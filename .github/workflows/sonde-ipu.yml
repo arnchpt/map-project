@@ -1,0 +1,21 @@
+# Sonde temporaire : vérifie ce que l'API IPU Parline expose (sièges par parti). À supprimer avant fusion.
+name: Sonde IPU
+on:
+  push:
+    branches: [claude/project-thread-emu4w8]
+    paths: [.github/workflows/sonde-ipu.yml]
+jobs:
+  sonde:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          get() { echo "=== $1"; curl -sS -m 30 -w '\n[HTTP %{http_code}]\n' -H 'Accept: application/json' "$1" | head -c 6000; echo; }
+          get "https://api.data.ipu.org/v1/chambers/FR-LC01"
+          get "https://api.data.ipu.org/v1/chambers?filter=id%3Aeq%3AFR-LC01"
+          get "https://api.data.ipu.org/v1/elections?filter=chamber_id%3Aeq%3AJP-LC01&page%5Bsize%5D=2"
+          get "https://api.data.ipu.org/v1/elections/JP-LC01-E20260208"
+          get "https://api.data.ipu.org/v1"
+          get "https://api.data.ipu.org/"
+          get "https://data.ipu.org/api-doc"
+          curl -sS -m 30 "https://data.ipu.org/data-dictionary" | grep -oiE '[a-z_]*(part|seat|composition|group)[a-z_]*' | sort | uniq -c | sort -rn | head -60
+          curl -sS -m 30 "https://data.ipu.org/parliament/JP/JP-LC01/election/JP-LC01-E20260208/" | sed 's/<[^>]*>/ /g' | tr -s ' \n' | grep -iE -A3 'party|seats|Liberal' | head -80
