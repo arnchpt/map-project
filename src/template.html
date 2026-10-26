@@ -78,6 +78,8 @@ header.top .lede { color: var(--muted); max-width: 62ch; }
 .pin { stroke: var(--surface); stroke-width: 1.2; vector-effect: non-scaling-stroke; cursor: pointer; }
 .pin.mil { fill: var(--mil); fill-opacity: .85; }
 .pin.sov { fill: var(--sov); fill-opacity: .8; }
+.focus { display: inline-flex; gap: 8px; align-items: center; font-size: 14px; color: var(--muted); }
+.focus select { font: 500 14px var(--f-body); color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 4px 8px; }
 .paris { fill: var(--surface); stroke: var(--accent); stroke-width: 2; vector-effect: non-scaling-stroke; pointer-events: none; }
 
 .zoom { position: absolute; right: 10px; top: 10px; display: grid; gap: 4px; }
@@ -132,9 +134,10 @@ header.top .lede { color: var(--muted); max-width: 62ch; }
 <div class="wrap">
   <header class="top">
     <div class="t">
-      <span class="eyebrow">Prototype · France seule renseignée · données au 26 octobre 2026</span>
+      <span class="eyebrow">Prototype · données au 26 octobre 2026</span>
       <h1>Atlas géopolitique</h1>
-      <p class="lede">Choisissez une couche, puis cliquez sur un pays pour voir sa relation avec la France. Chaque chiffre renvoie à sa source.</p>
+      <p class="lede">Choisissez une couche, puis cliquez sur un pays pour voir sa relation avec le pays choisi. Chaque chiffre renvoie à sa source.</p>
+      <label class="focus">Pays choisi <select id="focus"></select></label>
     </div>
     <nav class="layers" aria-label="Couches de la carte">
       <button type="button" data-layer="trade" aria-pressed="true"><span class="sw" style="background:var(--seq-4)"></span>Commerce</button>
@@ -162,14 +165,14 @@ header.top .lede { color: var(--muted); max-width: 62ch; }
     <div class="head" style="display:grid;gap:6px">
       <span class="eyebrow">Sources et méthode</span>
       <h2>D'où viennent les données</h2>
-      <p>Les couleurs et les classements sont calculés à partir des chiffres publiés, sans appréciation. Chaque couche a sa propre date : la carte n'est pas une photographie synchrone.</p>
+      <p>Les couleurs et les classements sont calculés à partir des chiffres publiés, sans appréciation. Commerce et proximité diplomatique sont calculés pour chaque pays du sélecteur ; présences militaires, conflits et tensions ne sont encore renseignés que pour la France, et le plafond lié aux sanctions ne s'applique qu'aux pays de l'UE. Chaque couche a sa propre date : la carte n'est pas une photographie synchrone.</p>
     </div>
     <div class="cols">
       <div>
         <h3>Commerce</h3>
         <ul>
           <li>FMI, <a href="https://data.imf.org/en/datasets/IMF.STA:IMTS">International Trade in Goods by partner country (IMTS)</a>, ex-Direction of Trade Statistics, interrogé par API le 26/10/2026. Même source et même méthode pour tous les pays.</li>
-          <li>Biens uniquement, année 2025, en milliards de dollars courants, tels que déclarés par la France : exportations FOB, importations CIF. Hong Kong compté à part de la Chine.</li>
+          <li>Biens uniquement, année 2025, en milliards de dollars courants, tels que déclarés par le pays choisi : exportations FOB, importations CIF. Hong Kong compté à part de la Chine.</li>
           <li>Les flux par pays diffèrent de ceux des Douanes françaises. L'explication la plus probable est l'<a href="https://one.oecd.org/document/STD/SES/WPTGS(2008)3/en/pdf">« effet Rotterdam »</a> : un bien importé hors de l'UE et dédouané à Anvers ou Rotterdam est ensuite compté comme un achat à la Belgique ou aux Pays-Bas. La Belgique et les Pays-Bas sont donc gonflés, et la Chine paraît plus petite : 51,9 Md$ d'importations ici, contre 74,9 Md€ (Hong Kong inclus) dans le <a href="https://www.tresor.economie.gouv.fr/Articles/2026/02/06/rapport-2026-sur-le-commerce-exterieur-de-la-france">rapport 2026 du Trésor</a>.</li>
         </ul>
       </div>
@@ -210,7 +213,7 @@ header.top .lede { color: var(--muted); max-width: 62ch; }
 <script>
 const WORLD = __TOPO__;
 const NAMES = __NAMES__;
-Object.assign(NAMES, { "840": "États-Unis", "384": "Côte d'Ivoire", "180": "RD Congo", "826": "Royaume-Uni", "156": "Chine", "784": "Émirats arabes unis" });
+Object.assign(NAMES, { "344": "Hong Kong", "702": "Singapour", "840": "États-Unis", "384": "Côte d'Ivoire", "180": "RD Congo", "826": "Royaume-Uni", "156": "Chine", "784": "Émirats arabes unis" });
 
 // ---- Données (voir la section Sources et méthode) ----
 const SRC = {
@@ -227,15 +230,15 @@ const SRC = {
 };
 
 // Exportations (x, FOB) et importations (m, CIF) de biens, Md$, 2025 (xp, mp : 2024), produit par scripts/imts.js
-const TRADE_DATA = __TRADE__;
-const TRADE = TRADE_DATA.values, TW = TRADE_DATA.monde;
-const TRADE_TOTAL = { x: TW.x, m: TW.m, s: TW.x - TW.m, s24: TW.xp - TW.mp };
-const TOP = Object.keys(TRADE).filter(id => TRADE[id].x != null && TRADE[id].m != null).sort((a, b) => (TRADE[b].x + TRADE[b].m) - (TRADE[a].x + TRADE[a].m)).slice(0, 11);
+// Pays focus : métadonnées, commerce (scripts/imts.js) et votes (scripts/votes_kappa.py), injectés au build
+const FOCUS = __FOCUS__;
+let F, TRADE, TW, TRADE_TOTAL, TOP, TRADE_NOTE, PRES, PRES_UNPLACED, EVENTS, SANCTIONS, VOTES;
+const topOf = TRADE => Object.keys(TRADE).filter(id => TRADE[id].x != null && TRADE[id].m != null).sort((a, b) => (TRADE[b].x + TRADE[b].m) - (TRADE[a].x + TRADE[a].m)).slice(0, 11);
 // Écart avec les Douanes, très probablement l'« effet Rotterdam » : biens hors UE dédouanés à Anvers ou Rotterdam, puis comptés comme achats à la Belgique ou aux Pays-Bas
-const TRADE_NOTE = { "528": "transit portuaire", "056": "transit portuaire", "156": "Douanes : 74,9 Md€ d'importations" };
+const TRADE_NOTE_FR = { "528": "transit portuaire", "056": "transit portuaire", "156": "Douanes : 74,9 Md€ d'importations" };
 
 // Présences : cat = sov (territoire français) | pre (forces prépositionnées) | dlia | ope | otan | onu
-const PRES = [
+const PRES_FR = [
   { id: "262", lon: 42.6, lat: 11.7, nom: "Forces françaises stationnées à Djibouti", cat: "pre", eff: 1500 },
   { id: "784", lon: 54.3, lat: 23.9, nom: "Forces françaises aux Émirats arabes unis", cat: "pre", eff: 750 },
   { id: "384", lon: -5.5, lat: 7.6, nom: "Détachement de liaison interarmées", cat: "dlia", eff: 100 },
@@ -250,7 +253,7 @@ const PRES = [
   { id: null, lon: 165.6, lat: -21.3, nom: "Forces armées en Nouvelle-Calédonie", cat: "sov", eff: 2200 },
   { id: null, lon: -149.4, lat: -17.6, nom: "Forces armées en Polynésie française", cat: "sov", eff: 1000 },
 ];
-const PRES_UNPLACED = [
+const PRES_UNPLACED_FR = [
   { nom: "Autres missions OTAN (police du ciel, groupes navals, KFOR)", eff: "≈ 2 500" },
   { nom: "Opérations de l'UE (Althea, Aspides, Atalante, Irini…)", eff: "≈ 600" },
   { nom: "Autres missions ONU (Sahara occidental, RCA, RDC)", eff: "≈ 850" },
@@ -259,7 +262,7 @@ const PRES_UNPLACED = [
 const CAT = { pre: "Forces prépositionnées", dlia: "Liaison interarmées", ope: "Opération", otan: "OTAN", onu: "ONU", sov: "Territoire français" };
 
 // Conflits et tensions : faits datés, une catégorie par fait
-const EVENTS = [
+const EVENTS_FR = [
   { id: "368", k: "engage", t: "Opération Chammal en cours", d: "Coalition contre l'État islamique, environ 1 100 militaires.", s: "armees" },
   { id: "804", k: "soutien", t: "Aide militaire à l'Ukraine", d: "Soutien à un pays envahi par la Russie depuis février 2022.", s: "kiel" },
   { id: "643", k: "sanction", t: "Sanctions de l'UE", d: "Régime de mesures restrictives appliqué par la France.", s: "sanc" },
@@ -303,14 +306,13 @@ const ORGS = {
 };
 for (const o in ORGS) ORGS[o] = ORGS[o].split(" ");
 const orgsOf = id => Object.keys(ORGS).filter(o => ORGS[o].includes(id));
-const shared = id => orgsOf(id).filter(o => ORGS[o].includes("250"));
-const jaccard = id => { const a = orgsOf("250"), b = orgsOf(id), inter = shared(id).length, uni = new Set([...a, ...b]).size; return uni ? Math.round(inter / uni * 100) : 0; };
-// Sanctions visant l'État : régimes UE hérités par la France ; « réciproque » si l'État visé a pris des contre-mesures contre l'UE
-const SANCTIONS = { "643": { plafond: 20, d: "Régime UE et contre-sanctions russes (embargo alimentaire depuis 2014)" }, "112": { plafond: 20, d: "Régime UE et contre-sanctions biélorusses" }, "364": { plafond: 40, d: "Régime UE visant l'Iran" }, "408": { plafond: 40, d: "Régime UE visant la Corée du Nord" }, "104": { plafond: 40, d: "Régime UE visant le Myanmar (embargo sur les armes, gel d'avoirs)" }, "862": { plafond: 40, d: "Régime UE visant le Venezuela (embargo sur les armes, gel d'avoirs)" }, "558": { plafond: 40, d: "Régime UE visant des responsables du gouvernement nicaraguayen (gel d'avoirs, visas)" } };
+const shared = id => orgsOf(id).filter(o => ORGS[o].includes(FR));
+const jaccard = id => { const a = orgsOf(FR), b = orgsOf(id), inter = shared(id).length, uni = new Set([...a, ...b]).size; return uni ? Math.round(inter / uni * 100) : 0; };
+// Sanctions visant l'État : régimes UE, appliqués seulement quand le pays choisi est membre de l'UE ; « réciproque » si l'État visé a pris des contre-mesures contre l'UE
+const SANCTIONS_UE = { "643": { plafond: 20, d: "Régime UE et contre-sanctions russes (embargo alimentaire depuis 2014)" }, "112": { plafond: 20, d: "Régime UE et contre-sanctions biélorusses" }, "364": { plafond: 40, d: "Régime UE visant l'Iran" }, "408": { plafond: 40, d: "Régime UE visant la Corée du Nord" }, "104": { plafond: 40, d: "Régime UE visant le Myanmar (embargo sur les armes, gel d'avoirs)" }, "862": { plafond: 40, d: "Régime UE visant le Venezuela (embargo sur les armes, gel d'avoirs)" }, "558": { plafond: 40, d: "Régime UE visant des responsables du gouvernement nicaraguayen (gel d'avoirs, visas)" } };
 // Votes ONU : kappa de Cohen oui/abstention/non sur les votes disputés (Häge 2011), sessions 76-78 (2021-2024),
 // ramené sur 0-100 par (kappa + 1) / 2 × 100 : échelle absolue commune à tous les pays focus, 50 = pas plus d'accord que le hasard
-const VOTES_DATA = __VOTES__;
-const VOTES = VOTES_DATA.values, VOTES_PERIOD = "2021-2024";
+const VOTES_PERIOD = "2021-2024";
 const dClass = sc => sc >= 67 ? 2 : sc >= 34 ? 1 : 0;
 const D_CLASSES = [{ l: "Proximité faible (0–33)", c: "--seq-1" }, { l: "Proximité moyenne (34–66)", c: "--seq-3" }, { l: "Proximité forte (67–100)", c: "--seq-5" }];
 function diplo(id) {
@@ -321,7 +323,20 @@ function diplo(id) {
 const METHOD_VERSION = "méthode v1 (26/10/2026)";
 
 // ---- Carte ----
-const FR = "250", PARIS = [2.35, 48.86];
+// FR = code ISO numérique du pays choisi (nom hérité du prototype France), PARIS = sa capitale
+let FR, PARIS;
+function setFocus(iso) {
+  const f = FOCUS[iso]; F = iso; FR = f.num; PARIS = f.cap;
+  TRADE = f.trade.values; TW = f.trade.monde;
+  TRADE_TOTAL = { x: TW.x, m: TW.m, s: TW.x - TW.m, s24: TW.xp - TW.mp };
+  TOP = topOf(TRADE); VOTES = f.votes;
+  const fr = iso === "FRA";
+  TRADE_NOTE = fr ? TRADE_NOTE_FR : {};
+  PRES = fr ? PRES_FR : []; PRES_UNPLACED = fr ? PRES_UNPLACED_FR : []; EVENTS = fr ? EVENTS_FR : [];
+  SANCTIONS = f.ue ? SANCTIONS_UE : {};
+}
+setFocus("FRA");
+const FN = () => FOCUS[F];
 const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 const svg = d3.select("#map"), W = 960, H = 505;
 const countries = topojson.feature(WORLD, WORLD.objects.countries).features.filter(f => f.properties.name !== "Antarctica");
@@ -332,13 +347,13 @@ const path = d3.geoPath(proj);
 const g = svg.append("g");
 g.append("path").datum({ type: "Sphere" }).attr("d", path).attr("fill", "var(--sea)");
 const cPaths = g.append("g").selectAll("path").data(countries).join("path")
-  .attr("class", d => "country" + (d.key === FR ? " fr" : "")).attr("d", path)
+  .attr("class", "country").attr("d", path)
   .attr("tabindex", -1)
   .on("click", (e, d) => select(d.key))
   .on("mousemove", (e, d) => showTip(e, d.key))
   .on("mouseleave", hideTip);
 const gFlows = g.append("g"), gPins = g.append("g");
-g.append("circle").attr("class", "paris").attr("r", 3.5).attr("transform", `translate(${proj(PARIS)})`);
+g.append("circle").attr("class", "paris").attr("r", 3.5);
 
 let k = 1;
 const zoom = d3.zoom().scaleExtent([1, 8]).translateExtent([[0, 0], [W, H]]).on("zoom", e => {
@@ -355,7 +370,7 @@ d3.select("#zreset").on("click", () => svg.transition().call(zoom.transform, d3.
 let layer = "trade", sel = FR;
 const fmt = v => v.toLocaleString("fr-FR", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 const signed = v => (v > 0 ? "+" : v < 0 ? "−" : "") + fmt(Math.abs(v));
-const nom = id => (byId.get(id) || {}).nom || id;
+const nom = id => (byId.get(id) || {}).nom || NAMES[id] || id;
 const tradeSeq = ["--seq-1", "--seq-2", "--seq-3", "--seq-4", "--seq-5"];
 const tradeBin = v => v >= 100 ? 4 : v >= 40 ? 3 : v >= 10 ? 2 : v >= 2 ? 1 : 0;
 const tradeBins = ["< 2", "2–10", "10–40", "40–100", "≥ 100"];
@@ -375,11 +390,12 @@ function fillFor(id) {
 
 function render() {
   document.querySelectorAll(".layers button").forEach(b => b.setAttribute("aria-pressed", b.dataset.layer === layer));
-  cPaths.style("fill", d => fillFor(d.key)).classed("sel", d => d.key === sel && sel !== FR);
+  cPaths.style("fill", d => fillFor(d.key)).classed("sel", d => d.key === sel && sel !== FR).classed("fr", d => d.key === FR);
+  g.select(".paris").attr("transform", `translate(${proj(PARIS)})`);
 
   // Flux commerciaux
   const flows = layer === "trade" ? TOP.map(id => ({ id, v: TRADE[id].x + TRADE[id].m })) : [];
-  const wScale = d3.scaleSqrt().domain([0, 220]).range([0, 7]);
+  const wScale = d3.scaleSqrt().domain([0, Math.max(220, d3.max(flows, d => d.v) || 0)]).range([0, 7]);
   gFlows.selectAll("path").data(flows, d => d.id).join("path").attr("class", "flow")
     .attr("stroke-width", d => wScale(d.v))
     .attr("d", d => {
@@ -404,18 +420,20 @@ function render() {
 
 function renderLegend() {
   const L = document.getElementById("legend");
-  if (layer === "trade") L.innerHTML = `<span class="ttl">Échanges de biens avec la France, 2025 (Md$)</span>
+  if (layer === "trade") L.innerHTML = `<span class="ttl">Échanges de biens avec ${FN().le}, 2025 (Md$)</span>
     <div class="items"><span class="ramp">${tradeSeq.map(v => `<span style="background:var(${v})"></span>`).join("")}</span>
     <span class="mono" style="font-size:11.5px">${tradeBins[0]} → ${tradeBins[4]}</span>
     <span class="it"><span class="sw" style="background:var(--land)"></span>pas de donnée</span></div>`;
-  if (layer === "mil") L.innerHTML = `<span class="ttl">Militaires français déployés, sept. 2026</span>
+  if (layer === "mil" && F !== "FRA") L.innerHTML = `<span class="ttl">Présences militaires : pas encore renseignées pour ${FN().le}</span>`;
+  else if (layer === "mil") L.innerHTML = `<span class="ttl">Militaires français déployés, sept. 2026</span>
     <div class="items"><span class="it"><span class="dot" style="background:var(--mil)"></span>À l'étranger</span>
     <span class="it"><span class="dot" style="background:var(--sov)"></span>Outre-mer</span>
     <span class="it">Taille du point = effectif</span></div>
     <span style="color:var(--muted)">Présences reconnues officiellement. Les présences non déclarées n'apparaissent pas.</span>`;
-  if (layer === "conf") L.innerHTML = `<span class="ttl">Faits datés impliquant la France</span>
+  if (layer === "conf" && F !== "FRA") L.innerHTML = `<span class="ttl">Conflits et tensions : pas encore renseignés pour ${FN().le}</span>`;
+  else if (layer === "conf") L.innerHTML = `<span class="ttl">Faits datés impliquant la France</span>
     <div class="items">${Object.values(KIND).map(v => `<span class="it"><span class="sw" style="background:${v.c}"></span>${v.l}</span>`).join("")}</div>`;
-  if (layer === "dipl") L.innerHTML = `<span class="ttl">Proximité diplomatique avec la France, score 0–100</span>
+  if (layer === "dipl") L.innerHTML = `<span class="ttl">Proximité diplomatique avec ${FN().le}, score 0–100</span>
     <div class="items">${D_CLASSES.map(d => `<span class="it"><span class="sw" style="background:var(${d.c})"></span>${d.l}</span>`).join("")}
     <span class="it"><span class="sw" style="background:var(--land)"></span>pas de donnée</span></div>
     <span style="color:var(--muted)">Votes ONU ${VOTES_PERIOD} (60 %), organisations communes (40 %), plafond en cas de sanctions.</span>`;
@@ -433,14 +451,14 @@ function renderPanel() {
 }
 
 function franceSheet() {
-  let h = `<div class="head"><span class="eyebrow">Fiche pays · ${TITLES[layer]}</span><h2>France</h2></div>`;
+  let h = `<div class="head"><span class="eyebrow">Fiche pays · ${TITLES[layer]}</span><h2>${FN().nom}</h2></div>`;
   if (layer === "trade") {
     const rows = TOP.map(id => [id, { ...TRADE[id], note: TRADE_NOTE[id] }]);
     const max = d3.max(rows, r => Math.max(r[1].x, r[1].m));
     h += `<div class="kpis">
       <div class="kpi"><span class="v">${fmt(TRADE_TOTAL.x)}</span><span class="l">Exportations, Md$</span></div>
       <div class="kpi"><span class="v">${fmt(TRADE_TOTAL.m)}</span><span class="l">Importations, Md$</span></div>
-      <div class="kpi"><span class="v neg">${signed(TRADE_TOTAL.s)}</span><span class="l">Solde 2025 (${signed(TRADE_TOTAL.s24)} en 2024)</span></div></div>
+      <div class="kpi"><span class="v ${TRADE_TOTAL.s >= 0 ? "pos" : "neg"}">${signed(TRADE_TOTAL.s)}</span><span class="l">Solde 2025 (${signed(TRADE_TOTAL.s24)} en 2024)</span></div></div>
       <div class="grp"><span class="eyebrow">Premiers partenaires, exportations / importations</span><div class="list">
       ${rows.map(([id, t]) => { const s = t.x - t.m; return `<div class="row" tabindex="0" data-id="${id}">
         <span class="n">${nom(id)}${t.note ? ` <span class="tag">${t.note}</span>` : ""}</span>
@@ -448,10 +466,13 @@ function franceSheet() {
         <span class="bars"><span class="bar x" style="width:${t.x / max * 100}%"></span><span class="bar m" style="width:${t.m / max * 100}%"></span></span></div>`; }).join("")}
       </div></div>
       <p class="note">Barre bleue : exportations. Barre grise : importations. Le chiffre à droite est le solde en Md$. Les services (tourisme, numérique) ne sont pas comptés.</p>
-      <p class="note"><b>Lecture.</b> Un produit chinois dédouané à Rotterdam ou Anvers apparaît très probablement ici comme un achat aux Pays-Bas ou à la Belgique (« effet Rotterdam »). Les Douanes françaises comptent 74,9 Md€ d'importations depuis la Chine (Hong Kong inclus) en 2025, contre 51,9 Md$ ici.</p>
-      <div class="src">Source : ${srcLink("imf")}. Exportations FOB, importations CIF, déclarées par la France. Comparaison : ${srcLink("tresor")}.</div>`;
+      ${F === "FRA" ? `<p class="note"><b>Lecture.</b> Un produit chinois dédouané à Rotterdam ou Anvers apparaît très probablement ici comme un achat aux Pays-Bas ou à la Belgique (« effet Rotterdam »). Les Douanes françaises comptent 74,9 Md€ d'importations depuis la Chine (Hong Kong inclus) en 2025, contre 51,9 Md$ ici.</p>` : ""}
+      <div class="src">Source : ${srcLink("imf")}. Exportations FOB, importations CIF, déclarées par ${FN().le}.${F === "FRA" ? ` Comparaison : ${srcLink("tresor")}.` : ""}${F === "RUS" ? " La Russie ne publie plus le détail de son commerce depuis 2022 : ces chiffres sont probablement estimés par le FMI à partir des déclarations de ses partenaires." : ""}</div>`;
   }
-  if (layer === "mil") {
+  if ((layer === "mil" || layer === "conf") && F !== "FRA") {
+    h += `<p class="sub">Couche pas encore renseignée pour ${FN().le}. Seule la France l'est pour l'instant : ces faits sont relevés source par source, pas calculés.</p>`;
+  }
+  else if (layer === "mil") {
     const ab = PRES.filter(p => p.cat !== "sov").sort((a, b) => b.eff - a.eff), ov = PRES.filter(p => p.cat === "sov");
     const tot = d3.sum(ab, p => p.eff);
     h += `<div class="kpis">
@@ -467,7 +488,7 @@ function franceSheet() {
       <p class="note">Présences reconnues officiellement. Les présences non déclarées n'apparaissent pas. Cette règle favorise les États transparents : un pays qui publie ses déploiements paraît plus présent qu'un pays opaque.</p>
       <div class="src">Source : ${srcLink("armees")}. Vérifié le ${CHECKED}. Statut : ${presStatus()} (non reconfirmé après 24 mois, retiré après 36). Retraits récents : voir la couche Conflits et tensions.</div>`;
   }
-  if (layer === "conf") {
+  else if (layer === "conf") {
     h += `<p class="sub">Uniquement des faits datés et sourcés. Aucune appréciation de l'intensité d'une tension.</p>`;
     for (const [kk, v] of Object.entries(KIND)) {
       const ev = EVENTS.filter(e => e.k === kk);
@@ -485,11 +506,12 @@ plafond : 100 · 40 si sanctions · 20 si réciproques
 classes : 0–33 faible · 34–66 moyenne · 67–100 forte
 faible = peu de liens, pas forcément hostile</div>
       <div class="kpis">${D_CLASSES.slice().reverse().map((d, k) => `<div class="kpi"><span class="v">${nCl[2 - k]}</span><span class="l">${d.l}</span></div>`).join("")}</div>
-      <p class="note"><b>Votes de ${VOTES_PERIOD}.</b> Sessions 76 à 78, dernières publiées par Voeten. Les sessions extraordinaires d'urgence ne sont pas incluses : les résolutions de 2022-2023 condamnant l'invasion de l'Ukraine manquent, seuls les textes annuels sur la Crimée et les territoires occupés sont comptés. Échelle des votes : 50 = pas plus d'accord que le hasard, au-dessus = vote souvent comme la France, en dessous = vote souvent à l'opposé.</p>
+      <p class="note"><b>Votes de ${VOTES_PERIOD}.</b> Sessions 76 à 78, dernières publiées par Voeten. Les sessions extraordinaires d'urgence ne sont pas incluses : les résolutions de 2022-2023 condamnant l'invasion de l'Ukraine manquent, seuls les textes annuels sur la Crimée et les territoires occupés sont comptés. Échelle des votes : 50 = pas plus d'accord que le hasard, au-dessus = vote souvent comme ${FN().le}, en dessous = vote souvent à l'opposé.</p>
       <div class="grp"><span class="eyebrow">Les plus proches</span><div class="list">${top.map(rowD).join("")}</div></div>
       <div class="grp"><span class="eyebrow">Les moins proches</span><div class="list">${bottom.map(rowD).join("")}</div></div>
-      <div class="grp"><span class="eyebrow">France : ${orgsOf(FR).length} organisations sur 15</span><div style="display:flex;gap:6px;flex-wrap:wrap;padding-left:6px">${orgsOf(FR).map(o => `<span class="tag">${o}</span>`).join("")}</div></div>
-      <div class="grp"><span class="eyebrow">Score plafonné par des sanctions</span><div class="list">
+      <div class="grp"><span class="eyebrow">${FN().nom} : ${orgsOf(FR).length} organisations sur 15</span><div style="display:flex;gap:6px;flex-wrap:wrap;padding-left:6px">${orgsOf(FR).map(o => `<span class="tag">${o}</span>`).join("")}</div></div>
+      ${FN().ue ? "" : `<p class="note"><b>Sanctions non prises en compte.</b> La règle de plafonnement porte sur les régimes de l'UE. Celle des régimes propres à ${FN().le} reste à définir : aucun score n'est plafonné ici.</p>`}
+      <div class="grp" ${FN().ue ? "" : "hidden"}><span class="eyebrow">Score plafonné par des sanctions</span><div class="list">
       ${Object.entries(SANCTIONS).map(([id, s]) => `<div class="row" tabindex="0" data-id="${id}"><span class="n">${nom(id)}</span><span class="val">≤ ${s.plafond}</span><span class="d">${s.d}</span></div>`).join("")}
       </div></div>
       <div class="src">Fiche méthode des indicateurs, ${METHOD_VERSION}. Votes : UN General Assembly Voting Data (Voeten), Harvard Dataverse. Listes d'organisations : détail dans Sources et méthode. Sanctions : ${srcLink("sanc")}.</div>`;
@@ -499,25 +521,25 @@ faible = peu de liens, pas forcément hostile</div>
 
 function otherSheet(id) {
   const t = TRADE[id] && TRADE[id].x != null && TRADE[id].m != null ? TRADE[id] : null, note = TRADE_NOTE[id], pres = PRES.filter(p => p.id === id), ev = EVENTS.filter(e => e.id === id), sh = shared(id);
-  let h = `<div class="head"><span class="eyebrow">Relation avec la France</span><h2>${nom(id)}</h2>
-    <p class="sub">La fiche complète de ce pays n'est pas encore construite. Voici ce que les données françaises disent de la relation.</p></div>`;
+  let h = `<div class="head"><span class="eyebrow">Relation avec ${FN().le}</span><h2>${nom(id)}</h2>
+    <p class="sub">${Object.values(FOCUS).some(f => f.num === id) ? "Sa propre fiche est disponible dans le sélecteur « Pays choisi »." : "La fiche complète de ce pays n'est pas encore construite."} Voici ce que les données ${FN().du} disent de la relation.</p></div>`;
   h += `<div class="grp"><span class="eyebrow">Commerce de biens, 2025</span>` + (t ? `<div class="kpis">
-      <div class="kpi"><span class="v">${fmt(t.x)}</span><span class="l">Exportations françaises, Md$</span></div>
-      <div class="kpi"><span class="v">${fmt(t.m)}</span><span class="l">Importations françaises, Md$</span></div>
+      <div class="kpi"><span class="v">${fmt(t.x)}</span><span class="l">Exportations ${FN().du}, Md$</span></div>
+      <div class="kpi"><span class="v">${fmt(t.m)}</span><span class="l">Importations ${FN().du}, Md$</span></div>
       <div class="kpi"><span class="v ${t.x - t.m >= 0 ? "pos" : "neg"}">${signed(t.x - t.m)}</span><span class="l">Solde${t.xp != null && t.mp != null ? ` (${signed(t.xp - t.mp)} en 2024)` : ""}</span></div></div>
-      <p class="empty">Part dans le commerce de biens de la France : ${fmt((t.x + t.m) / (TW.x + TW.m) * 100)} %. La part de la France pour ce pays (l'autre sens) sera ajoutée avec la fiche de ce pays.</p>
+      <p class="empty">Part dans le commerce de biens ${FN().du} : ${fmt((t.x + t.m) / (TW.x + TW.m) * 100)} %.</p>
       <div class="src">Source : ${srcLink("imf")}${note ? ` · ${note}` : ""}</div>` : `<p class="empty">Pas de donnée FMI complète pour ce pays.</p>`) + `</div>`;
-  h += `<div class="grp"><span class="eyebrow">Présence militaire française</span>` + (pres.length ? pres.map(p => `<div class="row" style="cursor:default"><span class="n">${p.nom}</span><span class="val">${p.eff.toLocaleString("fr-FR")}</span><span class="d">${CAT[p.cat]} · ${presStatus()}, vérifié le ${CHECKED} · ${srcLink("armees")}</span></div>`).join("") : `<p class="empty">Aucune présence rattachée à ce pays sur la page du ministère des Armées.</p>`) + `</div>`;
-  h += `<div class="grp"><span class="eyebrow">Conflits et tensions</span>` + (ev.length ? ev.map(e => `<div class="row" style="cursor:default"><span class="n"><span class="sw" style="background:${KIND[e.k].c};margin-right:6px"></span>${e.t}</span><span class="val"></span><span class="d">${e.d} ${srcLink(e.s)}</span></div>`).join("") : `<p class="empty">Aucun fait recensé dans ce prototype.</p>`) + `</div>`;
+  if (F === "FRA") h += `<div class="grp"><span class="eyebrow">Présence militaire française</span>` + (pres.length ? pres.map(p => `<div class="row" style="cursor:default"><span class="n">${p.nom}</span><span class="val">${p.eff.toLocaleString("fr-FR")}</span><span class="d">${CAT[p.cat]} · ${presStatus()}, vérifié le ${CHECKED} · ${srcLink("armees")}</span></div>`).join("") : `<p class="empty">Aucune présence rattachée à ce pays sur la page du ministère des Armées.</p>`) + `</div>`;
+  if (F === "FRA") h += `<div class="grp"><span class="eyebrow">Conflits et tensions</span>` + (ev.length ? ev.map(e => `<div class="row" style="cursor:default"><span class="n"><span class="sw" style="background:${KIND[e.k].c};margin-right:6px"></span>${e.t}</span><span class="val"></span><span class="d">${e.d} ${srcLink(e.s)}</span></div>`).join("") : `<p class="empty">Aucun fait recensé dans ce prototype.</p>`) + `</div>`;
   const dp = diplo(id);
   h += `<div class="grp"><span class="eyebrow">Proximité diplomatique</span><div class="kpis">
       <div class="kpi"><span class="v">${dp.v == null ? "—" : dp.v}</span><span class="l">Votes ONU ${VOTES_PERIOD} (60 %)</span></div>
       <div class="kpi"><span class="v">${dp.j}</span><span class="l">Organisations communes (40 %)</span></div>
-      <div class="kpi"><span class="v">${dp.cap < 100 ? "≤ " + dp.cap : "aucun"}</span><span class="l">Plafond sanctions</span></div></div>`
+      <div class="kpi"><span class="v">${!FN().ue ? "non défini" : dp.cap < 100 ? "≤ " + dp.cap : "aucun"}</span><span class="l">Plafond sanctions</span></div></div>`
     + (sh.length ? `<div style="display:flex;gap:6px;flex-wrap:wrap">${sh.map(o => `<span class="tag">${o}</span>`).join("")}</div>` : `<p class="empty">Aucune organisation commune sur la liste de 15.</p>`)
     + (SANCTIONS[id] ? `<p class="empty">${SANCTIONS[id].d}.</p>` : "")
     + `<p class="empty">Score final : ${dp.score == null ? "pas de donnée de vote" : `${Math.round(dp.score)} sur 100, ${D_CLASSES[dClass(dp.score)].l.split(" (")[0].toLowerCase()}`}.</p></div>`;
-  return h + `<button class="back" type="button">← Revenir à la France</button>`;
+  return h + `<button class="back" type="button">← Revenir à la fiche ${FN().nom}</button>`;
 }
 
 P.addEventListener("click", e => { const r = e.target.closest(".row[data-id]"); if (r && !e.target.closest("a")) select(r.dataset.id); });
@@ -535,8 +557,9 @@ function showTipHTML(e, html) {
 }
 function showTip(e, id) {
   let line = "";
-  if (id === FR) line = "Cliquez pour la fiche France";
+  if (id === FR) line = `Cliquez pour la fiche ${FN().nom}`;
   else if (layer === "trade") { const t = TRADE[id]; line = t && t.x != null && t.m != null ? `Échanges : ${fmt(t.x + t.m)} Md$ · solde ${signed(t.x - t.m)}` : "Pas de donnée FMI"; }
+  else if ((layer === "mil" || layer === "conf") && F !== "FRA") line = "Couche pas encore renseignée pour le pays choisi";
   else if (layer === "mil") { const p = PRES.find(p => p.id === id); line = p ? `${p.eff.toLocaleString("fr-FR")} militaires français` : "Pas de présence française recensée"; }
   else if (layer === "conf") { const ev = EVENTS.filter(e => e.id === id); line = ev.length ? ev.map(e => e.t).join("<br>") : "Aucun fait recensé"; }
   else if (layer === "dipl") { const dp = diplo(id), s = shared(id); line = (dp.score == null ? "Pas de donnée de vote" : `Score ${Math.round(dp.score)} · votes ${dp.v} · organisations ${dp.j}`) + "<br>" + (s.length ? `Organisations communes : ${s.join(", ")} (indice ${jaccard(id)})` : "Aucune organisation commune") + (SANCTIONS[id] ? `<br>Sanctions : score plafonné à ${SANCTIONS[id].plafond}` : ""); }
@@ -545,5 +568,9 @@ function showTip(e, id) {
 function hideTip() { tip.hidden = true; }
 
 document.querySelectorAll(".layers button").forEach(b => b.addEventListener("click", () => { layer = b.dataset.layer; render(); }));
+const FSEL = document.getElementById("focus");
+FSEL.innerHTML = Object.entries(FOCUS).map(([iso, f]) => `<option value="${iso}">${f.nom}</option>`).join("");
+FSEL.value = F;  // le sélecteur reste la seule façon de changer de pays choisi
+FSEL.addEventListener("change", () => { setFocus(FSEL.value); sel = FR; render(); });
 render();
 </script>

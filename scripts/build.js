@@ -1,21 +1,41 @@
-// Assemble la page publiable : injecte le fond de carte, les noms de pays et les scores de vote dans src/template.html
+// Assemble la page publiable : injecte le fond de carte, les noms de pays, le commerce et les votes de chaque pays choisi dans src/template.html
 // Usage : npm run build  ->  dist/index.html
 const fs = require("fs");
 const path = require("path");
 const root = path.join(__dirname, "..");
 const read = p => fs.readFileSync(path.join(root, p), "utf8");
 
+const isoc = require("i18n-iso-countries");
 const topo = fs.readFileSync(require.resolve("world-atlas/countries-110m.json"), "utf8");
-const votes = JSON.parse(read("data/votes/votes-fra.json"));
-const trade = JSON.parse(read("data/trade/trade-fra.json"));
+// Pays proposés dans le sélecteur, dans l'ordre du critère du top 10 (voir README) ; le = forme avec article, du = complément
+const FOCUS = {
+  FRA: { nom: "France", le: "la France", du: "de la France", cap: [2.35, 48.86], ue: true },
+  USA: { nom: "États-Unis", le: "les États-Unis", du: "des États-Unis", cap: [-77.04, 38.91] },
+  CHN: { nom: "Chine", le: "la Chine", du: "de la Chine", cap: [116.4, 39.9] },
+  RUS: { nom: "Russie", le: "la Russie", du: "de la Russie", cap: [37.62, 55.75] },
+  DEU: { nom: "Allemagne", le: "l'Allemagne", du: "de l'Allemagne", cap: [13.4, 52.52], ue: true },
+  IND: { nom: "Inde", le: "l'Inde", du: "de l'Inde", cap: [77.21, 28.61] },
+  GBR: { nom: "Royaume-Uni", le: "le Royaume-Uni", du: "du Royaume-Uni", cap: [-0.13, 51.51] },
+  JPN: { nom: "Japon", le: "le Japon", du: "du Japon", cap: [139.69, 35.69] },
+  ITA: { nom: "Italie", le: "l'Italie", du: "de l'Italie", cap: [12.5, 41.9], ue: true },
+  CAN: { nom: "Canada", le: "le Canada", du: "du Canada", cap: [-75.7, 45.42] },
+  KOR: { nom: "Corée du Sud", le: "la Corée du Sud", du: "de la Corée du Sud", cap: [126.98, 37.57] },
+  SAU: { nom: "Arabie saoudite", le: "l'Arabie saoudite", du: "de l'Arabie saoudite", cap: [46.72, 24.71] },
+};
 // Les clés de world-atlas sont des codes ISO numériques sur 3 chiffres ("044")
-const values = Object.fromEntries(Object.entries(votes.values).map(([k, v]) => [k.padStart(3, "0"), v]));
+const pad = values => Object.fromEntries(Object.entries(values).map(([k, v]) => [k.padStart(3, "0"), v]));
+for (const [iso, f] of Object.entries(FOCUS)) {
+  const votes = JSON.parse(read(`data/votes/votes-${iso.toLowerCase()}.json`));
+  const trade = JSON.parse(read(`data/trade/trade-${iso.toLowerCase()}.json`));
+  f.num = isoc.alpha3ToNumeric(iso);
+  f.votes = pad(votes.values);
+  f.trade = { ...trade, values: pad(trade.values) };
+}
 
 const html = read("src/template.html")
   .replace("__TOPO__", topo)
   .replace("__NAMES__", read("data/names.json"))
-  .replace("__VOTES__", JSON.stringify({ sessions: votes.sessions, values }))
-  .replace("__TRADE__", JSON.stringify({ ...trade, values: Object.fromEntries(Object.entries(trade.values).map(([k, v]) => [k.padStart(3, "0"), v])) }));
+  .replace("__FOCUS__", JSON.stringify(FOCUS));
 
 fs.mkdirSync(path.join(root, "dist"), { recursive: true });
 fs.writeFileSync(path.join(root, "dist/index.html"), html);
