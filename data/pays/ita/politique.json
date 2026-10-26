@@ -1,0 +1,84 @@
+{
+  "pays": "ITA",
+  "verifie": "2026-10-26",
+  "chef_etat": {
+    "nom": "Sergio Mattarella",
+    "fonction": "Président de la République",
+    "parti": null,
+    "depuis": "2015-02-03",
+    "qid": "Q3956186",
+    "src": "quirinale"
+  },
+  "chef_gouv": {
+    "nom": "Giorgia Meloni",
+    "fonction": "Présidente du Conseil des ministres",
+    "parti": "Frères d'Italie",
+    "depuis": "2022-10-22",
+    "qid": "Q451791",
+    "src": "gouvernement"
+  },
+  "chambre": {
+    "nom": "Chambre des députés",
+    "sieges": 400,
+    "majorite": 201,
+    "election": "2022-09-25",
+    "src": "electoral",
+    "ipu": "IT-LC01-E20220925"
+  },
+  "partis": [
+    {
+      "nom": "Frères d'Italie",
+      "sieges": 119,
+      "role": "gouv",
+      "leaders": "Giorgia Meloni"
+    },
+    {
+      "nom": "Parti démocrate",
+      "sieges": 69,
+      "role": "hors",
+      "leaders": "Elly Schlein"
+    },
+    {
+      "nom": "Ligue",
+      "sieges": 66,
+      "role": "gouv",
+      "leaders": "Matteo Salvini (réélu secrétaire le 25/10/2026)"
+    },
+    {
+      "nom": "Mouvement 5 étoiles",
+      "sieges": 52,
+      "role": "hors",
+      "leaders": "Giuseppe Conte"
+    },
+    {
+      "nom": "Forza Italia",
+      "sieges": 45,
+      "role": "gouv",
+      "leaders": "Antonio Tajani"
+    },
+    {
+      "nom": "Action – Italia Viva",
+      "sieges": 21,
+      "role": "hors",
+      "leaders": "Carlo Calenda (Action), Matteo Renzi (Italia Viva), listes séparées depuis 2023"
+    },
+    {
+      "nom": "Alliance Verts et Gauche",
+      "sieges": 12,
+      "role": "hors",
+      "leaders": "Angelo Bonelli, Nicola Fratoianni"
+    },
+    {
+      "nom": "Nous modérés",
+      "sieges": 7,
+      "role": "gouv",
+      "leaders": "Maurizio Lupi"
+    }
+  ],
+  "autres": 9,
+  "notes": [
+    "Sièges élus le 25/09/2022, repris de data/politique/politique.json, à recouper avec Eligendo une fois l'accès ouvert.",
+    "L'IPU ne publie que les totaux par coalition (centre droit 237, centre gauche 84).",
+    "Groupes à la Chambre en octobre 2026 (changements de groupe) : voir la note de la source « camera »."
+  ]
+}
