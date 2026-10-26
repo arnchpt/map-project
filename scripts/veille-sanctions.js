@@ -81,7 +81,8 @@ async function telecharger(src) {
   const nouveau = { ...ancien }, lignes = [], echecs = [];
   // Mesures retenues par autorité suivie : { USA: Set(RUS, IRN…) }
   const retenues = {};
-  for (const m of mesures) for (const de of [m.de].flat()) if (SOURCES[de]) for (const v of [m.vers].flat()) (retenues[de] ??= new Set()).add(v);
+  // Une mesure « sans_liste » (interdiction générale, sans personnes désignées, comme le Canada envers la Corée du Nord) n'a pas d'entrée dans les listes : pas de contrôle
+  for (const m of mesures) if (!m.sans_liste) for (const de of [m.de].flat()) if (SOURCES[de]) for (const v of [m.vers].flat()) (retenues[de] ??= new Set()).add(v);
 
   for (const [k, src] of Object.entries(SOURCES)) {
     let res;
