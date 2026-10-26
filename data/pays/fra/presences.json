@@ -1,0 +1,25 @@
+{
+  "pays": "FRA",
+  "verifie": "2026-10-26",
+  "presences": [
+    { "hote": "DJI", "lon": 42.6, "lat": 11.7, "nom": "Forces françaises stationnées à Djibouti", "cat": "pre", "eff": 1500, "depuis": null, "src": "armees" },
+    { "hote": "ARE", "lon": 54.3, "lat": 23.9, "nom": "Forces françaises aux Émirats arabes unis", "cat": "pre", "eff": 750, "depuis": null, "src": "armees" },
+    { "hote": "CIV", "lon": -5.5, "lat": 7.6, "nom": "Détachement de liaison interarmées en Côte d'Ivoire", "cat": "dlia", "eff": 100, "depuis": null, "src": "armees" },
+    { "hote": "GAB", "lon": 11.6, "lat": -0.6, "nom": "Détachement de liaison interarmées au Gabon", "cat": "dlia", "eff": 100, "depuis": null, "src": "armees" },
+    { "hote": "IRQ", "lon": 43.7, "lat": 33.2, "nom": "Opération Chammal (coalition contre l'État islamique)", "cat": "ope", "eff": 1100, "depuis": null, "src": "armees" },
+    { "hote": "ROU", "lon": 25.0, "lat": 45.9, "nom": "Bataillon multinational de l'OTAN en Roumanie (commandement français)", "cat": "otan", "eff": 1400, "depuis": null, "src": "armees" },
+    { "hote": "EST", "lon": 25.6, "lat": 58.7, "nom": "Contingent dans le bataillon multinational de l'OTAN en Estonie", "cat": "otan", "eff": 350, "depuis": null, "src": "armees" },
+    { "hote": "LBN", "lon": 35.9, "lat": 33.9, "nom": "FINUL, opération Daman (ONU)", "cat": "onu", "eff": 800, "depuis": null, "src": "armees" },
+    { "hote": null, "lon": -61.0, "lat": 14.6, "nom": "Forces armées aux Antilles", "cat": "sov", "eff": 1100, "depuis": null, "src": "armees" },
+    { "hote": null, "lon": -53.1, "lat": 4.0, "nom": "Forces armées en Guyane", "cat": "sov", "eff": 2650, "depuis": null, "src": "armees" },
+    { "hote": null, "lon": 55.5, "lat": -21.1, "nom": "Forces armées dans la zone sud de l'océan Indien (Réunion, Mayotte)", "cat": "sov", "eff": 2100, "depuis": null, "src": "armees" },
+    { "hote": null, "lon": 165.6, "lat": -21.3, "nom": "Forces armées en Nouvelle-Calédonie", "cat": "sov", "eff": 2200, "depuis": null, "src": "armees" },
+    { "hote": null, "lon": -149.4, "lat": -17.6, "nom": "Forces armées en Polynésie française", "cat": "sov", "eff": 1000, "depuis": null, "src": "armees" }
+  ],
+  "non_localisees": [
+    { "nom": "Autres missions OTAN (police du ciel, groupes navals, KFOR)", "eff": "≈ 2 500", "src": "armees" },
+    { "nom": "Opérations de l'UE (Althea, Aspides, Atalante, Irini…)", "eff": "≈ 600", "src": "armees" },
+    { "nom": "Autres missions ONU (Sahara occidental, RCA, RDC)", "eff": "≈ 850", "src": "armees" },
+    { "nom": "Mission Corymbe, golfe de Guinée", "eff": "450", "src": "armees" }
+  ]
+}
