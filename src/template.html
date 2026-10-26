@@ -1,0 +1,548 @@
+<title>Atlas géopolitique</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout : carte large à gauche, fiche pays à droite ; une seule colonne sous 960px. Teintes froides d'atlas, un bleu de Prusse pour la France. */
+:root {
+  --bg: #eef1f4;
+  --surface: #ffffff;
+  --ink: #17202b;
+  --muted: #586374;
+  --line: #d6dce4;
+  --sea: #e4eaf0;
+  --land: #ccd4dd;
+  --land-edge: #f4f6f8;
+  --accent: #0f5c78;
+  --accent-soft: #d7e8ef;
+  --seq-1: #d2e3ec; --seq-2: #9fc3d6; --seq-3: #5f97b5; --seq-4: #2c6a8e; --seq-5: #0d3f5c;
+  --pos: #2f7d5b; --neg: #b5462f;
+  --mil: #9a5b0f; --mil-soft: #ecd3ad; --sov: #5b6b7f;
+  --c-engage: #b5462f; --c-retrait: #c98a1c; --c-sanction: #6a4c93; --c-soutien: #2f7d5b;
+  --f-display: "Spectral", Georgia, "Times New Roman", serif;
+  --f-body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #10161d; --surface: #18212b; --ink: #e5eaf0; --muted: #99a5b5; --line: #2a3542;
+  --sea: #141c25; --land: #2c3846; --land-edge: #18212b; --accent: #6cbbd9; --accent-soft: #1c3644;
+  --seq-1: #1f3746; --seq-2: #2a5770; --seq-3: #3b7ea0; --seq-4: #5ea7c8; --seq-5: #9fd3ea;
+  --pos: #6cc79a; --neg: #ec8b7c; --mil: #e3a857; --mil-soft: #3a2c17; --sov: #9aa8b9;
+  --c-engage: #ec8b7c; --c-retrait: #e3b25a; --c-sanction: #b39ae0; --c-soutien: #6cc79a;
+  color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #10161d; --surface: #18212b; --ink: #e5eaf0; --muted: #99a5b5; --line: #2a3542;
+  --sea: #141c25; --land: #2c3846; --land-edge: #18212b; --accent: #6cbbd9; --accent-soft: #1c3644;
+  --seq-1: #1f3746; --seq-2: #2a5770; --seq-3: #3b7ea0; --seq-4: #5ea7c8; --seq-5: #9fd3ea;
+  --pos: #6cc79a; --neg: #ec8b7c; --mil: #e3a857; --mil-soft: #3a2c17; --sov: #9aa8b9;
+  --c-engage: #ec8b7c; --c-retrait: #e3b25a; --c-sanction: #b39ae0; --c-soutien: #6cc79a;
+  color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.5; }
+.wrap { max-width: 1320px; margin: 0 auto; padding-block: 28px 56px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 20px; }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 600; margin: 0; line-height: 1.15; text-wrap: balance; }
+h1 { font-size: clamp(28px, 4vw, 40px); }
+h2 { font-size: 26px; }
+h3 { font-size: 17px; font-family: var(--f-body); font-weight: 600; }
+p { margin: 0; }
+a { color: var(--accent); text-underline-offset: 2px; }
+.eyebrow { font-family: var(--f-mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.mono { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+
+header.top { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px 24px; }
+header.top .t { display: grid; gap: 6px; }
+header.top .lede { color: var(--muted); max-width: 62ch; }
+
+.layers { display: flex; flex-wrap: wrap; gap: 6px; }
+.layers button { font: 500 14px var(--f-body); color: var(--ink); background: var(--surface); border: 1px solid var(--line);
+  border-radius: 999px; padding: 7px 14px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+.layers button .sw { width: 10px; height: 10px; border-radius: 50%; }
+.layers button[aria-pressed="true"] { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+.layers button:focus-visible, .btn:focus-visible, .row:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.main { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 20px; align-items: start; }
+@media (min-width: 961px) { .mapcard { position: sticky; top: calc(16px + env(safe-area-inset-top, 0px)); } }
+@media (max-width: 960px) { .main { grid-template-columns: minmax(0, 1fr); } }
+
+.mapcard { background: var(--sea); border: 1px solid var(--line); border-radius: 8px; position: relative; overflow: hidden; min-width: 0; }
+#map { display: block; width: 100%; height: auto; aspect-ratio: 1.9; max-width: 100%; touch-action: none; cursor: grab; }
+#map:active { cursor: grabbing; }
+.country { fill: var(--land); stroke: var(--land-edge); stroke-width: .5; vector-effect: non-scaling-stroke; cursor: pointer; transition: fill .15s; }
+.country:hover { filter: brightness(.93); }
+.country.fr { fill: var(--accent) !important; }
+.country.sel { stroke: var(--ink); stroke-width: 1.6; }
+.flow { fill: none; stroke: var(--accent); stroke-opacity: .55; stroke-linecap: round; pointer-events: none; vector-effect: non-scaling-stroke; }
+.pin { stroke: var(--surface); stroke-width: 1.2; vector-effect: non-scaling-stroke; cursor: pointer; }
+.pin.mil { fill: var(--mil); fill-opacity: .85; }
+.pin.sov { fill: var(--sov); fill-opacity: .8; }
+.paris { fill: var(--surface); stroke: var(--accent); stroke-width: 2; vector-effect: non-scaling-stroke; pointer-events: none; }
+
+.zoom { position: absolute; right: 10px; top: 10px; display: grid; gap: 4px; }
+.btn { font: 600 15px var(--f-body); width: 32px; height: 32px; border-radius: 6px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+.legend { position: absolute; left: 10px; bottom: 10px; background: color-mix(in srgb, var(--surface) 92%, transparent); border: 1px solid var(--line);
+  border-radius: 6px; padding: 8px 10px; font-size: 12.5px; display: grid; gap: 5px; max-width: calc(100% - 20px); }
+.legend .ttl { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.legend .items { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: center; }
+.legend .it { display: inline-flex; align-items: center; gap: 6px; }
+.legend .ramp { display: flex; height: 8px; width: 140px; border-radius: 2px; overflow: hidden; }
+.legend .ramp span { flex: 1; }
+.sw { display: inline-block; width: 11px; height: 11px; border-radius: 2px; flex: none; }
+.dot { display: inline-block; width: 11px; height: 11px; border-radius: 50%; flex: none; }
+@media (max-width: 600px) { .legend { position: static; border: 0; border-top: 1px solid var(--line); border-radius: 0; max-width: none; } }
+
+.tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--surface); font-size: 13px; padding: 6px 9px; border-radius: 5px; max-width: 240px; line-height: 1.35; z-index: 5; }
+.tip b { font-weight: 600; }
+
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 20px; display: grid; gap: 18px; min-width: 0; }
+.panel .head { display: grid; gap: 4px; }
+.panel .sub { color: var(--muted); font-size: 14px; }
+.kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.kpi { display: grid; gap: 2px; padding: 10px 0; border-top: 2px solid var(--line); }
+.kpi .v { font-family: var(--f-mono); font-size: 19px; font-weight: 500; font-variant-numeric: tabular-nums; }
+.kpi .l { font-size: 12.5px; color: var(--muted); }
+.neg { color: var(--neg); } .pos { color: var(--pos); }
+.list { display: grid; gap: 2px; }
+.row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 10px; padding: 8px 6px; border-radius: 6px; cursor: pointer; align-items: center; }
+.row:hover { background: var(--accent-soft); }
+.row .n { font-weight: 500; min-width: 0; }
+.row .d { font-size: 13px; color: var(--muted); grid-column: 1 / -1; }
+.row .val { font-family: var(--f-mono); font-size: 13px; font-variant-numeric: tabular-nums; text-align: right; }
+.bars { grid-column: 1 / -1; display: grid; gap: 3px; }
+.bar { height: 6px; border-radius: 3px; }
+.bar.x { background: var(--accent); } .bar.m { background: var(--muted); opacity: .55; }
+.tag { display: inline-flex; align-items: center; gap: 6px; font-family: var(--f-mono); font-size: 11px; letter-spacing: .03em; padding: 2px 8px; border-radius: 99px; border: 1px solid var(--line); color: var(--muted); white-space: nowrap; }
+.grp { display: grid; gap: 6px; }
+.grp > .eyebrow { padding-left: 6px; }
+.src { font-size: 12.5px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 12px; display: grid; gap: 4px; }
+.note { font-size: 13.5px; color: var(--muted); background: var(--bg); border-radius: 6px; padding: 10px 12px; }
+.back { justify-self: start; font: 500 13.5px var(--f-body); background: none; border: 1px solid var(--line); border-radius: 99px; padding: 5px 12px; color: var(--ink); cursor: pointer; }
+.empty { color: var(--muted); font-size: 14px; }
+
+.method { display: grid; gap: 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 20px 22px; }
+.method .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px 28px; }
+.method .cols > div { display: grid; gap: 6px; align-content: start; min-width: 0; }
+.method ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; font-size: 14px; }
+.method p { font-size: 14px; color: var(--muted); max-width: 75ch; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="t">
+      <span class="eyebrow">Prototype · France seule renseignée · données au 26 octobre 2026</span>
+      <h1>Atlas géopolitique</h1>
+      <p class="lede">Choisissez une couche, puis cliquez sur un pays pour voir sa relation avec la France. Chaque chiffre renvoie à sa source.</p>
+    </div>
+    <nav class="layers" aria-label="Couches de la carte">
+      <button type="button" data-layer="trade" aria-pressed="true"><span class="sw" style="background:var(--seq-4)"></span>Commerce</button>
+      <button type="button" data-layer="mil" aria-pressed="false"><span class="sw" style="background:var(--mil)"></span>Présences militaires</button>
+      <button type="button" data-layer="conf" aria-pressed="false"><span class="sw" style="background:var(--c-engage)"></span>Conflits et tensions</button>
+      <button type="button" data-layer="dipl" aria-pressed="false"><span class="sw" style="background:var(--seq-3)"></span>Proximité diplomatique</button>
+    </nav>
+  </header>
+
+  <div class="main">
+    <div class="mapcard" id="mapcard">
+      <svg id="map" viewBox="0 0 960 505" role="img" aria-label="Carte du monde interactive"></svg>
+      <div class="zoom">
+        <button class="btn" id="zin" type="button" aria-label="Zoomer">+</button>
+        <button class="btn" id="zout" type="button" aria-label="Dézoomer">−</button>
+        <button class="btn" id="zreset" type="button" aria-label="Recentrer" style="font-size:13px">⟲</button>
+      </div>
+      <div class="legend" id="legend"></div>
+      <div class="tip" id="tip" hidden></div>
+    </div>
+    <aside class="panel" id="panel" aria-live="polite"></aside>
+  </div>
+
+  <section class="method" id="methode">
+    <div class="head" style="display:grid;gap:6px">
+      <span class="eyebrow">Sources et méthode</span>
+      <h2>D'où viennent les données</h2>
+      <p>Les couleurs et les classements sont calculés à partir des chiffres publiés, sans appréciation. Chaque couche a sa propre date : la carte n'est pas une photographie synchrone.</p>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>Commerce</h3>
+        <ul>
+          <li>FMI, <a href="https://data.imf.org/en/datasets/IMF.STA:IMTS">International Trade in Goods by partner country (IMTS)</a>, ex-Direction of Trade Statistics, interrogé par API le 26/10/2026. Même source et même méthode pour tous les pays.</li>
+          <li>Biens uniquement, année 2025, en milliards de dollars courants, tels que déclarés par la France : exportations FOB, importations CIF. Hong Kong compté à part de la Chine.</li>
+          <li>Les flux par pays diffèrent de ceux des Douanes françaises. L'explication la plus probable est l'<a href="https://one.oecd.org/document/STD/SES/WPTGS(2008)3/en/pdf">« effet Rotterdam »</a> : un bien importé hors de l'UE et dédouané à Anvers ou Rotterdam est ensuite compté comme un achat à la Belgique ou aux Pays-Bas. La Belgique et les Pays-Bas sont donc gonflés, et la Chine paraît plus petite : 51,9 Md$ d'importations ici, contre 74,9 Md€ (Hong Kong inclus) dans le <a href="https://www.tresor.economie.gouv.fr/Articles/2026/02/06/rapport-2026-sur-le-commerce-exterieur-de-la-france">rapport 2026 du Trésor</a>.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Présences militaires</h3>
+        <ul>
+          <li>Ministère des Armées, <a href="https://www.defense.gouv.fr/operations/deploiement-armees-francaises-monde">Déploiement des armées françaises dans le monde</a>, page modifiée le 11 septembre 2026.</li>
+          <li>Seules les présences rattachées à un pays précis sont placées. Les totaux non ventilés (missions UE, autres missions OTAN et ONU, déploiements maritimes) sont listés sans point.</li>
+          <li>Position indicative au centre du pays, pas l'emplacement exact des emprises.</li>
+          <li>Règle de la fiche méthode : seules les présences reconnues officiellement apparaissent, ce qui favorise les États transparents. Un point non reconfirmé depuis 24 mois est signalé, puis retiré à 36 mois.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Conflits et tensions</h3>
+        <ul>
+          <li>La fiche méthode prévoit les données UCDP (accès par jeton, à demander). En attendant, la couche liste des faits datés et sourcés, sans mesure d'intensité.</li>
+          <li>Engagement : opération Chammal, même page du ministère des Armées.</li>
+          <li>Retraits : <a href="https://www.defense.gouv.fr/sites/default/files/ema/20220818_NP_CAB_CEMA_COM_lettre_hebdomadaire_de_communication.pdf">EMA, 18/08/2022</a> (Mali), <a href="https://www.afrik.com/l-armee-francaise-a-officiellement-quitte-le-burkina-faso">Afrik.com</a> (Burkina Faso), <a href="https://www.letemps.ch/monde/apres-le-mali-et-le-burkina-l-armee-francaise-quitte-le-niger">Le Temps</a> (Niger), <a href="https://www.senat.fr/rap/r24-288/r24-2887.html">Sénat, rapport 2024-288</a> (Tchad), <a href="https://fr.allafrica.com/stories/202507180096.html">AllAfrica, 18/07/2025</a> (Sénégal).</li>
+          <li>Sanctions : régimes de l'UE, que la France applique. Règle : un pays est retenu si le régime vise le gouvernement en place ou l'économie du pays, pas seulement des personnes, des groupes armés ou un embargo de l'ONU. Plafond du score diplomatique à 40, à 20 si des contre-sanctions contre l'UE sont sourcées. Liste revue à chaque renouvellement de l'UE. Régimes vérifiés le 26/10/2026 sur la <a href="https://www.sanctionsmap.eu/">carte des sanctions de l'UE</a>. Contre-sanctions : <a href="https://globalsanctions.com/2026/09/russia-renews-agriculture-counter-sanctions-until-december-2028/">embargo alimentaire russe</a> prolongé jusqu'à fin 2028, embargo biélorusse prolongé jusqu'à fin 2027 (<a href="https://cargoclub.io/tr/news/belarus-extends-ban-on-imports-of-certain-goods-from-unfriendly-countries-until-the-end-of-2027.html">source secondaire</a>).</li>
+          <li>Soutien : <a href="https://www.ifw-kiel.de/topics/war-against-ukraine/ukraine-support-tracker/">Ukraine Support Tracker, Kiel Institute</a>.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Proximité diplomatique</h3>
+        <ul>
+          <li>Formule de la <a href="https://claude.ai/artifact/EvRippFyodo7pmgzxwHXe8">fiche méthode v1</a> : 60 % votes à l'ONU, 40 % organisations communes, score plafonné à 40 en cas de sanctions, à 20 si elles sont réciproques.</li>
+          <li>Votes à l'ONU : accord de vote avec la France (kappa de Cohen oui, abstention, non, méthode Häge 2011) sur les votes disputés (minorité d'au moins 10 %), moyenne des sessions 76 à 78 (septembre 2021 à juin 2024), ramené sur 0–100 (100 = partenaire qui vote le plus comme la France). Données : <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/LEJUQZ&version=33.0">UN General Assembly Voting Data, Erik Voeten, Harvard Dataverse (version 33, juin 2024)</a>. Les sessions 79 et 80 (2024-2026) ne figurent pas dans les fichiers de votes publiés.</li>
+          <li>Organisations : indice de Jaccard sur 15 organisations, membres pleins. Listes contrôlées le 26/10/2026 : Commonwealth sur la <a href="https://thecommonwealth.org/our-member-countries">liste officielle</a> ; OCS, BRICS, OTSC, OEA et ASEAN sur les articles Wikipédia et, pour le Timor oriental, sur l'<a href="https://vietnamnews.vn/politics-laws/1728144/asean-summit-47-timor-leste-officially-becomes-asean-s-11th-member.html">adhésion d'octobre 2025</a>. Francophonie : 50 États membres de plein droit sur la <a href="https://www.francophonie.org/90-etats-et-gouvernements-125">liste officielle de l'OIF</a> (90 États et gouvernements dont 53 membres, 5 associés et 32 observateurs ; associés, observateurs et gouvernements non souverains exclus) ; Chypre ajoutée, Guinée réintégrée en septembre 2024. Union africaine : 55 États sur la <a href="https://au.int/en/member_states/countryprofiles2">liste officielle de l'UA</a>, République arabe sahraouie démocratique incluse ; les États suspendus (notamment Mali, Burkina Faso, Niger, Soudan, Guinée-Bissau, Madagascar) restent comptés car toujours membres. Ligue arabe : 22 États, Syrie réintégrée en <a href="https://www.pbs.org/newshour/world/arab-league-votes-to-reinstate-syrias-membership-after-12-year-suspension">mai 2023</a> ; site officiel inaccessible, liste contrôlée sur Wikipédia. Arménie comptée dans l'OTSC (participation gelée depuis février 2024, retrait non finalisé) ; Mali, Burkina Faso et Niger retirés de la Francophonie (retrait annoncé en 2025).</li>
+        </ul>
+      </div>
+    </div>
+    <p>Fond de carte : <a href="https://www.naturalearthdata.com/about/disputed-boundaries-policy/">Natural Earth</a> au 1/110 000 000 via world-atlas, frontières de contrôle de fait. Les petits États (Malte, Singapour, Bahreïn…) n'apparaissent pas à cette échelle. Prototype v0.1, fiche méthode v1 du 26 octobre 2026.</p>
+  </section>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script>
+const WORLD = __TOPO__;
+const NAMES = __NAMES__;
+Object.assign(NAMES, { "840": "États-Unis", "384": "Côte d'Ivoire", "180": "RD Congo", "826": "Royaume-Uni", "156": "Chine", "784": "Émirats arabes unis" });
+
+// ---- Données (voir la section Sources et méthode) ----
+const SRC = {
+  imf: { t: "FMI, International Trade in Goods by partner country (IMTS), données 2025", u: "https://data.imf.org/en/datasets/IMF.STA:IMTS" },
+  tresor: { t: "DG Trésor, Rapport 2026 sur le commerce extérieur (données 2025)", u: "https://www.tresor.economie.gouv.fr/Articles/2026/02/06/rapport-2026-sur-le-commerce-exterieur-de-la-france" },
+  armees: { t: "Ministère des Armées, page modifiée le 11/09/2026", u: "https://www.defense.gouv.fr/operations/deploiement-armees-francaises-monde" },
+  ema22: { t: "EMA, lettre hebdomadaire du 18/08/2022", u: "https://www.defense.gouv.fr/sites/default/files/ema/20220818_NP_CAB_CEMA_COM_lettre_hebdomadaire_de_communication.pdf" },
+  bf: { t: "Afrik.com", u: "https://www.afrik.com/l-armee-francaise-a-officiellement-quitte-le-burkina-faso" },
+  ne: { t: "Le Temps", u: "https://www.letemps.ch/monde/apres-le-mali-et-le-burkina-l-armee-francaise-quitte-le-niger" },
+  senat: { t: "Sénat, rapport d'information 2024-288", u: "https://www.senat.fr/rap/r24-288/r24-2887.html" },
+  sn: { t: "AllAfrica, 18/07/2025", u: "https://fr.allafrica.com/stories/202507180096.html" },
+  sanc: { t: "Carte des sanctions de l'UE, vérifiée le 26/10/2026", u: "https://www.sanctionsmap.eu/" },
+  kiel: { t: "Kiel Institute, Ukraine Support Tracker", u: "https://www.ifw-kiel.de/topics/war-against-ukraine/ukraine-support-tracker/" },
+};
+
+// Exportations (x, FOB) et importations (m, CIF) de biens, Md$, 2025 (xp, mp : 2024), produit par scripts/imts.js
+const TRADE_DATA = __TRADE__;
+const TRADE = TRADE_DATA.values, TW = TRADE_DATA.monde;
+const TRADE_TOTAL = { x: TW.x, m: TW.m, s: TW.x - TW.m, s24: TW.xp - TW.mp };
+const TOP = Object.keys(TRADE).filter(id => TRADE[id].x != null && TRADE[id].m != null).sort((a, b) => (TRADE[b].x + TRADE[b].m) - (TRADE[a].x + TRADE[a].m)).slice(0, 11);
+// Écart avec les Douanes, très probablement l'« effet Rotterdam » : biens hors UE dédouanés à Anvers ou Rotterdam, puis comptés comme achats à la Belgique ou aux Pays-Bas
+const TRADE_NOTE = { "528": "transit portuaire", "056": "transit portuaire", "156": "Douanes : 74,9 Md€ d'importations" };
+
+// Présences : cat = sov (territoire français) | pre (forces prépositionnées) | dlia | ope | otan | onu
+const PRES = [
+  { id: "262", lon: 42.6, lat: 11.7, nom: "Forces françaises stationnées à Djibouti", cat: "pre", eff: 1500 },
+  { id: "784", lon: 54.3, lat: 23.9, nom: "Forces françaises aux Émirats arabes unis", cat: "pre", eff: 750 },
+  { id: "384", lon: -5.5, lat: 7.6, nom: "Détachement de liaison interarmées", cat: "dlia", eff: 100 },
+  { id: "266", lon: 11.6, lat: -0.6, nom: "Détachement de liaison interarmées", cat: "dlia", eff: 100 },
+  { id: "368", lon: 43.7, lat: 33.2, nom: "Opération Chammal (coalition contre l'État islamique)", cat: "ope", eff: 1100 },
+  { id: "642", lon: 25.0, lat: 45.9, nom: "Bataillon multinational de l'OTAN (commandement français)", cat: "otan", eff: 1400 },
+  { id: "233", lon: 25.6, lat: 58.7, nom: "Bataillon multinational de l'OTAN", cat: "otan", eff: 350 },
+  { id: "422", lon: 35.9, lat: 33.9, nom: "FINUL, opération Daman (ONU)", cat: "onu", eff: 800 },
+  { id: null, lon: -61.0, lat: 14.6, nom: "Forces armées aux Antilles", cat: "sov", eff: 1100 },
+  { id: null, lon: -53.1, lat: 4.0, nom: "Forces armées en Guyane", cat: "sov", eff: 2650 },
+  { id: null, lon: 55.5, lat: -21.1, nom: "Forces armées dans la zone sud de l'océan Indien (Réunion, Mayotte)", cat: "sov", eff: 2100 },
+  { id: null, lon: 165.6, lat: -21.3, nom: "Forces armées en Nouvelle-Calédonie", cat: "sov", eff: 2200 },
+  { id: null, lon: -149.4, lat: -17.6, nom: "Forces armées en Polynésie française", cat: "sov", eff: 1000 },
+];
+const PRES_UNPLACED = [
+  { nom: "Autres missions OTAN (police du ciel, groupes navals, KFOR)", eff: "≈ 2 500" },
+  { nom: "Opérations de l'UE (Althea, Aspides, Atalante, Irini…)", eff: "≈ 600" },
+  { nom: "Autres missions ONU (Sahara occidental, RCA, RDC)", eff: "≈ 850" },
+  { nom: "Mission Corymbe, golfe de Guinée", eff: "450" },
+];
+const CAT = { pre: "Forces prépositionnées", dlia: "Liaison interarmées", ope: "Opération", otan: "OTAN", onu: "ONU", sov: "Territoire français" };
+
+// Conflits et tensions : faits datés, une catégorie par fait
+const EVENTS = [
+  { id: "368", k: "engage", t: "Opération Chammal en cours", d: "Coalition contre l'État islamique, environ 1 100 militaires.", s: "armees" },
+  { id: "804", k: "soutien", t: "Aide militaire à l'Ukraine", d: "Soutien à un pays envahi par la Russie depuis février 2022.", s: "kiel" },
+  { id: "643", k: "sanction", t: "Sanctions de l'UE", d: "Régime de mesures restrictives appliqué par la France.", s: "sanc" },
+  { id: "112", k: "sanction", t: "Sanctions de l'UE", d: "Régime de mesures restrictives appliqué par la France.", s: "sanc" },
+  { id: "364", k: "sanction", t: "Sanctions de l'UE", d: "Régime de mesures restrictives appliqué par la France.", s: "sanc" },
+  { id: "408", k: "sanction", t: "Sanctions de l'UE", d: "Régime de mesures restrictives appliqué par la France.", s: "sanc" },
+  { id: "104", k: "sanction", t: "Sanctions de l'UE", d: "Régime de mesures restrictives appliqué par la France.", s: "sanc" },
+  { id: "862", k: "sanction", t: "Sanctions de l'UE", d: "Régime de mesures restrictives appliqué par la France.", s: "sanc" },
+  { id: "558", k: "sanction", t: "Sanctions de l'UE", d: "Régime de mesures restrictives appliqué par la France.", s: "sanc" },
+  { id: "466", k: "retrait", t: "Départ des forces françaises, août 2022", d: "Fin de l'opération Barkhane au Mali le 15 août 2022, après la dégradation des relations avec la junte.", s: "ema22" },
+  { id: "854", k: "retrait", t: "Départ des forces françaises, février 2023", d: "Départ demandé par les autorités de transition.", s: "bf" },
+  { id: "562", k: "retrait", t: "Départ des forces françaises, décembre 2023", d: "Départ exigé par la junte après le coup d'État de juillet 2023.", s: "ne" },
+  { id: "148", k: "retrait", t: "Fin de la coopération militaire, novembre 2024", d: "Annoncée par N'Djamena le 28 novembre 2024, bases rétrocédées à partir de décembre.", s: "senat" },
+  { id: "686", k: "retrait", t: "Départ des forces françaises, juillet 2025", d: "Le président sénégalais a demandé la fin des bases étrangères fin 2024.", s: "sn" },
+];
+const KIND = {
+  engage: { l: "Engagement armé en cours", c: "var(--c-engage)" },
+  soutien: { l: "Soutien à une partie en guerre", c: "var(--c-soutien)" },
+  sanction: { l: "Sanctions de l'UE en vigueur", c: "var(--c-sanction)" },
+  retrait: { l: "Retrait exigé par l'État hôte", c: "var(--c-retrait)" },
+};
+
+// Proximité diplomatique, fiche méthode v1 : score = min(0,6 × votes ONU + 0,4 × Jaccard organisations, plafond sanctions)
+// Liste fermée de 15 organisations, membres pleins (codes ISO numériques). Contrôle du 26/10/2026 : voir la section Sources et méthode
+const ORGS = {
+  "ONU-CS permanent": "156 250 643 826 840",
+  "UE": "040 056 100 191 196 203 208 233 246 250 276 300 348 372 380 428 440 442 470 528 616 620 642 703 705 724 752",
+  "OTAN": "008 056 100 124 191 203 208 233 246 250 276 300 348 352 380 428 440 442 499 528 578 616 620 642 703 705 724 752 792 807 826 840",
+  "OTSC": "051 112 398 417 643 762",
+  "G7": "124 250 276 380 392 826 840",
+  "G20": "032 036 076 124 156 250 276 356 360 380 392 410 484 643 682 710 792 826 840",
+  "BRICS": "076 156 231 356 360 364 643 710 784 818",
+  "OCS": "112 156 356 364 398 417 586 643 762 860",
+  "OCDE": "036 040 056 124 152 170 188 203 208 233 246 250 276 300 348 352 372 376 380 392 410 428 440 442 484 528 554 578 616 620 703 705 724 752 756 792 826 840",
+  "ASEAN": "096 104 116 360 418 458 608 626 702 704 764",
+  "Union africaine": "012 024 072 108 120 132 140 148 174 178 180 204 226 231 232 262 266 270 288 324 384 404 426 430 434 450 454 466 478 480 504 508 516 562 566 624 646 678 686 690 694 706 710 716 728 729 732 748 768 788 800 818 834 854 894",
+  "OEA": "028 032 044 052 068 076 084 124 152 170 188 212 214 218 222 308 320 328 332 340 388 484 591 600 604 659 662 670 740 780 840 858",
+  "Ligue arabe": "012 048 174 262 275 368 400 414 422 434 478 504 512 634 682 706 729 760 784 788 818 887",
+  "Commonwealth": "028 036 044 050 052 072 084 090 096 120 124 144 196 212 242 266 270 288 296 308 328 356 388 404 426 454 458 462 470 480 508 516 520 548 554 566 586 598 646 659 662 670 690 694 702 710 748 768 776 780 798 800 826 834 882 894",
+  "Francophonie": "008 020 051 056 100 108 116 120 124 132 140 148 174 178 180 196 204 212 226 250 262 266 288 300 324 332 384 418 422 442 450 478 480 492 498 504 548 642 646 662 678 686 690 704 756 768 788 807 818 624",
+};
+for (const o in ORGS) ORGS[o] = ORGS[o].split(" ");
+const orgsOf = id => Object.keys(ORGS).filter(o => ORGS[o].includes(id));
+const shared = id => orgsOf(id).filter(o => ORGS[o].includes("250"));
+const jaccard = id => { const a = orgsOf("250"), b = orgsOf(id), inter = shared(id).length, uni = new Set([...a, ...b]).size; return uni ? Math.round(inter / uni * 100) : 0; };
+// Sanctions visant l'État : régimes UE hérités par la France ; « réciproque » si l'État visé a pris des contre-mesures contre l'UE
+const SANCTIONS = { "643": { plafond: 20, d: "Régime UE et contre-sanctions russes (embargo alimentaire depuis 2014)" }, "112": { plafond: 20, d: "Régime UE et contre-sanctions biélorusses" }, "364": { plafond: 40, d: "Régime UE visant l'Iran" }, "408": { plafond: 40, d: "Régime UE visant la Corée du Nord" }, "104": { plafond: 40, d: "Régime UE visant le Myanmar (embargo sur les armes, gel d'avoirs)" }, "862": { plafond: 40, d: "Régime UE visant le Venezuela (embargo sur les armes, gel d'avoirs)" }, "558": { plafond: 40, d: "Régime UE visant des responsables du gouvernement nicaraguayen (gel d'avoirs, visas)" } };
+// Votes ONU : kappa de Cohen oui/abstention/non sur les votes disputés (Häge 2011), sessions 76-78 (2021-2024),
+// remis à l'échelle 0-100 sur l'étendue observée pour la France (100 = partenaire qui vote le plus comme la France)
+const VOTES_DATA = __VOTES__;
+const VOTES = VOTES_DATA.values, VOTES_PERIOD = "2021-2024";
+const dClass = sc => sc >= 67 ? 2 : sc >= 34 ? 1 : 0;
+const D_CLASSES = [{ l: "Éloignés (0–33)", c: "--seq-1" }, { l: "Intermédiaires (34–66)", c: "--seq-3" }, { l: "Alignés (67–100)", c: "--seq-5" }];
+function diplo(id) {
+  const j = jaccard(id), v = VOTES[id] ?? null, cap = SANCTIONS[id]?.plafond ?? 100;
+  const score = v == null ? null : Math.min(0.6 * v + 0.4 * j, cap);
+  return { j, v, cap, score, max: Math.min(0.4 * j + 60, cap) };
+}
+const METHOD_VERSION = "méthode v1 (26/10/2026)";
+
+// ---- Carte ----
+const FR = "250", PARIS = [2.35, 48.86];
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const svg = d3.select("#map"), W = 960, H = 505;
+const countries = topojson.feature(WORLD, WORLD.objects.countries).features.filter(f => f.properties.name !== "Antarctica");
+countries.forEach(f => { f.key = f.id || f.properties.name; f.nom = NAMES[f.id] || f.properties.name; });
+const byId = new Map(countries.map(f => [f.key, f]));
+const proj = d3.geoNaturalEarth1().fitExtent([[8, 8], [W - 8, H - 8]], { type: "Sphere" });
+const path = d3.geoPath(proj);
+const g = svg.append("g");
+g.append("path").datum({ type: "Sphere" }).attr("d", path).attr("fill", "var(--sea)");
+const cPaths = g.append("g").selectAll("path").data(countries).join("path")
+  .attr("class", d => "country" + (d.key === FR ? " fr" : "")).attr("d", path)
+  .attr("tabindex", -1)
+  .on("click", (e, d) => select(d.key))
+  .on("mousemove", (e, d) => showTip(e, d.key))
+  .on("mouseleave", hideTip);
+const gFlows = g.append("g"), gPins = g.append("g");
+g.append("circle").attr("class", "paris").attr("r", 3.5).attr("transform", `translate(${proj(PARIS)})`);
+
+let k = 1;
+const zoom = d3.zoom().scaleExtent([1, 8]).translateExtent([[0, 0], [W, H]]).on("zoom", e => {
+  k = e.transform.k; g.attr("transform", e.transform);
+  gPins.selectAll("circle").attr("r", d => d.r / Math.sqrt(k));
+  g.select(".paris").attr("r", 3.5 / Math.sqrt(k));
+});
+svg.call(zoom);
+d3.select("#zin").on("click", () => svg.transition().call(zoom.scaleBy, 1.6));
+d3.select("#zout").on("click", () => svg.transition().call(zoom.scaleBy, 1 / 1.6));
+d3.select("#zreset").on("click", () => svg.transition().call(zoom.transform, d3.zoomIdentity));
+
+// ---- État ----
+let layer = "trade", sel = FR;
+const fmt = v => v.toLocaleString("fr-FR", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+const signed = v => (v > 0 ? "+" : v < 0 ? "−" : "") + fmt(Math.abs(v));
+const nom = id => (byId.get(id) || {}).nom || id;
+const tradeSeq = ["--seq-1", "--seq-2", "--seq-3", "--seq-4", "--seq-5"];
+const tradeBin = v => v >= 100 ? 4 : v >= 40 ? 3 : v >= 10 ? 2 : v >= 2 ? 1 : 0;
+const tradeBins = ["< 2", "2–10", "10–40", "40–100", "≥ 100"];
+const jBin = j => j >= 60 ? 4 : j >= 40 ? 3 : j >= 25 ? 2 : j >= 10 ? 1 : 0;
+const jBins = ["1–9", "10–24", "25–39", "40–59", "≥ 60"];
+// Présences : date de la source et règle d'expiration (24 mois : non reconfirmé, 36 mois : retiré)
+const PRES_SRC_DATE = new Date("2026-09-11"), CHECKED = "26/10/2026";
+const presStatus = () => { const m = (Date.now() - PRES_SRC_DATE) / 2.63e9; return m >= 36 ? "retiré" : m >= 24 ? "non reconfirmé" : "confirmé"; };
+
+function fillFor(id) {
+  if (id === FR) return null;
+  if (layer === "trade") { const t = TRADE[id]; return t ? `var(${tradeSeq[tradeBin((t.x || 0) + (t.m || 0))]})` : null; }
+  if (layer === "mil") return PRES.some(p => p.id === id) ? "var(--mil-soft)" : null;
+  if (layer === "conf") { const e = EVENTS.find(e => e.id === id); return e ? KIND[e.k].c : null; }
+  if (layer === "dipl") { const sc = diplo(id).score; return sc == null ? null : `var(${D_CLASSES[dClass(sc)].c})`; }
+}
+
+function render() {
+  document.querySelectorAll(".layers button").forEach(b => b.setAttribute("aria-pressed", b.dataset.layer === layer));
+  cPaths.style("fill", d => fillFor(d.key)).classed("sel", d => d.key === sel && sel !== FR);
+
+  // Flux commerciaux
+  const flows = layer === "trade" ? TOP.map(id => ({ id, v: TRADE[id].x + TRADE[id].m })) : [];
+  const wScale = d3.scaleSqrt().domain([0, 220]).range([0, 7]);
+  gFlows.selectAll("path").data(flows, d => d.id).join("path").attr("class", "flow")
+    .attr("stroke-width", d => wScale(d.v))
+    .attr("d", d => {
+      const f = byId.get(d.id); if (!f) return null;
+      const a = proj(PARIS), b = path.centroid(f);
+      const mx = (a[0] + b[0]) / 2, my = (a[1] + b[1]) / 2 - Math.hypot(b[0] - a[0], b[1] - a[1]) * 0.25;
+      return `M${a}Q${mx},${my} ${b}`;
+    });
+
+  // Points de présence
+  const pins = layer === "mil" ? PRES.map(p => ({ ...p, r: Math.max(4, Math.sqrt(p.eff) / 4.2) })) : [];
+  gPins.selectAll("circle").data(pins, d => d.nom).join("circle")
+    .attr("class", d => "pin " + (d.cat === "sov" ? "sov" : "mil"))
+    .attr("transform", d => `translate(${proj([d.lon, d.lat])})`)
+    .attr("r", d => d.r / Math.sqrt(k))
+    .on("click", (e, d) => select(d.id || FR))
+    .on("mousemove", (e, d) => showTipHTML(e, `<b>${d.nom}</b><br>${CAT[d.cat]} · ${d.eff.toLocaleString("fr-FR")} militaires`))
+    .on("mouseleave", hideTip);
+
+  renderLegend(); renderPanel();
+}
+
+function renderLegend() {
+  const L = document.getElementById("legend");
+  if (layer === "trade") L.innerHTML = `<span class="ttl">Échanges de biens avec la France, 2025 (Md$)</span>
+    <div class="items"><span class="ramp">${tradeSeq.map(v => `<span style="background:var(${v})"></span>`).join("")}</span>
+    <span class="mono" style="font-size:11.5px">${tradeBins[0]} → ${tradeBins[4]}</span>
+    <span class="it"><span class="sw" style="background:var(--land)"></span>pas de donnée</span></div>`;
+  if (layer === "mil") L.innerHTML = `<span class="ttl">Militaires français déployés, sept. 2026</span>
+    <div class="items"><span class="it"><span class="dot" style="background:var(--mil)"></span>À l'étranger</span>
+    <span class="it"><span class="dot" style="background:var(--sov)"></span>Outre-mer</span>
+    <span class="it">Taille du point = effectif</span></div>
+    <span style="color:var(--muted)">Présences reconnues officiellement. Les présences non déclarées n'apparaissent pas.</span>`;
+  if (layer === "conf") L.innerHTML = `<span class="ttl">Faits datés impliquant la France</span>
+    <div class="items">${Object.values(KIND).map(v => `<span class="it"><span class="sw" style="background:${v.c}"></span>${v.l}</span>`).join("")}</div>`;
+  if (layer === "dipl") L.innerHTML = `<span class="ttl">Proximité diplomatique avec la France, score 0–100</span>
+    <div class="items">${D_CLASSES.map(d => `<span class="it"><span class="sw" style="background:var(${d.c})"></span>${d.l}</span>`).join("")}
+    <span class="it"><span class="sw" style="background:var(--land)"></span>pas de donnée</span></div>
+    <span style="color:var(--muted)">Votes ONU ${VOTES_PERIOD} (60 %), organisations communes (40 %), plafond en cas de sanctions.</span>`;
+}
+
+// ---- Fiche ----
+const P = document.getElementById("panel");
+const srcLink = key => `<a href="${SRC[key].u}" target="_blank" rel="noopener">${SRC[key].t}</a>`;
+const TITLES = { trade: "Commerce de biens", mil: "Présences militaires", conf: "Conflits et tensions", dipl: "Proximité diplomatique" };
+
+function renderPanel() {
+  if (sel === FR) return P.innerHTML = franceSheet();
+  P.innerHTML = otherSheet(sel);
+  P.querySelector(".back").onclick = () => select(FR);
+}
+
+function franceSheet() {
+  let h = `<div class="head"><span class="eyebrow">Fiche pays · ${TITLES[layer]}</span><h2>France</h2></div>`;
+  if (layer === "trade") {
+    const rows = TOP.map(id => [id, { ...TRADE[id], note: TRADE_NOTE[id] }]);
+    const max = d3.max(rows, r => Math.max(r[1].x, r[1].m));
+    h += `<div class="kpis">
+      <div class="kpi"><span class="v">${fmt(TRADE_TOTAL.x)}</span><span class="l">Exportations, Md$</span></div>
+      <div class="kpi"><span class="v">${fmt(TRADE_TOTAL.m)}</span><span class="l">Importations, Md$</span></div>
+      <div class="kpi"><span class="v neg">${signed(TRADE_TOTAL.s)}</span><span class="l">Solde 2025 (${signed(TRADE_TOTAL.s24)} en 2024)</span></div></div>
+      <div class="grp"><span class="eyebrow">Premiers partenaires, exportations / importations</span><div class="list">
+      ${rows.map(([id, t]) => { const s = t.x - t.m; return `<div class="row" tabindex="0" data-id="${id}">
+        <span class="n">${nom(id)}${t.note ? ` <span class="tag">${t.note}</span>` : ""}</span>
+        <span class="val ${s >= 0 ? "pos" : "neg"}">${signed(s)}</span>
+        <span class="bars"><span class="bar x" style="width:${t.x / max * 100}%"></span><span class="bar m" style="width:${t.m / max * 100}%"></span></span></div>`; }).join("")}
+      </div></div>
+      <p class="note">Barre bleue : exportations. Barre grise : importations. Le chiffre à droite est le solde en Md$. Les services (tourisme, numérique) ne sont pas comptés.</p>
+      <p class="note"><b>Lecture.</b> Un produit chinois dédouané à Rotterdam ou Anvers apparaît très probablement ici comme un achat aux Pays-Bas ou à la Belgique (« effet Rotterdam »). Les Douanes françaises comptent 74,9 Md€ d'importations depuis la Chine (Hong Kong inclus) en 2025, contre 51,9 Md$ ici.</p>
+      <div class="src">Source : ${srcLink("imf")}. Exportations FOB, importations CIF, déclarées par la France. Comparaison : ${srcLink("tresor")}.</div>`;
+  }
+  if (layer === "mil") {
+    const ab = PRES.filter(p => p.cat !== "sov").sort((a, b) => b.eff - a.eff), ov = PRES.filter(p => p.cat === "sov");
+    const tot = d3.sum(ab, p => p.eff);
+    h += `<div class="kpis">
+      <div class="kpi"><span class="v">${ab.length}</span><span class="l">Pays avec présence placée</span></div>
+      <div class="kpi"><span class="v">${tot.toLocaleString("fr-FR")}</span><span class="l">Militaires dans ces pays</span></div>
+      <div class="kpi"><span class="v">${d3.sum(ov, p => p.eff).toLocaleString("fr-FR")}</span><span class="l">En outre-mer</span></div></div>
+      <div class="grp"><span class="eyebrow">À l'étranger</span><div class="list">
+      ${ab.map(p => `<div class="row" tabindex="0" data-id="${p.id}"><span class="n">${nom(p.id)}</span><span class="val">${p.eff.toLocaleString("fr-FR")}</span><span class="d">${p.nom} · ${CAT[p.cat]}</span></div>`).join("")}
+      </div></div>
+      <div class="grp"><span class="eyebrow">Sans pays précis</span><div class="list">
+      ${PRES_UNPLACED.map(p => `<div class="row" style="cursor:default"><span class="n">${p.nom}</span><span class="val">${p.eff}</span></div>`).join("")}
+      </div></div>
+      <p class="note">Présences reconnues officiellement. Les présences non déclarées n'apparaissent pas. Cette règle favorise les États transparents : un pays qui publie ses déploiements paraît plus présent qu'un pays opaque.</p>
+      <div class="src">Source : ${srcLink("armees")}. Vérifié le ${CHECKED}. Statut : ${presStatus()} (non reconfirmé après 24 mois, retiré après 36). Retraits récents : voir la couche Conflits et tensions.</div>`;
+  }
+  if (layer === "conf") {
+    h += `<p class="sub">Uniquement des faits datés et sourcés. Aucune appréciation de l'intensité d'une tension.</p>`;
+    for (const [kk, v] of Object.entries(KIND)) {
+      const ev = EVENTS.filter(e => e.k === kk);
+      h += `<div class="grp"><span class="eyebrow" style="display:flex;gap:6px;align-items:center"><span class="sw" style="background:${v.c}"></span>${v.l}</span><div class="list">
+        ${ev.map(e => `<div class="row" tabindex="0" data-id="${e.id}"><span class="n">${nom(e.id)}</span><span class="val"></span><span class="d">${e.t}. ${srcLink(e.s)}</span></div>`).join("")}</div></div>`;
+    }
+  }
+  if (layer === "dipl") {
+    const scored = countries.filter(c => c.key !== FR).map(c => ({ id: c.key, ...diplo(c.key) })).filter(r => r.score != null).sort((a, b) => b.score - a.score);
+    const nCl = [0, 1, 2].map(k => scored.filter(r => dClass(r.score) === k).length);
+    const top = scored.slice(0, 6), bottom = scored.slice(-6).reverse();
+    const rowD = r => `<div class="row" tabindex="0" data-id="${r.id}"><span class="n">${nom(r.id)}</span><span class="val">${Math.round(r.score)}</span><span class="d">Votes ${r.v} · organisations ${r.j}${r.cap < 100 ? ` · plafond ${r.cap} (sanctions)` : ""}</span></div>`;
+    h += `<div class="formula mono" style="font-size:12.5px;background:var(--bg);border-radius:6px;padding:10px 12px;white-space:pre-wrap">score = min(0,6 × votes ONU + 0,4 × organisations, plafond)
+plafond : 100 · 40 si sanctions · 20 si réciproques
+classes : 0–33 éloignés · 34–66 intermédiaires · 67–100 alignés</div>
+      <div class="kpis">${D_CLASSES.slice().reverse().map((d, k) => `<div class="kpi"><span class="v">${nCl[2 - k]}</span><span class="l">${d.l}</span></div>`).join("")}</div>
+      <p class="note"><b>Votes de ${VOTES_PERIOD}.</b> Sessions 76 à 78, dernières publiées par Voeten. Les sessions extraordinaires d'urgence ne sont pas incluses : les résolutions de 2022-2023 condamnant l'invasion de l'Ukraine manquent, seuls les textes annuels sur la Crimée et les territoires occupés sont comptés. 100 = partenaire qui vote le plus comme la France.</p>
+      <div class="grp"><span class="eyebrow">Les plus proches</span><div class="list">${top.map(rowD).join("")}</div></div>
+      <div class="grp"><span class="eyebrow">Les plus éloignés</span><div class="list">${bottom.map(rowD).join("")}</div></div>
+      <div class="grp"><span class="eyebrow">France : ${orgsOf(FR).length} organisations sur 15</span><div style="display:flex;gap:6px;flex-wrap:wrap;padding-left:6px">${orgsOf(FR).map(o => `<span class="tag">${o}</span>`).join("")}</div></div>
+      <div class="grp"><span class="eyebrow">Score plafonné par des sanctions</span><div class="list">
+      ${Object.entries(SANCTIONS).map(([id, s]) => `<div class="row" tabindex="0" data-id="${id}"><span class="n">${nom(id)}</span><span class="val">≤ ${s.plafond}</span><span class="d">${s.d}</span></div>`).join("")}
+      </div></div>
+      <div class="src">Fiche méthode des indicateurs, ${METHOD_VERSION}. Votes : UN General Assembly Voting Data (Voeten), Harvard Dataverse. Listes d'organisations : détail dans Sources et méthode. Sanctions : ${srcLink("sanc")}.</div>`;
+  }
+  return h;
+}
+
+function otherSheet(id) {
+  const t = TRADE[id] && TRADE[id].x != null && TRADE[id].m != null ? TRADE[id] : null, note = TRADE_NOTE[id], pres = PRES.filter(p => p.id === id), ev = EVENTS.filter(e => e.id === id), sh = shared(id);
+  let h = `<div class="head"><span class="eyebrow">Relation avec la France</span><h2>${nom(id)}</h2>
+    <p class="sub">La fiche complète de ce pays n'est pas encore construite. Voici ce que les données françaises disent de la relation.</p></div>`;
+  h += `<div class="grp"><span class="eyebrow">Commerce de biens, 2025</span>` + (t ? `<div class="kpis">
+      <div class="kpi"><span class="v">${fmt(t.x)}</span><span class="l">Exportations françaises, Md$</span></div>
+      <div class="kpi"><span class="v">${fmt(t.m)}</span><span class="l">Importations françaises, Md$</span></div>
+      <div class="kpi"><span class="v ${t.x - t.m >= 0 ? "pos" : "neg"}">${signed(t.x - t.m)}</span><span class="l">Solde${t.xp != null && t.mp != null ? ` (${signed(t.xp - t.mp)} en 2024)` : ""}</span></div></div>
+      <p class="empty">Part dans le commerce de biens de la France : ${fmt((t.x + t.m) / (TW.x + TW.m) * 100)} %. La part de la France pour ce pays (l'autre sens) sera ajoutée avec la fiche de ce pays.</p>
+      <div class="src">Source : ${srcLink("imf")}${note ? ` · ${note}` : ""}</div>` : `<p class="empty">Pas de donnée FMI complète pour ce pays.</p>`) + `</div>`;
+  h += `<div class="grp"><span class="eyebrow">Présence militaire française</span>` + (pres.length ? pres.map(p => `<div class="row" style="cursor:default"><span class="n">${p.nom}</span><span class="val">${p.eff.toLocaleString("fr-FR")}</span><span class="d">${CAT[p.cat]} · ${presStatus()}, vérifié le ${CHECKED} · ${srcLink("armees")}</span></div>`).join("") : `<p class="empty">Aucune présence rattachée à ce pays sur la page du ministère des Armées.</p>`) + `</div>`;
+  h += `<div class="grp"><span class="eyebrow">Conflits et tensions</span>` + (ev.length ? ev.map(e => `<div class="row" style="cursor:default"><span class="n"><span class="sw" style="background:${KIND[e.k].c};margin-right:6px"></span>${e.t}</span><span class="val"></span><span class="d">${e.d} ${srcLink(e.s)}</span></div>`).join("") : `<p class="empty">Aucun fait recensé dans ce prototype.</p>`) + `</div>`;
+  const dp = diplo(id);
+  h += `<div class="grp"><span class="eyebrow">Proximité diplomatique</span><div class="kpis">
+      <div class="kpi"><span class="v">${dp.v == null ? "—" : dp.v}</span><span class="l">Votes ONU ${VOTES_PERIOD} (60 %)</span></div>
+      <div class="kpi"><span class="v">${dp.j}</span><span class="l">Organisations communes (40 %)</span></div>
+      <div class="kpi"><span class="v">${dp.cap < 100 ? "≤ " + dp.cap : "aucun"}</span><span class="l">Plafond sanctions</span></div></div>`
+    + (sh.length ? `<div style="display:flex;gap:6px;flex-wrap:wrap">${sh.map(o => `<span class="tag">${o}</span>`).join("")}</div>` : `<p class="empty">Aucune organisation commune sur la liste de 15.</p>`)
+    + (SANCTIONS[id] ? `<p class="empty">${SANCTIONS[id].d}.</p>` : "")
+    + `<p class="empty">Score final : ${dp.score == null ? "pas de donnée de vote" : `${Math.round(dp.score)} sur 100, ${D_CLASSES[dClass(dp.score)].l.split(" (")[0].toLowerCase()}`}.</p></div>`;
+  return h + `<button class="back" type="button">← Revenir à la France</button>`;
+}
+
+P.addEventListener("click", e => { const r = e.target.closest(".row[data-id]"); if (r && !e.target.closest("a")) select(r.dataset.id); });
+P.addEventListener("keydown", e => { const r = e.target.closest(".row[data-id]"); if (r && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); select(r.dataset.id); } });
+
+function select(id) { sel = id || FR; render(); }
+
+// ---- Infobulle ----
+const tip = document.getElementById("tip"), card = document.getElementById("mapcard");
+function showTipHTML(e, html) {
+  tip.innerHTML = html; tip.hidden = false;
+  const r = card.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
+  tip.style.left = Math.min(x + 14, r.width - tip.offsetWidth - 6) + "px";
+  tip.style.top = Math.max(6, y - tip.offsetHeight - 10) + "px";
+}
+function showTip(e, id) {
+  let line = "";
+  if (id === FR) line = "Cliquez pour la fiche France";
+  else if (layer === "trade") { const t = TRADE[id]; line = t && t.x != null && t.m != null ? `Échanges : ${fmt(t.x + t.m)} Md$ · solde ${signed(t.x - t.m)}` : "Pas de donnée FMI"; }
+  else if (layer === "mil") { const p = PRES.find(p => p.id === id); line = p ? `${p.eff.toLocaleString("fr-FR")} militaires français` : "Pas de présence française recensée"; }
+  else if (layer === "conf") { const ev = EVENTS.filter(e => e.id === id); line = ev.length ? ev.map(e => e.t).join("<br>") : "Aucun fait recensé"; }
+  else if (layer === "dipl") { const dp = diplo(id), s = shared(id); line = (dp.score == null ? "Pas de donnée de vote" : `Score ${Math.round(dp.score)} · votes ${dp.v} · organisations ${dp.j}`) + "<br>" + (s.length ? `Organisations communes : ${s.join(", ")} (indice ${jaccard(id)})` : "Aucune organisation commune") + (SANCTIONS[id] ? `<br>Sanctions : score plafonné à ${SANCTIONS[id].plafond}` : ""); }
+  showTipHTML(e, `<b>${nom(id)}</b><br>${line}`);
+}
+function hideTip() { tip.hidden = true; }
+
+document.querySelectorAll(".layers button").forEach(b => b.addEventListener("click", () => { layer = b.dataset.layer; render(); }));
+render();
+</script>
