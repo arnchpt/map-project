@@ -168,10 +168,9 @@ header.top .lede { color: var(--muted); max-width: 62ch; }
       <div>
         <h3>Commerce</h3>
         <ul>
-          <li>Direction générale du Trésor, <a href="https://www.tresor.economie.gouv.fr/Articles/2026/02/06/rapport-2026-sur-le-commerce-exterieur-de-la-france">Rapport 2026 sur le commerce extérieur de la France</a>, février 2026, à partir des données des Douanes.</li>
-          <li>Biens uniquement, année 2025, hors matériel militaire pour les flux par pays. Chine y compris Hong Kong.</li>
-          <li>Les flux par pays viennent du tableau p. 34-35, recoupés avec le commentaire p. 25-33. La Pologne n'a pas pu être recoupée.</li>
-          <li>La fiche méthode retient le FMI (IMTS, en dollars) pour la version finale. Ce prototype utilise la source nationale en euros.</li>
+          <li>FMI, <a href="https://data.imf.org/en/datasets/IMF.STA:IMTS">International Trade in Goods by partner country (IMTS)</a>, ex-Direction of Trade Statistics, interrogé par API le 26/10/2026. Même source et même méthode pour tous les pays.</li>
+          <li>Biens uniquement, année 2025, en milliards de dollars courants, tels que déclarés par la France : exportations FOB, importations CIF. Hong Kong compté à part de la Chine.</li>
+          <li>Les flux par pays diffèrent de ceux des Douanes françaises. L'explication la plus probable est l'<a href="https://one.oecd.org/document/STD/SES/WPTGS(2008)3/en/pdf">« effet Rotterdam »</a> : un bien importé hors de l'UE et dédouané à Anvers ou Rotterdam est ensuite compté comme un achat à la Belgique ou aux Pays-Bas. La Belgique et les Pays-Bas sont donc gonflés, et la Chine paraît plus petite : 51,9 Md$ d'importations ici, contre 74,9 Md€ (Hong Kong inclus) dans le <a href="https://www.tresor.economie.gouv.fr/Articles/2026/02/06/rapport-2026-sur-le-commerce-exterieur-de-la-france">rapport 2026 du Trésor</a>.</li>
         </ul>
       </div>
       <div>
@@ -215,6 +214,7 @@ Object.assign(NAMES, { "840": "États-Unis", "384": "Côte d'Ivoire", "180": "RD
 
 // ---- Données (voir la section Sources et méthode) ----
 const SRC = {
+  imf: { t: "FMI, International Trade in Goods by partner country (IMTS), données 2025", u: "https://data.imf.org/en/datasets/IMF.STA:IMTS" },
   tresor: { t: "DG Trésor, Rapport 2026 sur le commerce extérieur (données 2025)", u: "https://www.tresor.economie.gouv.fr/Articles/2026/02/06/rapport-2026-sur-le-commerce-exterieur-de-la-france" },
   armees: { t: "Ministère des Armées, page modifiée le 11/09/2026", u: "https://www.defense.gouv.fr/operations/deploiement-armees-francaises-monde" },
   ema22: { t: "EMA, lettre hebdomadaire du 18/08/2022", u: "https://www.defense.gouv.fr/sites/default/files/ema/20220818_NP_CAB_CEMA_COM_lettre_hebdomadaire_de_communication.pdf" },
@@ -226,21 +226,13 @@ const SRC = {
   kiel: { t: "Kiel Institute, Ukraine Support Tracker", u: "https://www.ifw-kiel.de/topics/war-against-ukraine/ukraine-support-tracker/" },
 };
 
-// Exportations (x) et importations (m) de biens, Md€, 2025 et 2024
-const TRADE = {
-  "276": { x: 81.5, m: 86.8, x24: 78.0, m24: 86.5 },
-  "380": { x: 48.0, m: 53.8, x24: 48.4, m24: 50.6 },
-  "840": { x: 48.3, m: 55.7, x24: 48.6, m24: 52.6 },
-  "156": { x: 28.9, m: 74.9, x24: 29.5, m24: 71.6, note: "y compris Hong Kong" },
-  "724": { x: 45.3, m: 45.4, x24: 44.0, m24: 47.2 },
-  "056": { x: 44.9, m: 44.5, x24: 45.3, m24: 52.5 },
-  "826": { x: 39.5, m: 25.8, x24: 37.8, m24: 26.8 },
-  "528": { x: 23.9, m: 29.4, x24: 23.1, m24: 29.6 },
-  "756": { x: 22.6, m: 17.9, x24: 19.8, m24: 17.5 },
-  "616": { x: 16.2, m: 16.6, x24: 15.3, m24: 16.2, note: "non recoupé" },
-  "792": { x: 12.1, m: 11.7, x24: 12.4, m24: 11.0 },
-};
-const TRADE_TOTAL = { x: 614.7, m: 683.9, s: -69.2, x24: 599.9, m24: 679.2, s24: -79.3 };
+// Exportations (x, FOB) et importations (m, CIF) de biens, Md$, 2025 (xp, mp : 2024), produit par scripts/imts.js
+const TRADE_DATA = __TRADE__;
+const TRADE = TRADE_DATA.values, TW = TRADE_DATA.monde;
+const TRADE_TOTAL = { x: TW.x, m: TW.m, s: TW.x - TW.m, s24: TW.xp - TW.mp };
+const TOP = Object.keys(TRADE).filter(id => TRADE[id].x != null && TRADE[id].m != null).sort((a, b) => (TRADE[b].x + TRADE[b].m) - (TRADE[a].x + TRADE[a].m)).slice(0, 11);
+// Écart avec les Douanes, très probablement l'« effet Rotterdam » : biens hors UE dédouanés à Anvers ou Rotterdam, puis comptés comme achats à la Belgique ou aux Pays-Bas
+const TRADE_NOTE = { "528": "transit portuaire", "056": "transit portuaire", "156": "Douanes : 74,9 Md€ d'importations" };
 
 // Présences : cat = sov (territoire français) | pre (forces prépositionnées) | dlia | ope | otan | onu
 const PRES = [
@@ -365,18 +357,17 @@ const fmt = v => v.toLocaleString("fr-FR", { minimumFractionDigits: 1, maximumFr
 const signed = v => (v > 0 ? "+" : v < 0 ? "−" : "") + fmt(Math.abs(v));
 const nom = id => (byId.get(id) || {}).nom || id;
 const tradeSeq = ["--seq-1", "--seq-2", "--seq-3", "--seq-4", "--seq-5"];
-const tradeBin = v => v >= 120 ? 4 : v >= 80 ? 3 : v >= 60 ? 2 : v >= 40 ? 1 : 0;
-const tradeBins = ["< 40", "40–60", "60–80", "80–120", "≥ 120"];
+const tradeBin = v => v >= 100 ? 4 : v >= 40 ? 3 : v >= 10 ? 2 : v >= 2 ? 1 : 0;
+const tradeBins = ["< 2", "2–10", "10–40", "40–100", "≥ 100"];
 const jBin = j => j >= 60 ? 4 : j >= 40 ? 3 : j >= 25 ? 2 : j >= 10 ? 1 : 0;
 const jBins = ["1–9", "10–24", "25–39", "40–59", "≥ 60"];
-const TRADE_HM = 602.3 + 692.9; // total hors matériel militaire, base des parts par pays
 // Présences : date de la source et règle d'expiration (24 mois : non reconfirmé, 36 mois : retiré)
 const PRES_SRC_DATE = new Date("2026-09-11"), CHECKED = "26/10/2026";
 const presStatus = () => { const m = (Date.now() - PRES_SRC_DATE) / 2.63e9; return m >= 36 ? "retiré" : m >= 24 ? "non reconfirmé" : "confirmé"; };
 
 function fillFor(id) {
   if (id === FR) return null;
-  if (layer === "trade") { const t = TRADE[id]; return t ? `var(${tradeSeq[tradeBin(t.x + t.m)]})` : null; }
+  if (layer === "trade") { const t = TRADE[id]; return t ? `var(${tradeSeq[tradeBin((t.x || 0) + (t.m || 0))]})` : null; }
   if (layer === "mil") return PRES.some(p => p.id === id) ? "var(--mil-soft)" : null;
   if (layer === "conf") { const e = EVENTS.find(e => e.id === id); return e ? KIND[e.k].c : null; }
   if (layer === "dipl") { const sc = diplo(id).score; return sc == null ? null : `var(${D_CLASSES[dClass(sc)].c})`; }
@@ -387,8 +378,8 @@ function render() {
   cPaths.style("fill", d => fillFor(d.key)).classed("sel", d => d.key === sel && sel !== FR);
 
   // Flux commerciaux
-  const flows = layer === "trade" ? Object.entries(TRADE).map(([id, t]) => ({ id, v: t.x + t.m })) : [];
-  const wScale = d3.scaleSqrt().domain([0, 170]).range([0, 7]);
+  const flows = layer === "trade" ? TOP.map(id => ({ id, v: TRADE[id].x + TRADE[id].m })) : [];
+  const wScale = d3.scaleSqrt().domain([0, 220]).range([0, 7]);
   gFlows.selectAll("path").data(flows, d => d.id).join("path").attr("class", "flow")
     .attr("stroke-width", d => wScale(d.v))
     .attr("d", d => {
@@ -413,10 +404,10 @@ function render() {
 
 function renderLegend() {
   const L = document.getElementById("legend");
-  if (layer === "trade") L.innerHTML = `<span class="ttl">Échanges de biens avec la France, 2025 (Md€)</span>
+  if (layer === "trade") L.innerHTML = `<span class="ttl">Échanges de biens avec la France, 2025 (Md$)</span>
     <div class="items"><span class="ramp">${tradeSeq.map(v => `<span style="background:var(${v})"></span>`).join("")}</span>
     <span class="mono" style="font-size:11.5px">${tradeBins[0]} → ${tradeBins[4]}</span>
-    <span class="it"><span class="sw" style="background:var(--land)"></span>hors top 11</span></div>`;
+    <span class="it"><span class="sw" style="background:var(--land)"></span>pas de donnée</span></div>`;
   if (layer === "mil") L.innerHTML = `<span class="ttl">Militaires français déployés, sept. 2026</span>
     <div class="items"><span class="it"><span class="dot" style="background:var(--mil)"></span>À l'étranger</span>
     <span class="it"><span class="dot" style="background:var(--sov)"></span>Outre-mer</span>
@@ -444,11 +435,11 @@ function renderPanel() {
 function franceSheet() {
   let h = `<div class="head"><span class="eyebrow">Fiche pays · ${TITLES[layer]}</span><h2>France</h2></div>`;
   if (layer === "trade") {
-    const rows = Object.entries(TRADE).sort((a, b) => (b[1].x + b[1].m) - (a[1].x + a[1].m));
+    const rows = TOP.map(id => [id, { ...TRADE[id], note: TRADE_NOTE[id] }]);
     const max = d3.max(rows, r => Math.max(r[1].x, r[1].m));
     h += `<div class="kpis">
-      <div class="kpi"><span class="v">${fmt(TRADE_TOTAL.x)}</span><span class="l">Exportations, Md€</span></div>
-      <div class="kpi"><span class="v">${fmt(TRADE_TOTAL.m)}</span><span class="l">Importations, Md€</span></div>
+      <div class="kpi"><span class="v">${fmt(TRADE_TOTAL.x)}</span><span class="l">Exportations, Md$</span></div>
+      <div class="kpi"><span class="v">${fmt(TRADE_TOTAL.m)}</span><span class="l">Importations, Md$</span></div>
       <div class="kpi"><span class="v neg">${signed(TRADE_TOTAL.s)}</span><span class="l">Solde 2025 (${signed(TRADE_TOTAL.s24)} en 2024)</span></div></div>
       <div class="grp"><span class="eyebrow">Premiers partenaires, exportations / importations</span><div class="list">
       ${rows.map(([id, t]) => { const s = t.x - t.m; return `<div class="row" tabindex="0" data-id="${id}">
@@ -456,8 +447,9 @@ function franceSheet() {
         <span class="val ${s >= 0 ? "pos" : "neg"}">${signed(s)}</span>
         <span class="bars"><span class="bar x" style="width:${t.x / max * 100}%"></span><span class="bar m" style="width:${t.m / max * 100}%"></span></span></div>`; }).join("")}
       </div></div>
-      <p class="note">Barre bleue : exportations. Barre grise : importations. Le chiffre à droite est le solde en Md€. Les services (tourisme, numérique) ne sont pas comptés.</p>
-      <div class="src">Source : ${srcLink("tresor")}. Totaux y compris matériel militaire, flux par pays hors matériel militaire.</div>`;
+      <p class="note">Barre bleue : exportations. Barre grise : importations. Le chiffre à droite est le solde en Md$. Les services (tourisme, numérique) ne sont pas comptés.</p>
+      <p class="note"><b>Lecture.</b> Un produit chinois dédouané à Rotterdam ou Anvers apparaît très probablement ici comme un achat aux Pays-Bas ou à la Belgique (« effet Rotterdam »). Les Douanes françaises comptent 74,9 Md€ d'importations depuis la Chine (Hong Kong inclus) en 2025, contre 51,9 Md$ ici.</p>
+      <div class="src">Source : ${srcLink("imf")}. Exportations FOB, importations CIF, déclarées par la France. Comparaison : ${srcLink("tresor")}.</div>`;
   }
   if (layer === "mil") {
     const ab = PRES.filter(p => p.cat !== "sov").sort((a, b) => b.eff - a.eff), ov = PRES.filter(p => p.cat === "sov");
@@ -505,15 +497,15 @@ classes : 0–33 éloignés · 34–66 intermédiaires · 67–100 alignés</div
 }
 
 function otherSheet(id) {
-  const t = TRADE[id], pres = PRES.filter(p => p.id === id), ev = EVENTS.filter(e => e.id === id), sh = shared(id);
+  const t = TRADE[id] && TRADE[id].x != null && TRADE[id].m != null ? TRADE[id] : null, note = TRADE_NOTE[id], pres = PRES.filter(p => p.id === id), ev = EVENTS.filter(e => e.id === id), sh = shared(id);
   let h = `<div class="head"><span class="eyebrow">Relation avec la France</span><h2>${nom(id)}</h2>
     <p class="sub">La fiche complète de ce pays n'est pas encore construite. Voici ce que les données françaises disent de la relation.</p></div>`;
   h += `<div class="grp"><span class="eyebrow">Commerce de biens, 2025</span>` + (t ? `<div class="kpis">
-      <div class="kpi"><span class="v">${fmt(t.x)}</span><span class="l">Exportations françaises, Md€</span></div>
-      <div class="kpi"><span class="v">${fmt(t.m)}</span><span class="l">Importations françaises, Md€</span></div>
-      <div class="kpi"><span class="v ${t.x - t.m >= 0 ? "pos" : "neg"}">${signed(t.x - t.m)}</span><span class="l">Solde (${signed(t.x24 - t.m24)} en 2024)</span></div></div>
-      <p class="empty">Part dans le commerce de biens de la France : ${fmt((t.x + t.m) / TRADE_HM * 100)} %. La part de la France pour ce pays (l'autre sens) sera ajoutée avec les données FMI.</p>
-      <div class="src">Source : ${srcLink("tresor")}${t.note ? ` · ${t.note}` : ""}</div>` : `<p class="empty">Hors des 11 premiers partenaires de la France. Donnée détaillée à intégrer.</p>`) + `</div>`;
+      <div class="kpi"><span class="v">${fmt(t.x)}</span><span class="l">Exportations françaises, Md$</span></div>
+      <div class="kpi"><span class="v">${fmt(t.m)}</span><span class="l">Importations françaises, Md$</span></div>
+      <div class="kpi"><span class="v ${t.x - t.m >= 0 ? "pos" : "neg"}">${signed(t.x - t.m)}</span><span class="l">Solde${t.xp != null && t.mp != null ? ` (${signed(t.xp - t.mp)} en 2024)` : ""}</span></div></div>
+      <p class="empty">Part dans le commerce de biens de la France : ${fmt((t.x + t.m) / (TW.x + TW.m) * 100)} %. La part de la France pour ce pays (l'autre sens) sera ajoutée avec la fiche de ce pays.</p>
+      <div class="src">Source : ${srcLink("imf")}${note ? ` · ${note}` : ""}</div>` : `<p class="empty">Pas de donnée FMI complète pour ce pays.</p>`) + `</div>`;
   h += `<div class="grp"><span class="eyebrow">Présence militaire française</span>` + (pres.length ? pres.map(p => `<div class="row" style="cursor:default"><span class="n">${p.nom}</span><span class="val">${p.eff.toLocaleString("fr-FR")}</span><span class="d">${CAT[p.cat]} · ${presStatus()}, vérifié le ${CHECKED} · ${srcLink("armees")}</span></div>`).join("") : `<p class="empty">Aucune présence rattachée à ce pays sur la page du ministère des Armées.</p>`) + `</div>`;
   h += `<div class="grp"><span class="eyebrow">Conflits et tensions</span>` + (ev.length ? ev.map(e => `<div class="row" style="cursor:default"><span class="n"><span class="sw" style="background:${KIND[e.k].c};margin-right:6px"></span>${e.t}</span><span class="val"></span><span class="d">${e.d} ${srcLink(e.s)}</span></div>`).join("") : `<p class="empty">Aucun fait recensé dans ce prototype.</p>`) + `</div>`;
   const dp = diplo(id);
@@ -543,7 +535,7 @@ function showTipHTML(e, html) {
 function showTip(e, id) {
   let line = "";
   if (id === FR) line = "Cliquez pour la fiche France";
-  else if (layer === "trade") line = TRADE[id] ? `Échanges : ${fmt(TRADE[id].x + TRADE[id].m)} Md€ · solde ${signed(TRADE[id].x - TRADE[id].m)}` : "Hors top 11";
+  else if (layer === "trade") { const t = TRADE[id]; line = t && t.x != null && t.m != null ? `Échanges : ${fmt(t.x + t.m)} Md$ · solde ${signed(t.x - t.m)}` : "Pas de donnée FMI"; }
   else if (layer === "mil") { const p = PRES.find(p => p.id === id); line = p ? `${p.eff.toLocaleString("fr-FR")} militaires français` : "Pas de présence française recensée"; }
   else if (layer === "conf") { const ev = EVENTS.filter(e => e.id === id); line = ev.length ? ev.map(e => e.t).join("<br>") : "Aucun fait recensé"; }
   else if (layer === "dipl") { const dp = diplo(id), s = shared(id); line = (dp.score == null ? "Pas de donnée de vote" : `Score ${Math.round(dp.score)} · votes ${dp.v} · organisations ${dp.j}`) + "<br>" + (s.length ? `Organisations communes : ${s.join(", ")} (indice ${jaccard(id)})` : "Aucune organisation commune") + (SANCTIONS[id] ? `<br>Sanctions : score plafonné à ${SANCTIONS[id].plafond}` : ""); }

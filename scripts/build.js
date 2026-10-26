@@ -7,13 +7,15 @@ const read = p => fs.readFileSync(path.join(root, p), "utf8");
 
 const topo = fs.readFileSync(require.resolve("world-atlas/countries-110m.json"), "utf8");
 const votes = JSON.parse(read("data/votes-fra.json"));
+const trade = JSON.parse(read("data/trade-fra.json"));
 // Les clés de world-atlas sont des codes ISO numériques sur 3 chiffres ("044")
 const values = Object.fromEntries(Object.entries(votes.values).map(([k, v]) => [k.padStart(3, "0"), v]));
 
 const html = read("src/template.html")
   .replace("__TOPO__", topo)
   .replace("__NAMES__", read("data/names.json"))
-  .replace("__VOTES__", JSON.stringify({ sessions: votes.sessions, values }));
+  .replace("__VOTES__", JSON.stringify({ sessions: votes.sessions, values }))
+  .replace("__TRADE__", JSON.stringify({ ...trade, values: Object.fromEntries(Object.entries(trade.values).map(([k, v]) => [k.padStart(3, "0"), v])) }));
 
 fs.mkdirSync(path.join(root, "dist"), { recursive: true });
 fs.writeFileSync(path.join(root, "dist/index.html"), html);

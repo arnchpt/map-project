@@ -1,6 +1,7 @@
 // Commerce de biens d'un pays par partenaire, FMI IMTS (fiche méthode v1). API publique, sans clé.
 // Usage : NODE_USE_ENV_PROXY=1 node scripts/imts.js FRA 2025 data/trade-fra.json   (la variable n'est utile que derrière un proxy)
-// Sortie : {annee, unite, values: {code ISO numérique: {x, m}}} en Md$, x = exportations FOB, m = importations CIF
+// Sortie : {annee, unite, monde, values: {code ISO numérique: {x, m, xp, mp}}} en Md$, x = exportations FOB, m = importations CIF,
+// xp et mp = même chose pour l'année précédente ; monde = total toutes destinations (code G001)
 // Lit d'abord la structure du jeu (ordre des dimensions, codes indicateurs) et s'arrête si elle ne correspond pas.
 const fs = require("fs");
 const c = require("i18n-iso-countries");
@@ -24,17 +25,17 @@ const DATA = "application/vnd.sdmx.data+json;version=2.0.0";
     const key = dims.map(d => d === "COUNTRY" ? reporter : d === "INDICATOR" ? code : d === "FREQUENCY" ? "A" : "*").join(".");
     const js = await get(`${BASE}/data/dataflow/IMF.STA/IMTS/+/${key}`, DATA);
     const s = js.data.structures[0], sd = s.dimensions.series, iP = sd.findIndex(d => d.id === "COUNTERPART_COUNTRY");
-    const iY = s.dimensions.observation[0].values.findIndex(v => v.value === year);
+    const tp = s.dimensions.observation[0].values, iY = tp.findIndex(v => v.value === year), iP1 = tp.findIndex(v => v.value === String(year - 1));
     const scale = s.attributes.series.find(a => a.id === "SCALE");
     if (scale) console.log(f, "attribut SCALE", scale.values.map(v => v.id), "(les valeurs reçues sont en dollars, voir contrôle ci-dessous)");
     if (iY < 0) throw new Error(`année ${year} absente pour ${code}`);
     for (const [k, ser] of Object.entries(js.data.dataSets[0].series)) {
-      const iso = sd[iP].values[+k.split(":")[iP]].id, v = ser.observations[iY]?.[0];
-      if (v == null) continue;
-      const md = Math.round(+v / 1e8) / 10; // $ → Md$, 1 décimale
-      if (iso === "G001") world[f] = md; // monde
-      const num = c.alpha3ToNumeric(iso);
-      if (num) (res[num] ??= {})[f] = md; // agrégats régionaux ignorés
+      const iso = sd[iP].values[+k.split(":")[iP]].id, num = iso === "G001" ? "monde" : c.alpha3ToNumeric(iso);
+      if (!num) continue; // agrégats régionaux
+      for (const [i, key] of [[iY, f], [iP1, f + "p"]]) {
+        const v = ser.observations[i]?.[0];
+        if (v != null) ((num === "monde" ? world : (res[num] ??= {})))[key] = Math.round(+v / 1e8) / 10; // $ → Md$, 1 décimale
+      }
     }
   }
   fs.writeFileSync(out, JSON.stringify({ annee: +year, unite: "Md$", source: "FMI, IMTS (api.imf.org, IMF.STA/IMTS)", monde: world, values: res }));

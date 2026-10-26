@@ -16,6 +16,8 @@ Principe : « le contenu dicte le contexte ». Les couleurs et les scores sont c
 | `data/names.json` | Noms de pays en français, par code ISO numérique. |
 | `data/votes-fra.json` | Proximité des votes à l'ONU avec la France, 0–100, produite par `scripts/votes_kappa.py`. |
 | `scripts/build.js` | Injecte le fond de carte, les noms et les votes dans le gabarit et écrit `dist/index.html`. |
+| `data/trade-fra.json` | Commerce de biens de la France par partenaire, 2025 et 2024, en Md$, produit par `scripts/imts.js`. |
+| `scripts/imts.js` | Interroge l'API publique du FMI (IMTS, sans clé) et écrit les échanges par partenaire. |
 | `scripts/votes_kappa.py` | Calcule l'accord de vote (kappa de Cohen, votes disputés, 3 dernières sessions) à partir de `UNVotes.RData`. |
 | `dist/index.html` | Page assemblée pour l'artifact. |
 | `docs/index.html` | Page assemblée pour GitHub Pages. |
@@ -31,6 +33,15 @@ Le build écrit deux fichiers :
 
 - `dist/index.html` : fragment HTML (sans `<!doctype>` ni `<head>`), format attendu par la publication en artifact ;
 - `docs/index.html` : la même page en document complet, servie par GitHub Pages (branche `main`, dossier `/docs`).
+
+## Mettre à jour le commerce (FMI)
+
+```sh
+NODE_USE_ENV_PROXY=1 node scripts/imts.js FRA 2025 data/trade-fra.json
+npm run build
+```
+
+`NODE_USE_ENV_PROXY=1` n'est utile que derrière un proxy. Les flux par pays diffèrent de ceux des Douanes françaises (effet Rotterdam : Belgique et Pays-Bas gonflés, Chine minorée) ; l'écart est signalé sur la carte.
 
 ## Recalculer les votes à l'ONU
 
