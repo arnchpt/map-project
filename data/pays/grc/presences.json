@@ -31,10 +31,23 @@
       "eff": null,
       "depuis": null,
       "src": "mae_onu"
+    },
+    {
+      "hote": "XKX",
+      "lon": 21.2,
+      "lat": 42.6,
+      "nom": "KFOR (OTAN), contingent grec",
+      "cat": "otan",
+      "eff": 121,
+      "depuis": null,
+      "src": "nato_kfor"
     }
   ],
   "non_localisees": [
-    { "nom": "KFOR (OTAN, Kosovo) : le code XKX n'est pas accepté par le contrôle, point non localisé", "eff": "121 (février 2026)", "src": "nato_kfor" },
-    { "nom": "EUNAVFOR Aspides (UE, mer Rouge) : quartier général d'opération à Larissa et commandement, frégate HS Psara en juillet 2026", "eff": "non publié", "src": "eeas_aspides" }
+    {
+      "nom": "EUNAVFOR Aspides (UE, mer Rouge) : quartier général d'opération à Larissa et commandement, frégate HS Psara en juillet 2026",
+      "eff": "non publié",
+      "src": "eeas_aspides"
+    }
   ]
 }
