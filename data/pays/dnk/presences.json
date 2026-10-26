@@ -1,0 +1,53 @@
+{
+  "pays": "DNK",
+  "verifie": "2026-10-26",
+  "presences": [
+    {
+      "hote": "LVA",
+      "lon": 24.3,
+      "lat": 57.1,
+      "nom": "Direction de l'état-major OTAN en Lettonie et bataillons de combat en rotation",
+      "cat": "otan",
+      "eff": null,
+      "depuis": null,
+      "src": "defense"
+    },
+    {
+      "hote": "IRQ",
+      "lon": 44.4,
+      "lat": 33.3,
+      "nom": "Mission de l'OTAN en Irak (NMI)",
+      "cat": "otan",
+      "eff": null,
+      "depuis": null,
+      "src": "defense"
+    },
+    {
+      "hote": "IRQ",
+      "lon": 44.4,
+      "lat": 33.3,
+      "nom": "Coalition internationale contre l'État islamique (opération Inherent Resolve), contribution de formation",
+      "cat": "ope",
+      "eff": null,
+      "depuis": "2014",
+      "src": "defense"
+    },
+    {
+      "hote": null,
+      "lon": -51.7,
+      "lat": 64.2,
+      "nom": "Commandement arctique (Arktisk Kommando), Groenland",
+      "cat": "sov",
+      "eff": null,
+      "depuis": null,
+      "src": "defense"
+    }
+  ],
+  "non_localisees": [
+    {
+      "nom": "KFOR (Kosovo) : garde du camp Maréchal de Lattre de Tassigny (Novo Selo) et état-major de Pristina, depuis 1999",
+      "eff": "≈ 35",
+      "src": "um-otan"
+    }
+  ]
+}
