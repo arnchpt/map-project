@@ -3,6 +3,16 @@
   "verifie": "2026-10-26",
   "presences": [
     {
+      "hote": "XKX",
+      "lon": 21.2,
+      "lat": 42.6,
+      "nom": "KFOR (OTAN) : 53e contingent, bataillon non cinétique du commandement régional Est sous commandement slovène",
+      "cat": "otan",
+      "eff": 109,
+      "depuis": null,
+      "src": "sv_revija"
+    },
+    {
       "hote": "BIH",
       "lon": 18.4,
       "lat": 43.8,
@@ -43,11 +53,5 @@
       "src": "sv"
     }
   ],
-  "non_localisees": [
-    {
-      "nom": "KFOR (OTAN), Kosovo : 53e contingent, bataillon non cinétique du commandement régional Est sous commandement slovène",
-      "eff": "109 (décembre 2025)",
-      "src": "sv_revija"
-    }
-  ]
+  "non_localisees": []
 }
