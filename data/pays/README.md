@@ -18,7 +18,7 @@ Un fichier sans données garde sa structure avec une liste vide et une note dans
 
 ## Règles communes
 
-- **Codes pays** : ISO alpha-3 en majuscules partout (`"hote": "LTU"`). Le build convertit en codes numériques.
+- **Codes pays** : ISO alpha-3 en majuscules partout (`"hote": "LTU"`). Le build convertit en codes numériques. Seule exception admise : `XKX` pour le Kosovo (code UE, FMI, Banque mondiale), par exemple pour la KFOR.
 - **Dates** : ISO (`2026-10-26`, ou `2026-10` si le jour n'est pas connu). `verifie` = date du dernier relevé.
 - **Chaque fait a un `src`** qui existe dans `sources.json`. Pas de fait sans source.
 - **Ordre de préférence des sources** : officiel national > organisation internationale (OTAN, ONU, UE, IPU) > institut de recherche > presse. Une source de presse porte `"type": "presse"` et n'est admise que si aucune source officielle n'existe.

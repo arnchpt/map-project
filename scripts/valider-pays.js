@@ -10,6 +10,8 @@ const KIND = ["engage", "soutien", "retrait", "tension"];
 const TYPE = ["officiel", "international", "recherche", "presse"];
 const COUCHES = ["presences", "conflits", "politique", "commerce", "sanctions", "autre"];
 const DATE = /^\d{4}(-\d{2}(-\d{2})?)?$/;
+// Codes admis hors ISO 3166 : XKX = Kosovo (code utilisé par l'UE, le FMI et la Banque mondiale)
+const HORS_ISO = ["XKX"];
 
 function valider(code) {
   const err = [], d = path.join(dir, code), iso = code.toUpperCase();
@@ -18,7 +20,7 @@ function valider(code) {
     if (!fs.existsSync(p)) { if (oblig) err.push(`${f} manquant`); return null; }
     try { return JSON.parse(fs.readFileSync(p, "utf8")); } catch (e) { err.push(`${f} : JSON invalide (${e.message})`); return null; }
   };
-  const pays = (v, ou, nul = false) => { if (v === null && nul) return; if (!isoc.isValid(v) || v !== String(v).toUpperCase() || v.length !== 3) err.push(`${ou} : code pays « ${v} » invalide (ISO alpha-3 majuscules)`); };
+  const pays = (v, ou, nul = false) => { if (v === null && nul) return; if (HORS_ISO.includes(v)) return; if (!isoc.isValid(v) || v !== String(v).toUpperCase() || v.length !== 3) err.push(`${ou} : code pays « ${v} » invalide (ISO alpha-3 majuscules)`); };
   const date = (v, ou, nul = true) => { if (v == null && nul) return; if (!DATE.test(v ?? "")) err.push(`${ou} : date « ${v} » invalide`); };
   const entete = (j, f) => { if (code !== "_modele" && j.pays !== iso) err.push(`${f} : "pays" doit valoir ${iso}`); date(j.verifie, `${f} verifie`, false); };
 
