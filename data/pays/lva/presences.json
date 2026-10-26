@@ -3,6 +3,16 @@
   "verifie": "2026-10-26",
   "presences": [
     {
+      "hote": "XKX",
+      "lon": 21.2,
+      "lat": 42.6,
+      "nom": "KFOR (OTAN) : compagnie d'infanterie légère dans un bataillon multinational mené par les États-Unis",
+      "cat": "otan",
+      "eff": null,
+      "depuis": null,
+      "src": "defense"
+    },
+    {
       "hote": "IRQ",
       "lon": 44.4,
       "lat": 33.3,
@@ -24,11 +34,6 @@
     }
   ],
   "non_localisees": [
-    {
-      "nom": "KFOR (OTAN, Kosovo) : compagnie d'infanterie légère dans un bataillon multinational mené par les États-Unis ; non localisé car le contrat n'admet pas de code pour le Kosovo",
-      "eff": "non publié",
-      "src": "defense"
-    },
     {
       "nom": "Opération de déminage dans le détroit d'Ormuz (mandat de la Saeima du 24/09/2026, jusqu'au 01/09/2028)",
       "eff": "jusqu'à 20 (plafond du mandat, déploiement non daté)",
