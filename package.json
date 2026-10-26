@@ -7,5 +7,8 @@
   },
   "devDependencies": {
     "world-atlas": "2.0.2"
+  },
+  "dependencies": {
+    "i18n-iso-countries": "^7.14.0"
   }
 }
