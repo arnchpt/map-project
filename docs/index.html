@@ -32,14 +32,41 @@
   --mil: #e8a25a; --mil-soft: #6b4a26; --sov: #9fb3c8;
   --c-engage: #f39a84; --c-retrait: #e9c25c; --c-sanction: #b9a2ec; --c-soutien: #8fd0a2;
   --exp: #e6c579; --imp: #a9c3dc;
+  --tie: #74d1bf; --tie-sanc: #c4a8f2; --comet: #fff4d6;
+  --bg-glow: #10253d; --on-gold: #0a1828; --hatch-bg: #3a3220; --halo: rgba(4, 10, 20, .95);
   --f-display: "Cinzel", "Trajan Pro", Georgia, "Times New Roman", serif;
   --f-body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
   --f-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
   color-scheme: dark;
 }
+/* Mode clair « parchemin » : crème, orange brûlé et pêche. Suit le réglage du système, sauf choix explicite via le bouton */
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) {
+  --bg: #f8eedc; --surface: #fffaf1; --ink: #2b1d12; --muted: #6b5442; --line: #ead7bc;
+  --gold: #a64b16; --gold-dim: #d9a477; --accent: #a64b16; --accent-soft: #fbe3cc; --link: #a3461a;
+  --sea: #f2dcc0; --land: #fffcf6; --land-edge: #c9a27a;
+  --seq-1: #f3caa3; --seq-2: #eda775; --seq-3: #e48b55; --seq-4: #c45f2b; --seq-5: #87391a;
+  --pos: #2d7a4c; --neg: #b8391f;
+  --mil: #b35a10; --mil-soft: #f5cfa3; --sov: #5f7389;
+  --c-engage: #c0392b; --c-retrait: #c98a1c; --c-sanction: #6a4c93; --c-soutien: #2f7d5b;
+  --exp: #c45f2b; --imp: #3f6f99;
+  --tie: #1f7a6c; --tie-sanc: #6a4c93; --comet: #1f7a6c;
+  --bg-glow: #fff6e8; --on-gold: #fffaf1; --hatch-bg: #f7d9bd; --halo: rgba(255, 250, 241, .95);
+  color-scheme: light; } }
+:root[data-theme="light"] {
+  --bg: #f8eedc; --surface: #fffaf1; --ink: #2b1d12; --muted: #6b5442; --line: #ead7bc;
+  --gold: #a64b16; --gold-dim: #d9a477; --accent: #a64b16; --accent-soft: #fbe3cc; --link: #a3461a;
+  --sea: #f2dcc0; --land: #fffcf6; --land-edge: #c9a27a;
+  --seq-1: #f3caa3; --seq-2: #eda775; --seq-3: #e48b55; --seq-4: #c45f2b; --seq-5: #87391a;
+  --pos: #2d7a4c; --neg: #b8391f;
+  --mil: #b35a10; --mil-soft: #f5cfa3; --sov: #5f7389;
+  --c-engage: #c0392b; --c-retrait: #c98a1c; --c-sanction: #6a4c93; --c-soutien: #2f7d5b;
+  --exp: #c45f2b; --imp: #3f6f99;
+  --tie: #1f7a6c; --tie-sanc: #6a4c93; --comet: #1f7a6c;
+  --bg-glow: #fff6e8; --on-gold: #fffaf1; --hatch-bg: #f7d9bd; --halo: rgba(255, 250, 241, .95);
+  color-scheme: light; }
 
 * { box-sizing: border-box; }
-body { background: radial-gradient(ellipse 120% 70% at 50% 0%, #10253d 0%, var(--bg) 60%) fixed, var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.5; }
+body { background: radial-gradient(ellipse 120% 70% at 50% 0%, var(--bg-glow) 0%, var(--bg) 60%) fixed, var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.5; }
 .wrap { max-width: 1320px; margin: 0 auto; padding-block: 28px 56px;
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
   display: grid; gap: 20px; }
@@ -66,7 +93,7 @@ header.top .lede { color: var(--muted); max-width: 62ch; }
   border-radius: 999px; padding: 7px 14px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: background .2s, color .2s, border-color .2s; }
 .layers button:hover { border-color: var(--gold); }
 .layers button .sw { width: 10px; height: 10px; border-radius: 50%; box-shadow: 0 0 0 1px rgba(0,0,0,.35); }
-.layers button[aria-pressed="true"] { background: var(--gold); color: #0a1828; border-color: var(--gold); }
+.layers button[aria-pressed="true"] { background: var(--gold); color: var(--on-gold); border-color: var(--gold); }
 .layers button:focus-visible, .btn:focus-visible, .row:focus-visible, .back:focus-visible, .focus select:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 
 .main { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 20px; align-items: start; }
@@ -86,15 +113,18 @@ header.top .lede { color: var(--muted); max-width: 62ch; }
 .country.fr { fill: url(#hatch) !important; stroke: var(--gold); stroke-width: 1.1; }
 .country.sel { stroke: var(--ink); stroke-width: 1.8; }
 /* Liaisons : arc fixe, puis points qui circulent (or = exportations vers le partenaire, bleu pâle = importations) */
-.flows { filter: drop-shadow(0 0 1.5px rgba(4, 10, 20, .95)); }
+.flows { filter: drop-shadow(0 0 1.5px var(--halo)); }
 .flow { fill: none; stroke: var(--gold); stroke-opacity: .6; stroke-linecap: round; pointer-events: none; transition: stroke-opacity .3s; }
-.flow.dipl { stroke: var(--ink); stroke-opacity: .8; stroke-dasharray: 1.5 3; }
+/* Couleur de l'arc = sens de la liaison : solde commercial (vert excédent, corail déficit), proximité (vert-de-gris) ou sanctions (violet) */
+.flow.surplus { stroke: var(--pos); } .flow.deficit { stroke: var(--neg); }
+.flow.dipl { stroke: var(--tie); stroke-opacity: .9; }
+.flow.sanc { stroke: var(--tie-sanc); stroke-opacity: .9; stroke-dasharray: 2 3; }
 .flows.dim .flow { stroke-opacity: .16; }
 .flows.dim .flow.hl { stroke-opacity: .95; }
 .pulse { fill: none; stroke-linecap: round; pointer-events: none; }
 .pulse.x { stroke: var(--exp); stroke-dasharray: 0 14; animation: run 1.6s linear infinite; }
 .pulse.m { stroke: var(--imp); stroke-dasharray: 0 14; stroke-dashoffset: 7; animation: run-back 1.6s linear infinite; }
-.pulse.d { stroke: #fff4d6; stroke-dasharray: 6 120; animation: comet 3.2s ease-in-out infinite; }
+.pulse.d { stroke: var(--comet); stroke-dasharray: 6 120; animation: comet 3.2s ease-in-out infinite; }
 .flows.dim .pulse { opacity: .25; }
 .flows.dim .pulse.hl { opacity: 1; }
 @keyframes run { to { stroke-dashoffset: -14; } }
@@ -110,6 +140,8 @@ header.top .lede { color: var(--muted); max-width: 62ch; }
 @keyframes ring { from { transform: scale(1); opacity: .9; } to { transform: scale(4.5); opacity: 0; } }
 .rose { position: absolute; right: 12px; bottom: 12px; width: clamp(56px, 9vw, 96px); height: auto; pointer-events: none; opacity: .8; }
 
+.theme { justify-self: start; font: 500 13px var(--f-body); background: var(--surface); border: 1px solid var(--gold-dim); border-radius: 99px; padding: 4px 12px; color: var(--ink); cursor: pointer; }
+.theme:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 .zoom { position: absolute; right: 10px; top: 10px; display: grid; gap: 4px; }
 .btn { font: 600 15px var(--f-body); width: 32px; height: 32px; border-radius: 3px; border: 1px solid var(--gold-dim); background: var(--surface); color: var(--gold); cursor: pointer; }
 .btn:hover { border-color: var(--gold); }
@@ -120,14 +152,15 @@ header.top .lede { color: var(--muted); max-width: 62ch; }
 .legend .it { display: inline-flex; align-items: center; gap: 6px; }
 .legend .ramp { display: flex; height: 8px; width: 140px; border-radius: 1px; overflow: hidden; outline: 1px solid var(--gold-dim); }
 .legend .ramp span { flex: 1; }
-.legend .hatch { background: repeating-linear-gradient(45deg, var(--gold) 0 1.5px, #3a3220 1.5px 4px); outline: 1px solid var(--gold); }
+.legend .hatch { background: repeating-linear-gradient(45deg, var(--gold) 0 1.5px, var(--hatch-bg) 1.5px 4px); outline: 1px solid var(--gold); }
 .legend .ln { display: inline-block; width: 22px; height: 0; border-top: 2px solid var(--gold); opacity: .8; }
-.legend .ln.dot { border-top-style: dotted; border-color: var(--ink); }
+.legend .ln.tie { border-color: var(--tie); } .legend .ln.sanc { border-top-style: dashed; border-color: var(--tie-sanc); }
+.legend .ln.pos { border-color: var(--pos); } .legend .ln.neg { border-color: var(--neg); }
 .sw { display: inline-block; width: 11px; height: 11px; border-radius: 2px; flex: none; }
 .dot { display: inline-block; width: 11px; height: 11px; border-radius: 50%; flex: none; }
 @media (max-width: 600px) { .legend { position: static; border: 0; border-top: 1px solid var(--gold-dim); border-radius: 0; max-width: none; } .rose { width: 48px; top: 10px; left: 10px; right: auto; bottom: auto; } }
 
-.tip { position: absolute; pointer-events: none; background: var(--ink); color: #0a1828; font-size: 13px; padding: 6px 9px; border-radius: 3px; border: 1px solid var(--gold); max-width: 240px; line-height: 1.35; z-index: 5; box-shadow: 0 4px 14px rgba(0,0,0,.45); }
+.tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--surface); font-size: 13px; padding: 6px 9px; border-radius: 3px; border: 1px solid var(--gold); max-width: 240px; line-height: 1.35; z-index: 5; box-shadow: 0 4px 14px rgba(0,0,0,.45); }
 .tip b { font-weight: 600; }
 
 .panel { background: var(--surface); border: 1px solid var(--gold-dim); border-radius: 3px; padding: 20px; display: grid; gap: 18px; min-width: 0; }
@@ -174,7 +207,8 @@ header.top .lede { color: var(--muted); max-width: 62ch; }
       <span class="eyebrow">Prototype · données au 26 octobre 2026</span>
       <h1>Atlas géopolitique</h1>
       <p class="lede">Choisissez une couche, puis cliquez sur un pays pour voir sa relation avec le pays choisi. Chaque chiffre renvoie à sa source.</p>
-      <label class="focus">Pays choisi <select id="focus"></select></label>
+      <div style="display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center"><label class="focus">Pays choisi <select id="focus"></select></label>
+      <button type="button" class="theme" id="theme" aria-label="Changer de thème">Thème clair</button></div>
     </div>
     <nav class="layers" aria-label="Couches de la carte">
       <button type="button" data-layer="trade" aria-pressed="true"><span class="sw" style="background:var(--seq-4)"></span>Commerce</button>
@@ -187,7 +221,7 @@ header.top .lede { color: var(--muted); max-width: 62ch; }
   <div class="main">
     <div class="mapcard" id="mapcard">
       <svg id="map" viewBox="0 0 960 505" role="img" aria-label="Carte du monde interactive">
-        <defs><pattern id="hatch" patternUnits="userSpaceOnUse" width="3" height="3" patternTransform="rotate(45)"><rect width="3" height="3" fill="#3a3220"/><rect width="1.3" height="3" fill="#d8b35e"/></pattern></defs>
+        <defs><pattern id="hatch" patternUnits="userSpaceOnUse" width="3" height="3" patternTransform="rotate(45)"><rect width="3" height="3" style="fill:var(--hatch-bg)"/><rect width="1.3" height="3" style="fill:var(--gold)"/></pattern></defs>
       </svg>
       <div class="zoom">
         <button class="btn" id="zin" type="button" aria-label="Zoomer">+</button>
@@ -479,22 +513,24 @@ function renderFlows() {
   if (layer === "trade") {
     const ids = TOP.includes(sel) || sel === FR || !TRADE[sel] || TRADE[sel].x == null ? TOP : [...TOP, sel];
     const wScale = d3.scaleSqrt().domain([0, Math.max(220, d3.max(ids, id => TRADE[id].x + TRADE[id].m) || 0)]).range([0, 7]);
-    flows = ids.map(id => ({ id, kind: "trade", w: Math.max(.8, wScale(TRADE[id].x + TRADE[id].m)), x: TRADE[id].x, m: TRADE[id].m }));
+    flows = ids.map(id => ({ id, kind: "trade", cls: TRADE[id].x >= TRADE[id].m ? "surplus" : "deficit", w: Math.max(.8, wScale(TRADE[id].x + TRADE[id].m)) }));
   }
   if (layer === "dipl") {
     const scored = countries.filter(c => c.key !== FR).map(c => ({ id: c.key, sc: diplo(c.key).score })).filter(r => r.sc != null).sort((a, b) => b.sc - a.sc);
     const ids = scored.slice(0, N_DIPL);
     const s = scored.find(r => r.id === sel);
     if (s && !ids.includes(s)) ids.push(s);
-    flows = ids.map(r => ({ id: r.id, kind: "dipl", w: .6 + r.sc / 40 }));
+    // Liens étroits (vert-de-gris) et liens plafonnés par des sanctions (violet), quand le pays choisi en applique
+    for (const id of Object.keys(SANCTIONS)) { const r = scored.find(r => r.id === id); if (r && !ids.includes(r)) ids.push(r); }
+    flows = ids.map(r => SANCTIONS[r.id] ? { id: r.id, kind: "dipl", cls: "sanc", w: 1.4 } : { id: r.id, kind: "dipl", cls: "dipl", w: .8 + r.sc / 35 });
   }
   flows = flows.map(d => ({ ...d, d: arcPath(d.id) })).filter(d => d.d);
   const hl = sel !== FR && flows.some(d => d.id === sel);
   gFlows.classed("dim", hl);
   // Chaque liaison : un arc, puis une ou deux couches de points animés
   const items = flows.flatMap(d => d.kind === "trade"
-    ? [{ ...d, key: d.id + "a", cls: "flow" }, { ...d, key: d.id + "x", cls: "pulse x", w: Math.max(1.6, d.w * .55) }, { ...d, key: d.id + "m", cls: "pulse m", w: Math.max(1.6, d.w * .55) }]
-    : [{ ...d, key: d.id + "a", cls: "flow dipl" }, { ...d, key: d.id + "c", cls: "pulse d", w: Math.max(1.4, d.w * .9) }]);
+    ? [{ ...d, key: d.id + "a", cls: "flow " + d.cls }, { ...d, key: d.id + "x", cls: "pulse x", w: Math.max(1.6, d.w * .55) }, { ...d, key: d.id + "m", cls: "pulse m", w: Math.max(1.6, d.w * .55) }]
+    : [{ ...d, key: d.id + "a", cls: "flow " + d.cls }, ...(d.cls === "sanc" ? [] : [{ ...d, key: d.id + "c", cls: "pulse d", w: Math.max(1.4, d.w * .9) }])]);
   const paths = gFlows.selectAll("path").data(items, d => d.key).join("path")
     .attr("class", d => d.cls).classed("hl", d => d.id === sel)
     .attr("d", d => d.d).attr("stroke-width", d => d.w / k);
@@ -524,7 +560,8 @@ function renderLegend() {
     <span class="it"><span class="sw hatch"></span>${FN().nom}</span></div>
     <div class="items"><span class="it"><span class="dot" style="background:var(--exp)"></span>exportations</span>
     <span class="it"><span class="dot" style="background:var(--imp)"></span>importations</span>
-    <span class="it">épaisseur de l'arc = volume</span></div>`;
+    <span class="it"><span class="ln pos"></span>excédent</span><span class="it"><span class="ln neg"></span>déficit</span>
+    <span class="it">épaisseur = volume</span></div>`;
   if (layer === "mil" && F !== "FRA") L.innerHTML = `<span class="ttl">Présences militaires : pas encore renseignées pour ${FN().le}</span>`;
   else if (layer === "mil") L.innerHTML = `<span class="ttl">Militaires français déployés, sept. 2026</span>
     <div class="items"><span class="it"><span class="dot" style="background:var(--mil)"></span>À l'étranger</span>
@@ -537,7 +574,8 @@ function renderLegend() {
   if (layer === "dipl") L.innerHTML = `<span class="ttl">Proximité diplomatique avec ${FN().le}, score 0–100</span>
     <div class="items">${D_CLASSES.map(d => `<span class="it"><span class="sw" style="background:var(${d.c})"></span>${d.l}</span>`).join("")}
     <span class="it"><span class="sw" style="background:var(--land);outline:1px solid var(--land-edge)"></span>pas de donnée</span>
-    <span class="it"><span class="ln dot"></span>${N_DIPL} pays les plus proches</span></div>
+    <span class="it"><span class="ln tie"></span>${N_DIPL} pays les plus proches</span>
+    ${Object.keys(SANCTIONS).length ? `<span class="it"><span class="ln sanc"></span>score plafonné par des sanctions</span>` : ""}</div>
     <span style="color:var(--muted)">Votes ONU ${VOTES_PERIOD} (60 %), organisations communes (40 %), plafond en cas de sanctions.</span>`;
 }
 
@@ -674,6 +712,13 @@ const FSEL = document.getElementById("focus");
 FSEL.innerHTML = Object.entries(FOCUS).map(([iso, f]) => `<option value="${iso}">${f.nom}</option>`).join("");
 FSEL.value = F;  // le sélecteur reste la seule façon de changer de pays choisi
 FSEL.addEventListener("change", () => { setFocus(FSEL.value); sel = FR; render(); });
+// Thème : suit le système par défaut, le bouton force l'autre thème (mémorisé si le navigateur le permet)
+const TB = document.getElementById("theme"), root = document.documentElement;
+const isLight = () => (root.dataset.theme || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark")) === "light";
+const syncTheme = () => { TB.textContent = isLight() ? "Thème sombre" : "Thème clair"; };
+try { const t = localStorage.getItem("atlas-theme"); if (t) root.dataset.theme = t; } catch (e) {}
+TB.addEventListener("click", () => { root.dataset.theme = isLight() ? "dark" : "light"; try { localStorage.setItem("atlas-theme", root.dataset.theme); } catch (e) {} syncTheme(); });
+syncTheme();
 render();
 </script>
 
