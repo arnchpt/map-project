@@ -1,0 +1,96 @@
+# Actualisation automatique des données (voir README, « Actualisation automatique »).
+# Chaque jour : commerce (FMI IMTS). Le lundi : contrôle des organisations sur Wikidata.
+# Rien de nouveau : rien n'est commité (au plus une mise à jour hebdomadaire de la date de vérification).
+# Chiffres modifiés et contrôles passés : commit direct sur main, GitHub Pages republie le site.
+# Anomalie, changement d'année ou écart Wikidata : PR « actualisation-auto » à relire, rien n'est publié.
+# Échec d'une source : le job échoue et GitHub prévient par mail.
+name: Actualisation des données
+
+on:
+  schedule:
+    - cron: "17 5 * * *"
+  workflow_dispatch:
+    inputs:
+      organisations:
+        description: "Contrôler aussi les organisations (Wikidata)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: actualisation
+  cancel-in-progress: false
+
+jobs:
+  actualiser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Jour de la semaine
+        id: jour
+        run: echo "lundi=$([ "$(date -u +%u)" = 1 ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+
+      - name: Commerce (FMI IMTS)
+        id: commerce
+        continue-on-error: true
+        run: node scripts/refresh-trade.js
+
+      - name: Organisations (Wikidata)
+        id: orgs
+        if: (github.event_name == 'workflow_dispatch' && inputs.organisations) || (github.event_name == 'schedule' && steps.jour.outputs.lundi == 'true')
+        continue-on-error: true
+        run: node scripts/orgs-wikidata.js
+
+      - run: npm run build
+
+      - name: Publier ou proposer
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ANOMALIE: ${{ steps.commerce.outputs.anomaly == 'true' || steps.orgs.outputs.changed == 'true' }}
+        run: |
+          if git diff --quiet; then echo "Aucun changement."; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A data dist docs
+          if [ "$ANOMALIE" != "true" ]; then
+            git commit -m "Actualisation automatique des données ($(date -u +%F))"
+            git push origin HEAD:main
+            exit 0
+          fi
+          git checkout -B actualisation-auto
+          git commit -m "Actualisation à relire ($(date -u +%F))"
+          git push -f origin actualisation-auto
+          {
+            echo "Actualisation automatique du $(date -u +%F). Des contrôles demandent une relecture avant publication."
+            echo
+            if [ -s tmp/anomalies-commerce.md ]; then echo "## Commerce (FMI)"; echo; cat tmp/anomalies-commerce.md; echo; fi
+            if [ "${{ steps.orgs.outputs.changed }}" = "true" ]; then
+              echo "## Organisations (Wikidata a changé)"; echo
+              echo "Écarts entre Wikidata et notre liste validée (data/orgs.json). Wikidata n'est qu'un détecteur : vérifier sur le site officiel, puis corriger data/orgs.json à la main si besoin."; echo
+              cat tmp/rapport-organisations.md; echo
+            fi
+            echo "Fusionner publie ces chiffres. Fermer la PR les écarte : le robot la rouvrira si l'écart persiste."
+          } > tmp/pr.md
+          if gh pr list --head actualisation-auto --state open --json number --jq '.[0].number' | grep -q .; then
+            gh pr edit actualisation-auto --body-file tmp/pr.md
+          else
+            gh pr create --head actualisation-auto --base main --title "Actualisation des données à relire" --body-file tmp/pr.md
+          fi
+
+      - name: Signaler les sources en échec
+        if: steps.commerce.outcome == 'failure' || steps.orgs.outcome == 'failure'
+        run: |
+          echo "::error::Source en échec : commerce=${{ steps.commerce.outcome }}, organisations=${{ steps.orgs.outcome }}. Voir le journal des étapes."
+          exit 1
