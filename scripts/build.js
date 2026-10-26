@@ -1,4 +1,4 @@
-// Assemble la page publiable : injecte le fond de carte, les noms de pays, le commerce et les votes de chaque pays choisi dans src/template.html
+// Assemble la page publiable : injecte le fond de carte, les noms de pays, le commerce, les votes et les plafonds sanctions de chaque pays choisi dans src/template.html
 // Usage : npm run build  ->  dist/index.html
 const fs = require("fs");
 const path = require("path");
@@ -29,6 +29,26 @@ for (const [iso, f] of Object.entries(FOCUS)) {
   f.num = isoc.alpha3ToNumeric(iso);
   f.votes = pad(votes.values);
   f.trade = { ...trade, values: pad(trade.values) };
+}
+
+// Plafond sanctions de chaque paire (règle dans data/sanctions.json) : 40 si une mesure compte dans un sens, 20 dans les deux
+const SANC = JSON.parse(read("data/sanctions.json"));
+const NAMES = JSON.parse(read("data/names.json"));
+const arr = v => Array.isArray(v) ? v : [v];
+const members = t => t === "UE" ? SANC.ue : [t];
+const label = t => t === "UE" ? "UE" : FOCUS[t]?.nom || NAMES[isoc.alpha3ToNumeric(t)] || isoc.getName(t, "fr") || t;
+const EDGES = SANC.mesures.flatMap(m => arr(m.de).flatMap(a => arr(m.vers).flatMap(b =>
+  members(a).flatMap(x => members(b).map(y => ({ de: x, vers: y, d: `${label(a)} → ${label(b)} : ${m.d}`, src: m.src }))))));
+for (const [iso, f] of Object.entries(FOCUS)) {
+  const pairs = {};
+  for (const e of EDGES) {
+    const other = e.de === iso ? e.vers : e.vers === iso ? e.de : null;
+    if (!other) continue;
+    const p = pairs[other] ??= { out: false, in: false, m: [] };
+    p[e.de === iso ? "out" : "in"] = true;
+    if (!p.m.some(x => x.d === e.d)) p.m.push({ d: e.d, src: e.src });
+  }
+  f.sanctions = Object.fromEntries(Object.entries(pairs).map(([o, p]) => [isoc.alpha3ToNumeric(o), { plafond: p.out && p.in ? 20 : 40, d: p.m.map(x => x.d).join(" ; "), m: p.m }]));
 }
 
 const html = read("src/template.html")
