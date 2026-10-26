@@ -33,6 +33,16 @@
       "src": "president"
     },
     {
+      "hote": "XKX",
+      "lon": 21.2,
+      "lat": 42.6,
+      "nom": "KFOR (OTAN, Kosovo)",
+      "cat": "otan",
+      "eff": null,
+      "depuis": null,
+      "src": "defense"
+    },
+    {
       "hote": "PAK",
       "lon": 73.1,
       "lat": 33.7,
@@ -74,11 +84,6 @@
     }
   ],
   "non_localisees": [
-    {
-      "nom": "KFOR (OTAN, Kosovo) : non placé sur la carte, le Kosovo n'a pas de code ISO alpha-3 accepté par le contrôle",
-      "eff": "non publié",
-      "src": "defense"
-    },
     {
       "nom": "Opération de sécurité maritime de l'OTAN Sea Guardian (Méditerranée)",
       "eff": "non publié",
