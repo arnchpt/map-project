@@ -54,7 +54,7 @@ python3 scripts/votes_kappa.py UNVotes.RData data/votes-fra.json
 
 ## Sources du prototype France
 
-- Commerce : DG Trésor, [Rapport 2026 sur le commerce extérieur](https://www.tresor.economie.gouv.fr/Articles/2026/02/06/rapport-2026-sur-le-commerce-exterieur-de-la-france) (biens, 2025).
+- Commerce : FMI, [IMTS](https://data.imf.org/en/datasets/IMF.STA:IMTS) (biens, 2025, en dollars, déclarations de la France). Comparaison avec le [Rapport 2026 du Trésor](https://www.tresor.economie.gouv.fr/Articles/2026/02/06/rapport-2026-sur-le-commerce-exterieur-de-la-france).
 - Présences militaires : ministère des Armées, [Déploiement des armées françaises dans le monde](https://www.defense.gouv.fr/operations/deploiement-armees-francaises-monde) (page du 11/09/2026).
 - Conflits et tensions : faits datés, une source par fait (voir la section « Sources et méthode » de la page).
 - Proximité diplomatique : formule de la fiche méthode v1 (60 % votes ONU, 40 % organisations communes, plafond en cas de sanctions).
@@ -62,8 +62,8 @@ python3 scripts/votes_kappa.py UNVotes.RData data/votes-fra.json
 
 ## Limites connues
 
-- Votes à l'ONU antérieurs à 2020 : les votes après l'invasion de l'Ukraine ne sont pas pris en compte.
+- Votes à l'ONU arrêtés à juin 2024 (sessions 76 à 78) : le jeu de Voeten ne publie plus les votes bruts après cette version.
 - La remise à l'échelle 0–100 des votes classe 120 pays « éloignés » ; à revoir dans la fiche méthode avant d'étendre à d'autres pays.
-- Commerce en euros depuis la source nationale ; la fiche méthode prévoit le FMI (IMTS, en dollars).
+- Commerce : biens seulement, services absents. La part de la France pour chaque partenaire (dépendance dans l'autre sens) n'est pas encore affichée.
 - Conflits : données UCDP pas encore branchées (jeton d'accès à demander).
 - Sanctions : 7 pays plafonnés (Russie et Biélorussie à 20, Iran, Corée du Nord, Myanmar, Venezuela et Nicaragua à 40), selon la règle validée le 26/10/2026. Liste à revoir à chaque renouvellement des régimes de l'UE.
