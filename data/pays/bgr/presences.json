@@ -1,0 +1,33 @@
+{
+  "pays": "BGR",
+  "verifie": "2026-10-26",
+  "presences": [
+    {
+      "hote": "BIH",
+      "lon": 18.4,
+      "lat": 43.9,
+      "nom": "EUFOR Althea (opération militaire de l'UE en Bosnie-Herzégovine)",
+      "cat": "ue",
+      "eff": null,
+      "depuis": null,
+      "src": "gouvernement"
+    }
+  ],
+  "non_localisees": [
+    {
+      "nom": "Total déclaré : cinq opérations de l'OTAN et trois opérations de l'UE (au 05/10/2026)",
+      "eff": "≈ 270",
+      "src": "defense"
+    },
+    {
+      "nom": "KFOR (force de l'OTAN au Kosovo) ; Kosovo sans code ISO alpha-3 accepté par le contrat",
+      "eff": "non publié",
+      "src": "defense"
+    },
+    {
+      "nom": "EUMAM Ukraine (mission de formation de l'UE, hors du territoire ukrainien)",
+      "eff": "non publié",
+      "src": "gouvernement"
+    }
+  ]
+}
