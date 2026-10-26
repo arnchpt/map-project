@@ -13,6 +13,16 @@
       "src": "difesa"
     },
     {
+      "hote": "XKX",
+      "lon": 21.2,
+      "lat": 42.6,
+      "nom": "KFOR (force de l'OTAN au Kosovo)",
+      "cat": "otan",
+      "eff": null,
+      "depuis": "1999-06",
+      "src": "missions"
+    },
+    {
       "hote": "LBN",
       "lon": 35.5,
       "lat": 33.9,
@@ -94,11 +104,6 @@
     }
   ],
   "non_localisees": [
-    {
-      "nom": "KFOR (force de l'OTAN au Kosovo) : non localisée faute de code ISO alpha-3 officiel pour le Kosovo, à trancher par le fil d'intégration",
-      "eff": null,
-      "src": "missions"
-    },
     {
       "nom": "Opérations navales de l'UE Aspides (mer Rouge) et Atalanta (océan Indien)",
       "eff": null,
