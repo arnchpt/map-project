@@ -1,0 +1,11 @@
+{
+  "name": "map-project",
+  "private": true,
+  "description": "Atlas géopolitique : carte du monde interactive, données sourcées",
+  "scripts": {
+    "build": "node scripts/build.js"
+  },
+  "devDependencies": {
+    "world-atlas": "2.0.2"
+  }
+}
