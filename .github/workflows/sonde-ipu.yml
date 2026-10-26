@@ -9,13 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          get() { echo "=== $1"; curl -sS -m 30 -w '\n[HTTP %{http_code}]\n' -H 'Accept: application/json' "$1" | head -c 6000; echo; }
-          get "https://api.data.ipu.org/v1/chambers/FR-LC01"
-          get "https://api.data.ipu.org/v1/chambers?filter=id%3Aeq%3AFR-LC01"
-          get "https://api.data.ipu.org/v1/elections?filter=chamber_id%3Aeq%3AJP-LC01&page%5Bsize%5D=2"
-          get "https://api.data.ipu.org/v1/elections/JP-LC01-E20260208"
-          get "https://api.data.ipu.org/v1"
-          get "https://api.data.ipu.org/"
-          get "https://data.ipu.org/api-doc"
-          curl -sS -m 30 "https://data.ipu.org/data-dictionary" | grep -oiE '[a-z_]*(part|seat|composition|group)[a-z_]*' | sort | uniq -c | sort -rn | head -60
-          curl -sS -m 30 "https://data.ipu.org/parliament/JP/JP-LC01/election/JP-LC01-E20260208/" | sed 's/<[^>]*>/ /g' | tr -s ' \n' | grep -iE -A3 'party|seats|Liberal' | head -80
+          A=https://api.data.ipu.org/v1
+          curl -sS -m 60 "$A/elections/JP-LC01-E20260208" > e.json
+          echo "== clés élection"; jq -r '.data.attributes | keys | join(" ")' e.json
+          echo "== champs parti/siège"; jq -c '.data.attributes | to_entries[] | select(.key|test("part|seat|result|compos|group";"i")) | {k:.key, v:(.value|tostring|.[0:1500])}' e.json
+          curl -sS -m 60 "$A/chambers/JP-LC01" > c.json
+          echo "== clés chambre"; jq -r '.data.attributes | keys | join(" ")' c.json
+          echo "== chambre parti/siège"; jq -c '.data.attributes | to_entries[] | select(.key|test("part|seat|compos|group|last_elec|election";"i")) | {k:.key, v:(.value|tostring|.[0:1500])}' c.json
+          for f in "chamber%3Aeq%3AJP-LC01" "chamber_code%3Aeq%3AJP-LC01"; do echo "== liste $f"; curl -sS -m 60 "$A/elections?filter=$f&page%5Bsize%5D=3" | jq -c '{err:.errors, ids:[.data[]?.id]}'; done
+          for e in RU-LC01-E20260920 RU-LC01-E20260918 US-LC01-E20241105 GB-LC01-E20240704; do echo "== $e"; curl -sS -m 60 "$A/elections/$e" | jq -c '{err:.errors[0].title, id:.data.id}'; done
