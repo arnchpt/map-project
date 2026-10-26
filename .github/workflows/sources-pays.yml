@@ -1,0 +1,121 @@
+# Récupération des sources nationales (voir data/pays/README.md, « Récupérer les données »).
+# Exécute scripts/pays/<iso3>/*.js : les sites nationaux sont joignables depuis GitHub Actions, pas depuis les sessions Claude.
+# - Lancement manuel (workflow_dispatch) : un pays ou tous, en essai (rapport seulement) ou en proposition (PR si les données changent).
+# - Chaque lundi : tous les pays, en proposition.
+# - Sur une PR qui touche scripts/pays/ ou data/pays/ : essai, rien n'est poussé.
+# Chaque pays est contrôlé par scripts/valider-pays.js ; un script en échec fait échouer le job (mail GitHub), sans bloquer les autres pays.
+name: Sources nationales
+
+on:
+  schedule:
+    - cron: "41 5 * * 1"
+  workflow_dispatch:
+    inputs:
+      pays:
+        description: "Code ISO alpha-3 (ex. AUT), ou « tous »"
+        default: tous
+      mode:
+        description: "essai (rapport seulement) ou proposer (PR si changement)"
+        type: choice
+        options: [essai, proposer]
+        default: essai
+  pull_request:
+    paths:
+      - scripts/pays/**
+      - data/pays/**
+      - scripts/valider-pays.js
+      - .github/workflows/sources-pays.yml
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: sources-pays
+  cancel-in-progress: false
+
+jobs:
+  recuperer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: npm ci --no-audit --no-fund
+
+      - name: Récupérer et contrôler
+        id: run
+        env:
+          ENTREE_PAYS: ${{ github.event.inputs.pays || 'tous' }}
+          MODE: ${{ github.event_name == 'pull_request' && 'essai' || github.event.inputs.mode || 'proposer' }}
+        run: |
+          mkdir -p tmp
+          if [ "$ENTREE_PAYS" = "tous" ]; then
+            liste=$(ls -d scripts/pays/*/ 2>/dev/null | xargs -rn1 basename | grep -v '^_' || true)
+          else
+            liste=$(echo "$ENTREE_PAYS" | tr 'A-Z' 'a-z')
+          fi
+          echo "## Sources nationales ($MODE)" >> "$GITHUB_STEP_SUMMARY"
+          echoue=""; change=""
+          for p in $liste; do
+            echo "### ${p^^}" >> "$GITHUB_STEP_SUMMARY"
+            ok=1
+            for s in scripts/pays/$p/*.js; do
+              [ -e "$s" ] || continue
+              echo "::group::$s"
+              if PAYS="${p^^}" MODE="$MODE" node "$s"; then echo "- ✓ $(basename "$s")" >> "$GITHUB_STEP_SUMMARY"
+              else ok=0; echo "- ✗ $(basename "$s") en échec (voir le journal)" >> "$GITHUB_STEP_SUMMARY"; fi
+              echo "::endgroup::"
+            done
+            [ -f "tmp/pays-$p.md" ] && cat "tmp/pays-$p.md" >> "$GITHUB_STEP_SUMMARY"
+            if [ -d "data/pays/$p" ]; then
+              node scripts/valider-pays.js "$p" >> "$GITHUB_STEP_SUMMARY" 2>&1 || ok=0
+            fi
+            [ $ok = 1 ] || echoue="$echoue $p"
+            if [ $ok = 1 ] && [ -n "$(git status --porcelain "data/pays/$p")" ]; then
+              change="$change $p"; echo "- Données modifiées" >> "$GITHUB_STEP_SUMMARY"
+            fi
+          done
+          echo "echoue=$echoue" >> "$GITHUB_OUTPUT"
+          echo "change=$change" >> "$GITHUB_OUTPUT"
+          echo "mode=$MODE" >> "$GITHUB_OUTPUT"
+
+      - name: Contrôler tous les pays
+        if: always()
+        run: node scripts/valider-pays.js | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Proposer (une PR par pays)
+        if: steps.run.outputs.mode == 'proposer' && steps.run.outputs.change != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CHANGE: ${{ steps.run.outputs.change }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          base=$(git rev-parse HEAD)
+          for p in $CHANGE; do
+            b="sources-pays-$p"
+            git stash push -q -- "data/pays/$p"
+            git checkout -q -B "$b" "$base"
+            git stash pop -q
+            git add "data/pays/$p"
+            git commit -qm "Sources nationales ${p^^} : données actualisées ($(date -u +%F))"
+            git push -qf origin "$b"
+            body="Relevé automatique du $(date -u +%F) par scripts/pays/$p/. Contrôle du contrat : OK. Relire le diff avant fusion (les chiffres viennent des sources listées dans data/pays/$p/sources.json)."
+            if gh pr list --head "$b" --state open --json number --jq '.[0].number' | grep -q .; then
+              gh pr edit "$b" --body "$body"
+            else
+              gh pr create --head "$b" --base main --title "Sources nationales ${p^^} : données actualisées" --body "$body" --assignee "${{ github.repository_owner }}"
+            fi
+            git checkout -q "$base"
+          done
+
+      - name: Signaler un pays en échec
+        if: steps.run.outputs.echoue != ''
+        run: |
+          echo "::error::Sources nationales en échec :${{ steps.run.outputs.echoue }}. Détail dans le résumé du job."
+          exit 1
