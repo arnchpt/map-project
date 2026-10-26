@@ -3,14 +3,15 @@
 // Sortie : {annee, unite, monde, values: {code ISO numérique: {x, m, xp, mp}}} en Md$, x = exportations FOB, m = importations CIF,
 // xp et mp = même chose pour l'année précédente ; monde = total toutes destinations (code G001)
 // Lit d'abord la structure du jeu (ordre des dimensions, codes indicateurs) et s'arrête si elle ne correspond pas.
+// Aussi utilisé comme module par scripts/refresh-trade.js : fetchTrade(reporter, year) renvoie le même objet sans écrire de fichier.
 const fs = require("fs");
 const c = require("i18n-iso-countries");
-const [, , reporter = "FRA", year = "2025", out = "trade.json"] = process.argv;
 const BASE = "https://api.imf.org/external/sdmx/3.0";
 const get = async (u, accept) => { const r = await fetch(u, { headers: { Accept: accept } }); if (!r.ok) throw new Error(`${r.status} ${u}`); return r.json(); };
 const DATA = "application/vnd.sdmx.data+json;version=2.0.0";
 
-(async () => {
+async function fetchTrade(reporter, year) {
+  year = String(year);
   const st = await get(`${BASE}/structure/dataflow/IMF.STA/IMTS/+?references=descendants&detail=full`, "application/vnd.sdmx.structure+json;version=2.0.0");
   const dsd = st.data.dataStructures[0], dims = dsd.dataStructureComponents.dimensionList.dimensions.map(d => d.id);
   console.log("dimensions", dims);
@@ -38,6 +39,15 @@ const DATA = "application/vnd.sdmx.data+json;version=2.0.0";
       }
     }
   }
-  fs.writeFileSync(out, JSON.stringify({ annee: +year, unite: "Md$", source: "FMI, IMTS (api.imf.org, IMF.STA/IMTS)", monde: world, values: res }));
-  console.log("partenaires", Object.keys(res).length, "monde", world, "DEU", res["276"], "USA", res["840"], "CHN", res["156"]);
-})().catch(e => { console.error(e.message); process.exit(1); });
+  console.log(reporter, year, "partenaires", Object.keys(res).length, "monde", world);
+  return { annee: +year, unite: "Md$", source: "FMI, IMTS (api.imf.org, IMF.STA/IMTS)", monde: world, values: res };
+}
+
+module.exports = { fetchTrade };
+
+if (require.main === module) {
+  const [, , reporter = "FRA", year = "2025", out = "trade.json"] = process.argv;
+  fetchTrade(reporter, year)
+    .then(t => fs.writeFileSync(out, JSON.stringify(t)))
+    .catch(e => { console.error(e.message); process.exit(1); });
+}
