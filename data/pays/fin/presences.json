@@ -1,0 +1,21 @@
+{
+  "pays": "FIN",
+  "verifie": "2026-10-26",
+  "presences": [
+    { "hote": "LBN", "lon": 35.3, "lat": 33.2, "nom": "FINUNIFIL, contingent de la Force intérimaire des Nations unies au Liban (UNIFIL)", "cat": "onu", "eff": 200, "depuis": null, "src": "defense" },
+    { "hote": "BIH", "lon": 18.4, "lat": 43.9, "nom": "Opération EUFOR Althea", "cat": "ue", "eff": null, "depuis": null, "src": "defmin" },
+    { "hote": "IRQ", "lon": 44.4, "lat": 33.3, "nom": "Mission de l'OTAN en Irak (NMI)", "cat": "otan", "eff": 3, "depuis": "2018-12", "src": "defmin" },
+    { "hote": "IRQ", "lon": 44.0, "lat": 36.2, "nom": "Coalition contre Daech, opération Inherent Resolve", "cat": "ope", "eff": null, "depuis": "2015", "src": "defmin" }
+  ],
+  "non_localisees": [
+    { "nom": "KFOR, force de l'OTAN au Kosovo (pas de code ISO alpha-3 pour le Kosovo)", "eff": "≈ 70", "src": "defense" },
+    { "nom": "ONUST (UNTSO), observateurs militaires au Proche-Orient", "eff": "non publié", "src": "defense" },
+    { "nom": "Mission d'assistance militaire de l'UE à l'Ukraine (EUMAM Ukraine), formation sur le territoire de l'UE", "eff": "≤ 60", "src": "budget" },
+    { "nom": "Activités navales de l'OTAN en temps de paix 2026 (mer Baltique, mer du Nord, Atlantique Nord)", "eff": "2 navires", "src": "gouvernement" }
+  ],
+  "notes": [
+    "Total publié : environ 390 militaires en gestion de crise prévus pour 2026 (projet de budget 2026).",
+    "Pas de participation finlandaise prévue en 2026-2027 aux forces avancées terrestres de l'OTAN hors de Finlande ni à la police du ciel (communiqués du ministère de la Défense, mai 2025 et janvier 2026).",
+    "Forces étrangères en Finlande (non comptées ici, elles relèvent du pays déployeur) : Forward Land Forces Finland, nation-cadre Suède, élément d'état-major multinational à Rovaniemi, opérationnelle depuis le 6 juin 2026."
+  ]
+}

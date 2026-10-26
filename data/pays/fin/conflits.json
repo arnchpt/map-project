@@ -1,0 +1,22 @@
+{
+  "pays": "FIN",
+  "verifie": "2026-10-26",
+  "evenements": [
+    {
+      "avec": "UKR",
+      "k": "soutien",
+      "t": "Aide militaire à l'Ukraine",
+      "d": "Paquets successifs de matériel de défense annoncés par le ministère de la Défense depuis février 2022.",
+      "date": "2022-02",
+      "src": "defmin"
+    },
+    {
+      "avec": "RUS",
+      "k": "tension",
+      "t": "Fermeture de la frontière terrestre avec la Russie",
+      "d": "Le gouvernement a fermé tous les points de passage de la frontière orientale à partir de décembre 2023 et a prolongé la mesure.",
+      "date": "2023-12",
+      "src": "gouvernement"
+    }
+  ]
+}
