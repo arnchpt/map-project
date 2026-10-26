@@ -16,7 +16,8 @@ Principe : « le contenu dicte le contexte ». Les couleurs et les scores sont c
 | `src/template.html` | La page : styles, faits France (présences, conflits, sanctions UE), carte (d3 + topojson), sélecteur du pays choisi. Contient trois emplacements remplis au build. |
 | `data/names.json` | Noms de pays en français, par code ISO numérique. |
 | `data/votes/votes-<pays>.json` | Proximité des votes à l'ONU entre un pays focus et tous les autres, 0–100 (échelle absolue), produite par `scripts/votes_kappa.py`. 11 pays calculés : FRA, USA, CHN, RUS, DEU, GBR, IND, JPN, ITA, CAN, KOR. |
-| `scripts/build.js` | Liste les pays du sélecteur (nom, capitale, membre de l'UE) et injecte fond de carte, noms, commerce et votes dans le gabarit. |
+| `scripts/build.js` | Liste les pays du sélecteur (nom, capitale, membre de l'UE), calcule le plafond sanctions de chaque paire et injecte fond de carte, noms, commerce, votes et plafonds dans le gabarit. |
+| `data/sanctions.json` | Mesures de sanctions retenues (qui sanctionne qui, source de chaque mesure) et règle de plafonnement validée le 26/10/2026. À revoir à chaque renouvellement d'un régime. |
 | `data/trade/trade-<pays>.json` | Commerce de biens d'un pays focus par partenaire, 2025 et 2024, en Md$, produit par `scripts/imts.js`. Mêmes 11 pays. |
 | `scripts/imts.js` | Interroge l'API publique du FMI (IMTS, sans clé) et écrit les échanges par partenaire. |
 | `data/orgs.json` | Liste fermée des 15 organisations et de leurs membres pleins, validée à la main. |

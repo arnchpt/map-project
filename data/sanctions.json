@@ -1,0 +1,45 @@
+{
+  "verifie_le": "2026-10-26",
+  "regle": "Validée par Arnaud le 2026-10-26. Une mesure d'un État A contre un État B compte si : (1) c'est une sanction (gel d'avoirs, embargo, interdiction commerciale ou financière, contre-sanction officielle), pas un contrôle à l'export ; (2) A l'a adoptée de lui-même, pas seulement en application de l'ONU ; (3) elle vise le gouvernement en place de B (dirigeants, armée, banque centrale, dette souveraine) ou son économie, pas seulement des personnes, des entreprises ou des groupes armés. Plafond de la paire : 40 si une direction compte, 20 si les deux. Liste revue à chaque renouvellement ; veille mensuelle sur les listes OFAC, britannique et canadienne.",
+  "ue": ["AUT", "BEL", "BGR", "HRV", "CYP", "CZE", "DNK", "EST", "FIN", "FRA", "DEU", "GRC", "HUN", "IRL", "ITA", "LVA", "LTU", "LUX", "MLT", "NLD", "POL", "PRT", "ROU", "SVK", "SVN", "ESP", "SWE"],
+  "exclus": {
+    "CHN": "Contrôles à l'export vers les utilisateurs militaires japonais et américains (MOFCOM 2024 et 2026) : contrôle à l'export, pas sanction.",
+    "IRN": "Désignation « terroriste » des armées de l'UE (février 2026) : pas de mesure économique, non comptée comme réciprocité.",
+    "AFG": "États-Unis : talibans désignés comme groupe terroriste, pas comme gouvernement.",
+    "PRK": "Contre la Corée du Sud : « État hostile » (2024), rupture politique, pas un instrument de sanction.",
+    "JPN": "Contre l'Iran : application des sanctions de l'ONU seulement (snapback, septembre 2025).",
+    "COL": "États-Unis : président Petro sanctionné en 2025, n'est plus au pouvoir depuis août 2026.",
+    "IND": "L'Inde n'applique que les sanctions de l'ONU."
+  },
+  "mesures": [
+    { "de": "UE", "vers": "RUS", "d": "Régimes UE visant la Russie", "src": "https://www.sanctionsmap.eu/" },
+    { "de": "UE", "vers": "BLR", "d": "Régime UE visant la Biélorussie", "src": "https://www.sanctionsmap.eu/" },
+    { "de": "UE", "vers": "IRN", "d": "Régimes UE visant l'Iran", "src": "https://www.sanctionsmap.eu/" },
+    { "de": "UE", "vers": "PRK", "d": "Régime UE visant la Corée du Nord", "src": "https://www.sanctionsmap.eu/" },
+    { "de": "UE", "vers": "MMR", "d": "Régime UE visant le Myanmar (embargo sur les armes, gel d'avoirs)", "src": "https://www.sanctionsmap.eu/" },
+    { "de": "UE", "vers": "VEN", "d": "Régime UE visant le Venezuela (embargo sur les armes, gel d'avoirs)", "src": "https://www.sanctionsmap.eu/" },
+    { "de": "UE", "vers": "NIC", "d": "Régime UE visant des responsables du gouvernement nicaraguayen (gel d'avoirs, visas)", "src": "https://www.sanctionsmap.eu/" },
+
+    { "de": "USA", "vers": "RUS", "d": "Sanctions américaines visant la Russie (OFAC)", "src": "https://ofac.treasury.gov/sanctions-programs-and-country-information/russian-harmful-foreign-activities-sanctions" },
+    { "de": "USA", "vers": "BLR", "d": "Sanctions américaines visant le gouvernement biélorusse (OFAC, allégées en 2026)", "src": "https://www.clearygottlieb.com/news-and-insights/publication-listing/ofac-lifts-belarus-sovereign-debt-ban-eases-sanctions-on-belarusian-potash-sector" },
+    { "de": "USA", "vers": "IRN", "d": "Sanctions américaines visant l'Iran (OFAC)", "src": "https://ofac.treasury.gov/sanctions-programs-and-country-information/iran-sanctions" },
+    { "de": "USA", "vers": "PRK", "d": "Sanctions américaines visant la Corée du Nord (OFAC)", "src": "https://ofac.treasury.gov/sanctions-programs-and-country-information/north-korea-sanctions" },
+    { "de": "USA", "vers": "CUB", "d": "Embargo américain contre Cuba (OFAC)", "src": "https://ofac.treasury.gov/sanctions-programs-and-country-information/cuba-sanctions" },
+    { "de": "USA", "vers": "VEN", "d": "Sanctions américaines visant le gouvernement vénézuélien (OFAC, licences d'allègement en 2026)", "src": "https://www.faegredrinker.com/en/insights/publications/2026/3/unpacking-the-recent-changes-to-the-venezuela-sanctions-program" },
+    { "de": "USA", "vers": "NIC", "d": "Sanctions américaines visant le gouvernement nicaraguayen et son secteur aurifère (OFAC)", "src": "https://www.mining.com/web/us-mining-sanctions-take-aim-at-nicaraguas-ortega/" },
+    { "de": "USA", "vers": "MMR", "d": "Sanctions américaines visant le régime militaire birman (OFAC)", "src": "https://ofac.treasury.gov/sanctions-programs-and-country-information/burma-related-sanctions" },
+    { "de": "USA", "vers": "SDN", "d": "Sanctions américaines contre le gouvernement soudanais pour usage d'armes chimiques (exportations, crédits publics, depuis juin 2025)", "src": "https://sanctionsnews.bakermckenzie.com/additional-sanctions-on-sudan-under-the-chemical-and-biological-weapons-control-and-warfare-elimination-act/" },
+
+    { "de": "GBR", "vers": ["RUS", "BLR", "IRN", "PRK", "MMR", "VEN", "NIC"], "d": "Régime de sanctions britannique (FCDO)", "src": "https://www.gov.uk/government/collections/uk-sanctions-regimes-under-the-sanctions-act" },
+    { "de": "CAN", "vers": ["RUS", "BLR", "IRN", "PRK", "MMR", "VEN", "NIC"], "d": "Règlement canadien sur les mesures économiques spéciales", "src": "https://www.international.gc.ca/world-monde/international_relations-relations_internationales/sanctions/current-actuelles.aspx" },
+    { "de": "JPN", "vers": ["RUS", "BLR", "PRK"], "d": "Sanctions japonaises (loi sur les changes et le commerce extérieur)", "src": "https://globalinvestigationsreview.com/guide/the-guide-sanctions/seventh-edition/article/overall-regulatory-regime-in-japan-and-enforcement-actions-against-sanctions-evasion-schemes" },
+    { "de": "KOR", "vers": "RUS", "d": "Corée du Sud : transactions avec la banque centrale russe interdites depuis 2022", "src": "https://asianews.network/?p=28970" },
+    { "de": "KOR", "vers": "PRK", "d": "Corée du Sud : mesures du 24 mai 2010 (arrêt des échanges, en partie assouplies)", "src": "https://www.koreatimes.co.kr/amp/foreignaffairs/northkorea/20200522/will-south-korea-lift-2010-sanctions-against-north-korea" },
+
+    { "de": ["AUS", "NZL", "NOR", "CHE", "ISL", "LIE", "ALB", "MNE", "MKD", "SGP", "MCO"], "vers": "RUS", "d": "Sanctions nationales ou alignées sur celles de l'UE", "src": "https://www.castellum.ai/insights/which-countries-are-taking-action-on-ukraine" },
+    { "de": "UKR", "vers": "RUS", "d": "Sanctions ukrainiennes contre la Russie", "src": "https://www.castellum.ai/insights/which-countries-are-taking-action-on-ukraine" },
+
+    { "de": "RUS", "vers": ["UE", "USA", "GBR", "CAN", "JPN", "KOR", "AUS", "NZL", "NOR", "CHE", "ISL", "LIE", "ALB", "MNE", "MKD", "UKR", "SGP", "MCO", "SMR", "AND", "TWN", "FSM", "BHS"], "d": "Contre-mesures russes contre les pays « inamicaux » (ordonnance 430-r de 2022) et, pour une partie d'entre eux, embargo alimentaire prolongé jusqu'à fin 2028", "src": "https://globalsanctions.com/2026/09/russia-renews-agriculture-counter-sanctions-until-december-2028/" },
+    { "de": "BLR", "vers": ["UE", "GBR", "CAN", "AUS", "NZL", "NOR", "CHE", "ISL", "LIE", "ALB", "MNE", "MKD"], "d": "Contre-sanctions biélorusses, embargo sur des biens des pays « inamicaux » prolongé jusqu'à fin 2027", "src": "https://cargoclub.io/en/news/belarus-extends-ban-on-imports-of-certain-goods-from-unfriendly-countries-until-the-end-of-2027.html" }
+  ]
+}

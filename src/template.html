@@ -236,7 +236,7 @@ header.top .lede { color: var(--muted); max-width: 62ch; }
     <div class="head" style="display:grid;gap:6px">
       <span class="eyebrow">Sources et méthode</span>
       <h2>D'où viennent les données</h2>
-      <p>Les couleurs et les classements sont calculés à partir des chiffres publiés, sans appréciation. Commerce et proximité diplomatique sont calculés pour chaque pays du sélecteur ; présences militaires, conflits et tensions ne sont encore renseignés que pour la France, et le plafond lié aux sanctions ne s'applique qu'aux pays de l'UE. Chaque couche a sa propre date : la carte n'est pas une photographie synchrone.</p>
+      <p>Les couleurs et les classements sont calculés à partir des chiffres publiés, sans appréciation. Commerce et proximité diplomatique sont calculés pour chaque pays du sélecteur ; présences militaires, conflits et tensions ne sont encore renseignés que pour la France, et le plafond lié aux sanctions est calculé pour tous. Chaque couche a sa propre date : la carte n'est pas une photographie synchrone.</p>
     </div>
     <div class="cols">
       <div>
@@ -270,6 +270,7 @@ header.top .lede { color: var(--muted); max-width: 62ch; }
         <h3>Proximité diplomatique</h3>
         <ul>
           <li>Formule de la <a href="https://claude.ai/artifact/EvRippFyodo7pmgzxwHXe8">fiche méthode v1</a> : 60 % votes à l'ONU, 40 % organisations communes, score plafonné à 40 en cas de sanctions, à 20 si elles sont réciproques.</li>
+          <li>Sanctions, règle validée le 26/10/2026 et appliquée à chaque État : une mesure compte si c'est une sanction (gel d'avoirs, embargo, interdiction commerciale ou financière, contre-sanction officielle), adoptée par l'État lui-même et pas seulement en application de l'ONU, et si elle vise le gouvernement en place (dirigeants, armée, banque centrale, dette souveraine) ou l'économie du pays, pas seulement des personnes, des entreprises ou des groupes armés. Plafond de la paire : 40 si une mesure compte dans un sens, 20 dans les deux. Contrôles à l'export exclus (dont les interdictions chinoises vers les utilisateurs militaires japonais et américains) ; désignations « terroristes » d'armées non comptées comme réciprocité (Iran envers les armées de l'UE, février 2026). L'Inde n'applique que les sanctions de l'ONU. Sources : régimes de l'<a href="https://www.sanctionsmap.eu/">UE</a>, des <a href="https://ofac.treasury.gov/sanctions-programs-and-country-information">États-Unis (OFAC)</a>, du <a href="https://www.gov.uk/government/collections/uk-sanctions-regimes-under-the-sanctions-act">Royaume-Uni</a>, du <a href="https://www.international.gc.ca/world-monde/international_relations-relations_internationales/sanctions/current-actuelles.aspx">Canada</a>, du Japon et de la Corée du Sud, contre-mesures russes (pays « inamicaux », ordonnance 430-r) et biélorusses ; le lien de chaque mesure figure dans la fiche du pays. Vérifié le 26/10/2026, en partie à partir de sources secondaires (cabinets d'avocats, presse).</li>
           <li>Votes à l'ONU : accord de vote avec la France (kappa de Cohen oui, abstention, non, méthode Häge 2011) sur les votes disputés (minorité d'au moins 10 %), moyenne des sessions 76 à 78 (septembre 2021 à juin 2024), ramené sur 0–100 par score = (kappa + 1) / 2 × 100 : 50 = accord qui ne dépasse pas le hasard, au-dessus = vote souvent comme la France, en dessous = vote souvent à l'opposé. Échelle absolue, la même pour tous les pays focus, donc comparable d'un pays à l'autre (l'ancienne échelle relative, 100 = partenaire le plus aligné, rangeait l'Inde et le Brésil derrière la Russie). Données : <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/LEJUQZ&version=33.0">UN General Assembly Voting Data, Erik Voeten, Harvard Dataverse (version 33, juin 2024)</a>. Les sessions 79 et 80 (2024-2026) ne figurent pas dans les fichiers de votes publiés.</li>
           <li>Organisations : indice de Jaccard sur 15 organisations, membres pleins. Listes contrôlées le 26/10/2026 : Commonwealth sur la <a href="https://thecommonwealth.org/our-member-countries">liste officielle</a> ; OCS, BRICS, OTSC, OEA et ASEAN sur les articles Wikipédia et, pour le Timor oriental, sur l'<a href="https://vietnamnews.vn/politics-laws/1728144/asean-summit-47-timor-leste-officially-becomes-asean-s-11th-member.html">adhésion d'octobre 2025</a>. Francophonie : 50 États membres de plein droit sur la <a href="https://www.francophonie.org/90-etats-et-gouvernements-125">liste officielle de l'OIF</a> (90 États et gouvernements dont 53 membres, 5 associés et 32 observateurs ; associés, observateurs et gouvernements non souverains exclus) ; Chypre ajoutée, Guinée réintégrée en septembre 2024. Union africaine : 55 États sur la <a href="https://au.int/en/member_states/countryprofiles2">liste officielle de l'UA</a>, République arabe sahraouie démocratique incluse ; les États suspendus (notamment Mali, Burkina Faso, Niger, Soudan, Guinée-Bissau, Madagascar) restent comptés car toujours membres. Ligue arabe : 22 États, Syrie réintégrée en <a href="https://www.pbs.org/newshour/world/arab-league-votes-to-reinstate-syrias-membership-after-12-year-suspension">mai 2023</a> ; site officiel inaccessible, liste contrôlée sur Wikipédia. Arménie comptée dans l'OTSC (participation gelée depuis février 2024, retrait non finalisé) ; Mali, Burkina Faso et Niger retirés de la Francophonie (retrait annoncé en 2025).</li>
         </ul>
@@ -367,8 +368,9 @@ const ORGS = __ORGS__;
 const orgsOf = id => Object.keys(ORGS).filter(o => ORGS[o].includes(id));
 const shared = id => orgsOf(id).filter(o => ORGS[o].includes(FR));
 const jaccard = id => { const a = orgsOf(FR), b = orgsOf(id), inter = shared(id).length, uni = new Set([...a, ...b]).size; return uni ? Math.round(inter / uni * 100) : 0; };
-// Sanctions visant l'État : régimes UE, appliqués seulement quand le pays choisi est membre de l'UE ; « réciproque » si l'État visé a pris des contre-mesures contre l'UE
-const SANCTIONS_UE = { "643": { plafond: 20, d: "Régime UE et contre-sanctions russes (embargo alimentaire depuis 2014)" }, "112": { plafond: 20, d: "Régime UE et contre-sanctions biélorusses" }, "364": { plafond: 40, d: "Régime UE visant l'Iran" }, "408": { plafond: 40, d: "Régime UE visant la Corée du Nord" }, "104": { plafond: 40, d: "Régime UE visant le Myanmar (embargo sur les armes, gel d'avoirs)" }, "862": { plafond: 40, d: "Régime UE visant le Venezuela (embargo sur les armes, gel d'avoirs)" }, "558": { plafond: 40, d: "Régime UE visant des responsables du gouvernement nicaraguayen (gel d'avoirs, visas)" } };
+// Plafond sanctions de la paire, calculé au build depuis data/sanctions.json : 40 si une mesure vise l'État ou l'économie dans un sens, 20 dans les deux
+// m = mesures retenues, chacune avec sa source
+const sancDesc = s => s.m.map(x => `${x.d} (<a href="${x.src}" target="_blank" rel="noopener">source</a>)`).join(" ; ")
 // Votes ONU : kappa de Cohen oui/abstention/non sur les votes disputés (Häge 2011), sessions 76-78 (2021-2024),
 // ramené sur 0-100 par (kappa + 1) / 2 × 100 : échelle absolue commune à tous les pays focus, 50 = pas plus d'accord que le hasard
 const VOTES_PERIOD = "2021-2024";
@@ -392,7 +394,7 @@ function setFocus(iso) {
   const fr = iso === "FRA";
   TRADE_NOTE = fr ? TRADE_NOTE_FR : {};
   PRES = fr ? PRES_FR : []; PRES_UNPLACED = fr ? PRES_UNPLACED_FR : []; EVENTS = fr ? EVENTS_FR : [];
-  SANCTIONS = f.ue ? SANCTIONS_UE : {};
+  SANCTIONS = f.sanctions;
 }
 setFocus("FRA");
 const FN = () => FOCUS[F];
@@ -630,11 +632,11 @@ faible = peu de liens, pas forcément hostile</div>
       <div class="grp"><span class="eyebrow">Les plus proches</span><div class="list">${top.map(rowD).join("")}</div></div>
       <div class="grp"><span class="eyebrow">Les moins proches</span><div class="list">${bottom.map(rowD).join("")}</div></div>
       <div class="grp"><span class="eyebrow">${FN().nom} : ${orgsOf(FR).length} organisations sur 15</span><div style="display:flex;gap:6px;flex-wrap:wrap;padding-left:6px">${orgsOf(FR).map(o => `<span class="tag">${o}</span>`).join("")}</div></div>
-      ${FN().ue ? "" : `<p class="note"><b>Sanctions non prises en compte.</b> La règle de plafonnement porte sur les régimes de l'UE. Celle des régimes propres à ${FN().le} reste à définir : aucun score n'est plafonné ici.</p>`}
-      <div class="grp" ${FN().ue ? "" : "hidden"}><span class="eyebrow">Score plafonné par des sanctions</span><div class="list">
-      ${Object.entries(SANCTIONS).map(([id, s]) => `<div class="row" tabindex="0" data-id="${id}"><span class="n">${nom(id)}</span><span class="val">≤ ${s.plafond}</span><span class="d">${s.d}</span></div>`).join("")}
-      </div></div>
-      <div class="src">Fiche méthode des indicateurs, ${METHOD_VERSION}. Votes : UN General Assembly Voting Data (Voeten), Harvard Dataverse.${fresh("votes")} Listes d'organisations : détail dans Sources et méthode.${fresh("organisations")} Sanctions : ${srcLink("sanc")}.</div>`;
+      <div class="grp"><span class="eyebrow">Score plafonné par des sanctions</span>${Object.keys(SANCTIONS).length ? `<div class="list">
+      ${Object.entries(SANCTIONS).sort((a, b) => a[1].plafond - b[1].plafond || nom(a[0]).localeCompare(nom(b[0]), "fr")).map(([id, s]) => `<div class="row" tabindex="0" data-id="${id}"><span class="n">${nom(id)}</span><span class="val">≤ ${s.plafond}</span><span class="d">${sancDesc(s)}</span></div>`).join("")}
+      </div>` : `<p class="empty">Aucun plafond : aucune mesure retenue par la règle ne concerne ${FN().le}, dans un sens ou dans l'autre.</p>`}</div>
+      <p class="note"><b>Ce que le plafond ne compte pas.</b> Les contrôles à l'export, les droits de douane et les sanctions contre de simples personnes ou entreprises. Une rivalité comme celle entre les États-Unis et la Chine n'apparaît donc pas ici ; elle se lit dans la couche commerce.</p>
+      <div class="src">Fiche méthode des indicateurs, ${METHOD_VERSION}. Votes : UN General Assembly Voting Data (Voeten), Harvard Dataverse.${fresh("votes")} Listes d'organisations : détail dans Sources et méthode.${fresh("organisations")} Sanctions : source de chaque mesure ci-dessus, règle dans Sources et méthode.</div>`;
   }
   return h;
 }
@@ -655,9 +657,9 @@ function otherSheet(id) {
   h += `<div class="grp"><span class="eyebrow">Proximité diplomatique</span><div class="kpis">
       <div class="kpi"><span class="v">${dp.v == null ? "—" : dp.v}</span><span class="l">Votes ONU ${VOTES_PERIOD} (60 %)</span></div>
       <div class="kpi"><span class="v">${dp.j}</span><span class="l">Organisations communes (40 %)</span></div>
-      <div class="kpi"><span class="v">${!FN().ue ? "non défini" : dp.cap < 100 ? "≤ " + dp.cap : "aucun"}</span><span class="l">Plafond sanctions</span></div></div>`
+      <div class="kpi"><span class="v">${dp.cap < 100 ? "≤ " + dp.cap : "aucun"}</span><span class="l">Plafond sanctions</span></div></div>`
     + (sh.length ? `<div style="display:flex;gap:6px;flex-wrap:wrap">${sh.map(o => `<span class="tag">${o}</span>`).join("")}</div>` : `<p class="empty">Aucune organisation commune sur la liste de 15.</p>`)
-    + (SANCTIONS[id] ? `<p class="empty">${SANCTIONS[id].d}.</p>` : "")
+    + (SANCTIONS[id] ? `<p class="empty">${sancDesc(SANCTIONS[id])}.</p>` : "")
     + `<p class="empty">Score final : ${dp.score == null ? "pas de donnée de vote" : `${Math.round(dp.score)} sur 100, ${D_CLASSES[dClass(dp.score)].l.split(" (")[0].toLowerCase()}`}.</p></div>`;
   return h + `<button class="back" type="button">← Revenir à la fiche ${FN().nom}</button>`;
 }
