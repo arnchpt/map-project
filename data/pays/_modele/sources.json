@@ -17,7 +17,11 @@
       "couches": [
         "presences"
       ],
-      "notes": "Effectifs arrondis par le ministère."
+      "notes": "Effectifs arrondis par le ministère.",
+      "hotes": [
+        "exemple.gouv.xx"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "stat",
@@ -34,7 +38,11 @@
       "couches": [
         "commerce"
       ],
-      "notes": ""
+      "notes": "",
+      "hotes": [
+        "exemple.stat.xx"
+      ],
+      "acces": "non_verifie"
     },
     {
       "type": "officiel",
@@ -51,7 +59,11 @@
       "cadence": "irrégulière",
       "couches": [
         "conflits"
-      ]
+      ],
+      "hotes": [
+        "exemple.gouv.xx"
+      ],
+      "acces": "non_verifie"
     },
     {
       "type": "officiel",
@@ -68,7 +80,11 @@
       "cadence": "à chaque changement",
       "couches": [
         "politique"
-      ]
+      ],
+      "hotes": [
+        "exemple.gouv.xx"
+      ],
+      "acces": "non_verifie"
     },
     {
       "type": "officiel",
@@ -85,7 +101,11 @@
       "cadence": "à chaque élection",
       "couches": [
         "politique"
-      ]
+      ],
+      "hotes": [
+        "exemple.elections.xx"
+      ],
+      "acces": "non_verifie"
     }
   ]
 }

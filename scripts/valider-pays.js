@@ -31,6 +31,8 @@ function valider(code) {
       if (ids.has(x.id)) err.push(`${ou} : id en double`); ids.add(x.id);
       if (!/^https?:\/\//.test(x.url ?? "")) err.push(`${ou} : url invalide`);
       if (!TYPE.includes(x.type)) err.push(`${ou} : type « ${x.type} » hors liste`);
+      if (!Array.isArray(x.hotes) || !x.hotes.length || x.hotes.some(h => !/^[a-z0-9.-]+\.[a-z]{2,}$/.test(h))) err.push(`${ou} : hotes doit lister des noms d'hôte exacts`);
+      if (!["verifie", "non_verifie"].includes(x.acces)) err.push(`${ou} : acces doit valoir verifie ou non_verifie`);
       if (typeof x.api !== "boolean") err.push(`${ou} : api doit être true/false`);
       if (x.api && !x.api_url) err.push(`${ou} : api_url manquante`);
       for (const c of x.couches ?? []) if (!COUCHES.includes(c)) err.push(`${ou} : couche « ${c} » hors liste`);

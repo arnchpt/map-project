@@ -37,6 +37,8 @@ Un fichier sans données garde sa structure avec une liste vide et une note dans
 | `cadence` | fréquence de mise à jour constatée (`mensuelle`, `annuelle`, `à chaque élection`, `irrégulière`) |
 | `api`, `api_url`, `format` | `true` si un accès machine existe (API, CSV/JSON/XML stable), son URL, son format |
 | `couches` | une ou plusieurs de `presences` · `conflits` · `politique` · `commerce` · `sanctions` · `autre` |
+| `hotes` | liste des noms d'hôte exacts à joindre (`www.nsi.bg`, `api.stat.xx`), page et API comprises |
+| `acces` | `verifie` si la page a été lue et le chiffre recoupé depuis la session, sinon `non_verifie` |
 | `notes` | limites connues, écarts avec d'autres sources |
 
 ## `presences.json`
@@ -74,6 +76,14 @@ Même structure qu'une entrée de [`data/politique/politique.json`](../politique
 ## `commerce.json`
 
 Total et 10 premiers partenaires selon l'institut national, dans sa devise et son concept (`commerce spécial`, `commerce général`, FOB/CAF), sans conversion. `notes` : écarts connus avec le FMI, par partenaire (effet Rotterdam, réexportations).
+
+## Accès réseau
+
+Les sessions passent par une liste blanche de domaines exacts, que seul Arnaud modifie. Un site national bloqué ne se contourne pas (ni miroir, ni GitHub Actions, ni autre machine) :
+
+- la source est quand même documentée dans `sources.json`, avec ses `hotes` exacts et `"acces": "non_verifie"` ;
+- un fait tiré d'une source non vérifiée garde son `src` mais ne sera affiché qu'une fois l'accès vérifié ;
+- le fil d'intégration agrège les `hotes` non vérifiés des 27 pays en une seule liste, et Arnaud décide lesquels ouvrir.
 
 ## Qui écrit quoi
 
