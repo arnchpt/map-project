@@ -1,0 +1,27 @@
+{
+ "_note": "Fraîcheur de chaque couche, affichée sur la carte. donnees = période couverte, modifie = dernière fois que les chiffres ont changé, verifie = dernier contrôle de la source. alerte_jours : au-delà, la carte signale la couche comme non vérifiée. Mis à jour par scripts/refresh-trade.js et scripts/orgs-wikidata.js ; votes à la main.",
+ "commerce": {
+  "source": "FMI, IMTS",
+  "auto": true,
+  "donnees": "2025",
+  "modifie": "2026-10-26",
+  "verifie": "2026-10-26",
+  "alerte_jours": 14
+ },
+ "organisations": {
+  "source": "Listes officielles, contrôle Wikidata",
+  "auto": true,
+  "donnees": "liste du 26/10/2026",
+  "modifie": "2026-10-26",
+  "verifie": "2026-10-26",
+  "alerte_jours": 21
+ },
+ "votes": {
+  "source": "Voeten, Harvard Dataverse",
+  "auto": false,
+  "donnees": "sessions 76 à 78 (juin 2024)",
+  "modifie": "2026-10-26",
+  "verifie": "2026-10-26",
+  "alerte_jours": 400
+ }
+}
