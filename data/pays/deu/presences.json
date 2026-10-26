@@ -13,6 +13,16 @@
       "src": "litauen"
     },
     {
+      "hote": "XKX",
+      "lon": 21.2,
+      "lat": 42.6,
+      "nom": "KFOR (plafond du mandat : 400, sans échéance)",
+      "cat": "otan",
+      "eff": null,
+      "depuis": null,
+      "src": "defense"
+    },
+    {
       "hote": "BIH",
       "lon": 18.4,
       "lat": 43.9,
@@ -64,11 +74,6 @@
     }
   ],
   "non_localisees": [
-    {
-      "nom": "KFOR, Kosovo (plafond du mandat : 400, sans échéance) : pas de code ISO alpha-3 pour le Kosovo dans le contrôle",
-      "eff": "plafond 400",
-      "src": "defense"
-    },
     {
       "nom": "EUNAVFOR Aspides, mer Rouge (jusqu'au 31/10/2027)",
       "eff": "plafond 350 selon le BMVg",
