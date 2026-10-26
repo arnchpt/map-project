@@ -43,7 +43,7 @@ const SOURCES = {
   CAN: {
     nom: "Affaires mondiales Canada, liste consolidée des sanctions autonomes (LMES)",
     urls: ["https://www.international.gc.ca/world-monde/assets/office_docs/international_relations-relations_internationales/sanctions/sema-lmes.xml"],
-    lire: xmlTags("record", "Country"), min: 8,
+    lire: xmlTags("record", "Country-Pays"), min: 8,
   },
 };
 
@@ -113,10 +113,12 @@ async function telecharger(src) {
   const changed = lignes.length > 0;
   if (changed) fs.writeFileSync(path.join(root, SNAP), JSON.stringify(nouveau, null, 1) + "\n");
   fs.mkdirSync(path.join(root, "tmp"), { recursive: true });
-  fs.writeFileSync(path.join(root, "tmp/rapport-sanctions.md"), [
+  const rapport = [
     lignes.join("\n") || "Aucun changement de régime détecté.",
     echecs.length ? `### Sources en échec\n\n\`\`\`\n${echecs.join("\n")}\n\`\`\`` : "",
-  ].filter(Boolean).join("\n\n") + "\n");
+  ].filter(Boolean).join("\n\n") + "\n";
+  fs.writeFileSync(path.join(root, "tmp/rapport-sanctions.md"), rapport);
+  console.log("\n" + rapport);
   if (process.env.GITHUB_OUTPUT) fs.appendFileSync(process.env.GITHUB_OUTPUT, `changed=${changed}\n`);
   if (echecs.length) { console.error("Source(s) en échec :\n" + echecs.join("\n")); process.exit(1); }
 })().catch(e => { console.error(e.stack); process.exit(1); });
