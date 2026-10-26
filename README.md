@@ -15,9 +15,9 @@ Principe : « le contenu dicte le contexte ». Les couleurs et les scores sont c
 |---|---|
 | `src/template.html` | La page : styles, faits France (présences, conflits, sanctions UE), carte (d3 + topojson), sélecteur du pays choisi. Contient trois emplacements remplis au build. |
 | `data/names.json` | Noms de pays en français, par code ISO numérique. |
-| `data/votes/votes-<pays>.json` | Proximité des votes à l'ONU entre un pays focus et tous les autres, 0–100 (échelle absolue), produite par `scripts/votes_kappa.py`. 12 pays calculés : FRA, USA, CHN, RUS, DEU, GBR, IND, JPN, ITA, SAU, CAN, KOR. |
+| `data/votes/votes-<pays>.json` | Proximité des votes à l'ONU entre un pays focus et tous les autres, 0–100 (échelle absolue), produite par `scripts/votes_kappa.py`. 11 pays calculés : FRA, USA, CHN, RUS, DEU, GBR, IND, JPN, ITA, CAN, KOR. |
 | `scripts/build.js` | Liste les pays du sélecteur (nom, capitale, membre de l'UE) et injecte fond de carte, noms, commerce et votes dans le gabarit. |
-| `data/trade/trade-<pays>.json` | Commerce de biens d'un pays focus par partenaire, 2025 et 2024, en Md$, produit par `scripts/imts.js`. Mêmes 12 pays. |
+| `data/trade/trade-<pays>.json` | Commerce de biens d'un pays focus par partenaire, 2025 et 2024, en Md$, produit par `scripts/imts.js`. Mêmes 11 pays. |
 | `scripts/imts.js` | Interroge l'API publique du FMI (IMTS, sans clé) et écrit les échanges par partenaire. |
 | `scripts/votes_kappa.py` | Calcule l'accord de vote (kappa de Cohen, votes disputés, 3 dernières sessions) à partir de `UNVotes.RData`. |
 | `dist/index.html` | Page assemblée pour l'artifact. |
@@ -48,7 +48,7 @@ npm run build
 
 ```sh
 pip install numpy pandas pyreadr country_converter
-python3 scripts/votes_kappa.py UNVotes.RData data/votes FRA,USA,CHN,RUS,DEU,GBR,IND,JPN,ITA,SAU,CAN,KOR
+python3 scripts/votes_kappa.py UNVotes.RData data/votes FRA,USA,CHN,RUS,DEU,GBR,IND,JPN,ITA,CAN,KOR
 ```
 
 Score = (kappa + 1) / 2 × 100 : 50 = pas plus d'accord que le hasard, au-dessus = votent ensemble, en dessous = votent l'un contre l'autre. L'échelle est la même pour tous les pays focus, donc les scores se comparent d'un pays à l'autre. L'ancienne échelle relative (100 = partenaire le plus aligné du pays focus) reste disponible avec `--echelle relative`.
@@ -65,7 +65,7 @@ Score = (kappa + 1) / 2 × 100 : 50 = pas plus d'accord que le hasard, au-dessus
 
 ## Pays couverts
 
-Le sélecteur propose 12 pays : la France et les candidats au top 10 des puissances. Critère : PIB nominal 2025 (FMI, WEO d'octobre 2026) et dépenses militaires 2025 ([SIPRI, avril 2026](https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025)). États-Unis, Chine, Russie, Allemagne, Inde, Royaume-Uni, Japon et France sont dans le top 10 des deux classements. Les places 9 et 10 dépendent de la méthode (Italie, Canada, Corée du Sud ou Arabie saoudite) et restent à arrêter.
+Le sélecteur propose 11 pays, retenus le 26/10/2026 : moyenne des rangs au PIB nominal 2025 (FMI, WEO d'octobre 2026) et aux dépenses militaires 2025 ([SIPRI, avril 2026](https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025)). Dans l'ordre : États-Unis, Chine, Allemagne, Royaume-Uni, Inde, Russie (ex aequo), Japon, France, Italie, puis Canada et Corée du Sud à égalité pour la 10e place (tous deux gardés). L'Arabie saoudite suit juste après.
 
 Pour ces pays, commerce et proximité diplomatique sont calculés. Présences militaires, conflits et tensions ne sont renseignés que pour la France. Le plafond lié aux sanctions ne s'applique qu'aux pays de l'UE (France, Allemagne, Italie) : la règle pour les régimes des autres pays reste à définir.
 

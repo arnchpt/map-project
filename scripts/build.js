@@ -7,7 +7,7 @@ const read = p => fs.readFileSync(path.join(root, p), "utf8");
 
 const isoc = require("i18n-iso-countries");
 const topo = fs.readFileSync(require.resolve("world-atlas/countries-110m.json"), "utf8");
-// Pays proposés dans le sélecteur, dans l'ordre du critère du top 10 (voir README) ; le = forme avec article, du = complément
+// Pays proposés dans le sélecteur, France d’abord, puis le top 10 retenu (voir README) ; le = forme avec article, du = complément
 const FOCUS = {
   FRA: { nom: "France", le: "la France", du: "de la France", cap: [2.35, 48.86], ue: true },
   USA: { nom: "États-Unis", le: "les États-Unis", du: "des États-Unis", cap: [-77.04, 38.91] },
@@ -20,7 +20,6 @@ const FOCUS = {
   ITA: { nom: "Italie", le: "l'Italie", du: "de l'Italie", cap: [12.5, 41.9], ue: true },
   CAN: { nom: "Canada", le: "le Canada", du: "du Canada", cap: [-75.7, 45.42] },
   KOR: { nom: "Corée du Sud", le: "la Corée du Sud", du: "de la Corée du Sud", cap: [126.98, 37.57] },
-  SAU: { nom: "Arabie saoudite", le: "l'Arabie saoudite", du: "de l'Arabie saoudite", cap: [46.72, 24.71] },
 };
 // Les clés de world-atlas sont des codes ISO numériques sur 3 chiffres ("044")
 const pad = values => Object.fromEntries(Object.entries(values).map(([k, v]) => [k.padStart(3, "0"), v]));
