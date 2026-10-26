@@ -9,134 +9,196 @@
 <title>Atlas géopolitique</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
-/* Layout : carte large à gauche, fiche pays à droite ; une seule colonne sous 960px. Teintes froides d'atlas, un bleu de Prusse pour la France. */
+/* Layout : carte large à gauche, fiche pays à droite ; une seule colonne sous 960px.
+   Thème « carte ancienne » : nuit marine, filets et capitales dorés façon gravure. Un seul thème sombre, l'ornement reste en accent. */
 :root {
-  --bg: #eef1f4;
-  --surface: #ffffff;
-  --ink: #17202b;
-  --muted: #586374;
-  --line: #d6dce4;
-  --sea: #e4eaf0;
-  --land: #ccd4dd;
-  --land-edge: #f4f6f8;
-  --accent: #0f5c78;
-  --accent-soft: #d7e8ef;
-  --seq-1: #d2e3ec; --seq-2: #9fc3d6; --seq-3: #5f97b5; --seq-4: #2c6a8e; --seq-5: #0d3f5c;
-  --pos: #2f7d5b; --neg: #b5462f;
-  --mil: #9a5b0f; --mil-soft: #ecd3ad; --sov: #5b6b7f;
-  --c-engage: #b5462f; --c-retrait: #c98a1c; --c-sanction: #6a4c93; --c-soutien: #2f7d5b;
-  --f-display: "Spectral", Georgia, "Times New Roman", serif;
+  --bg: #0a1828;
+  --surface: #0f2238;
+  --ink: #f2e8cc;
+  --muted: #b9ad8d;
+  --line: #2a3f58;
+  --gold: #d8b35e;
+  --gold-dim: #8a7444;
+  --sea: #0c1d31;
+  --land: #172a41;
+  --land-edge: #6f6142;
+  --accent: #d8b35e;
+  --accent-soft: #1b3350;
+  --link: #e6c579;
+  --seq-1: #2d5075; --seq-2: #53727a; --seq-3: #8e8b63; --seq-4: #c7a656; --seq-5: #f4d88e;
+  --pos: #8fd0a2; --neg: #f39a84;
+  --mil: #e8a25a; --mil-soft: #6b4a26; --sov: #9fb3c8;
+  --c-engage: #f39a84; --c-retrait: #e9c25c; --c-sanction: #b9a2ec; --c-soutien: #8fd0a2;
+  --exp: #e6c579; --imp: #a9c3dc;
+  --tie: #74d1bf; --tie-sanc: #c4a8f2; --comet: #fff4d6;
+  --bg-glow: #10253d; --on-gold: #0a1828; --hatch-bg: #3a3220; --halo: rgba(4, 10, 20, .95);
+  --f-display: "Cinzel", "Trajan Pro", Georgia, "Times New Roman", serif;
   --f-body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
   --f-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  color-scheme: dark;
 }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
-  --bg: #10161d; --surface: #18212b; --ink: #e5eaf0; --muted: #99a5b5; --line: #2a3542;
-  --sea: #141c25; --land: #2c3846; --land-edge: #18212b; --accent: #6cbbd9; --accent-soft: #1c3644;
-  --seq-1: #1f3746; --seq-2: #2a5770; --seq-3: #3b7ea0; --seq-4: #5ea7c8; --seq-5: #9fd3ea;
-  --pos: #6cc79a; --neg: #ec8b7c; --mil: #e3a857; --mil-soft: #3a2c17; --sov: #9aa8b9;
-  --c-engage: #ec8b7c; --c-retrait: #e3b25a; --c-sanction: #b39ae0; --c-soutien: #6cc79a;
-  color-scheme: dark; } }
-:root[data-theme="dark"] {
-  --bg: #10161d; --surface: #18212b; --ink: #e5eaf0; --muted: #99a5b5; --line: #2a3542;
-  --sea: #141c25; --land: #2c3846; --land-edge: #18212b; --accent: #6cbbd9; --accent-soft: #1c3644;
-  --seq-1: #1f3746; --seq-2: #2a5770; --seq-3: #3b7ea0; --seq-4: #5ea7c8; --seq-5: #9fd3ea;
-  --pos: #6cc79a; --neg: #ec8b7c; --mil: #e3a857; --mil-soft: #3a2c17; --sov: #9aa8b9;
-  --c-engage: #ec8b7c; --c-retrait: #e3b25a; --c-sanction: #b39ae0; --c-soutien: #6cc79a;
-  color-scheme: dark; }
+/* Mode clair « parchemin » : crème, orange brûlé et pêche. Suit le réglage du système, sauf choix explicite via le bouton */
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) {
+  --bg: #f8eedc; --surface: #fffaf1; --ink: #2b1d12; --muted: #6b5442; --line: #ead7bc;
+  --gold: #a64b16; --gold-dim: #d9a477; --accent: #a64b16; --accent-soft: #fbe3cc; --link: #a3461a;
+  --sea: #f2dcc0; --land: #fffcf6; --land-edge: #c9a27a;
+  --seq-1: #f3caa3; --seq-2: #eda775; --seq-3: #e48b55; --seq-4: #c45f2b; --seq-5: #87391a;
+  --pos: #2d7a4c; --neg: #b8391f;
+  --mil: #b35a10; --mil-soft: #f5cfa3; --sov: #5f7389;
+  --c-engage: #c0392b; --c-retrait: #c98a1c; --c-sanction: #6a4c93; --c-soutien: #2f7d5b;
+  --exp: #c45f2b; --imp: #3f6f99;
+  --tie: #1f7a6c; --tie-sanc: #6a4c93; --comet: #1f7a6c;
+  --bg-glow: #fff6e8; --on-gold: #fffaf1; --hatch-bg: #f7d9bd; --halo: rgba(255, 250, 241, .95);
+  color-scheme: light; } }
+:root[data-theme="light"] {
+  --bg: #f8eedc; --surface: #fffaf1; --ink: #2b1d12; --muted: #6b5442; --line: #ead7bc;
+  --gold: #a64b16; --gold-dim: #d9a477; --accent: #a64b16; --accent-soft: #fbe3cc; --link: #a3461a;
+  --sea: #f2dcc0; --land: #fffcf6; --land-edge: #c9a27a;
+  --seq-1: #f3caa3; --seq-2: #eda775; --seq-3: #e48b55; --seq-4: #c45f2b; --seq-5: #87391a;
+  --pos: #2d7a4c; --neg: #b8391f;
+  --mil: #b35a10; --mil-soft: #f5cfa3; --sov: #5f7389;
+  --c-engage: #c0392b; --c-retrait: #c98a1c; --c-sanction: #6a4c93; --c-soutien: #2f7d5b;
+  --exp: #c45f2b; --imp: #3f6f99;
+  --tie: #1f7a6c; --tie-sanc: #6a4c93; --comet: #1f7a6c;
+  --bg-glow: #fff6e8; --on-gold: #fffaf1; --hatch-bg: #f7d9bd; --halo: rgba(255, 250, 241, .95);
+  color-scheme: light; }
 
 * { box-sizing: border-box; }
-body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.5; }
+body { background: radial-gradient(ellipse 120% 70% at 50% 0%, var(--bg-glow) 0%, var(--bg) 60%) fixed, var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.5; }
 .wrap { max-width: 1320px; margin: 0 auto; padding-block: 28px 56px;
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
   display: grid; gap: 20px; }
 h1, h2, h3 { font-family: var(--f-display); font-weight: 600; margin: 0; line-height: 1.15; text-wrap: balance; }
-h1 { font-size: clamp(28px, 4vw, 40px); }
-h2 { font-size: 26px; }
+h1 { font-size: clamp(30px, 4.6vw, 48px); font-weight: 600; letter-spacing: .04em; color: var(--gold); }
+h2 { font-size: 24px; letter-spacing: .02em; color: var(--gold); }
 h3 { font-size: 17px; font-family: var(--f-body); font-weight: 600; }
 p { margin: 0; }
-a { color: var(--accent); text-underline-offset: 2px; }
+a { color: var(--link); text-underline-offset: 2px; text-decoration-color: color-mix(in srgb, var(--link) 45%, transparent); }
+a:hover { text-decoration-color: currentColor; }
 .eyebrow { font-family: var(--f-mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .mono { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
 
-header.top { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px 24px; }
-header.top .t { display: grid; gap: 6px; }
+/* En-tête en cartouche : filets dorés doubles, titre en capitales gravées */
+header.top { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 14px 24px;
+  padding: 18px 0 16px; border-block: 3px double var(--gold-dim); }
+header.top .t { display: grid; gap: 8px; }
+header.top .eyebrow::before, header.top .eyebrow::after { content: "✦"; color: var(--gold); margin: 0 .6em; font-size: 9px; vertical-align: 1px; }
+header.top .eyebrow::before { margin-left: 0; }
 header.top .lede { color: var(--muted); max-width: 62ch; }
 
 .layers { display: flex; flex-wrap: wrap; gap: 6px; }
-.layers button { font: 500 14px var(--f-body); color: var(--ink); background: var(--surface); border: 1px solid var(--line);
-  border-radius: 999px; padding: 7px 14px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
-.layers button .sw { width: 10px; height: 10px; border-radius: 50%; }
-.layers button[aria-pressed="true"] { background: var(--ink); color: var(--surface); border-color: var(--ink); }
-.layers button:focus-visible, .btn:focus-visible, .row:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.layers button { font: 500 14px var(--f-body); color: var(--ink); background: var(--surface); border: 1px solid var(--gold-dim);
+  border-radius: 999px; padding: 7px 14px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: background .2s, color .2s, border-color .2s; }
+.layers button:hover { border-color: var(--gold); }
+.layers button .sw { width: 10px; height: 10px; border-radius: 50%; box-shadow: 0 0 0 1px rgba(0,0,0,.35); }
+.layers button[aria-pressed="true"] { background: var(--gold); color: var(--on-gold); border-color: var(--gold); }
+.layers button:focus-visible, .btn:focus-visible, .row:focus-visible, .back:focus-visible, .focus select:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 
 .main { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 20px; align-items: start; }
 @media (min-width: 961px) { .mapcard { position: sticky; top: calc(16px + env(safe-area-inset-top, 0px)); } }
 @media (max-width: 960px) { .main { grid-template-columns: minmax(0, 1fr); } }
 
-.mapcard { background: var(--sea); border: 1px solid var(--line); border-radius: 8px; position: relative; overflow: hidden; min-width: 0; }
+/* Cadre de la carte : double filet doré, comme le bord d'une planche gravée */
+.mapcard { background: var(--sea); border: 1px solid var(--gold-dim); outline: 1px solid color-mix(in srgb, var(--gold-dim) 55%, transparent); outline-offset: 3px;
+  border-radius: 2px; position: relative; overflow: hidden; min-width: 0; margin: 4px; }
 #map { display: block; width: 100%; height: auto; aspect-ratio: 1.9; max-width: 100%; touch-action: none; cursor: grab; }
 #map:active { cursor: grabbing; }
-.country { fill: var(--land); stroke: var(--land-edge); stroke-width: .5; vector-effect: non-scaling-stroke; cursor: pointer; transition: fill .15s; }
-.country:hover { filter: brightness(.93); }
-.country.fr { fill: var(--accent) !important; }
-.country.sel { stroke: var(--ink); stroke-width: 1.6; }
-.flow { fill: none; stroke: var(--accent); stroke-opacity: .55; stroke-linecap: round; pointer-events: none; vector-effect: non-scaling-stroke; }
-.pin { stroke: var(--surface); stroke-width: 1.2; vector-effect: non-scaling-stroke; cursor: pointer; }
-.pin.mil { fill: var(--mil); fill-opacity: .85; }
-.pin.sov { fill: var(--sov); fill-opacity: .8; }
+.grat { fill: none; stroke: var(--gold); stroke-opacity: .13; stroke-width: .5; vector-effect: non-scaling-stroke; pointer-events: none; }
+.rhumb { stroke: var(--gold); stroke-opacity: .12; stroke-width: .5; vector-effect: non-scaling-stroke; pointer-events: none; }
+.sphere-edge { fill: none; stroke: var(--gold-dim); stroke-width: 1; vector-effect: non-scaling-stroke; pointer-events: none; }
+.country { fill: var(--land); stroke: var(--land-edge); stroke-width: .5; vector-effect: non-scaling-stroke; cursor: pointer; transition: fill .35s; }
+.country:hover { filter: brightness(1.25); }
+.country.fr { fill: url(#hatch) !important; stroke: var(--gold); stroke-width: 1.1; }
+.country.sel { stroke: var(--ink); stroke-width: 1.8; }
+/* Liaisons : arc fixe, puis points qui circulent (or = exportations vers le partenaire, bleu pâle = importations) */
+.flows { filter: drop-shadow(0 0 1.5px var(--halo)); }
+.flow { fill: none; stroke: var(--gold); stroke-opacity: .6; stroke-linecap: round; pointer-events: none; transition: stroke-opacity .3s; }
+/* Couleur de l'arc = sens de la liaison : solde commercial (vert excédent, corail déficit), proximité (vert-de-gris) ou sanctions (violet) */
+.flow.surplus { stroke: var(--pos); } .flow.deficit { stroke: var(--neg); }
+.flow.dipl { stroke: var(--tie); stroke-opacity: .9; }
+.flow.sanc { stroke: var(--tie-sanc); stroke-opacity: .9; stroke-dasharray: 2 3; }
+.flows.dim .flow { stroke-opacity: .16; }
+.flows.dim .flow.hl { stroke-opacity: .95; }
+.pulse { fill: none; stroke-linecap: round; pointer-events: none; }
+.pulse.x { stroke: var(--exp); stroke-dasharray: 0 14; animation: run 1.6s linear infinite; }
+.pulse.m { stroke: var(--imp); stroke-dasharray: 0 14; stroke-dashoffset: 7; animation: run-back 1.6s linear infinite; }
+.pulse.d { stroke: var(--comet); stroke-dasharray: 6 120; animation: comet 3.2s ease-in-out infinite; }
+.flows.dim .pulse { opacity: .25; }
+.flows.dim .pulse.hl { opacity: 1; }
+@keyframes run { to { stroke-dashoffset: -14; } }
+@keyframes run-back { from { stroke-dashoffset: 7; } to { stroke-dashoffset: 21; } }
+@keyframes comet { from { stroke-dashoffset: 6; } to { stroke-dashoffset: -120; } }
+.pin { stroke: var(--bg); stroke-width: 1.2; vector-effect: non-scaling-stroke; cursor: pointer; }
+.pin.mil { fill: var(--mil); fill-opacity: .9; }
+.pin.sov { fill: var(--sov); fill-opacity: .85; }
 .focus { display: inline-flex; gap: 8px; align-items: center; font-size: 14px; color: var(--muted); }
-.focus select { font: 500 14px var(--f-body); color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 4px 8px; }
-.paris { fill: var(--surface); stroke: var(--accent); stroke-width: 2; vector-effect: non-scaling-stroke; pointer-events: none; }
+.focus select { font: 600 15px var(--f-body); color: var(--ink); background: var(--surface); border: 1px solid var(--gold-dim); border-radius: 4px; padding: 5px 10px; }
+.paris { fill: var(--gold); stroke: var(--bg); stroke-width: 1.5; vector-effect: non-scaling-stroke; pointer-events: none; }
+.paris-ring { fill: none; stroke: var(--gold); stroke-width: 1; vector-effect: non-scaling-stroke; pointer-events: none; transform-box: fill-box; transform-origin: center; animation: ring 2.8s ease-out infinite; }
+@keyframes ring { from { transform: scale(1); opacity: .9; } to { transform: scale(4.5); opacity: 0; } }
+.rose { position: absolute; right: 12px; bottom: 12px; width: clamp(56px, 9vw, 96px); height: auto; pointer-events: none; opacity: .8; }
 
+.theme { justify-self: start; font: 500 13px var(--f-body); background: var(--surface); border: 1px solid var(--gold-dim); border-radius: 99px; padding: 4px 12px; color: var(--ink); cursor: pointer; }
+.theme:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 .zoom { position: absolute; right: 10px; top: 10px; display: grid; gap: 4px; }
-.btn { font: 600 15px var(--f-body); width: 32px; height: 32px; border-radius: 6px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
-.legend { position: absolute; left: 10px; bottom: 10px; background: color-mix(in srgb, var(--surface) 92%, transparent); border: 1px solid var(--line);
-  border-radius: 6px; padding: 8px 10px; font-size: 12.5px; display: grid; gap: 5px; max-width: calc(100% - 20px); }
-.legend .ttl { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.btn { font: 600 15px var(--f-body); width: 32px; height: 32px; border-radius: 3px; border: 1px solid var(--gold-dim); background: var(--surface); color: var(--gold); cursor: pointer; }
+.btn:hover { border-color: var(--gold); }
+.legend { position: absolute; left: 10px; bottom: 10px; background: color-mix(in srgb, var(--surface) 94%, transparent); border: 1px solid var(--gold-dim);
+  border-radius: 3px; padding: 8px 11px; font-size: 12.5px; display: grid; gap: 5px; max-width: calc(100% - 130px); }
+.legend .ttl { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--gold); }
 .legend .items { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: center; }
 .legend .it { display: inline-flex; align-items: center; gap: 6px; }
-.legend .ramp { display: flex; height: 8px; width: 140px; border-radius: 2px; overflow: hidden; }
+.legend .ramp { display: flex; height: 8px; width: 140px; border-radius: 1px; overflow: hidden; outline: 1px solid var(--gold-dim); }
 .legend .ramp span { flex: 1; }
+.legend .hatch { background: repeating-linear-gradient(45deg, var(--gold) 0 1.5px, var(--hatch-bg) 1.5px 4px); outline: 1px solid var(--gold); }
+.legend .ln { display: inline-block; width: 22px; height: 0; border-top: 2px solid var(--gold); opacity: .8; }
+.legend .ln.tie { border-color: var(--tie); } .legend .ln.sanc { border-top-style: dashed; border-color: var(--tie-sanc); }
+.legend .ln.pos { border-color: var(--pos); } .legend .ln.neg { border-color: var(--neg); }
 .sw { display: inline-block; width: 11px; height: 11px; border-radius: 2px; flex: none; }
 .dot { display: inline-block; width: 11px; height: 11px; border-radius: 50%; flex: none; }
-@media (max-width: 600px) { .legend { position: static; border: 0; border-top: 1px solid var(--line); border-radius: 0; max-width: none; } }
+@media (max-width: 600px) { .legend { position: static; border: 0; border-top: 1px solid var(--gold-dim); border-radius: 0; max-width: none; } .rose { width: 48px; top: 10px; left: 10px; right: auto; bottom: auto; } }
 
-.tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--surface); font-size: 13px; padding: 6px 9px; border-radius: 5px; max-width: 240px; line-height: 1.35; z-index: 5; }
+.tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--surface); font-size: 13px; padding: 6px 9px; border-radius: 3px; border: 1px solid var(--gold); max-width: 240px; line-height: 1.35; z-index: 5; box-shadow: 0 4px 14px rgba(0,0,0,.45); }
 .tip b { font-weight: 600; }
 
-.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 20px; display: grid; gap: 18px; min-width: 0; }
-.panel .head { display: grid; gap: 4px; }
+.panel { background: var(--surface); border: 1px solid var(--gold-dim); border-radius: 3px; padding: 20px; display: grid; gap: 18px; min-width: 0; }
+.panel .head { display: grid; gap: 4px; padding-bottom: 12px; border-bottom: 3px double var(--line); }
 .panel .sub { color: var(--muted); font-size: 14px; }
 .kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
-.kpi { display: grid; gap: 2px; padding: 10px 0; border-top: 2px solid var(--line); }
+.kpi { display: grid; gap: 2px; padding: 10px 0; border-top: 1px solid var(--gold-dim); }
 .kpi .v { font-family: var(--f-mono); font-size: 19px; font-weight: 500; font-variant-numeric: tabular-nums; }
 .kpi .l { font-size: 12.5px; color: var(--muted); }
 .neg { color: var(--neg); } .pos { color: var(--pos); }
 .list { display: grid; gap: 2px; }
-.row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 10px; padding: 8px 6px; border-radius: 6px; cursor: pointer; align-items: center; }
+.row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 10px; padding: 8px 6px; border-radius: 3px; cursor: pointer; align-items: center; }
 .row:hover { background: var(--accent-soft); }
 .row .n { font-weight: 500; min-width: 0; }
 .row .d { font-size: 13px; color: var(--muted); grid-column: 1 / -1; }
 .row .val { font-family: var(--f-mono); font-size: 13px; font-variant-numeric: tabular-nums; text-align: right; }
 .bars { grid-column: 1 / -1; display: grid; gap: 3px; }
-.bar { height: 6px; border-radius: 3px; }
-.bar.x { background: var(--accent); } .bar.m { background: var(--muted); opacity: .55; }
-.tag { display: inline-flex; align-items: center; gap: 6px; font-family: var(--f-mono); font-size: 11px; letter-spacing: .03em; padding: 2px 8px; border-radius: 99px; border: 1px solid var(--line); color: var(--muted); white-space: nowrap; }
+.bar { height: 6px; border-radius: 1px; }
+.bar.x { background: var(--exp); } .bar.m { background: var(--imp); opacity: .75; }
+.tag { display: inline-flex; align-items: center; gap: 6px; font-family: var(--f-mono); font-size: 11px; letter-spacing: .03em; padding: 2px 8px; border-radius: 99px; border: 1px solid var(--gold-dim); color: var(--muted); white-space: nowrap; }
 .grp { display: grid; gap: 6px; }
 .grp > .eyebrow { padding-left: 6px; }
 .src { font-size: 12.5px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 12px; display: grid; gap: 4px; }
-.note { font-size: 13.5px; color: var(--muted); background: var(--bg); border-radius: 6px; padding: 10px 12px; }
-.back { justify-self: start; font: 500 13.5px var(--f-body); background: none; border: 1px solid var(--line); border-radius: 99px; padding: 5px 12px; color: var(--ink); cursor: pointer; }
+.note { font-size: 13.5px; color: var(--muted); background: var(--bg); border-left: 2px solid var(--gold-dim); border-radius: 2px; padding: 10px 12px; }
+.back { justify-self: start; font: 500 13.5px var(--f-body); background: none; border: 1px solid var(--gold-dim); border-radius: 99px; padding: 5px 12px; color: var(--ink); cursor: pointer; }
 .empty { color: var(--muted); font-size: 14px; }
 
-.method { display: grid; gap: 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 20px 22px; }
+.method { display: grid; gap: 14px; background: var(--surface); border: 1px solid var(--gold-dim); border-radius: 3px; padding: 20px 22px; }
 .method .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px 28px; }
 .method .cols > div { display: grid; gap: 6px; align-content: start; min-width: 0; }
+.method h3 { color: var(--gold); }
 .method ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; font-size: 14px; }
 .method p { font-size: 14px; color: var(--muted); max-width: 75ch; }
-@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+/* Mouvement réduit : arcs et points immobiles (or et bleu alternés), pas de tracé progressif ni d'onde autour de la capitale */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+  .pulse.d, .paris-ring { display: none; }
+}
 .stale { font-family: var(--f-mono); font-size: 11px; padding: 1px 6px; border-radius: 99px; border: 1px solid var(--mil); color: var(--mil); white-space: nowrap; }
 </style>
 
@@ -146,7 +208,8 @@ header.top .lede { color: var(--muted); max-width: 62ch; }
       <span class="eyebrow">Prototype · données au 26 octobre 2026</span>
       <h1>Atlas géopolitique</h1>
       <p class="lede">Choisissez une couche, puis cliquez sur un pays pour voir sa relation avec le pays choisi. Chaque chiffre renvoie à sa source.</p>
-      <label class="focus">Pays choisi <select id="focus"></select></label>
+      <div style="display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center"><label class="focus">Pays choisi <select id="focus"></select></label>
+      <button type="button" class="theme" id="theme" aria-label="Changer de thème">Thème clair</button></div>
     </div>
     <nav class="layers" aria-label="Couches de la carte">
       <button type="button" data-layer="trade" aria-pressed="true"><span class="sw" style="background:var(--seq-4)"></span>Commerce</button>
@@ -158,12 +221,19 @@ header.top .lede { color: var(--muted); max-width: 62ch; }
 
   <div class="main">
     <div class="mapcard" id="mapcard">
-      <svg id="map" viewBox="0 0 960 505" role="img" aria-label="Carte du monde interactive"></svg>
+      <svg id="map" viewBox="0 0 960 505" role="img" aria-label="Carte du monde interactive">
+        <defs><pattern id="hatch" patternUnits="userSpaceOnUse" width="3" height="3" patternTransform="rotate(45)"><rect width="3" height="3" style="fill:var(--hatch-bg)"/><rect width="1.3" height="3" style="fill:var(--gold)"/></pattern></defs>
+      </svg>
       <div class="zoom">
         <button class="btn" id="zin" type="button" aria-label="Zoomer">+</button>
         <button class="btn" id="zout" type="button" aria-label="Dézoomer">−</button>
         <button class="btn" id="zreset" type="button" aria-label="Recentrer" style="font-size:13px">⟲</button>
       </div>
+      <svg class="rose" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+        <circle cx="50" cy="50" r="38" fill="none" stroke="var(--gold)" stroke-width=".6"/><circle cx="50" cy="50" r="35" fill="none" stroke="var(--gold)" stroke-width=".4" stroke-dasharray="1 2"/>
+        <path d="M50,50L52.8,51.1L58.4,29.7Z" fill="var(--gold)"/><path d="M50,50L47.2,48.9L58.4,29.7Z" fill="var(--bg)" stroke="var(--gold)" stroke-width=".6"/><path d="M50,50L51.1,52.8L70.3,41.6Z" fill="var(--gold)"/><path d="M50,50L48.9,47.2L70.3,41.6Z" fill="var(--bg)" stroke="var(--gold)" stroke-width=".6"/><path d="M50,50L48.9,52.8L70.3,58.4Z" fill="var(--gold)"/><path d="M50,50L51.1,47.2L70.3,58.4Z" fill="var(--bg)" stroke="var(--gold)" stroke-width=".6"/><path d="M50,50L47.2,51.1L58.4,70.3Z" fill="var(--gold)"/><path d="M50,50L52.8,48.9L58.4,70.3Z" fill="var(--bg)" stroke="var(--gold)" stroke-width=".6"/><path d="M50,50L47.2,48.9L41.6,70.3Z" fill="var(--gold)"/><path d="M50,50L52.8,51.1L41.6,70.3Z" fill="var(--bg)" stroke="var(--gold)" stroke-width=".6"/><path d="M50,50L48.9,47.2L29.7,58.4Z" fill="var(--gold)"/><path d="M50,50L51.1,52.8L29.7,58.4Z" fill="var(--bg)" stroke="var(--gold)" stroke-width=".6"/><path d="M50,50L51.1,47.2L29.7,41.6Z" fill="var(--gold)"/><path d="M50,50L48.9,52.8L29.7,41.6Z" fill="var(--bg)" stroke="var(--gold)" stroke-width=".6"/><path d="M50,50L52.8,48.9L41.6,29.7Z" fill="var(--gold)"/><path d="M50,50L47.2,51.1L41.6,29.7Z" fill="var(--bg)" stroke="var(--gold)" stroke-width=".6"/><path d="M50,50L53.5,53.5L72.6,27.4Z" fill="var(--gold)"/><path d="M50,50L46.5,46.5L72.6,27.4Z" fill="var(--bg)" stroke="var(--gold)" stroke-width=".6"/><path d="M50,50L46.5,53.5L72.6,72.6Z" fill="var(--gold)"/><path d="M50,50L53.5,46.5L72.6,72.6Z" fill="var(--bg)" stroke="var(--gold)" stroke-width=".6"/><path d="M50,50L46.5,46.5L27.4,72.6Z" fill="var(--gold)"/><path d="M50,50L53.5,53.5L27.4,72.6Z" fill="var(--bg)" stroke="var(--gold)" stroke-width=".6"/><path d="M50,50L53.5,46.5L27.4,27.4Z" fill="var(--gold)"/><path d="M50,50L46.5,53.5L27.4,27.4Z" fill="var(--bg)" stroke="var(--gold)" stroke-width=".6"/><path d="M50,50L57.0,50.0L50.0,4.0Z" fill="var(--gold)"/><path d="M50,50L43.0,50.0L50.0,4.0Z" fill="var(--bg)" stroke="var(--gold)" stroke-width=".6"/><path d="M50,50L50.0,57.0L96.0,50.0Z" fill="var(--gold)"/><path d="M50,50L50.0,43.0L96.0,50.0Z" fill="var(--bg)" stroke="var(--gold)" stroke-width=".6"/><path d="M50,50L43.0,50.0L50.0,96.0Z" fill="var(--gold)"/><path d="M50,50L57.0,50.0L50.0,96.0Z" fill="var(--bg)" stroke="var(--gold)" stroke-width=".6"/><path d="M50,50L50.0,43.0L4.0,50.0Z" fill="var(--gold)"/><path d="M50,50L50.0,57.0L4.0,50.0Z" fill="var(--bg)" stroke="var(--gold)" stroke-width=".6"/><circle cx="50" cy="50" r="2.2" fill="var(--gold)"/>
+        <text x="50" y="5.5" text-anchor="middle" font-family="Cinzel, serif" font-size="8" fill="var(--gold)">N</text>
+      </svg>
       <div class="legend" id="legend"></div>
       <div class="tip" id="tip" hidden></div>
     </div>
@@ -372,21 +442,28 @@ const byId = new Map(countries.map(f => [f.key, f]));
 const proj = d3.geoNaturalEarth1().fitExtent([[8, 8], [W - 8, H - 8]], { type: "Sphere" });
 const path = d3.geoPath(proj);
 const g = svg.append("g");
+const REDUCED = matchMedia("(prefers-reduced-motion: reduce)");
 g.append("path").datum({ type: "Sphere" }).attr("d", path).attr("fill", "var(--sea)");
+// Ornements de portulan : graticule tous les 10°, lignes de rhumb rayonnant depuis la capitale du pays choisi
+g.append("path").datum(d3.geoGraticule10()).attr("class", "grat").attr("d", path);
+const gRhumb = g.append("g");
 const cPaths = g.append("g").selectAll("path").data(countries).join("path")
   .attr("class", "country").attr("d", path)
   .attr("tabindex", -1)
   .on("click", (e, d) => select(d.key))
   .on("mousemove", (e, d) => showTip(e, d.key))
   .on("mouseleave", hideTip);
-const gFlows = g.append("g"), gPins = g.append("g");
+g.append("path").datum({ type: "Sphere" }).attr("class", "sphere-edge").attr("d", path);
+const gFlows = g.append("g").attr("class", "flows"), gPins = g.append("g");
+g.append("circle").attr("class", "paris-ring").attr("r", 3.5);
 g.append("circle").attr("class", "paris").attr("r", 3.5);
 
 let k = 1;
 const zoom = d3.zoom().scaleExtent([1, 8]).translateExtent([[0, 0], [W, H]]).on("zoom", e => {
   k = e.transform.k; g.attr("transform", e.transform);
   gPins.selectAll("circle").attr("r", d => d.r / Math.sqrt(k));
-  g.select(".paris").attr("r", 3.5 / Math.sqrt(k));
+  g.selectAll(".paris, .paris-ring").attr("r", 3.5 / Math.sqrt(k));
+  gFlows.selectAll("path").attr("stroke-width", d => d.w / k);
 });
 svg.call(zoom);
 d3.select("#zin").on("click", () => svg.transition().call(zoom.scaleBy, 1.6));
@@ -418,19 +495,12 @@ function fillFor(id) {
 function render() {
   document.querySelectorAll(".layers button").forEach(b => b.setAttribute("aria-pressed", b.dataset.layer === layer));
   cPaths.style("fill", d => fillFor(d.key)).classed("sel", d => d.key === sel && sel !== FR).classed("fr", d => d.key === FR);
-  g.select(".paris").attr("transform", `translate(${proj(PARIS)})`);
-
-  // Flux commerciaux
-  const flows = layer === "trade" ? TOP.map(id => ({ id, v: TRADE[id].x + TRADE[id].m })) : [];
-  const wScale = d3.scaleSqrt().domain([0, Math.max(220, d3.max(flows, d => d.v) || 0)]).range([0, 7]);
-  gFlows.selectAll("path").data(flows, d => d.id).join("path").attr("class", "flow")
-    .attr("stroke-width", d => wScale(d.v))
-    .attr("d", d => {
-      const f = byId.get(d.id); if (!f) return null;
-      const a = proj(PARIS), b = path.centroid(f);
-      const mx = (a[0] + b[0]) / 2, my = (a[1] + b[1]) / 2 - Math.hypot(b[0] - a[0], b[1] - a[1]) * 0.25;
-      return `M${a}Q${mx},${my} ${b}`;
-    });
+  const cap = proj(PARIS);
+  g.selectAll(".paris, .paris-ring").attr("transform", `translate(${cap})`);
+  gRhumb.selectAll("line").data(d3.range(32)).join("line").attr("class", "rhumb")
+    .attr("x1", cap[0]).attr("y1", cap[1])
+    .attr("x2", i => cap[0] + 1400 * Math.cos(i * Math.PI / 16)).attr("y2", i => cap[1] + 1400 * Math.sin(i * Math.PI / 16));
+  renderFlows();
 
   // Points de présence
   const pins = layer === "mil" ? PRES.map(p => ({ ...p, r: Math.max(4, Math.sqrt(p.eff) / 4.2) })) : [];
@@ -445,12 +515,71 @@ function render() {
   renderLegend(); renderPanel();
 }
 
+// Liaisons depuis la capitale du pays choisi : commerce (11 premiers partenaires) ou proximité diplomatique (10 plus proches).
+// Le pays sélectionné reçoit toujours son arc, mis en avant ; arcs tracés progressivement sauf mouvement réduit.
+const N_DIPL = 10;
+let lastFlowKey = "";
+function arcPath(id) {
+  const f = byId.get(id); if (!f) return null;
+  const a = proj(PARIS), b = path.centroid(f);
+  if (!isFinite(b[0])) return null;
+  const mx = (a[0] + b[0]) / 2, my = (a[1] + b[1]) / 2 - Math.hypot(b[0] - a[0], b[1] - a[1]) * 0.25;
+  return `M${a}Q${mx},${my} ${b}`;
+}
+function renderFlows() {
+  let flows = [];
+  if (layer === "trade") {
+    const ids = TOP.includes(sel) || sel === FR || !TRADE[sel] || TRADE[sel].x == null ? TOP : [...TOP, sel];
+    const wScale = d3.scaleSqrt().domain([0, Math.max(220, d3.max(ids, id => TRADE[id].x + TRADE[id].m) || 0)]).range([0, 7]);
+    flows = ids.map(id => ({ id, kind: "trade", cls: TRADE[id].x >= TRADE[id].m ? "surplus" : "deficit", w: Math.max(.8, wScale(TRADE[id].x + TRADE[id].m)) }));
+  }
+  if (layer === "dipl") {
+    const scored = countries.filter(c => c.key !== FR).map(c => ({ id: c.key, sc: diplo(c.key).score })).filter(r => r.sc != null).sort((a, b) => b.sc - a.sc);
+    const ids = scored.slice(0, N_DIPL);
+    const s = scored.find(r => r.id === sel);
+    if (s && !ids.includes(s)) ids.push(s);
+    // Liens étroits (vert-de-gris) et liens plafonnés par des sanctions (violet), quand le pays choisi en applique
+    for (const id of Object.keys(SANCTIONS)) { const r = scored.find(r => r.id === id); if (r && !ids.includes(r)) ids.push(r); }
+    flows = ids.map(r => SANCTIONS[r.id] ? { id: r.id, kind: "dipl", cls: "sanc", w: 1.4 } : { id: r.id, kind: "dipl", cls: "dipl", w: .8 + r.sc / 35 });
+  }
+  flows = flows.map(d => ({ ...d, d: arcPath(d.id) })).filter(d => d.d);
+  const hl = sel !== FR && flows.some(d => d.id === sel);
+  gFlows.classed("dim", hl);
+  // Chaque liaison : un arc, puis une ou deux couches de points animés
+  const items = flows.flatMap(d => d.kind === "trade"
+    ? [{ ...d, key: d.id + "a", cls: "flow " + d.cls }, { ...d, key: d.id + "x", cls: "pulse x", w: Math.max(1.6, d.w * .55) }, { ...d, key: d.id + "m", cls: "pulse m", w: Math.max(1.6, d.w * .55) }]
+    : [{ ...d, key: d.id + "a", cls: "flow " + d.cls }, ...(d.cls === "sanc" ? [] : [{ ...d, key: d.id + "c", cls: "pulse d", w: Math.max(1.4, d.w * .9) }])]);
+  const paths = gFlows.selectAll("path").data(items, d => d.key).join("path")
+    .attr("class", d => d.cls).classed("hl", d => d.id === sel)
+    .attr("d", d => d.d).attr("stroke-width", d => d.w / k);
+  // Tracé progressif à chaque changement de couche ou de pays choisi, pas à chaque clic
+  const key = layer + F;
+  if (key !== lastFlowKey && !REDUCED.matches) {
+    // Arcs de commerce : tracé du trait ; arcs diplomatiques (pointillés) : apparition en fondu
+    paths.filter(".flow").each(function (d, i) {
+      const el = d3.select(this), len = this.getTotalLength();
+      const t = d.kind === "dipl"
+        ? el.style("opacity", 0).transition().delay(i * 70).duration(700).style("opacity", 1)
+        : el.attr("stroke-dasharray", `${len} ${len}`).attr("stroke-dashoffset", len).transition().delay(i * 60).duration(900).ease(d3.easeCubicOut).attr("stroke-dashoffset", 0);
+      t.on("end", () => el.attr("stroke-dasharray", null).attr("stroke-dashoffset", null).style("opacity", null));
+    });
+    paths.filter(".pulse").style("opacity", 0).transition().delay((d, i) => 600 + i * 15).duration(500).style("opacity", 1)
+      .on("end", function () { d3.select(this).style("opacity", null); });
+  }
+  lastFlowKey = key;
+}
+
 function renderLegend() {
   const L = document.getElementById("legend");
-  if (layer === "trade") L.innerHTML = `<span class="ttl">Échanges de biens avec ${FN().le}, 2025 (Md$)</span>
+  if (layer === "trade") L.innerHTML = `<span class="ttl">Échanges de biens avec ${FN().le}, ${TY} (Md$)</span>
     <div class="items"><span class="ramp">${tradeSeq.map(v => `<span style="background:var(${v})"></span>`).join("")}</span>
     <span class="mono" style="font-size:11.5px">${tradeBins[0]} → ${tradeBins[4]}</span>
-    <span class="it"><span class="sw" style="background:var(--land)"></span>pas de donnée</span></div>`;
+    <span class="it"><span class="sw" style="background:var(--land);outline:1px solid var(--land-edge)"></span>pas de donnée</span>
+    <span class="it"><span class="sw hatch"></span>${FN().nom}</span></div>
+    <div class="items"><span class="it"><span class="dot" style="background:var(--exp)"></span>exportations</span>
+    <span class="it"><span class="dot" style="background:var(--imp)"></span>importations</span>
+    <span class="it"><span class="ln pos"></span>excédent</span><span class="it"><span class="ln neg"></span>déficit</span>
+    <span class="it">épaisseur = volume</span></div>`;
   if (layer === "mil" && F !== "FRA") L.innerHTML = `<span class="ttl">Présences militaires : pas encore renseignées pour ${FN().le}</span>`;
   else if (layer === "mil") L.innerHTML = `<span class="ttl">Militaires français déployés, sept. 2026</span>
     <div class="items"><span class="it"><span class="dot" style="background:var(--mil)"></span>À l'étranger</span>
@@ -462,7 +591,9 @@ function renderLegend() {
     <div class="items">${Object.values(KIND).map(v => `<span class="it"><span class="sw" style="background:${v.c}"></span>${v.l}</span>`).join("")}</div>`;
   if (layer === "dipl") L.innerHTML = `<span class="ttl">Proximité diplomatique avec ${FN().le}, score 0–100</span>
     <div class="items">${D_CLASSES.map(d => `<span class="it"><span class="sw" style="background:var(${d.c})"></span>${d.l}</span>`).join("")}
-    <span class="it"><span class="sw" style="background:var(--land)"></span>pas de donnée</span></div>
+    <span class="it"><span class="sw" style="background:var(--land);outline:1px solid var(--land-edge)"></span>pas de donnée</span>
+    <span class="it"><span class="ln tie"></span>${N_DIPL} pays les plus proches</span>
+    ${Object.keys(SANCTIONS).length ? `<span class="it"><span class="ln sanc"></span>score plafonné par des sanctions</span>` : ""}</div>
     <span style="color:var(--muted)">Votes ONU ${VOTES_PERIOD} (60 %), organisations communes (40 %), plafond en cas de sanctions.</span>`;
 }
 
@@ -492,7 +623,7 @@ function franceSheet() {
         <span class="val ${s >= 0 ? "pos" : "neg"}">${signed(s)}</span>
         <span class="bars"><span class="bar x" style="width:${t.x / max * 100}%"></span><span class="bar m" style="width:${t.m / max * 100}%"></span></span></div>`; }).join("")}
       </div></div>
-      <p class="note">Barre bleue : exportations. Barre grise : importations. Le chiffre à droite est le solde en Md$. Les services (tourisme, numérique) ne sont pas comptés.</p>
+      <p class="note">Barre du haut : exportations. Barre du bas : importations. Le chiffre à droite est le solde en Md$. Les services (tourisme, numérique) ne sont pas comptés.</p>
       ${F === "FRA" ? `<p class="note"><b>Lecture.</b> Un produit chinois dédouané à Rotterdam ou Anvers apparaît très probablement ici comme un achat aux Pays-Bas ou à la Belgique (« effet Rotterdam »). Les Douanes françaises comptent 74,9 Md€ d'importations depuis la Chine (Hong Kong inclus) en 2025, contre 51,9 Md$ ici.</p>` : ""}
       <div class="src">Source : ${srcLink("imf")}. Exportations FOB, importations CIF, déclarées par ${FN().le}.${fresh("commerce")}${F === "FRA" ? ` Comparaison : ${srcLink("tresor")}.` : ""}${F === "RUS" ? " La Russie ne publie plus le détail de son commerce depuis 2022 : ces chiffres sont probablement estimés par le FMI à partir des déclarations de ses partenaires." : ""}</div>`;
   }
@@ -599,6 +730,13 @@ const FSEL = document.getElementById("focus");
 FSEL.innerHTML = Object.entries(FOCUS).map(([iso, f]) => `<option value="${iso}">${f.nom}</option>`).join("");
 FSEL.value = F;  // le sélecteur reste la seule façon de changer de pays choisi
 FSEL.addEventListener("change", () => { setFocus(FSEL.value); sel = FR; render(); });
+// Thème : suit le système par défaut, le bouton force l'autre thème (mémorisé si le navigateur le permet)
+const TB = document.getElementById("theme"), root = document.documentElement;
+const isLight = () => (root.dataset.theme || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark")) === "light";
+const syncTheme = () => { TB.textContent = isLight() ? "Thème sombre" : "Thème clair"; };
+try { const t = localStorage.getItem("atlas-theme"); if (t) root.dataset.theme = t; } catch (e) {}
+TB.addEventListener("click", () => { root.dataset.theme = isLight() ? "dark" : "light"; try { localStorage.setItem("atlas-theme", root.dataset.theme); } catch (e) {} syncTheme(); });
+syncTheme();
 render();
 </script>
 
