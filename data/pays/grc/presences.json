@@ -1,0 +1,40 @@
+{
+  "pays": "GRC",
+  "verifie": "2026-10-26",
+  "presences": [
+    {
+      "hote": "CYP",
+      "lon": 33.2,
+      "lat": 35.1,
+      "nom": "Force hellénique à Chypre (ΕΛΔΥΚ)",
+      "cat": "pre",
+      "eff": null,
+      "depuis": null,
+      "src": "mae_chypre"
+    },
+    {
+      "hote": "SAU",
+      "lon": 38.1,
+      "lat": 24.1,
+      "nom": "Batterie de défense aérienne Patriot à Yanbou",
+      "cat": "pre",
+      "eff": null,
+      "depuis": "2021-09",
+      "src": "presse_patriot"
+    },
+    {
+      "hote": "LBN",
+      "lon": 35.1,
+      "lat": 33.3,
+      "nom": "FINUL, Force navale (une frégate)",
+      "cat": "onu",
+      "eff": null,
+      "depuis": null,
+      "src": "mae_onu"
+    }
+  ],
+  "non_localisees": [
+    { "nom": "KFOR (OTAN, Kosovo) : le code XKX n'est pas accepté par le contrôle, point non localisé", "eff": "121 (février 2026)", "src": "nato_kfor" },
+    { "nom": "EUNAVFOR Aspides (UE, mer Rouge) : quartier général d'opération à Larissa et commandement, frégate HS Psara en juillet 2026", "eff": "non publié", "src": "eeas_aspides" }
+  ]
+}
