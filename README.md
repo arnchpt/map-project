@@ -51,4 +51,4 @@ python3 scripts/votes_kappa.py UNVotes.RData data/votes-fra.json
 - La remise à l'échelle 0–100 des votes classe 120 pays « éloignés » ; à revoir dans la fiche méthode avant d'étendre à d'autres pays.
 - Commerce en euros depuis la source nationale ; la fiche méthode prévoit le FMI (IMTS, en dollars).
 - Conflits : données UCDP pas encore branchées (jeton d'accès à demander).
-- Sanctions de l'UE à reconfirmer sur la [carte des sanctions de l'UE](https://www.sanctionsmap.eu/).
+- Sanctions : seuls 4 pays sont plafonnés (Russie, Biélorussie, Iran, Corée du Nord, vérifiés le 26/10/2026). Six autres régimes de l'UE attendent la règle à valider.
