@@ -35,7 +35,7 @@ const get = async u => { const r = await fetch(u, { headers: { Accept: "applicat
     const c = pol.pays[iso].chambre, o = old[iso];
     if (o && o.code !== s.code) lines.push(`- **${iso}** : nouvelle élection ${s.code} (avant ${o.code}). Mettre à jour politique.json (partis, dirigeants, rôles, codes ipu) ; d'ici là le site garde l'ancienne répartition.`);
     else if (o && JSON.stringify(o.partis) !== JSON.stringify(s.partis)) lines.push(`- **${iso}** : sièges modifiés par l'IPU pour ${s.code}.`);
-    if (c && c.ipu === s.code && Object.keys(s.partis).length) {
+    if (c && c.ipu === s.code && Object.keys(s.partis).length && pol.pays[iso].partis.some(p => p.ipu)) {
       const mapped = new Set(pol.pays[iso].partis.flatMap(p => p.ipu ?? []));
       const libres = Object.keys(s.partis).filter(k => !mapped.has(k) && s.partis[k] >= 5);
       if (libres.length) lines.push(`- **${iso}** : partis IPU d'au moins 5 sièges comptés dans « autres » : ${libres.join(", ")}`);
