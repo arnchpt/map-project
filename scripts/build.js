@@ -18,3 +18,20 @@ const html = read("src/template.html")
 fs.mkdirSync(path.join(root, "dist"), { recursive: true });
 fs.writeFileSync(path.join(root, "dist/index.html"), html);
 console.log("dist/index.html", (html.length / 1024).toFixed(0), "Ko");
+
+// Version GitHub Pages : même page, enveloppée dans un document complet (docs/index.html)
+const page = `<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+${html}
+</body>
+</html>
+`;
+fs.mkdirSync(path.join(root, "docs"), { recursive: true });
+fs.writeFileSync(path.join(root, "docs/index.html"), page);
+console.log("docs/index.html (GitHub Pages)");

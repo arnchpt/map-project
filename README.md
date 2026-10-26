@@ -17,7 +17,8 @@ Principe : « le contenu dicte le contexte ». Les couleurs et les scores sont c
 | `data/votes-fra.json` | Proximité des votes à l'ONU avec la France, 0–100, produite par `scripts/votes_kappa.py`. |
 | `scripts/build.js` | Injecte le fond de carte, les noms et les votes dans le gabarit et écrit `dist/index.html`. |
 | `scripts/votes_kappa.py` | Calcule l'accord de vote (kappa de Cohen, votes disputés, 3 dernières sessions) à partir de `UNVotes.RData`. |
-| `dist/index.html` | Page assemblée, celle qui est publiée. |
+| `dist/index.html` | Page assemblée pour l'artifact. |
+| `docs/index.html` | Page assemblée pour GitHub Pages. |
 
 ## Construire la page
 
@@ -26,7 +27,10 @@ npm install
 npm run build
 ```
 
-`dist/index.html` est un fragment HTML (sans `<!doctype>` ni `<head>`) : c'est le format attendu par la publication en artifact. Pour un hébergement classique, il faudra l'envelopper dans un document complet.
+Le build écrit deux fichiers :
+
+- `dist/index.html` : fragment HTML (sans `<!doctype>` ni `<head>`), format attendu par la publication en artifact ;
+- `docs/index.html` : la même page en document complet, servie par GitHub Pages (branche `main`, dossier `/docs`).
 
 ## Recalculer les votes à l'ONU
 
