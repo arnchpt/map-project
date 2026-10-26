@@ -1,0 +1,12 @@
+{
+  "pays": "CZE",
+  "verifie": "2026-10-26",
+  "notes": "Pays hôtes cités pour le flanc Est de l'OTAN. Effectifs par pays non publiés dans les sources trouvées : le mandat fixe un plafond global (2 000) et la presse donne 427 militaires au total en mai 2026. Positions approximatives (bases des groupements de l'OTAN), à confirmer par le rapport annuel du ministère.",
+  "presences": [
+    { "hote": "SVK", "lon": 19.3, "lat": 48.4, "nom": "Groupement tactique multinational de l'OTAN en Slovaquie (renforcement du flanc Est)", "cat": "otan", "eff": null, "depuis": null, "src": "mandat" },
+    { "hote": "LTU", "lon": 24.2, "lat": 55.0, "nom": "Groupement de présence avancée de l'OTAN en Lituanie (renforcement du flanc Est)", "cat": "otan", "eff": null, "depuis": null, "src": "mandat" },
+    { "hote": "LVA", "lon": 24.3, "lat": 57.1, "nom": "Brigade multinationale de l'OTAN en Lettonie (renforcement du flanc Est)", "cat": "otan", "eff": null, "depuis": null, "src": "mandat" },
+    { "hote": "POL", "lon": 21.0, "lat": 52.2, "nom": "Renforcement du flanc Est de l'OTAN en Pologne", "cat": "otan", "eff": null, "depuis": null, "src": "mandat" }
+  ],
+  "non_localisees": []
+}
