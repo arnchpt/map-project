@@ -10,11 +10,10 @@ jobs:
     steps:
       - run: |
           A=https://api.data.ipu.org/v1
-          curl -sS -m 60 "$A/elections/JP-LC01-E20260208" > e.json
-          echo "== clés élection"; jq -r '.data.attributes | keys | join(" ")' e.json
-          echo "== champs parti/siège"; jq -c '.data.attributes | to_entries[] | select(.key|test("part|seat|result|compos|group";"i")) | {k:.key, v:(.value|tostring|.[0:1500])}' e.json
-          curl -sS -m 60 "$A/chambers/JP-LC01" > c.json
-          echo "== clés chambre"; jq -r '.data.attributes | keys | join(" ")' c.json
-          echo "== chambre parti/siège"; jq -c '.data.attributes | to_entries[] | select(.key|test("part|seat|compos|group|last_elec|election";"i")) | {k:.key, v:(.value|tostring|.[0:1500])}' c.json
-          for f in "chamber%3Aeq%3AJP-LC01" "chamber_code%3Aeq%3AJP-LC01"; do echo "== liste $f"; curl -sS -m 60 "$A/elections?filter=$f&page%5Bsize%5D=3" | jq -c '{err:.errors, ids:[.data[]?.id]}'; done
-          for e in RU-LC01-E20260920 RU-LC01-E20260918 US-LC01-E20241105 GB-LC01-E20240704; do echo "== $e"; curl -sS -m 60 "$A/elections/$e" | jq -c '{err:.errors[0].title, id:.data.id}'; done
+          for c in US DE GB IN RU JP FR IT CA KR CN; do
+            le=$(curl -sS -m 60 "$A/chambers/$c-LC01" | jq -r '.data.attributes.last_election.value.from // "aucune"' | cut -c1-10)
+            code="$c-LC01-E${le//-/}"
+            echo "== $c dernière élection $le ($code)"
+            curl -sS -m 60 "$A/elections/$code" | jq -c '.data.attributes | {siege:.number_of_seats_at_stake.value, p:[.seats_per_parties.value[]? | [.party, .total_number_of_seats]]}'
+          done
+          echo "== partis"; for u in "parties/jp-liberal_democratic_party_ldp" "parties?filter=id%3Aeq%3Ajp-sanseito" "political_parties/jp-sanseito"; do curl -sS -m 60 "$A/$u" | head -c 1500; echo; done
