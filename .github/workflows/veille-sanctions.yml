@@ -1,0 +1,76 @@
+# Veille mensuelle des régimes de sanctions (voir README, « Veille des sanctions »).
+# Le 1er de chaque mois, à l'heure de l'actualisation quotidienne : listes officielles UE, OFAC, Royaume-Uni, Canada.
+# Régime apparu ou disparu, mesure retenue sans régime, variation forte : PR « veille-sanctions » avec le rapport.
+# La PR ne met à jour que l'instantané data/check/sanctions-regimes.json : les plafonds (data/sanctions.json) restent une décision humaine.
+# Source injoignable ou format changé : le job échoue et GitHub prévient par mail.
+# Sur une PR qui modifie la veille : relève à blanc (rapport dans le résumé du job, rien n'est poussé), pour tester avant fusion.
+name: Veille des sanctions
+
+on:
+  schedule:
+    - cron: "17 5 1 * *"
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - scripts/veille-sanctions.js
+      - .github/workflows/veille-sanctions.yml
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: veille-sanctions
+  cancel-in-progress: false
+
+jobs:
+  veiller:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Relever les régimes
+        id: releve
+        continue-on-error: true
+        run: node scripts/veille-sanctions.js
+
+      - name: Rapport dans le résumé du job
+        if: always()
+        run: cat tmp/rapport-sanctions.md >> "$GITHUB_STEP_SUMMARY" || echo "Pas de rapport." >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Proposer
+        if: github.event_name != 'pull_request' && steps.releve.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B veille-sanctions
+          git add data/check/sanctions-regimes.json
+          git commit -m "Veille des sanctions : régimes modifiés ($(date -u +%F))"
+          git push -f origin veille-sanctions
+          {
+            echo "Veille du $(date -u +%F) : des régimes de sanctions ont changé dans les listes officielles."
+            echo
+            echo "**Les plafonds n'ont pas été modifiés.** Pour chaque alerte, vérifier sur la source officielle si la règle validée le 26/10/2026 (voir \`data/sanctions.json\`, champ \`regle\`) change un plafond. Si oui, corriger \`data/sanctions.json\` à la main dans une autre PR."
+            echo
+            cat tmp/rapport-sanctions.md
+            echo
+            echo "Fusionner cette PR enregistre l'état actuel comme référence (la même alerte ne reviendra pas). La fermer sans fusionner : l'alerte reviendra le mois prochain."
+          } > tmp/pr.md
+          if gh pr list --head veille-sanctions --state open --json number --jq '.[0].number' | grep -q .; then
+            gh pr edit veille-sanctions --body-file tmp/pr.md
+          else
+            gh pr create --head veille-sanctions --base main --title "Veille des sanctions : régimes à vérifier" --body-file tmp/pr.md --assignee "${{ github.repository_owner }}"
+          fi
+
+      - name: Signaler une source en échec
+        if: steps.releve.outcome == 'failure'
+        run: |
+          echo "::error::Veille des sanctions : au moins une liste officielle est injoignable ou illisible. Détail dans le journal de « Relever les régimes » et dans le résumé du job."
+          exit 1
