@@ -75,18 +75,7 @@ Même structure qu'une entrée de [`data/politique/politique.json`](../politique
 
 Total et 10 premiers partenaires selon l'institut national, dans sa devise et son concept (`commerce spécial`, `commerce général`, FOB/CAF), sans conversion. `notes` : écarts connus avec le FMI, par partenaire (effet Rotterdam, réexportations).
 
-## Récupérer les données (règle réseau)
-
-Les sessions Claude passent par une liste blanche de domaines ; les sites nationaux (une centaine) n'y sont pas et **on ne demande pas à Arnaud de les ajouter**.
-
-- **Découverte** des sources : par recherche web.
-- **Récupération** des données : par un script `scripts/pays/<iso3>/<nom>.js`, exécuté dans GitHub Actions (réseau non filtré) par le workflow générique [`sources-pays.yml`](../../.github/workflows/sources-pays.yml). Modèle : [`scripts/pays/_modele/exemple.js`](../../scripts/pays/_modele/exemple.js).
-- Le script tourne depuis la racine du dépôt avec `PAYS=<ISO3>` et `MODE=essai|proposer`, Node 22 (`fetch` natif), sans dépendance nouvelle. Il n'écrit que dans `data/pays/<iso3>/` et peut ajouter un rapport dans `tmp/pays-<iso3>.md`. Source injoignable ou format changé : `exit 1`.
-- **Tester** : ouvrir une PR (le workflow tourne en essai sur toute PR qui touche `scripts/pays/` ou `data/pays/`, rapport dans le résumé du job), ou le lancer à la main (Actions → Sources nationales → Run workflow, pays + mode).
-- Chaque lundi, tous les scripts tournent en mode `proposer` : une PR par pays dont les données ont changé, jamais de commit direct sur `main`.
-- Une source sans accès machine (page HTML instable, PDF) reste en relevé manuel : `"api": false` et une `cadence` dans `sources.json`.
-
 ## Qui écrit quoi
 
-- Les fils « Sources nationales » écrivent **uniquement** dans `data/pays/<iso3>/` et `scripts/pays/<iso3>/`.
+- Les fils « Sources nationales » écrivent **uniquement** dans `data/pays/<iso3>/`.
 - Le code commun (`scripts/`, `src/`, `data/*.json` hors `pays/`) est modifié par le fil d'intégration UE, pour éviter les conflits.
