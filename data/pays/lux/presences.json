@@ -1,0 +1,45 @@
+{
+  "pays": "LUX",
+  "verifie": "2026-10-26",
+  "presences": [
+    {
+      "hote": "LTU",
+      "lon": 24.2,
+      "lat": 55.1,
+      "nom": "Présence avancée renforcée de l'OTAN en Lituanie (Forward Land Forces, groupement sous commandement allemand, Rukla)",
+      "cat": "otan",
+      "eff": null,
+      "depuis": null,
+      "src": "cetat"
+    },
+    {
+      "hote": "ROU",
+      "lon": 24.8,
+      "lat": 45.9,
+      "nom": "Activités de vigilance renforcée de l'OTAN en Roumanie (peloton de reconnaissance, Cincu)",
+      "cat": "otan",
+      "eff": null,
+      "depuis": "2023-03",
+      "src": "chd_def"
+    },
+    {
+      "hote": "DEU",
+      "lon": 13.4,
+      "lat": 52.5,
+      "nom": "Mission d'assistance militaire de l'UE en soutien à l'Ukraine (EUMAM Ukraine), formation en Allemagne",
+      "cat": "ue",
+      "eff": null,
+      "depuis": null,
+      "src": "defense"
+    }
+  ],
+  "non_localisees": [
+    { "nom": "Opération navale de l'UE en Méditerranée (EUNAVFOR MED Irini)", "eff": "non publié", "src": "chd_def" },
+    { "nom": "Mission de l'UE au Mozambique (équipe de communication par satellite, deux séjours par an)", "eff": "non publié", "src": "chd_def" }
+  ],
+  "notes": [
+    "Total publié en commission le 17/06/2026 : 19 militaires, dont 17 déployés, dans trois missions OTAN et trois missions UE (effectif par mission non relevé).",
+    "KFOR (Kosovo) non reprise : participation autorisée du 01/04/2025 au 31/05/2026 (au plus 10 militaires) et annoncée comme se terminant en juin 2026.",
+    "Lituanie : participation prolongée jusqu'au 31/12/2027 (projet de règlement grand-ducal). Roumanie : autorisation jusqu'au 01/07/2027."
+  ]
+}
