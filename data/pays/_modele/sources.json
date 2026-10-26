@@ -1,0 +1,111 @@
+{
+  "pays": "XXX",
+  "verifie": "2026-10-26",
+  "sources": [
+    {
+      "id": "defense",
+      "nom": "Ministère de la Défense, page « Opérations extérieures »",
+      "editeur": "Ministère de la Défense (XXX)",
+      "url": "https://exemple.gouv.xx/operations",
+      "type": "officiel",
+      "langue": "xx",
+      "licence": "Licence ouverte / réutilisation libre avec mention (à vérifier sur le site)",
+      "cadence": "irrégulière (page mise à jour à chaque déploiement)",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences"
+      ],
+      "notes": "Effectifs arrondis par le ministère.",
+      "hotes": [
+        "exemple.gouv.xx"
+      ],
+      "acces": "verifie"
+    },
+    {
+      "id": "stat",
+      "nom": "Institut national de statistique, commerce extérieur par partenaire",
+      "editeur": "Institut national de statistique (XXX)",
+      "url": "https://exemple.stat.xx/commerce",
+      "type": "officiel",
+      "langue": "en",
+      "licence": "CC BY 4.0",
+      "cadence": "mensuelle",
+      "api": true,
+      "api_url": "https://exemple.stat.xx/api/v1/commerce?partenaire=all",
+      "format": "json",
+      "couches": [
+        "commerce"
+      ],
+      "notes": "",
+      "hotes": [
+        "exemple.stat.xx"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "type": "officiel",
+      "langue": "xx",
+      "licence": "non précisée",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "notes": "",
+      "id": "mae",
+      "nom": "Ministère des Affaires étrangères, communiqués",
+      "editeur": "Ministère des Affaires étrangères (XXX)",
+      "url": "https://exemple.gouv.xx/communiques",
+      "cadence": "irrégulière",
+      "couches": [
+        "conflits"
+      ],
+      "hotes": [
+        "exemple.gouv.xx"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "type": "officiel",
+      "langue": "xx",
+      "licence": "non précisée",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "notes": "",
+      "id": "gouvernement",
+      "nom": "Portail du gouvernement, composition",
+      "editeur": "Gouvernement (XXX)",
+      "url": "https://exemple.gouv.xx/gouvernement",
+      "cadence": "à chaque changement",
+      "couches": [
+        "politique"
+      ],
+      "hotes": [
+        "exemple.gouv.xx"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "type": "officiel",
+      "langue": "xx",
+      "licence": "non précisée",
+      "api": true,
+      "api_url": "https://exemple.elections.xx/resultats.csv",
+      "format": "csv",
+      "notes": "",
+      "id": "electoral",
+      "nom": "Commission électorale, résultats officiels",
+      "editeur": "Commission électorale (XXX)",
+      "url": "https://exemple.elections.xx/resultats",
+      "cadence": "à chaque élection",
+      "couches": [
+        "politique"
+      ],
+      "hotes": [
+        "exemple.elections.xx"
+      ],
+      "acces": "non_verifie"
+    }
+  ]
+}

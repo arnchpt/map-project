@@ -1,0 +1,22 @@
+{
+  "pays": "XXX",
+  "verifie": "2026-10-26",
+  "evenements": [
+    {
+      "avec": "UKR",
+      "k": "soutien",
+      "t": "Aide militaire à l'Ukraine",
+      "d": "Livraisons d'armes déclarées par le gouvernement depuis février 2022.",
+      "date": "2022-02",
+      "src": "defense"
+    },
+    {
+      "avec": "TUR",
+      "k": "tension",
+      "t": "Différend sur la délimitation maritime",
+      "d": "Protestation officielle du ministère des Affaires étrangères le 12/03/2026.",
+      "date": "2026-03-12",
+      "src": "mae"
+    }
+  ]
+}

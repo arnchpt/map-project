@@ -1,0 +1,15 @@
+{
+  "pays": "XXX",
+  "verifie": "2026-10-26",
+  "src": "stat",
+  "annee": 2025,
+  "devise": "EUR",
+  "unite": "Md",
+  "concept": "commerce spécial, exportations FOB, importations CAF",
+  "total": { "x": 100.0, "m": 110.0 },
+  "partenaires": [
+    { "pays": "DEU", "x": 20.1, "m": 25.3 },
+    { "pays": "CHN", "x": 5.2, "m": 14.8 }
+  ],
+  "notes": { "NLD": "Transit portuaire : importations surestimées par le FMI (effet Rotterdam)." }
+}

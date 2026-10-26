@@ -1,0 +1,18 @@
+{
+  "pays": "XXX",
+  "verifie": "2026-10-26",
+  "chef_etat": { "nom": "Prénom Nom", "fonction": "Président de la République", "parti": null, "depuis": "2024-01-01", "qid": "Q0", "src": "gouvernement" },
+  "chef_gouv": { "nom": "Prénom Nom", "fonction": "Premier ministre", "parti": "Parti A", "depuis": "2025-06-01", "qid": "Q0", "src": "gouvernement" },
+  "chambre": {
+    "nom": "Assemblée nationale",
+    "sieges": 200,
+    "majorite": 101,
+    "election": "2025-05-01",
+    "src": "electoral",
+    "ipu": "XX-LC01-E20250501"
+  },
+  "partis": [
+    { "nom": "Parti A", "sieges": 90, "role": "gouv", "leaders": "Prénom Nom (président du parti)", "ipu": ["xx-party_a"] },
+    { "nom": "Parti B", "sieges": 60, "role": "hors", "leaders": "Prénom Nom", "ipu": ["xx-party_b"] }
+  ]
+}
