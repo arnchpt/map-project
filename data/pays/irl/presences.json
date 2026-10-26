@@ -23,6 +23,16 @@
       "src": "defense"
     },
     {
+      "hote": "XKX",
+      "lon": 21.2,
+      "lat": 42.6,
+      "nom": "KFOR (OTAN), état-major de Pristina",
+      "cat": "otan",
+      "eff": 13,
+      "depuis": null,
+      "src": "defense_gov"
+    },
+    {
       "hote": "ISR",
       "lon": 35.2,
       "lat": 31.8,
@@ -34,8 +44,15 @@
     }
   ],
   "non_localisees": [
-    { "nom": "KFOR (OTAN), état-major de Pristina, Kosovo : pas de code ISO alpha-3 accepté par le contrôle (XKX refusé)", "eff": "13", "src": "defense_gov" },
-    { "nom": "Opération navale de l'UE Irini (EUNAVFOR MED), état-major de Rome", "eff": "3 (chiffre non daté)", "src": "defense" },
-    { "nom": "Officiers d'état-major et observateurs auprès de l'ONU, de l'UE, de l'OTAN (Partenariat pour la paix) et de l'OSCE", "eff": "non publié", "src": "defense" }
+    {
+      "nom": "Opération navale de l'UE Irini (EUNAVFOR MED), état-major de Rome",
+      "eff": "3 (chiffre non daté)",
+      "src": "defense"
+    },
+    {
+      "nom": "Officiers d'état-major et observateurs auprès de l'ONU, de l'UE, de l'OTAN (Partenariat pour la paix) et de l'OSCE",
+      "eff": "non publié",
+      "src": "defense"
+    }
   ]
 }
