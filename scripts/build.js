@@ -6,8 +6,8 @@ const root = path.join(__dirname, "..");
 const read = p => fs.readFileSync(path.join(root, p), "utf8");
 
 const topo = fs.readFileSync(require.resolve("world-atlas/countries-110m.json"), "utf8");
-const votes = JSON.parse(read("data/votes-fra.json"));
-const trade = JSON.parse(read("data/trade-fra.json"));
+const votes = JSON.parse(read("data/votes/votes-fra.json"));
+const trade = JSON.parse(read("data/trade/trade-fra.json"));
 // Les clés de world-atlas sont des codes ISO numériques sur 3 chiffres ("044")
 const values = Object.fromEntries(Object.entries(votes.values).map(([k, v]) => [k.padStart(3, "0"), v]));
 
