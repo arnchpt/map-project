@@ -1,0 +1,38 @@
+{
+  "pays": "AUT",
+  "verifie": "2026-10-26",
+  "presences": [
+    {
+      "hote": "BIH",
+      "lon": 18.4,
+      "lat": 43.9,
+      "nom": "EUFOR Althea (opération militaire de l'UE en Bosnie-Herzégovine)",
+      "cat": "ue",
+      "eff": null,
+      "depuis": null,
+      "src": "defense"
+    },
+    {
+      "hote": "LBN",
+      "lon": 35.1,
+      "lat": 33.1,
+      "nom": "FINUL / UNIFIL (Force intérimaire des Nations unies au Liban)",
+      "cat": "onu",
+      "eff": null,
+      "depuis": "2011",
+      "src": "defense"
+    }
+  ],
+  "non_localisees": [
+    {
+      "nom": "KFOR (force de l'OTAN au Kosovo) : le Kosovo n'a pas de code ISO 3166, le point ne peut pas être placé selon le contrat",
+      "eff": "≈ 140 (presse)",
+      "src": "defense"
+    },
+    {
+      "nom": "EUNAVFOR MED Irini (Méditerranée, embargo de l'ONU sur les armes à destination de la Libye)",
+      "eff": "jusqu'à 65 autorisés en 2026",
+      "src": "parlement"
+    }
+  ]
+}
