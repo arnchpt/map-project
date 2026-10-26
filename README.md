@@ -19,6 +19,12 @@ Principe : « le contenu dicte le contexte ». Les couleurs et les scores sont c
 | `scripts/build.js` | Liste les pays du sélecteur (nom, capitale, membre de l'UE) et injecte fond de carte, noms, commerce et votes dans le gabarit. |
 | `data/trade/trade-<pays>.json` | Commerce de biens d'un pays focus par partenaire, 2025 et 2024, en Md$, produit par `scripts/imts.js`. Mêmes 11 pays. |
 | `scripts/imts.js` | Interroge l'API publique du FMI (IMTS, sans clé) et écrit les échanges par partenaire. |
+| `data/orgs.json` | Liste fermée des 15 organisations et de leurs membres pleins, validée à la main. |
+| `data/freshness.json` | Fraîcheur de chaque couche (période couverte, dernière vérification), affichée sur la carte. |
+| `data/check/orgs-wikidata.json` | Membres des organisations selon Wikidata, dernier relevé (sert à détecter les changements). |
+| `scripts/refresh-trade.js` | Actualise le commerce des 11 pays depuis le FMI et contrôle les nouveaux chiffres. |
+| `scripts/orgs-wikidata.js` | Compare les organisations avec Wikidata et produit un rapport des écarts. |
+| `.github/workflows/actualisation.yml` | Actualisation automatique quotidienne (voir plus bas). |
 | `scripts/votes_kappa.py` | Calcule l'accord de vote (kappa de Cohen, votes disputés, 3 dernières sessions) à partir de `UNVotes.RData`. |
 | `dist/index.html` | Page assemblée pour l'artifact. |
 | `docs/index.html` | Page assemblée pour GitHub Pages. |
@@ -43,6 +49,27 @@ npm run build
 ```
 
 `NODE_USE_ENV_PROXY=1` n'est utile que derrière un proxy. Les flux par pays diffèrent de ceux des Douanes françaises (effet Rotterdam : Belgique et Pays-Bas gonflés, Chine minorée) ; l'écart est signalé sur la carte.
+
+## Actualisation automatique
+
+Le workflow `.github/workflows/actualisation.yml` tourne chaque jour à 5 h 17 UTC (et à la demande, onglet Actions, « Run workflow ») :
+
+| Couche | Fréquence du contrôle | Ce qui se passe |
+|---|---|---|
+| Commerce (FMI IMTS) | chaque jour | Les 11 fichiers sont réinterrogés. Année visée : l'année précédente dès que le FMI la publie. |
+| Organisations | chaque lundi | Wikidata est comparé à `data/orgs.json`. Wikidata n'est qu'un détecteur : la liste n'est jamais modifiée automatiquement. |
+| Votes à l'ONU | à la main, une fois par an | Pas de source scriptable après juin 2024 (voir Limites). |
+
+Règles de publication :
+
+- rien de nouveau : aucun commit, sauf la date de vérification, rafraîchie au plus une fois par semaine ;
+- chiffres modifiés, contrôles passés : commit direct sur `main`, GitHub Pages republie le site ;
+- anomalie (total monde qui bouge de plus de 30 %, grand partenaire de plus de 50 %, partenaires manquants), changement d'année ou changement sur Wikidata : PR « Actualisation des données à relire », rien n'est publié avant fusion ;
+- source en échec : le job échoue et GitHub envoie un mail.
+
+Sur la carte, chaque couche indique sa période et sa date de vérification, avec la mention « Vérification en retard » si le dernier contrôle dépasse le délai prévu (14 jours pour le commerce, 21 pour les organisations).
+
+Réglage nécessaire une fois : Settings → Actions → General → Workflow permissions, cocher « Read and write permissions » et « Allow GitHub Actions to create and approve pull requests ».
 
 ## Recalculer les votes à l'ONU
 
