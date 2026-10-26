@@ -1,0 +1,305 @@
+{
+  "pays": "DEU",
+  "verifie": "2026-10-26",
+  "sources": [
+    {
+      "type": "officiel",
+      "langue": "de",
+      "licence": "non précisée",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "notes": "Liste des missions mandatées par le Bundestag avec plafond d'effectif et échéance. Plafonds relevés via des résultats de recherche web, pas sur la page : Aspides 350 selon le BMVg contre 700 dans d'autres relevés, Sea Guardian 550 ou 650. À trancher sur les Drucksachen de mandat (source mandats).",
+      "acces": "non_verifie",
+      "id": "defense",
+      "nom": "Bundeswehr, « Die Bundeswehr in Auslandseinsätzen »",
+      "editeur": "Bundeswehr (ministère fédéral de la Défense)",
+      "url": "https://www.bundeswehr.de/de/auftrag/einsaetze",
+      "cadence": "irrégulière (à chaque vote ou fin de mandat)",
+      "couches": [
+        "presences"
+      ],
+      "hotes": [
+        "www.bundeswehr.de"
+      ]
+    },
+    {
+      "type": "officiel",
+      "langue": "de",
+      "licence": "non précisée",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "notes": "Communiqués de prolongation de mandat (ex. Aspides prolongée jusqu'au 31/10/2027, plafond 350).",
+      "acces": "non_verifie",
+      "id": "bmvg",
+      "nom": "BMVg, « Einsätze der Bundeswehr »",
+      "editeur": "Bundesministerium der Verteidigung",
+      "url": "https://www.bmvg.de/de/themen/friedenssicherung/einsaetze-der-bundeswehr",
+      "cadence": "irrégulière",
+      "couches": [
+        "presences"
+      ],
+      "hotes": [
+        "www.bmvg.de"
+      ]
+    },
+    {
+      "type": "officiel",
+      "langue": "de",
+      "licence": "non précisée",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "notes": "Stationnement permanent prévu d'environ 4 800 militaires, pleine capacité annoncée pour le second semestre 2027. Effectif présent non publié sous forme de chiffre stable.",
+      "acces": "non_verifie",
+      "id": "litauen",
+      "nom": "Bundeswehr, montée en puissance de la brigade Lituanie (Panzerbrigade 45)",
+      "editeur": "Bundeswehr (Heer)",
+      "url": "https://www.bundeswehr.de/de/organisation/heer/aktuelles/aufwuchs-brigade-litauen-6065568",
+      "cadence": "irrégulière",
+      "couches": [
+        "presences"
+      ],
+      "hotes": [
+        "www.bundeswehr.de"
+      ]
+    },
+    {
+      "type": "officiel",
+      "langue": "de",
+      "licence": "non précisée (conditions dans la fiche d'information de l'API DIP)",
+      "api": true,
+      "api_url": "https://search.dip.bundestag.de/api/v1/drucksache",
+      "format": "json",
+      "notes": "Clé d'API publique publiée sur la page d'aide DIP, renouvelée périodiquement (validité jusqu'à mai 2027 selon une source tierce, non vérifié). Les textes de mandat (Antrag der Bundesregierung) font foi pour les plafonds et échéances.",
+      "acces": "non_verifie",
+      "id": "mandats",
+      "nom": "Bundestag, DIP (documentation des travaux parlementaires) : mandats d'engagement armé",
+      "editeur": "Deutscher Bundestag",
+      "url": "https://dip.bundestag.de/",
+      "cadence": "continue (chaque document parlementaire)",
+      "couches": [
+        "presences",
+        "politique"
+      ],
+      "hotes": [
+        "dip.bundestag.de",
+        "search.dip.bundestag.de"
+      ]
+    },
+    {
+      "type": "officiel",
+      "langue": "de",
+      "licence": "non précisée",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "notes": "URL de rubrique non relue depuis la session.",
+      "acces": "non_verifie",
+      "id": "ukraine",
+      "nom": "Gouvernement fédéral, soutien à l'Ukraine",
+      "editeur": "Presse- und Informationsamt der Bundesregierung",
+      "url": "https://www.bundesregierung.de/breg-de/themen/krieg-in-der-ukraine",
+      "cadence": "irrégulière",
+      "couches": [
+        "conflits"
+      ],
+      "hotes": [
+        "www.bundesregierung.de"
+      ]
+    },
+    {
+      "type": "officiel",
+      "langue": "de",
+      "licence": "non précisée",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "notes": "Source des faits « tension » (convocations d'ambassadeurs, protestations). Aucun fait relevé à ce stade faute d'accès à la page.",
+      "acces": "non_verifie",
+      "id": "aa",
+      "nom": "Auswärtiges Amt, communiqués de presse",
+      "editeur": "Auswärtiges Amt",
+      "url": "https://www.auswaertiges-amt.de/de/newsroom",
+      "cadence": "irrégulière",
+      "couches": [
+        "conflits",
+        "sanctions"
+      ],
+      "hotes": [
+        "www.auswaertiges-amt.de"
+      ]
+    },
+    {
+      "type": "officiel",
+      "langue": "de",
+      "licence": "non précisée",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "notes": "Applique surtout les embargos de l'UE (déjà couverts par la couche sanctions UE, non recopiés). Restrictions nationales additionnelles signalées pour l'Iran, la Russie, la Corée du Nord et la Libye (relevé IHK de décembre 2025, à vérifier sur la liste BAFA).",
+      "acces": "non_verifie",
+      "id": "bafa",
+      "nom": "BAFA, embargos par pays",
+      "editeur": "Bundesamt für Wirtschaft und Ausfuhrkontrolle",
+      "url": "https://www.bafa.de/DE/Aussenwirtschaft/Ausfuhrkontrolle/Embargos/embargos_node.html",
+      "cadence": "irrégulière",
+      "couches": [
+        "sanctions"
+      ],
+      "hotes": [
+        "www.bafa.de"
+      ]
+    },
+    {
+      "type": "officiel",
+      "langue": "de",
+      "licence": "non précisée",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "notes": "Autorité compétente pour la mise en œuvre des sanctions financières de l'UE et de l'ONU en Allemagne. Pas de régime national autonome identifié.",
+      "acces": "non_verifie",
+      "id": "bundesbank",
+      "nom": "Deutsche Bundesbank, sanctions financières",
+      "editeur": "Deutsche Bundesbank",
+      "url": "https://www.bundesbank.de/de/service/finanzsanktionen",
+      "cadence": "à chaque modification des listes",
+      "couches": [
+        "sanctions"
+      ],
+      "hotes": [
+        "www.bundesbank.de"
+      ]
+    },
+    {
+      "type": "officiel",
+      "langue": "de",
+      "licence": "Datenlizenz Deutschland – Namensnennung – Version 2.0",
+      "api": true,
+      "api_url": "https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile?name=51000-0003",
+      "format": "csv/json",
+      "notes": "Utilisable sans inscription selon Destatis ; un jeton de compte est nécessaire pour certaines requêtes de l'API. commerce.json non fourni : table non lisible depuis la session. Le communiqué PD26_056 du 20/02/2026 donne pour 2025 les échanges (exportations + importations) avec la Chine (251,8 Md€), les États-Unis (240,5 Md€) et les Pays-Bas (209,1 Md€), insuffisant pour les 10 premiers partenaires.",
+      "acces": "non_verifie",
+      "id": "stat",
+      "nom": "Destatis GENESIS-Online, table 51000-0003 (commerce extérieur par pays)",
+      "editeur": "Statistisches Bundesamt (Destatis)",
+      "url": "https://www-genesis.destatis.de/datenbank/online/statistic/51000/table/51000-0003",
+      "cadence": "mensuelle (résultats provisoires), annuelle (définitifs)",
+      "couches": [
+        "commerce"
+      ],
+      "hotes": [
+        "www-genesis.destatis.de",
+        "www.destatis.de"
+      ]
+    },
+    {
+      "type": "officiel",
+      "langue": "de",
+      "licence": "non précisée",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "notes": "",
+      "acces": "non_verifie",
+      "id": "presidence",
+      "nom": "Président fédéral, biographie",
+      "editeur": "Bundespräsidialamt",
+      "url": "https://www.bundespraesident.de/",
+      "cadence": "à chaque élection présidentielle",
+      "couches": [
+        "politique"
+      ],
+      "hotes": [
+        "www.bundespraesident.de"
+      ]
+    },
+    {
+      "type": "officiel",
+      "langue": "de",
+      "licence": "non précisée",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "notes": "",
+      "acces": "non_verifie",
+      "id": "gouvernement",
+      "nom": "Gouvernement fédéral, composition du cabinet",
+      "editeur": "Presse- und Informationsamt der Bundesregierung",
+      "url": "https://www.bundesregierung.de/breg-de/bundesregierung/bundeskabinett",
+      "cadence": "à chaque changement",
+      "couches": [
+        "politique"
+      ],
+      "hotes": [
+        "www.bundesregierung.de"
+      ]
+    },
+    {
+      "type": "officiel",
+      "langue": "de",
+      "licence": "non précisée (Datenlizenz Deutschland probable, à vérifier)",
+      "api": true,
+      "api_url": "https://www.bundeswahlleiterin.de/bundestagswahlen/2025/ergebnisse/opendata.html",
+      "format": "csv",
+      "notes": "Fichiers de résultats ouverts publiés après chaque scrutin ; URL exacte des fichiers à relire.",
+      "acces": "non_verifie",
+      "id": "electoral",
+      "nom": "Bundeswahlleiterin, résultats officiels de l'élection au Bundestag 2025",
+      "editeur": "Die Bundeswahlleiterin",
+      "url": "https://www.bundeswahlleiterin.de/bundestagswahlen/2025/ergebnisse.html",
+      "cadence": "à chaque élection",
+      "couches": [
+        "politique"
+      ],
+      "hotes": [
+        "www.bundeswahlleiterin.de"
+      ]
+    },
+    {
+      "type": "recherche",
+      "langue": "de",
+      "licence": "CC0 1.0",
+      "api": true,
+      "api_url": "https://www.abgeordnetenwatch.de/api/v2/parliament-periods",
+      "format": "json",
+      "notes": "Association, non officielle. Limite : 30 requêtes par minute et par IP. Utile pour les effectifs par groupe en cours de législature.",
+      "acces": "non_verifie",
+      "id": "abgeordnetenwatch",
+      "nom": "abgeordnetenwatch.de, API v2 (mandats, législatures)",
+      "editeur": "Parlamentwatch e.V.",
+      "url": "https://www.abgeordnetenwatch.de/api",
+      "cadence": "continue",
+      "couches": [
+        "politique"
+      ],
+      "hotes": [
+        "www.abgeordnetenwatch.de"
+      ]
+    },
+    {
+      "type": "international",
+      "langue": "en",
+      "licence": "CC BY-NC-SA 4.0",
+      "api": true,
+      "api_url": "https://api.data.ipu.org/v1/",
+      "format": "json",
+      "notes": "Déjà utilisée par la couche commune « Qui gouverne » ; sièges repris de data/politique/politique.json.",
+      "acces": "non_verifie",
+      "id": "ipu",
+      "nom": "IPU Parline, élection au Bundestag du 23/02/2025",
+      "editeur": "Union interparlementaire",
+      "url": "https://data.ipu.org/parliament/DE/DE-LC01/election/DE-LC01-E20250223/",
+      "cadence": "hebdomadaire (relue par l'actualisation automatique)",
+      "couches": [
+        "politique"
+      ],
+      "hotes": [
+        "data.ipu.org",
+        "api.data.ipu.org"
+      ]
+    }
+  ]
+}

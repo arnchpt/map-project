@@ -1,0 +1,14 @@
+{
+  "pays": "DEU",
+  "verifie": "2026-10-26",
+  "evenements": [
+    {
+      "avec": "UKR",
+      "k": "soutien",
+      "t": "Aide militaire à l'Ukraine",
+      "d": "Livraisons d'armes déclarées par le gouvernement fédéral depuis février 2022.",
+      "date": "2022-02",
+      "src": "ukraine"
+    }
+  ]
+}
