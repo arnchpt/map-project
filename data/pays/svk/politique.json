@@ -1,0 +1,23 @@
+{
+  "pays": "SVK",
+  "verifie": "2026-10-26",
+  "chef_etat": { "nom": "Peter Pellegrini", "fonction": "Président de la République", "parti": null, "depuis": "2024-06-15", "qid": "Q17330556", "src": "wikidata" },
+  "chef_gouv": { "nom": "Robert Fico", "fonction": "Président du gouvernement", "parti": "Direction – social-démocratie (Smer-SD)", "depuis": "2023-10-25", "qid": "Q57606", "src": "wikidata" },
+  "chambre": {
+    "nom": "Conseil national (Národná rada)",
+    "sieges": 150,
+    "majorite": 76,
+    "election": "2023-09-30",
+    "src": "electoral",
+    "ipu": "SK-LC01-E20230930"
+  },
+  "partis": [
+    { "nom": "Direction – social-démocratie (Smer-SD)", "sieges": 42, "role": "gouv", "leaders": "Robert Fico (président du parti)", "ipu": [] },
+    { "nom": "Slovaquie progressiste (PS)", "sieges": 32, "role": "hors", "leaders": "Michal Šimečka (président du parti, non reconfirmé)", "ipu": [] },
+    { "nom": "Voix – social-démocratie (Hlas-SD)", "sieges": 27, "role": "gouv", "leaders": "Matúš Šutaj Eštok (président du parti, non reconfirmé)", "ipu": [] },
+    { "nom": "OĽaNO et amis (liste de 2023, mouvement renommé Slovensko)", "sieges": 16, "role": "hors", "leaders": "Igor Matovič (non reconfirmé)", "ipu": [] },
+    { "nom": "Mouvement chrétien-démocrate (KDH)", "sieges": 12, "role": "hors", "leaders": "Milan Majerský (non reconfirmé)", "ipu": [] },
+    { "nom": "Liberté et solidarité (SaS)", "sieges": 11, "role": "hors", "leaders": "Branislav Gröhling (président du parti, non reconfirmé)", "ipu": [] },
+    { "nom": "Parti national slovaque (SNS)", "sieges": 10, "role": "gouv", "leaders": "Andrej Danko (président du parti, non reconfirmé)", "ipu": [] }
+  ]
+}
