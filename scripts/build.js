@@ -1,5 +1,5 @@
 // Assemble la page publiable : injecte le fond de carte, les noms de pays, le commerce, les votes et les plafonds sanctions de chaque pays choisi,
-// les organisations (data/orgs.json) et la fraîcheur des couches (data/freshness.json) dans src/template.html
+// les organisations (data/orgs.json), les forces politiques (data/politique/politique.json) et la fraîcheur des couches (data/freshness.json) dans src/template.html
 // Usage : npm run build  ->  dist/index.html
 const fs = require("fs");
 const path = require("path");
@@ -57,7 +57,8 @@ const html = read("src/template.html")
   .replace("__NAMES__", read("data/names.json"))
   .replace("__FOCUS__", JSON.stringify(FOCUS))
   .replace("__ORGS__", JSON.stringify(Object.fromEntries(Object.entries(JSON.parse(read("data/orgs.json")).orgs).map(([k, o]) => [k, o.membres]))))
-  .replace("__FRESH__", read("data/freshness.json"));
+  .replace("__FRESH__", read("data/freshness.json"))
+  .replace("__POLITIQUE__", read("data/politique/politique.json"));
 
 fs.mkdirSync(path.join(root, "dist"), { recursive: true });
 fs.writeFileSync(path.join(root, "dist/index.html"), html);

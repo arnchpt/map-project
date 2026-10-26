@@ -192,6 +192,21 @@ header.top .lede { color: var(--muted); max-width: 62ch; }
   .pulse.d, .paris-ring { display: none; }
 }
 .stale { font-family: var(--f-mono); font-size: 11px; padding: 1px 6px; border-radius: 99px; border: 1px solid var(--mil); color: var(--mil); white-space: nowrap; }
+/* Forces politiques : bloc repliable en tête de fiche, barre de sièges sans couleurs de partis (gouvernement / hors gouvernement / non renseigné) */
+.pol { border: 1px solid var(--gold-dim); border-radius: 3px; padding: 10px 12px; }
+.pol > summary { cursor: pointer; display: grid; gap: 2px; list-style: none; }
+.pol > summary::-webkit-details-marker { display: none; }
+.pol > summary .eyebrow::after { content: " ▸"; }
+.pol[open] > summary .eyebrow::after { content: " ▾"; }
+.pol .who { font-size: 14px; }
+.pol .body { display: grid; gap: 12px; margin-top: 12px; }
+.seats { position: relative; display: flex; height: 14px; border-radius: 2px; overflow: hidden; background: var(--line); }
+.seats span { height: 100%; border-right: 1px solid var(--surface); }
+.seats .gouv { background: var(--accent); } .seats .hors { background: var(--muted); } .seats .nr { background: var(--gold-dim); }
+.seats .maj { position: absolute; top: -3px; bottom: -3px; width: 2px; background: var(--ink); border: 0; }
+.pol .row { cursor: default; }
+.pol .leg { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12.5px; color: var(--muted); }
+.pol .leg i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
 </style>
 
 <div class="wrap">
@@ -306,6 +321,8 @@ const SRC = {
 const FOCUS = __FOCUS__;
 // Fraîcheur par couche (scripts/refresh-trade.js, scripts/orgs-wikidata.js) : affichée sous chaque couche, signalée si la vérification est trop ancienne
 const FRESH = __FRESH__;
+// Forces politiques des pays du sélecteur (data/politique/politique.json, relevé manuel ; scripts/politique.js contrôle les chefs d'État et de gouvernement)
+const POLITIQUE = __POLITIQUE__;
 const frDate = iso => iso.split("-").reverse().join("/");
 const fresh = k => { const f = FRESH[k], late = (Date.now() - Date.parse(f.verifie)) / 864e5 > f.alerte_jours;
   return ` Données : ${f.donnees}, vérifiées le ${frDate(f.verifie)}${f.auto ? " (contrôle automatique)" : ""}.${late ? ` <span class="stale">Vérification en retard</span>` : ""}`; };
@@ -572,8 +589,37 @@ function renderPanel() {
   P.querySelector(".back").onclick = () => select(FR);
 }
 
+// Bloc « Qui gouverne » : chefs d'État et de gouvernement, sièges de la dernière élection, dirigeants de partis. Aucun qualificatif, uniquement ce que disent les sources.
+const ROLE = { gouv: ["gouv", "au gouvernement"], hors: ["hors", "hors gouvernement"] };
+const ext = s => `<a href="${s.u}" target="_blank" rel="noopener">${s.t}</a>`;
+function politicsBlock(iso) {
+  const p = POLITIQUE.pays[iso];
+  if (!p) return "";
+  const pers = (x, def) => x ? `${x.fonction || def} : <b>${x.nom}</b>${x.parti ? ` (${x.parti})` : ""}` : "";
+  let h = `<details class="pol"><summary><span class="eyebrow">Qui gouverne</span>
+    <span class="who">${pers(p.chef_etat, "Chef de l'État")}</span>${p.chef_gouv ? `<span class="who">${pers(p.chef_gouv, "Chef du gouvernement")}</span>` : ""}</summary><div class="body">`;
+  const c = p.chambre;
+  if (c) {
+    const parts = [...p.partis.filter(x => x.sieges), ...(p.autres ? [{ nom: "Autres", sieges: p.autres, role: undefined }] : [])];
+    h += `<div class="grp"><span class="eyebrow">${c.nom} · élection du ${frDate(c.election)} · ${c.sieges} sièges</span>
+      <div class="seats" role="img" aria-label="Répartition des ${c.sieges} sièges">${parts.map(x => `<span class="${x.role === undefined ? "" : (ROLE[x.role] || ["nr"])[0]}" style="width:${x.sieges / c.sieges * 100}%" title="${x.nom} : ${x.sieges}"></span>`).join("")}<span class="maj" style="left:${c.majorite / c.sieges * 100}%"></span></div>
+      <div class="leg"><span><i style="background:var(--accent)"></i>au gouvernement</span><span><i style="background:var(--muted)"></i>hors gouvernement</span><span><i style="background:var(--gold-dim)"></i>non renseigné</span><span>trait : majorité absolue (${c.majorite})</span></div>
+      <div class="list">${p.partis.map(x => `<div class="row"><span class="n">${x.nom}${x.role && ROLE[x.role] ? ` <span class="tag">${ROLE[x.role][1]}</span>` : ""}</span><span class="val">${x.sieges ?? "—"}</span>
+        ${x.leaders ? `<span class="d">${x.leaders}${x.src ? ` · ${ext(x.src)}` : ""}${x.ok === false ? ` <span class="stale">non reconfirmé</span>` : ""}</span>` : ""}</div>`).join("")}
+      ${p.autres ? `<div class="row"><span class="n">Autres partis et indépendants</span><span class="val">${p.autres}</span></div>` : ""}</div></div>`;
+    if (p.seconde) h += `<p class="empty">${p.seconde}</p>`;
+  } else {
+    h += `<div class="list">${p.partis.map(x => `<div class="row"><span class="n">${x.nom}</span><span class="val"></span><span class="d">${x.leaders}</span></div>`).join("")}</div>`;
+  }
+  for (const n of p.notes || []) h += `<p class="note">${n}</p>`;
+  h += `<div class="src"><span>Sièges : ${c ? ext(c.src) + (c.recoupe === false ? ` <span class="stale">non recoupé</span>` : "") : "sans objet"}.${p.src_leaders ? ` Dirigeants : ${ext(p.src_leaders)}.` : ""}${p.src_notes ? ` Notes : ${ext(p.src_notes)}.` : ""}
+    Fiche Wikidata du <a href="https://www.wikidata.org/wiki/${p.chef_etat.qid}" target="_blank" rel="noopener">chef de l'État</a>${p.chef_gouv ? ` et du <a href="https://www.wikidata.org/wiki/${p.chef_gouv.qid}" target="_blank" rel="noopener">chef du gouvernement</a>` : ""}.</span>
+    <span>${POLITIQUE.regle}${fresh("politique")}</span></div></div></details>`;
+  return h;
+}
+
 function franceSheet() {
-  let h = `<div class="head"><span class="eyebrow">Fiche pays · ${TITLES[layer]}</span><h2>${FN().nom}</h2></div>`;
+  let h = `<div class="head"><span class="eyebrow">Fiche pays · ${TITLES[layer]}</span><h2>${FN().nom}</h2></div>` + politicsBlock(F);
   if (layer === "trade") {
     const rows = TOP.map(id => [id, { ...TRADE[id], note: TRADE_NOTE[id] }]);
     const max = d3.max(rows, r => Math.max(r[1].x, r[1].m));
@@ -651,6 +697,8 @@ function otherSheet(id) {
       <div class="kpi"><span class="v ${t.x - t.m >= 0 ? "pos" : "neg"}">${signed(t.x - t.m)}</span><span class="l">Solde${t.xp != null && t.mp != null ? ` (${signed(t.xp - t.mp)} en ${TY - 1})` : ""}</span></div></div>
       <p class="empty">Part dans le commerce de biens ${FN().du} : ${fmt((t.x + t.m) / (TW.x + TW.m) * 100)} %.</p>
       <div class="src">Source : ${srcLink("imf")}${note ? ` · ${note}` : ""}</div>` : `<p class="empty">Pas de donnée FMI complète pour ce pays.</p>`) + `</div>`;
+  const iso = Object.keys(FOCUS).find(k => FOCUS[k].num === id);
+  if (iso && POLITIQUE.pays[iso]) h += politicsBlock(iso);
   if (F === "FRA") h += `<div class="grp"><span class="eyebrow">Présence militaire française</span>` + (pres.length ? pres.map(p => `<div class="row" style="cursor:default"><span class="n">${p.nom}</span><span class="val">${p.eff.toLocaleString("fr-FR")}</span><span class="d">${CAT[p.cat]} · ${presStatus()}, vérifié le ${CHECKED} · ${srcLink("armees")}</span></div>`).join("") : `<p class="empty">Aucune présence rattachée à ce pays sur la page du ministère des Armées.</p>`) + `</div>`;
   if (F === "FRA") h += `<div class="grp"><span class="eyebrow">Conflits et tensions</span>` + (ev.length ? ev.map(e => `<div class="row" style="cursor:default"><span class="n"><span class="sw" style="background:${KIND[e.k].c};margin-right:6px"></span>${e.t}</span><span class="val"></span><span class="d">${e.d} ${srcLink(e.s)}</span></div>`).join("") : `<p class="empty">Aucun fait recensé dans ce prototype.</p>`) + `</div>`;
   const dp = diplo(id);
