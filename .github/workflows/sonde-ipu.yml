@@ -1,4 +1,4 @@
-# Sonde temporaire : vérifie ce que l'API IPU Parline expose (sièges par parti). À supprimer avant fusion.
+# Sonde temporaire : exécute les contrôles politiques comme le robot. À supprimer avant fusion.
 name: Sonde IPU
 on:
   push:
@@ -8,12 +8,9 @@ jobs:
   sonde:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          A=https://api.data.ipu.org/v1
-          for c in US DE GB IN RU JP FR IT CA KR CN; do
-            le=$(curl -sS -m 60 "$A/chambers/$c-LC01" | jq -r '.data.attributes.last_election.value.from // "aucune"' | cut -c1-10)
-            code="$c-LC01-E${le//-/}"
-            echo "== $c dernière élection $le ($code)"
-            curl -sS -m 60 "$A/elections/$code" | jq -c '.data.attributes | {siege:.number_of_seats_at_stake.value, p:[.seats_per_parties.value[]? | [.party, .total_number_of_seats]]}'
-          done
-          echo "== partis"; for u in "parties/jp-liberal_democratic_party_ldp" "parties?filter=id%3Aeq%3Ajp-sanseito" "political_parties/jp-sanseito"; do curl -sS -m 60 "$A/$u" | head -c 1500; echo; done
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: npm ci
+      - run: node scripts/ipu-sieges.js; node scripts/politique.js; npm run build
+      - run: git status --porcelain; git diff --stat; git diff data/; cat tmp/rapport-ipu.md; echo; cat tmp/rapport-politique.md
