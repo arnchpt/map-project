@@ -1,0 +1,114 @@
+{
+  "pays": "BEL",
+  "verifie": "2026-10-26",
+  "chef_etat": {
+    "nom": "Philippe",
+    "fonction": "Roi des Belges",
+    "parti": null,
+    "depuis": "2013-07-21",
+    "qid": "Q155004",
+    "src": "gouvernement"
+  },
+  "chef_gouv": {
+    "nom": "Bart De Wever",
+    "fonction": "Premier ministre",
+    "parti": "N-VA",
+    "depuis": "2025-02-03",
+    "qid": "Q336599",
+    "src": "gouvernement"
+  },
+  "chambre": {
+    "nom": "Chambre des représentants",
+    "sieges": 150,
+    "majorite": 76,
+    "election": "2024-06-09",
+    "src": "chambre-fiche",
+    "ipu": "BE-LC01-E20240609"
+  },
+  "partis": [
+    {
+      "nom": "N-VA",
+      "sieges": 24,
+      "role": "gouv",
+      "leaders": "Valerie Van Peel (présidente)",
+      "src": "partis"
+    },
+    {
+      "nom": "Vlaams Belang",
+      "sieges": 20,
+      "role": "hors",
+      "leaders": "Tom Van Grieken (président)",
+      "src": "partis"
+    },
+    {
+      "nom": "MR",
+      "sieges": 20,
+      "role": "gouv",
+      "leaders": "Georges-Louis Bouchez (président)",
+      "src": "partis"
+    },
+    {
+      "nom": "PS",
+      "sieges": 16,
+      "role": "hors",
+      "leaders": "Paul Magnette (président)",
+      "src": "partis"
+    },
+    {
+      "nom": "PTB-PVDA",
+      "sieges": 15,
+      "role": "hors",
+      "leaders": "Raoul Hedebouw (président)",
+      "src": "partis"
+    },
+    {
+      "nom": "Les Engagés",
+      "sieges": 14,
+      "role": "gouv",
+      "leaders": "Yvan Verougstraete (président)",
+      "src": "partis"
+    },
+    {
+      "nom": "Vooruit",
+      "sieges": 13,
+      "role": "gouv",
+      "leaders": "Conner Rousseau (président)",
+      "src": "partis"
+    },
+    {
+      "nom": "CD&V",
+      "sieges": 11,
+      "role": "gouv",
+      "leaders": "Sammy Mahdi (président)",
+      "src": "partis"
+    },
+    {
+      "nom": "Anders (ex-Open Vld)",
+      "sieges": 7,
+      "role": "hors",
+      "leaders": null,
+      "src": "partis"
+    },
+    {
+      "nom": "Groen",
+      "sieges": 6,
+      "role": "hors",
+      "leaders": "Bart Dhondt (président)",
+      "src": "partis"
+    },
+    {
+      "nom": "Ecolo",
+      "sieges": 3,
+      "role": "hors",
+      "leaders": null,
+      "src": "partis"
+    },
+    {
+      "nom": "DéFI",
+      "sieges": 1,
+      "role": "hors",
+      "leaders": "Sophie Rohonyi (présidente)",
+      "src": "partis"
+    }
+  ]
+}
