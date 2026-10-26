@@ -197,7 +197,7 @@ header.top .lede { color: var(--muted); max-width: 62ch; }
         <h3>Proximité diplomatique</h3>
         <ul>
           <li>Formule de la <a href="https://claude.ai/artifact/EvRippFyodo7pmgzxwHXe8">fiche méthode v1</a> : 60 % votes à l'ONU, 40 % organisations communes, score plafonné à 40 en cas de sanctions, à 20 si elles sont réciproques.</li>
-          <li>Votes à l'ONU : accord de vote avec la France (kappa de Cohen oui, abstention, non, méthode Häge 2011) sur les votes disputés (minorité d'au moins 10 %), moyenne des sessions 72 à 74 (2017-2019), ramené sur 0–100 (100 = partenaire qui vote le plus comme la France). Données : <a href="https://github.com/evoeten/United-Nations-General-Assembly-Votes-and-Ideal-Points">UN General Assembly Voting Data, Erik Voeten</a>. Les sessions 2020 à 2025 ne sont pas accessibles depuis l'environnement de travail.</li>
+          <li>Votes à l'ONU : accord de vote avec la France (kappa de Cohen oui, abstention, non, méthode Häge 2011) sur les votes disputés (minorité d'au moins 10 %), moyenne des sessions 76 à 78 (septembre 2021 à juin 2024), ramené sur 0–100 (100 = partenaire qui vote le plus comme la France). Données : <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/LEJUQZ&version=33.0">UN General Assembly Voting Data, Erik Voeten, Harvard Dataverse (version 33, juin 2024)</a>. Les sessions 79 et 80 (2024-2026) ne figurent pas dans les fichiers de votes publiés.</li>
           <li>Organisations : indice de Jaccard sur 15 organisations, membres pleins. Listes contrôlées le 26/10/2026 : Commonwealth sur la <a href="https://thecommonwealth.org/our-member-countries">liste officielle</a> ; OCS, BRICS, OTSC, OEA et ASEAN sur les articles Wikipédia et, pour le Timor oriental, sur l'<a href="https://vietnamnews.vn/politics-laws/1728144/asean-summit-47-timor-leste-officially-becomes-asean-s-11th-member.html">adhésion d'octobre 2025</a>. Francophonie : 50 États membres de plein droit sur la <a href="https://www.francophonie.org/90-etats-et-gouvernements-125">liste officielle de l'OIF</a> (90 États et gouvernements dont 53 membres, 5 associés et 32 observateurs ; associés, observateurs et gouvernements non souverains exclus) ; Chypre ajoutée, Guinée réintégrée en septembre 2024. Union africaine : 55 États sur la <a href="https://au.int/en/member_states/countryprofiles2">liste officielle de l'UA</a>, République arabe sahraouie démocratique incluse ; les États suspendus (notamment Mali, Burkina Faso, Niger, Soudan, Guinée-Bissau, Madagascar) restent comptés car toujours membres. Ligue arabe : 22 États, Syrie réintégrée en <a href="https://www.pbs.org/newshour/world/arab-league-votes-to-reinstate-syrias-membership-after-12-year-suspension">mai 2023</a> ; site officiel inaccessible, liste contrôlée sur Wikipédia. Arménie comptée dans l'OTSC (participation gelée depuis février 2024, retrait non finalisé) ; Mali, Burkina Faso et Niger retirés de la Francophonie (retrait annoncé en 2025).</li>
         </ul>
       </div>
@@ -315,10 +315,10 @@ const shared = id => orgsOf(id).filter(o => ORGS[o].includes("250"));
 const jaccard = id => { const a = orgsOf("250"), b = orgsOf(id), inter = shared(id).length, uni = new Set([...a, ...b]).size; return uni ? Math.round(inter / uni * 100) : 0; };
 // Sanctions visant l'État : régimes UE hérités par la France ; « réciproque » si l'État visé a pris des contre-mesures contre l'UE
 const SANCTIONS = { "643": { plafond: 20, d: "Régime UE et contre-sanctions russes (embargo alimentaire depuis 2014)" }, "112": { plafond: 20, d: "Régime UE et contre-sanctions biélorusses" }, "364": { plafond: 40, d: "Régime UE visant l'Iran" }, "408": { plafond: 40, d: "Régime UE visant la Corée du Nord" }, "104": { plafond: 40, d: "Régime UE visant le Myanmar (embargo sur les armes, gel d'avoirs)" }, "862": { plafond: 40, d: "Régime UE visant le Venezuela (embargo sur les armes, gel d'avoirs)" }, "558": { plafond: 40, d: "Régime UE visant des responsables du gouvernement nicaraguayen (gel d'avoirs, visas)" } };
-// Votes ONU : kappa de Cohen oui/abstention/non sur les votes disputés (Häge 2011), sessions 72-74 (2017-2019),
+// Votes ONU : kappa de Cohen oui/abstention/non sur les votes disputés (Häge 2011), sessions 76-78 (2021-2024),
 // remis à l'échelle 0-100 sur l'étendue observée pour la France (100 = partenaire qui vote le plus comme la France)
 const VOTES_DATA = __VOTES__;
-const VOTES = VOTES_DATA.values, VOTES_PERIOD = "2017-2019";
+const VOTES = VOTES_DATA.values, VOTES_PERIOD = "2021-2024";
 const dClass = sc => sc >= 67 ? 2 : sc >= 34 ? 1 : 0;
 const D_CLASSES = [{ l: "Éloignés (0–33)", c: "--seq-1" }, { l: "Intermédiaires (34–66)", c: "--seq-3" }, { l: "Alignés (67–100)", c: "--seq-5" }];
 function diplo(id) {
@@ -492,14 +492,14 @@ function franceSheet() {
 plafond : 100 · 40 si sanctions · 20 si réciproques
 classes : 0–33 éloignés · 34–66 intermédiaires · 67–100 alignés</div>
       <div class="kpis">${D_CLASSES.slice().reverse().map((d, k) => `<div class="kpi"><span class="v">${nCl[2 - k]}</span><span class="l">${d.l}</span></div>`).join("")}</div>
-      <p class="note"><b>Votes de ${VOTES_PERIOD}.</b> Ce sont les dernières sessions accessibles. Les votes postérieurs à l'invasion de l'Ukraine (2022) ne sont pas encore pris en compte. 100 = partenaire qui vote le plus comme la France.</p>
+      <p class="note"><b>Votes de ${VOTES_PERIOD}.</b> Sessions 76 à 78, dernières publiées par Voeten. Les sessions extraordinaires d'urgence ne sont pas incluses : les résolutions de 2022-2023 condamnant l'invasion de l'Ukraine manquent, seuls les textes annuels sur la Crimée et les territoires occupés sont comptés. 100 = partenaire qui vote le plus comme la France.</p>
       <div class="grp"><span class="eyebrow">Les plus proches</span><div class="list">${top.map(rowD).join("")}</div></div>
       <div class="grp"><span class="eyebrow">Les plus éloignés</span><div class="list">${bottom.map(rowD).join("")}</div></div>
       <div class="grp"><span class="eyebrow">France : ${orgsOf(FR).length} organisations sur 15</span><div style="display:flex;gap:6px;flex-wrap:wrap;padding-left:6px">${orgsOf(FR).map(o => `<span class="tag">${o}</span>`).join("")}</div></div>
       <div class="grp"><span class="eyebrow">Score plafonné par des sanctions</span><div class="list">
       ${Object.entries(SANCTIONS).map(([id, s]) => `<div class="row" tabindex="0" data-id="${id}"><span class="n">${nom(id)}</span><span class="val">≤ ${s.plafond}</span><span class="d">${s.d}</span></div>`).join("")}
       </div></div>
-      <div class="src">Fiche méthode des indicateurs, ${METHOD_VERSION}. Votes : UN General Assembly Voting Data (Voeten), copie GitHub. Listes d'organisations : détail dans Sources et méthode. Sanctions : ${srcLink("sanc")}.</div>`;
+      <div class="src">Fiche méthode des indicateurs, ${METHOD_VERSION}. Votes : UN General Assembly Voting Data (Voeten), Harvard Dataverse. Listes d'organisations : détail dans Sources et méthode. Sanctions : ${srcLink("sanc")}.</div>`;
   }
   return h;
 }

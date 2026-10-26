@@ -39,7 +39,7 @@ pip install numpy pandas pyreadr country_converter
 python3 scripts/votes_kappa.py UNVotes.RData data/votes-fra.json
 ```
 
-`UNVotes.RData` vient du jeu de données d'Erik Voeten ([Harvard Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/LEJUQZ)). La version actuelle de `data/votes-fra.json` couvre les sessions 72 à 74 (2017-2019), seule copie accessible au moment du prototype ([GitHub](https://github.com/evoeten/United-Nations-General-Assembly-Votes-and-Ideal-Points)).
+`UNVotes.RData` vient du jeu de données d'Erik Voeten ([Harvard Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/LEJUQZ)). La version actuelle de `data/votes-fra.json` couvre les sessions 76 à 78 (septembre 2021 à juin 2024), à partir du fichier `UNVotes-1.RData` de la version 33 du jeu (juin 2024, [téléchargement direct](https://dataverse.harvard.edu/api/access/datafile/10295576)). Les versions suivantes du jeu ne publient plus les votes bruts, seulement les ideal points.
 
 ## Sources du prototype France
 
