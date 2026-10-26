@@ -1,0 +1,17 @@
+{
+  "pays": "MLT",
+  "verifie": "2026-10-26",
+  "presences": [
+    {
+      "hote": "LBN",
+      "lon": 35.3,
+      "lat": 33.2,
+      "nom": "Contingent des forces armées maltaises au sein du bataillon irlandais de la FINUL (UNIFIL)",
+      "cat": "onu",
+      "eff": 10,
+      "depuis": "2018-11",
+      "src": "defie"
+    }
+  ],
+  "non_localisees": []
+}

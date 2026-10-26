@@ -1,0 +1,21 @@
+{
+  "pays": "MLT",
+  "verifie": "2026-10-26",
+  "chef_etat": { "nom": "Myriam Spiteri Debono", "fonction": "Présidente de la République", "parti": null, "depuis": "2024-04-04", "qid": "Q1647394", "src": "gouvernement" },
+  "chef_gouv": { "nom": "Robert Abela", "fonction": "Premier ministre", "parti": "Parti travailliste", "depuis": "2020-01-13", "qid": "Q37860840", "src": "gouvernement" },
+  "chambre": {
+    "nom": "Chambre des représentants",
+    "sieges": 79,
+    "majorite": 40,
+    "election": "2026-05-30",
+    "src": "electoral",
+    "ipu": "MT-LC01-E20260530"
+  },
+  "partis": [
+    { "nom": "Parti travailliste (Partit Laburista)", "sieges": 42, "role": "gouv", "leaders": "Robert Abela (chef du parti)" },
+    { "nom": "Parti nationaliste (Partit Nazzjonalista)", "sieges": 37, "role": "hors", "leaders": "Alex Borg (chef du parti et de l'opposition)" }
+  ],
+  "notes": [
+    "Élection anticipée du 30/05/2026. Les 79 sièges comprennent 65 sièges de circonscription, 2 sièges de correction proportionnelle (Parti nationaliste) et 12 sièges au titre du mécanisme de parité femmes-hommes (6 par parti)."
+  ]
+}
