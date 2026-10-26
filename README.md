@@ -29,6 +29,8 @@ Principe : « le contenu dicte le contexte ». Les couleurs et les scores sont c
 | `scripts/refresh-trade.js` | Actualise le commerce des 11 pays depuis le FMI et contrôle les nouveaux chiffres. |
 | `scripts/orgs-wikidata.js` | Compare les organisations avec Wikidata et produit un rapport des écarts. |
 | `.github/workflows/actualisation.yml` | Actualisation automatique quotidienne (voir plus bas). |
+| `.github/workflows/veille-sanctions.yml`, `scripts/veille-sanctions.js` | Veille mensuelle des régimes de sanctions (voir plus bas). |
+| `data/check/sanctions-regimes.json` | Régimes de sanctions relevés dans les listes officielles, dernier état validé (sert à détecter les changements). Créé au premier passage de la veille. |
 | `scripts/votes_kappa.py` | Calcule l'accord de vote (kappa de Cohen, votes disputés, 3 dernières sessions) à partir de `UNVotes.RData`. |
 | `dist/index.html` | Page assemblée pour l'artifact. |
 | `docs/index.html` | Page assemblée pour GitHub Pages. |
@@ -89,6 +91,21 @@ NODE_USE_ENV_PROXY=1 node scripts/politique.js
 compare les chefs d'État et de gouvernement du JSON à Wikidata (P35, P6) et écrit les écarts dans `tmp/rapport-politique.md`, sans rien modifier.
 - Sièges : `scripts/ipu-sieges.js` interroge chaque lundi l'API de l'Union interparlementaire (IPU Parline, licence CC BY-NC-SA 4.0) et garde un instantané dans `data/politique/ipu-sieges.json`. Le build prend les sièges IPU quand le code d'élection correspond à `chambre.ipu` et que chaque parti listé a sa correspondance (`ipu`). Nouvelle élection ou correction IPU : PR « actualisation-auto » à relire, il faut alors mettre à jour la liste des partis, leurs dirigeants et leurs codes IPU. L'IPU ne détaille pas l'Italie par parti (coalitions seulement) et n'a pas encore publié la Russie 2026 : chiffres manuels pour ces deux pays.
 - Aucune source structurée fiable pour les dirigeants de partis : relevé manuel, à revoir après chaque congrès ou élection.
+
+## Veille des sanctions
+
+Le workflow `.github/workflows/veille-sanctions.yml` tourne le 1er de chaque mois à 5 h 17 UTC (et à la demande). Il télécharge quatre listes officielles et en tire les régimes en vigueur :
+
+| Autorité | Liste | Ce qui compte comme régime |
+|---|---|---|
+| UE | Liste consolidée des sanctions financières (Commission) | code programme (`RUS`, `IRN`…) |
+| États-Unis | Liste SDN de l'OFAC (CSV) | programme OFAC (`RUSSIA-EO14024`, `IRAN`…) |
+| Royaume-Uni | UK Sanctions List (FCDO, XML) | nom du régime |
+| Canada | Liste consolidée des sanctions autonomes (XML) | pays visé |
+
+Il ouvre une PR « Veille des sanctions : régimes à vérifier » quand un régime apparaît ou disparaît, quand une mesure de `data/sanctions.json` n'a plus de régime correspondant, ou quand un régime visant un pays plafonné gagne ou perd plus de 25 % de désignations. La PR ne touche que l'instantané `data/check/sanctions-regimes.json` : **les plafonds ne sont jamais modifiés automatiquement**, la décision reste humaine. Une liste injoignable ou dont le format a changé fait échouer le job (mail de GitHub) avec un extrait du fichier reçu.
+
+Limite : la veille voit la création ou la levée d'un régime, pas un allègement à l'intérieur d'un régime qui reste en place (par exemple la levée de l'interdiction sur la dette biélorusse en 2026). Ces cas restent à suivre au renouvellement de chaque régime.
 
 ## Recalculer les votes à l'ONU
 
