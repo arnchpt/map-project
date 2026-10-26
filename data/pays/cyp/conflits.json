@@ -1,0 +1,14 @@
+{
+  "pays": "CYP",
+  "verifie": "2026-10-26",
+  "evenements": [
+    {
+      "avec": "TUR",
+      "k": "tension",
+      "t": "Présence militaire turque au nord de l'île",
+      "d": "Forces turques stationnées au nord depuis l'intervention de juillet 1974, présence contestée par le gouvernement chypriote ; une zone tampon de l'ONU (UNFICYP) sépare les deux parties.",
+      "date": "1974-07-20",
+      "src": "mae"
+    }
+  ]
+}
