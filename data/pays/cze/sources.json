@@ -15,9 +15,14 @@
       "api": true,
       "api_url": "https://data.csu.gov.cz/opendata/katalog",
       "format": "csv, json",
-      "couches": ["commerce"],
+      "couches": [
+        "commerce"
+      ],
       "notes": "DataStat remplace la Veřejná databáze (VDB), fermée au 2e semestre 2026 ; en production depuis le 03/09/2026. L'ancien jeu « commerce par pays » (242010-25, CSV, M CZK, depuis 2005) n'est plus mis à jour depuis 2026 et renvoie vers vzonu_cr. ČSÚ publie au concept national (changement de propriété), recalculé depuis 2020 : écarts attendus avec le FMI. Point d'API exact du jeu par pays non documenté dans les pages trouvées. Doc : https://csu.gov.cz/produkty/datastat-postupne-nahrazuje-verejnou-databazi ; licence : https://csu.gov.cz/podminky_pro_vyuzivani_a_dalsi_zverejnovani_statistickych_udaju_csu",
-      "hotes": ["csu.gov.cz", "data.csu.gov.cz"],
+      "hotes": [
+        "csu.gov.cz",
+        "data.csu.gov.cz"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -32,9 +37,14 @@
       "api": false,
       "api_url": null,
       "format": "pdf, docx",
-      "couches": ["presences", "conflits"],
+      "couches": [
+        "presences",
+        "conflits"
+      ],
       "notes": "Plafonds jusqu'au 31/12/2026 : 2 000 militaires pour le renforcement du flanc Est de l'OTAN, 100 pour la mission d'assistance militaire de l'UE à l'Ukraine, 800 pour la formation de soldats ukrainiens en Tchéquie. Le mandat fixe des plafonds, pas les effectifs par pays. Résolution de la Chambre (tisk 822) : https://mise.mo.gov.cz/assets/informacni-servis/mandat/u-ps_velky_19_11_24_c_1166.docx ; du Sénat (tisk 327) : https://mise.mo.gov.cz/assets/informacni-servis/mandat/us_velky_20_11_24_c_36.pdf. Mandat 2027-2028 déposé en août 2026 (plafond flanc Est ramené à 1 600), adoption non confirmée.",
-      "hotes": ["mise.mo.gov.cz"],
+      "hotes": [
+        "mise.mo.gov.cz"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -49,9 +59,13 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["presences"],
+      "couches": [
+        "presences"
+      ],
       "notes": "Seule source trouvée pour l'effectif réel : 427 militaires en mai 2026, répartis entre Slovaquie, Pologne, Lituanie et Lettonie, sans détail par pays. Ne sert que de contexte ; à remplacer par le rapport annuel du ministère.",
-      "hotes": ["www.expats.cz"],
+      "hotes": [
+        "www.expats.cz"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -66,9 +80,13 @@
       "api": true,
       "api_url": "https://www.psp.cz/sqw/hp.sqw?k=1300",
       "format": "zip de fichiers UNL (texte délimité)",
-      "couches": ["politique"],
+      "couches": [
+        "politique"
+      ],
       "notes": "Format et cadence connus avant 2026, non revérifiés le 2026-10-26 (domaine bloqué, aucune documentation trouvée par recherche).",
-      "hotes": ["www.psp.cz"],
+      "hotes": [
+        "www.psp.cz"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -83,9 +101,15 @@
       "api": true,
       "api_url": "https://www.volby.cz/opendata/ps2025/",
       "format": "xml (schémas XSD, partis codés avec registres fournis)",
-      "couches": ["politique"],
+      "couches": [
+        "politique"
+      ],
       "notes": "Format stable depuis 1996. Un fichier XML donne aussi la composition en vigueur du Sénat. Le domaine volby.gov.cz apparaît pour le Sénat 2026 (https://volby.gov.cz/opendata/se2026/SENATciselnikyPopis.pdf).",
-      "hotes": ["www.volby.cz", "volby.cz", "volby.gov.cz"],
+      "hotes": [
+        "www.volby.cz",
+        "volby.cz",
+        "volby.gov.cz"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -100,9 +124,13 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["politique"],
+      "couches": [
+        "politique"
+      ],
       "notes": "Gouvernement Babiš III (ANO, SPD, Motoristé), formé le 15/12/2025 selon Wikipédia (une seule source pour la liste finale des ministres).",
-      "hotes": ["vlada.gov.cz"],
+      "hotes": [
+        "vlada.gov.cz"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -117,10 +145,36 @@
       "api": true,
       "api_url": "https://query.wikidata.org/sparql",
       "format": "json",
-      "couches": ["politique"],
+      "couches": [
+        "politique"
+      ],
       "notes": "Lu le 2026-10-26 : Petr Pavel (Q2080040) depuis le 09/03/2023 ; Andrej Babiš (Q10819807) depuis le 09/12/2025. À recouper avec vlada.gov.cz et hrad.cz dès l'accès.",
-      "hotes": ["www.wikidata.org", "query.wikidata.org"],
+      "hotes": [
+        "www.wikidata.org",
+        "query.wikidata.org"
+      ],
       "acces": "verifie"
+    },
+    {
+      "id": "presse_resultats",
+      "nom": "Wikipédia, « 2025 Czech parliamentary election » (résultats attribués à ČSÚ / volby.cz)",
+      "editeur": "Wikipédia (anglais)",
+      "url": "https://en.wikipedia.org/wiki/2025_Czech_parliamentary_election",
+      "type": "presse",
+      "langue": "en",
+      "licence": "CC BY-SA 4.0",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Sièges des 3-4 octobre 2025 : ANO 80, SPOLU 52, STAN 22, Pirates 18, SPD 15, Motoristé 13. Lu via recherche web le 2026-10-26, la page n'a pas été ouverte. Source de repli tant que volby.cz est bloqué : à remplacer par le XML officiel (source volby).",
+      "hotes": [
+        "en.wikipedia.org"
+      ],
+      "acces": "non_verifie"
     },
     {
       "id": "presse_coalition",
@@ -134,9 +188,13 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["politique"],
+      "couches": [
+        "politique"
+      ],
       "notes": "Coalition ANO, SPD et Motoristé : 108 sièges sur 200. En attente de recoupement avec volby.cz.",
-      "hotes": ["english.radio.cz"],
+      "hotes": [
+        "english.radio.cz"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -151,9 +209,13 @@
       "api": true,
       "api_url": "https://mzv.gov.cz/jnp/cz/o_ministerstvu/otevrena_data/index_5.html",
       "format": "csv, pdf",
-      "couches": ["sanctions"],
+      "couches": [
+        "sanctions"
+      ],
       "notes": "Liste propre à la Tchéquie : personnes visées par la loi 1/2023, inscrites par le gouvernement sur proposition du ministère. Distincte des sanctions UE. Format CSV modifié le 23/07/2026 (colonnes retirées ou remplacées). Gels d'avoirs exécutés par le Finanční analytický úřad. Texte de la loi : https://mzv.gov.cz/file/4923428/sb0001_2023.pdf",
-      "hotes": ["mzv.gov.cz"],
+      "hotes": [
+        "mzv.gov.cz"
+      ],
       "acces": "non_verifie"
     }
   ]
