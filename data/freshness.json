@@ -1,5 +1,5 @@
 {
- "_note": "Fraîcheur de chaque couche, affichée sur la carte. donnees = période couverte, modifie = dernière fois que les chiffres ont changé, verifie = dernier contrôle de la source. alerte_jours : au-delà, la carte signale la couche comme non vérifiée. Mis à jour par scripts/refresh-trade.js et scripts/orgs-wikidata.js ; votes à la main.",
+ "_note": "Fraîcheur de chaque couche, affichée sur la carte. donnees = période couverte, modifie = dernière fois que les chiffres ont changé, verifie = dernier contrôle de la source. alerte_jours : au-delà, la carte signale la couche comme non vérifiée. Mis à jour par scripts/refresh-trade.js et scripts/orgs-wikidata.js ; votes et forces politiques à la main (scripts/politique.js contrôle les chefs d'État et de gouvernement).",
  "commerce": {
   "source": "FMI, IMTS",
   "auto": true,
@@ -23,5 +23,13 @@
   "modifie": "2026-10-26",
   "verifie": "2026-10-26",
   "alerte_jours": 400
+ },
+ "politique": {
+  "source": "Résultats électoraux officiels, presse ; contrôle Wikidata des chefs d'État et de gouvernement",
+  "auto": false,
+  "donnees": "dernière élection de chaque pays ; dirigeants au 26/10/2026",
+  "modifie": "2026-10-26",
+  "verifie": "2026-10-26",
+  "alerte_jours": 45
  }
 }

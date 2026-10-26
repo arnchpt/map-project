@@ -1,0 +1,945 @@
+{
+ "verifie": "2026-10-26",
+ "regle": "Sièges : résultat de la dernière élection de la chambre basse selon l'Union interparlementaire (contrôle hebdomadaire), figé jusqu'au scrutin suivant (défections et partielles non suivies). Chefs d'État et de gouvernement : Wikidata (P35, P6), recoupé avec la presse. Dirigeants de partis : relevé manuel daté ; « non reconfirmé » = aucune source d'octobre 2026 trouvée.",
+ "pays": {
+  "USA": {
+   "chef_etat": {
+    "nom": "Donald Trump",
+    "fonction": "Président (chef de l'État et du gouvernement)",
+    "parti": "Parti républicain",
+    "depuis": "2025-01-20",
+    "qid": "Q22686"
+   },
+   "chef_gouv": null,
+   "chambre": {
+    "nom": "Chambre des représentants",
+    "sieges": 435,
+    "majorite": 218,
+    "election": "2024-11-05",
+    "src": {
+     "t": "Union interparlementaire (IPU Parline), CC BY-NC-SA 4.0",
+     "u": "https://data.ipu.org/parliament/US/US-LC01/election/US-LC01-E20241105/"
+    },
+    "ipu": "US-LC01-E20241105"
+   },
+   "partis": [
+    {
+     "nom": "Parti républicain",
+     "sieges": 220,
+     "role": "gouv",
+     "leaders": "Mike Johnson (président de la Chambre), John Thune (chef de la majorité au Sénat)",
+     "ipu": [
+      "us-republican_party"
+     ]
+    },
+    {
+     "nom": "Parti démocrate",
+     "sieges": 215,
+     "role": "hors",
+     "leaders": "Hakeem Jeffries (chef de la minorité à la Chambre), Chuck Schumer (chef de la minorité au Sénat)",
+     "ipu": [
+      "us-democratic_party_0"
+     ]
+    }
+   ],
+   "seconde": "Sénat (100 sièges) : 53 républicains, 45 démocrates, 2 indépendants qui siègent avec les démocrates.",
+   "notes": [
+    "Les partis américains n'ont pas de chef unique : les dirigeants indiqués sont ceux du Congrès.",
+    "Élections de mi-mandat le 3 novembre 2026 (toute la Chambre, 35 sièges du Sénat)."
+   ],
+   "src_leaders": {
+    "t": "Political.org, 06/10/2026",
+    "u": "https://political.org/2026/10/06/who-will-survive-the-2026-midterms-could-make-or-break-mike-johnson-hakeem-jeffries-john-thune-and-chuck-schumer/"
+   },
+   "autres": 0
+  },
+  "CHN": {
+   "chef_etat": {
+    "nom": "Xi Jinping",
+    "fonction": "Président de la République, secrétaire général du Parti communiste",
+    "parti": "Parti communiste chinois",
+    "depuis": "2013-03-14",
+    "qid": "Q15031"
+   },
+   "chef_gouv": {
+    "nom": "Li Qiang",
+    "fonction": "Premier ministre",
+    "parti": "Parti communiste chinois",
+    "depuis": "2023-03-11",
+    "qid": "Q4414390"
+   },
+   "chambre": null,
+   "partis": [
+    {
+     "nom": "Parti communiste chinois",
+     "sieges": null,
+     "role": "gouv",
+     "leaders": "Xi Jinping (secrétaire général)"
+    }
+   ],
+   "notes": [
+    "Pas d'élection nationale entre partis concurrents. La Constitution (article 1) fait de la direction du Parti communiste « le trait déterminant du socialisme à la chinoise ».",
+    "Les 2 977 députés de l'Assemblée nationale populaire (14e législature, 2023) sont élus par les assemblées des provinces, pas au suffrage direct. Huit autres partis sont reconnus et acceptent la direction du Parti communiste."
+   ],
+   "src_notes": {
+    "t": "Constitution de la République populaire de Chine (texte officiel, ANP)",
+    "u": "http://www.npc.gov.cn/englishnpc/constitution2019/201911/1f65146fb6104dd3a2793875d19b5b29.shtml"
+   }
+  },
+  "DEU": {
+   "chef_etat": {
+    "nom": "Frank-Walter Steinmeier",
+    "fonction": "Président fédéral",
+    "parti": "SPD",
+    "depuis": "2017-03-19",
+    "qid": "Q76658"
+   },
+   "chef_gouv": {
+    "nom": "Friedrich Merz",
+    "fonction": "Chancelier",
+    "parti": "CDU",
+    "depuis": "2025-05-06",
+    "qid": "Q566257"
+   },
+   "chambre": {
+    "nom": "Bundestag",
+    "sieges": 630,
+    "majorite": 316,
+    "election": "2025-02-23",
+    "src": {
+     "t": "Union interparlementaire (IPU Parline), CC BY-NC-SA 4.0",
+     "u": "https://data.ipu.org/parliament/DE/DE-LC01/election/DE-LC01-E20250223/"
+    },
+    "ipu": "DE-LC01-E20250223"
+   },
+   "partis": [
+    {
+     "nom": "CDU/CSU",
+     "sieges": 208,
+     "role": "gouv",
+     "leaders": "Friedrich Merz (CDU), Markus Söder (CSU)",
+     "ok": false,
+     "ipu": [
+      "de-christian_democratic_union_cdu",
+      "de-christian_social_union_bavaria_csu"
+     ]
+    },
+    {
+     "nom": "AfD",
+     "sieges": 152,
+     "role": "hors",
+     "leaders": "Alice Weidel et Tino Chrupalla (réélus en juillet 2026)",
+     "src": {
+      "t": "ZDF",
+      "u": "https://www.zdfheute.de/politik/deutschland/afd-parteitag-erfurt-chrupalla-weidel-100.html"
+     },
+     "ipu": [
+      "de-alternative_germany_afd"
+     ]
+    },
+    {
+     "nom": "SPD",
+     "sieges": 120,
+     "role": "gouv",
+     "leaders": "Lars Klingbeil (coprésidente Bärbel Bas démissionnaire le 12/10/2026, congrès prévu mi-janvier)",
+     "src": {
+      "t": "taz",
+      "u": "https://taz.de/Ruecktritt-von-SPD-Chefin/!6220794/"
+     },
+     "ipu": [
+      "de-social_democratic_party_spd"
+     ]
+    },
+    {
+     "nom": "Verts (Bündnis 90/Die Grünen)",
+     "sieges": 85,
+     "role": "hors",
+     "leaders": "Franziska Brantner et Felix Banaszak",
+     "src": {
+      "t": "Site du parti",
+      "u": "https://www.gruene.de/leute/unser-bundesvorstand"
+     },
+     "ipu": [
+      "de-green_party"
+     ]
+    },
+    {
+     "nom": "Die Linke",
+     "sieges": 64,
+     "role": "hors",
+     "leaders": "Ines Schwerdtner et Luigi Pantisano (depuis juin 2026)",
+     "src": {
+      "t": "Site du parti",
+      "u": "https://www.die-linke.de/partei/parteidemokratie/parteivorstand/parteivorstand-2026-2028/"
+     },
+     "ipu": [
+      "de-left_party_die_linke"
+     ]
+    }
+   ],
+   "autres": 1
+  },
+  "GBR": {
+   "chef_etat": {
+    "nom": "Charles III",
+    "fonction": "Roi",
+    "parti": null,
+    "depuis": "2022-09-08",
+    "qid": "Q43274"
+   },
+   "chef_gouv": {
+    "nom": "Andy Burnham",
+    "fonction": "Premier ministre",
+    "parti": "Parti travailliste",
+    "depuis": "2026-07-20",
+    "qid": "Q269909"
+   },
+   "chambre": {
+    "nom": "Chambre des communes",
+    "sieges": 650,
+    "majorite": 326,
+    "election": "2024-07-04",
+    "src": {
+     "t": "Union interparlementaire (IPU Parline), CC BY-NC-SA 4.0",
+     "u": "https://data.ipu.org/parliament/GB/GB-LC01/election/GB-LC01-E20240704/"
+    },
+    "ipu": "GB-LC01-E20240704"
+   },
+   "partis": [
+    {
+     "nom": "Parti travailliste",
+     "sieges": 411,
+     "role": "gouv",
+     "leaders": "Andy Burnham (depuis le 17/07/2026)",
+     "src": {
+      "t": "ABC News",
+      "u": "https://abcnews.com/International/andy-burnham-become-uks-prime-minister-after-meeting/story?id=134907835"
+     },
+     "ipu": [
+      "gb-labour_party"
+     ]
+    },
+    {
+     "nom": "Parti conservateur",
+     "sieges": 121,
+     "role": "hors",
+     "leaders": "Kemi Badenoch",
+     "src": {
+      "t": "PollCheck, octobre 2026",
+      "u": "https://www.pollcheck.co.uk/favourability-ratings"
+     },
+     "ipu": [
+      "gb-conservative_party"
+     ]
+    },
+    {
+     "nom": "Libéraux-démocrates",
+     "sieges": 72,
+     "role": "hors",
+     "leaders": "Ed Davey",
+     "ok": false,
+     "ipu": [
+      "gb-liberal_democrats"
+     ]
+    },
+    {
+     "nom": "Parti national écossais (SNP)",
+     "sieges": 9,
+     "role": "hors",
+     "leaders": "John Swinney",
+     "src": {
+      "t": "Parlement écossais",
+      "u": "https://www.parliament.scot/msps/current-and-previous-msps/john-swinney"
+     },
+     "ipu": [
+      "gb-scottish_national_party"
+     ]
+    },
+    {
+     "nom": "Sinn Féin",
+     "sieges": 7,
+     "role": "hors",
+     "leaders": "Mary Lou McDonald",
+     "ok": false,
+     "ipu": [
+      "gb-sinn_fein"
+     ]
+    },
+    {
+     "nom": "Reform UK",
+     "sieges": 5,
+     "role": "hors",
+     "leaders": "Nigel Farage",
+     "src": {
+      "t": "PollCheck, octobre 2026",
+      "u": "https://www.pollcheck.co.uk/favourability-ratings"
+     },
+     "ipu": [
+      "gb-reform-uk"
+     ]
+    },
+    {
+     "nom": "Parti unioniste démocrate (DUP)",
+     "sieges": 5,
+     "role": "hors",
+     "leaders": "Gavin Robinson",
+     "ok": false,
+     "ipu": [
+      "gb-democratic_unionist_party"
+     ]
+    }
+   ],
+   "autres": 20,
+   "notes": [
+    "Sinn Féin ne siège pas à Westminster (abstentionnisme)."
+   ]
+  },
+  "IND": {
+   "chef_etat": {
+    "nom": "Draupadi Murmu",
+    "fonction": "Présidente",
+    "parti": "BJP",
+    "depuis": "2022-07-25",
+    "qid": "Q19901232"
+   },
+   "chef_gouv": {
+    "nom": "Narendra Modi",
+    "fonction": "Premier ministre",
+    "parti": "BJP",
+    "depuis": "2014-05-26",
+    "qid": "Q1058"
+   },
+   "chambre": {
+    "nom": "Lok Sabha",
+    "sieges": 543,
+    "majorite": 272,
+    "election": "2024-06-04",
+    "src": {
+     "t": "Union interparlementaire (IPU Parline), CC BY-NC-SA 4.0",
+     "u": "https://data.ipu.org/parliament/IN/IN-LC01/election/IN-LC01-E20240419/"
+    },
+    "ipu": "IN-LC01-E20240419"
+   },
+   "partis": [
+    {
+     "nom": "Bharatiya Janata Party (BJP)",
+     "sieges": 240,
+     "role": "gouv",
+     "leaders": "Nitin Nabin (président depuis le 20/01/2026)",
+     "src": {
+      "t": "Site du BJP",
+      "u": "https://www.bjp.org/shri-nitin-nabin"
+     },
+     "ipu": [
+      "in-bharatiya_janata_party_bjp"
+     ]
+    },
+    {
+     "nom": "Congrès national indien",
+     "sieges": 99,
+     "role": "hors",
+     "leaders": "Mallikarjun Kharge (président), Rahul Gandhi (chef de l'opposition)",
+     "ok": false,
+     "ipu": [
+      "in-indian_national_congress_inc"
+     ]
+    },
+    {
+     "nom": "Samajwadi Party",
+     "sieges": 37,
+     "role": "hors",
+     "leaders": "Akhilesh Yadav",
+     "ok": false,
+     "ipu": [
+      "in-samajwadi_party_sp"
+     ]
+    },
+    {
+     "nom": "Trinamool Congress",
+     "sieges": 29,
+     "role": "hors",
+     "leaders": "Mamata Banerjee",
+     "ok": false,
+     "ipu": [
+      "in-all_india_trinamool_congress_aitc"
+     ]
+    },
+    {
+     "nom": "DMK",
+     "sieges": 22,
+     "role": "hors",
+     "leaders": "M. K. Stalin",
+     "ok": false,
+     "ipu": [
+      "in-dravida_munnetra_kazhagam_dmk"
+     ]
+    },
+    {
+     "nom": "Telugu Desam Party",
+     "sieges": 16,
+     "role": "gouv",
+     "leaders": "N. Chandrababu Naidu",
+     "ok": false,
+     "ipu": [
+      "in-telugu_desam_party_tdp"
+     ]
+    },
+    {
+     "nom": "Janata Dal (United)",
+     "sieges": 12,
+     "role": "gouv",
+     "leaders": "Nitish Kumar",
+     "ok": false,
+     "ipu": [
+      "in-janata_dal_united_jdu"
+     ]
+    }
+   ],
+   "autres": 88,
+   "notes": [
+    "Coalitions : NDA (au gouvernement, menée par le BJP) 293 sièges, INDIA (opposition, menée par le Congrès) 234."
+   ]
+  },
+  "RUS": {
+   "chef_etat": {
+    "nom": "Vladimir Poutine",
+    "fonction": "Président",
+    "parti": "sans étiquette",
+    "depuis": "2012-05-07",
+    "qid": "Q7747"
+   },
+   "chef_gouv": {
+    "nom": "Mikhaïl Michoustine",
+    "fonction": "Président du gouvernement",
+    "parti": "sans étiquette",
+    "depuis": "2020-01-16",
+    "qid": "Q4298520"
+   },
+   "chambre": {
+    "nom": "Douma d'État",
+    "sieges": 450,
+    "majorite": 226,
+    "election": "2026-09-20",
+    "recoupe": false,
+    "src": {
+     "t": "Wikipédia (EN), d'après la Commission électorale centrale",
+     "u": "https://en.wikipedia.org/wiki/2026_Russian_legislative_election"
+    },
+    "ipu": "RU-LC01-E20260918"
+   },
+   "partis": [
+    {
+     "nom": "Russie unie",
+     "sieges": 349,
+     "role": null,
+     "leaders": "Dmitri Medvedev (président du parti)"
+    },
+    {
+     "nom": "Parti communiste (KPRF)",
+     "sieges": 37,
+     "role": null,
+     "leaders": "Guennadi Ziouganov"
+    },
+    {
+     "nom": "LDPR",
+     "sieges": 23,
+     "role": null,
+     "leaders": "Leonid Sloutski"
+    },
+    {
+     "nom": "Nouvelles Personnes",
+     "sieges": 19,
+     "role": null,
+     "leaders": "Alexeï Netchaïev"
+    },
+    {
+     "nom": "Russie juste",
+     "sieges": 17,
+     "role": null,
+     "leaders": "Sergueï Mironov"
+    }
+   ],
+   "autres": 5,
+   "notes": [
+    "Le président et le chef du gouvernement n'appartiennent à aucun parti ; le gouvernement n'est pas formé par une coalition de partis.",
+    "Sièges relevés sur une seule source complète : d'autres médias donnent des chiffres différents (ex. 40 sièges au KPRF). L'Union interparlementaire n'a pas encore publié le détail par parti : il remplacera ces chiffres dès sa parution (contrôle hebdomadaire).",
+    "L'OSCE n'a pas envoyé de mission d'observation (non invitée)."
+   ],
+   "src_leaders": {
+    "t": "Wikipédia (EN), tableau des résultats 2026",
+    "u": "https://en.wikipedia.org/wiki/2026_Russian_legislative_election"
+   },
+   "src_notes": {
+    "t": "New Eastern Europe, 26/10/2026",
+    "u": "https://neweasterneurope.eu/2026/10/26/how-russia-eliminated-electoral-competition/"
+   }
+  },
+  "JPN": {
+   "chef_etat": {
+    "nom": "Naruhito",
+    "fonction": "Empereur",
+    "parti": null,
+    "depuis": "2019-05-01",
+    "qid": "Q217096"
+   },
+   "chef_gouv": {
+    "nom": "Sanae Takaichi",
+    "fonction": "Première ministre",
+    "parti": "Parti libéral-démocrate",
+    "depuis": "2025-10-21",
+    "qid": "Q1705028"
+   },
+   "chambre": {
+    "nom": "Chambre des représentants",
+    "sieges": 465,
+    "majorite": 233,
+    "election": "2026-02-08",
+    "src": {
+     "t": "Union interparlementaire (IPU Parline), CC BY-NC-SA 4.0",
+     "u": "https://data.ipu.org/parliament/JP/JP-LC01/election/JP-LC01-E20260208/"
+    },
+    "ipu": "JP-LC01-E20260208"
+   },
+   "partis": [
+    {
+     "nom": "Parti libéral-démocrate (PLD)",
+     "sieges": 315,
+     "role": "gouv",
+     "leaders": "Sanae Takaichi",
+     "ipu": [
+      "jp-liberal_democratic_party_ldp"
+     ]
+    },
+    {
+     "nom": "Alliance réformiste centriste",
+     "sieges": 49,
+     "role": "hors",
+     "leaders": "Jun'ya Ogawa (aujourd'hui président du Parti démocrate réformiste)",
+     "src": {
+      "t": "Wikipédia (EN)",
+      "u": "https://en.wikipedia.org/wiki/Centrist_Reform_Alliance"
+     },
+     "ipu": [
+      "jp-centrist-reform-alliance"
+     ]
+    },
+    {
+     "nom": "Parti japonais de l'innovation (Ishin)",
+     "sieges": 36,
+     "role": "gouv",
+     "leaders": "Hirofumi Yoshimura",
+     "src": {
+      "t": "Wikipédia (EN), 2e cabinet Takaichi",
+      "u": "https://en.wikipedia.org/wiki/Second_Takaichi_cabinet"
+     },
+     "ipu": [
+      "jp-nippon_ishin_no_japan_restoration_party"
+     ]
+    },
+    {
+     "nom": "Parti démocrate du peuple",
+     "sieges": 28,
+     "role": "hors",
+     "leaders": "Yūichirō Tamaki (réélu en septembre 2026)",
+     "src": {
+      "t": "China Daily (Xinhua), 07/09/2026",
+      "u": "https://www.chinadailyhk.com/article/639143"
+     },
+     "ipu": [
+      "jp-democratic_party_for_the_people"
+     ]
+    },
+    {
+     "nom": "Sanseitō",
+     "sieges": 15,
+     "role": "hors",
+     "leaders": "Sōhei Kamiya",
+     "ok": false,
+     "ipu": [
+      "jp-sanseito"
+     ]
+    },
+    {
+     "nom": "Équipe pour le futur (Team Mirai)",
+     "sieges": 11,
+     "role": "hors",
+     "leaders": "Takahiro Anno",
+     "ok": false,
+     "ipu": [
+      "jp-team-mirai"
+     ]
+    }
+   ],
+   "autres": 11,
+   "notes": [
+    "L'Alliance réformiste centriste (fusion du PDC et du Komeito, janvier 2026) est dissoute de fait depuis le 17/09/2026 : ses élus se répartissent entre le Parti démocrate réformiste et le Komeito.",
+    "Sièges selon l'Union interparlementaire (315 pour le PLD) ; d'autres sources en comptent 316."
+   ]
+  },
+  "FRA": {
+   "chef_etat": {
+    "nom": "Emmanuel Macron",
+    "fonction": "Président de la République",
+    "parti": "Renaissance",
+    "depuis": "2017-05-14",
+    "qid": "Q3052772"
+   },
+   "chef_gouv": {
+    "nom": "Sébastien Lecornu",
+    "fonction": "Premier ministre",
+    "parti": "Renaissance",
+    "depuis": "2025-09-09",
+    "qid": "Q20089181"
+   },
+   "chambre": {
+    "nom": "Assemblée nationale",
+    "sieges": 577,
+    "majorite": 289,
+    "election": "2024-07-07",
+    "src": {
+     "t": "Union interparlementaire (IPU Parline), CC BY-NC-SA 4.0",
+     "u": "https://data.ipu.org/parliament/FR/FR-LC01/election/FR-LC01-E20240630/"
+    },
+    "ipu": "FR-LC01-E20240630"
+   },
+   "partis": [
+    {
+     "nom": "Union de la gauche (Nouveau Front populaire)",
+     "sieges": 178,
+     "role": "hors",
+     "leaders": "LFI : Manuel Bompard (coordinateur) ; PS : Olivier Faure ; Écologistes : Marine Tondelier",
+     "src": {
+      "t": "Wikipédia (EN), Marine Tondelier et primaire de la gauche 2026",
+      "u": "https://en.wikipedia.org/wiki/2026_United_Left_primary"
+     },
+     "ipu": [
+      "fr-new-popular-front-(nfp)-ug"
+     ]
+    },
+    {
+     "nom": "Ensemble (bloc présidentiel)",
+     "sieges": 150,
+     "role": "gouv",
+     "leaders": "Renaissance : Gabriel Attal (secrétaire général)",
+     "src": {
+      "t": "Wikipédia (EN)",
+      "u": "https://en.wikipedia.org/wiki/Gabriel_Attal"
+     },
+     "ipu": [
+      "fr-ensemble_presidential_majority_"
+     ]
+    },
+    {
+     "nom": "Rassemblement national",
+     "sieges": 125,
+     "role": "hors",
+     "leaders": "Jordan Bardella (président), Marine Le Pen (présidente du groupe)",
+     "src": {
+      "t": "CNews, 22/10/2026",
+      "u": "https://www.cnews.fr/france/2026-10-22/violences-urbaines-sebastien-lecornu-recoit-les-chefs-de-partis-politiques-ce"
+     },
+     "ipu": [
+      "fr-national_rally_rn_"
+     ]
+    },
+    {
+     "nom": "Les Républicains",
+     "sieges": 39,
+     "role": null,
+     "leaders": "Bruno Retailleau (président)",
+     "src": {
+      "t": "Site du parti",
+      "u": "https://republicains.fr/qui-sommes-nous/"
+     },
+     "ipu": [
+      "fr-republicans_lr"
+     ]
+    },
+    {
+     "nom": "Divers droite",
+     "sieges": 27,
+     "role": null,
+     "leaders": "",
+     "ipu": [
+      "fr-other_parties_right_dvd"
+     ]
+    },
+    {
+     "nom": "Union de l'extrême droite (UDR)",
+     "sieges": 17,
+     "role": "hors",
+     "leaders": "Éric Ciotti",
+     "ok": false,
+     "ipu": [
+      "fr-union-of-the-far-right"
+     ]
+    }
+   ],
+   "autres": 41,
+   "notes": [
+    "Nuances attribuées par le ministère de l'Intérieur au soir de l'élection. Les groupes de l'Assemblée ont évolué depuis.",
+    "Participation des Républicains au gouvernement : non renseignée."
+   ]
+  },
+  "ITA": {
+   "chef_etat": {
+    "nom": "Sergio Mattarella",
+    "fonction": "Président de la République",
+    "parti": null,
+    "depuis": "2015-02-03",
+    "qid": "Q3956186"
+   },
+   "chef_gouv": {
+    "nom": "Giorgia Meloni",
+    "fonction": "Présidente du Conseil",
+    "parti": "Frères d'Italie",
+    "depuis": "2022-10-22",
+    "qid": "Q451791"
+   },
+   "chambre": {
+    "nom": "Chambre des députés",
+    "sieges": 400,
+    "majorite": 201,
+    "election": "2022-09-25",
+    "src": {
+     "t": "Wikipédia (IT), élections de 2022",
+     "u": "https://it.wikipedia.org/wiki/Elezioni_politiche_in_Italia_del_2022"
+    },
+    "ipu": "IT-LC01-E20220925"
+   },
+   "partis": [
+    {
+     "nom": "Frères d'Italie",
+     "sieges": 119,
+     "role": "gouv",
+     "leaders": "Giorgia Meloni"
+    },
+    {
+     "nom": "Parti démocrate",
+     "sieges": 69,
+     "role": "hors",
+     "leaders": "Elly Schlein (mandat prolongé le 18/10/2026)",
+     "src": {
+      "t": "Open, 18/10/2026",
+      "u": "https://www.open.online/2026/10/18/assemblea-pd-proroga-mandato-elly-schlein-discorso/"
+     }
+    },
+    {
+     "nom": "Ligue",
+     "sieges": 66,
+     "role": "gouv",
+     "leaders": "Matteo Salvini (réélu le 25/10/2026)",
+     "src": {
+      "t": "ANSA, 25/10/2026",
+      "u": "https://www.ansa.it/sito/notizie/politica/2026/10/25/salvini-riconfermato-segretario-lega-con-465-voti_61f47561-e911-4440-a3d8-61190f98b532.html"
+     }
+    },
+    {
+     "nom": "Mouvement 5 étoiles",
+     "sieges": 52,
+     "role": "hors",
+     "leaders": "Giuseppe Conte",
+     "src": {
+      "t": "Il Fatto Quotidiano",
+      "u": "https://www.ilfattoquotidiano.it/2025/10/26/movimento-5-stelle-conte-presidente-elezione-notizie/8173854/"
+     }
+    },
+    {
+     "nom": "Forza Italia",
+     "sieges": 45,
+     "role": "gouv",
+     "leaders": "Antonio Tajani",
+     "src": {
+      "t": "Il Sole 24 Ore",
+      "u": "https://www.ilsole24ore.com/art/forza-italia-tajani-eletto-segretario-quattro-vice-grande-responsabilita-AFOPhLqC"
+     }
+    },
+    {
+     "nom": "Action – Italia Viva",
+     "sieges": 21,
+     "role": "hors",
+     "leaders": "Carlo Calenda, Matteo Renzi (listes séparées depuis)",
+     "ok": false
+    },
+    {
+     "nom": "Alliance Verts et Gauche",
+     "sieges": 12,
+     "role": "hors",
+     "leaders": "Angelo Bonelli, Nicola Fratoianni",
+     "ok": false
+    }
+   ],
+   "autres": 16,
+   "notes": [
+    "Nous modérés (7 sièges, compris dans « autres ») participe aussi à la coalition de gouvernement.",
+    "L'Union interparlementaire ne publie que les totaux par coalition (centre droit 237, centre gauche 84), cohérents avec le détail par parti ci-dessus."
+   ]
+  },
+  "CAN": {
+   "chef_etat": {
+    "nom": "Charles III",
+    "fonction": "Roi, représenté par la gouverneure générale",
+    "parti": null,
+    "depuis": "2022-09-08",
+    "qid": "Q43274"
+   },
+   "chef_gouv": {
+    "nom": "Mark Carney",
+    "fonction": "Premier ministre",
+    "parti": "Parti libéral",
+    "depuis": "2025-03-14",
+    "qid": "Q192533"
+   },
+   "chambre": {
+    "nom": "Chambre des communes",
+    "sieges": 343,
+    "majorite": 172,
+    "election": "2025-04-28",
+    "src": {
+     "t": "Union interparlementaire (IPU Parline), CC BY-NC-SA 4.0",
+     "u": "https://data.ipu.org/parliament/CA/CA-LC01/election/CA-LC01-E20250428/"
+    },
+    "ipu": "CA-LC01-E20250428"
+   },
+   "partis": [
+    {
+     "nom": "Parti libéral",
+     "sieges": 169,
+     "role": "gouv",
+     "leaders": "Mark Carney",
+     "ipu": [
+      "ca-liberal_party"
+     ]
+    },
+    {
+     "nom": "Parti conservateur",
+     "sieges": 144,
+     "role": "hors",
+     "leaders": "Pierre Poilievre (confirmé en janvier 2026)",
+     "src": {
+      "t": "CBC, 31/01/2026",
+      "u": "https://www.cbc.ca/news/politics/livestory/pierre-poilievre-speech-conservative-convention-leadership-review-live-updates-9.7068829"
+     },
+     "ipu": [
+      "ca-conservative_party"
+     ]
+    },
+    {
+     "nom": "Bloc québécois",
+     "sieges": 22,
+     "role": "hors",
+     "leaders": "Yves-François Blanchet",
+     "ok": false,
+     "ipu": [
+      "ca-bloc_qu__b__cois_bq"
+     ]
+    },
+    {
+     "nom": "Nouveau Parti démocratique",
+     "sieges": 7,
+     "role": "hors",
+     "leaders": "Avi Lewis (depuis le 29/03/2026)",
+     "src": {
+      "t": "Wikipédia (EN)",
+      "u": "https://en.wikipedia.org/wiki/Avi_Lewis"
+     },
+     "ipu": [
+      "ca-ndp_new_democratic_party_ndp_"
+     ]
+    },
+    {
+     "nom": "Parti vert",
+     "sieges": 1,
+     "role": "hors",
+     "leaders": "Elizabeth May",
+     "ok": false,
+     "ipu": [
+      "ca-green_party"
+     ]
+    }
+   ],
+   "autres": 0
+  },
+  "KOR": {
+   "chef_etat": {
+    "nom": "Lee Jae-myung",
+    "fonction": "Président (chef de l'État et du gouvernement)",
+    "parti": "Parti démocrate",
+    "depuis": "2025-06-04",
+    "qid": "Q12612463"
+   },
+   "chef_gouv": {
+    "nom": "Han Seong-sook",
+    "fonction": "Première ministre (nommée par le président)",
+    "parti": null,
+    "depuis": "2026-07-01",
+    "qid": "Q55082182"
+   },
+   "chambre": {
+    "nom": "Assemblée nationale",
+    "sieges": 300,
+    "majorite": 151,
+    "election": "2024-04-10",
+    "src": {
+     "t": "Union interparlementaire (IPU Parline), CC BY-NC-SA 4.0",
+     "u": "https://data.ipu.org/parliament/KR/KR-LC01/election/KR-LC01-E20240410/"
+    },
+    "ipu": "KR-LC01-E20240410"
+   },
+   "partis": [
+    {
+     "nom": "Parti démocrate",
+     "sieges": 175,
+     "role": "gouv",
+     "leaders": "Kim Min-seok (depuis le 17/08/2026)",
+     "src": {
+      "t": "Korea Herald",
+      "u": "https://www.koreaherald.com/article/10843221"
+     },
+     "ipu": [
+      "kr-democratic-party-of-korea",
+      "kr-democratic-alliance"
+     ]
+    },
+    {
+     "nom": "Parti du pouvoir au peuple",
+     "sieges": 108,
+     "role": "hors",
+     "leaders": "Jang Dong-hyuk",
+     "ok": false,
+     "ipu": [
+      "kr-people-power-party",
+      "kr-people-future-party"
+     ]
+    },
+    {
+     "nom": "Reconstruire la Corée",
+     "sieges": 12,
+     "role": "hors",
+     "leaders": "Shin Jang-sik (depuis le 25/07/2026)",
+     "src": {
+      "t": "Korea Times, 25/07/2026",
+      "u": "https://koreatimes.co.kr/southkorea/politics/20260725/minor-rebuilding-korea-party-elects-new-leader"
+     },
+     "ipu": [
+      "kr-rebuilding-korea-party"
+     ]
+    },
+    {
+     "nom": "Parti de la réforme",
+     "sieges": 3,
+     "role": "hors",
+     "leaders": "Lee Jun-seok",
+     "ok": false,
+     "ipu": [
+      "kr-new-reform-party"
+     ]
+    }
+   ],
+   "autres": 2,
+   "notes": [
+    "Sièges comptés avec les listes satellites de chaque parti à la proportionnelle."
+   ]
+  }
+ }
+}

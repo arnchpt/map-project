@@ -1,0 +1,189 @@
+{
+ "USA": {
+  "code": "US-LC01-E20241105",
+  "date": "2024-11-05",
+  "sieges": 435,
+  "partis": {
+   "us-republican_party": 220,
+   "us-democratic_party_0": 215
+  }
+ },
+ "CHN": {
+  "code": "CN-LC01-E20230305",
+  "date": "2023-03-05",
+  "sieges": 2977,
+  "partis": {}
+ },
+ "DEU": {
+  "code": "DE-LC01-E20250223",
+  "date": "2025-02-23",
+  "sieges": 630,
+  "partis": {
+   "de-christian_democratic_union_cdu": 164,
+   "de-alternative_germany_afd": 152,
+   "de-social_democratic_party_spd": 120,
+   "de-green_party": 85,
+   "de-left_party_die_linke": 64,
+   "de-christian_social_union_bavaria_csu": 44,
+   "de-ssw": 1
+  }
+ },
+ "GBR": {
+  "code": "GB-LC01-E20240704",
+  "date": "2024-07-04",
+  "sieges": 650,
+  "partis": {
+   "gb-labour_party": 411,
+   "gb-conservative_party": 121,
+   "gb-liberal_democrats": 72,
+   "gb-scottish_national_party": 9,
+   "gb-sinn_fein": 7,
+   "gb-democratic_unionist_party": 5,
+   "gb-reform-uk": 5,
+   "gb-green_party_0": 4,
+   "gb-plaid_cymru": 4,
+   "gb-social_democratic_and_labour_party_sdlp_": 2,
+   "gb-trade-unionist-voice": 1,
+   "gb-alliance_party": 1,
+   "gb-ulster-unionist-party": 1,
+   "gb-independents": 6,
+   "gb-speaker": 1
+  }
+ },
+ "IND": {
+  "code": "IN-LC01-E20240419",
+  "date": "2024-04-19",
+  "sieges": 543,
+  "partis": {
+   "in-bharatiya_janata_party_bjp": 240,
+   "in-indian_national_congress_inc": 99,
+   "in-samajwadi_party_sp": 37,
+   "in-all_india_trinamool_congress_aitc": 29,
+   "in-dravida_munnetra_kazhagam_dmk": 22,
+   "in-telugu_desam_party_tdp": 16,
+   "in-janata_dal_united_jdu": 12,
+   "in-shiv_sena_ss": 9,
+   "in-nationalist-congress-party-party-sharadchandra-pawar-(ncpsp)": 8,
+   "in-shiv-sena": 7,
+   "in-lok-jan-shakti-party-(ram-vilas)-ljprv-002": 5,
+   "in-yuvajana_sramika_rythu_congress_party_ysrcp": 4,
+   "in-rashtriya_janata_dal_rjd": 4,
+   "in-communist_party_india_marxist_cpi_m": 4,
+   "in-indian_union_muslim_league_iuml": 3,
+   "in-aam_aadmi_party": 3,
+   "in-jharkhand_mukti_morcha_jmm": 3,
+   "in-janasena-party-jnp": 2,
+   "in-communist-party-of-india-(marxist-leninist)-(liberation)-cpi(ml)(l)": 2,
+   "in-janata_dal_secular_jds": 2,
+   "in-viduthalai_chiruthaigal_katchi_vck_": 2,
+   "in-communist_party_india_cpi": 2,
+   "in-rashtriya-lok-dal-(rld)": 2,
+   "in-jammu_and_kashmir_national_conference_j_knc_": 2,
+   "in-united-people-s-party-liberal-(uppl)": 1,
+   "in-asom-gana-parishad-(agp)": 1,
+   "in-hindustani-awam-morcha-(secular)": 1,
+   "in-kerala_congress_m": 1,
+   "in-revolutionary_socialist_party": 1,
+   "in-nationalist_congress_party_ncp": 1,
+   "in-voice-of-the-people-party-(votpp)": 1,
+   "in-zoram-people-s-movement-(zpm)": 1,
+   "in-shiromani_akali_dal_sad": 1,
+   "in-rashtriya_loktantrik_party_rlp_": 1,
+   "in-bharat-adivasi-party-(bhrtadvsip)": 1,
+   "in-sikkim_krantikari_morcha_skm_": 1,
+   "in-marumalarchi-dravida-munnetra-kazhagam-(mdmk)": 1,
+   "in-aazad-samaj-party-(kanshi-ram)-(aspkr)": 1,
+   "in-apna_dal": 1,
+   "in-ajsu_party_ajsu_": 1,
+   "in-all_india_majlis_e_ittehadul_muslimeen": 1,
+   "in-independents": 7
+  }
+ },
+ "RUS": {
+  "code": "RU-LC01-E20260918",
+  "date": "2026-09-18",
+  "sieges": 450,
+  "partis": {}
+ },
+ "JPN": {
+  "code": "JP-LC01-E20260208",
+  "date": "2026-02-08",
+  "sieges": 465,
+  "partis": {
+   "jp-liberal_democratic_party_ldp": 315,
+   "jp-centrist-reform-alliance": 49,
+   "jp-nippon_ishin_no_japan_restoration_party": 36,
+   "jp-democratic_party_for_the_people": 28,
+   "jp-sanseito": 15,
+   "jp-team-mirai": 11,
+   "jp-japanese_communist_party_jcp": 4,
+   "jp-reiwa_shinsengumi": 1,
+   "jp-genzei-nippon-yukoku-rengo": 1,
+   "jp-independents": 5
+  }
+ },
+ "FRA": {
+  "code": "FR-LC01-E20240630",
+  "date": "2024-06-30",
+  "sieges": 577,
+  "partis": {
+   "fr-new-popular-front-(nfp)-ug": 178,
+   "fr-ensemble_presidential_majority_": 150,
+   "fr-national_rally_rn_": 125,
+   "fr-republicans_lr": 39,
+   "fr-other_parties_right_dvd": 27,
+   "fr-union-of-the-far-right": 17,
+   "fr-other_left_wing_parties_dvg": 12,
+   "fr-regionalist_reg": 9,
+   "fr-other_parties_of_the_centre": 6,
+   "fr-horizons-(hor)": 6,
+   "fr-union-of-democrats-and-independents-(udi)": 3,
+   "fr-socialist_party_ps": 2,
+   "fr-ecologist_eco": 1,
+   "fr-far_right_exd": 1,
+   "fr-others_div": 1
+  }
+ },
+ "ITA": {
+  "code": "IT-LC01-E20220925",
+  "date": "2022-09-25",
+  "sieges": 400,
+  "partis": {
+   "it-coalition_brothers_of_italy_fdi_lega_forza_italia_us_moderates_noi_moderati_nm_": 237,
+   "it-democratic_party_democratic_and_progressive_italy_dp_idp_greens_and_left_alliance_avs_europa_civic_commitment_ic_": 84,
+   "it-five_star_movement_m5s": 52,
+   "it-action_italia_viva": 21,
+   "it-south_tyrolean_people_s_party_patt_svp_patt_": 3,
+   "it-south_calls_north_sud_chiama_nord_": 1,
+   "it-aosta_valley_vda_": 1,
+   "it-associative_movement_italians_abroad_maie": 1
+  }
+ },
+ "CAN": {
+  "code": "CA-LC01-E20250428",
+  "date": "2025-04-28",
+  "sieges": 343,
+  "partis": {
+   "ca-liberal_party": 169,
+   "ca-conservative_party": 144,
+   "ca-bloc_qu__b__cois_bq": 22,
+   "ca-ndp_new_democratic_party_ndp_": 7,
+   "ca-green_party": 1
+  }
+ },
+ "KOR": {
+  "code": "KR-LC01-E20240410",
+  "date": "2024-04-10",
+  "sieges": 300,
+  "partis": {
+   "kr-democratic-party-of-korea": 161,
+   "kr-people-power-party": 90,
+   "kr-people-future-party": 18,
+   "kr-democratic-alliance": 14,
+   "kr-rebuilding-korea-party": 12,
+   "kr-new-reform-party": 3,
+   "kr-new-future-party": 1,
+   "kr-progressive-party": 1
+  }
+ }
+}

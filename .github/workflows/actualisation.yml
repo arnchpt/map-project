@@ -1,5 +1,5 @@
 # Actualisation automatique des données (voir README, « Actualisation automatique »).
-# Chaque jour : commerce (FMI IMTS). Le lundi : contrôle des organisations sur Wikidata.
+# Chaque jour : commerce (FMI IMTS). Le lundi : contrôle des organisations et des chefs d'État et de gouvernement (Wikidata), sièges par parti (IPU).
 # Rien de nouveau : rien n'est commité (au plus une mise à jour hebdomadaire de la date de vérification).
 # Chiffres modifiés et contrôles passés : commit direct sur main, GitHub Pages republie le site.
 # Anomalie, changement d'année ou écart Wikidata : PR « actualisation-auto » à relire, rien n'est publié.
@@ -53,12 +53,24 @@ jobs:
         continue-on-error: true
         run: node scripts/orgs-wikidata.js
 
+      - name: Chefs d'État et de gouvernement (Wikidata)
+        id: politique
+        if: (github.event_name == 'workflow_dispatch' && inputs.organisations) || (github.event_name == 'schedule' && steps.jour.outputs.lundi == 'true')
+        continue-on-error: true
+        run: node scripts/politique.js
+
+      - name: Sièges par parti (IPU Parline)
+        id: ipu
+        if: (github.event_name == 'workflow_dispatch' && inputs.organisations) || (github.event_name == 'schedule' && steps.jour.outputs.lundi == 'true')
+        continue-on-error: true
+        run: node scripts/ipu-sieges.js
+
       - run: npm run build
 
       - name: Publier ou proposer
         env:
           GH_TOKEN: ${{ github.token }}
-          ANOMALIE: ${{ steps.commerce.outputs.anomaly == 'true' || steps.orgs.outputs.changed == 'true' }}
+          ANOMALIE: ${{ steps.commerce.outputs.anomaly == 'true' || steps.orgs.outputs.changed == 'true' || steps.politique.outputs.ecart == 'true' || steps.ipu.outputs.changed == 'true' }}
         run: |
           if git diff --quiet; then echo "Aucun changement."; exit 0; fi
           git config user.name "github-actions[bot]"
@@ -81,6 +93,15 @@ jobs:
               echo "Écarts entre Wikidata et notre liste validée (data/orgs.json). Wikidata n'est qu'un détecteur : vérifier sur le site officiel, puis corriger data/orgs.json à la main si besoin."; echo
               cat tmp/rapport-organisations.md; echo
             fi
+            if [ "${{ steps.politique.outputs.ecart }}" = "true" ]; then
+              echo "## Chefs d'État et de gouvernement (écart avec Wikidata)"; echo
+              echo "Wikidata n'est qu'un détecteur : vérifier dans la presse, puis corriger data/politique/politique.json à la main."; echo
+              cat tmp/rapport-politique.md; echo
+            fi
+            if [ "${{ steps.ipu.outputs.changed }}" = "true" ]; then
+              echo "## Sièges (l'Union interparlementaire a publié du nouveau)"; echo
+              cat tmp/rapport-ipu.md; echo
+            fi
             echo "Fusionner publie ces chiffres. Fermer la PR les écarte : le robot la rouvrira si l'écart persiste."
           } > tmp/pr.md
           if gh pr list --head actualisation-auto --state open --json number --jq '.[0].number' | grep -q .; then
@@ -90,7 +111,7 @@ jobs:
           fi
 
       - name: Signaler les sources en échec
-        if: steps.commerce.outcome == 'failure' || steps.orgs.outcome == 'failure'
+        if: steps.commerce.outcome == 'failure' || steps.orgs.outcome == 'failure' || steps.politique.outcome == 'failure' || steps.ipu.outcome == 'failure'
         run: |
-          echo "::error::Source en échec : commerce=${{ steps.commerce.outcome }}, organisations=${{ steps.orgs.outcome }}. Voir le journal des étapes."
+          echo "::error::Source en échec : commerce=${{ steps.commerce.outcome }}, organisations=${{ steps.orgs.outcome }}, politique=${{ steps.politique.outcome }}, sièges=${{ steps.ipu.outcome }}. Voir le journal des étapes."
           exit 1

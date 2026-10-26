@@ -16,6 +16,9 @@ Principe : « le contenu dicte le contexte ». Les couleurs et les scores sont c
 | `src/template.html` | La page : styles, faits France (présences, conflits, sanctions UE), carte (d3 + topojson), sélecteur du pays choisi. Contient trois emplacements remplis au build. |
 | `data/names.json` | Noms de pays en français, par code ISO numérique. |
 | `data/votes/votes-<pays>.json` | Proximité des votes à l'ONU entre un pays focus et tous les autres, 0–100 (échelle absolue), produite par `scripts/votes_kappa.py`. 11 pays calculés : FRA, USA, CHN, RUS, DEU, GBR, IND, JPN, ITA, CAN, KOR. |
+| `data/politique/politique.json` | Forces politiques des 11 pays : chefs d'État et de gouvernement, sièges de la dernière élection, dirigeants de partis, avec sources. |
+| `scripts/ipu-sieges.js` | Sièges par parti à la dernière élection, API IPU Parline, contrôle hebdomadaire. |
+| `scripts/politique.js` | Contrôle les chefs d'État et de gouvernement contre Wikidata (détecteur d'écarts, n'écrit rien dans les données). |
 | `scripts/build.js` | Liste les pays du sélecteur (nom, capitale, membre de l'UE), calcule le plafond sanctions de chaque paire et injecte fond de carte, noms, commerce, votes et plafonds dans le gabarit. |
 | `data/sanctions.json` | Mesures de sanctions retenues (qui sanctionne qui, source de chaque mesure) et règle de plafonnement validée le 26/10/2026. À revoir à chaque renouvellement d'un régime. |
 | `data/trade/trade-<pays>.json` | Commerce de biens d'un pays focus par partenaire, 2025 et 2024, en Md$, produit par `scripts/imts.js`. Mêmes 11 pays. |
@@ -73,6 +76,21 @@ Règles de publication :
 Sur la carte, chaque couche indique sa période et sa date de vérification, avec la mention « Vérification en retard » si le dernier contrôle dépasse le délai prévu (14 jours pour le commerce, 21 pour les organisations).
 
 Réglage nécessaire une fois : Settings → Actions → General → Workflow permissions, cocher « Read and write permissions » et « Allow GitHub Actions to create and approve pull requests ».
+
+## Forces politiques
+
+Chaque fiche pays commence par un bloc « Qui gouverne » : chef de l'État, chef du gouvernement, sièges de la chambre basse par parti, dirigeants des principaux partis, rattachement au gouvernement ou non. Les données sont dans `data/politique/politique.json`, relevées à la main le 26/10/2026, chaque dirigeant avec sa source ou la mention « non reconfirmé ».
+
+- Sièges : résultat officiel de la dernière élection, figé jusqu'au scrutin suivant (défections et partielles non suivies). Russie : une seule source complète, marquée « non recoupé ». Chine : pas d'élection concurrentielle, le bloc le dit sans chiffre de sièges.
+- Wikidata est fiable pour les chefs d'État et de gouvernement, mais pas pour les sièges (incomplets ou périmés) ni pour les dirigeants de partis (doublons, mandats échus). Il sert donc de détecteur :
+
+```sh
+NODE_USE_ENV_PROXY=1 node scripts/politique.js
+```
+
+compare les chefs d'État et de gouvernement du JSON à Wikidata (P35, P6) et écrit les écarts dans `tmp/rapport-politique.md`, sans rien modifier.
+- Sièges : `scripts/ipu-sieges.js` interroge chaque lundi l'API de l'Union interparlementaire (IPU Parline, licence CC BY-NC-SA 4.0) et garde un instantané dans `data/politique/ipu-sieges.json`. Le build prend les sièges IPU quand le code d'élection correspond à `chambre.ipu` et que chaque parti listé a sa correspondance (`ipu`). Nouvelle élection ou correction IPU : PR « actualisation-auto » à relire, il faut alors mettre à jour la liste des partis, leurs dirigeants et leurs codes IPU. L'IPU ne détaille pas l'Italie par parti (coalitions seulement) et n'a pas encore publié la Russie 2026 : chiffres manuels pour ces deux pays.
+- Aucune source structurée fiable pour les dirigeants de partis : relevé manuel, à revoir après chaque congrès ou élection.
 
 ## Veille des sanctions
 

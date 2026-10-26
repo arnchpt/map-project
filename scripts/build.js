@@ -1,5 +1,5 @@
 // Assemble la page publiable : injecte le fond de carte, les noms de pays, le commerce, les votes et les plafonds sanctions de chaque pays choisi,
-// les organisations (data/orgs.json) et la fraîcheur des couches (data/freshness.json) dans src/template.html
+// les organisations (data/orgs.json), les forces politiques (data/politique/politique.json) et la fraîcheur des couches (data/freshness.json) dans src/template.html
 // Usage : npm run build  ->  dist/index.html
 const fs = require("fs");
 const path = require("path");
@@ -52,12 +52,27 @@ for (const [iso, f] of Object.entries(FOCUS)) {
   f.sanctions = Object.fromEntries(Object.entries(pairs).map(([o, p]) => [isoc.alpha3ToNumeric(o), { plafond: p.out && p.in ? 20 : 40, d: p.m.map(x => x.d).join(" ; "), m: p.m }]));
 }
 
+// Forces politiques : les sièges viennent de l'IPU (scripts/ipu-sieges.js) quand l'élection relevée est celle que pointe chambre.ipu
+// et que chaque parti listé a sa correspondance IPU ; sinon (nouvelle élection pas encore relue, Italie, Russie) les chiffres du JSON restent
+function politique() {
+  const pol = JSON.parse(read("data/politique/politique.json")), ipu = JSON.parse(read("data/politique/ipu-sieges.json"));
+  for (const [iso, p] of Object.entries(pol.pays)) {
+    const s = ipu[iso], c = p.chambre;
+    if (!c || !s || s.code !== c.ipu || !Object.keys(s.partis).length || !p.partis.every(x => x.ipu)) continue;
+    for (const x of p.partis) x.sieges = x.ipu.reduce((t, k) => t + (s.partis[k] ?? 0), 0);
+    c.sieges = s.sieges;
+    p.autres = s.sieges - p.partis.reduce((t, x) => t + x.sieges, 0);
+  }
+  return pol;
+}
+
 const html = read("src/template.html")
   .replace("__TOPO__", topo)
   .replace("__NAMES__", read("data/names.json"))
   .replace("__FOCUS__", JSON.stringify(FOCUS))
   .replace("__ORGS__", JSON.stringify(Object.fromEntries(Object.entries(JSON.parse(read("data/orgs.json")).orgs).map(([k, o]) => [k, o.membres]))))
-  .replace("__FRESH__", read("data/freshness.json"));
+  .replace("__FRESH__", read("data/freshness.json"))
+  .replace("__POLITIQUE__", JSON.stringify(politique()));
 
 fs.mkdirSync(path.join(root, "dist"), { recursive: true });
 fs.writeFileSync(path.join(root, "dist/index.html"), html);
