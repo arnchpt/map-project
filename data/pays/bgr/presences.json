@@ -11,17 +11,22 @@
       "eff": null,
       "depuis": null,
       "src": "gouvernement"
+    },
+    {
+      "hote": "XKX",
+      "lon": 21.2,
+      "lat": 42.6,
+      "nom": "KFOR (force de l'OTAN au Kosovo)",
+      "cat": "otan",
+      "eff": null,
+      "depuis": null,
+      "src": "defense"
     }
   ],
   "non_localisees": [
     {
       "nom": "Total déclaré : cinq opérations de l'OTAN et trois opérations de l'UE (au 05/10/2026)",
       "eff": "≈ 270",
-      "src": "defense"
-    },
-    {
-      "nom": "KFOR (force de l'OTAN au Kosovo) ; Kosovo sans code ISO alpha-3 accepté par le contrat",
-      "eff": "non publié",
       "src": "defense"
     },
     {
