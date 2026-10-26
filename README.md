@@ -16,6 +16,7 @@ Principe : « le contenu dicte le contexte ». Les couleurs et les scores sont c
 | `src/template.html` | La page : styles, faits France (présences, conflits, sanctions UE), carte (d3 + topojson), sélecteur du pays choisi. Contient trois emplacements remplis au build. |
 | `data/names.json` | Noms de pays en français, par code ISO numérique. |
 | `data/votes/votes-<pays>.json` | Proximité des votes à l'ONU entre un pays focus et tous les autres, 0–100 (échelle absolue), produite par `scripts/votes_kappa.py`. 11 pays calculés : FRA, USA, CHN, RUS, DEU, GBR, IND, JPN, ITA, CAN, KOR. |
+| `data/pays/<iso3>/` | Données nationales de chaque pays de l'UE, depuis ses propres sources : inventaire des sources, présences militaires, conflits et tensions, forces politiques, commerce national. Contrat et modèle dans `data/pays/README.md` et `data/pays/_modele/`, contrôle par `scripts/valider-pays.js`. |
 | `data/politique/politique.json` | Forces politiques des 11 pays : chefs d'État et de gouvernement, sièges de la dernière élection, dirigeants de partis, avec sources. |
 | `scripts/ipu-sieges.js` | Sièges par parti à la dernière élection, API IPU Parline, contrôle hebdomadaire. |
 | `scripts/politique.js` | Contrôle les chefs d'État et de gouvernement contre Wikidata (détecteur d'écarts, n'écrit rien dans les données). |

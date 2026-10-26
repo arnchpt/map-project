@@ -1,0 +1,29 @@
+{
+  "pays": "XXX",
+  "verifie": "2026-10-26",
+  "presences": [
+    {
+      "hote": "LTU",
+      "lon": 23.9,
+      "lat": 54.9,
+      "nom": "Contingent dans le bataillon multinational de l'OTAN en Lituanie",
+      "cat": "otan",
+      "eff": 150,
+      "depuis": "2017-02",
+      "src": "defense"
+    },
+    {
+      "hote": null,
+      "lon": 0.0,
+      "lat": 0.0,
+      "nom": "Exemple de territoire national hors métropole",
+      "cat": "sov",
+      "eff": null,
+      "depuis": null,
+      "src": "defense"
+    }
+  ],
+  "non_localisees": [
+    { "nom": "Opérations navales de l'UE (Aspides, Irini)", "eff": "≈ 80", "src": "defense" }
+  ]
+}

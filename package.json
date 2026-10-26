@@ -3,7 +3,8 @@
   "private": true,
   "description": "Atlas géopolitique : carte du monde interactive, données sourcées",
   "scripts": {
-    "build": "node scripts/build.js"
+    "build": "node scripts/build.js",
+    "valider-pays": "node scripts/valider-pays.js"
   },
   "devDependencies": {
     "world-atlas": "2.0.2"
