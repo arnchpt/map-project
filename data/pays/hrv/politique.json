@@ -1,8 +1,8 @@
 {
   "pays": "HRV",
   "verifie": "2026-10-26",
-  "chef_etat": { "nom": "Zoran Milanović", "fonction": "Président de la République", "parti": null, "depuis": "2020-02-19", "qid": null, "src": "president" },
-  "chef_gouv": { "nom": "Andrej Plenković", "fonction": "Président du gouvernement", "parti": "HDZ", "depuis": "2016-10-19", "qid": null, "src": "gouvernement" },
+  "chef_etat": { "nom": "Zoran Milanović", "fonction": "Président de la République", "parti": null, "depuis": "2020-02-19", "qid": "Q57687", "src": "president" },
+  "chef_gouv": { "nom": "Andrej Plenković", "fonction": "Président du gouvernement", "parti": "HDZ", "depuis": "2016-10-19", "qid": "Q11685764", "src": "gouvernement" },
   "chambre": {
     "nom": "Hrvatski sabor",
     "sieges": 151,
