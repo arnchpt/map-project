@@ -1,6 +1,6 @@
 {
   "pays": "HUN",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "sources": [
     {
       "id": "stat",
@@ -17,7 +17,7 @@
       "couches": [
         "commerce"
       ],
-      "notes": "Site bloqué depuis la session : tableau exact par partenaire et licence à confirmer. Depuis 2021, les tableaux STADAT sont téléchargeables en XLSX à URL stable, mais aucune API documentée n'a été trouvée. Pas de commerce.json tant qu'aucun chiffre n'a pu être lu.",
+      "notes": "Site bloqué depuis la session : tableau exact par partenaire et licence à confirmer. Depuis 2021, les tableaux STADAT sont téléchargeables en XLSX à URL stable, mais aucune API documentée n'a été trouvée. Pas de commerce.json tant qu'aucun chiffre n'a pu être lu. Toujours inaccessible le 27/10/2026 (www.ksh.hu, statinfo.ksh.hu).",
       "hotes": [
         "www.ksh.hu",
         "statinfo.ksh.hu"
@@ -28,7 +28,7 @@
       "id": "honved",
       "nom": "Ministère de la Défense et forces armées hongroises, actualités et missions",
       "editeur": "Honvédelmi Minisztérium / Magyar Honvédség",
-      "url": "https://honvedelem.hu/",
+      "url": "https://honvedelem.hu/missziok.html",
       "type": "officiel",
       "langue": "hu",
       "licence": "non précisée",
@@ -40,12 +40,12 @@
         "presences",
         "conflits"
       ],
-      "notes": "Pas de page récapitulative des effectifs par mission trouvée. Tchad : le Parlement a autorisé le 6/11/2023 jusqu'à 200 militaires (400 en relève) jusqu'au 31/12/2025, sans déploiement confirmé par une source officielle à ce jour, donc absent de presences.json. Présences étrangères en Hongrie (escadre de transport lourd de l'OTAN à Pápa, état-major de la Division multinationale Centre à Székesfehérvár) : hors du périmètre de cette couche, qui décrit les forces hongroises à l'étranger.",
+      "notes": "Page « Missziók » lue le 27/10/2026 : KFOR (bataillon de réserve tactique, camp de Novo Selo, 35e relève depuis le 27/09/2026), EUFOR Althea (déminage, octobre 2026), SHAPE à Mons, UNFICYP (visite du chef d'état-major en novembre 2025), UNIFIL (7e relève rentrée en novembre 2024). Pas de tableau d'effectifs par mission. Irak : la mission OTAN a été suspendue et les militaires hongrois rapatriés en mars 2026. Tchad : autorisé par le Parlement le 6/11/2023 (jusqu'à 200 militaires, 400 en relève, jusqu'au 31/12/2025), aucun déploiement confirmé par le ministère, donc absent de presences.json. Présences étrangères en Hongrie : hors du périmètre de cette couche.",
       "hotes": [
         "honvedelem.hu",
         "defence.hu"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "parlement",
@@ -63,7 +63,7 @@
         "politique",
         "presences"
       ],
-      "notes": "Les déploiements à l'étranger sont autorisés par résolution (OGY határozat) ou décision gouvernementale publiée au Magyar Közlöny. Aucune API publique documentée trouvée.",
+      "notes": "Les déploiements à l'étranger sont autorisés par résolution (OGY határozat) ou décision gouvernementale publiée au Magyar Közlöny. Aucune API publique documentée trouvée. Le 27/10/2026, www.parlament.hu répond par un contrôle CAPTCHA aux accès automatisés : non contourné, donc non vérifié.",
       "hotes": [
         "www.parlament.hu",
         "library.parlament.hu"
@@ -86,7 +86,7 @@
         "presences",
         "sanctions"
       ],
-      "notes": "Sanctions : la loi LII de 2017 organise l'exécution des mesures restrictives de l'UE et du Conseil de sécurité de l'ONU. Les règlements de l'UE s'appliquent directement ; aucune liste nationale autonome n'a été trouvée. Information issue d'un guide juridique secondaire (CMS), à confirmer sur njt.hu.",
+      "notes": "Sanctions : la loi LII de 2017 organise l'exécution des mesures restrictives de l'UE et du Conseil de sécurité de l'ONU. Les règlements de l'UE s'appliquent directement ; aucune liste nationale autonome n'a été trouvée. Information issue d'un guide juridique secondaire (CMS), à confirmer sur njt.hu. Toujours inaccessible le 27/10/2026 (magyarkozlony.hu, njt.hu).",
       "hotes": [
         "magyarkozlony.hu",
         "njt.hu"
@@ -108,7 +108,7 @@
       "couches": [
         "politique"
       ],
-      "notes": "Résultats définitifs du scrutin du 12/04/2026 publiés le 18/04/2026 : 141 Tisza, 52 Fidesz–KDNP, 6 Mi Hazánk. Chiffres relevés par la presse (intellinews.com, bluewin.ch), pas lus sur le site de l'office.",
+      "notes": "Résultats définitifs du scrutin du 12/04/2026 publiés le 18/04/2026 : 141 Tisza, 52 Fidesz–KDNP, 6 Mi Hazánk. Chiffres relevés par la presse (intellinews.com, bluewin.ch), pas lus sur le site de l'office. Le 27/10/2026, vtr.valasztas.hu répond mais n'affiche les résultats que par JavaScript ; aucune URL de données ouverte n'a été trouvée, donc non vérifié.",
       "hotes": [
         "www.valasztas.hu",
         "vtr.valasztas.hu"
@@ -119,7 +119,7 @@
       "id": "gouvernement",
       "nom": "Portail du gouvernement, composition",
       "editeur": "Gouvernement de Hongrie",
-      "url": "https://kormany.hu/",
+      "url": "https://kormany.hu/kormany",
       "type": "officiel",
       "langue": "hu",
       "licence": "non précisée",
@@ -130,11 +130,11 @@
       "couches": [
         "politique"
       ],
-      "notes": "Gouvernement Magyar en fonctions depuis mai 2026 (16 ministres). Le ministère des Affaires étrangères a été séparé du commerce extérieur.",
+      "notes": "Page « Kormányzat » lue le 27/10/2026 : Magyar Péter, Premier ministre ; Orbán Anita, vice-Première ministre et ministre des Affaires étrangères ; Ruff Bálint, vice-Premier ministre ; Ruszin-Szendi Romulusz, ministre de la Défense ; 16 ministres. Le président de la République n'y figure pas (donnée tirée de Wikidata).",
       "hotes": [
         "kormany.hu"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "mae",
@@ -172,11 +172,11 @@
       "couches": [
         "presences"
       ],
-      "notes": "Version de février 2026 : Hongrie 408 militaires sur 4 636. Chiffre lu dans un extrait de recherche, pas dans le PDF.",
+      "notes": "Placemat de juin 2026 lu le 27/10/2026 : Hongrie 410 sur 4 739 militaires, 31 nations contributrices.",
       "hotes": [
         "www.nato.int"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "onu_pk",
@@ -193,7 +193,7 @@
       "couches": [
         "presences"
       ],
-      "notes": "Effectifs hongrois par mission (UNFICYP, UNIFIL, MINURSO) à lire ici une fois l'accès ouvert. Au 31/05/2025, 35 Hongrois servaient dans des missions de l'ONU (defence.hu). La FINUL s'achève fin 2026.",
+      "notes": "Effectifs hongrois par mission (UNFICYP, UNIFIL, MINURSO) à lire ici une fois l'accès ouvert. Au 31/05/2025, 35 Hongrois servaient dans des missions de l'ONU (defence.hu). La FINUL s'achève fin 2026. Le 27/10/2026, peacekeeping.un.org répond par un défi anti-robot sur les documents de contributions et psdata.un.org est une application JavaScript : non vérifié.",
       "hotes": [
         "peacekeeping.un.org",
         "psdata.un.org"
