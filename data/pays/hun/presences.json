@@ -1,12 +1,32 @@
 {
   "pays": "HUN",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "presences": [
+    {
+      "hote": "XKX",
+      "lon": 21.2,
+      "lat": 42.7,
+      "nom": "Contingent dans la KFOR (force de l'OTAN au Kosovo), bataillon de réserve tactique",
+      "cat": "otan",
+      "eff": 410,
+      "depuis": null,
+      "src": "otan_kfor"
+    },
+    {
+      "hote": "BEL",
+      "lon": 3.9,
+      "lat": 50.5,
+      "nom": "Personnel au grand quartier général des forces alliées en Europe (SHAPE), Mons",
+      "cat": "otan",
+      "eff": null,
+      "depuis": null,
+      "src": "honved"
+    },
     {
       "hote": "BIH",
       "lon": 18.4,
       "lat": 43.9,
-      "nom": "Contingent dans l'opération EUFOR Althea",
+      "nom": "Détachement de déminage dans l'opération EUFOR Althea",
       "cat": "ue",
       "eff": null,
       "depuis": null,
@@ -19,8 +39,8 @@
       "nom": "Section dans la FINUL (UNIFIL)",
       "cat": "onu",
       "eff": null,
-      "depuis": "2006",
-      "src": "onu_pk"
+      "depuis": null,
+      "src": "honved"
     },
     {
       "hote": "CYP",
@@ -29,8 +49,8 @@
       "nom": "Contingent dans l'UNFICYP",
       "cat": "onu",
       "eff": null,
-      "depuis": "1993",
-      "src": "onu_pk"
+      "depuis": null,
+      "src": "honved"
     },
     {
       "hote": "ESH",
@@ -43,11 +63,5 @@
       "src": "onu_pk"
     }
   ],
-  "non_localisees": [
-    {
-      "nom": "Contingent dans la KFOR (force de l'OTAN au Kosovo), depuis 1999 ; classé ici car le Kosovo n'a pas de code ISO alpha-3 accepté par le contrôle",
-      "eff": "408 (février 2026)",
-      "src": "otan_kfor"
-    }
-  ]
+  "non_localisees": []
 }
