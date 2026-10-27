@@ -1,13 +1,13 @@
 {
   "pays": "EST",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "chef_etat": {
     "nom": "Ülle Madise",
     "fonction": "Présidente de la République",
     "parti": null,
     "depuis": "2026-10-12",
     "qid": "Q16407395",
-    "src": "president"
+    "src": "electoral"
   },
   "chef_gouv": {
     "nom": "Kristen Michal",
@@ -22,7 +22,7 @@
     "sieges": 101,
     "majorite": 51,
     "election": "2023-03-05",
-    "src": "electoral",
+    "src": "ipu",
     "ipu": "EE-LC01-E20230305"
   },
   "partis": [
@@ -30,37 +30,55 @@
       "nom": "Parti de la réforme",
       "sieges": 37,
       "role": "gouv",
-      "leaders": "Kristen Michal (président du parti, Premier ministre)"
+      "leaders": "Kristen Michal (président du parti, Premier ministre)",
+      "ipu": [
+        "ee-reform_party"
+      ]
     },
     {
       "nom": "Parti populaire conservateur (EKRE)",
       "sieges": 17,
       "role": "hors",
-      "leaders": "Martin Helme (président, réélu en juin 2026)"
+      "leaders": "Martin Helme (président)",
+      "ipu": [
+        "ee-conservative_peoples_party_ekre"
+      ]
     },
     {
       "nom": "Parti du centre",
       "sieges": 16,
       "role": "hors",
-      "leaders": "Mihhail Kõlvart (président, non reconfirmé)"
+      "leaders": "Mihhail Kõlvart (président, selon Wikidata, non reconfirmé)",
+      "ipu": [
+        "ee-centre_party"
+      ]
     },
     {
       "nom": "Eesti 200",
       "sieges": 14,
       "role": "gouv",
-      "leaders": "Kristina Kallas (présidente)"
+      "leaders": "Kristina Kallas (présidente, ministre de l'Éducation)",
+      "ipu": [
+        "ee-eesti_200"
+      ]
     },
     {
       "nom": "Parti social-démocrate",
       "sieges": 9,
       "role": "hors",
-      "leaders": "non reconfirmé"
+      "leaders": "Lauri Läänemets (président selon Wikidata, non reconfirmé)",
+      "ipu": [
+        "ee-social_democratic_party"
+      ]
     },
     {
       "nom": "Isamaa",
       "sieges": 8,
       "role": "hors",
-      "leaders": "Urmas Reinsalu (président)"
+      "leaders": "Urmas Reinsalu (président)",
+      "ipu": [
+        "ee-isamaa"
+      ]
     }
   ]
 }
