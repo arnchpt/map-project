@@ -1,36 +1,78 @@
 {
   "pays": "NLD",
-  "verifie": "2026-10-26",
-  "src": "cbs-handelsland",
+  "verifie": "2026-10-27",
+  "src": "cbs-statline",
   "annee": 2025,
   "devise": "EUR",
   "unite": "Md",
-  "concept": "commerce national CBS (réexportations incluses, quasi-transit exclu), chiffres provisoires",
+  "concept": "commerce de biens CBS par franchissement de frontière (table 85429NED) : exportations = réexportations + produits néerlandais, importations = total moins transit entrant ; quasi-transit exclu ; chiffres provisoires",
   "total": {
-    "x": 654.8,
-    "m": 581.9
+    "x": 652.8,
+    "m": 582.0
   },
   "partenaires": [
     {
       "pays": "DEU",
-      "x": 145.1,
+      "x": 144.9,
       "m": 98.5
     },
     {
+      "pays": "BEL",
+      "x": 75.0,
+      "m": 55.6
+    },
+    {
       "pays": "USA",
-      "x": 32.2,
-      "m": 57.3
+      "x": 32.1,
+      "m": 57.2
+    },
+    {
+      "pays": "FRA",
+      "x": 49.4,
+      "m": 21.2
     },
     {
       "pays": "CHN",
       "x": 18.7,
       "m": 48.5
+    },
+    {
+      "pays": "GBR",
+      "x": 41.3,
+      "m": 25.0
+    },
+    {
+      "pays": "ITA",
+      "x": 28.7,
+      "m": 14.9
+    },
+    {
+      "pays": "POL",
+      "x": 21.3,
+      "m": 13.9
+    },
+    {
+      "pays": "ESP",
+      "x": 23.2,
+      "m": 10.8
+    },
+    {
+      "pays": "SWE",
+      "x": 12.8,
+      "m": 8.6
     }
   ],
   "notes": {
-    "NLD": "Effet Rotterdam. Le FMI (IMTS, relevé le 26/10/2026) donne pour 2025 963,3 Md$ d'exportations et 866,0 Md$ d'importations, soit environ 1,5 fois les totaux CBS en euros : l'écart dépasse largement l'effet de change et correspond au quasi-transit, que le CBS exclut et qu'Eurostat (donc le FMI) inclut. Sources : cbs-quasi, eurostat-rotterdam. Liste limitée à 3 partenaires dont exportations et importations 2025 ont pu être relevées ; les 10 premiers viendront de StatLine une fois l'hôte ouvert.",
-    "CHN": "Importations : 48,5 Md€ selon le CBS contre 127,9 Md$ selon le FMI. Le FMI compte les biens chinois débarqués à Rotterdam puis réexpédiés vers le reste de l'UE ; le CBS les exclut quand ils restent propriété étrangère (quasi-transit).",
-    "DEU": "Exportations : 145,1 Md€ selon le CBS contre 233,8 Md$ selon le FMI. Le FMI inclut le quasi-transit réexpédié vers l'Allemagne ; la part exacte n'est pas publiée par partenaire dans StatLine.",
-    "USA": "Importations : 57,3 Md€ selon le CBS contre 78,3 Md$ selon le FMI."
+    "NLD": "Effet Rotterdam. Les totaux du CBS excluent le quasi-transit (biens restés propriété étrangère). Avec lui, la table 85429NED donne pour 2025 875,6 Md€ d'exportations (dont 222,9 Md€ de transit sortant) et 772,7 Md€ d'importations (dont 190,7 Md€ de transit entrant). Le FMI (IMTS, relevé le 27/10/2026) publie 963,3 Md$ et 866,0 Md$, soit l'ordre de grandeur des totaux avec transit et non celui des totaux CBS hors transit (comparaison approximative, devises différentes). Eurostat indique que les flux néerlandais sont surestimés par ce transit. Chiffres 2025 provisoires.",
+    "BEL": "Hors transit CBS. Transit : 3,1 Md€ entrant, 19,2 Md€ sortant. FMI : 106,2 Md$ d'exportations, 66,3 Md$ d'importations.",
+    "CHN": "Hors transit CBS. Transit : 50,9 Md€ entrant, 2,4 Md€ sortant. FMI : 23,9 Md$ d'exportations, 127,9 Md$ d'importations.",
+    "DEU": "Hors transit CBS. Transit : 12,7 Md€ entrant, 62,3 Md€ sortant. FMI : 233,8 Md$ d'exportations, 125,6 Md$ d'importations.",
+    "FRA": "Hors transit CBS. Transit : 2,6 Md€ entrant, 21,6 Md€ sortant. FMI : 80,2 Md$ d'exportations, 26,8 Md$ d'importations.",
+    "ITA": "Hors transit CBS. Transit : 3,3 Md€ entrant, 11,4 Md€ sortant. FMI : 45,2 Md$ d'exportations, 20,5 Md$ d'importations.",
+    "POL": "Hors transit CBS. Transit : 2,3 Md€ entrant, 8,7 Md€ sortant. FMI : 33,9 Md$ d'exportations, 18,3 Md$ d'importations.",
+    "ESP": "Hors transit CBS. Transit : 1,2 Md€ entrant, 10,7 Md€ sortant. FMI : 38,4 Md$ d'exportations, 13,6 Md$ d'importations.",
+    "GBR": "Hors transit CBS. Transit : 5,6 Md€ entrant, 8,6 Md€ sortant. FMI : 56,3 Md$ d'exportations, 26,3 Md$ d'importations.",
+    "USA": "Hors transit CBS. Transit : 20,5 Md€ entrant, 11,0 Md€ sortant. FMI : 48,6 Md$ d'exportations, 78,3 Md$ d'importations.",
+    "SWE": "Hors transit CBS. Transit : 0,8 Md€ entrant, 7,5 Md€ sortant. FMI : 22,9 Md$ d'exportations, 10,7 Md$ d'importations."
   }
 }

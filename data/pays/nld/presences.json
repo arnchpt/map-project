@@ -1,17 +1,113 @@
 {
   "pays": "NLD",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "presences": [
-    { "hote": "LTU", "lon": 24.2, "lat": 55.1, "nom": "Contingent dans le groupement tactique de présence avancée renforcée de l'OTAN (eFP) en Lituanie", "cat": "otan", "eff": 250, "depuis": "2017-02", "src": "defensie" },
-    { "hote": "POL", "lon": 22.0, "lat": 50.1, "nom": "Défense antiaérienne (Patriot) du centre logistique de l'OTAN pour l'aide à l'Ukraine (NSATU)", "cat": "otan", "eff": 300, "depuis": "2025-12", "src": "defensie" },
-    { "hote": "ROU", "lon": 23.9, "lat": 46.5, "nom": "Détachement de drones MQ-9 Reaper, renforcement du flanc est de l'OTAN", "cat": "otan", "eff": 40, "depuis": null, "src": "defensie" },
-    { "hote": "DEU", "lon": 8.2, "lat": 50.1, "nom": "Officiers d'état-major au commandement NSATU (Wiesbaden)", "cat": "otan", "eff": null, "depuis": null, "src": "defensie" },
-    { "hote": "BIH", "lon": 18.4, "lat": 43.9, "nom": "EUFOR Althea", "cat": "ue", "eff": null, "depuis": null, "src": "defensie" },
-    { "hote": "KOR", "lon": 127.0, "lat": 37.5, "nom": "Conseillers au Commandement des Nations unies (UNC)", "cat": "onu", "eff": null, "depuis": "2025-01", "src": "defensie" },
-    { "hote": null, "lon": -68.9, "lat": 12.2, "nom": "Commandement des forces dans les Caraïbes (Curaçao, Aruba, Saint-Martin et îles BES), garde-côtes et navire stationnaire", "cat": "sov", "eff": null, "depuis": null, "src": "defensie" }
+    {
+      "hote": "LTU",
+      "lon": 24.2,
+      "lat": 55.1,
+      "nom": "Contingent dans la Multinational Battlegroup Lithuania de l'OTAN (bataillon sous commandement allemand, Rukla)",
+      "cat": "otan",
+      "eff": 250,
+      "depuis": "2017-02",
+      "src": "defensie"
+    },
+    {
+      "hote": "POL",
+      "lon": 22.0,
+      "lat": 50.1,
+      "nom": "Air and Missile Defense Taskforce (Patriot) protégeant le centre logistique de l'OTAN pour l'Ukraine (NSATU)",
+      "cat": "otan",
+      "eff": null,
+      "depuis": null,
+      "src": "defensie"
+    },
+    {
+      "hote": "ROU",
+      "lon": 23.9,
+      "lat": 46.5,
+      "nom": "Détachement de drones MQ-9 Reaper à Luna, flanc est de l'OTAN",
+      "cat": "otan",
+      "eff": 40,
+      "depuis": null,
+      "src": "defensie"
+    },
+    {
+      "hote": "DEU",
+      "lon": 8.2,
+      "lat": 50.1,
+      "nom": "Personnel au commandement NSATU de Wiesbaden et formation d'Ukrainiens (EUMAM)",
+      "cat": "otan",
+      "eff": null,
+      "depuis": null,
+      "src": "defensie"
+    },
+    {
+      "hote": "BIH",
+      "lon": 18.4,
+      "lat": 43.9,
+      "nom": "EUFOR Althea (officiers d'état-major ; compagnie d'infanterie rentrée le 21/10/2026, mission prolongée jusqu'à fin 2027)",
+      "cat": "ue",
+      "eff": null,
+      "depuis": null,
+      "src": "defensie"
+    },
+    {
+      "hote": "KOR",
+      "lon": 127.0,
+      "lat": 37.5,
+      "nom": "Commandement des Nations unies (UNC)",
+      "cat": "onu",
+      "eff": 3,
+      "depuis": "2025-01",
+      "src": "defensie"
+    },
+    {
+      "hote": "BHR",
+      "lon": 50.6,
+      "lat": 26.2,
+      "nom": "Officiers au quartier général des Combined Maritime Forces (CMF)",
+      "cat": "dlia",
+      "eff": null,
+      "depuis": null,
+      "src": "defensie"
+    },
+    {
+      "hote": "ISR",
+      "lon": 35.2,
+      "lat": 31.8,
+      "nom": "Office of the Security Coordinator (USSC), Jérusalem et Ramallah",
+      "cat": "dlia",
+      "eff": null,
+      "depuis": null,
+      "src": "defensie"
+    },
+    {
+      "hote": null,
+      "lon": -68.9,
+      "lat": 12.2,
+      "nom": "Navire stationnaire Zr.Ms. Friesland, Caraïbes (Aruba, Bonaire, Curaçao ; appui aux garde-côtes)",
+      "cat": "sov",
+      "eff": null,
+      "depuis": null,
+      "src": "defensie"
+    }
   ],
   "non_localisees": [
-    { "nom": "Organisme des Nations unies chargé de la surveillance de la trêve (ONUST/UNTSO), Moyen-Orient", "eff": "11", "src": "defensie" },
-    { "nom": "Coordinateur américain de la sécurité (USSC) pour Israël et l'Autorité palestinienne", "eff": "non publié", "src": "defensie" }
+    {
+      "nom": "UNTSO : observateurs aux lignes d'armistice Liban, Syrie, Israël",
+      "eff": "11",
+      "src": "defensie"
+    },
+    {
+      "nom": "Navires de l'OTAN Baltic Sentry (mer Baltique) et officiers de l'opération UE Aspides (mer Rouge)",
+      "eff": "non publié",
+      "src": "defensie"
+    },
+    {
+      "nom": "Formateurs GPOI au Tchad (jusqu'au 12 septembre)",
+      "eff": "non publié",
+      "src": "defensie"
+    }
   ]
 }

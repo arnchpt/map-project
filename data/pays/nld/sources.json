@@ -1,23 +1,27 @@
 {
   "pays": "NLD",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "sources": [
     {
       "id": "cbs-statline",
-      "nom": "CBS StatLine, commerce international de biens par pays (open data OData)",
+      "nom": "CBS StatLine, commerce de biens par pays (open data OData v3)",
       "editeur": "Centraal Bureau voor de Statistiek (CBS)",
-      "url": "https://www.cbs.nl/nl-nl/onze-diensten/open-data/statline-als-open-data",
+      "url": "https://opendata.cbs.nl/ODataApi/OData/85429NED",
       "type": "officiel",
       "langue": "nl",
       "licence": "CC BY 4.0 (mention « Bron: CBS »), selon la page copyright de cbs.nl",
       "cadence": "mensuelle (chiffres provisoires, révisés)",
       "api": true,
-      "api_url": "https://opendata.cbs.nl/ODataApi/odata/",
-      "format": "json (OData v3 ; OData v4 en cours sur datasets.cbs.nl)",
-      "couches": ["commerce"],
-      "notes": "Source à brancher pour remplacer la publication annuelle : toutes les tables StatLine sont en OData, sans clé. Le numéro de la table « pays partenaires » reste à identifier une fois l'hôte ouvert (84668ENG couvre réexportations et quasi-transit par origine/destination ; 85429NED les chiffres clés au passage de la frontière). StatLine inclut les réexportations mais pas le quasi-transit (biens restés propriété étrangère), contrairement à Eurostat et au FMI. Hôte injoignable depuis la session (refus du proxy).",
-      "hotes": ["opendata.cbs.nl", "datasets.cbs.nl", "www.cbs.nl"],
-      "acces": "non_verifie"
+      "api_url": "https://opendata.cbs.nl/ODataApi/OData/85429NED/TypedDataSet",
+      "format": "json (OData v3, sans clé)",
+      "couches": [
+        "commerce"
+      ],
+      "notes": "Lu le 27/10/2026. Table 85429NED « Internationale goederenhandel ; grensoverschrijding, kerncijfers » (2015 à juillet 2026, mensuelle, valeurs en M€) : par pays et section SITC, importation totale, transit entrant, réexportation, produits néerlandais, transit sortant. Filtre utile : Perioden eq '2025JJ00' et SITC eq 'T001082'. Hors transit, les totaux 2025 (652,8 Md€ / 582,0 Md€) correspondent à la publication Nederland Handelsland. La table 85427NED (eigendomsoverdracht) suit un autre concept (changement de propriété) et donne des totaux différents : ne pas la mélanger. Les domaines www.cbs.nl et datasets.cbs.nl (OData v4) restent bloqués, sans effet sur l'accès.",
+      "hotes": [
+        "opendata.cbs.nl"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "cbs-handelsland",
@@ -31,9 +35,13 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["commerce"],
-      "notes": "Chiffres 2025 provisoires. Relevés par recherche web, page non lue directement (hôte bloqué) : à recouper dans StatLine dès l'ouverture. Total des exportations 653,7 Md€ dans cette publication contre 654,8 Md€ dans le communiqué de janvier 2026 (révision).",
-      "hotes": ["longreads.cbs.nl"],
+      "couches": [
+        "commerce"
+      ],
+      "notes": "Chiffres 2025 provisoires, relevés par recherche web : Allemagne 145,1 / 98,5 Md€, États-Unis 57,3, Chine 18,7 / 48,5 (écarts de 0,2 Md€ au plus avec StatLine du 27/10/2026, révision). Page non lue, longreads.cbs.nl bloqué : la source utilisée pour commerce.json est StatLine.",
+      "hotes": [
+        "longreads.cbs.nl"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -48,9 +56,13 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["commerce"],
-      "notes": "Base de la note « effet Rotterdam » de commerce.json : le quasi-transit (biens étrangers qui ne font que traverser) n'est pas dans StatLine mais figure chez Eurostat, donc dans les séries FMI.",
-      "hotes": ["www.cbs.nl"],
+      "couches": [
+        "commerce"
+      ],
+      "notes": "Définitions du CBS, page non lue (www.cbs.nl bloqué). Le quasi-transit chiffré par pays vient de la table StatLine 85429NED (source cbs-statline).",
+      "hotes": [
+        "www.cbs.nl"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -65,16 +77,20 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["commerce"],
-      "notes": "Eurostat indique que les flux néerlandais sont surestimés : les biens destinés à d'autres États membres sont comptés comme importations extra-UE aux Pays-Bas (mise en libre pratique), puis comme exportations intra-UE depuis les Pays-Bas.",
-      "hotes": ["ec.europa.eu"],
-      "acces": "non_verifie"
+      "couches": [
+        "commerce"
+      ],
+      "notes": "Page lue le 27/10/2026. Eurostat indique que les flux commerciaux néerlandais sont surestimés (« Rotterdam effect », quasi-transit) : les biens destinés à d'autres pays de l'UE sont comptés comme importations extra-UE aux Pays-Bas, puis comme exportations intra-UE vers ces pays.",
+      "hotes": [
+        "ec.europa.eu"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "defensie",
       "nom": "Ministère de la Défense, « Missies in buitenland » et « Weekoverzicht Defensieoperaties »",
       "editeur": "Ministerie van Defensie (Pays-Bas)",
-      "url": "https://www.defensie.nl/onderwerpen/missies-in-buitenland",
+      "url": "https://www.defensie.nl/onderwerpen/m/missies-in-buitenland/huidige-missies",
       "type": "officiel",
       "langue": "nl",
       "licence": "CC BY-SA 4.0 (page copyright de defensie.nl ; photos exclues)",
@@ -82,10 +98,14 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["presences"],
-      "notes": "La page donne un total de postes à l'étranger (550 au 27/10/2026 selon le relevé, 598 au 27/07/2026) et une carte cliquable par mission ; les effectifs par mission ne sont pas tous publiés. Pas de flux machine identifié. Relevés par recherche web, hôte bloqué : chiffres à relire sur la page.",
-      "hotes": ["www.defensie.nl"],
-      "acces": "non_verifie"
+      "couches": [
+        "presences"
+      ],
+      "notes": "Pages lues le 27/10/2026 : « Huidige missies en inzet » (liste par mission), page « Missies in buitenland » (550 postes à l'étranger au 27/10/2026) et weekoverzicht du 21/10/2026. Effectifs publiés : Lituanie ≈ 250 et Roumanie ≈ 40 (weekoverzicht du 14/01/2026, non repris depuis), Corée 3 (14/01/2026), UNTSO 11, EUFOR Althea ≈ 175 rentrés le 21/10/2026. Pologne : aucun effectif publié. Le site renvoie 404 sur l'ancien lien /onderwerpen/missies-in-buitenland.",
+      "hotes": [
+        "www.defensie.nl"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "kamerstukken",
@@ -99,14 +119,21 @@
       "api": true,
       "api_url": "https://repository.overheid.nl/sru",
       "format": "xml (SRU), pdf, odt",
-      "couches": ["presences", "conflits", "sanctions"],
-      "notes": "Source primaire des déploiements : toute mission est notifiée au Parlement (art. 100 de la Constitution). Requête utile : dossier 29521 (missions) et 36045 (aide à l'Ukraine). La lettre du 20/05/2026 (29 521, nr. 520) récapitule les contributions 2025.",
-      "hotes": ["zoek.officielebekendmakingen.nl", "repository.overheid.nl"],
+      "couches": [
+        "presences",
+        "conflits",
+        "sanctions"
+      ],
+      "notes": "Source primaire des déploiements (art. 100 de la Constitution) mais hôtes bloqués le 27/10/2026 : non lue. Les effectifs viennent de defensie.nl.",
+      "hotes": [
+        "zoek.officielebekendmakingen.nl",
+        "repository.overheid.nl"
+      ],
       "acces": "non_verifie"
     },
     {
       "id": "oekraine",
-      "nom": "Rijksoverheid, « Nederlandse hulp voor Oekraïne » et lettre Défense du 21/04/2026 (36 045, nr. 292)",
+      "nom": "Rijksoverheid, « Nederlandse hulp voor Oekraïne »",
       "editeur": "Gouvernement des Pays-Bas",
       "url": "https://www.rijksoverheid.nl/onderwerpen/oorlog-in-oekraine/nederlandse-hulp-voor-oekraine",
       "type": "officiel",
@@ -116,10 +143,14 @@
       "api": false,
       "api_url": null,
       "format": "html, pdf",
-      "couches": ["conflits"],
-      "notes": "Lettre du 21/04/2026 : 14,3 Md€ (bruts) alloués par les cabinets précédents à l'aide militaire ; le cabinet Jetten prévoit environ 3 Md€ nets par an sur 2026-2029.",
-      "hotes": ["www.rijksoverheid.nl", "zoek.officielebekendmakingen.nl"],
-      "acces": "non_verifie"
+      "couches": [
+        "conflits"
+      ],
+      "notes": "Page lue le 27/10/2026 : aide financière, énergie et humanitaire datée jour par jour. Les montants d'aide militaire cités dans les lettres de la Défense (dossier 36 045) n'ont pu être relus : zoek.officielebekendmakingen.nl bloqué et pas de chiffre sur cette page. Aucun montant militaire n'est donc repris dans conflits.json.",
+      "hotes": [
+        "www.rijksoverheid.nl"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "mh17",
@@ -133,16 +164,20 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["conflits"],
-      "notes": "Procédures engagées par les Pays-Bas : requête interétatique devant la CEDH (2020, arrêt du 09/07/2025) et plainte devant le Conseil de l'OACI (décision de mai 2025).",
-      "hotes": ["www.government.nl"],
-      "acces": "non_verifie"
+      "couches": [
+        "conflits"
+      ],
+      "notes": "Page lue le 27/10/2026 : décision du Conseil de l'OACI du 12/05/2025 (affaire introduite en 2022 par les Pays-Bas et l'Australie) et décision du 30/06/2025 sur les réparations ; arrêt de la CEDH du 09/07/2025 (à l'unanimité).",
+      "hotes": [
+        "www.government.nl"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "kabinet",
-      "nom": "Rijksoverheid, composition du gouvernement (Regering)",
+      "nom": "Rijksoverheid, composition du gouvernement (Regering, Bewindspersonen)",
       "editeur": "Gouvernement des Pays-Bas",
-      "url": "https://www.rijksoverheid.nl/regering",
+      "url": "https://www.rijksoverheid.nl/regering/bewindspersonen",
       "type": "officiel",
       "langue": "nl",
       "licence": "CC0 1.0",
@@ -150,10 +185,14 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["politique"],
-      "notes": "Cabinet Jetten (D66, VVD, CDA), gouvernement minoritaire assermenté le 23/02/2026. Chef de l'État et chef du gouvernement recoupés avec Wikidata (Q154952, Q28860866) depuis la session.",
-      "hotes": ["www.rijksoverheid.nl"],
-      "acces": "non_verifie"
+      "couches": [
+        "politique"
+      ],
+      "notes": "Pages lues le 27/10/2026 : cabinet Jetten (D66, VVD, CDA) assermenté le 23/02/2026 ; 18 ministres et 10 secrétaires d'État. Rob Jetten ministre-président, Dilan Yeşilgöz-Zegerius (Défense, 1re vice-ministre-présidente), Bart van den Brink (2e vice-ministre-président). Les partis des personnes ne figurent pas sur la page.",
+      "hotes": [
+        "www.rijksoverheid.nl"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "kiesraad",
@@ -167,10 +206,14 @@
       "api": true,
       "api_url": "https://data.overheid.nl/dataset/verkiezingsuitslag-tweede-kamer-2025",
       "format": "EML (xml) et csv, en archives zip",
-      "couches": ["politique"],
-      "notes": "Résultats par commune (listes) et par circonscription (candidats). Le Kiesraad ne fournit pas d'assistance sur le format EML. Sièges relevés par recherche web (parlement.com), à recouper dans le fichier officiel.",
-      "hotes": ["data.overheid.nl", "www.kiesraad.nl"],
-      "acces": "non_verifie"
+      "couches": [
+        "politique"
+      ],
+      "notes": "Fiche lue le 27/10/2026 : élection du 29/10/2025, EML et csv, CC0, mise à jour du 09/12/2025. Fichiers non téléchargés ; sièges recoupés avec parlement.com et avec l'IPU (NL-LC01-E20251029, 150 sièges). Le Kiesraad ne fournit pas d'assistance sur le format EML.",
+      "hotes": [
+        "data.overheid.nl"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "tweedekamer",
@@ -184,10 +227,15 @@
       "api": true,
       "api_url": "https://gegevensmagazijn.tweedekamer.nl/OData/v4/2.0/Fractie",
       "format": "json (OData v4), sans clé",
-      "couches": ["politique"],
-      "notes": "Meilleure source automatisable pour la composition actuelle de la chambre : elle suit les scissions de groupes en cours de législature (la page Fracties affiche PVV 19 sièges contre 26 élus), alors que politique.json garde les sièges de l'élection. Contact : opendata@tweedekamer.nl.",
-      "hotes": ["gegevensmagazijn.tweedekamer.nl", "opendata.tweedekamer.nl", "www.tweedekamer.nl"],
-      "acces": "non_verifie"
+      "couches": [
+        "politique"
+      ],
+      "notes": "OData v4 interrogé le 27/10/2026 : entités Fractie (sièges actuels) et FractieZetelPersoon (Functie « Fractievoorzitter »). Composition actuelle : D66 26, VVD 22, Progressief Nederland (ex-GroenLinks-PvdA, depuis le 09/06/2026) 20, PVV 19, CDA 18, JA21 9, FvD 7, Groep Markuszower 7 (scission de la PVV, 20/01/2026), BBB 3 et Lid Keijzer 1 (24/02/2026), 3 chacun pour CU, SP, PvdD, SGP, DENK, 2 pour 50PLUS, 1 pour Volt (total 150). politique.json garde les sièges de l'élection du 29/10/2025 (règle du contrat) ; la composition actuelle est celle de ce service.",
+      "hotes": [
+        "gegevensmagazijn.tweedekamer.nl",
+        "opendata.tweedekamer.nl"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "parlement-com",
@@ -201,10 +249,14 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["politique"],
-      "notes": "Sert de recoupement en attendant le fichier Kiesraad. Participation 78,3 %.",
-      "hotes": ["www.parlement.com"],
-      "acces": "non_verifie"
+      "couches": [
+        "politique"
+      ],
+      "notes": "Page lue le 27/10/2026 : résultats de l'élection du 29/10/2025 par parti, identiques à ceux de l'IPU.",
+      "hotes": [
+        "www.parlement.com"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "terrorismelijst",
@@ -218,10 +270,14 @@
       "api": false,
       "api_url": null,
       "format": "pdf",
-      "couches": ["sanctions"],
-      "notes": "Seul régime de sanctions propre aux Pays-Bas : gel d'avoirs de personnes et organisations, en application de la résolution 1373 du Conseil de sécurité. Vise des personnes, pas des États : rien à afficher sur la carte. Les autres sanctions appliquées sont celles de l'UE et de l'ONU, déjà couvertes. Modifications signalées par les « sanctiealerts » DNB/AFM (www.dnb.nl).",
-      "hotes": ["www.rijksoverheid.nl", "www.dnb.nl"],
-      "acces": "non_verifie"
+      "couches": [
+        "sanctions"
+      ],
+      "notes": "Page lue le 27/10/2026 : liste au format OpenDocument (tableur, 13,59 Ko), datée du 11/09/2026. Seul régime de sanctions propre aux Pays-Bas : gel d'avoirs de personnes et d'organisations, en application de la résolution 1373 de l'ONU. Vise des personnes, pas des États : rien à afficher sur la carte. Les autres sanctions appliquées sont celles de l'UE et de l'ONU, déjà couvertes.",
+      "hotes": [
+        "www.rijksoverheid.nl"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "sanctiewet",
@@ -235,9 +291,15 @@
       "api": true,
       "api_url": "https://repository.overheid.nl/sru",
       "format": "xml, html",
-      "couches": ["sanctions"],
-      "notes": "Cadre légal : le ministre des Affaires étrangères met en œuvre les sanctions UE/ONU par règlements ministériels. Un projet de loi du 17/02/2026 doit remplacer la Sanctiewet 1977 ; statut d'adoption non vérifié.",
-      "hotes": ["wetten.overheid.nl", "repository.overheid.nl", "www.eerstekamer.nl"],
+      "couches": [
+        "sanctions"
+      ],
+      "notes": "Cadre légal (BWBR0003296) ; wetten.overheid.nl et repository.overheid.nl bloqués le 27/10/2026, non lu. Un projet de loi du 17/02/2026 doit remplacer la Sanctiewet 1977 ; statut d'adoption non vérifié.",
+      "hotes": [
+        "wetten.overheid.nl",
+        "repository.overheid.nl",
+        "www.eerstekamer.nl"
+      ],
       "acces": "non_verifie"
     }
   ]
