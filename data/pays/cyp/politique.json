@@ -1,23 +1,84 @@
 {
   "pays": "CYP",
-  "verifie": "2026-10-26",
-  "chef_etat": { "nom": "Nikos Christodoulides", "fonction": "Président de la République (chef de l'État et du gouvernement)", "parti": null, "depuis": "2023-02-28", "qid": "Q48905549", "src": "presidence" },
+  "verifie": "2026-10-27",
+  "chef_etat": {
+    "nom": "Nikos Christodoulides",
+    "fonction": "Président de la République (chef de l'État et du gouvernement)",
+    "parti": null,
+    "depuis": "2023-02-28",
+    "qid": "Q48905549",
+    "src": "presidence"
+  },
   "chef_gouv": null,
   "chambre": {
     "nom": "Chambre des représentants",
     "sieges": 56,
     "majorite": 29,
     "election": "2026-05-24",
-    "src": "elections-analyse",
+    "src": "ipu",
     "ipu": "CY-LC01-E20260524"
   },
   "partis": [
-    { "nom": "Rassemblement démocrate (DISY)", "sieges": 17, "role": "hors", "leaders": "Annita Demetriou (présidente du parti)", "qid": "Q644973" },
-    { "nom": "Parti progressiste des travailleurs (AKEL)", "sieges": 15, "role": "hors", "leaders": "Stefanos Stefanou (secrétaire général)", "qid": "Q212158" },
-    { "nom": "Front national populaire (ELAM)", "sieges": 8, "role": "hors", "leaders": "Christos Christou (président du parti)", "qid": "Q2748384" },
-    { "nom": "Parti démocrate (DIKO)", "sieges": 8, "role": "gouv", "leaders": "Nikolas Papadopoulos (président du parti)", "qid": "Q816863" },
-    { "nom": "Citoyens pour Chypre (ALMA)", "sieges": 4, "role": "hors", "leaders": "Odysseas Michaelides (président du parti)", "qid": "Q139552238" },
-    { "nom": "Démocratie directe (Direct Democracy Cyprus)", "sieges": 4, "role": "hors", "leaders": "Fidias Panayiotou (fondateur)", "qid": "Q138026801" }
+    {
+      "nom": "Rassemblement démocrate (DISY)",
+      "sieges": 17,
+      "role": "hors",
+      "leaders": "Annita Demetriou (présidente du parti)",
+      "qid": "Q644973",
+      "ipu": [
+        "cy-democratic_rally_disy"
+      ]
+    },
+    {
+      "nom": "Parti progressiste des travailleurs (AKEL)",
+      "sieges": 15,
+      "role": "hors",
+      "leaders": "Stefanos Stefanou (secrétaire général)",
+      "qid": "Q212158",
+      "ipu": [
+        "cy-progressive_party_working_people_akel"
+      ]
+    },
+    {
+      "nom": "Front national populaire (ELAM)",
+      "sieges": 8,
+      "role": "hors",
+      "leaders": "Christos Christou (président du parti)",
+      "qid": "Q2748384",
+      "ipu": [
+        "cy-national_popular_front_elam_"
+      ]
+    },
+    {
+      "nom": "Parti démocrate (DIKO)",
+      "sieges": 8,
+      "role": "gouv",
+      "leaders": "Nikolas Papadopoulos (président du parti)",
+      "qid": "Q816863",
+      "ipu": [
+        "cy-democratic_party_diko"
+      ]
+    },
+    {
+      "nom": "Citoyens pour Chypre (ALMA)",
+      "sieges": 4,
+      "role": "hors",
+      "leaders": "Odysseas Michaelides (président du parti)",
+      "qid": "Q139552238",
+      "ipu": [
+        "cy-alma-citizens-for-cyprus"
+      ]
+    },
+    {
+      "nom": "Démocratie directe (Direct Democracy Cyprus)",
+      "sieges": 4,
+      "role": "hors",
+      "leaders": "Fidias Panayiotou (fondateur)",
+      "qid": "Q138026801",
+      "ipu": [
+        "cy-direct-democracy-cyprus"
+      ]
+    }
   ],
   "notes": [
     "La Constitution prévoit 80 sièges, dont 24 réservés aux Chypriotes turcs et vacants depuis 1964 : 56 sièges pourvus, majorité calculée sur 56.",

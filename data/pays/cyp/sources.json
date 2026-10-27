@@ -1,6 +1,6 @@
 {
   "pays": "CYP",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "sources": [
     {
       "id": "stat",
@@ -9,15 +9,21 @@
       "url": "https://cystatdb.cystat.gov.cy/pxweb/en/8.CYSTAT-DB/8.CYSTAT-DB__External%20Trade__Foreign%20Trade%20Statistics%20by%20Main%20Product%20Category/1022201E.px/",
       "type": "officiel",
       "langue": "en",
-      "licence": "non précisée",
+      "licence": "non précisée sur la base de données",
       "cadence": "mensuelle",
       "api": true,
-      "api_url": "https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/",
-      "format": "px, json (API PxWeb)",
-      "couches": ["commerce"],
-      "notes": "Base PxWeb (tables 1022201E mensuelle par catégorie et pays ; 10421xxE détail par produit NC8 et pays). L'URL d'API suit le schéma standard PxWeb et reste à confirmer. Le bulletin PDF mensuel « Intra & Extra EU Trade Statistics » est arrêté depuis janvier 2023 (communiqué PIO du 24/04/2023), les données ne sont plus que dans CYSTAT-DB. Un second hôte existe (cystatdb23px.cystat.gov.cy). commerce.json non créé : aucun chiffre lu depuis la session.",
-      "hotes": ["cystatdb.cystat.gov.cy", "cystatdb23px.cystat.gov.cy", "www.cystat.gov.cy"],
-      "acces": "non_verifie"
+      "api_url": "https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/External%20Trade/",
+      "format": "json-stat2, csv, px (API PxWeb)",
+      "couches": [
+        "commerce"
+      ],
+      "notes": "API PxWeb lue le 27/10/2026, sans clé : listes de tables en GET, données en POST (json-stat2 ou csv). Tables utilisées : 1021201E (importations) et 1022201E (exportations, flux « intérieures » + « réexportations »), par catégorie de produit et pays, mensuelles, avec option « cumul janvier–mois choisi » (MONTH=2025M12, REFERENCE PERIOD=1, PRODUCT=0). Valeurs en euros ; totaux recoupés avec la table 1000011E (en milliers d'euros : importations 14 025 144, exportations 5 580 253 pour 2025). Données de l'année et des derniers mois révisées a posteriori (note de la table). Détail par produit NC8 : tables 10411xxE / 10421xxE (une par période). Le bulletin PDF mensuel est arrêté depuis janvier 2023 (communiqué PIO du 24/04/2023). Hôte miroir cystatdb23px.cystat.gov.cy et www.cystat.gov.cy (méthodologie) non joignables.",
+      "hotes": [
+        "cystatdb.cystat.gov.cy",
+        "cystatdb23px.cystat.gov.cy",
+        "www.cystat.gov.cy"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "defense",
@@ -31,9 +37,13 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["presences"],
-      "notes": "Aucune page de synthèse des déploiements à l'étranger trouvée par recherche. Les forces étrangères stationnées à Chypre (Royaume-Uni dans les zones de souveraineté d'Akrotiri et Dhekelia, ELDYK grecque, forces turques au nord, UNFICYP) relèvent des fichiers des pays déployeurs (GBR, GRC, TUR) et de l'ONU, pas de ce fichier.",
-      "hotes": ["www.mod.gov.cy"],
+      "couches": [
+        "presences"
+      ],
+      "notes": "Aucune page de synthèse des déploiements à l'étranger trouvée par recherche. Les forces étrangères stationnées à Chypre (Royaume-Uni dans les zones de souveraineté d'Akrotiri et Dhekelia, ELDYK grecque, forces turques au nord, UNFICYP) relèvent des fichiers des pays déployeurs (GBR, GRC, TUR) et de l'ONU, pas de ce fichier. www.mod.gov.cy non joignable depuis la session (27/10/2026).",
+      "hotes": [
+        "www.mod.gov.cy"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -48,16 +58,20 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["presences"],
+      "couches": [
+        "presences"
+      ],
       "notes": "Rapporte une déclaration du ministre de la Défense Vasilis Palmas : 2 officiers chypriotes à l'état-major de l'opération Aspides à Larissa. Article non daté dans le résultat de recherche. À remplacer par une source du ministère dès que www.mod.gov.cy est accessible.",
-      "hotes": ["en.sigmalive.com"],
+      "hotes": [
+        "en.sigmalive.com"
+      ],
       "acces": "non_verifie"
     },
     {
       "id": "mae",
       "nom": "Ministère des Affaires étrangères, question chypriote et communiqués",
       "editeur": "Ministère des Affaires étrangères (CYP)",
-      "url": "https://mfa.gov.cy/",
+      "url": "https://www.gov.cy/mfa/",
       "type": "officiel",
       "langue": "en",
       "licence": "non précisée",
@@ -65,9 +79,16 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["conflits", "politique"],
-      "notes": "Ministre : Constantinos Kombos depuis le 01/03/2023 (toujours en poste en septembre 2026 d'après la presse).",
-      "hotes": ["mfa.gov.cy", "www.mfa.gov.cy"],
+      "couches": [
+        "conflits",
+        "politique"
+      ],
+      "notes": "Ministre : Constantinos Kombos depuis le 01/03/2023 (toujours en poste en septembre 2026 d'après la presse). Redirection 301 vers www.gov.cy (portail gouvernemental), hôte non autorisé : à ouvrir pour lire la page.",
+      "hotes": [
+        "mfa.gov.cy",
+        "www.gov.cy",
+        "www.mfa.gov.cy"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -82,16 +103,22 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["conflits", "politique"],
+      "couches": [
+        "conflits",
+        "politique"
+      ],
       "notes": "Communiqués de tous les ministères, y compris remaniements (dernier partiel le 06/08/2026, Défense et Affaires étrangères inchangées).",
-      "hotes": ["www.pio.gov.cy", "pio.gov.cy"],
+      "hotes": [
+        "www.pio.gov.cy",
+        "pio.gov.cy"
+      ],
       "acces": "non_verifie"
     },
     {
       "id": "presidence",
       "nom": "Présidence de la République, Conseil des ministres",
       "editeur": "Présidence de la République (CYP)",
-      "url": "https://www.presidency.gov.cy/",
+      "url": "https://www.gov.cy/presidency/",
       "type": "officiel",
       "langue": "el",
       "licence": "non précisée",
@@ -99,9 +126,14 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["politique"],
-      "notes": "Régime présidentiel : le président est chef de l'État et du gouvernement.",
-      "hotes": ["www.presidency.gov.cy"],
+      "couches": [
+        "politique"
+      ],
+      "notes": "Régime présidentiel : le président est chef de l'État et du gouvernement. Redirection 301 vers www.gov.cy (portail gouvernemental), hôte non autorisé : à ouvrir pour lire la page.",
+      "hotes": [
+        "www.gov.cy",
+        "www.presidency.gov.cy"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -116,9 +148,13 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["politique"],
-      "notes": "Pas d'API officielle trouvée. 80 sièges constitutionnels, dont 24 réservés aux Chypriotes turcs et vacants depuis 1964 : 56 sièges pourvus. Le projet tiers openpatata-data (CC BY 4.0) a moissonné ce site par le passé ; non retenu (non officiel, maintenance incertaine).",
-      "hotes": ["www.parliament.cy"],
+      "couches": [
+        "politique"
+      ],
+      "notes": "Pas d'API officielle trouvée. 80 sièges constitutionnels, dont 24 réservés aux Chypriotes turcs et vacants depuis 1964 : 56 sièges pourvus. Le projet tiers openpatata-data (CC BY 4.0) a moissonné ce site par le passé ; non retenu (non officiel, maintenance incertaine). www.parliament.cy répond 403 depuis la session (27/10/2026).",
+      "hotes": [
+        "www.parliament.cy"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -133,10 +169,15 @@
       "api": true,
       "api_url": "https://api.data.ipu.org/v1/chambers/CY-LC01",
       "format": "json",
-      "couches": ["politique"],
-      "notes": "Déjà utilisée par l'actualisation hebdomadaire (GitHub Actions). Non joignable depuis cette session : code d'élection CY-LC01-E20260524 et codes partis à confirmer par le pipeline.",
-      "hotes": ["api.data.ipu.org", "data.ipu.org"],
-      "acces": "non_verifie"
+      "couches": [
+        "politique"
+      ],
+      "notes": "API lue le 27/10/2026 : dernière élection 2026-05-24, 56 sièges, DISY 17, AKEL 15, ELAM 8, DIKO 8, ALMA 4, Démocratie directe 4 (identique aux sièges de politique.json). Code d'élection CY-LC01-E20260524 confirmé. data.ipu.org (pages HTML) répond 403 : seul api.data.ipu.org est utilisé.",
+      "hotes": [
+        "api.data.ipu.org",
+        "data.ipu.org"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "wikidata",
@@ -150,27 +191,15 @@
       "api": true,
       "api_url": "https://query.wikidata.org/sparql",
       "format": "json (SPARQL)",
-      "couches": ["politique"],
+      "couches": [
+        "politique"
+      ],
       "notes": "Interrogée le 26/10/2026 : P35 = Q48905549 (Nikos Christodoulides). Les présidents de partis y sont souvent périmés (DIKO indiqué Marios Garoyian) : ne pas s'en servir pour les leaders.",
-      "hotes": ["query.wikidata.org", "www.wikidata.org"],
+      "hotes": [
+        "query.wikidata.org",
+        "www.wikidata.org"
+      ],
       "acces": "verifie"
-    },
-    {
-      "id": "elections-analyse",
-      "nom": "PISM Spotlight n° 27/2026, élections législatives à Chypre",
-      "editeur": "Polish Institute of International Affairs (PISM)",
-      "url": "https://pism.pl/publications/parliamentary-elections-in-the-republic-of-cyprus",
-      "type": "recherche",
-      "langue": "en",
-      "licence": "non précisée",
-      "cadence": "ponctuelle",
-      "api": false,
-      "api_url": null,
-      "format": "html, pdf",
-      "couches": ["politique"],
-      "notes": "Résultats du 24/05/2026 recoupés avec la Fondation Robert Schuman (oee 6817) et IDEA (mai 2026) : sièges identiques dans les trois sources. Source provisoire en attendant www.parliament.cy ou l'IPU. Le site officiel des résultats (service électoral du ministère de l'Intérieur) n'a pas été identifié avec certitude.",
-      "hotes": ["pism.pl"],
-      "acces": "non_verifie"
     },
     {
       "id": "onu",
@@ -184,9 +213,14 @@
       "api": false,
       "api_url": null,
       "format": "pdf",
-      "couches": ["conflits"],
-      "notes": "UNFICYP : 759 militaires au 17/06/2026 ; mandat prolongé jusqu'au 31/01/2027. Patrouille la zone tampon entre la Garde nationale et les forces du nord.",
-      "hotes": ["unsco.unmissions.org", "peacekeeping.un.org"],
+      "couches": [
+        "conflits"
+      ],
+      "notes": "UNFICYP : 759 militaires au 17/06/2026 ; mandat prolongé jusqu'au 31/01/2027. Patrouille la zone tampon entre la Garde nationale et les forces du nord. peacekeeping.un.org répond 403, unsco.unmissions.org non joignable (27/10/2026).",
+      "hotes": [
+        "unsco.unmissions.org",
+        "peacekeeping.un.org"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -201,9 +235,13 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["sanctions"],
+      "couches": [
+        "sanctions"
+      ],
       "notes": "Créée par la loi 150(I)/2025, en vigueur le 25/07/2025 : guichet unique pour l'application des sanctions UE et ONU, enquêtes et amendes administratives. Pas de liste nationale autonome identifiée : rien à ajouter aux couches automatiques (sanctions UE). URL exacte de l'unité à confirmer.",
-      "hotes": ["www.mof.gov.cy"],
+      "hotes": [
+        "www.mof.gov.cy"
+      ],
       "acces": "non_verifie"
     }
   ]
