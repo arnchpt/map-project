@@ -1,6 +1,6 @@
 {
   "pays": "FIN",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "sources": [
     {
       "id": "defense",
@@ -14,9 +14,13 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["presences"],
-      "notes": "Une page par opération avec l'effectif finlandais (ex. UNIFIL ≈ 200, KFOR ≈ 70). Les effectifs diffèrent selon les pages (KFOR : 70 aux Forces de défense, ≈ 60 au ministère des Affaires étrangères, ≈ 20 sur le site de la représentation auprès de l'OTAN). Effectifs relevés via moteur de recherche, page non lue depuis la session.",
-      "hotes": ["puolustusvoimat.fi"],
+      "couches": [
+        "presences"
+      ],
+      "notes": "Une page par opération avec l'effectif finlandais (ex. UNIFIL ≈ 200, KFOR ≈ 70). Les effectifs diffèrent selon les pages (KFOR : 70 aux Forces de défense, ≈ 60 au ministère des Affaires étrangères, ≈ 20 sur le site de la représentation auprès de l'OTAN). Effectifs relevés via moteur de recherche, page non lue depuis la session. Hôte ouvert mais 403 anti-robot le 2026-10-27 : toujours non lu.",
+      "hotes": [
+        "puolustusvoimat.fi"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -31,9 +35,14 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["presences", "conflits"],
-      "notes": "La page indique 10 opérations et ≈ 400 militaires, mais son texte paraît ancien. Les communiqués du ministère sont aussi publiés sur valtioneuvosto.fi.",
-      "hotes": ["www.defmin.fi"],
+      "couches": [
+        "presences",
+        "conflits"
+      ],
+      "notes": "La page indique 10 opérations et ≈ 400 militaires, mais son texte paraît ancien. Les communiqués du ministère sont aussi publiés sur valtioneuvosto.fi. Hôte ouvert mais 403 anti-robot le 2026-10-27 : toujours non lu.",
+      "hotes": [
+        "www.defmin.fi"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -48,9 +57,13 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["presences"],
-      "notes": "Effectif prévu pour 2026 : environ 390 militaires en gestion de crise (relevé via moteur de recherche). Source la plus stable pour le total annuel.",
-      "hotes": ["budjetti.vm.fi"],
+      "couches": [
+        "presences"
+      ],
+      "notes": "Effectif prévu pour 2026 : environ 390 militaires en gestion de crise (relevé via moteur de recherche). Source la plus stable pour le total annuel. Hôte budjetti.vm.fi injoignable (000) le 2026-10-27.",
+      "hotes": [
+        "budjetti.vm.fi"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -65,9 +78,15 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["politique", "conflits", "presences"],
-      "notes": "Publie aussi les décisions sur la frontière orientale et les communiqués Défense (FLF Finland, contributions OTAN 2026-2027). Flux RSS disponibles sur le site (non testés).",
-      "hotes": ["valtioneuvosto.fi"],
+      "couches": [
+        "politique",
+        "conflits",
+        "presences"
+      ],
+      "notes": "Publie aussi les décisions sur la frontière orientale et les communiqués Défense (FLF Finland, contributions OTAN 2026-2027). Flux RSS disponibles sur le site (non testés). Hôte valtioneuvosto.fi injoignable (000) le 2026-10-27.",
+      "hotes": [
+        "valtioneuvosto.fi"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -82,10 +101,14 @@
       "api": true,
       "api_url": "https://avoindata.eduskunta.fi/api/v1/tables/",
       "format": "json",
-      "couches": ["politique"],
-      "notes": "Tables des députés et des groupes parlementaires (répartition actuelle, défections comprises) et votes depuis 1976. Permettrait un contrôle automatique des sièges par groupe.",
-      "hotes": ["avoindata.eduskunta.fi", "www.eduskunta.fi"],
-      "acces": "non_verifie"
+      "couches": [
+        "politique"
+      ],
+      "notes": "Tables MemberOfParliament (groupe actuel et fin de mandat de chaque député, XML) lues le 2026-10-27 : 200 députés en fonction. Répartition actuelle des groupes : KOK 48, PS 45, SDP 43, KESK 23, VIHR 13, VAS 11, RKP 10, KD 5, Liike Nyt 1, groupe Timo Vornanen 1 (un député a quitté le groupe PS). Table SaliDBAanestys pour les votes depuis 1976. Licence non relue sur le site.",
+      "hotes": [
+        "avoindata.eduskunta.fi"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "electoral",
@@ -99,10 +122,16 @@
       "api": true,
       "api_url": "https://pxdata.stat.fi/PxWeb/api/v1/en/StatFin/evaa/",
       "format": "json-stat",
-      "couches": ["politique"],
-      "notes": "Le changement de base du 8 juin 2026 a raccourci les identifiants et codes de variables de l'API. Résultat 2023 : KOK 48, PS 46, SDP 43, KESK 23, VIHR 13, VAS 11, RKP 9, KD 5, Liik 1, Åland 1. Résultats bruts aussi publiés par le ministère de la Justice (tulospalvelu.vaalit.fi).",
-      "hotes": ["pxdata.stat.fi", "stat.fi", "tulospalvelu.vaalit.fi", "vaalit.fi"],
-      "acces": "non_verifie"
+      "couches": [
+        "politique"
+      ],
+      "notes": "API PxWeb lue le 2026-10-27 : table 13sr.px, élus 2023 par parti (KOK 48, PS 46, SDP 43, KESK 23, VIHR 13, VAS 11, RKP 9, KD 5, Liike 1, autres 1 ; total 200), identique à l'IPU. Les identifiants et variables de l'API ont été raccourcis lors du changement de base du 8 juin 2026. Résultats bruts du ministère de la Justice : tulospalvelu.vaalit.fi (page d'accueil seule lue).",
+      "hotes": [
+        "pxdata.stat.fi",
+        "stat.fi",
+        "tulospalvelu.vaalit.fi"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "douane",
@@ -116,9 +145,14 @@
       "api": true,
       "api_url": "https://uljas.tulli.fi/uljas/graph/api.aspx",
       "format": "json-stat",
-      "couches": ["commerce"],
-      "notes": "Formats CSV, JSON, JSON-stat, XML. commerce.json non rempli : hôtes bloqués depuis la session, aucun chiffre relu. L'URL exacte de l'API reste à confirmer une fois l'accès ouvert.",
-      "hotes": ["tilastot.tulli.fi", "uljas.tulli.fi"],
+      "couches": [
+        "commerce"
+      ],
+      "notes": "Formats CSV, JSON, JSON-stat, XML. commerce.json non rempli : hôtes bloqués depuis la session, aucun chiffre relu. L'URL exacte de l'API reste à confirmer une fois l'accès ouvert. Hôtes injoignables (000) le 2026-10-27 : toujours non lu.",
+      "hotes": [
+        "tilastot.tulli.fi",
+        "uljas.tulli.fi"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -133,9 +167,14 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["sanctions", "conflits"],
-      "notes": "La Finlande applique les sanctions de l'ONU et de l'UE (loi 659/1967) ; les sanctions d'États tiers (États-Unis, Royaume-Uni) n'y ont pas d'effet juridique. Pas de régime de sanctions autonome, hors gel d'avoirs antiterroriste national (loi 325/2013). Rien à ajouter à la couche sanctions UE.",
-      "hotes": ["um.fi"],
+      "couches": [
+        "sanctions",
+        "conflits"
+      ],
+      "notes": "La Finlande applique les sanctions de l'ONU et de l'UE (loi 659/1967) ; les sanctions d'États tiers (États-Unis, Royaume-Uni) n'y ont pas d'effet juridique. Pas de régime de sanctions autonome, hors gel d'avoirs antiterroriste national (loi 325/2013). Rien à ajouter à la couche sanctions UE. Hôtes injoignables (000) le 2026-10-27 : toujours non lu.",
+      "hotes": [
+        "um.fi"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -150,9 +189,14 @@
       "api": true,
       "api_url": "https://opendata.finlex.fi/",
       "format": "xml",
-      "couches": ["sanctions"],
-      "notes": "Texte consolidé des lois de mise en œuvre des sanctions ; utile seulement pour sourcer l'absence de régime autonome.",
-      "hotes": ["www.finlex.fi", "opendata.finlex.fi"],
+      "couches": [
+        "sanctions"
+      ],
+      "notes": "Texte consolidé des lois de mise en œuvre des sanctions ; utile seulement pour sourcer l'absence de régime autonome. Hôtes injoignables (000) le 2026-10-27 : toujours non lu.",
+      "hotes": [
+        "www.finlex.fi",
+        "opendata.finlex.fi"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -167,10 +211,15 @@
       "api": true,
       "api_url": "https://api.data.ipu.org/v1/elections/FI-LC01-E20230402",
       "format": "json",
-      "couches": ["politique"],
-      "notes": "API bloquée depuis cette session : codes partis IPU non relevés, à compléter par le fil d'intégration (le script ipu-sieges.js y a accès en CI).",
-      "hotes": ["data.ipu.org", "api.data.ipu.org"],
-      "acces": "non_verifie"
+      "couches": [
+        "politique"
+      ],
+      "notes": "API lue le 2026-10-27 : élection FI-LC01-E20230402, 200 sièges, répartition identique à Statistics Finland. Codes partis relevés dans politique.json.",
+      "hotes": [
+        "api.data.ipu.org",
+        "data.ipu.org"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "wikidata",
@@ -184,9 +233,14 @@
       "api": true,
       "api_url": "https://query.wikidata.org/sparql",
       "format": "json",
-      "couches": ["politique"],
-      "notes": "Interrogé le 2026-10-26 depuis la session. Les présidents de partis sont relevés via P488 sans date de fin.",
-      "hotes": ["query.wikidata.org", "www.wikidata.org"],
+      "couches": [
+        "politique"
+      ],
+      "notes": "Relu le 2026-10-27 (P6 Orpo, P35 Stubb inchangés). Les présidents de partis sont relevés via P488 sans date de fin.",
+      "hotes": [
+        "query.wikidata.org",
+        "www.wikidata.org"
+      ],
       "acces": "verifie"
     }
   ]
