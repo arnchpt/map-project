@@ -1,25 +1,82 @@
 {
   "pays": "POL",
-  "verifie": "2026-10-26",
-  "chef_etat": { "nom": "Karol Nawrocki", "fonction": "Président de la République", "parti": null, "depuis": "2025-08-06", "qid": "Q17704749", "src": "prezydent" },
-  "chef_gouv": { "nom": "Donald Tusk", "fonction": "Président du Conseil des ministres", "parti": "Coalition civique (KO)", "depuis": "2023-12-13", "qid": "Q946", "src": "kprm" },
+  "verifie": "2026-10-27",
+  "chef_etat": {
+    "nom": "Karol Nawrocki",
+    "fonction": "Président de la République",
+    "parti": null,
+    "depuis": "2025-08-06",
+    "qid": "Q17704749",
+    "src": "eli_mp"
+  },
+  "chef_gouv": {
+    "nom": "Donald Tusk",
+    "fonction": "Président du Conseil des ministres",
+    "parti": "Coalition civique (KO)",
+    "depuis": "2023-12-13",
+    "qid": "Q946",
+    "src": "eli_mp"
+  },
   "chambre": {
     "nom": "Sejm",
     "sieges": 460,
     "majorite": 231,
     "election": "2023-10-15",
-    "src": "pkw",
+    "src": "ipu",
     "ipu": "PL-LC01-E20231015"
   },
   "partis": [
-    { "nom": "Droit et justice (PiS)", "sieges": 194, "role": "hors", "leaders": "Jarosław Kaczyński (président, non reconfirmé)" },
-    { "nom": "Coalition civique (KO)", "sieges": 157, "role": "gouv", "leaders": "Donald Tusk (président de la Plateforme civique, non reconfirmé)" },
-    { "nom": "Troisième voie (PSL et Polska 2050)", "sieges": 65, "role": "gouv", "leaders": "Władysław Kosiniak-Kamysz (PSL, non reconfirmé), Katarzyna Pełczyńska-Nałęcz (Polska 2050, élue le 31/01/2026)", "src": "polskieradio" },
-    { "nom": "Gauche (Lewica)", "sieges": 26, "role": "gouv", "leaders": "non reconfirmé" },
-    { "nom": "Confédération (Konfederacja)", "sieges": 18, "role": "hors", "leaders": "Sławomir Mentzen et Krzysztof Bosak (non reconfirmé)" }
+    {
+      "nom": "Droit et justice (PiS)",
+      "sieges": 194,
+      "role": "hors",
+      "leaders": "Jarosław Kaczyński (président du parti, Wikidata)",
+      "ipu": [
+        "pl-law_and_justice_pis"
+      ]
+    },
+    {
+      "nom": "Coalition civique (KO)",
+      "sieges": 157,
+      "role": "gouv",
+      "leaders": "Donald Tusk (président de la Plateforme civique, Wikidata)",
+      "ipu": [
+        "pl-civic_coalition_ko_"
+      ]
+    },
+    {
+      "nom": "Troisième voie (PSL et Polska 2050)",
+      "sieges": 65,
+      "role": "gouv",
+      "leaders": "Władysław Kosiniak-Kamysz (PSL, non reconfirmé), Katarzyna Pełczyńska-Nałęcz (Polska 2050, élue le 31/01/2026)",
+      "src": "polskieradio",
+      "ipu": [
+        "pl-third_way"
+      ]
+    },
+    {
+      "nom": "Gauche (Lewica)",
+      "sieges": 26,
+      "role": "gouv",
+      "leaders": "non reconfirmé",
+      "ipu": [
+        "pl-the_new_left_nowa_lewica_"
+      ]
+    },
+    {
+      "nom": "Confédération (Konfederacja)",
+      "sieges": 18,
+      "role": "hors",
+      "leaders": "Sławomir Mentzen et Krzysztof Bosak (non reconfirmé)",
+      "ipu": [
+        "pl-confederation_liberty_and_independence_kwin_"
+      ]
+    }
   ],
   "notes": [
-    "Sièges : listes du scrutin du 15/10/2023, figés jusqu'en 2027. Les clubs actuels du Sejm diffèrent (scission de Polska 2050 et création du club Centrum le 18/02/2026) : l'API du Sejm donne la composition du jour.",
-    "Le parti Razem, élu sur la liste Lewica, ne participe pas au gouvernement."
+    "Sièges : liste du scrutin du 15/10/2023 selon l'IPU (460 sièges), figés jusqu'au scrutin suivant (2027).",
+    "Clubs au Sejm le 2026-10-27 selon l'API du Sejm : KO 156, PiS 147, Rozwój Plus 40, PSL-TD 32, Lewica 21, Konfederacja 17, Polska 2050 15, Centrum 15, Razem 4, Konfederacja Korony Polskiej 3, Demokracja Bezpośrednia 3, non-inscrits 7. Scission de Polska 2050 et création du club Centrum le 18/02/2026.",
+    "Dirigeants : seuls ceux de PiS et de la Plateforme civique sont confirmés (Wikidata). Les autres restent « non reconfirmé » : PSL, Polska 2050, Nouvelle gauche et Konfederacja n'ont pas de source lisible depuis la session.",
+    "Radosław Sikorski est vice-Premier ministre et ministre des Affaires étrangères (page MSZ lue le 2026-10-27)."
   ]
 }
