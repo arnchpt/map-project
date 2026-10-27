@@ -1,30 +1,69 @@
 {
   "pays": "AUT",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "src": "stat",
   "annee": 2025,
   "devise": "EUR",
   "unite": "Md",
-  "concept": "résultats provisoires du 30/06/2026 ; concept (spécial/général, CAF/FOB) non vérifié",
+  "concept": "valeurs en euros des exportations par pays de destination et des importations par pays d'origine, série annuelle (jeu OGD_1531kn2_Aussenhandel_4, mis à jour le 15/10/2026) ; somme de tous les pays, y compris les rubriques EU techniques",
   "total": {
-    "x": 189.79,
-    "m": 196.9
+    "x": 189.69,
+    "m": 197.07
   },
   "partenaires": [
     {
       "pays": "DEU",
-      "x": 56.2,
-      "m": 63.36
+      "x": 56.19,
+      "m": 63.43
+    },
+    {
+      "pays": "ITA",
+      "x": 12.63,
+      "m": 12.46
+    },
+    {
+      "pays": "CHN",
+      "x": 5.02,
+      "m": 17.52
+    },
+    {
+      "pays": "CHE",
+      "x": 9.84,
+      "m": 11.05
     },
     {
       "pays": "USA",
-      "x": 12.8,
-      "m": 7.75
+      "x": 12.78,
+      "m": 7.74
+    },
+    {
+      "pays": "CZE",
+      "x": 7.21,
+      "m": 8.16
+    },
+    {
+      "pays": "POL",
+      "x": 7.24,
+      "m": 6.11
+    },
+    {
+      "pays": "HUN",
+      "x": 7.0,
+      "m": 4.82
+    },
+    {
+      "pays": "FRA",
+      "x": 6.66,
+      "m": 4.85
+    },
+    {
+      "pays": "NLD",
+      "x": 3.81,
+      "m": 5.75
     }
   ],
   "notes": {
-    "DEU": "Importations calculées à partir des exportations (56,2) et du solde publié (−7,16), non publiées telles quelles dans l'extrait lu.",
-    "USA": "Importations calculées à partir des exportations (12,8) et du solde publié (+5,05).",
-    "CHN": "Seul le solde est connu : −12,62 Md€, le plus fort déficit bilatéral. Exportations et importations non relevées."
+    "NLD": "Importations par pays d'origine : le transit portuaire (effet Rotterdam) est moins marqué que dans le commerce par pays d'expédition du FMI.",
+    "CHN": "Premier déficit bilatéral : importations 17,52 Md€ contre 5,02 Md€ d'exportations."
   }
 }
