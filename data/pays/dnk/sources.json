@@ -1,12 +1,12 @@
 {
   "pays": "DNK",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "sources": [
     {
       "id": "stat",
-      "nom": "Danmarks Statistik, StatBank : commerce de biens par pays (table UHV)",
+      "nom": "Danmarks Statistik, StatBank : commerce de biens par pays (table SITC2R4)",
       "editeur": "Danmarks Statistik",
-      "url": "https://www.statbank.dk/UHV",
+      "url": "https://www.statbank.dk/SITC2R4",
       "type": "officiel",
       "langue": "da",
       "licence": "CC BY 4.0 (mention de la source obligatoire, usage commercial autorisé)",
@@ -14,10 +14,15 @@
       "api": true,
       "api_url": "https://api.statbank.dk/v1/data",
       "format": "json",
-      "couches": ["commerce"],
-      "notes": "API sans clé, requêtes POST en JSON (tableinfo puis data). Table UHV : commerce de biens par pays et par produit, série depuis 1838 ; mise à jour constatée le 9 avril 2026, suivante annoncée le 11 mai 2026 (explorer.dst.dk/uhv). Documentation : https://www.dst.dk/en/Statistik/hjaelp-til-statistikbanken/api. commerce.json non produit : hôtes bloqués depuis la session.",
-      "hotes": ["api.statbank.dk", "www.statbank.dk", "www.dst.dk"],
-      "acces": "non_verifie"
+      "couches": [
+        "commerce"
+      ],
+      "notes": "API sans clé : POST https://api.statbank.dk/v1/data (JSON, sortie CSV), métadonnées via /v1/tableinfo/SITC2R4. Lue le 2026-10-27, mise à jour du 2026-10-09 (données jusqu'à 2026M08). Table UHV (ancienne référence) inactive depuis 2024. Variables : SITC (TOT), LAND (241), INDUD (1 importations, 2 exportations), UHBEGREB (GP principe du franchissement de frontière, ES changement de propriété), mois, en milliers de DKK. commerce.json = somme des 12 mois de 2025, principe GP. Le code W1 (« REST OF THE WORLD ») vaut 982,3 Md DKK à l'exportation contre 964,7 pour la somme des autres lignes : il sert de total, l'écart vient des lignes confidentielles ou non réparties.",
+      "hotes": [
+        "api.statbank.dk",
+        "www.statbank.dk"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "defense",
@@ -31,10 +36,14 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["presences"],
-      "notes": "Effectifs par mission non relevés : page non lue depuis la session. Contenu repris d'un résumé de moteur de recherche, à confirmer.",
-      "hotes": ["www.forsvaret.dk"],
-      "acces": "non_verifie"
+      "couches": [
+        "presences"
+      ],
+      "notes": "Page lue le 2026-10-27 : Lettonie (Danemark dirige le QG OTAN et envoie des bataillons en rotation), Irak (mission OTAN et coalition depuis 2014), Kosovo (état-major et section de garde), Estonie (présence avancée OTAN dans les pays baltes et en Pologne), Ukraine (dons de matériel, formation), Baltique (patrouilles aériennes), forces navales permanentes de l'OTAN. Aucun effectif publié sur cette page.",
+      "hotes": [
+        "www.forsvaret.dk"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "fmn",
@@ -48,10 +57,15 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["presences", "conflits"],
-      "notes": "Paquets de dons numérotés (au moins 29 en 2026). Vue anglaise des opérations : https://www.fmn.dk/en/topics/operations/ongoing-operations/",
-      "hotes": ["www.fmn.dk"],
-      "acces": "non_verifie"
+      "couches": [
+        "presences",
+        "conflits"
+      ],
+      "notes": "Page « Nyheder om Ruslands invasion af Ukraine » lue le 2026-10-27 : donation d'environ 4,4 Md DKK (date non indiquée dans l'extrait), 3,8 Md DKK supplémentaires au fonds Ukraine en 2026, 29e paquet de 1,7 Md DKK. Vue anglaise des opérations : https://www.fmn.dk/en/topics/operations/ongoing-operations/",
+      "hotes": [
+        "www.fmn.dk"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "um-otan",
@@ -65,10 +79,14 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["presences"],
-      "notes": "Donne l'effectif KFOR (environ 35, garde du camp Maréchal de Lattre de Tassigny et état-major de Pristina). Le chiffre de 800 pour la Lettonie y date de la rotation 2022-2023 : non repris.",
-      "hotes": ["um.dk"],
-      "acces": "non_verifie"
+      "couches": [
+        "presences"
+      ],
+      "notes": "Page lue le 2026-10-27 : KFOR environ 35 personnes (garde du camp Maréchal de Lattre de Tassigny près de Novo Selo, tâches pour l'état-major de Pristina). Le chiffre de 800 pour la Lettonie date de la rotation mai 2022 - mai 2023 : non repris.",
+      "hotes": [
+        "um.dk"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "sanctions",
@@ -82,10 +100,14 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["sanctions"],
-      "notes": "Pas de régime national de sanctions : le Danemark applique les sanctions de l'UE et de l'ONU (« Danmark fører ikke sine egne nationale sanktioner mod Rusland »). Base pénale : § 110 c du code pénal, durci par la loi n° 731 du 20 juin 2025. Contrôle : Erhvervsstyrelsen. Rien à ajouter à la couche sanctions UE commune.",
-      "hotes": ["um.dk"],
-      "acces": "non_verifie"
+      "couches": [
+        "sanctions"
+      ],
+      "notes": "Page lue le 2026-10-27 : régime à deux voies, l'UE met en œuvre les sanctions du Conseil de sécurité de l'ONU et adopte des sanctions autonomes ; interdictions de visa et embargos sur les armes appliqués au niveau national, gel des avoirs par règlement du Conseil. La page ne parle pas de sanctions nationales danoises ; la phrase « Danmark fører ikke sine egne nationale sanktioner mod Rusland » vient d'un résultat de recherche, non retrouvée sur cette page. Rien à ajouter à la couche sanctions UE commune.",
+      "hotes": [
+        "um.dk"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "upn",
@@ -99,9 +121,13 @@
       "api": false,
       "api_url": null,
       "format": "pdf",
-      "couches": ["conflits"],
-      "notes": "Convocation du chargé d'affaires des États-Unis le 27 août 2025 au sujet d'opérations d'influence au Groenland.",
-      "hotes": ["www.ft.dk"],
+      "couches": [
+        "conflits"
+      ],
+      "notes": "Convocation du chargé d'affaires des États-Unis le 27 août 2025 au sujet d'opérations d'influence au Groenland. www.ft.dk répond 403 le 2026-10-27 : non vérifiée.",
+      "hotes": [
+        "www.ft.dk"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -116,15 +142,20 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["politique"],
-      "notes": "Gouvernement en place depuis le 3 juin 2026 (S, SF, M, RV ; 82 sièges sur 179). Fiche historique : https://regeringen.dk/om-regeringen/regeringer-siden-1848/regeringen-mette-frederiksen-iii/",
-      "hotes": ["stm.dk", "regeringen.dk"],
-      "acces": "non_verifie"
+      "couches": [
+        "politique"
+      ],
+      "notes": "Communiqué lu le 2026-10-27 : gouvernement Frederiksen III formé le 3 juin 2026 (première ministre Mette Frederiksen, affaires étrangères Lars Løkke Rasmussen, défense Jeppe Bruus). Composition S, SF, M, RV confirmée par la fiche https://regeringen.dk/om-regeringen/regeringer-siden-1848/regeringen-mette-frederiksen-iii/ (entrée en fonction le 3 juin 2026). Le nombre de sièges de la coalition n'y figure pas.",
+      "hotes": [
+        "stm.dk",
+        "regeringen.dk"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "electoral",
       "nom": "Indenrigsministeriet, résultat officiel de l'élection du Folketing du 24 mars 2026",
-      "editeur": "Indenrigsministeriet (ministère de l'Intérieur), valg.im.dk ; Danmarks Statistik pour la publication détaillée",
+      "editeur": "Indenrigs- og Sundhedsministeriet (ministère de l'Intérieur et de la Santé), d'après Danmarks Statistik",
       "url": "https://www.valg.im.dk/nyhedsarkiv/2026/apr/saadan-fordelte-stemmerne-sig-ved-folketingsvalget-den-24-marts-2026",
       "type": "officiel",
       "langue": "da",
@@ -133,10 +164,14 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["politique"],
-      "notes": "Sièges des 175 élus du Danemark métropolitain. Publication détaillée de Danmarks Statistik du 10 avril 2026 : https://www.dst.dk/ext/6210414110174/0/befolkning/Folketingsvalg-2026--pdf. Les 4 sièges des îles Féroé et du Groenland ne sont pas ventilés ici.",
-      "hotes": ["www.valg.im.dk", "www.dst.dk"],
-      "acces": "non_verifie"
+      "couches": [
+        "politique"
+      ],
+      "notes": "Communiqué du 8 avril 2026 lu le 2026-10-27 : résultat définitif de Danmarks Statistik, 175 sièges au Danemark métropolitain, 2 aux îles Féroé et 2 au Groenland (179 au total), élus et comptés séparément. Sièges conformes à politique.json.",
+      "hotes": [
+        "www.valg.im.dk"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "parlement",
@@ -150,9 +185,14 @@
       "api": true,
       "api_url": "https://oda.ft.dk/api/Akt%C3%B8r",
       "format": "json",
-      "couches": ["politique"],
-      "notes": "OData v3 (acteurs, groupes parlementaires, votes). Conditions : https://www.ft.dk/-/media/sites/ft/pdf/dokumenter/aabne-data/conditions_for_use_-of_the_danish_parliaments-_open_data.pdf. Source à brancher pour relire automatiquement les sièges par groupe.",
-      "hotes": ["oda.ft.dk", "www.ft.dk"],
+      "couches": [
+        "politique"
+      ],
+      "notes": "OData v3 (acteurs, groupes parlementaires, votes). Conditions : https://www.ft.dk/-/media/sites/ft/pdf/dokumenter/aabne-data/conditions_for_use_-of_the_danish_parliaments-_open_data.pdf. Source à brancher pour relire automatiquement les sièges par groupe. oda.ft.dk toujours bloqué le 2026-10-27.",
+      "hotes": [
+        "oda.ft.dk",
+        "www.ft.dk"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -167,9 +207,13 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["politique"],
-      "notes": "Utilisée pour les chefs de parti faute de page officielle trouvée. À remplacer par oda.ft.dk ou les sites des partis.",
-      "hotes": ["lex.dk"],
+      "couches": [
+        "politique"
+      ],
+      "notes": "Utilisée pour les chefs de parti faute de page officielle trouvée. À remplacer par oda.ft.dk ou les sites des partis. lex.dk toujours bloqué le 2026-10-27.",
+      "hotes": [
+        "lex.dk"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -184,9 +228,14 @@
       "api": true,
       "api_url": "https://query.wikidata.org/sparql",
       "format": "json",
-      "couches": ["politique"],
+      "couches": [
+        "politique"
+      ],
       "notes": "Relu le 2026-10-26 : P35 = Frederik X (Q1004037), P6 = Mette Frederiksen (Q5015).",
-      "hotes": ["query.wikidata.org", "www.wikidata.org"],
+      "hotes": [
+        "query.wikidata.org",
+        "www.wikidata.org"
+      ],
       "acces": "verifie"
     },
     {
@@ -201,10 +250,36 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["autre"],
-      "notes": "Présences étrangères au Danemark, à reporter dans le fichier USA et non ici : accès des forces américaines à Karup, Skrydstrup et Aalborg (accord signé le 21 décembre 2023, adopté par le Folketing en juin 2025, hors Groenland et Féroé) ; base spatiale de Pituffik au Groenland (accord de 1951). Page d'origine fmn.dk non lue.",
-      "hotes": ["www.globalsecurity.org", "www.fmn.dk"],
+      "couches": [
+        "autre"
+      ],
+      "notes": "Présences étrangères au Danemark, à reporter dans le fichier USA et non ici : accès des forces américaines à Karup, Skrydstrup et Aalborg (accord signé le 21 décembre 2023, adopté par le Folketing en juin 2025, hors Groenland et Féroé) ; base spatiale de Pituffik au Groenland (accord de 1951). Page d'origine fmn.dk non lue. Hôte globalsecurity.org toujours bloqué le 2026-10-27.",
+      "hotes": [
+        "www.globalsecurity.org",
+        "www.fmn.dk"
+      ],
       "acces": "non_verifie"
+    },
+    {
+      "id": "arktisk",
+      "nom": "Forsvaret, Arktisk Kommando",
+      "editeur": "Forsvaret (forces armées danoises)",
+      "url": "https://www.forsvaret.dk/da/organisation/arktisk-kommando/",
+      "type": "officiel",
+      "langue": "da",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences"
+      ],
+      "notes": "Page lue le 2026-10-27 : commandement interarmées chargé de la défense du Groenland et des îles Féroé, état-major à Nuuk.",
+      "hotes": [
+        "www.forsvaret.dk"
+      ],
+      "acces": "verifie"
     }
   ]
 }

@@ -1,0 +1,66 @@
+{
+  "pays": "DNK",
+  "verifie": "2026-10-27",
+  "src": "stat",
+  "annee": 2025,
+  "devise": "DKK",
+  "unite": "Md",
+  "concept": "commerce de biens, principe du franchissement de frontière (GP), somme des 12 mois de 2025, sans ventilation par produit",
+  "total": {
+    "x": 982.3,
+    "m": 905.8
+  },
+  "partenaires": [
+    {
+      "pays": "DEU",
+      "x": 138.6,
+      "m": 176.4
+    },
+    {
+      "pays": "SWE",
+      "x": 87.1,
+      "m": 105.0
+    },
+    {
+      "pays": "NLD",
+      "x": 59.1,
+      "m": 80.6
+    },
+    {
+      "pays": "CHN",
+      "x": 54.8,
+      "m": 75.1
+    },
+    {
+      "pays": "USA",
+      "x": 71.3,
+      "m": 38.7
+    },
+    {
+      "pays": "NOR",
+      "x": 58.8,
+      "m": 42.8
+    },
+    {
+      "pays": "POL",
+      "x": 47.9,
+      "m": 44.8
+    },
+    {
+      "pays": "GBR",
+      "x": 46.0,
+      "m": 23.1
+    },
+    {
+      "pays": "FRA",
+      "x": 34.3,
+      "m": 31.6
+    },
+    {
+      "pays": "ITA",
+      "x": 24.7,
+      "m": 33.2
+    }
+  ],
+  "notes": {}
+}
