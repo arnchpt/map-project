@@ -1,6 +1,6 @@
 {
   "pays": "BEL",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "chef_etat": {
     "nom": "Philippe",
     "fonction": "Roi des Belges",
@@ -83,7 +83,7 @@
       "src": "partis"
     },
     {
-      "nom": "Anders (ex-Open Vld)",
+      "nom": "Open Vld",
       "sieges": 7,
       "role": "hors",
       "leaders": null,

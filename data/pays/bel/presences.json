@@ -1,6 +1,6 @@
 {
   "pays": "BEL",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "presences": [
     {
       "hote": "ROU",
@@ -8,24 +8,89 @@
       "lat": 45.9,
       "nom": "Contingent dans le groupement tactique multinational de l'OTAN en Roumanie (sous commandement français)",
       "cat": "otan",
+      "eff": 300,
+      "depuis": "2022-02",
+      "src": "defense-missions"
+    },
+    {
+      "hote": "LTU",
+      "lon": 24.9,
+      "lat": 55.0,
+      "nom": "Escadron de reconnaissance et détachement de mortiers dans le groupement tactique de l'OTAN en Lituanie (commandement allemand), période déterminée en 2026",
+      "cat": "otan",
       "eff": null,
       "depuis": null,
       "src": "defense-plan"
+    },
+    {
+      "hote": "ISL",
+      "lon": -22.6,
+      "lat": 64.0,
+      "nom": "Détachement de police du ciel de l'OTAN en Islande (quatre F-16, 2026)",
+      "cat": "otan",
+      "eff": 100,
+      "depuis": null,
+      "src": "defense-plan"
+    },
+    {
+      "hote": "COD",
+      "lon": 25.9,
+      "lat": -2.9,
+      "nom": "Suivi du projet de la Facilité européenne pour la paix à Kindu et au camp de Lwama",
+      "cat": "ue",
+      "eff": 10,
+      "depuis": null,
+      "src": "defense-missions"
+    },
+    {
+      "hote": "BEN",
+      "lon": 2.4,
+      "lat": 6.4,
+      "nom": "Partenariat militaire bilatéral avec le Bénin (formation de la Garde nationale et des marines)",
+      "cat": "dlia",
+      "eff": null,
+      "depuis": null,
+      "src": "defense-missions"
+    },
+    {
+      "hote": "NER",
+      "lon": 2.1,
+      "lat": 13.5,
+      "nom": "Détachement d'agents de sécurité militaire à l'ambassade de Belgique à Niamey",
+      "cat": "dlia",
+      "eff": null,
+      "depuis": null,
+      "src": "defense-missions"
+    },
+    {
+      "hote": "KWT",
+      "lon": 48.0,
+      "lat": 29.4,
+      "nom": "État-major de l'opération Inherent Resolve (coalition contre Daesh)",
+      "cat": "ope",
+      "eff": 10,
+      "depuis": null,
+      "src": "defense-missions"
     }
   ],
   "non_localisees": [
     {
-      "nom": "Police du ciel de l'OTAN (Baltic Air Policing, rotations)",
-      "eff": "non publié",
-      "src": "ministre-defense"
+      "nom": "Police du ciel renforcée de l'OTAN depuis la Lituanie ou la Pologne (seconde mission 2026, quatre F-16)",
+      "eff": "≈ 100",
+      "src": "defense-plan"
     },
     {
-      "nom": "Opération Aspides de l'UE en mer Rouge (frégate prévue au second semestre 2026)",
+      "nom": "Chasseur de mines en mer du Nord et mer Baltique (deux missions, environ six mois en 2026)",
       "eff": "non publié",
       "src": "defense-plan"
     },
     {
-      "nom": "Drone MQ-9B SkyGuardian en Méditerranée (surveillance, première mission en 2026)",
+      "nom": "Opération Aspides de l'UE : frégate déployée environ deux mois (mer Rouge, golfe d'Aden, océan Indien)",
+      "eff": "180",
+      "src": "defense-plan"
+    },
+    {
+      "nom": "Drone MQ-9B SkyGuardian en Méditerranée (surveillance de la frontière sud de l'UE et de l'OTAN, 2026)",
       "eff": "non publié",
       "src": "defense-plan"
     }

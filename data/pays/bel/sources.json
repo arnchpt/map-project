@@ -1,6 +1,6 @@
 {
   "pays": "BEL",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "sources": [
     {
       "id": "defense-plan",
@@ -18,11 +18,11 @@
         "presences",
         "conflits"
       ],
-      "notes": "Aucun flux machine. Trois piliers : défense collective à l'Est, sécurité collective au Sud, territoire national. Relevé fait par recherche web, page non lue depuis la session.",
+      "notes": "Page lue le 27/10/2026. Pas de flux machine. Trois piliers : défense collective à l'Est, sécurité collective au Sud, territoire national. Le plan 2026 maintient la Lituanie (escadron de reconnaissance et détachement de mortiers pour une période déterminée) : l'échéance du 31/01/2026 relevée dans la presse concernait le plan 2025.",
       "hotes": [
         "www.mil.be"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "defense-missions",
@@ -39,11 +39,11 @@
       "couches": [
         "presences"
       ],
-      "notes": "Liste les opérations en cours, y compris les opérations intérieures (Urban Shield, Green Shield), exclues de la couche.",
+      "notes": "Pages lues le 27/10/2026 : « Missions sur le flanc oriental de l'Europe » (Roumanie, environ 300 militaires depuis le 8 mars 2022), « Missions en Afrique » (RDC, Bénin, détachements d'agents de sécurité à Kinshasa et Niamey), « Mission Inherent Resolve » (une dizaine de militaires au Koweït). Les opérations en Belgique (Urban Shield, Vigilant Protector) sont exclues de la couche.",
       "hotes": [
         "www.mil.be"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "ministre-defense",
@@ -77,18 +77,16 @@
       "licence": "non précisée",
       "cadence": "mensuelle",
       "api": true,
-      "api_url": "https://nsidisseminate-stat.nbb.be/rest/data/BE2,DF_EXTERNAL_TRADE_OVERVIEW,latest/all",
+      "api_url": "https://nsidisseminate-stat.nbb.be/rest/data/BE2,DF_EXTTRADEBENAT_Overview,1.0/BE..00....A?lastNObservations=2&detail=full",
       "format": "sdmx-json",
       "couches": [
         "commerce"
       ],
-      "notes": "API SDMX sans clé (SDMX-JSON). L'URL de base et l'identifiant du flux viennent d'un projet tiers (github.com/lacausecrypto/mcp-nbb), pas de la documentation de la BNB : à confirmer. Flux par partenaire à identifier dans le catalogue des dataflows. Licence non trouvée. Pas de commerce.json tant que l'accès n'est pas vérifié.",
+      "notes": "API SDMX-JSON lue le 27/10/2026, sans clé. En-tête Accept : application/vnd.sdmx.data+json;version=1.0.0-wd (la version « latest » dans l'URL est refusée : utiliser 1.0). Flux BE2/DF_EXTTRADEBENAT_Overview, dimensions REPORTING.COUNTRY.PRODUCT.FLOW.CONCEPT.DATATYPE.FREQ ; PRODUCT 00 = total, FLOW X/I, FREQ A/Q/M ; codes pays ISO alpha-2. Unité non portée par la série (valeurs en euros d'après l'ordre de grandeur : 342 Md pour les importations 2025). Les pages www.nbb.be et stat.nbb.be restent inaccessibles : la licence n'a pas pu être relue.",
       "hotes": [
-        "www.nbb.be",
-        "stat.nbb.be",
         "nsidisseminate-stat.nbb.be"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "statbel",
@@ -127,12 +125,11 @@
       "couches": [
         "politique"
       ],
-      "notes": "Sièges relevés par recherche web (somme = 150).",
+      "notes": "Fiche n° 09.02 lue le 27/10/2026 : 12 listes, somme des sièges = 150.",
       "hotes": [
-        "www.dekamer.be",
-        "www.lachambre.be"
+        "www.dekamer.be"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "chambre-api",
@@ -149,17 +146,17 @@
       "couches": [
         "politique"
       ],
-      "notes": "API REST annoncée (acteurs politiques, organes, documents, questions). Le portail indique publier des données de test, pas forcément à jour ni complètes : inutilisable en production en l'état.",
+      "notes": "Page lue le 27/10/2026 : projet en phase conceptuelle, API REST XML/JSON annoncée, données publiées = données de test, non nécessairement à jour ni complètes. Inutilisable en production en l'état.",
       "hotes": [
         "data.dekamer.be"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "gouvernement",
       "nom": "Portail fédéral, composition du gouvernement",
       "editeur": "Chancellerie du Premier ministre",
-      "url": "https://www.belgium.be/fr/la_belgique/pouvoirs_publics/autorites_federales/gouvernement_federal/composition",
+      "url": "https://www.belgium.be/fr/la_belgique/pouvoirs_publics/autorites_federales/gouvernement_federal/composition_gouvernement",
       "type": "officiel",
       "langue": "fr",
       "licence": "non précisée",
@@ -170,12 +167,11 @@
       "couches": [
         "politique"
       ],
-      "notes": "Gouvernement De Wever, entré en fonction le 3 février 2025 (N-VA, MR, Les Engagés, Vooruit, CD&V). Chef de l'État et chef du gouvernement recoupés sur Wikidata (Q155004, Q336599).",
+      "notes": "Page lue le 27/10/2026 : Bart De Wever, Premier ministre ; Theo Francken, ministre de la Défense et du Commerce extérieur ; Maxime Prévot, Affaires étrangères. Date d'entrée en fonction (03/02/2025) et chef de l'État (Philippe, Q155004) recoupés sur Wikidata (Q336599).",
       "hotes": [
-        "www.belgium.be",
-        "www.premier.be"
+        "www.belgium.be"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "elections",
@@ -192,7 +188,7 @@
       "couches": [
         "politique"
       ],
-      "notes": "Source primaire des résultats ; prochaines élections fédérales prévues en 2029.",
+      "notes": "Source primaire des résultats ; hôtes inaccessibles le 27/10/2026. Sièges recoupés sur la fiche de la Chambre (chambre-fiche).",
       "hotes": [
         "www.elections.fgov.be",
         "elections2024.belgium.be"
@@ -214,7 +210,7 @@
       "couches": [
         "politique"
       ],
-      "notes": "Aucune source officielle centralisée des présidents de partis. Relevé du 26/10/2026 à reconfirmer sur les sites des partis. Ecolo (coprésidence renouvelée en 2026) et Anders (ex-Open Vld) non confirmés : laissés vides.",
+      "notes": "Aucune source officielle centralisée des présidents de partis. Relevé par recherche web du 26/10/2026, à reconfirmer : hôtes toujours inaccessibles le 27/10/2026. Ecolo et Open Vld/Anders non confirmés : laissés vides.",
       "hotes": [
         "fr.wikipedia.org",
         "www.dhnet.be",
