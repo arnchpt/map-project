@@ -14,10 +14,14 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["presences"],
-      "notes": "Liste 2026 publiée le 14/01/2026 : https://www.defensa.gob.es/comun/slider/2026/01/260114-misiones-internacionales-2026.html. Effectifs par mission non relevés (page non lue). Les chiffres de presse (≈ 3 000 à 4 000 militaires, 15 pays, 17 missions) divergent selon le critère et ne sont pas repris.",
-      "hotes": ["www.defensa.gob.es"],
-      "acces": "non_verifie"
+      "couches": [
+        "presences"
+      ],
+      "notes": "Lu le 27/10/2026. Tableau « Misiones internacionales en curso » : lieu, mission, début (mois-année). Page du 14/01/2026 : prorogation votée le 23/12/2025 jusqu'au 31/12/2026 ; « cerca de 4.000 militares » dans 15 pays ; FINUL « casi 700 militares ». Pas d'effectif par mission. Infographie PDF d'effectifs (janvier 2026) liée depuis la page, non lue. Fiche : https://www.defensa.gob.es/comun/slider/2026/01/260114-misiones-internacionales-2026.html.",
+      "hotes": [
+        "www.defensa.gob.es"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "emad",
@@ -31,10 +35,14 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["presences"],
-      "notes": "Source la plus fine (lieu, cadre OTAN/ONU/UE, effectifs). Version anglaise : https://emad.defensa.gob.es/en/operaciones/operaciones-en-el-exterior/. Pas de flux structuré connu : relevé manuel ou extraction HTML.",
-      "hotes": ["emad.defensa.gob.es"],
-      "acces": "non_verifie"
+      "couches": [
+        "presences"
+      ],
+      "notes": "Lu le 27/10/2026. Liste 2026 avec début de chaque mission ; mentionne aussi des déploiements au Sénégal et un quartier général d'opération (ES-OHQ) à Rota pour Atalanta. Carte interactive non lue (JavaScript). Actualités datées de la semaine (Roumanie, Turquie, Liban, Lettonie) : confirment les déploiements en cours. Pas de flux structuré : relevé HTML.",
+      "hotes": [
+        "emad.defensa.gob.es"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "moncloa-cm",
@@ -48,10 +56,15 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["presences", "conflits"],
-      "notes": "Le conseil du 23/12/2025 a prorogé jusqu'au 31/12/2026 la participation des unités des forces armées aux missions extérieures et plafonné à 400 les observateurs et officiers de liaison. Une dépêche reprise par Infobae indique le 31/01/2026 : probablement une erreur, la référence officielle reste à lire.",
-      "hotes": ["www.lamoncloa.gob.es"],
-      "acces": "non_verifie"
+      "couches": [
+        "presences",
+        "conflits"
+      ],
+      "notes": "Lu le 27/10/2026. La référence du 23/12/2025 contient l'accord prorogeant jusqu'au 31/12/2026 la participation d'unités et d'observateurs militaires aux missions extérieures. Le plafond de 400 observateurs cité par la presse n'apparaît pas dans la référence : non repris.",
+      "hotes": [
+        "www.lamoncloa.gob.es"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "moncloa-gobierno",
@@ -65,10 +78,14 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["politique"],
-      "notes": "Dernier remaniement repéré : 26/03/2026 (Carlos Cuerpo premier vice-président, Arcadi España aux Finances), annonce officielle https://www.lamoncloa.gob.es/lang/en/presidente/news/Paginas/2026/20260326-institutional-declaration.aspx. Chef de l'État et chef du gouvernement recoupés avec Wikidata (Q191045, Q6070218) le 26/10/2026.",
-      "hotes": ["www.lamoncloa.gob.es"],
-      "acces": "non_verifie"
+      "couches": [
+        "politique"
+      ],
+      "notes": "Lu le 27/10/2026. Page « Composición del Gobierno » (XV législature) : Pedro Sánchez Pérez-Castejón, président du gouvernement ; Carlos Cuerpo Caballero, vice-président premier. Remaniement du 26/03/2026 : annonce https://www.lamoncloa.gob.es/lang/en/presidente/news/Paginas/2026/20260326-institutional-declaration.aspx. Chef de l'État recoupé avec Wikidata (Q191045).",
+      "hotes": [
+        "www.lamoncloa.gob.es"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "congreso-opendata",
@@ -82,9 +99,13 @@
       "api": true,
       "api_url": "https://www.congreso.es/es/opendata/diputados",
       "format": "json, csv, xml",
-      "couches": ["politique"],
-      "notes": "Jeu « Diputados en activo » en JSON/CSV/XML. Les noms de fichiers semblent horodatés : le script devra lire la page puis suivre le lien JSON. Donne la répartition par groupe parlementaire, qui diffère des sièges élus (ex. départ de Podemos du groupe Sumar vers le groupe mixte fin 2023).",
-      "hotes": ["www.congreso.es"],
+      "couches": [
+        "politique"
+      ],
+      "notes": "Jeu « Diputados en activo » en JSON/CSV/XML. Les noms de fichiers semblent horodatés : le script devra lire la page puis suivre le lien JSON. Donne la répartition par groupe parlementaire, qui diffère des sièges élus (ex. départ de Podemos du groupe Sumar vers le groupe mixte fin 2023). Relecture du 27/10/2026 : www.congreso.es répond 403 aux scripts (filtre anti-robot), non contourné.",
+      "hotes": [
+        "www.congreso.es"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -99,9 +120,14 @@
       "api": false,
       "api_url": null,
       "format": "pdf",
-      "couches": ["presences"],
+      "couches": [
+        "presences"
+      ],
       "notes": "Confirmation parlementaire d'un déploiement : toute opération extérieure non liée directement à la défense de l'Espagne exige l'autorisation préalable du Congreso (LO 5/2005, art. 17, BOE du 18/11/2005 : https://boe.es/boe/dias/2005/11/18/pdfs/A37717-37723.pdf). Utile pour dater le « depuis » de chaque mission.",
-      "hotes": ["www.congreso.es", "boe.es"],
+      "hotes": [
+        "www.congreso.es",
+        "boe.es"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -116,9 +142,14 @@
       "api": true,
       "api_url": "https://www.senado.es/web/ficopendataservlet",
       "format": "xml",
-      "couches": ["politique"],
-      "notes": "Chambre haute, hors du panneau « Qui gouverne » (chambre basse seulement). Fiche catalogue : https://datos.gob.es/en/catalogo/i00000061-https-www-senado-es-web-composicionorganizacion-senadores-composicionsenado-senadoresdesde1977-consultaorden-index-html",
-      "hotes": ["www.senado.es", "datos.gob.es"],
+      "couches": [
+        "politique"
+      ],
+      "notes": "Chambre haute, hors du panneau « Qui gouverne » (chambre basse seulement). Fiche catalogue : https://datos.gob.es/en/catalogo/i00000061-https-www-senado-es-web-composicionorganizacion-senadores-composicionsenado-senadoresdesde1977-consultaorden-index-html Relecture du 27/10/2026 : www.senado.es répond 403 aux scripts, non contourné.",
+      "hotes": [
+        "www.senado.es",
+        "datos.gob.es"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -133,9 +164,14 @@
       "api": true,
       "api_url": "https://infoelectoral.interior.gob.es/opencms/es/elecciones-celebradas/area-de-descargas/",
       "format": "zip (fichiers à largeur fixe), xlsx",
-      "couches": ["politique"],
+      "couches": [
+        "politique"
+      ],
       "notes": "Résultats du Congreso par circonscription et par bureau. Le paquet R « infoelectoral » (rOpenSpain) automatise le téléchargement, preuve d'URL stables. Sièges du 23/07/2023 repris ici, non relus sur le site.",
-      "hotes": ["infoelectoral.interior.gob.es", "www.interior.gob.es"],
+      "hotes": [
+        "infoelectoral.interior.gob.es",
+        "www.interior.gob.es"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -150,9 +186,16 @@
       "api": true,
       "api_url": "https://www.boe.es/datosabiertos/api/boe/sumario/{aaaammjj}",
       "format": "json, xml (selon l'en-tête Accept)",
-      "couches": ["politique", "conflits", "sanctions"],
+      "couches": [
+        "politique",
+        "conflits",
+        "sanctions"
+      ],
       "notes": "Source primaire des nominations, des décrets-lois (embargo sur les armes à destination d'Israël, RDL 10/2025, BOE n° 230 du 24/09/2025) et des traités. API REST GET uniquement, sans clé. Doc : https://www.boe.es/datosabiertos/documentos/APIconsolidada.pdf",
-      "hotes": ["www.boe.es", "boe.es"],
+      "hotes": [
+        "www.boe.es",
+        "boe.es"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -167,9 +210,14 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["conflits", "sanctions"],
-      "notes": "Fiches pays de l'Oficina de Información Diplomática sur le même site. Aucune liste nationale de personnes sanctionnées repérée : l'Espagne applique les mesures restrictives UE et ONU (voir tesoro).",
-      "hotes": ["www.exteriores.gob.es"],
+      "couches": [
+        "conflits",
+        "sanctions"
+      ],
+      "notes": "Fiches pays de l'Oficina de Información Diplomática sur le même site. Aucune liste nationale de personnes sanctionnées repérée : l'Espagne applique les mesures restrictives UE et ONU (voir tesoro). Relecture du 27/10/2026 : www.exteriores.gob.es répond 503 ; réessayer.",
+      "hotes": [
+        "www.exteriores.gob.es"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -184,9 +232,13 @@
       "api": false,
       "api_url": null,
       "format": "html, pdf",
-      "couches": ["sanctions"],
+      "couches": [
+        "sanctions"
+      ],
       "notes": "Base légale d'un gel des avoirs décidé au niveau national (accord du Conseil des ministres) en plus des règlements UE. Selon FinReg360 (presse spécialisée, non vérifié au BOE), le RDL 7/2026 du 20/03/2026 a modifié l'art. 42 : gel d'effet immédiat, maintien au-delà d'un mois sans norme UE sur résolution du Trésor. Aucune liste nationale publiée repérée : pas de données à afficher en plus des sanctions UE.",
-      "hotes": ["www.tesoro.es"],
+      "hotes": [
+        "www.tesoro.es"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -201,9 +253,14 @@
       "api": false,
       "api_url": null,
       "format": "pdf",
-      "couches": ["autre", "conflits"],
+      "couches": [
+        "autre",
+        "conflits"
+      ],
       "notes": "Autorisations et exportations réalisées par pays destinataire, présentées au Congreso. Dernier repéré : 1er semestre 2025 (publié le 05/03/2026), https://comercio.gob.es/ImportacionExportacion/Informes_Estadisticas/Material%20Defansa%20Doble%20Uso/2025/260305-Informe-semestral-2025.pdf. Tableaux en PDF uniquement. URL de la page d'index déduite, à confirmer.",
-      "hotes": ["comercio.gob.es"],
+      "hotes": [
+        "comercio.gob.es"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -218,9 +275,13 @@
       "api": false,
       "api_url": null,
       "format": "html (requêtes interactives, export xlsx)",
-      "couches": ["commerce"],
+      "couches": [
+        "commerce"
+      ],
       "notes": "Commerce déclaré aux douanes, pays d'origine/destination. Pas d'API documentée trouvée : utiliser plutôt les fichiers de l'AEAT (source aeat). Données non relevées : commerce.json non créé tant que l'accès n'est pas ouvert.",
-      "hotes": ["datacomex.comercio.es"],
+      "hotes": [
+        "datacomex.comercio.es"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -235,9 +296,14 @@
       "api": true,
       "api_url": "https://sede.agenciatributaria.gob.es/Sede/estadisticas.html",
       "format": "texte à largeur fixe (zip)",
-      "couches": ["commerce"],
+      "couches": [
+        "commerce"
+      ],
       "notes": "Pour chaque mois : pays d'origine/destination, code NC, valeur en euros, masse. Descriptif du fichier : https://sede.agenciatributaria.gob.es/static_files/Sede/Tema/Aduanas/Comercio_exterior/resumenes_mens/fich_datos_resum_mensu.pdf. Source la plus automatisable pour commerce.json ; URL exacte des archives à relever une fois le domaine ouvert.",
-      "hotes": ["sede.agenciatributaria.gob.es", "www3.agenciatributaria.gob.es"],
+      "hotes": [
+        "sede.agenciatributaria.gob.es",
+        "www3.agenciatributaria.gob.es"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -252,9 +318,14 @@
       "api": true,
       "api_url": "https://servicios.ine.es/wstempus/js/ES/OPERACIONES_DISPONIBLES",
       "format": "json",
-      "couches": ["autre"],
-      "notes": "L'INE ne publie pas le commerce de biens par partenaire (c'est le rôle des douanes) : utile pour population, PIB, contexte. Sans clé.",
-      "hotes": ["servicios.ine.es", "www.ine.es"],
+      "couches": [
+        "autre"
+      ],
+      "notes": "L'INE ne publie pas le commerce de biens par partenaire (c'est le rôle des douanes) : utile pour population, PIB, contexte. Sans clé. Relecture du 27/10/2026 : servicios.ine.es répond 503 (maintenance) ; réessayer.",
+      "hotes": [
+        "servicios.ine.es",
+        "www.ine.es"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -269,9 +340,13 @@
       "api": false,
       "api_url": null,
       "format": "pdf",
-      "couches": ["presences"],
+      "couches": [
+        "presences"
+      ],
       "notes": "Confirmation par l'État hôte de la présence américaine à Rota et Morón (Convenio de Cooperación para la Defensa de 1988, protocoles de 2012 et 2015, accord du 08/05/2023 pour deux destroyers supplémentaires, plafond 4 250 militaires et 1 000 civils). Concerne la fiche USA, pas l'Espagne : à transmettre au fil d'intégration. Convention reconduite tacitement chaque année (presse, mai 2026).",
-      "hotes": ["www.defensa.gob.es"],
+      "hotes": [
+        "www.defensa.gob.es"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -286,9 +361,14 @@
       "api": true,
       "api_url": "https://query.wikidata.org/sparql",
       "format": "json",
-      "couches": ["politique"],
+      "couches": [
+        "politique"
+      ],
       "notes": "Lu le 26/10/2026 : chef de l'État Felipe VI depuis le 19/06/2014, chef du gouvernement Pedro Sánchez depuis le 02/06/2018. Présidents de partis souvent périmés sur Wikidata (UPN, PNV) : non utilisés pour les dirigeants.",
-      "hotes": ["www.wikidata.org", "query.wikidata.org"],
+      "hotes": [
+        "www.wikidata.org",
+        "query.wikidata.org"
+      ],
       "acces": "verifie"
     }
   ]
