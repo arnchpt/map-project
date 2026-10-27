@@ -1,8 +1,22 @@
 {
   "pays": "HRV",
-  "verifie": "2026-10-26",
-  "chef_etat": { "nom": "Zoran Milanović", "fonction": "Président de la République", "parti": null, "depuis": "2020-02-19", "qid": "Q57687", "src": "president" },
-  "chef_gouv": { "nom": "Andrej Plenković", "fonction": "Président du gouvernement", "parti": "HDZ", "depuis": "2016-10-19", "qid": "Q11685764", "src": "gouvernement" },
+  "verifie": "2026-10-27",
+  "chef_etat": {
+    "nom": "Zoran Milanović",
+    "fonction": "Président de la République",
+    "parti": null,
+    "depuis": "2020-02-19",
+    "qid": "Q57687",
+    "src": "president"
+  },
+  "chef_gouv": {
+    "nom": "Andrej Plenković",
+    "fonction": "Président du gouvernement",
+    "parti": "HDZ",
+    "depuis": "2016-10-19",
+    "qid": "Q11685764",
+    "src": "gouvernement"
+  },
   "chambre": {
     "nom": "Hrvatski sabor",
     "sieges": 151,
@@ -12,15 +26,65 @@
     "ipu": "HR-LC01-E20240417"
   },
   "partis": [
-    { "nom": "Liste HDZ (coalition menée par l'Union démocratique croate)", "sieges": 61, "role": "gouv", "leaders": "Andrej Plenković (président du HDZ)" },
-    { "nom": "Rijeke pravde (coalition menée par le SDP)", "sieges": 42, "role": "hors", "leaders": null },
-    { "nom": "Domovinski pokret (coalition DP)", "sieges": 14, "role": "gouv", "leaders": "Ivan Penava (président du DP, non reconfirmé en octobre 2026)" },
-    { "nom": "Most", "sieges": 11, "role": "hors", "leaders": null },
-    { "nom": "Možemo!", "sieges": 10, "role": "hors", "leaders": null },
-    { "nom": "IDS–PGS", "sieges": 2, "role": "hors", "leaders": null },
-    { "nom": "NPS", "sieges": 2, "role": "hors", "leaders": null },
-    { "nom": "Fokus–Republika", "sieges": 1, "role": "hors", "leaders": null },
-    { "nom": "SDSS (minorité serbe)", "sieges": 3, "role": "hors", "leaders": null },
-    { "nom": "Autres représentants des minorités nationales (DZMH, Kali Sarap, BZ et indépendants)", "sieges": 5, "role": "hors", "leaders": null }
+    {
+      "nom": "Liste HDZ (coalition menée par l'Union démocratique croate)",
+      "sieges": 61,
+      "role": "gouv",
+      "leaders": "Andrej Plenković (président du HDZ)"
+    },
+    {
+      "nom": "Rijeke pravde (coalition menée par le SDP)",
+      "sieges": 42,
+      "role": "hors",
+      "leaders": null
+    },
+    {
+      "nom": "Domovinski pokret (coalition DP)",
+      "sieges": 14,
+      "role": "gouv",
+      "leaders": "Ivan Penava (président du DP, non reconfirmé en octobre 2026)"
+    },
+    {
+      "nom": "Most",
+      "sieges": 11,
+      "role": "hors",
+      "leaders": null
+    },
+    {
+      "nom": "Možemo!",
+      "sieges": 10,
+      "role": "hors",
+      "leaders": null
+    },
+    {
+      "nom": "IDS–PGS",
+      "sieges": 2,
+      "role": "hors",
+      "leaders": null
+    },
+    {
+      "nom": "NPS",
+      "sieges": 2,
+      "role": "hors",
+      "leaders": null
+    },
+    {
+      "nom": "Fokus–Republika",
+      "sieges": 1,
+      "role": "hors",
+      "leaders": null
+    },
+    {
+      "nom": "SDSS (minorité serbe)",
+      "sieges": 3,
+      "role": "hors",
+      "leaders": null
+    },
+    {
+      "nom": "Autres représentants des minorités nationales (DZMH, Kali Sarap, BZ et indépendants)",
+      "sieges": 5,
+      "role": "hors",
+      "leaders": null
+    }
   ]
 }

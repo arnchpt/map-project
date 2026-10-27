@@ -1,6 +1,6 @@
 {
   "pays": "HRV",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "presences": [
     {
       "hote": "POL",
@@ -10,7 +10,7 @@
       "cat": "otan",
       "eff": null,
       "depuis": null,
-      "src": "defense"
+      "src": "president"
     },
     {
       "hote": "LTU",
@@ -40,7 +40,7 @@
       "cat": "otan",
       "eff": null,
       "depuis": null,
-      "src": "defense"
+      "src": "president"
     },
     {
       "hote": "PAK",
@@ -48,8 +48,8 @@
       "lat": 33.7,
       "nom": "UNMOGIP (ONU, Inde et Pakistan)",
       "cat": "onu",
-      "eff": 9,
-      "depuis": null,
+      "eff": null,
+      "depuis": "2002-08",
       "src": "defense-onu"
     },
     {
@@ -58,8 +58,8 @@
       "lat": 27.2,
       "nom": "MINURSO (ONU, Sahara occidental)",
       "cat": "onu",
-      "eff": 11,
-      "depuis": null,
+      "eff": null,
+      "depuis": "2002-12",
       "src": "defense-onu"
     },
     {
@@ -69,7 +69,7 @@
       "nom": "FINUL (ONU, Liban), officiers de liaison",
       "cat": "onu",
       "eff": null,
-      "depuis": null,
+      "depuis": "2007-07",
       "src": "defense-onu"
     },
     {
