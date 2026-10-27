@@ -1,53 +1,43 @@
 {
   "pays": "ROU",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "presences": [
     {
       "hote": "POL",
       "lon": 21.9,
       "lat": 53.8,
-      "nom": "Détachement de défense antiaérienne dans le battlegroup de présence avancée renforcée de l'OTAN en Pologne",
+      "nom": "Contingent roumain dans le groupement tactique multinational de l'OTAN en Pologne",
       "cat": "otan",
       "eff": null,
-      "depuis": "2017",
+      "depuis": null,
       "src": "mapn"
     },
     {
       "hote": "SVK",
       "lon": 19.3,
       "lat": 48.4,
-      "nom": "Détachement antichar dans le battlegroup multinational de l'OTAN en Slovaquie",
+      "nom": "Contingent roumain dans le groupement tactique multinational de l'OTAN en Slovaquie",
       "cat": "otan",
       "eff": null,
-      "depuis": "2025-01",
+      "depuis": null,
       "src": "mapn"
     },
     {
       "hote": "BGR",
       "lon": 26.1,
       "lat": 42.0,
-      "nom": "Détachement de reconnaissance dans le battlegroup multinational de l'OTAN en Bulgarie",
+      "nom": "Contingent roumain dans le groupement tactique multinational de l'OTAN en Bulgarie",
       "cat": "otan",
       "eff": null,
-      "depuis": "2025-01",
+      "depuis": null,
       "src": "mapn"
     },
     {
       "hote": "BIH",
       "lon": 18.4,
       "lat": 43.9,
-      "nom": "Opération EUFOR Althea",
+      "nom": "Détachement roumain de l'opération EUFOR Althea",
       "cat": "ue",
-      "eff": null,
-      "depuis": "2004-12",
-      "src": "mapn"
-    },
-    {
-      "hote": "IRQ",
-      "lon": 44.4,
-      "lat": 33.3,
-      "nom": "Mission de l'OTAN en Irak (NMI)",
-      "cat": "otan",
       "eff": null,
       "depuis": null,
       "src": "mapn"
@@ -56,8 +46,18 @@
       "hote": "CAF",
       "lon": 18.6,
       "lat": 4.4,
-      "nom": "Mission de formation de l'UE en République centrafricaine (EUTM RCA)",
+      "nom": "Détachement roumain de la mission de formation de l'UE en République centrafricaine (EUTM RCA)",
       "cat": "ue",
+      "eff": null,
+      "depuis": null,
+      "src": "mapn"
+    },
+    {
+      "hote": "XKX",
+      "lon": 21.2,
+      "lat": 42.7,
+      "nom": "Détachement roumain de la force de l'OTAN au Kosovo (KFOR)",
+      "cat": "otan",
       "eff": null,
       "depuis": null,
       "src": "mapn"
@@ -65,8 +65,8 @@
   ],
   "non_localisees": [
     {
-      "nom": "Force pour le Kosovo de l'OTAN (KFOR), Kosovo sans code ISO alpha-3 officiel",
-      "eff": "non publié",
+      "nom": "Total des militaires roumains en missions OTAN, UE et ONU",
+      "eff": "≈ 1 000",
       "src": "mapn"
     }
   ]
