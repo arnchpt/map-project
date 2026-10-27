@@ -1,7 +1,7 @@
 {
   "pays": "GRC",
   "verifie": "2026-10-26",
-  "note_acces": "Tous les domaines grecs testés (statistics.gr, geetha.mil.gr, mod.mil.gr, hellenicparliament.gr, mfa.gr, primeminister.gr, ypes.gr, data.gov.gr) ainsi que ec.europa.eu et api.data.ipu.org sont bloqués depuis l'environnement cloud le 26/10/2026 : relevé fait par recherche web, pages non ouvertes. Licences et formats marqués « à vérifier » tant qu'un accès direct n'a pas eu lieu. Tous les « acces » valent donc non_verifie.",
+  "note_acces": "Relecture du 27/10/2026 : 5 sources lues (OTAN KFOR, MAE/FINUL, IPU, Eurostat Comext, data.gov.gr). Les autres restent non vérifiées : www.mfa.gr, geetha.mil.gr, www.hellenicparliament.gr, www.primeminister.gr, www.presidency.gr, ekloges.ypes.gr, www.eeas.europa.eu et data.ipu.org répondent 403 (anti-robot), www.statistics.gr, www.mod.mil.gr, greekcitytimes.com, www.tovima.com, www.ot.gr, en.protothema.gr et www.cahdidatabases.coe.int ne sont pas joignables. Aucun contournement.",
   "sources": [
     {
       "id": "stat",
@@ -39,11 +39,11 @@
       "couches": [
         "commerce"
       ],
-      "notes": "Recoupement possible des 10 premiers partenaires FMI pour les 27 pays avec une seule requête. ec.europa.eu bloqué depuis l'environnement cloud : requête non testée.",
+      "notes": "Requête testée le 27/10/2026 (GR→DE, total, annuel 2024, indicateur VALUE_IN_EUROS) : réponse JSON-stat valide, mise à jour du 16/10/2026. Exploitable pour un commerce.json par partenaire.",
       "hotes": [
         "ec.europa.eu"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "geetha",
@@ -97,18 +97,18 @@
       "type": "international",
       "langue": "en",
       "licence": "non précisée",
-      "cadence": "irrégulière (dernière version trouvée : février 2026)",
+      "cadence": "irrégulière (dernière version lue : juin 2026)",
       "api": false,
       "api_url": null,
       "format": "pdf",
       "couches": [
         "presences"
       ],
-      "notes": "Février 2026 : Grèce 121 militaires sur 4 636. URL stable, contenu remplacé à chaque mise à jour.",
+      "notes": "Juin 2026 : Grèce 121 militaires sur 4 739 (lu le 27/10/2026). URL stable, contenu remplacé à chaque mise à jour.",
       "hotes": [
         "www.nato.int"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "eeas_aspides",
@@ -146,11 +146,11 @@
       "couches": [
         "presences"
       ],
-      "notes": "« Les forces armées helléniques contribuent avec une frégate à la Force navale de la FINUL. » Effectif non donné ; l'ONU indiquait 108 personnes en novembre 2022. La FINUL prend fin le 31/12/2026.",
+      "notes": "Lu le 27/10/2026 : « Les forces armées helléniques contribuent avec une frégate à la Force navale de la FINUL. » Effectif non donné ; l'ONU indiquait 108 personnes en novembre 2022. La FINUL prend fin le 31/12/2026.",
       "hotes": [
         "greeceforunsc.mfa.gr"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "mae_chypre",
@@ -314,12 +314,12 @@
       "couches": [
         "politique"
       ],
-      "notes": "Branchable sur scripts/ipu-sieges.js comme les 11 autres pays. Codes partis IPU non relevés (domaine bloqué depuis l'environnement).",
+      "notes": "Lu le 27/10/2026 : élection GR-LC01-E20230625, 300 sièges, répartition identique à politique.json. Branchable sur scripts/ipu-sieges.js.",
       "hotes": [
         "data.ipu.org",
         "api.data.ipu.org"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "datagov",
@@ -336,11 +336,11 @@
       "couches": [
         "autre"
       ],
-      "notes": "Relancé sur CKAN, plus de 22 000 jeux de données de 510 organismes (data.europa.eu). Point d'entrée CKAN standard supposé, non testé ; l'ancienne API demandait un jeton. Aucun jeu défense ou commerce par partenaire identifié.",
+      "notes": "CKAN joignable le 27/10/2026 (package_search répond en JSON, sans jeton). Recherche « defence » : 1 jeu. Aucun jeu défense ou commerce par partenaire utile identifié.",
       "hotes": [
         "data.gov.gr"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "presse_patriot",
