@@ -1,8 +1,22 @@
 {
   "pays": "FIN",
-  "verifie": "2026-10-26",
-  "chef_etat": { "nom": "Alexander Stubb", "fonction": "Président de la République", "parti": null, "depuis": "2024-03-01", "qid": "Q503143", "src": "wikidata" },
-  "chef_gouv": { "nom": "Petteri Orpo", "fonction": "Premier ministre", "parti": "Parti de la coalition nationale (Kokoomus)", "depuis": "2023-06-20", "qid": "Q6029546", "src": "wikidata" },
+  "verifie": "2026-10-27",
+  "chef_etat": {
+    "nom": "Alexander Stubb",
+    "fonction": "Président de la République",
+    "parti": null,
+    "depuis": "2024-03-01",
+    "qid": "Q503143",
+    "src": "wikidata"
+  },
+  "chef_gouv": {
+    "nom": "Petteri Orpo",
+    "fonction": "Premier ministre",
+    "parti": "Parti de la coalition nationale (Kokoomus)",
+    "depuis": "2023-06-20",
+    "qid": "Q6029546",
+    "src": "wikidata"
+  },
   "chambre": {
     "nom": "Eduskunta (Parlement)",
     "sieges": 200,
@@ -12,19 +26,99 @@
     "ipu": "FI-LC01-E20230402"
   },
   "partis": [
-    { "nom": "Parti de la coalition nationale (Kokoomus)", "sieges": 48, "role": "gouv", "leaders": "Petteri Orpo (président du parti)" },
-    { "nom": "Parti des Finlandais (Perussuomalaiset)", "sieges": 46, "role": "gouv", "leaders": "Riikka Purra (présidente du parti)" },
-    { "nom": "Parti social-démocrate (SDP)", "sieges": 43, "role": "hors", "leaders": "Antti Lindtman (président du parti)" },
-    { "nom": "Parti du centre (Keskusta)", "sieges": 23, "role": "hors", "leaders": "Antti Kaikkonen (président du parti)" },
-    { "nom": "Ligue verte (Vihreät)", "sieges": 13, "role": "hors", "leaders": "Sofia Virta (présidente du parti)" },
-    { "nom": "Alliance de gauche (Vasemmistoliitto)", "sieges": 11, "role": "hors", "leaders": "Minja Koskela (présidente du parti)" },
-    { "nom": "Parti populaire suédois (RKP)", "sieges": 9, "role": "gouv", "leaders": "Anders Adlercreutz (président du parti)" },
-    { "nom": "Chrétiens-démocrates (KD)", "sieges": 5, "role": "gouv", "leaders": "Sari Essayah (présidente du parti)" },
-    { "nom": "Mouvement maintenant (Liike Nyt)", "sieges": 1, "role": "hors", "leaders": "Hjallis Harkimo (président du parti)" },
-    { "nom": "Coalition ålandaise (Åländsk samling)", "sieges": 1, "role": "hors", "leaders": "non relevé" }
+    {
+      "nom": "Parti de la coalition nationale (Kokoomus)",
+      "sieges": 48,
+      "role": "gouv",
+      "leaders": "Petteri Orpo (président du parti)",
+      "ipu": [
+        "fi-national_coalition_party_kok"
+      ]
+    },
+    {
+      "nom": "Parti des Finlandais (Perussuomalaiset)",
+      "sieges": 46,
+      "role": "gouv",
+      "leaders": "Riikka Purra (présidente du parti)",
+      "ipu": [
+        "fi-finns_party_ps"
+      ]
+    },
+    {
+      "nom": "Parti social-démocrate (SDP)",
+      "sieges": 43,
+      "role": "hors",
+      "leaders": "Antti Lindtman (président du parti)",
+      "ipu": [
+        "fi-social_democratic_party_sdp"
+      ]
+    },
+    {
+      "nom": "Parti du centre (Keskusta)",
+      "sieges": 23,
+      "role": "hors",
+      "leaders": "Antti Kaikkonen (président du parti)",
+      "ipu": [
+        "fi-center_party_kesk"
+      ]
+    },
+    {
+      "nom": "Ligue verte (Vihreät)",
+      "sieges": 13,
+      "role": "hors",
+      "leaders": "Sofia Virta (présidente du parti)",
+      "ipu": [
+        "fi-greens_0"
+      ]
+    },
+    {
+      "nom": "Alliance de gauche (Vasemmistoliitto)",
+      "sieges": 11,
+      "role": "hors",
+      "leaders": "Minja Koskela (présidente du parti)",
+      "ipu": [
+        "fi-left_alliance_vas"
+      ]
+    },
+    {
+      "nom": "Parti populaire suédois (RKP)",
+      "sieges": 9,
+      "role": "gouv",
+      "leaders": "Anders Adlercreutz (président du parti)",
+      "ipu": [
+        "fi-swedish_people_s_party_of_finland"
+      ]
+    },
+    {
+      "nom": "Chrétiens-démocrates (KD)",
+      "sieges": 5,
+      "role": "gouv",
+      "leaders": "Sari Essayah (présidente du parti)",
+      "ipu": [
+        "fi-christian_democrats_kd"
+      ]
+    },
+    {
+      "nom": "Mouvement maintenant (Liike Nyt)",
+      "sieges": 1,
+      "role": "hors",
+      "leaders": "Hjallis Harkimo (président du parti)",
+      "ipu": [
+        "fi-movement_now_liike_nyt_"
+      ]
+    },
+    {
+      "nom": "Coalition ålandaise (Åländsk samling)",
+      "sieges": 1,
+      "role": "hors",
+      "leaders": "non relevé",
+      "ipu": [
+        "fi-others"
+      ]
+    }
   ],
   "notes": [
-    "Sièges : résultat de l'élection du 2 avril 2023, figé jusqu'au scrutin suivant (changements de groupe non suivis).",
+    "Sièges : résultat de l'élection du 2 avril 2023, recoupé le 2026-10-27 entre l'IPU et Statistics Finland (identiques). Répartition actuelle des groupes selon l'Eduskunta : PS 45 (un député a quitté le groupe), RKP 10 (le député ålandais siège dans le groupe suédois), un député dans un groupe propre ; non suivie sur la carte.",
     "Dirigeants de partis : Wikidata (P488), relevé du 2026-10-26.",
     "Prochaines élections législatives : avril 2027."
   ]
