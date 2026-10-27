@@ -1,6 +1,6 @@
 {
   "pays": "ITA",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "sources": [
     {
       "id": "stat",
@@ -17,7 +17,7 @@
       "couches": [
         "commerce"
       ],
-      "notes": "Hôte bloqué par le proxy de la session le 26/10/2026 : informations relevées par recherche web, page non lue. Agence SDMX IT1 ; limite de 5 requêtes par minute et par IP, dépassement = blocage de 1 à 2 jours. Identifiant du flux commerce par pays partenaire non trouvé. Pays partenaire : provenance/destination pour l'UE (Intrastat), origine/destination hors UE (DAU) : écarts attendus avec le FMI. commerce.json non rempli faute de chiffres lus à la source.",
+      "notes": "Relevé par recherche web, page non lue. Agence SDMX IT1 ; limite de 5 requêtes par minute et par IP, dépassement = blocage de 1 à 2 jours. Identifiant du flux commerce par pays partenaire non trouvé. Pays partenaire : provenance/destination pour l'UE (Intrastat), origine/destination hors UE (DAU) : écarts attendus avec le FMI. commerce.json non rempli faute de chiffres lus à la source. Contrôle du 27/10/2026 : esploradati.istat.it, coeweb.istat.it, sdmx.istat.it et www.istat.it répondent toujours par un échec de connexion (000).",
       "hotes": [
         "www.coeweb.istat.it",
         "coeweb.istat.it",
@@ -43,14 +43,14 @@
         "presences",
         "conflits"
       ],
-      "notes": "Hôte bloqué par le proxy de la session le 26/10/2026 : informations relevées par recherche web, page non lue. Cadre : loi 145/2016 réformée par la loi 168/2024. Délibération du 14/05/2026 (trois nouvelles missions : Iraq bilatérale, fiche 4-bis/2026 ; Somalie bilatérale, fiche 8-bis/2026), rapport des commissions III et IV le 14/07/2026, résolution adoptée par la Chambre le 28/07/2026. Chaque fiche donne une consistance maximale autorisée (plafond), pas l'effectif présent. Dossier du Service d'études du Sénat n. 704.",
+      "notes": "Dossier thématique de la Chambre relu le 27/10/2026 (temi.camera.it) : délibération du Conseil des ministres du 14/05/2026, prorogation 2026 (Doc. XXVI n. 4) et trois nouvelles missions (Doc. XXV n. 4), dont fiche 4-bis/2026 (Irak et Moyen-Orient), 8-bis/2026 (Corne de l'Afrique), 22-bis/2026 (Tunisie, Garde des finances). Autorisation pour la période du 01/01 au 31/12/2026. Les textes (documenti.camera.it, 403 anti-robot) n'ont pas été lus.",
       "hotes": [
         "temi.camera.it",
         "documenti.camera.it",
         "www.camera.it",
         "www.senato.it"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "difesa",
@@ -67,11 +67,11 @@
       "couches": [
         "presences"
       ],
-      "notes": "Hôte bloqué par le proxy de la session le 26/10/2026 : informations relevées par recherche web, page non lue. Une fiche par opération avec « contributo nazionale » ; ex. UNIFIL : consistance maximale annuelle 1 256 militaires (fiche Liban, d'après le résultat de recherche).",
+      "notes": "Relu le 27/10/2026. Une fiche par mission, avec une page « Contributo nazionale » qui donne la consistance maximale annuelle autorisée (plafond, pas l'effectif présent) : UNIFIL 1 256, KFOR 852, Niger jusqu'à 500 militaires ; Prima Parthica environ 300 (Erbil) et 400 (composante aérienne). Les fiches Lettonie, Bulgarie, Hongrie, BMIS, MIBIL et MIASIT ne donnent pas de chiffre. Pages BMIS, MIBIL, MIASIT : dernière modification 13/11/2023.",
       "hotes": [
         "www.difesa.it"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "normattiva",
@@ -88,7 +88,7 @@
       "couches": [
         "conflits"
       ],
-      "notes": "Hôte bloqué par le proxy de la session le 26/10/2026 : informations relevées par recherche web, page non lue. Les listes de matériels cédés sont classifiées ; seule l'autorisation légale est publique.",
+      "notes": "Relevé par recherche web, page non lue. Les listes de matériels cédés sont classifiées ; seule l'autorisation légale est publique. Contrôle du 27/10/2026 : www.normattiva.it et www.gazzettaufficiale.it en échec de connexion (hôtes hors liste).",
       "hotes": [
         "www.normattiva.it",
         "www.gazzettaufficiale.it"
@@ -110,7 +110,7 @@
       "couches": [
         "politique"
       ],
-      "notes": "Hôte bloqué par le proxy de la session le 26/10/2026 : informations relevées par recherche web, page non lue. L'IPU ne publie que les totaux par coalition pour 2022 : cette source donne le détail par liste. URL exacte de la section open data non confirmée.",
+      "notes": "Relevé par recherche web, page non lue. L'IPU ne publie que les totaux par coalition pour 2022 : cette source donne le détail par liste. URL exacte de la section open data non confirmée. Contrôle du 27/10/2026 : elezioni.interno.gov.it répond mais exige JavaScript (aucun résultat lisible sans navigateur) ; eligendo.interno.gov.it et elezionistorico.interno.gov.it en échec.",
       "hotes": [
         "elezioni.interno.gov.it",
         "eligendo.interno.gov.it",
@@ -133,12 +133,12 @@
       "couches": [
         "politique"
       ],
-      "notes": "Hôte bloqué par le proxy de la session le 26/10/2026 : informations relevées par recherche web, page non lue. Les groupes diffèrent des sièges élus en 2022 (changements de groupe). Relevé de recherche web, non recoupé : FdI 117, PD 68, Lega 55, FI 52, M5S 48, AVS 10, Azione 10, Noi Moderati 8, IV 7, Misto 23 (total 398). La carte garde les sièges de l'élection, règle commune.",
+      "notes": "Page de composition des groupes relue le 27/10/2026 (www.camera.it/leg19/46) : 398 députés, FdI 117, PD 68, Lega 54, FI 53, M5S 48, AVS 10, Azione 10, Noi Moderati 8, IV 7, Misto 23 (dont +Europa 3, Futuro Nazionale 9, minorités linguistiques 4, Sud chiama Nord 3, non inscrits 4). Les groupes diffèrent des sièges élus en 2022 (changements de groupe), la carte garde les sièges de l'élection. Point d'accès SPARQL joignable (dati.camera.it/sparql, éditeur Virtuoso) ; page de licence non trouvée, le CC BY-SA vient des pages de jeux de données relevées par recherche.",
       "hotes": [
         "www.camera.it",
         "dati.camera.it"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "senato",
@@ -155,7 +155,7 @@
       "couches": [
         "politique"
       ],
-      "notes": "Hôte bloqué par le proxy de la session le 26/10/2026 : informations relevées par recherche web, page non lue. Licence non confirmée.",
+      "notes": "Portail dati.senato.it joignable le 27/10/2026 (accueil, « Scarica i dati », « Interroga i dati »), jeux de données non lus ; licence non confirmée.",
       "hotes": [
         "dati.senato.it",
         "www.senato.it"
@@ -177,7 +177,7 @@
       "couches": [
         "politique"
       ],
-      "notes": "Hôte bloqué par le proxy de la session le 26/10/2026 : informations relevées par recherche web, page non lue.",
+      "notes": "Relevé par recherche web, page non lue. Contrôle du 27/10/2026 : www.governo.it joignable (menu : « Presidente Giorgia Meloni »), mais l'URL de la page du gouvernement renvoie une page introuvable ; date de prise de fonction non relue.",
       "hotes": [
         "www.governo.it"
       ],
@@ -198,7 +198,7 @@
       "couches": [
         "politique"
       ],
-      "notes": "Hôte bloqué par le proxy de la session le 26/10/2026 : informations relevées par recherche web, page non lue. Sergio Mattarella, réélu le 29/01/2022 (second mandat).",
+      "notes": "Relevé par recherche web, page non lue. Sergio Mattarella, réélu le 29/01/2022 (second mandat). Contrôle du 27/10/2026 : 403 anti-robot.",
       "hotes": [
         "www.quirinale.it"
       ],
@@ -219,7 +219,7 @@
       "couches": [
         "sanctions"
       ],
-      "notes": "Hôte bloqué par le proxy de la session le 26/10/2026 : informations relevées par recherche web, page non lue. L'Italie applique les sanctions ONU et UE (d.lgs. 109/2007 ; embargos et biens à double usage : d.lgs. 221/2017). L'art. 4-bis du d.lgs. 109/2007 permet des listes nationales de gel, valables 6 mois et caduques dès l'adoption de mesures UE : pas de régime autonome durable, donc rien à ajouter à la couche sanctions UE.",
+      "notes": "Relevé par recherche web, page non lue. L'Italie applique les sanctions ONU et UE (d.lgs. 109/2007 ; embargos et biens à double usage : d.lgs. 221/2017). L'art. 4-bis du d.lgs. 109/2007 permet des listes nationales de gel, valables 6 mois et caduques dès l'adoption de mesures UE : pas de régime autonome durable, donc rien à ajouter à la couche sanctions UE. Contrôle du 27/10/2026 : www.dt.mef.gov.it et uif.bancaditalia.it en échec de connexion.",
       "hotes": [
         "www.dt.mef.gov.it",
         "uif.bancaditalia.it"
@@ -241,7 +241,7 @@
       "couches": [
         "autre"
       ],
-      "notes": "Hôte bloqué par le proxy de la session le 26/10/2026 : informations relevées par recherche web, page non lue. Autorisations par pays destinataire : piste pour une future couche, non exploitée ici. Lien direct vers le Doc. LXVII n. 4 non trouvé.",
+      "notes": "Relevé par recherche web, page non lue. Autorisations par pays destinataire : piste pour une future couche, non exploitée ici. Lien direct vers le Doc. LXVII n. 4 non trouvé.",
       "hotes": [
         "www.senato.it",
         "documenti.camera.it",
@@ -264,7 +264,7 @@
       "couches": [
         "conflits"
       ],
-      "notes": "Hôte bloqué par le proxy de la session le 26/10/2026 : informations relevées par recherche web, page non lue. Aucune tension officielle bilatérale relevée faute d'accès.",
+      "notes": "Relevé par recherche web, page non lue. Aucune tension officielle bilatérale relevée faute d'accès. Contrôle du 27/10/2026 : www.esteri.it en échec de connexion.",
       "hotes": [
         "www.esteri.it"
       ],

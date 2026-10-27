@@ -1,12 +1,12 @@
 {
   "pays": "ITA",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "presences": [
     {
       "hote": "LBN",
       "lon": 35.3,
       "lat": 33.2,
-      "nom": "UNIFIL (Force intérimaire des Nations unies au Liban), commandement du secteur Ouest",
+      "nom": "UNIFIL (Force intérimaire des Nations unies au Liban), opération nationale « Leonte »",
       "cat": "onu",
       "eff": 1256,
       "depuis": null,
@@ -16,41 +16,41 @@
       "hote": "XKX",
       "lon": 21.2,
       "lat": 42.6,
-      "nom": "KFOR (force de l'OTAN au Kosovo)",
+      "nom": "KFOR (force de l'OTAN au Kosovo), Joint Enterprise",
       "cat": "otan",
-      "eff": null,
+      "eff": 852,
       "depuis": "1999-06",
-      "src": "missions"
+      "src": "difesa"
     },
     {
       "hote": "LBN",
       "lon": 35.5,
       "lat": 33.9,
-      "nom": "MIBIL, mission bilatérale d'assistance aux forces armées libanaises",
+      "nom": "MIBIL (mission militaire bilatérale italienne au Liban)",
       "cat": "dlia",
       "eff": null,
       "depuis": null,
-      "src": "missions"
+      "src": "difesa"
     },
     {
       "hote": "LVA",
       "lon": 24.3,
       "lat": 57.1,
-      "nom": "Présence avancée renforcée de l'OTAN en Lettonie",
+      "nom": "Groupement tactique multinational de l'OTAN en Lettonie, opération « Baltic Guardian »",
       "cat": "otan",
       "eff": null,
-      "depuis": "2017-06",
-      "src": "missions"
+      "depuis": null,
+      "src": "difesa"
     },
     {
       "hote": "BGR",
       "lon": 23.3,
       "lat": 42.7,
-      "nom": "Groupement tactique multinational de l'OTAN en Bulgarie (nation-cadre)",
+      "nom": "Groupement tactique multinational de l'OTAN en Bulgarie",
       "cat": "otan",
       "eff": null,
-      "depuis": "2022",
-      "src": "missions"
+      "depuis": null,
+      "src": "difesa"
     },
     {
       "hote": "HUN",
@@ -59,65 +59,145 @@
       "nom": "Groupement tactique multinational de l'OTAN en Hongrie",
       "cat": "otan",
       "eff": null,
-      "depuis": "2022",
-      "src": "missions"
+      "depuis": null,
+      "src": "difesa"
     },
     {
       "hote": "IRQ",
-      "lon": 44.4,
-      "lat": 33.3,
-      "nom": "Mission bilatérale en Irak (fiche 4-bis/2026) et mission de l'OTAN en Irak",
+      "lon": 44.0,
+      "lat": 36.2,
+      "nom": "Opération « Prima Parthica » (coalition contre Daech), Erbil",
       "cat": "ope",
-      "eff": null,
-      "depuis": "2026",
-      "src": "missions"
+      "eff": 300,
+      "depuis": "2014",
+      "src": "difesa"
     },
     {
       "hote": "SOM",
       "lon": 45.3,
       "lat": 2.0,
-      "nom": "Mission bilatérale en Somalie (fiche 8-bis/2026) et EUTM Somalie",
+      "nom": "Somalie : MIADIT (mission bilatérale de formation), EUTM Somalie, EUCAP Somalie",
       "cat": "ue",
       "eff": null,
       "depuis": null,
-      "src": "missions"
+      "src": "difesa"
     },
     {
       "hote": "DJI",
       "lon": 43.1,
       "lat": 11.6,
-      "nom": "Base militaire nationale d'appui à Djibouti",
+      "nom": "Base militaire italienne de soutien (BMIS), Djibouti",
       "cat": "pre",
       "eff": null,
-      "depuis": "2013",
-      "src": "missions"
+      "depuis": null,
+      "src": "difesa"
     },
     {
       "hote": "LBY",
       "lon": 13.2,
       "lat": 32.9,
-      "nom": "MIASIT, mission bilatérale d'assistance et de soutien en Libye",
+      "nom": "MIASIT (mission bilatérale d'assistance et de soutien en Libye)",
       "cat": "dlia",
       "eff": null,
       "depuis": "2018",
-      "src": "missions"
+      "src": "difesa"
+    },
+    {
+      "hote": "NER",
+      "lon": 2.1,
+      "lat": 13.5,
+      "nom": "MISIN (mission bilatérale de soutien en République du Niger)",
+      "cat": "dlia",
+      "eff": 500,
+      "depuis": null,
+      "src": "difesa"
+    },
+    {
+      "hote": "EGY",
+      "lon": 34.3,
+      "lat": 28.0,
+      "nom": "MFO (Force multinationale et observateurs, Sinaï)",
+      "cat": "onu",
+      "eff": null,
+      "depuis": null,
+      "src": "difesa"
+    },
+    {
+      "hote": "CYP",
+      "lon": 33.4,
+      "lat": 35.2,
+      "nom": "UNFICYP (Force des Nations unies à Chypre)",
+      "cat": "onu",
+      "eff": null,
+      "depuis": null,
+      "src": "difesa"
+    },
+    {
+      "hote": "ESH",
+      "lon": -13.2,
+      "lat": 27.1,
+      "nom": "MINURSO (mission des Nations unies pour le référendum au Sahara occidental)",
+      "cat": "onu",
+      "eff": null,
+      "depuis": "2017",
+      "src": "difesa"
+    },
+    {
+      "hote": "BIH",
+      "lon": 18.4,
+      "lat": 43.9,
+      "nom": "EUFOR Althea et quartier général OTAN de Sarajevo",
+      "cat": "ue",
+      "eff": null,
+      "depuis": null,
+      "src": "difesa"
+    },
+    {
+      "hote": "SRB",
+      "lon": 20.5,
+      "lat": 44.8,
+      "nom": "Bureau de liaison militaire de l'OTAN à Belgrade",
+      "cat": "otan",
+      "eff": null,
+      "depuis": null,
+      "src": "difesa"
+    },
+    {
+      "hote": "LTU",
+      "lon": 23.4,
+      "lat": 55.9,
+      "nom": "Police du ciel renforcée de l'OTAN en Lituanie",
+      "cat": "otan",
+      "eff": null,
+      "depuis": null,
+      "src": "difesa"
+    },
+    {
+      "hote": "PSE",
+      "lon": 35.2,
+      "lat": 31.9,
+      "nom": "MIADIT Palestine (formation) et EUPOL COPPS",
+      "cat": "ue",
+      "eff": null,
+      "depuis": null,
+      "src": "difesa"
     }
   ],
   "non_localisees": [
     {
-      "nom": "Opérations navales de l'UE Aspides (mer Rouge) et Atalanta (océan Indien)",
+      "nom": "Opérations navales de l'UE Aspides (mer Rouge), Atalanta (océan Indien) et Irini (Méditerranée)",
       "eff": null,
-      "src": "missions"
+      "src": "difesa"
     },
     {
-      "nom": "Forces maritimes combinées (CMF) et opération Mare Sicuro (Méditerranée centrale)",
+      "nom": "Opération Mare Sicuro (Méditerranée centrale), forces navales permanentes de l'OTAN et Sea Guardian",
       "eff": null,
-      "src": "missions"
+      "src": "difesa"
     },
     {
-      "nom": "Forces à haute disponibilité (Allied Reaction Force de l'OTAN)",
+      "nom": "Forces maritimes combinées : commandement de la CTF 153 en mer Rouge depuis 2024",
       "eff": null,
-      "src": "missions"
+      "src": "difesa"
     }
   ]
 }
