@@ -1,6 +1,6 @@
 {
   "pays": "FRA",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "evenements": [
     { "avec": "IRQ", "k": "engage", "t": "Opération Chammal en cours", "d": "Participation à la coalition contre l'État islamique, environ 1 100 militaires selon le ministère des Armées (page du 11/09/2026).", "date": "2014-09", "src": "armees" },
     { "avec": "UKR", "k": "soutien", "t": "Aide militaire à l'Ukraine", "d": "Livraisons d'armes et formation de militaires ukrainiens depuis l'invasion russe de février 2022.", "date": "2022-02", "src": "kiel" },
