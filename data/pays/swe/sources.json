@@ -1,36 +1,33 @@
 {
   "pays": "SWE",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "sources": [
     {
       "id": "scb",
-      "nom": "Statistikdatabasen, « Varuimport och varuexport. Totala värden efter handelspartner, bortfallsjusterat » (table HA0201J8)",
+      "nom": "Statistikdatabasen, « Varuimport och varuexport. Totala värden efter handelspartner, bortfallsjusterat » (table TAB3195, contenus HA0201J8 importations et HA0201J9 exportations)",
       "editeur": "Statistiska centralbyrån (SCB)",
       "url": "https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__HA__HA0201__HA0201A/OImpExpLandTotAr/",
       "type": "officiel",
       "langue": "sv",
-      "licence": "CC0 (mention « Källa: SCB » recommandée, non obligatoire)",
+      "licence": "CC0 (mention « Källa: SCB » recommandée, non obligatoire) selon la page SCB « Öppna data »",
       "cadence": "annuelle (tables mensuelles disponibles dans HA0201)",
       "api": true,
-      "api_url": "https://statistikdatabasen.scb.se/api/v2/tables/{id}/data",
+      "api_url": "https://statistikdatabasen.scb.se/api/v2/tables/TAB3195/data?lang=en&outputFormat=json-stat2&valueCodes[Tid]=2025&valueCodes[ContentsCode]=*&valueCodes[Handelspartner]=*",
       "format": "json-stat2",
       "couches": [
         "commerce"
       ],
       "hotes": [
-        "www.scb.se",
-        "statistikdatabasen.scb.se",
-        "www.statistikdatabasen.scb.se",
-        "api.scb.se"
+        "statistikdatabasen.scb.se"
       ],
-      "acces": "non_verifie",
-      "notes": "PxWebApi v2 en service depuis octobre 2025 (limites : 150 000 cellules par extraction, 30 appels / 10 s) ; la v1 (api.scb.se) doit fermer vers le tournant 2026-2027, donc viser la v2. Valeurs en milliers de SEK, 1998-2025. Importations par pays d'expédition et non d'origine : écart attendu avec le FMI (Pays-Bas, Allemagne, Norvège). commerce.json non rempli : domaines bloqués, aucun chiffre relu."
+      "acces": "verifie",
+      "notes": "Relu le 27/10/2026 : l'API v2 répond sans clé (table mise à jour le 27/10/2026, 1998-2025, milliers de SEK, ajustée de la non-réponse). L'identifiant de table de l'API est TAB3195 (HA0201J8 et HA0201J9 sont les codes de contenu). Les importations sont rangées par pays d'expédition et non d'origine : écart attendu avec le FMI (Pays-Bas). La v1 (api.scb.se) doit fermer vers le tournant 2026-2027 ; www.scb.se et api.scb.se ne répondent pas depuis la session."
     },
     {
       "id": "riksdagen",
       "nom": "Riksdagens öppna data : membres (personlista), votes, documents (propositions, skrivelser, lois SFS)",
       "editeur": "Sveriges riksdag",
-      "url": "https://www.riksdagen.se/sv/dokument-och-lagar/riksdagens-oppna-data/",
+      "url": "https://data.riksdagen.se/",
       "type": "officiel",
       "langue": "sv",
       "licence": "Libre et gratuite, mention obligatoire « Källa: Sveriges riksdag » ; interdiction d'utiliser le logo ou le nom comme caution ; photos sous droit d'auteur ; données personnelles soumises au RGPD",
@@ -45,39 +42,37 @@
         "autre"
       ],
       "hotes": [
-        "www.riksdagen.se",
         "data.riksdagen.se"
       ],
-      "acces": "non_verifie",
-      "notes": "Sièges en cours de mandat par parti (personlista), autorisations de déploiement à l'étranger votées par le Riksdag (propositions, ex. projet du 13/10/2026 pour les forces OTAN 2027), scrutins d'investiture du Premier ministre. Source la plus automatisable du pays."
+      "acces": "verifie",
+      "notes": "Relu le 27/10/2026 : personlista (318 membres en fonction), protocoles de séance (vote d'investiture du 15/10/2026), propositions (prop. 2026/27:6 sur les forces suédoises à l'OTAN en 2027), communications du gouvernement (skr. 2025/26:162 soutien militaire à l'Ukraine, skr. 2025/26:114 exportations de matériel de guerre 2025), textes de loi (SFS). Les effectifs de la personlista (S 96, SD 60, M 53...) diffèrent de la répartition des mandats car les ministres et les congés sont remplacés : les mandats viennent de Valmyndigheten."
     },
     {
       "id": "val",
-      "nom": "Valmyndigheten, résultat définitif et répartition des sièges de l'élection au Riksdag du 13/09/2026",
+      "nom": "Valmyndigheten, communiqué « Valresultat fastställt i 2026 års riksdagsval » (19/09/2026)",
       "editeur": "Valmyndigheten (autorité électorale)",
-      "url": "https://resultat.val.se/protokoll/protokoll_Val_2026_00_RD.pdf",
+      "url": "https://www.val.se/servicelankar/servicelankar/pressrum/nyheter--pressmeddelanden/pressmeddelande-nya/2026-09-19-valresultat-faststallt-i-2026-ars-riksdagsval",
       "type": "officiel",
       "langue": "sv",
       "licence": "non précisée",
       "cadence": "à chaque élection (législatives tous les 4 ans, prochaine en septembre 2030)",
       "api": false,
       "api_url": null,
-      "format": "pdf",
+      "format": "html",
       "couches": [
         "politique"
       ],
       "hotes": [
-        "www.val.se",
-        "resultat.val.se"
+        "www.val.se"
       ],
-      "acces": "non_verifie",
-      "notes": "Résultat fixé le 19/09/2026. Les fichiers de résultats détaillés de resultat.val.se n'ont pas pu être examinés (domaine bloqué) : format machine à confirmer."
+      "acces": "verifie",
+      "notes": "Relu le 27/10/2026 : mandats S 99, M 70, SD 62, V 30, C 25, KD 22, MP 22, L 19 ; participation 84,9 % (6 834 413 votants). Le PDF détaillé sur resultat.val.se n'a pas été lu ; les fichiers de résultats exploitables par machine restent à repérer. La date du scrutin (13/09/2026) est confirmée par le protocole du Riksdag et par l'IPU."
     },
     {
       "id": "regeringen",
       "nom": "Regeringen.se / Government.se : composition du gouvernement, communiqués, décisions de déploiement, page sanctions",
       "editeur": "Regeringskansliet (services du gouvernement)",
-      "url": "https://www.government.se/",
+      "url": "https://www.regeringen.se/",
       "type": "officiel",
       "langue": "sv",
       "licence": "non précisée",
@@ -92,18 +87,16 @@
         "sanctions"
       ],
       "hotes": [
-        "www.regeringen.se",
-        "www.government.se",
-        "regeringen.se"
+        "www.regeringen.se"
       ],
-      "acces": "non_verifie",
-      "notes": "Pas d'API publique. Les décisions de déploiement passent aussi par le Riksdag (source riksdagen, automatisable)."
+      "acces": "verifie",
+      "notes": "Relu le 27/10/2026 (communiqué du 30/09/2026 sur les Gripen, composition du gouvernement Kristersson en en-tête). Pas d'API publique. La version anglaise www.government.se répond 403 (protection anti-robot du site) et n'est pas utilisée."
     },
     {
       "id": "forsvarsmakten",
       "nom": "Försvarsmakten, actualités et opérations internationales",
       "editeur": "Försvarsmakten (forces armées suédoises)",
-      "url": "https://www.forsvarsmakten.se/en/news-and-events/news/flf-finland/",
+      "url": "https://www.forsvarsmakten.se/en/news-and-events/news/",
       "type": "officiel",
       "langue": "sv",
       "licence": "non précisée",
@@ -117,8 +110,8 @@
       "hotes": [
         "www.forsvarsmakten.se"
       ],
-      "acces": "non_verifie",
-      "notes": "Liste à jour des contributions (missions ONU, UE, OTAN) à relever sur ce site quand le domaine sera ouvert : seules les présences confirmées par le gouvernement ou l'OTAN sont saisies pour l'instant."
+      "acces": "verifie",
+      "notes": "Relu le 27/10/2026 : pages « Sweden and Finland Strengthen NATO's Defence on the Northern Flank » (établissement de FLF Finland à Boden) et « Sweden deploys Patriot to strengthen NATO's Eastern Flank » (06/10/2026). Pas de page unique listant toutes les opérations internationales : les faits sont tirés des communiqués datés."
     },
     {
       "id": "kungahuset",
@@ -138,8 +131,8 @@
       "hotes": [
         "www.kungahuset.se"
       ],
-      "acces": "non_verifie",
-      "notes": "Chef de l'État recoupé par Wikidata (P35 de Q34), accès vérifié."
+      "acces": "verifie",
+      "notes": "Relu le 27/10/2026 : « H.M. Konungen » en fonction ; la date d'accession (15/09/1973) vient de Wikidata (P35)."
     },
     {
       "id": "isp",
@@ -163,7 +156,7 @@
         "data.riksdagen.se"
       ],
       "acces": "non_verifie",
-      "notes": "Exportations 2025 par pays destinataire : annexe 1 de la communication du gouvernement 2025/26:114 (1er avril 2026), récupérable via l'API du Riksdag. ISP annonce un total d'un peu plus de 28 Md SEK pour 2025 (chiffre non relu)."
+      "notes": "Le site de l'ISP (isp.se) ne répond pas depuis la session. Les exportations de matériel de guerre 2025 ont été lues dans la communication 2025/26:114 du gouvernement (data.riksdagen.se/dokument/HD03114, 01/04/2026) : un peu plus de 28 Md SEK, 61 pays destinataires, environ 80 % vers 39 pays « partenaires établis », États-Unis premier destinataire puis Hongrie et Brésil. L'annexe par pays n'est pas saisie dans ce dossier."
     },
     {
       "id": "sfs2025-327",
@@ -183,8 +176,8 @@
       "hotes": [
         "data.riksdagen.se"
       ],
-      "acces": "non_verifie",
-      "notes": "En vigueur depuis le 10/06/2025. La Suède n'applique que les sanctions de l'UE et de l'ONU, sans régime autonome (selon le guide Chambers « Sanctions 2026 », https://practiceguides.chambers.com/practice-guides/sanctions-2026/sweden) : la couche sanctions UE automatique couvre donc le pays, rien à recopier."
+      "acces": "verifie",
+      "notes": "Relu le 27/10/2026 : l'article 2 définit les « sanctions internationales » comme les mesures décidées par le Conseil de sécurité de l'ONU ou dans le cadre de la PESC de l'UE. La loi, en vigueur depuis le 10/06/2025, transpose la directive (UE) 2024/1226. Les sanctions de l'UE étant déjà couvertes par la couche automatique, rien à recopier."
     },
     {
       "id": "openaid",
@@ -207,7 +200,7 @@
         "api.iatistandard.org"
       ],
       "acces": "non_verifie",
-      "notes": "Indicateur possible de relations bilatérales (aide par pays depuis 1998). Licence des données à confirmer."
+      "notes": "openaid.se et api.iatistandard.org ne répondent pas depuis la session. Indicateur possible de relations bilatérales (aide par pays depuis 1998). Licence des données à confirmer."
     },
     {
       "id": "otan",
@@ -227,8 +220,8 @@
       "hotes": [
         "www.nato.int"
       ],
-      "acces": "non_verifie",
-      "notes": ""
+      "acces": "verifie",
+      "notes": "Relu le 27/10/2026 : la page « Strengthening NATO's eastern flank » liste FLF Finland (hôte : Finlande, nation-cadre : Suède, contributeurs : Danemark, France, Islande, Italie, Norvège, Royaume-Uni) et la Suède parmi les contributeurs de la brigade de Lettonie (nation-cadre : Canada)."
     },
     {
       "id": "valtioneuvosto",
@@ -249,7 +242,7 @@
         "valtioneuvosto.fi"
       ],
       "acces": "non_verifie",
-      "notes": "Confirmation par l'État hôte de la présence suédoise en Finlande."
+      "notes": "Confirmation par l'État hôte de la présence suédoise en Finlande. valtioneuvosto.fi ne répond pas depuis la session ; le fait repose sur les pages de l'OTAN, de Försvarsmakten et du Riksdag, lues."
     },
     {
       "id": "wikidata",
@@ -271,7 +264,28 @@
         "query.wikidata.org"
       ],
       "acces": "verifie",
-      "notes": "Relevé SPARQL du 26/10/2026 : P35 = Carl XVI Gustaf (Q45068) depuis 1973-09-15 ; P6 = Ulf Kristersson (Q1780398) depuis 2022-10-18, sans date de fin ; dirigeants des 8 partis au Riksdag. Base collaborative : sert de contrôle, pas de source primaire."
+      "notes": "Relevé SPARQL du 26/10/2026, recoupé le 27/10 : P35 = Carl XVI Gustaf (Q45068) ; P6 = Ulf Kristersson (Q1780398) ; dirigeants des 8 partis du Riksdag (P488). Base collaborative : sert de contrôle, pas de source primaire."
+    },
+    {
+      "id": "ipu",
+      "nom": "IPU Parline, élection au Riksdag du 13/09/2026 (SE-LC01-E20260913)",
+      "editeur": "Union interparlementaire",
+      "url": "https://data.ipu.org/parliament/SE/SE-LC01/",
+      "type": "international",
+      "langue": "en",
+      "licence": "CC BY-NC-SA 4.0",
+      "cadence": "à chaque élection (relevé hebdomadaire par le dépôt)",
+      "api": true,
+      "api_url": "https://api.data.ipu.org/v1/elections/SE-LC01-E20260913",
+      "format": "json",
+      "couches": [
+        "politique"
+      ],
+      "hotes": [
+        "api.data.ipu.org"
+      ],
+      "acces": "verifie",
+      "notes": "Relu le 27/10/2026 : 349 sièges, mêmes mandats que Valmyndigheten. Déjà lue chaque semaine par scripts/ipu-sieges.js."
     }
   ]
 }

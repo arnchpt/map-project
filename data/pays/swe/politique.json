@@ -1,6 +1,6 @@
 {
   "pays": "SWE",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "chef_etat": {
     "nom": "Carl XVI Gustaf",
     "fonction": "Roi (fonctions de représentation)",
@@ -11,11 +11,11 @@
   },
   "chef_gouv": {
     "nom": "Ulf Kristersson",
-    "fonction": "Premier ministre (gouvernement démissionnaire chargé des affaires courantes depuis septembre 2026)",
+    "fonction": "Premier ministre (démission demandée après le scrutin du 13/09/2026, gouvernement chargé des affaires courantes)",
     "parti": "Parti modéré (Moderaterna)",
     "depuis": "2022-10-18",
     "qid": "Q1780398",
-    "src": "regeringen"
+    "src": "riksdagen"
   },
   "chambre": {
     "nom": "Riksdag",
@@ -30,60 +30,84 @@
       "nom": "Parti social-démocrate (Socialdemokraterna, S)",
       "sieges": 99,
       "role": "hors",
-      "leaders": "Magdalena Andersson (présidente)"
+      "leaders": "Magdalena Andersson (présidente)",
+      "ipu": [
+        "se-social_democratic_party_sap"
+      ]
     },
     {
       "nom": "Parti modéré (Moderaterna, M)",
       "sieges": 70,
       "role": "gouv",
-      "leaders": "Ulf Kristersson (président)"
+      "leaders": "Ulf Kristersson (président)",
+      "ipu": [
+        "se-moderate_party_m"
+      ]
     },
     {
       "nom": "Démocrates de Suède (Sverigedemokraterna, SD)",
       "sieges": 62,
       "role": "hors",
-      "leaders": "Jimmie Åkesson (président)"
+      "leaders": "Jimmie Åkesson (président)",
+      "ipu": [
+        "se-sweden_democrats_sd"
+      ]
     },
     {
       "nom": "Parti de gauche (Vänsterpartiet, V)",
       "sieges": 30,
       "role": "hors",
-      "leaders": "Nooshi Dadgostar (présidente)"
+      "leaders": "Nooshi Dadgostar (présidente)",
+      "ipu": [
+        "se-left_party_vp"
+      ]
     },
     {
       "nom": "Parti du centre (Centerpartiet, C)",
       "sieges": 25,
       "role": "hors",
-      "leaders": "Elisabeth Thand Ringqvist (présidente)"
+      "leaders": "Elisabeth Thand Ringqvist (présidente)",
+      "ipu": [
+        "se-centre_party_cp"
+      ]
     },
     {
       "nom": "Chrétiens-démocrates (Kristdemokraterna, KD)",
       "sieges": 22,
       "role": "gouv",
-      "leaders": "Ebba Busch (présidente)"
+      "leaders": "Ebba Busch (présidente)",
+      "ipu": [
+        "se-christian_democrats_kd"
+      ]
     },
     {
       "nom": "Parti de l'environnement Les Verts (Miljöpartiet, MP)",
       "sieges": 22,
       "role": "hors",
-      "leaders": "Amanda Lind et Daniel Helldén (porte-parole)"
+      "leaders": "Amanda Lind et Daniel Helldén (porte-parole)",
+      "ipu": [
+        "se-green_party_mpg"
+      ]
     },
     {
       "nom": "Libéraux (Liberalerna, L)",
       "sieges": 19,
       "role": "gouv",
-      "leaders": "Simona Mohamsson (présidente)"
+      "leaders": "Simona Mohamsson (présidente)",
+      "ipu": [
+        "se-liberal-party-(l)"
+      ]
     }
   ],
   "seconde": null,
   "notes": [
-    "Élection du 13/09/2026, résultat fixé par Valmyndigheten le 19/09/2026. Le gouvernement Kristersson (M, KD, L, soutenu au Riksdag par SD de 2022 à 2026) expédie les affaires courantes.",
-    "Le 15/10/2026, le Riksdag a rejeté la candidature de Magdalena Andersson au poste de Premier ministre (99 voix pour, 248 contre). Le président du Riksdag peut proposer au plus quatre candidats avant que de nouvelles élections soient obligatoires.",
+    "Élection du 13/09/2026, résultat fixé par Valmyndigheten le 19/09/2026. Le Premier ministre Ulf Kristersson (M) a remis sa démission au président du Riksdag après le scrutin ; son gouvernement (M, KD, L) expédie les affaires courantes.",
+    "Le 15/10/2026, le Riksdag a rejeté la proposition de nommer Magdalena Andersson (S) à la tête d'un gouvernement socialiste : 99 voix pour, 248 contre, 2 absents (protocole 2026/27:8). Le président du Riksdag peut proposer au plus quatre candidats avant que de nouvelles élections soient obligatoires.",
     "Rôles « gouv » : partis du gouvernement sortant, à mettre à jour dès la formation du nouveau gouvernement."
   ],
   "src_leaders": {
     "t": "Wikidata, présidents de partis (P488), relevé du 26/10/2026",
-    "u": "https://query.wikidata.org/"
+    "u": "https://www.wikidata.org/wiki/Q34"
   },
   "autres": 0
 }

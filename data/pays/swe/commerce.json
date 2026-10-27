@@ -1,0 +1,68 @@
+{
+  "pays": "SWE",
+  "verifie": "2026-10-27",
+  "src": "scb",
+  "annee": 2025,
+  "devise": "SEK",
+  "unite": "Md",
+  "concept": "commerce de biens, ajusté de la non-réponse ; exportations par pays de destination, importations par pays d'expédition (et non d'origine) ; table SCB TAB3195, valeurs en milliers de SEK converties en milliards",
+  "total": {
+    "x": 2037.9,
+    "m": 1988.6
+  },
+  "partenaires": [
+    {
+      "pays": "DEU",
+      "x": 200.8,
+      "m": 315.7
+    },
+    {
+      "pays": "NOR",
+      "x": 203.0,
+      "m": 185.2
+    },
+    {
+      "pays": "NLD",
+      "x": 99.7,
+      "m": 219.3
+    },
+    {
+      "pays": "DNK",
+      "x": 143.9,
+      "m": 133.9
+    },
+    {
+      "pays": "USA",
+      "x": 169.2,
+      "m": 87.1
+    },
+    {
+      "pays": "FIN",
+      "x": 133.6,
+      "m": 102.7
+    },
+    {
+      "pays": "BEL",
+      "x": 97.8,
+      "m": 98.0
+    },
+    {
+      "pays": "POL",
+      "x": 84.8,
+      "m": 95.6
+    },
+    {
+      "pays": "GBR",
+      "x": 108.8,
+      "m": 65.7
+    },
+    {
+      "pays": "CHN",
+      "x": 65.5,
+      "m": 103.6
+    }
+  ],
+  "notes": {
+    "NLD": "Importations par pays d'expédition : 219,3 Md SEK importés des Pays-Bas contre 99,7 Md SEK exportés vers eux ; le transit portuaire (effet Rotterdam) explique probablement une partie de l'écart (hypothèse, non chiffrée par SCB)."
+  }
+}
