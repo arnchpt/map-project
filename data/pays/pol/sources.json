@@ -1,13 +1,13 @@
 {
   "pays": "POL",
-  "verifie": "2026-10-26",
-  "notes": "Tous les sites officiels polonais (gov.pl, stat.gov.pl, sejm.gov.pl, eli.gov.pl, dane.gov.pl, pkw.gov.pl, prezydent.pl) sont refusés par la liste blanche de la session : aucune page n'a été lue directement, d'où acces non_verifie partout. Les faits viennent de résultats de recherche citant ces actes, recoupés avec Wikidata (accessible) pour les chefs d'État et de gouvernement. Pas de commerce.json : aucun chiffre GUS n'a pu être lu ; la couche commerce reste sur le FMI.",
+  "verifie": "2026-10-27",
+  "notes": "Relecture du 2026-10-27 après ouverture des hôtes. Lus depuis la session : API ELI et API du Sejm (api.sejm.gov.pl), gov.pl (MSWiA, MSZ, MON), API IPU, API de documentation SDP de GUS, API dane.gov.pl. Restent bloqués ou illisibles : eli.gov.pl, stat.gov.pl, api.stat.gov.pl, prezydent.pl, senat.gov.pl, dowodztwo.wp.mil.pl, www.pbs.org, www.polskieradio.pl, nato.int (page introuvable), la page gov.pl du Conseil des ministres (contenu chargé par script). Pas de commerce.json : l'API SDP exige une clé (en-tête X-ClientId) obtenue à l'inscription ; sans clé, la présence d'une ventilation par pays partenaire n'est pas confirmable.",
   "sources": [
     {
       "id": "eli_mp",
-      "nom": "Monitor Polski, décisions du Président sur l'emploi des contingents militaires à l'étranger (API ELI)",
+      "nom": "Monitor Polski, décisions du Président sur l'emploi des contingents militaires à l'étranger (API ELI du Sejm)",
       "editeur": "Kancelaria Sejmu / Kancelaria Prezesa Rady Ministrów (POL)",
-      "url": "https://eli.gov.pl/eli/MP/2026/655/ogl/pol/pdf",
+      "url": "https://api.sejm.gov.pl/eli/acts/MP/2026/655/text.pdf",
       "type": "officiel",
       "langue": "pl",
       "licence": "Actes officiels : hors droit d'auteur (art. 4 de la loi polonaise sur le droit d'auteur)",
@@ -15,10 +15,14 @@
       "api": true,
       "api_url": "https://api.sejm.gov.pl/eli/acts/MP/2026",
       "format": "json (liste des actes) + pdf/html (texte)",
-      "couches": ["presences"],
-      "notes": "Base légale : loi du 17/12/1998 sur l'emploi des forces armées hors du territoire. Chaque décision (« postanowienie ») fixe pays hôtes, mission, période et effectif maximal. Automatisable : filtrer les titres contenant « kontyngentu wojskowego » dans l'API ELI. L'effectif est un plafond autorisé, pas l'effectif réel. Décisions 2026 relevées : MP 2026/637, 638, 639, 654, 655, 924. Toutes expirent au plus tard le 31/12/2026 : renouvellements attendus en fin d'année.",
-      "hotes": ["api.sejm.gov.pl", "eli.gov.pl", "isap.sejm.gov.pl"],
-      "acces": "non_verifie"
+      "couches": [
+        "presences"
+      ],
+      "notes": "Les 6 décisions (MP 2026/637, 638, 639, 654, 655, 924) ont été lues en PDF via api.sejm.gov.pl/eli/acts/MP/2026/<n>/text.pdf. Chacune fixe pays, période, plafond d'effectif (soldats et personnel) et tâches ; l'effectif est un plafond autorisé, pas l'effectif réel. Base légale : loi du 17/12/1998. Automatisable : lister /eli/acts/MP/<année> et filtrer les titres contenant « Kontyngentu Wojskowego ». Toutes expirent au plus tard le 31/12/2026 (654 : 30/11/2026). Les actes sont signés « Prezydent K. Nawrocki, Prezes Rady Ministrów D. Tusk ». eli.gov.pl (miroir officiel) reste bloqué.",
+      "hotes": [
+        "api.sejm.gov.pl"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "mon",
@@ -32,16 +36,23 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["presences", "conflits"],
+      "couches": [
+        "presences",
+        "conflits"
+      ],
       "notes": "Le MON n'a pas publié la liste détaillée de l'aide militaire livrée à l'Ukraine (constat de presse, 2026). Les pages du Commandement opérationnel (dowodztwo.wp.mil.pl) détaillent les contingents.",
-      "hotes": ["www.gov.pl", "dowodztwo.wp.mil.pl", "www.wojsko-polskie.pl"],
+      "hotes": [
+        "www.gov.pl",
+        "dowodztwo.wp.mil.pl",
+        "www.wojsko-polskie.pl"
+      ],
       "acces": "non_verifie"
     },
     {
       "id": "dzu",
-      "nom": "Dziennik Ustaw (Journal officiel), règlements du ministre de l'Intérieur",
+      "nom": "Dziennik Ustaw, règlements du ministre de l'Intérieur sur la zone frontalière avec la Biélorussie",
       "editeur": "Kancelaria Prezesa Rady Ministrów (POL)",
-      "url": "https://eli.gov.pl/eli/DU/2026/695/ogl",
+      "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1129/text.pdf",
       "type": "officiel",
       "langue": "pl",
       "licence": "Actes officiels : hors droit d'auteur",
@@ -49,10 +60,14 @@
       "api": true,
       "api_url": "https://api.sejm.gov.pl/eli/acts/DU/2026",
       "format": "json + pdf",
-      "couches": ["conflits"],
-      "notes": "Dz.U. 2026 poz. 695 : interdiction temporaire de séjour dans une partie de la zone frontalière avec la Biélorussie (règlement du 26/05/2026, en vigueur le 03/06/2026, selon le résultat de recherche).",
-      "hotes": ["eli.gov.pl", "api.sejm.gov.pl"],
-      "acces": "non_verifie"
+      "couches": [
+        "conflits"
+      ],
+      "notes": "Zakaz czasowy de séjour dans une partie de la zone frontalière (200 m ou plus de profondeur selon les tronçons), 90 jours par règlement, renouvelé : Dz.U. 2026 poz. 235 (25/02/2026), poz. 695 (26/05/2026, en vigueur le 03/06/2026), poz. 1129 (24/08/2026, en vigueur le 01/09/2026). Base : loi du 12/10/1990 sur la protection de la frontière (art. 12a).",
+      "hotes": [
+        "api.sejm.gov.pl"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "mswia_sanctions",
@@ -66,16 +81,20 @@
       "api": false,
       "api_url": null,
       "format": "html (tableau)",
-      "couches": ["sanctions"],
-      "notes": "Régime national distinct des sanctions UE : loi du 13/04/2022 (Dz.U. 2022 poz. 835, texte consolidé 2025 poz. 514). Cible des personnes et entités liées au soutien à l'agression russe contre l'Ukraine et à la Biélorussie. 524 inscriptions selon une réponse ministérielle à une interpellation (date non relevée). Pas d'API : extraction HTML à prévoir, ou OpenSanctions si le jeu « pl_mswia_sanctions » existe (non vérifié).",
-      "hotes": ["www.gov.pl"],
-      "acces": "non_verifie"
+      "couches": [
+        "sanctions"
+      ],
+      "notes": "Page lue le 2026-10-27 (liste de personnes et d'entités avec décisions et motifs, en HTML dans la page ; aucune API). Régime national distinct des sanctions UE : loi du 13/04/2022 (Dz.U. 2022 poz. 835). Les motifs citent l'agression russe contre l'Ukraine et le soutien à la Biélorussie ; certaines personnes inscrites ne figurent pas sur la liste UE. Effectif total non compté (la page est trop volumineuse et non structurée).",
+      "hotes": [
+        "www.gov.pl"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "msz",
       "nom": "Ministère des Affaires étrangères (MSZ), communiqués",
       "editeur": "Ministerstwo Spraw Zagranicznych (POL)",
-      "url": "https://www.gov.pl/web/dyplomacja",
+      "url": "https://www.gov.pl/web/dyplomacja/kierownictwo-ministerstwa",
       "type": "officiel",
       "langue": "pl",
       "licence": "non précisée (portail gov.pl)",
@@ -83,10 +102,14 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["conflits"],
-      "notes": "Source à privilégier pour les convocations d'ambassadeurs et protestations officielles (couche tensions).",
-      "hotes": ["www.gov.pl"],
-      "acces": "non_verifie"
+      "couches": [
+        "conflits"
+      ],
+      "notes": "Page « Kierownictwo ministerstwa » lue : Radosław Sikorski, Wiceprezes Rady Ministrów, Minister Spraw Zagranicznych. Les communiqués (couche tensions) ne sont pas indexés par une API.",
+      "hotes": [
+        "www.gov.pl"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "sejm_api",
@@ -100,10 +123,14 @@
       "api": true,
       "api_url": "https://api.sejm.gov.pl/sejm/term10/clubs",
       "format": "json (OpenAPI : https://api.sejm.gov.pl/sejm/openapi/)",
-      "couches": ["politique"],
-      "notes": "Sans clé. Donne la composition actuelle des clubs, qui a beaucoup bougé depuis 2023 (scission de Polska 2050 et création du club Centrum le 18/02/2026). La carte affiche les sièges de l'élection (règle commune) : cette API sert de contrôle, pas d'affichage.",
-      "hotes": ["api.sejm.gov.pl", "www.sejm.gov.pl"],
-      "acces": "non_verifie"
+      "couches": [
+        "politique"
+      ],
+      "notes": "Lu le 2026-10-27 : 12 clubs et cercles (PiS 147, KO 156, PSL-TD 32, Rozwój Plus 40, Lewica 21, Polska 2050 15, Centrum 15, Konfederacja 17, Konfederacja Korony Polskiej 3, Razem 4, Demokracja Bezpośrednia 3, non-inscrits 7) et 499 entrées députés. Sans clé ; licence non précisée. Sert de contrôle, la carte affiche les sièges de l'élection (règle commune).",
+      "hotes": [
+        "api.sejm.gov.pl"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "pkw",
@@ -117,9 +144,13 @@
       "api": false,
       "api_url": null,
       "format": "html + fichiers csv/xlsx téléchargeables",
-      "couches": ["politique"],
-      "notes": "Sièges 2023 par liste (PiS 194, KO 157, Trzecia Droga 65, Lewica 26, Konfederacja 18) recoupés dans la presse polonaise (Forsal, Infor), pas lus sur le site PKW. Prochaines élections législatives : 2027.",
-      "hotes": ["sejmsenat2023.pkw.gov.pl", "pkw.gov.pl", "wybory.gov.pl"],
+      "couches": [
+        "politique"
+      ],
+      "notes": "Page d'accueil lue ; les résultats par liste sont chargés par script et n'ont pas pu être lus. Sièges 2023 contrôlés par l'IPU (source « ipu »). Prochaines élections législatives : 2027.",
+      "hotes": [
+        "sejmsenat2023.pkw.gov.pl"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -134,9 +165,13 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["politique"],
-      "notes": "Chef de l'État recoupé avec Wikidata (Q36, P35 : Karol Nawrocki, depuis le 06/08/2025) le 2026-10-26.",
-      "hotes": ["www.prezydent.pl"],
+      "couches": [
+        "politique"
+      ],
+      "notes": "Hôte renvoyant 403 aux scripts. Karol Nawrocki confirmé comme signataire des décisions MP 2026 (source eli_mp) et par Wikidata (Q36, P35, depuis le 06/08/2025).",
+      "hotes": [
+        "www.prezydent.pl"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -151,9 +186,13 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["politique"],
-      "notes": "Chef du gouvernement recoupé avec Wikidata (Q36, P6 : Donald Tusk, depuis le 13/12/2023) le 2026-10-26. Remaniement après la présidentielle 2025 : W. Kosiniak-Kamysz vice-Premier ministre et ministre de la Défense ; titre exact de R. Sikorski (vice-Premier ministre ou non) divergent selon la presse, à lire sur cette page.",
-      "hotes": ["www.gov.pl"],
+      "couches": [
+        "politique"
+      ],
+      "notes": "La page du Conseil des ministres charge sa liste par script (illisible). Donald Tusk confirmé comme contresignataire des décisions MP 2026 (source eli_mp) et par Wikidata (P6, depuis le 13/12/2023) ; Radosław Sikorski confirmé comme vice-Premier ministre par la source msz.",
+      "hotes": [
+        "www.gov.pl"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -168,27 +207,35 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["autre"],
+      "couches": [
+        "autre"
+      ],
       "notes": "Chambre haute (100 sièges), non affichée par le panneau « Qui gouverne » (chambre basse seulement). Aucune API publique trouvée.",
-      "hotes": ["www.senat.gov.pl"],
+      "hotes": [
+        "www.senat.gov.pl"
+      ],
       "acces": "non_verifie"
     },
     {
       "id": "gus_sdp",
       "nom": "Statistics Poland (GUS), API de la base des données publiées (SDP)",
       "editeur": "Główny Urząd Statystyczny (POL)",
-      "url": "https://api.stat.gov.pl/Home/SDPApi?lang=en",
+      "url": "https://api-sdp.stat.gov.pl/apidocs/index.html",
       "type": "officiel",
       "langue": "pl",
-      "licence": "non vérifiée (un résultat de recherche indique CC BY-SA 4.0 pour stat.gov.pl, à confirmer)",
+      "licence": "non précisée dans la documentation de l'API",
       "cadence": "mensuelle à annuelle selon la variable",
       "api": true,
-      "api_url": "https://api-sdp.stat.gov.pl/",
+      "api_url": "https://api-sdp.stat.gov.pl/api/",
       "format": "json",
-      "couches": ["commerce"],
-      "notes": "API ouverte le 25/04/2024, gratuite, clé obtenue à l'inscription. Présence du commerce par pays partenaire non confirmée. L'API BDL (bdl.stat.gov.pl) est régionale et ne convient pas. Alternative annuelle : Rocznik Statystyczny Handlu Zagranicznego (annuaire du commerce extérieur, par pays). Concept GUS : Intrastat + déclarations douanières depuis le 01/05/2004.",
-      "hotes": ["api-sdp.stat.gov.pl", "api.stat.gov.pl", "stat.gov.pl", "dbw.stat.gov.pl"],
-      "acces": "non_verifie"
+      "couches": [
+        "commerce"
+      ],
+      "notes": "Documentation OpenAPI lue (https://api-sdp.stat.gov.pl/apidocs/en/SDP.json?lang=en). Authentification par clé dans l'en-tête X-ClientId, obtenue à l'inscription ; routes variable, indicators, area, product, dictionaries. Sans clé, la liste des variables (et donc d'un commerce par partenaire) n'a pas pu être lue : à faire par Arnaud (inscription gratuite) avant d'écrire commerce.json. stat.gov.pl, api.stat.gov.pl et dbw.stat.gov.pl restent bloqués.",
+      "hotes": [
+        "api-sdp.stat.gov.pl"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "dane",
@@ -197,15 +244,19 @@
       "url": "https://dane.gov.pl/",
       "type": "officiel",
       "langue": "pl",
-      "licence": "par jeu de données (souvent CC0, selon un annuaire tiers)",
+      "licence": "par jeu de données (ex. « Other (Public Domain) » sur un jeu des garde-frontières)",
       "cadence": "variable",
       "api": true,
       "api_url": "https://api.dane.gov.pl/1.4/datasets",
       "format": "json",
-      "couches": ["autre"],
-      "notes": "Point d'entrée de secours si GUS ou les ministères y déposent des jeux réutilisables.",
-      "hotes": ["dane.gov.pl", "api.dane.gov.pl"],
-      "acces": "non_verifie"
+      "couches": [
+        "autre"
+      ],
+      "notes": "API lue sans clé : /1.4/datasets?q=... renvoie les jeux avec un champ license_description. Aucun jeu de commerce par partenaire identifié pour l'instant.",
+      "hotes": [
+        "api.dane.gov.pl"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "otan_art4",
@@ -219,9 +270,14 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["conflits"],
-      "notes": "Source de presse provisoire : à remplacer par la déclaration du Conseil de l'Atlantique Nord (nato.int) ou le communiqué du MSZ dès que ces hôtes sont ouverts.",
-      "hotes": ["www.pbs.org", "www.nato.int"],
+      "couches": [
+        "conflits"
+      ],
+      "notes": "Source de presse provisoire, toujours bloquée ; la déclaration du Conseil de l'Atlantique Nord n'a pas été trouvée sur nato.int. Le fait est conservé mais ne s'affiche qu'une fois la source vérifiée.",
+      "hotes": [
+        "www.pbs.org",
+        "www.nato.int"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -236,10 +292,56 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["politique"],
+      "couches": [
+        "politique"
+      ],
       "notes": "",
-      "hotes": ["www.polskieradio.pl"],
+      "hotes": [
+        "www.polskieradio.pl"
+      ],
       "acces": "non_verifie"
+    },
+    {
+      "id": "ipu",
+      "nom": "Union interparlementaire (IPU Parline), élection du Sejm du 15/10/2023",
+      "editeur": "Union interparlementaire",
+      "url": "https://data.ipu.org/parliament/PL/PL-LC01/election/PL-LC01-E20231015/",
+      "type": "international",
+      "langue": "en",
+      "licence": "CC BY-NC-SA 4.0",
+      "cadence": "à chaque élection",
+      "api": true,
+      "api_url": "https://api.data.ipu.org/v1/elections/PL-LC01-E20231015",
+      "format": "json",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Lu le 2026-10-27 : 460 sièges ; PiS 194, KO 157, Troisième voie 65, Nouvelle gauche 26, Konfederacja 18. Code élection confirmé (dernière élection de la chambre PL-LC01 : 2023-10-15).",
+      "hotes": [
+        "api.data.ipu.org"
+      ],
+      "acces": "verifie"
+    },
+    {
+      "id": "wikidata",
+      "nom": "Wikidata, chef de l'État, chef du gouvernement et présidents de partis (Pologne, Q36)",
+      "editeur": "Wikimedia Foundation",
+      "url": "https://www.wikidata.org/wiki/Q36",
+      "type": "recherche",
+      "langue": "en",
+      "licence": "CC0",
+      "cadence": "continue",
+      "api": true,
+      "api_url": "https://query.wikidata.org/sparql",
+      "format": "json/csv",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Interrogé le 2026-10-27 : P35 Karol Nawrocki (depuis 2025-08-06), P6 Donald Tusk (depuis 2023-12-13) ; P488 des partis : Kaczyński (PiS, depuis 2003), Tusk (Plateforme civique, depuis 2021). Les présidents de PSL, Polska 2050 et Nouvelle gauche ne sont pas fiables dans Wikidata (valeurs non résolues ou multiples).",
+      "hotes": [
+        "query.wikidata.org"
+      ],
+      "acces": "verifie"
     }
   ]
 }
