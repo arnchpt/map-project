@@ -1,0 +1,66 @@
+{
+  "pays": "CZE",
+  "verifie": "2026-10-27",
+  "src": "stat",
+  "annee": 2025,
+  "devise": "CZK",
+  "unite": "Md",
+  "concept": "exportations FOB, importations CIF, 12 mois de 2025 cumulés (CSV mensuel ČSÚ « Zahraniční obchod, země - měsíc », produits SITC « Celkem »)",
+  "total": {
+    "x": 4772.4,
+    "m": 4572.2
+  },
+  "partenaires": [
+    {
+      "pays": "DEU",
+      "x": 1405.2,
+      "m": 1021.8
+    },
+    {
+      "pays": "POL",
+      "x": 344.0,
+      "m": 421.0
+    },
+    {
+      "pays": "SVK",
+      "x": 439.1,
+      "m": 249.3
+    },
+    {
+      "pays": "CHN",
+      "x": 53.6,
+      "m": 562.0
+    },
+    {
+      "pays": "ITA",
+      "x": 185.0,
+      "m": 199.2
+    },
+    {
+      "pays": "FRA",
+      "x": 236.9,
+      "m": 136.9
+    },
+    {
+      "pays": "AUT",
+      "x": 184.6,
+      "m": 130.6
+    },
+    {
+      "pays": "GBR",
+      "x": 221.2,
+      "m": 68.3
+    },
+    {
+      "pays": "USA",
+      "x": 137.5,
+      "m": 125.6
+    },
+    {
+      "pays": "NLD",
+      "x": 145.5,
+      "m": 115.4
+    }
+  ],
+  "notes": {}
+}

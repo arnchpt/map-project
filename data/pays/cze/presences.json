@@ -1,12 +1,139 @@
 {
   "pays": "CZE",
-  "verifie": "2026-10-26",
-  "notes": "Pays hôtes cités pour le flanc Est de l'OTAN. Effectifs par pays non publiés dans les sources trouvées : le mandat fixe un plafond global (2 000) et la presse donne 427 militaires au total en mai 2026. Positions approximatives (bases des groupements de l'OTAN), à confirmer par le rapport annuel du ministère.",
+  "verifie": "2026-10-27",
+  "notes": "Relevé du portail des missions du ministère de la Défense le 2026-10-27. Effectif publié seulement pour la Pologne et les observateurs ONU ; ailleurs « null » (le mandat fixe un plafond global, 2 000 personnes pour la frontière Est de l'OTAN). Positions = base ou capitale citée sur la page.",
   "presences": [
-    { "hote": "SVK", "lon": 19.3, "lat": 48.4, "nom": "Groupement tactique multinational de l'OTAN en Slovaquie (renforcement du flanc Est)", "cat": "otan", "eff": null, "depuis": null, "src": "mandat" },
-    { "hote": "LTU", "lon": 24.2, "lat": 55.0, "nom": "Groupement de présence avancée de l'OTAN en Lituanie (renforcement du flanc Est)", "cat": "otan", "eff": null, "depuis": null, "src": "mandat" },
-    { "hote": "LVA", "lon": 24.3, "lat": 57.1, "nom": "Brigade multinationale de l'OTAN en Lettonie (renforcement du flanc Est)", "cat": "otan", "eff": null, "depuis": null, "src": "mandat" },
-    { "hote": "POL", "lon": 21.0, "lat": 52.2, "nom": "Renforcement du flanc Est de l'OTAN en Pologne", "cat": "otan", "eff": null, "depuis": null, "src": "mandat" }
+    {
+      "hote": "SVK",
+      "lon": 19.2,
+      "lat": 48.5,
+      "nom": "9e groupement tactique tchèque dans la brigade multinationale OTAN en Slovaquie (base de Lešť, près de 200 militaires en avant, plus des unités en alerte en Tchéquie)",
+      "cat": "otan",
+      "eff": null,
+      "depuis": "2022-04",
+      "src": "missions"
+    },
+    {
+      "hote": "LTU",
+      "lon": 24.3,
+      "lat": 55.1,
+      "nom": "8e groupement tchèque, présence avancée de l'OTAN (base de Rukla, compagnie de reconnaissance, 07/2026-01/2027)",
+      "cat": "otan",
+      "eff": null,
+      "depuis": null,
+      "src": "missions"
+    },
+    {
+      "hote": "LVA",
+      "lon": 24.3,
+      "lat": 57.1,
+      "nom": "6e groupement tchèque (génie) et unité de soutien logistique dans la brigade multinationale OTAN en Lettonie (07/2026-01/2027)",
+      "cat": "otan",
+      "eff": null,
+      "depuis": "2026-01",
+      "src": "missions"
+    },
+    {
+      "hote": "POL",
+      "lon": 21.0,
+      "lat": 52.2,
+      "nom": "6e groupement tchèque, unité d'hélicoptères en renfort de la défense aérienne polonaise (07/2026-10/2026)",
+      "cat": "otan",
+      "eff": 100,
+      "depuis": "2025-09",
+      "src": "missions"
+    },
+    {
+      "hote": "XKX",
+      "lon": 21.2,
+      "lat": 42.7,
+      "nom": "31e groupement tchèque au quartier général de la KFOR à Pristina (08/2026-02/2027)",
+      "cat": "otan",
+      "eff": null,
+      "depuis": "1999-07",
+      "src": "missions"
+    },
+    {
+      "hote": "XKX",
+      "lon": 21.2,
+      "lat": 42.7,
+      "nom": "Police militaire tchèque dans l'unité spécialisée multinationale (MSU) de la KFOR",
+      "cat": "otan",
+      "eff": null,
+      "depuis": "2023-07",
+      "src": "missions"
+    },
+    {
+      "hote": "BIH",
+      "lon": 18.3,
+      "lat": 43.8,
+      "nom": "24e groupe tchèque, opération EUFOR Althea (base de Butmir, Sarajevo, 11/2025-12/2026)",
+      "cat": "ue",
+      "eff": null,
+      "depuis": "2010-06",
+      "src": "missions"
+    },
+    {
+      "hote": "GRC",
+      "lon": 22.4,
+      "lat": 39.6,
+      "nom": "6e groupe tchèque au quartier général stratégique de l'opération EUNAVFOR Aspides (07/2026-01/2027)",
+      "cat": "ue",
+      "eff": null,
+      "depuis": "2024-03",
+      "src": "missions"
+    },
+    {
+      "hote": "EGY",
+      "lon": 34.3,
+      "lat": 27.9,
+      "nom": "18e groupement tchèque de la Force multinationale et observateurs (MFO) au Sinaï, avec un avion CASA C-295M (08/2026-08/2027)",
+      "cat": "ope",
+      "eff": null,
+      "depuis": "2009-11",
+      "src": "missions"
+    },
+    {
+      "hote": "SYR",
+      "lon": 36.0,
+      "lat": 33.5,
+      "nom": "11e groupe tchèque de l'UNDOF (camp Faouar, quartier général, 07/2026-07/2027)",
+      "cat": "onu",
+      "eff": null,
+      "depuis": "2015-07",
+      "src": "missions"
+    },
+    {
+      "hote": "COD",
+      "lon": 15.3,
+      "lat": -4.3,
+      "nom": "Observateur militaire tchèque, MONUSCO",
+      "cat": "onu",
+      "eff": 1,
+      "depuis": null,
+      "src": "missions"
+    },
+    {
+      "hote": "CAF",
+      "lon": 18.6,
+      "lat": 4.4,
+      "nom": "Observateur militaire tchèque, MINUSCA",
+      "cat": "onu",
+      "eff": 1,
+      "depuis": null,
+      "src": "missions"
+    }
   ],
-  "non_localisees": []
+  "non_localisees": [
+    {
+      "nom": "EUNAVFOR MED IRINI (rotation 08/2026-02/2027, effectif non publié)",
+      "eff": "non publié",
+      "src": "missions"
+    },
+    {
+      "nom": "Mission d'assistance militaire de l'UE à l'Ukraine (EUMAM), dans les États membres de l'UE",
+      "eff": "plafond 100",
+      "src": "mandat"
+    }
+  ]
 }

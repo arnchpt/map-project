@@ -1,6 +1,6 @@
 {
   "pays": "CZE",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "chef_etat": {
     "nom": "Petr Pavel",
     "fonction": "Président de la République",
@@ -22,56 +22,68 @@
     "sieges": 200,
     "majorite": 101,
     "election": "2025-10-03",
-    "src": "presse_resultats",
-    "ipu": null
+    "src": "ipu",
+    "ipu": "CZ-LC01-E20251003"
   },
   "partis": [
     {
       "nom": "ANO",
       "sieges": 80,
       "role": "gouv",
-      "leaders": "non reconfirmé",
-      "ipu": []
+      "leaders": "Andrej Babiš (président du gouvernement)",
+      "ipu": [
+        "cz-ano"
+      ]
     },
     {
       "nom": "SPOLU (ODS, KDU-ČSL, TOP 09)",
       "sieges": 52,
       "role": "hors",
       "leaders": "non reconfirmé",
-      "ipu": []
+      "ipu": [
+        "cz-spolu"
+      ]
     },
     {
       "nom": "STAN (Maires et indépendants)",
       "sieges": 22,
       "role": "hors",
       "leaders": "non reconfirmé",
-      "ipu": []
+      "ipu": [
+        "cz-mayors_and_independents_stan"
+      ]
     },
     {
       "nom": "Parti pirate tchèque",
       "sieges": 18,
       "role": "hors",
       "leaders": "non reconfirmé",
-      "ipu": []
+      "ipu": [
+        "cz-czech_pirate_party"
+      ]
     },
     {
       "nom": "SPD (Liberté et démocratie directe)",
       "sieges": 15,
       "role": "gouv",
       "leaders": "non reconfirmé",
-      "ipu": []
+      "ipu": [
+        "cz-freedom_and_direct_democracy_spd"
+      ]
     },
     {
       "nom": "Motoristé sobě",
       "sieges": 13,
       "role": "gouv",
-      "leaders": "non reconfirmé",
-      "ipu": []
+      "leaders": "Petr Macinka (vice-président du gouvernement, ministre des Affaires étrangères)",
+      "ipu": [
+        "cz-motoriste-sobe-(auto)"
+      ]
     }
   ],
   "notes": [
-    "Scrutin des 3 et 4 octobre 2025. Sièges par parti : Wikipédia (presse_resultats), en attendant le XML officiel de volby.cz (bloqué). Total de la coalition gouvernementale (108) recoupé par Radio Prague International (presse_coalition).",
-    "Dirigeants de partis non reconfirmés : aucune source lue depuis la session.",
-    "Code IPU de l'élection non lu (api.data.ipu.org bloqué depuis la session)."
+    "Sièges du scrutin des 3 et 4 octobre 2025 : IPU Parline, relu le 2026-10-27. Coalition ANO + SPD + Motoristé : 80 + 15 + 13 = 108 sièges.",
+    "Dirigeants : fonctions gouvernementales relues sur vlada.gov.cz (qui ne dit pas qui préside chaque parti) ; « non reconfirmé » = aucune source officielle lue.",
+    "Chef de l'État et chef du gouvernement : Wikidata (relu le 2026-10-27), le second recoupé par vlada.gov.cz."
   ]
 }
