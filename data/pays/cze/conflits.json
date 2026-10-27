@@ -1,12 +1,12 @@
 {
   "pays": "CZE",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "evenements": [
     {
       "avec": "UKR",
       "k": "soutien",
-      "t": "Formation de soldats ukrainiens",
-      "d": "Le mandat approuvé par la Chambre le 19/11/2024 et le Sénat le 20/11/2024 autorise jusqu'à 800 personnes pour former des soldats ukrainiens en Tchéquie jusqu'au 31/12/2026.",
+      "t": "Formation de soldats ukrainiens et mission de l'UE",
+      "d": "Le mandat approuvé le 19/11/2024 (Chambre) et le 20/11/2024 (Sénat) autorise jusqu'à 100 personnes dans la mission d'assistance de l'UE à l'Ukraine et jusqu'à 800 personnes pour la formation en Tchéquie, du 01/01/2025 au 31/12/2026.",
       "date": "2024-11-19",
       "src": "mandat"
     }
