@@ -1,6 +1,6 @@
 {
   "pays": "LVA",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "sources": [
     {
       "id": "stat",
@@ -14,10 +14,15 @@
       "api": true,
       "api_url": "https://api.stat.gov.lv/api/v2/index.html",
       "format": "json-stat2, csv, json, xlsx, px",
-      "couches": ["commerce"],
-      "notes": "API v2 en GET (PxWebApi 2), 10 000 cellules par requête, 30 requêtes / 10 s par IP, sans clé ; spécification OpenAPI à l'URL api_url. L'ancienne API PxWeb v1 reste sous data.stat.gov.lv/api/v1. Totaux 2025 relevés par recherche web dans le communiqué du CSP (exportations 19,54 Md€, importations 23,19 Md€), non relus depuis la session. Partenaires 2025 non relevés : le communiqué annuel cite Lituanie, Estonie, Allemagne, Royaume-Uni et Suède comme 5 premiers clients (47,4 % des exportations), sans montant par pays.",
-      "hotes": ["data.stat.gov.lv", "api.stat.gov.lv", "stat.gov.lv"],
-      "acces": "non_verifie"
+      "couches": [
+        "commerce"
+      ],
+      "notes": "API v2 relue le 27/10/2026 : GET sans clé sur https://api.stat.gov.lv/api/v2/tables/ATD020/data (valueCodes[FLOW|CN2Z|COUNTRY|ContentsCode|TIME], outputFormat=json-stat2), 10 000 cellules par requête, 30 requêtes / 10 s par IP. Table ATD020 mise à jour le 12/10/2026, données 2005-2026 : exportations 2025 = 19,86 Md€, importations 23,43 Md€ (données révisées ; le communiqué de février 2026 donnait 19,54 / 23,19 Md€). Contenu de la table : valeur en euros, sans précision FOB/CAF dans les métadonnées. Table ATD020m (mensuelle) non relue. Les codes pays de la table sont ISO alpha-2 ; les agrégats (UE, zones) sont à exclure.",
+      "hotes": [
+        "api.stat.gov.lv",
+        "data.stat.gov.lv"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "defense",
@@ -31,9 +36,14 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["presences", "conflits"],
-      "notes": "La page liste les opérations (KFOR, mission OTAN en Irak, Inherent Resolve, ONUST, EUNAVFOR MED Irini) sans effectif consolidé ni date de mise à jour. Les forces alliées stationnées en Lettonie (brigade multinationale de l'OTAN menée par le Canada à Ādaži, aviation américaine à Lielvārde) relèvent des fichiers des pays déployants ; fiche du ministère : https://www.mod.gov.lv/en/nato/nato-capabilities/nato-efp-battle-group.",
-      "hotes": ["www.mod.gov.lv", "mod.gov.lv"],
+      "couches": [
+        "presences",
+        "conflits"
+      ],
+      "notes": "La page liste les opérations (KFOR, mission OTAN en Irak, Inherent Resolve, ONUST, EUNAVFOR MED Irini) sans effectif consolidé ni date de mise à jour. Les forces alliées stationnées en Lettonie (brigade multinationale de l'OTAN menée par le Canada à Ādaži, aviation américaine à Lielvārde) relèvent des fichiers des pays déployants ; fiche du ministère : https://www.mod.gov.lv/en/nato/nato-capabilities/nato-efp-battle-group. Site www.mod.gov.lv inaccessible depuis la session le 27/10/2026 (échec de connexion) : mandats et effectifs relevés sur le site de la Saeima à la place.",
+      "hotes": [
+        "www.mod.gov.lv"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -48,10 +58,15 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["presences", "politique"],
-      "notes": "Toute participation à une opération internationale est autorisée par la Saeima (loi sur la participation des forces armées aux opérations internationales, likumi.lv id 34028). Aucune API officielle des députés trouvée ; l'agrégateur OpenSanctions (jeu lv_saeima, licence non commerciale) lit titania.saeima.lv.",
-      "hotes": ["www.saeima.lv", "titania.saeima.lv", "likumi.lv"],
-      "acces": "non_verifie"
+      "couches": [
+        "presences",
+        "politique"
+      ],
+      "notes": "Site en cours de refonte : version anglaise « en préparation », contenu en letton ; archive des communiqués (aktualitates) lisible, sitemap https://www.saeima.lv/sitemap.xml. Communiqués relus le 27/10/2026 : KFOR prolongée jusqu'au 31/12/2027 (vote du 06/11/2025), ONUST jusqu'au 01/05/2028 (23/04/2026), Irak jusqu'au 01/11/2028 (15/10/2026), Ormuz jusqu'au 01/09/2028 (24/09/2026). Aucune API des députés trouvée ; l'agrégateur OpenSanctions (jeu lv_saeima, licence non commerciale) lit titania.saeima.lv, non relu. Loi sur la participation des forces armées aux opérations internationales : likumi.lv, toujours inaccessible.",
+      "hotes": [
+        "www.saeima.lv"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "electoral",
@@ -62,13 +77,17 @@
       "langue": "lv",
       "licence": "non précisée",
       "cadence": "à chaque élection",
-      "api": false,
-      "api_url": null,
-      "format": "html",
-      "couches": ["politique"],
-      "notes": "La CVK a publié en JSON sur data.gov.lv les résultats de la 13e Saeima (2018), jeu non reconduit en 2022 et 2026 d'après la recherche. Sièges 2026 relevés par recherche web, pas sur le site de la CVK : 41 pour la Liste unie dans les relevés finaux (Wikipedia, politpro.eu, whogoverns.eu) contre 42 au décompte provisoire du 4 octobre (LSM). À confirmer sur cvk.lv.",
-      "hotes": ["www.cvk.lv", "cvk.lv", "data.gov.lv"],
-      "acces": "non_verifie"
+      "api": true,
+      "api_url": "https://www.cvk.lv/data/rezultati/latest.json",
+      "format": "json",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Résultats relus le 27/10/2026 dans le JSON que publie le site pour son propre tableau de bord (non documenté comme API ; statut « galigi » = définitif, généré le 16/10/2026, 1 059 bureaux dépouillés sur 1 059, participation 51,78 %). Les résultats ont été confirmés par la CVK le 16/10/2026. Sièges : Liste unie 41, La Lettonie d'abord 17, Pouvoir souverain / Jeunes Lettons 15, Alliance nationale 10, Progressistes 10, Nouvelle Unité 7 ; l'Union des verts et paysans (4,40 %) n'a aucun siège. Le décompte provisoire du 04/10 donnait 42 sièges à la Liste unie. Le JSON est une URL de site, non un contrat : à surveiller. Jeu ouvert data.gov.lv de 2018 non reconduit, data.gov.lv reste inaccessible.",
+      "hotes": [
+        "www.cvk.lv"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "gouvernement",
@@ -82,9 +101,14 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["politique", "conflits"],
-      "notes": "Gouvernement Kulbergs (Liste unie, Alliance nationale, Nouvelle Unité, Union des verts et paysans) investi le 28/05/2026 ; il reste en fonction jusqu'à la formation d'un gouvernement issu de la 15e Saeima, qui siège le 03/11/2026. Négociations de coalition annoncées pour le 28/10/2026 (LSM, 20/10/2026).",
-      "hotes": ["www.mk.gov.lv"],
+      "couches": [
+        "politique",
+        "conflits"
+      ],
+      "notes": "Gouvernement Kulbergs (Liste unie, Alliance nationale, Nouvelle Unité, Union des verts et paysans) investi le 28/05/2026 ; il reste en fonction jusqu'à la formation d'un gouvernement issu de la 15e Saeima, qui siège le 03/11/2026. Négociations de coalition annoncées pour le 28/10/2026 (LSM, 20/10/2026). Hôtes toujours inaccessibles le 27/10/2026 (www.mk.gov.lv, www.mfa.gov.lv, likumi.lv, www.vvc.gov.lv, fid.gov.lv).",
+      "hotes": [
+        "www.mk.gov.lv"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -99,9 +123,14 @@
       "api": true,
       "api_url": "https://query.wikidata.org/sparql",
       "format": "json (SPARQL)",
-      "couches": ["politique"],
-      "notes": "Requête lancée depuis la session le 26/10/2026 : Edgars Rinkēvičs (Q3047551) chef de l'État, Andris Kulbergs (Q115604300) chef du gouvernement depuis le 28/05/2026. Présidents de partis souvent périmés (ex. Nouvelle Unité) : seuls ceux recoupés par une autre source sont repris.",
-      "hotes": ["www.wikidata.org", "query.wikidata.org"],
+      "couches": [
+        "politique"
+      ],
+      "notes": "Requête lancée depuis la session le 26/10/2026 : Edgars Rinkēvičs (Q3047551) chef de l'État, Andris Kulbergs (Q115604300) chef du gouvernement depuis le 28/05/2026. Présidents de partis souvent périmés (ex. Nouvelle Unité) : seuls ceux recoupés par une autre source sont repris. Relue le 27/10/2026 pour les présidents de partis : voir politique.json.",
+      "hotes": [
+        "www.wikidata.org",
+        "query.wikidata.org"
+      ],
       "acces": "verifie"
     },
     {
@@ -116,9 +145,14 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["conflits", "sanctions"],
-      "notes": "Aide militaire à l'Ukraine : engagement d'au moins 0,25 % du PIB par an ; 2025 ≈ 110 M€ (0,30 % du PIB) selon le ministère, relevé par recherche web.",
-      "hotes": ["www.mfa.gov.lv"],
+      "couches": [
+        "conflits",
+        "sanctions"
+      ],
+      "notes": "Aide militaire à l'Ukraine : engagement d'au moins 0,25 % du PIB par an ; 2025 ≈ 110 M€ (0,30 % du PIB) selon le ministère, relevé par recherche web. Hôtes toujours inaccessibles le 27/10/2026 (www.mk.gov.lv, www.mfa.gov.lv, likumi.lv, www.vvc.gov.lv, fid.gov.lv).",
+      "hotes": [
+        "www.mfa.gov.lv"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -133,10 +167,14 @@
       "api": false,
       "api_url": null,
       "format": "html (recherche et vérification en masse)",
-      "couches": ["sanctions"],
-      "notes": "Autorité compétente pour les sanctions internationales et nationales depuis le 01/04/2024. Régime national créé par le règlement du Conseil des ministres n° 547 du 12/09/2025 (personnes liées à l'agression russe contre l'Ukraine). Aucun export machine de la liste nationale trouvé ; le volet UE est déjà couvert par la couche commune.",
-      "hotes": ["sankcijas.fid.gov.lv", "fid.gov.lv", "www.vvc.gov.lv"],
-      "acces": "non_verifie"
+      "couches": [
+        "sanctions"
+      ],
+      "notes": "Portail relu le 27/10/2026 : le FID est l'autorité compétente pour les sanctions internationales et nationales depuis le 01/04/2024 ; le portail publie les avoirs gelés (au 26/10/2026 : 183 sujets, dont 28 directement listés et 155 personnes morales détenues ou contrôlées) et un outil de recherche dans les listes ONU et UE. Cadre : loi sur les sanctions internationales et nationales (2016), règlement du Conseil des ministres n° 184 du 26/03/2024. Le règlement n° 547 de 2025 (régime national contre l'agression russe) n'est pas cité sur cette page : source mae, toujours non relue. Aucun export machine de la liste nationale ; le volet UE est déjà couvert par la couche commune.",
+      "hotes": [
+        "sankcijas.fid.gov.lv"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "frontiere",
@@ -150,9 +188,14 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["conflits"],
+      "couches": [
+        "conflits"
+      ],
       "notes": "Source officielle attendue : ministère de l'Intérieur (www.iem.gov.lv) ou Conseil des ministres, non joignables depuis la session. À remplacer dès que l'accès est vérifié.",
-      "hotes": ["reform.news", "www.iem.gov.lv"],
+      "hotes": [
+        "reform.news",
+        "www.iem.gov.lv"
+      ],
       "acces": "non_verifie"
     }
   ]
