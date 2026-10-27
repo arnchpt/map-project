@@ -1,0 +1,66 @@
+{
+  "pays": "LTU",
+  "verifie": "2026-10-27",
+  "src": "stat",
+  "annee": 2025,
+  "devise": "EUR",
+  "unite": "Md",
+  "concept": "commerce de biens, exportations et importations totales par pays partenaire (valeurs en milliers d'euros, somme des 12 mois de 2025 sur les chapitres NC à 2 chiffres)",
+  "total": {
+    "x": 36.87,
+    "m": 43.46
+  },
+  "partenaires": [
+    {
+      "pays": "POL",
+      "x": 3.78,
+      "m": 6.02
+    },
+    {
+      "pays": "DEU",
+      "x": 3.31,
+      "m": 5.62
+    },
+    {
+      "pays": "LVA",
+      "x": 4.6,
+      "m": 3.68
+    },
+    {
+      "pays": "NLD",
+      "x": 2.42,
+      "m": 2.25
+    },
+    {
+      "pays": "EST",
+      "x": 2.24,
+      "m": 1.75
+    },
+    {
+      "pays": "USA",
+      "x": 1.75,
+      "m": 1.8
+    },
+    {
+      "pays": "SWE",
+      "x": 1.6,
+      "m": 1.86
+    },
+    {
+      "pays": "NOR",
+      "x": 1.04,
+      "m": 1.88
+    },
+    {
+      "pays": "GBR",
+      "x": 1.56,
+      "m": 0.98
+    },
+    {
+      "pays": "CHN",
+      "x": 0.24,
+      "m": 2.27
+    }
+  ],
+  "notes": {}
+}
