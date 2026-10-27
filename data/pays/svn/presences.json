@@ -1,12 +1,12 @@
 {
   "pays": "SVN",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "presences": [
     {
       "hote": "XKX",
       "lon": 21.2,
       "lat": 42.6,
-      "nom": "KFOR (OTAN) : 53e contingent, bataillon non cinétique du commandement régional Est sous commandement slovène",
+      "nom": "KFOR (OTAN) : 52e puis 53e contingent (relève du 23/04/2026), bataillon non cinétique du commandement régional Est",
       "cat": "otan",
       "eff": 109,
       "depuis": null,
@@ -15,30 +15,20 @@
     {
       "hote": "BIH",
       "lon": 18.4,
-      "lat": 43.8,
-      "nom": "Opération EUFOR Althea et quartier général de l'OTAN à Sarajevo",
+      "lat": 43.9,
+      "nom": "Opération EUFOR Althea (équipe de liaison et d'observation)",
       "cat": "ue",
-      "eff": null,
+      "eff": 22,
       "depuis": null,
       "src": "sv"
     },
     {
-      "hote": "LVA",
-      "lon": 24.3,
-      "lat": 57.1,
-      "nom": "Brigade multinationale de l'OTAN en Lettonie (présence avancée renforcée)",
+      "hote": "BIH",
+      "lon": 18.4,
+      "lat": 43.9,
+      "nom": "Quartier général de l'OTAN à Sarajevo (Joint Enterprise)",
       "cat": "otan",
-      "eff": null,
-      "depuis": null,
-      "src": "sv_revija"
-    },
-    {
-      "hote": "SVK",
-      "lon": 19.3,
-      "lat": 48.4,
-      "nom": "Groupement tactique multinational de l'OTAN en Slovaquie",
-      "cat": "otan",
-      "eff": 111,
+      "eff": 5,
       "depuis": null,
       "src": "sv"
     },
@@ -46,12 +36,73 @@
       "hote": "SRB",
       "lon": 20.5,
       "lat": 44.8,
-      "nom": "Bureau de liaison militaire de l'OTAN à Belgrade",
+      "nom": "Bureau de liaison de l'OTAN à Belgrade (Joint Enterprise)",
       "cat": "dlia",
-      "eff": null,
+      "eff": 1,
       "depuis": null,
+      "src": "sv"
+    },
+    {
+      "hote": "LVA",
+      "lon": 24.3,
+      "lat": 57.1,
+      "nom": "Brigade multinationale de l'OTAN en Lettonie",
+      "cat": "otan",
+      "eff": 35,
+      "depuis": null,
+      "src": "sv"
+    },
+    {
+      "hote": "SVK",
+      "lon": 19.3,
+      "lat": 48.4,
+      "nom": "Groupement tactique multinational de l'OTAN en Slovaquie (6e contingent, terrain de Lešť)",
+      "cat": "otan",
+      "eff": 111,
+      "depuis": "2022-06",
+      "src": "sv"
+    },
+    {
+      "hote": "DEU",
+      "lon": 10.4,
+      "lat": 51.2,
+      "nom": "EUMAM Ukraine (mission d'assistance militaire de l'UE), effectif plafonné à 30",
+      "cat": "ue",
+      "eff": 30,
+      "depuis": "2023-05",
+      "src": "sv"
+    },
+    {
+      "hote": "CYP",
+      "lon": 33.4,
+      "lat": 35.2,
+      "nom": "UNFICYP (ONU), intégrés au contingent slovaque",
+      "cat": "onu",
+      "eff": 6,
+      "depuis": "2025-03",
       "src": "sv"
     }
   ],
-  "non_localisees": []
+  "non_localisees": [
+    {
+      "nom": "EUNAVFOR MED Irini (quartier général à Rome)",
+      "eff": "3 (sept. 2024)",
+      "src": "sv"
+    },
+    {
+      "nom": "EUNAVFOR Aspides (Grèce)",
+      "eff": "1 (sept. 2024)",
+      "src": "sv"
+    },
+    {
+      "nom": "UNTSO (observateurs en Syrie, Israël et Liban)",
+      "eff": "2 (sept. 2024)",
+      "src": "sv"
+    },
+    {
+      "nom": "Opération Inherent Resolve (état-major à Tampa, États-Unis)",
+      "eff": "2 (sept. 2024)",
+      "src": "sv"
+    }
+  ]
 }
