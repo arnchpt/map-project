@@ -1,30 +1,101 @@
 {
   "pays": "LTU",
-  "verifie": "2026-10-26",
-  "chef_etat": { "nom": "Gitanas Nausėda", "fonction": "Président de la République", "parti": null, "depuis": "2019-07-12", "qid": "Q9268379", "src": "wikidata" },
-  "chef_gouv": { "nom": "Mindaugas Sinkevičius", "fonction": "Premier ministre", "parti": "Parti social-démocrate de Lituanie (LSDP)", "depuis": "2026-07-14", "qid": "Q1936326", "src": "wikidata" },
+  "verifie": "2026-10-27",
+  "chef_etat": {
+    "nom": "Gitanas Nausėda",
+    "fonction": "Président de la République",
+    "parti": null,
+    "depuis": "2019-07-12",
+    "qid": "Q9268379",
+    "src": "wikidata"
+  },
+  "chef_gouv": {
+    "nom": "Mindaugas Sinkevičius",
+    "fonction": "Premier ministre",
+    "parti": "Parti social-démocrate de Lituanie (LSDP)",
+    "depuis": "2026-07-14",
+    "qid": "Q1936326",
+    "src": "wikidata"
+  },
   "chambre": {
     "nom": "Seimas",
     "sieges": 141,
     "majorite": 71,
     "election": "2024-10-13",
-    "src": "electoral",
+    "src": "ipu",
     "ipu": "LT-LC01-E20241013"
   },
   "partis": [
-    { "nom": "Parti social-démocrate de Lituanie (LSDP)", "sieges": 52, "role": "gouv", "leaders": "Mindaugas Sinkevičius (président du parti)" },
-    { "nom": "Union de la patrie – Chrétiens-démocrates lituaniens (TS-LKD)", "sieges": 28, "role": "hors", "leaders": "Laurynas Kasčiūnas (président du parti)" },
-    { "nom": "Aube du Niémen (Nemuno aušra)", "sieges": 20, "role": "hors", "leaders": "Remigijus Žemaitaitis (président du parti)" },
-    { "nom": "Union des démocrates « Pour la Lituanie » (DSVL)", "sieges": 14, "role": "gouv", "leaders": "Virginijus Sinkevičius (président du parti depuis le 13/04/2026)" },
-    { "nom": "Mouvement libéral (LS)", "sieges": 12, "role": "hors", "leaders": "non relevé" },
-    { "nom": "Union lituanienne des paysans et des verts (LVŽS)", "sieges": 8, "role": "gouv", "leaders": "non relevé" },
-    { "nom": "Action électorale des Polonais de Lituanie – Alliance des familles chrétiennes (AWPL-ZChR)", "sieges": 3, "role": "gouv", "leaders": "Waldemar Tomaszewski (président du parti)" }
+    {
+      "nom": "Parti social-démocrate de Lituanie (LSDP)",
+      "sieges": 52,
+      "role": "gouv",
+      "leaders": "Mindaugas Sinkevičius (président du parti)",
+      "ipu": [
+        "lt-lithuanian_social_democratic_party_lsdp"
+      ]
+    },
+    {
+      "nom": "Union de la patrie – Chrétiens-démocrates lituaniens (TS-LKD)",
+      "sieges": 28,
+      "role": "hors",
+      "leaders": "Laurynas Kasčiūnas (président du parti)",
+      "ipu": [
+        "lt-homeland_union_lithuanian_christian_democrats_ts_lkd"
+      ]
+    },
+    {
+      "nom": "Aube du Niémen (Nemuno aušra)",
+      "sieges": 20,
+      "role": "hors",
+      "leaders": "Remigijus Žemaitaitis (président du parti)",
+      "ipu": [
+        "lt-political-party-the-dawn-of-nemunas-(ppna)"
+      ]
+    },
+    {
+      "nom": "Union des démocrates « Pour la Lituanie » (DSVL)",
+      "sieges": 14,
+      "role": "gouv",
+      "leaders": "Virginijus Sinkevičius (président du parti depuis le 13/04/2026)",
+      "ipu": [
+        "lt-union-of-democrats-for-lithuania-(dsvl)"
+      ]
+    },
+    {
+      "nom": "Mouvement libéral (LS)",
+      "sieges": 12,
+      "role": "hors",
+      "leaders": "non relevé",
+      "ipu": [
+        "lt-liberals-movement-of-the-republic-of-lithuania-(ls)"
+      ]
+    },
+    {
+      "nom": "Union lituanienne des paysans et des verts (LVŽS)",
+      "sieges": 8,
+      "role": "gouv",
+      "leaders": "non relevé",
+      "ipu": [
+        "lt-lithuanian-farmers-popular-union-(lvzs)"
+      ]
+    },
+    {
+      "nom": "Action électorale des Polonais de Lituanie – Alliance des familles chrétiennes (AWPL-ZChR)",
+      "sieges": 3,
+      "role": "gouv",
+      "leaders": "Waldemar Tomaszewski (président du parti)",
+      "ipu": [
+        "lt-lithuanian_poles_electoral_action_llra_"
+      ]
+    }
   ],
   "seconde": null,
   "notes": [
-    "Sièges à l'élection des 13 et 27 octobre 2024 ; 4 autres sièges : Union nationale 1, Parti de la liberté 1, indépendants 2. Les changements de groupe en cours de mandat ne sont pas reportés.",
-    "Coalition approuvée le 14/07/2026 (LSDP, DSVL, groupe LVŽS et AWPL-ZChR), 75 sièges annoncés ; Aube du Niémen a quitté la coalition en juin 2026.",
-    "Codes partis IPU non renseignés : api.data.ipu.org bloqué depuis ce fil. Code d'élection IPU déduit de la date du premier tour, à confirmer par la relecture hebdomadaire."
+    "Sièges à l'élection des 13 et 27 octobre 2024 (IPU, relu le 2026-10-27) ; 4 autres sièges : Union nationale 1, Parti de la liberté 1, indépendants 2.",
+    "Groupes au Seimas le 2026-10-27 (lrs.lt) : LSDP 52, TS-LKD 28, Aube du Niémen 17, Démocrates « Vardan Lietuvos » 13, Mouvement libéral 11, groupe LVŽS et Familles chrétiennes 9, groupe mixte 9, soit 139 membres siégeant.",
+    "Coalition approuvée le 14/07/2026 (LSDP, DSVL, groupe LVŽS et AWPL-ZChR), 75 sièges annoncés ; Aube du Niémen a quitté la coalition en juin 2026 (OSW, non relu).",
+    "Présidents des partis Mouvement libéral et LVŽS non relevés : absents de Wikidata."
   ],
   "autres": 4,
   "src_leaders": "wikidata",

@@ -1,6 +1,6 @@
 {
   "pays": "LTU",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "sources": [
     {
       "id": "defense",
@@ -17,7 +17,7 @@
       "couches": [
         "presences"
       ],
-      "notes": "Domaine kam.lt bloqué par le réseau du projet le 2026-10-26 (cloud et poste d'Arnaud) : contenu relevé via moteur de recherche, non relu en direct. La page n'est pas datée. Elle indique 125 militaires dans 9 opérations et des plafonds par mission (KFOR 60, EUMAM Ukraine 40, Atalanta 30, Irini 20, EUTM RCA et EUMAM Mozambique 11), avec des effectifs relevés de 44 (KFOR), 2 (EUMAM Ukraine), 2 (Atalanta). Faute de date, les effectifs restent à null dans presences.json.",
+      "notes": "Domaine kam.lt bloqué par le réseau du projet le 2026-10-26 (cloud et poste d'Arnaud) : contenu relevé via moteur de recherche, non relu en direct. La page n'est pas datée. Elle indique 125 militaires dans 9 opérations et des plafonds par mission (KFOR 60, EUMAM Ukraine 40, Atalanta 30, Irini 20, EUTM RCA et EUMAM Mozambique 11), avec des effectifs relevés de 44 (KFOR), 2 (EUMAM Ukraine), 2 (Atalanta). Faute de date, les effectifs restent à null dans presences.json. Revérifié le 2026-10-27 : kam.lt répond par un défi Cloudflare (HTTP 403), laissé non vérifié.",
       "hotes": [
         "kam.lt"
       ],
@@ -60,7 +60,7 @@
       "couches": [
         "presences"
       ],
-      "notes": "Juin 2026, contingent de 40 personnels au plus. Relevé via moteur de recherche (domaine bloqué).",
+      "notes": "Juin 2026, contingent de 40 personnels au plus. Relevé via moteur de recherche (domaine bloqué). Revérifié le 2026-10-27 : kam.lt répond par un défi Cloudflare (HTTP 403), laissé non vérifié.",
       "hotes": [
         "kam.lt"
       ],
@@ -81,7 +81,7 @@
       "couches": [
         "presences"
       ],
-      "notes": "Annonce les relèves OTAN de juillet à décembre 2026 : module de transmissions (9 militaires) dans l'opération OTAN « Active Fence », navire « Jotvingis » (61 militaires) dans l'opération OTAN « Brilliant Shield ». Page exacte non relue (domaine bloqué).",
+      "notes": "Annonce les relèves OTAN de juillet à décembre 2026 : module de transmissions (9 militaires) dans l'opération OTAN « Active Fence », navire « Jotvingis » (61 militaires) dans l'opération OTAN « Brilliant Shield ». Page exacte non relue (domaine bloqué). Revérifié le 2026-10-27 : kariuomene.lt répond par un défi Cloudflare (HTTP 403), laissé non vérifié.",
       "hotes": [
         "kariuomene.lt"
       ],
@@ -102,7 +102,7 @@
       "couches": [
         "presences"
       ],
-      "notes": "Confirmation côté pays hôte des forces étrangères en Lituanie : brigade allemande « Litauen » (Panzerbrigade 45, Rūdninkai et Rukla), bataillon multinational OTAN sous commandement allemand, rotation américaine à Pabradė. Ces présences relèvent des fichiers des pays déployeurs (DEU, USA…), pas de presences.json de la Lituanie. Page non datée.",
+      "notes": "Confirmation côté pays hôte des forces étrangères en Lituanie : brigade allemande « Litauen » (Panzerbrigade 45, Rūdninkai et Rukla), bataillon multinational OTAN sous commandement allemand, rotation américaine à Pabradė. Ces présences relèvent des fichiers des pays déployeurs (DEU, USA…), pas de presences.json de la Lituanie. Page non datée. Revérifié le 2026-10-27 : kam.lt répond par un défi Cloudflare (HTTP 403), laissé non vérifié.",
       "hotes": [
         "kam.lt"
       ],
@@ -123,7 +123,7 @@
       "couches": [
         "conflits"
       ],
-      "notes": "223 M€ prévus pour 2026 ; aide militaire cumulée annoncée au-delà de 1 Md$. Engagement d'au moins 0,25 % du PIB par an (Conseil de défense de l'État).",
+      "notes": "223 M€ prévus pour 2026 ; aide militaire cumulée annoncée au-delà de 1 Md$. Engagement d'au moins 0,25 % du PIB par an (Conseil de défense de l'État). Revérifié le 2026-10-27 : lithuania.lt répond par un défi Cloudflare (HTTP 403), laissé non vérifié.",
       "hotes": [
         "lithuania.lt"
       ],
@@ -145,7 +145,7 @@
         "politique",
         "conflits"
       ],
-      "notes": "Domaine bloqué le 2026-10-26. Chef du gouvernement recoupé par Wikidata (source « wikidata »).",
+      "notes": "Domaine bloqué (défi Cloudflare, HTTP 403) le 2026-10-27, laissé non vérifié. Chef du gouvernement recoupé par Wikidata (source « wikidata »).",
       "hotes": [
         "lrv.lt"
       ],
@@ -177,7 +177,7 @@
       "id": "seimas",
       "nom": "Seimas, composition des groupes parlementaires (frakcijos)",
       "editeur": "Lietuvos Respublikos Seimo kanceliarija",
-      "url": "https://www.lrs.lt/sip/portal.show?p_r=35299&p_k=2",
+      "url": "https://www.lrs.lt/sip/portal.show?p_r=35299&p_k=1",
       "type": "officiel",
       "langue": "en",
       "licence": "non précisée",
@@ -188,13 +188,13 @@
       "couches": [
         "politique"
       ],
-      "notes": "Domaine bloqué le 2026-10-26. Le Seimas a ouvert 7 jeux de données sur data.gov.lt en mai 2024 (textes du site, calendrier des sessions, événements…), sans la composition des groupes à cette date. OpenSanctions publie une liste quotidienne des membres dérivée de lrs.lt (CC BY-NC 4.0).",
+      "notes": "Relu le 2026-10-27 : liste des membres du Seimas par groupe, page HTML (cookies de statistiques sans effet sur l'accès). Pas d'API : data.gov.lt et get.data.gov.lt n'ont pas répondu. Composition relevée : LSDP 52, TS-LKD 28, Aube du Niémen 17, Démocrates « Vardan Lietuvos » 13, Mouvement libéral 11, groupe LVŽS et Familles chrétiennes 9, groupe mixte 9 (139 membres siégeant). OpenSanctions publie une liste quotidienne des membres dérivée de lrs.lt (CC BY-NC 4.0) ; non relue.",
       "hotes": [
         "www.lrs.lt",
         "data.gov.lt",
         "get.data.gov.lt"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "electoral",
@@ -211,12 +211,33 @@
       "couches": [
         "politique"
       ],
-      "notes": "Domaine bloqué le 2026-10-26. Sièges par parti recoupés avec Wikipedia (« 2024 Lithuanian parliamentary election ») : LSDP 52, TS-LKD 28, Aube du Niémen 20, Démocrates « Pour la Lituanie » 14, Mouvement libéral 12, LVŽS 8, AWPL-ZChR 3, Union nationale 1, Parti de la liberté 1, indépendants 2. La relecture hebdomadaire IPU (api.data.ipu.org, CC BY-NC-SA 4.0) prend le relais une fois les codes partis IPU renseignés.",
+      "notes": "Domaine bloqué (défi Cloudflare, HTTP 403) le 2026-10-27, laissé non vérifié. Sièges désormais contrôlés par l'IPU (source « ipu »).",
       "hotes": [
         "www.vrk.lt",
         "api.data.ipu.org"
       ],
       "acces": "non_verifie"
+    },
+    {
+      "id": "ipu",
+      "nom": "IPU Parline, Lituanie, Seimas (LT-LC01), élections 2024",
+      "editeur": "Union interparlementaire",
+      "url": "https://data.ipu.org/parliament/LT/LT-LC01/election/LT-LC01-E20241013/",
+      "type": "international",
+      "langue": "en",
+      "licence": "CC BY-NC-SA 4.0",
+      "cadence": "à chaque élection",
+      "api": true,
+      "api_url": "https://api.data.ipu.org/v1/elections/LT-LC01-E20241013",
+      "format": "json",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Relu le 2026-10-27 : 141 sièges, élection du 13/10/2024 (tour 2 le 27/10/2024). LSDP 52, TS-LKD 28, Aube du Niémen 20, DSVL 14, Mouvement libéral 12, LVŽS 8, AWPL-ZChR 3, Union nationale 1, Parti de la liberté 1, indépendants 2 : identique au relevé initial. Remplace la VRK (Cloudflare) comme source de contrôle des sièges.",
+      "hotes": [
+        "api.data.ipu.org"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "coalition",
@@ -249,17 +270,17 @@
       "licence": "non précisée",
       "cadence": "mensuelle",
       "api": true,
-      "api_url": "https://osp-rs.stat.gov.lt/rest_xml/",
+      "api_url": "https://osp-rs.stat.gov.lt/ords/ipospp/ospp/rest_xml/",
       "format": "sdmx-xml",
       "couches": [
         "commerce"
       ],
-      "notes": "Service SDMX 2.1 REST officiel (aussi osp-rs.stat.gov.lt/json_xml). Domaine bloqué le 2026-10-26 : identifiant du flux commerce par pays non vérifié, d'où l'absence de commerce.json. À relever depuis GitHub Actions (non soumis à la liste d'accès). Données Intrastat/Extrastat, nomenclature NC. Pas de licence explicite trouvée.",
+      "notes": "Relu le 2026-10-27 : service SDMX 2.1 joignable (osp-rs.stat.gov.lt/rest_xml redirige vers /ords/ipospp/ospp/rest_xml). Flux utilisés : S6R005_M6050106 (exportations) et S6R007_M6050106 (importations), chapitres NC à 2 chiffres par pays partenaire (codes ISO alpha-2), valeurs mensuelles en milliers d'euros, mises à jour 2026-10-09. Somme 2025 : 36,87 Md€ d'exportations et 43,46 Md€ d'importations, égale aux flux totaux S6R005_M6050101 et S6R007_M6050101. Le flux S6R007_M6050150 donne aussi les importations par pays d'origine (non retenu). Exemple : GET .../rest_xml/data/S6R005_M6050106/all?startPeriod=2025-01&endPeriod=2025-12. Pas de licence explicite trouvée. osp.stat.gov.lt (site) n'a pas répondu depuis la session.",
       "hotes": [
-        "osp.stat.gov.lt",
-        "osp-rs.stat.gov.lt"
+        "osp-rs.stat.gov.lt",
+        "osp.stat.gov.lt"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "sanctions-loi",
