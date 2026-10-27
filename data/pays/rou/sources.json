@@ -18,12 +18,12 @@
         "presences",
         "conflits"
       ],
-      "notes": "Domaine bloqué pour la session (proxy 403), page non lue. Les présences ci-dessous ont été relevées dans des articles de presse citant ces communiqués (g4media.ro 2026-01, sofiaglobe.com 2025-01-15) : à recouper sur le site. Pas de page de synthèse des déploiements ni de flux structuré connus ; effectifs par mission rarement publiés.",
+      "notes": "Page lue le 2026-10-27 (hôtes www.mapn.ro et english.mapn.ro en 200). Communiqué n° 347 du 2026-10-23 « Videoconferința ministrului apărării naționale cu militarii români aflați în misiuni internaționale » (https://www.mapn.ro/cpresa/19456) : cite EUFOR (Bosnie-Herzégovine), KFOR (Kosovo), EUTM (République centrafricaine) et les contingents des groupements tactiques de l'OTAN en Bulgarie, Slovaquie et Pologne ; environ 1 000 militaires en missions OTAN, UE et ONU. Aucun effectif par mission. La mission OTAN en Irak n'y figure pas : retirée. Page de synthèse https://misiuni.mapn.ro non joignable (hôte hors liste). Pas de flux structuré.",
       "hotes": [
         "www.mapn.ro",
         "english.mapn.ro"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "csat",
@@ -40,7 +40,7 @@
       "couches": [
         "presences"
       ],
-      "notes": "Fixe chaque année le plafond des forces pouvant être engagées à l'étranger. Communiqué HTML, décisions détaillées non publiées.",
+      "notes": "Fixe chaque année le plafond des forces pouvant être engagées à l'étranger. Communiqué HTML, décisions détaillées non publiées. 2026-10-27 : www.presidency.ro injoignable (000).",
       "hotes": [
         "www.presidency.ro"
       ],
@@ -62,7 +62,7 @@
         "politique",
         "presences"
       ],
-      "notes": "Site Oracle ORDS en HTML, pas d'open data documenté. Les effectifs des groupes évoluent depuis 2024 (changements de groupe) : non repris, les sièges retenus sont ceux de l'élection. Le Parlement approuve aussi les déploiements étrangers en Roumanie et roumains à l'étranger (décisions au Monitorul Oficial).",
+      "notes": "Site Oracle ORDS en HTML, pas d'open data documenté. Les effectifs des groupes évoluent depuis 2024 (changements de groupe) : non repris, les sièges retenus sont ceux de l'élection. Le Parlement approuve aussi les déploiements étrangers en Roumanie et roumains à l'étranger (décisions au Monitorul Oficial). 2026-10-27 : hôte toujours injoignable (000), reste non_verifie.",
       "hotes": [
         "www.cdep.ro"
       ],
@@ -83,7 +83,7 @@
       "couches": [
         "politique"
       ],
-      "notes": "",
+      "notes": "Hôte joignable le 2026-10-27 (200, page d'accueil du Sénat lue) ; aucun fait des autres fichiers n'en dépend, donc laissé non_verifie.",
       "hotes": [
         "www.senat.ro"
       ],
@@ -104,7 +104,7 @@
       "couches": [
         "politique"
       ],
-      "notes": "Cabinet Niculescu investi le 2026-10-20 (280 voix sur 338 votants). Relevé via Wikidata (P6, Q218) et presse (romaniajournal.ro, rador.ro, 2026-10-21) faute d'accès au site.",
+      "notes": "Cabinet Niculescu investi le 2026-10-20 (280 voix sur 338 votants). Relevé via Wikidata (P6, Q218) et presse (romaniajournal.ro, rador.ro, 2026-10-21) faute d'accès au site. 2026-10-27 : hôte toujours injoignable (000), reste non_verifie.",
       "hotes": [
         "gov.ro"
       ],
@@ -146,7 +146,7 @@
       "couches": [
         "politique"
       ],
-      "notes": "Sièges 2024 recoupés avec la répartition publiée par l'IPU (code RO-LC01-E20241201, non lu depuis la session : api.data.ipu.org bloqué) et Wikipedia. Codes partis IPU non relevés : les sièges restent figés jusqu'à leur ajout.",
+      "notes": "Sièges 2024 recoupés avec la répartition publiée par l'IPU (code RO-LC01-E20241201, non lu depuis la session : api.data.ipu.org bloqué) et Wikipedia. Codes partis IPU non relevés : les sièges restent figés jusqu'à leur ajout. 2026-10-27 : www.roaep.ro répond par un défi reCAPTCHA (non contourné) ; prezenta.roaep.ro répond 418 ; data.gov.ro injoignable.",
       "hotes": [
         "www.roaep.ro",
         "prezenta.roaep.ro",
@@ -170,7 +170,7 @@
         "conflits",
         "sanctions"
       ],
-      "notes": "Domaine bloqué. Convocations de l'ambassadeur russe (2026-04-25, 2026-07-27) relevées via l'agence publique Agerpres (agerpres.ro), à recouper. Rubrique « Sancțiuni internaționale » : la Roumanie applique les sanctions ONU et UE (OUG 202/2008), aucun régime national autonome identifié, donc rien à ajouter à la couche sanctions UE.",
+      "notes": "Domaine bloqué. Convocations de l'ambassadeur russe (2026-04-25, 2026-07-27) relevées via l'agence publique Agerpres (agerpres.ro), à recouper. Rubrique « Sancțiuni internaționale » : la Roumanie applique les sanctions ONU et UE (OUG 202/2008), aucun régime national autonome identifié, donc rien à ajouter à la couche sanctions UE. 2026-10-27 : hôte toujours injoignable (000), reste non_verifie.",
       "hotes": [
         "www.mae.ro"
       ],
@@ -191,7 +191,7 @@
       "couches": [
         "sanctions"
       ],
-      "notes": "Autorité de gel des avoirs (OUG 202/2008) ; les ordres de gel paraissent au Monitorul Oficial. Pas de liste propre. Cour des comptes (sept. 2024) : coordination ANAF–MAE jugée insuffisante.",
+      "notes": "Autorité de gel des avoirs (OUG 202/2008) ; les ordres de gel paraissent au Monitorul Oficial. Pas de liste propre. Cour des comptes (sept. 2024) : coordination ANAF–MAE jugée insuffisante. 2026-10-27 : hôte toujours injoignable (000), reste non_verifie.",
       "hotes": [
         "static.anaf.ro",
         "www.anaf.ro"
@@ -213,7 +213,7 @@
       "couches": [
         "commerce"
       ],
-      "notes": "API REST JSON sans clé : /tempo-ins/context, /matrix/<code>, /matrix/dataSet/<code> (POST). Servie en http seul sur le port 8077 : fragile, et le port non standard peut être refusé même une fois l'hôte autorisé. Domaine bloqué : commerce.json non rempli, aucun chiffre relevé. Clients existants : paquet R « TEMPO » (Revista Română de Statistică, 2019), dépôt gov2-ro/tempo-ins-dump.",
+      "notes": "API REST JSON sans clé : /tempo-ins/context, /matrix/<code>, /matrix/dataSet/<code> (POST). Servie en http seul sur le port 8077 : fragile, et le port non standard peut être refusé même une fois l'hôte autorisé. Domaine bloqué : commerce.json non rempli, aucun chiffre relevé. Clients existants : paquet R « TEMPO » (Revista Română de Statistică, 2019), dépôt gov2-ro/tempo-ins-dump. 2026-10-27 : hôte toujours injoignable (000), reste non_verifie.",
       "hotes": [
         "statistici.insse.ro",
         "insse.ro"
