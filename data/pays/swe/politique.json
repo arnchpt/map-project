@@ -1,0 +1,89 @@
+{
+  "pays": "SWE",
+  "verifie": "2026-10-26",
+  "chef_etat": {
+    "nom": "Carl XVI Gustaf",
+    "fonction": "Roi (fonctions de représentation)",
+    "parti": null,
+    "depuis": "1973-09-15",
+    "qid": "Q45068",
+    "src": "kungahuset"
+  },
+  "chef_gouv": {
+    "nom": "Ulf Kristersson",
+    "fonction": "Premier ministre (gouvernement démissionnaire chargé des affaires courantes depuis septembre 2026)",
+    "parti": "Parti modéré (Moderaterna)",
+    "depuis": "2022-10-18",
+    "qid": "Q1780398",
+    "src": "regeringen"
+  },
+  "chambre": {
+    "nom": "Riksdag",
+    "sieges": 349,
+    "majorite": 175,
+    "election": "2026-09-13",
+    "src": "val",
+    "ipu": "SE-LC01-E20260913"
+  },
+  "partis": [
+    {
+      "nom": "Parti social-démocrate (Socialdemokraterna, S)",
+      "sieges": 99,
+      "role": "hors",
+      "leaders": "Magdalena Andersson (présidente)"
+    },
+    {
+      "nom": "Parti modéré (Moderaterna, M)",
+      "sieges": 70,
+      "role": "gouv",
+      "leaders": "Ulf Kristersson (président)"
+    },
+    {
+      "nom": "Démocrates de Suède (Sverigedemokraterna, SD)",
+      "sieges": 62,
+      "role": "hors",
+      "leaders": "Jimmie Åkesson (président)"
+    },
+    {
+      "nom": "Parti de gauche (Vänsterpartiet, V)",
+      "sieges": 30,
+      "role": "hors",
+      "leaders": "Nooshi Dadgostar (présidente)"
+    },
+    {
+      "nom": "Parti du centre (Centerpartiet, C)",
+      "sieges": 25,
+      "role": "hors",
+      "leaders": "Elisabeth Thand Ringqvist (présidente)"
+    },
+    {
+      "nom": "Chrétiens-démocrates (Kristdemokraterna, KD)",
+      "sieges": 22,
+      "role": "gouv",
+      "leaders": "Ebba Busch (présidente)"
+    },
+    {
+      "nom": "Parti de l'environnement Les Verts (Miljöpartiet, MP)",
+      "sieges": 22,
+      "role": "hors",
+      "leaders": "Amanda Lind et Daniel Helldén (porte-parole)"
+    },
+    {
+      "nom": "Libéraux (Liberalerna, L)",
+      "sieges": 19,
+      "role": "gouv",
+      "leaders": "Simona Mohamsson (présidente)"
+    }
+  ],
+  "seconde": null,
+  "notes": [
+    "Élection du 13/09/2026, résultat fixé par Valmyndigheten le 19/09/2026. Le gouvernement Kristersson (M, KD, L, soutenu au Riksdag par SD de 2022 à 2026) expédie les affaires courantes.",
+    "Le 15/10/2026, le Riksdag a rejeté la candidature de Magdalena Andersson au poste de Premier ministre (99 voix pour, 248 contre). Le président du Riksdag peut proposer au plus quatre candidats avant que de nouvelles élections soient obligatoires.",
+    "Rôles « gouv » : partis du gouvernement sortant, à mettre à jour dès la formation du nouveau gouvernement."
+  ],
+  "src_leaders": {
+    "t": "Wikidata, présidents de partis (P488), relevé du 26/10/2026",
+    "u": "https://query.wikidata.org/"
+  },
+  "autres": 0
+}

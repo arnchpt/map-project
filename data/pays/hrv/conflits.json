@@ -1,0 +1,22 @@
+{
+  "pays": "HRV",
+  "verifie": "2026-10-26",
+  "evenements": [
+    {
+      "avec": "UKR",
+      "k": "soutien",
+      "t": "Aide militaire à l'Ukraine",
+      "d": "Décisions du gouvernement d'aide humanitaire et militaire annoncées par le ministère de la Défense le 28/02/2022 ; les décisions suivantes sont classifiées.",
+      "date": "2022-02-28",
+      "src": "defense-en"
+    },
+    {
+      "avec": "SVN",
+      "k": "tension",
+      "t": "Frontière dans la baie de Piran",
+      "d": "La Croatie déclare ne pas être liée par la sentence arbitrale du 29/06/2017, après s'être retirée de la procédure en 2015.",
+      "date": "2017-06-29",
+      "src": "cpa"
+    }
+  ]
+}

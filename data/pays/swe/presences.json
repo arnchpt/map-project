@@ -1,0 +1,33 @@
+{
+  "pays": "SWE",
+  "verifie": "2026-10-26",
+  "presences": [
+    {
+      "hote": "LVA",
+      "lon": 24.3,
+      "lat": 57.1,
+      "nom": "Bataillon mécanisé suédois dans la brigade multinationale de l'OTAN en Lettonie (Forward Land Forces Latvia, camp d'Ādaži)",
+      "cat": "otan",
+      "eff": null,
+      "depuis": "2025-01",
+      "src": "regeringen"
+    },
+    {
+      "hote": "FIN",
+      "lon": 25.7,
+      "lat": 66.5,
+      "nom": "Forward Land Forces Finland : la Suède est nation-cadre (élément d'état-major multinational à Rovaniemi ; groupement de bataillon d'environ 600 militaires prépositionné à Boden, en Suède)",
+      "cat": "otan",
+      "eff": null,
+      "depuis": "2026-06-06",
+      "src": "valtioneuvosto"
+    }
+  ],
+  "non_localisees": [
+    {
+      "nom": "Police du ciel renforcée et défense aérienne intégrée de l'OTAN au-dessus de la Pologne (JAS 39 Gripen, à partir du 1er octobre 2026 pour deux mois, basés surtout en Suède avec une base avancée en Pologne)",
+      "eff": "non publié",
+      "src": "regeringen"
+    }
+  ]
+}

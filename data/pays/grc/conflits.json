@@ -1,0 +1,22 @@
+{
+  "pays": "GRC",
+  "verifie": "2026-10-26",
+  "evenements": [
+    {
+      "avec": "TUR",
+      "k": "tension",
+      "t": "Différend sur les zones maritimes",
+      "d": "En novembre 2025, le ministère grec des Affaires étrangères rejette la protestation turque contre la carte grecque de planification de l'espace maritime publiée sur la plateforme de l'UE.",
+      "date": "2025-11",
+      "src": "presse_msp"
+    },
+    {
+      "avec": "UKR",
+      "k": "soutien",
+      "t": "Matériel de défense pour l'Ukraine",
+      "d": "Le 27/02/2022, le Premier ministre décide l'envoi de matériel de défense et de fournitures médicales à l'Ukraine.",
+      "date": "2022-02-27",
+      "src": "presse_ukr"
+    }
+  ]
+}

@@ -1,0 +1,254 @@
+{
+  "pays": "BGR",
+  "verifie": "2026-10-26",
+  "sources": [
+    {
+      "id": "stat",
+      "nom": "Institut national de statistique, commerce extérieur (base Infostat)",
+      "editeur": "Institut national de statistique (NSI, Bulgarie)",
+      "url": "https://nsi.bg/en/node/7498",
+      "type": "officiel",
+      "langue": "bg",
+      "licence": "Licence NSI 2.0 : réutilisation gratuite, mention de la source obligatoire, sens des données non altéré",
+      "cadence": "mensuelle (provisoire), annuelle (définitive)",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "commerce"
+      ],
+      "notes": "Commerce de biens par partenaire depuis 2000, Intrastat (UE) et Extrastat (hors UE). Aucune API documentée trouvée : export manuel depuis Infostat. Séries en leva jusqu'en 2025, en euros depuis l'adoption de l'euro le 01/01/2026 (1 € = 1,95583 BGN, Commission européenne). Domaines bloqués depuis la session : pas de commerce.json tant que les chiffres ne sont pas relevés à la source. Licence : https://www.nsi.bg/en/pages/license-to-use-statistical-information-produced-and-disseminated-by-the-national-statistical-institute-485",
+      "hotes": [
+        "nsi.bg",
+        "www.nsi.bg",
+        "infostat.nsi.bg"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "defense",
+      "nom": "Ministère de la Défense, communiqués sur les contingents à l'étranger",
+      "editeur": "Ministère de la Défense (Bulgarie)",
+      "url": "https://www.mod.bg/en/",
+      "type": "officiel",
+      "langue": "bg",
+      "licence": "non précisée",
+      "cadence": "irrégulière (à chaque rotation)",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences"
+      ],
+      "notes": "Seule l'Assemblée nationale autorise l'envoi de forces à l'étranger (déclaration du ministre de la Défense relayée par BTA). Le ministère a annoncé le 05/10/2026 environ 270 militaires dans cinq opérations OTAN et trois opérations UE, sans détail accessible. Chiffres relayés par l'agence BTA (source bta), à recouper sur mod.bg.",
+      "hotes": [
+        "www.mod.bg",
+        "mod.bg"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "parlement",
+      "nom": "Assemblée nationale, décisions et données des députés",
+      "editeur": "Assemblée nationale (Bulgarie)",
+      "url": "https://www.parliament.bg/",
+      "type": "officiel",
+      "langue": "bg",
+      "licence": "non précisée",
+      "cadence": "à chaque décision ; composition à chaque législature",
+      "api": true,
+      "api_url": "https://www.parliament.bg/api/v1/coll-list-ns/bg",
+      "format": "json",
+      "couches": [
+        "politique",
+        "presences",
+        "conflits"
+      ],
+      "notes": "API JSON publique non documentée, repérée via un outil tiers (https://skillsmp.com/creators/atanasster/electionsbg/claude-skills-parliament-scrape) : non testée. Décisions utilisées, relayées par la presse : aide militaire à l'Ukraine (04/05/2022 puis 03/11/2022, Sofia Globe) ; levée conditionnelle du veto sur la Macédoine du Nord (24/06/2022).",
+      "hotes": [
+        "www.parliament.bg",
+        "parliament.bg"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "dv",
+      "nom": "Journal officiel (Държавен вестник)",
+      "editeur": "Assemblée nationale (Bulgarie)",
+      "url": "https://dv.parliament.bg/",
+      "type": "officiel",
+      "langue": "bg",
+      "licence": "non précisée",
+      "cadence": "bihebdomadaire",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences",
+        "conflits"
+      ],
+      "notes": "Publie les décisions de l'Assemblée autorisant les déploiements à l'étranger et le stationnement de forces étrangères : source de preuve pour chaque présence.",
+      "hotes": [
+        "dv.parliament.bg"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "electoral",
+      "nom": "Commission électorale centrale, résultats officiels",
+      "editeur": "Commission électorale centrale (CIK, Bulgarie)",
+      "url": "https://results.cik.bg/",
+      "type": "officiel",
+      "langue": "bg",
+      "licence": "non précisée",
+      "cadence": "à chaque élection",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Résultats définitifs du 19/04/2026 relayés par Novinite (https://www.novinite.com/view_news.php?id=238183) : participation 51,11 %, Bulgarie progressiste 131 sièges, GERB 39, PP-DB 37. Format des fichiers non vérifié.",
+      "hotes": [
+        "results.cik.bg",
+        "www.cik.bg"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "gouvernement",
+      "nom": "Conseil des ministres, composition du gouvernement",
+      "editeur": "Conseil des ministres (Bulgarie)",
+      "url": "https://www.gov.bg/",
+      "type": "officiel",
+      "langue": "bg",
+      "licence": "non précisée",
+      "cadence": "à chaque changement",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique",
+        "presences"
+      ],
+      "notes": "Adopte les décisions d'application des mandats parlementaires (ex. participation à EUMAM Ukraine, contingent d'EUFOR Althea).",
+      "hotes": [
+        "www.gov.bg",
+        "gov.bg"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "mae",
+      "nom": "Ministère des Affaires étrangères, communiqués",
+      "editeur": "Ministère des Affaires étrangères (Bulgarie)",
+      "url": "https://www.mfa.bg/en/",
+      "type": "officiel",
+      "langue": "bg",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "conflits",
+        "sanctions"
+      ],
+      "notes": "Pas de liste nationale de sanctions : la Bulgarie applique les listes ONU et UE (déjà couvertes par la carte). Autorité compétente pour les restrictions de voyage (liste des autorités nationales de la Commission européenne). Projet de loi sur la mise en œuvre des sanctions internationales mis en consultation en février 2026 (BTA), adoption non confirmée. Expulsion de 70 diplomates russes annoncée le 28/06/2022 (Al Jazeera).",
+      "hotes": [
+        "www.mfa.bg",
+        "mfa.bg"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "dans",
+      "nom": "Agence d'État pour la sécurité nationale, direction du renseignement financier",
+      "editeur": "DANS / SANS (Bulgarie)",
+      "url": "https://www.dans.bg/",
+      "type": "officiel",
+      "langue": "bg",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "sanctions"
+      ],
+      "notes": "Autorité de gel des avoirs (sanctions financières ONU et UE), au titre de la loi sur les mesures contre le blanchiment. Ne publie pas de liste propre connue.",
+      "hotes": [
+        "www.dans.bg",
+        "dans.bg"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "bta",
+      "nom": "Agence télégraphique bulgare (BTA)",
+      "editeur": "BTA, agence de presse publique",
+      "url": "https://www.bta.bg/en/",
+      "type": "presse",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "quotidienne",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences",
+        "conflits",
+        "politique"
+      ],
+      "notes": "Retenue faute d'accès aux sites officiels : relaie les communiqués du ministère de la Défense et du Conseil des ministres. Articles utilisés : 270 militaires dans 8 opérations (https://www.bta.bg/en/news/bulgaria/884087-about-270-servicemen-take-part-in-five-nato-three-eu-operations) ; EUFOR Althea (https://bta.bg/en/news/590490-bulgaria-to-continue-to-participate-in-eu-military-operation-in-bosnia-and-herze) ; EUMAM Ukraine (https://www.bta.bg/en/news/bulgaria/407963-government-adopts-decision-implementing-national-assembly-decision-on-provision-). Pages lues via moteur de recherche uniquement.",
+      "hotes": [
+        "www.bta.bg",
+        "bta.bg"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "ipu",
+      "nom": "IPU Parline, élection du 19/04/2026",
+      "editeur": "Union interparlementaire",
+      "url": "https://data.ipu.org/parliament/BG/BG-LC01/election/BG-LC01-E20260419/",
+      "type": "international",
+      "langue": "en",
+      "licence": "CC BY-NC-SA 4.0",
+      "cadence": "à chaque élection",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Déjà branchée dans l'actualisation hebdomadaire. Codes partis IPU non relevés (domaine bloqué ici).",
+      "hotes": [
+        "data.ipu.org"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "wikidata",
+      "nom": "Wikidata, Bulgarie (Q219) : chef de l'État (P35), chef du gouvernement (P6), présidents de partis (P488)",
+      "editeur": "Wikimedia",
+      "url": "https://www.wikidata.org/wiki/Q219",
+      "type": "recherche",
+      "langue": "fr",
+      "licence": "CC0",
+      "cadence": "continue",
+      "api": true,
+      "api_url": "https://query.wikidata.org/sparql",
+      "format": "json",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Interrogée le 26/10/2026 : P6 = Roumen Radev depuis le 08/05/2026, P35 = Iliana Iotova depuis le 23/01/2026.",
+      "hotes": [
+        "www.wikidata.org",
+        "query.wikidata.org"
+      ],
+      "acces": "verifie"
+    }
+  ]
+}

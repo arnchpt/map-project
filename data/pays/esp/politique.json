@@ -1,0 +1,27 @@
+{
+  "pays": "ESP",
+  "verifie": "2026-10-26",
+  "chef_etat": { "nom": "Felipe VI", "fonction": "Roi d'Espagne", "parti": null, "depuis": "2014-06-19", "qid": "Q191045", "src": "wikidata" },
+  "chef_gouv": { "nom": "Pedro Sánchez", "fonction": "Président du gouvernement", "parti": "PSOE", "depuis": "2018-06-02", "qid": "Q6070218", "src": "moncloa-gobierno" },
+  "chambre": {
+    "nom": "Congreso de los Diputados",
+    "sieges": 350,
+    "majorite": 176,
+    "election": "2023-07-23",
+    "src": "infoelectoral",
+    "ipu": "ES-LC01-E20230723"
+  },
+  "partis": [
+    { "nom": "PP", "sieges": 137, "role": "hors", "leaders": "Alberto Núñez Feijóo (président)" },
+    { "nom": "PSOE", "sieges": 121, "role": "gouv", "leaders": "Pedro Sánchez (secrétaire général)" },
+    { "nom": "Vox", "sieges": 33, "role": "hors", "leaders": "Santiago Abascal (président)" },
+    { "nom": "Sumar", "sieges": 31, "role": "gouv", "leaders": "Yolanda Díaz (tête de liste en 2023)" },
+    { "nom": "ERC", "sieges": 7, "role": "hors", "leaders": "Oriol Junqueras (président)" },
+    { "nom": "Junts", "sieges": 7, "role": "hors", "leaders": "Carles Puigdemont (président)" },
+    { "nom": "EH Bildu", "sieges": 6, "role": "hors", "leaders": "Arnaldo Otegi (coordinateur général)" },
+    { "nom": "PNV", "sieges": 5, "role": "hors", "leaders": "Aitor Esteban (président depuis le 30/03/2025)" },
+    { "nom": "BNG", "sieges": 1, "role": "hors", "leaders": "Ana Pontón (porte-parole nationale)" },
+    { "nom": "Coalición Canaria", "sieges": 1, "role": "hors", "leaders": null },
+    { "nom": "UPN", "sieges": 1, "role": "hors", "leaders": null }
+  ]
+}

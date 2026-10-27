@@ -1,0 +1,30 @@
+{
+  "pays": "LVA",
+  "verifie": "2026-10-26",
+  "evenements": [
+    {
+      "avec": "UKR",
+      "k": "soutien",
+      "t": "Aide militaire à l'Ukraine",
+      "d": "Aide militaire déclarée depuis février 2022, engagement d'au moins 0,25 % du PIB par an ; environ 110 M€ en 2025 selon le ministère des Affaires étrangères.",
+      "date": "2022-02",
+      "src": "mae"
+    },
+    {
+      "avec": "RUS",
+      "k": "tension",
+      "t": "Sanctions nationales liées à l'agression russe",
+      "d": "Le Conseil des ministres a adopté le 12/09/2025 le règlement n° 547 créant un régime de sanctions nationales contre les personnes liées à l'agression militaire russe contre l'Ukraine.",
+      "date": "2025-09-12",
+      "src": "fid"
+    },
+    {
+      "avec": "BLR",
+      "k": "tension",
+      "t": "Régime renforcé à la frontière biélorusse",
+      "d": "Régime renforcé de protection de la frontière en vigueur depuis août 2021, prolongé le 30/06/2026 jusqu'au 31/12/2026, motivé par le gouvernement par une « pression hybride » de la Biélorussie.",
+      "date": "2021-08",
+      "src": "frontiere"
+    }
+  ]
+}

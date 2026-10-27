@@ -1,0 +1,30 @@
+{
+  "pays": "BGR",
+  "verifie": "2026-10-26",
+  "evenements": [
+    {
+      "avec": "UKR",
+      "k": "soutien",
+      "t": "Aide militaire à l'Ukraine",
+      "d": "L'Assemblée nationale autorise le 03/11/2022 la fourniture d'armes à l'Ukraine, après une aide limitée à la réparation de matériel votée le 04/05/2022.",
+      "date": "2022-11-03",
+      "src": "parlement"
+    },
+    {
+      "avec": "RUS",
+      "k": "tension",
+      "t": "Expulsion de 70 diplomates russes",
+      "d": "Le gouvernement annonce le 28/06/2022 l'expulsion de 70 membres du personnel diplomatique russe.",
+      "date": "2022-06-28",
+      "src": "mae"
+    },
+    {
+      "avec": "MKD",
+      "k": "tension",
+      "t": "Conditions à l'adhésion de la Macédoine du Nord à l'UE",
+      "d": "L'Assemblée nationale autorise le 24/06/2022 la levée du veto bulgare à l'ouverture des négociations d'adhésion, sous conditions.",
+      "date": "2022-06-24",
+      "src": "parlement"
+    }
+  ]
+}

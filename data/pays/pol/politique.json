@@ -1,0 +1,25 @@
+{
+  "pays": "POL",
+  "verifie": "2026-10-26",
+  "chef_etat": { "nom": "Karol Nawrocki", "fonction": "Président de la République", "parti": null, "depuis": "2025-08-06", "qid": "Q17704749", "src": "prezydent" },
+  "chef_gouv": { "nom": "Donald Tusk", "fonction": "Président du Conseil des ministres", "parti": "Coalition civique (KO)", "depuis": "2023-12-13", "qid": "Q946", "src": "kprm" },
+  "chambre": {
+    "nom": "Sejm",
+    "sieges": 460,
+    "majorite": 231,
+    "election": "2023-10-15",
+    "src": "pkw",
+    "ipu": "PL-LC01-E20231015"
+  },
+  "partis": [
+    { "nom": "Droit et justice (PiS)", "sieges": 194, "role": "hors", "leaders": "Jarosław Kaczyński (président, non reconfirmé)" },
+    { "nom": "Coalition civique (KO)", "sieges": 157, "role": "gouv", "leaders": "Donald Tusk (président de la Plateforme civique, non reconfirmé)" },
+    { "nom": "Troisième voie (PSL et Polska 2050)", "sieges": 65, "role": "gouv", "leaders": "Władysław Kosiniak-Kamysz (PSL, non reconfirmé), Katarzyna Pełczyńska-Nałęcz (Polska 2050, élue le 31/01/2026)", "src": "polskieradio" },
+    { "nom": "Gauche (Lewica)", "sieges": 26, "role": "gouv", "leaders": "non reconfirmé" },
+    { "nom": "Confédération (Konfederacja)", "sieges": 18, "role": "hors", "leaders": "Sławomir Mentzen et Krzysztof Bosak (non reconfirmé)" }
+  ],
+  "notes": [
+    "Sièges : listes du scrutin du 15/10/2023, figés jusqu'en 2027. Les clubs actuels du Sejm diffèrent (scission de Polska 2050 et création du club Centrum le 18/02/2026) : l'API du Sejm donne la composition du jour.",
+    "Le parti Razem, élu sur la liste Lewica, ne participe pas au gouvernement."
+  ]
+}

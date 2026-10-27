@@ -22,7 +22,7 @@
   --seq-1: #2d5075; --seq-2: #53727a; --seq-3: #8e8b63; --seq-4: #c7a656; --seq-5: #f4d88e;
   --pos: #8fd0a2; --neg: #f39a84;
   --mil: #e8a25a; --mil-soft: #6b4a26; --sov: #9fb3c8;
-  --c-engage: #f39a84; --c-retrait: #e9c25c; --c-sanction: #b9a2ec; --c-soutien: #8fd0a2;
+  --c-engage: #f39a84; --c-tension: #7cc3e6; --c-retrait: #e9c25c; --c-sanction: #b9a2ec; --c-soutien: #8fd0a2;
   --exp: #e6c579; --imp: #a9c3dc;
   --tie: #74d1bf; --tie-sanc: #c4a8f2; --comet: #fff4d6;
   --bg-glow: #10253d; --on-gold: #0a1828; --hatch-bg: #3a3220; --halo: rgba(4, 10, 20, .95);
@@ -39,7 +39,7 @@
   --seq-1: #f3caa3; --seq-2: #eda775; --seq-3: #e48b55; --seq-4: #c45f2b; --seq-5: #87391a;
   --pos: #2d7a4c; --neg: #b8391f;
   --mil: #b35a10; --mil-soft: #f5cfa3; --sov: #5f7389;
-  --c-engage: #c0392b; --c-retrait: #c98a1c; --c-sanction: #6a4c93; --c-soutien: #2f7d5b;
+  --c-engage: #c0392b; --c-tension: #2b6fa8; --c-retrait: #c98a1c; --c-sanction: #6a4c93; --c-soutien: #2f7d5b;
   --exp: #c45f2b; --imp: #3f6f99;
   --tie: #1f7a6c; --tie-sanc: #6a4c93; --comet: #1f7a6c;
   --bg-glow: #fff6e8; --on-gold: #fffaf1; --hatch-bg: #f7d9bd; --halo: rgba(255, 250, 241, .95);
@@ -51,7 +51,7 @@
   --seq-1: #f3caa3; --seq-2: #eda775; --seq-3: #e48b55; --seq-4: #c45f2b; --seq-5: #87391a;
   --pos: #2d7a4c; --neg: #b8391f;
   --mil: #b35a10; --mil-soft: #f5cfa3; --sov: #5f7389;
-  --c-engage: #c0392b; --c-retrait: #c98a1c; --c-sanction: #6a4c93; --c-soutien: #2f7d5b;
+  --c-engage: #c0392b; --c-tension: #2b6fa8; --c-retrait: #c98a1c; --c-sanction: #6a4c93; --c-soutien: #2f7d5b;
   --exp: #c45f2b; --imp: #3f6f99;
   --tie: #1f7a6c; --tie-sanc: #6a4c93; --comet: #1f7a6c;
   --bg-glow: #fff6e8; --on-gold: #fffaf1; --hatch-bg: #f7d9bd; --halo: rgba(255, 250, 241, .95);
@@ -326,7 +326,7 @@ const POLITIQUE = __POLITIQUE__;
 const frDate = iso => iso.split("-").reverse().join("/");
 const fresh = k => { const f = FRESH[k], late = (Date.now() - Date.parse(f.verifie)) / 864e5 > f.alerte_jours;
   return ` Données : ${f.donnees}, vérifiées le ${frDate(f.verifie)}${f.auto ? " (contrôle automatique)" : ""}.${late ? ` <span class="stale">Vérification en retard</span>` : ""}`; };
-let TY, F, TRADE, TW, TRADE_TOTAL, TOP, TRADE_NOTE, PRES, PRES_UNPLACED, EVENTS, SANCTIONS, VOTES;
+let NAT, TY, F, TRADE, TW, TRADE_TOTAL, TOP, TRADE_NOTE, PRES, PRES_UNPLACED, EVENTS, SANCTIONS, VOTES;
 const topOf = TRADE => Object.keys(TRADE).filter(id => TRADE[id].x != null && TRADE[id].m != null).sort((a, b) => (TRADE[b].x + TRADE[b].m) - (TRADE[a].x + TRADE[a].m)).slice(0, 11);
 // Écart avec les Douanes, très probablement l'« effet Rotterdam » : biens hors UE dédouanés à Anvers ou Rotterdam, puis comptés comme achats à la Belgique ou aux Pays-Bas
 const TRADE_NOTE_FR = { "528": "transit portuaire", "056": "transit portuaire", "156": "Douanes : 74,9 Md€ d'importations" };
@@ -353,7 +353,7 @@ const PRES_UNPLACED_FR = [
   { nom: "Autres missions ONU (Sahara occidental, RCA, RDC)", eff: "≈ 850" },
   { nom: "Mission Corymbe, golfe de Guinée", eff: "450" },
 ];
-const CAT = { pre: "Forces prépositionnées", dlia: "Liaison interarmées", ope: "Opération", otan: "OTAN", onu: "ONU", sov: "Territoire français" };
+const CAT = { pre: "Forces prépositionnées", dlia: "Liaison interarmées", ope: "Opération", otan: "OTAN", onu: "ONU", ue: "Mission de l'UE", sov: "Territoire national" };
 
 // Conflits et tensions : faits datés, une catégorie par fait
 const EVENTS_FR = [
@@ -377,6 +377,7 @@ const KIND = {
   soutien: { l: "Soutien à une partie en guerre", c: "var(--c-soutien)" },
   sanction: { l: "Sanctions de l'UE en vigueur", c: "var(--c-sanction)" },
   retrait: { l: "Retrait exigé par l'État hôte", c: "var(--c-retrait)" },
+  tension: { l: "Différend officiel", c: "var(--c-tension)" },
 };
 
 // Proximité diplomatique, fiche méthode v1 : score = min(0,6 × votes ONU + 0,4 × Jaccard organisations, plafond sanctions)
@@ -410,7 +411,12 @@ function setFocus(iso) {
   TOP = topOf(TRADE); VOTES = f.votes;
   const fr = iso === "FRA";
   TRADE_NOTE = fr ? TRADE_NOTE_FR : {};
-  PRES = fr ? PRES_FR : []; PRES_UNPLACED = fr ? PRES_UNPLACED_FR : []; EVENTS = fr ? EVENTS_FR : [];
+  // Faits nationaux : la France depuis ce gabarit, les autres pays depuis data/pays/<iso3>/ (f.nat, injecté au build)
+  const n = f.nat;
+  if (n) for (const [k, v] of Object.entries(n.src)) SRC[`${iso}:${k}`] = v;
+  const key = x => ({ ...x, s: SRC[`${iso}:${x.s}`] ? `${iso}:${x.s}` : x.s });
+  PRES = fr ? PRES_FR : n ? n.pres.map(key) : []; PRES_UNPLACED = fr ? PRES_UNPLACED_FR : n ? n.unplaced.map(key) : []; EVENTS = fr ? EVENTS_FR : n ? n.events.map(key) : [];
+  NAT = fr || !!n;
   SANCTIONS = f.sanctions;
 }
 setFocus("FRA");
@@ -484,13 +490,13 @@ function render() {
   renderFlows();
 
   // Points de présence
-  const pins = layer === "mil" ? PRES.map(p => ({ ...p, r: Math.max(4, Math.sqrt(p.eff) / 4.2) })) : [];
+  const pins = layer === "mil" ? PRES.map(p => ({ ...p, r: p.eff == null ? 4 : Math.max(4, Math.sqrt(p.eff) / 4.2) })) : [];
   gPins.selectAll("circle").data(pins, d => d.nom).join("circle")
     .attr("class", d => "pin " + (d.cat === "sov" ? "sov" : "mil"))
     .attr("transform", d => `translate(${proj([d.lon, d.lat])})`)
     .attr("r", d => d.r / Math.sqrt(k))
     .on("click", (e, d) => select(d.id || FR))
-    .on("mousemove", (e, d) => showTipHTML(e, `<b>${d.nom}</b><br>${CAT[d.cat]} · ${d.eff.toLocaleString("fr-FR")} militaires`))
+    .on("mousemove", (e, d) => showTipHTML(e, `<b>${d.nom}</b><br>${CAT[d.cat]} · ${effTxt(d.eff)}${d.nv ? " · source non vérifiée" : ""}`))
     .on("mouseleave", hideTip);
 
   renderLegend(); renderPanel();
@@ -561,15 +567,15 @@ function renderLegend() {
     <span class="it"><span class="dot" style="background:var(--imp)"></span>importations</span>
     <span class="it"><span class="ln pos"></span>excédent</span><span class="it"><span class="ln neg"></span>déficit</span>
     <span class="it">épaisseur = volume</span></div>`;
-  if (layer === "mil" && F !== "FRA") L.innerHTML = `<span class="ttl">Présences militaires : pas encore renseignées pour ${FN().le}</span>`;
-  else if (layer === "mil") L.innerHTML = `<span class="ttl">Militaires français déployés, sept. 2026</span>
+  if (layer === "mil" && !NAT) L.innerHTML = `<span class="ttl">Présences militaires : pas encore renseignées pour ${FN().le}</span>`;
+  else if (layer === "mil") L.innerHTML = `<span class="ttl">${F === "FRA" ? "Militaires français déployés, sept. 2026" : `Présences militaires déclarées ${FN().du}, relevé du ${frDate(FN().nat.verifie)}`}</span>
     <div class="items"><span class="it"><span class="dot" style="background:var(--mil)"></span>À l'étranger</span>
-    <span class="it"><span class="dot" style="background:var(--sov)"></span>Outre-mer</span>
+    <span class="it"><span class="dot" style="background:var(--sov)"></span>${sovLabel()}</span>
     <span class="it">Taille du point = effectif</span></div>
     <span style="color:var(--muted)">Présences reconnues officiellement. Les présences non déclarées n'apparaissent pas.</span>`;
-  if (layer === "conf" && F !== "FRA") L.innerHTML = `<span class="ttl">Conflits et tensions : pas encore renseignés pour ${FN().le}</span>`;
-  else if (layer === "conf") L.innerHTML = `<span class="ttl">Faits datés impliquant la France</span>
-    <div class="items">${Object.values(KIND).map(v => `<span class="it"><span class="sw" style="background:${v.c}"></span>${v.l}</span>`).join("")}</div>`;
+  if (layer === "conf" && !NAT) L.innerHTML = `<span class="ttl">Conflits et tensions : pas encore renseignés pour ${FN().le}</span>`;
+  else if (layer === "conf") L.innerHTML = `<span class="ttl">Faits datés impliquant ${FN().le}</span>
+    <div class="items">${Object.values(KIND).filter(v => EVENTS.some(e => KIND[e.k] === v)).map(v => `<span class="it"><span class="sw" style="background:${v.c}"></span>${v.l}</span>`).join("")}</div>`;
   if (layer === "dipl") L.innerHTML = `<span class="ttl">Proximité diplomatique avec ${FN().le}, score 0–100</span>
     <div class="items">${D_CLASSES.map(d => `<span class="it"><span class="sw" style="background:var(${d.c})"></span>${d.l}</span>`).join("")}
     <span class="it"><span class="sw" style="background:var(--land);outline:1px solid var(--land-edge)"></span>pas de donnée</span>
@@ -580,7 +586,11 @@ function renderLegend() {
 
 // ---- Fiche ----
 const P = document.getElementById("panel");
-const srcLink = key => `<a href="${SRC[key].u}" target="_blank" rel="noopener">${SRC[key].t}</a>`;
+const NV = ` <span class="stale" title="Source citée mais pas encore relue : son site n'était pas accessible lors du relevé">non vérifié</span>`;
+const srcLink = key => SRC[key] ? `<a href="${SRC[key].u}" target="_blank" rel="noopener">${SRC[key].t}</a>${SRC[key].nv ? NV : ""}` : "source non renseignée";
+const effTxt = e => e == null ? "effectif non publié" : `${e.toLocaleString("fr-FR")} militaires`;
+const effVal = e => e == null ? "n.c." : e.toLocaleString("fr-FR");
+const sovLabel = () => F === "FRA" ? "Outre-mer" : "Hors métropole";
 const TITLES = { trade: "Commerce de biens", mil: "Présences militaires", conf: "Conflits et tensions", dipl: "Proximité diplomatique" };
 
 function renderPanel() {
@@ -637,29 +647,32 @@ function franceSheet() {
       ${F === "FRA" ? `<p class="note"><b>Lecture.</b> Un produit chinois dédouané à Rotterdam ou Anvers apparaît très probablement ici comme un achat aux Pays-Bas ou à la Belgique (« effet Rotterdam »). Les Douanes françaises comptent 74,9 Md€ d'importations depuis la Chine (Hong Kong inclus) en 2025, contre 51,9 Md$ ici.</p>` : ""}
       <div class="src">Source : ${srcLink("imf")}. Exportations FOB, importations CIF, déclarées par ${FN().le}.${fresh("commerce")}${F === "FRA" ? ` Comparaison : ${srcLink("tresor")}.` : ""}${F === "RUS" ? " La Russie ne publie plus le détail de son commerce depuis 2022 : ces chiffres sont probablement estimés par le FMI à partir des déclarations de ses partenaires." : ""}</div>`;
   }
-  if ((layer === "mil" || layer === "conf") && F !== "FRA") {
-    h += `<p class="sub">Couche pas encore renseignée pour ${FN().le}. Seule la France l'est pour l'instant : ces faits sont relevés source par source, pas calculés.</p>`;
+  if ((layer === "mil" || layer === "conf") && !NAT) {
+    h += `<p class="sub">Couche pas encore renseignée pour ${FN().le}. Ces faits sont relevés source par source, pas calculés.</p>`;
   }
   else if (layer === "mil") {
-    const ab = PRES.filter(p => p.cat !== "sov").sort((a, b) => b.eff - a.eff), ov = PRES.filter(p => p.cat === "sov");
-    const tot = d3.sum(ab, p => p.eff);
+    const ab = PRES.filter(p => p.cat !== "sov").sort((a, b) => (b.eff ?? -1) - (a.eff ?? -1)), ov = PRES.filter(p => p.cat === "sov");
+    const tot = d3.sum(ab, p => p.eff), nc = ab.filter(p => p.eff == null).length;
+    const srcs = [...new Set([...PRES, ...PRES_UNPLACED].map(p => p.s))];
     h += `<div class="kpis">
       <div class="kpi"><span class="v">${ab.length}</span><span class="l">Pays avec présence placée</span></div>
-      <div class="kpi"><span class="v">${tot.toLocaleString("fr-FR")}</span><span class="l">Militaires dans ces pays</span></div>
-      <div class="kpi"><span class="v">${d3.sum(ov, p => p.eff).toLocaleString("fr-FR")}</span><span class="l">En outre-mer</span></div></div>
+      <div class="kpi"><span class="v">${nc === ab.length ? "n.c." : tot.toLocaleString("fr-FR")}</span><span class="l">Militaires dans ces pays${nc ? ` (${nc} effectif${nc > 1 ? "s" : ""} non publié${nc > 1 ? "s" : ""})` : ""}</span></div>
+      <div class="kpi"><span class="v">${!ov.length ? "—" : ov.every(p => p.eff == null) ? ov.length : d3.sum(ov, p => p.eff).toLocaleString("fr-FR")}</span><span class="l">${ov.length && ov.every(p => p.eff == null) ? `Implantations ${sovLabel().toLowerCase()}` : sovLabel()}</span></div></div>
       <div class="grp"><span class="eyebrow">À l'étranger</span><div class="list">
-      ${ab.map(p => `<div class="row" tabindex="0" data-id="${p.id}"><span class="n">${nom(p.id)}</span><span class="val">${p.eff.toLocaleString("fr-FR")}</span><span class="d">${p.nom} · ${CAT[p.cat]}</span></div>`).join("")}
+      ${ab.map(p => `<div class="row" tabindex="0" data-id="${p.id}"><span class="n">${nom(p.id)}</span><span class="val">${effVal(p.eff)}</span><span class="d">${p.nom} · ${CAT[p.cat]}${F === "FRA" ? "" : ` · ${srcLink(p.s)}`}</span></div>`).join("")}
       </div></div>
       <div class="grp"><span class="eyebrow">Sans pays précis</span><div class="list">
-      ${PRES_UNPLACED.map(p => `<div class="row" style="cursor:default"><span class="n">${p.nom}</span><span class="val">${p.eff}</span></div>`).join("")}
+      ${PRES_UNPLACED.map(p => `<div class="row" style="cursor:default"><span class="n">${p.nom}</span><span class="val">${p.eff}</span>${F === "FRA" ? "" : `<span class="d">${srcLink(p.s)}</span>`}</div>`).join("")}
       </div></div>
       <p class="note">Présences reconnues officiellement. Les présences non déclarées n'apparaissent pas. Cette règle favorise les États transparents : un pays qui publie ses déploiements paraît plus présent qu'un pays opaque.</p>
-      <div class="src">Source : ${srcLink("armees")}. Vérifié le ${CHECKED}. Statut : ${presStatus()} (non reconfirmé après 24 mois, retiré après 36). Retraits récents : voir la couche Conflits et tensions.</div>`;
+      ${F === "FRA" ? `<div class="src">Source : ${srcLink("armees")}. Vérifié le ${CHECKED}. Statut : ${presStatus()} (non reconfirmé après 24 mois, retiré après 36). Retraits récents : voir la couche Conflits et tensions.</div>`
+        : `<div class="src">Sources : ${srcs.map(srcLink).join(" · ")}. Relevé du ${frDate(FN().nat.verifie)}. « Non vérifié » : la source est citée, mais son site n'était pas accessible lors du relevé pour recouper le chiffre.</div>`}`;
   }
   else if (layer === "conf") {
     h += `<p class="sub">Uniquement des faits datés et sourcés. Aucune appréciation de l'intensité d'une tension.</p>`;
     for (const [kk, v] of Object.entries(KIND)) {
       const ev = EVENTS.filter(e => e.k === kk);
+      if (!ev.length) continue;
       h += `<div class="grp"><span class="eyebrow" style="display:flex;gap:6px;align-items:center"><span class="sw" style="background:${v.c}"></span>${v.l}</span><div class="list">
         ${ev.map(e => `<div class="row" tabindex="0" data-id="${e.id}"><span class="n">${nom(e.id)}</span><span class="val"></span><span class="d">${e.t}. ${srcLink(e.s)}</span></div>`).join("")}</div></div>`;
     }
@@ -700,7 +713,8 @@ function otherSheet(id) {
   const iso = Object.keys(FOCUS).find(k => FOCUS[k].num === id);
   if (iso && POLITIQUE.pays[iso]) h += politicsBlock(iso);
   if (F === "FRA") h += `<div class="grp"><span class="eyebrow">Présence militaire française</span>` + (pres.length ? pres.map(p => `<div class="row" style="cursor:default"><span class="n">${p.nom}</span><span class="val">${p.eff.toLocaleString("fr-FR")}</span><span class="d">${CAT[p.cat]} · ${presStatus()}, vérifié le ${CHECKED} · ${srcLink("armees")}</span></div>`).join("") : `<p class="empty">Aucune présence rattachée à ce pays sur la page du ministère des Armées.</p>`) + `</div>`;
-  if (F === "FRA") h += `<div class="grp"><span class="eyebrow">Conflits et tensions</span>` + (ev.length ? ev.map(e => `<div class="row" style="cursor:default"><span class="n"><span class="sw" style="background:${KIND[e.k].c};margin-right:6px"></span>${e.t}</span><span class="val"></span><span class="d">${e.d} ${srcLink(e.s)}</span></div>`).join("") : `<p class="empty">Aucun fait recensé dans ce prototype.</p>`) + `</div>`;
+  else if (NAT) h += `<div class="grp"><span class="eyebrow">Présence militaire ${FN().du}</span>` + (pres.length ? pres.map(p => `<div class="row" style="cursor:default"><span class="n">${p.nom}</span><span class="val">${effVal(p.eff)}</span><span class="d">${CAT[p.cat]} · ${srcLink(p.s)}</span></div>`).join("") : `<p class="empty">Aucune présence déclarée dans ce pays par les sources ${FN().du}.</p>`) + `</div>`;
+  if (NAT) h += `<div class="grp"><span class="eyebrow">Conflits et tensions</span>` + (ev.length ? ev.map(e => `<div class="row" style="cursor:default"><span class="n"><span class="sw" style="background:${KIND[e.k].c};margin-right:6px"></span>${e.t}</span><span class="val"></span><span class="d">${e.d} ${srcLink(e.s)}</span></div>`).join("") : `<p class="empty">Aucun fait recensé.</p>`) + `</div>`;
   const dp = diplo(id);
   h += `<div class="grp"><span class="eyebrow">Proximité diplomatique</span><div class="kpis">
       <div class="kpi"><span class="v">${dp.v == null ? "—" : dp.v}</span><span class="l">Votes ONU ${VOTES_PERIOD} (60 %)</span></div>
@@ -729,8 +743,8 @@ function showTip(e, id) {
   let line = "";
   if (id === FR) line = `Cliquez pour la fiche ${FN().nom}`;
   else if (layer === "trade") { const t = TRADE[id]; line = t && t.x != null && t.m != null ? `Échanges : ${fmt(t.x + t.m)} Md$ · solde ${signed(t.x - t.m)}` : "Pas de donnée FMI"; }
-  else if ((layer === "mil" || layer === "conf") && F !== "FRA") line = "Couche pas encore renseignée pour le pays choisi";
-  else if (layer === "mil") { const p = PRES.find(p => p.id === id); line = p ? `${p.eff.toLocaleString("fr-FR")} militaires français` : "Pas de présence française recensée"; }
+  else if ((layer === "mil" || layer === "conf") && !NAT) line = "Couche pas encore renseignée pour le pays choisi";
+  else if (layer === "mil") { const ps = PRES.filter(p => p.id === id); line = ps.length ? ps.map(p => F === "FRA" ? `${effTxt(p.eff)} français` : `${p.nom} · ${effTxt(p.eff)}`).join("<br>") : `Pas de présence ${FN().du} recensée`; }
   else if (layer === "conf") { const ev = EVENTS.filter(e => e.id === id); line = ev.length ? ev.map(e => e.t).join("<br>") : "Aucun fait recensé"; }
   else if (layer === "dipl") { const dp = diplo(id), s = shared(id); line = (dp.score == null ? "Pas de donnée de vote" : `Score ${Math.round(dp.score)} · votes ${dp.v} · organisations ${dp.j}`) + "<br>" + (s.length ? `Organisations communes : ${s.join(", ")} (indice ${jaccard(id)})` : "Aucune organisation commune") + (SANCTIONS[id] ? `<br>Sanctions : score plafonné à ${SANCTIONS[id].plafond}` : ""); }
   showTipHTML(e, `<b>${nom(id)}</b><br>${line}`);

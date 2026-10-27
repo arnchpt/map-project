@@ -1,0 +1,78 @@
+{
+  "pays": "SVN",
+  "verifie": "2026-10-26",
+  "chef_etat": {
+    "nom": "Nataša Pirc Musar",
+    "fonction": "Présidente de la République",
+    "parti": null,
+    "depuis": "2022-12-22",
+    "qid": "Q12797332",
+    "src": "wikidata"
+  },
+  "chef_gouv": {
+    "nom": "Janez Janša",
+    "fonction": "Président du gouvernement",
+    "parti": "SDS",
+    "depuis": "2026-06-04",
+    "qid": "Q57627",
+    "src": "wikidata"
+  },
+  "chambre": {
+    "nom": "Državni zbor (Assemblée nationale)",
+    "sieges": 90,
+    "majorite": 46,
+    "election": "2026-03-22",
+    "src": "dvk",
+    "ipu": "SI-LC01-E20260322"
+  },
+  "partis": [
+    {
+      "nom": "Gibanje Svoboda",
+      "sieges": 29,
+      "role": "hors",
+      "leaders": "Robert Golob (président)"
+    },
+    {
+      "nom": "SDS",
+      "sieges": 28,
+      "role": "gouv",
+      "leaders": "Janez Janša (président)"
+    },
+    {
+      "nom": "NSi–SLS–Fokus",
+      "sieges": 9,
+      "role": "gouv",
+      "leaders": "Jernej Vrtovec (NSi), Tina Bregant (SLS), Marko Lotrič (Fokus)"
+    },
+    {
+      "nom": "SD",
+      "sieges": 6,
+      "role": "hors",
+      "leaders": "Matjaž Han (président)"
+    },
+    {
+      "nom": "Demokrati",
+      "sieges": 6,
+      "role": "gouv",
+      "leaders": "Anže Logar (président)"
+    },
+    {
+      "nom": "Levica in Vesna",
+      "sieges": 5,
+      "role": "hors",
+      "leaders": "Asta Vrečko et Luka Mesec (Levica), Urša Zgojznik et Uroš Macerl (Vesna)"
+    },
+    {
+      "nom": "Resni.ca",
+      "sieges": 5,
+      "role": "hors",
+      "leaders": "Zoran Stevanović (président de l'Assemblée nationale) ; soutien au gouvernement sans participation"
+    },
+    {
+      "nom": "Députés des minorités italienne et hongroise",
+      "sieges": 2,
+      "role": "hors",
+      "leaders": "2 sièges réservés"
+    }
+  ]
+}

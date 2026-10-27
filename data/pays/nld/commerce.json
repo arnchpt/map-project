@@ -1,0 +1,36 @@
+{
+  "pays": "NLD",
+  "verifie": "2026-10-26",
+  "src": "cbs-handelsland",
+  "annee": 2025,
+  "devise": "EUR",
+  "unite": "Md",
+  "concept": "commerce national CBS (réexportations incluses, quasi-transit exclu), chiffres provisoires",
+  "total": {
+    "x": 654.8,
+    "m": 581.9
+  },
+  "partenaires": [
+    {
+      "pays": "DEU",
+      "x": 145.1,
+      "m": 98.5
+    },
+    {
+      "pays": "USA",
+      "x": 32.2,
+      "m": 57.3
+    },
+    {
+      "pays": "CHN",
+      "x": 18.7,
+      "m": 48.5
+    }
+  ],
+  "notes": {
+    "NLD": "Effet Rotterdam. Le FMI (IMTS, relevé le 26/10/2026) donne pour 2025 963,3 Md$ d'exportations et 866,0 Md$ d'importations, soit environ 1,5 fois les totaux CBS en euros : l'écart dépasse largement l'effet de change et correspond au quasi-transit, que le CBS exclut et qu'Eurostat (donc le FMI) inclut. Sources : cbs-quasi, eurostat-rotterdam. Liste limitée à 3 partenaires dont exportations et importations 2025 ont pu être relevées ; les 10 premiers viendront de StatLine une fois l'hôte ouvert.",
+    "CHN": "Importations : 48,5 Md€ selon le CBS contre 127,9 Md$ selon le FMI. Le FMI compte les biens chinois débarqués à Rotterdam puis réexpédiés vers le reste de l'UE ; le CBS les exclut quand ils restent propriété étrangère (quasi-transit).",
+    "DEU": "Exportations : 145,1 Md€ selon le CBS contre 233,8 Md$ selon le FMI. Le FMI inclut le quasi-transit réexpédié vers l'Allemagne ; la part exacte n'est pas publiée par partenaire dans StatLine.",
+    "USA": "Importations : 57,3 Md€ selon le CBS contre 78,3 Md$ selon le FMI."
+  }
+}

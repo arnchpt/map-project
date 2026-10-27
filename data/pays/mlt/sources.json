@@ -1,0 +1,222 @@
+{
+  "pays": "MLT",
+  "verifie": "2026-10-26",
+  "sources": [
+    {
+      "id": "afm",
+      "nom": "Armed Forces of Malta, pages « Overseas Operations » et « UNIFIL »",
+      "editeur": "Armed Forces of Malta (ministère de l'Intérieur, de la Sécurité et de l'Emploi)",
+      "url": "https://afm.gov.mt/operations-deployments/",
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences"
+      ],
+      "notes": "Page UNIFIL : https://afm.gov.mt/united-nations-interim-force-in-lebanon-unifil/ (déploiement au sein du bataillon irlandais depuis novembre 2018). La page « Overseas Operations » cite UNIFIL, l'OSCE et Frontex, sans effectifs à jour. Domaine bloqué depuis l'environnement de travail (403 au proxy) : relevé par moteur de recherche, page non lue en direct. Contributions citées hors source officielle et donc non retenues : Aspides (2 militaires à l'état-major de Larissa, MaltaToday 2024), Frontex à Chios (4 militaires, publication LinkedIn non datée), EUMM Géorgie et Atalanta (Wikipédia).",
+      "hotes": [
+        "afm.gov.mt"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "defie",
+      "nom": "Forces de défense irlandaises, note d'information du 126e bataillon d'infanterie (UNIFIL)",
+      "editeur": "Óglaigh na hÉireann / Defence Forces Ireland",
+      "url": "https://military.ie/en/news-and-events/news/126-bn-briefing-note-15-apr-25.docx",
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "à chaque rotation (≈ 6 mois)",
+      "api": false,
+      "api_url": null,
+      "format": "docx",
+      "couches": [
+        "presences"
+      ],
+      "notes": "Source de l'État co-déployant (le contingent maltais est intégré au bataillon irlandais). 126e bataillon, avril 2025 : 308 personnels dont 10 des AFM. 123e bataillon : 9 Maltais sur 343. Effectif à relire à chaque rotation ; pas de chiffre maltais officiel plus récent trouvé.",
+      "hotes": [
+        "military.ie"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "parlement",
+      "nom": "Parlement de Malte, 15e législature, groupes politiques",
+      "editeur": "Parliament of Malta",
+      "url": "https://parlament.mt/15th-leg/political-groups/",
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "à chaque élection",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Une page par député sous /15th-leg/political-groups/<parti>/<nom>/ (dates d'élection et de serment). Pas d'API ni d'export publié. Domaine bloqué depuis l'environnement de travail (403 au proxy).",
+      "hotes": [
+        "parlament.mt",
+        "www.parlament.mt"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "electoral",
+      "nom": "Electoral Commission, résultats des élections générales",
+      "editeur": "Electoral Commission Malta",
+      "url": "https://electoral.gov.mt/ElectionResults/General",
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "à chaque élection",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Élection du 30/05/2026. Communiqué du premier dépouillement : https://electoral.gov.mt/pr-31-05-26-en (312 129 votants, Parti travailliste 158 444 voix, Parti nationaliste 136 723). Sièges : 36 PL et 29 PN élus dans les 13 circonscriptions, + 2 PN au titre du mécanisme de correction proportionnelle, + 6 PL et 6 PN au titre du mécanisme de parité (article 52A de la Constitution), soit 42 et 37 sur 79. Le nombre de sièges de la chambre varie d'une législature à l'autre (65 de base + sièges correctifs). Concordant avec l'IPU Parline (MT-LC01-E20260530) ; codes partis IPU non relevés (api.data.ipu.org bloqué depuis l'environnement).",
+      "hotes": [
+        "electoral.gov.mt"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "gouvernement",
+      "nom": "Portail du gouvernement maltais, composition du gouvernement",
+      "editeur": "Government of Malta",
+      "url": "https://www.gov.mt/",
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "à chaque changement",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Nouveau gouvernement Abela assermenté le 04/06/2026 (TVM, chaîne publique : https://tvmnews.mt/en/news/prime-minister-robert-abela-appoints-ministers-and-parliamentary-secretaries-for-new-legislature/). Certaines pages ministérielles de gov.mt datent de 2020 et ne sont plus à jour. Chefs d'État et de gouvernement recoupés avec Wikidata (Q233, P35 et P6) le 26/10/2026.",
+      "hotes": [
+        "www.gov.mt",
+        "tvmnews.mt"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "pn",
+      "nom": "Partit Nazzjonalista, fiche du député Alex Borg",
+      "editeur": "Partit Nazzjonalista",
+      "url": "https://pn.org.mt/en/mps/alex-borg-2/",
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Élu chef du parti le 06/09/2025, chef de l'opposition depuis le 10/09/2025 (Wikipédia indique le 07/09/2025 pour la direction du parti).",
+      "hotes": [
+        "pn.org.mt"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "smb",
+      "nom": "Sanctions Monitoring Board, sanctions UE, ONU et nationales",
+      "editeur": "Sanctions Monitoring Board (ministère des Affaires étrangères)",
+      "url": "https://smb.gov.mt/news/national-sanctions/",
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "irrégulière (à chaque acte UE ou ONU)",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "sanctions"
+      ],
+      "notes": "Base légale : National Interest (Enabling Powers) Act, chapitre 365, refondu le 14/11/2025 (loi XXXV de 2025). Les sanctions UE et ONU s'appliquent directement. Un seul régime national publié : Legal Notice 259 de 2020 (https://legislation.mt/eli/ln/2020/259/eng), qui interdit l'exportation ou le transbordement vers la Libye de navires pouvant servir au trafic de migrants ; aucune liste nationale de personnes désignées trouvée. Liste « article 19(5) » publiée sur le même site. Alertes de mise à jour par courriel sur inscription, pas de flux machine. Domaine bloqué depuis l'environnement de travail.",
+      "hotes": [
+        "smb.gov.mt",
+        "legislation.mt"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "constitution",
+      "nom": "Constitution de Malte, article 1(3) (neutralité)",
+      "editeur": "Legislation Malta (ministère de la Justice)",
+      "url": "https://legislation.mt/eli/const/eng",
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences",
+        "autre"
+      ],
+      "notes": "Malte est neutre, pratique le non-alignement, refuse toute alliance militaire et n'autorise aucune base militaire étrangère sur son territoire ; les installations militaires ne peuvent être utilisées par des forces étrangères qu'à la demande du gouvernement maltais dans des cas limités (légitime défense, mesures du Conseil de sécurité de l'ONU, menace contre la souveraineté ou la neutralité). D'où l'absence de présence étrangère à recenser à Malte.",
+      "hotes": [
+        "legislation.mt"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "nso",
+      "nom": "National Statistics Office, communiqués mensuels « International Trade in Goods »",
+      "editeur": "National Statistics Office Malta",
+      "url": "https://nso.gov.mt/international_trade_in_goods/",
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "mensuelle (≈ 40 jours après le mois)",
+      "api": false,
+      "api_url": null,
+      "format": "pdf",
+      "couches": [
+        "commerce"
+      ],
+      "notes": "Communiqués PDF (ex. https://nso.gov.mt/international-trade-in-goods-july-2026/) : totaux, part UE, principales hausses et baisses par partenaire, sans tableau complet des 10 premiers partenaires. Ventilation détaillée fournie sur demande payante (https://nso.gov.mt/international-trade-data-requests/). Pas d'API trouvée ; le portail portal.data.gov.mt liste 62 jeux NSO sans licence affichée. commerce.json non produit : la carte reste sur le FMI. Pour un recoupement automatisable, Eurostat Comext (même déclarations Intrastat et douane) serait la voie, hors source nationale. Domaine bloqué depuis l'environnement de travail.",
+      "hotes": [
+        "nso.gov.mt",
+        "portal.data.gov.mt"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "mfea",
+      "nom": "Ministère des Affaires étrangères et du Commerce, communiqués",
+      "editeur": "Ministry for Foreign Affairs (Malta)",
+      "url": "https://foreignandeu.gov.mt/",
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "conflits",
+        "sanctions"
+      ],
+      "notes": "Aucun engagement armé, soutien militaire déclaré à une partie en guerre, retrait exigé ou différend officiel en cours relevé : conflits.json vide. La délimitation du plateau continental avec la Libye a été tranchée par la CIJ en 1985. Domaine bloqué depuis l'environnement de travail.",
+      "hotes": [
+        "foreignandeu.gov.mt"
+      ],
+      "acces": "non_verifie"
+    }
+  ]
+}

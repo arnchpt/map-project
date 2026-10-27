@@ -1,0 +1,30 @@
+{
+  "pays": "ESP",
+  "verifie": "2026-10-26",
+  "evenements": [
+    {
+      "avec": "UKR",
+      "k": "soutien",
+      "t": "Aide militaire à l'Ukraine",
+      "d": "Livraisons de matériel militaire déclarées par le gouvernement depuis 2022 ; accord bilatéral de sécurité signé à Madrid le 27/05/2024.",
+      "date": "2022-02",
+      "src": "moncloa-cm"
+    },
+    {
+      "avec": "ISR",
+      "k": "tension",
+      "t": "Embargo sur les armes à destination d'Israël",
+      "d": "Décret-loi 10/2025 publié au BOE le 24/09/2025, consolidant l'embargo appliqué depuis octobre 2023, validé par le Congreso le 08/10/2025.",
+      "date": "2025-09-24",
+      "src": "boe"
+    },
+    {
+      "avec": "GBR",
+      "k": "tension",
+      "t": "Revendication de souveraineté sur Gibraltar",
+      "d": "Revendication maintenue par l'Espagne ; accord politique UE–Royaume-Uni sur le statut post-Brexit de Gibraltar annoncé le 11/06/2025.",
+      "date": "2025-06-11",
+      "src": "exteriores"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "pays": "ITA",
+  "verifie": "2026-10-26",
+  "evenements": [
+    {
+      "avec": "UKR",
+      "k": "soutien",
+      "t": "Cessions de matériels militaires à l'Ukraine",
+      "d": "Cessions autorisées par décret-loi depuis mars 2022 et prorogées chaque année ; listes des matériels classifiées.",
+      "date": "2022-03",
+      "src": "normattiva"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "pays": "PRT",
+  "verifie": "2026-10-26",
+  "presences": [
+    {
+      "hote": "MOZ",
+      "lon": 32.6,
+      "lat": -26.0,
+      "nom": "Mission de renforcement des capacités au Mozambique (plafond autorisé : 25 militaires, 4 mois)",
+      "cat": "dlia",
+      "eff": 25,
+      "depuis": "2026-04",
+      "src": "dr"
+    },
+    {
+      "hote": "SOM",
+      "lon": 45.3,
+      "lat": 2.0,
+      "nom": "EUTM Somalia, état-major de la mission (plafond autorisé : 4 militaires)",
+      "cat": "ue",
+      "eff": 4,
+      "depuis": null,
+      "src": "dr"
+    },
+    {
+      "hote": null,
+      "lon": -27.1,
+      "lat": 38.8,
+      "nom": "Base aérienne n.º 4 des Lajes (Açores), utilisée par les États-Unis en vertu de l'accord de coopération et de défense de 1995",
+      "cat": "sov",
+      "eff": null,
+      "depuis": null,
+      "src": "dr"
+    }
+  ],
+  "non_localisees": [
+    {
+      "nom": "Police du ciel de l'OTAN dans les pays baltes (Baltic Air Policing)",
+      "eff": "146",
+      "src": "defesa_mi"
+    },
+    {
+      "nom": "Opération maritime de l'OTAN Sea Guardian",
+      "eff": "82 (4 moyens)",
+      "src": "defesa_mi"
+    },
+    {
+      "nom": "tailored Forward Presence de l'OTAN, états-majors multinationaux du Sud-Est (plafond autorisé)",
+      "eff": "≤ 5",
+      "src": "dr"
+    },
+    {
+      "nom": "Activités de vigilance renforcée de l'OTAN (eVA)",
+      "eff": "non publié",
+      "src": "dr"
+    }
+  ]
+}

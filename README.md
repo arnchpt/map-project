@@ -15,19 +15,20 @@ Principe : « le contenu dicte le contexte ». Les couleurs et les scores sont c
 |---|---|
 | `src/template.html` | La page : styles, faits France (présences, conflits, sanctions UE), carte (d3 + topojson), sélecteur du pays choisi. Contient trois emplacements remplis au build. |
 | `data/names.json` | Noms de pays en français, par code ISO numérique. |
-| `data/votes/votes-<pays>.json` | Proximité des votes à l'ONU entre un pays focus et tous les autres, 0–100 (échelle absolue), produite par `scripts/votes_kappa.py`. 11 pays calculés : FRA, USA, CHN, RUS, DEU, GBR, IND, JPN, ITA, CAN, KOR. |
+| `data/votes/votes-<pays>.json` | Proximité des votes à l'ONU entre un pays focus et tous les autres, 0–100 (échelle absolue), produite par `scripts/votes_kappa.py`. 35 pays calculés : les 11 du top 10 (FRA, USA, CHN, RUS, DEU, GBR, IND, JPN, ITA, CAN, KOR) et les 24 autres membres de l'UE. |
 | `data/pays/<iso3>/` | Données nationales de chaque pays de l'UE, depuis ses propres sources : inventaire des sources, présences militaires, conflits et tensions, forces politiques, commerce national. Contrat et modèle dans `data/pays/README.md` et `data/pays/_modele/`, contrôle par `scripts/valider-pays.js`. |
-| `data/politique/politique.json` | Forces politiques des 11 pays : chefs d'État et de gouvernement, sièges de la dernière élection, dirigeants de partis, avec sources. |
+| `data/politique/politique.json` | Forces politiques des 11 pays du top 10 (les autres membres de l'UE sont dans `data/pays/<iso3>/politique.json`) : chefs d'État et de gouvernement, sièges de la dernière élection, dirigeants de partis, avec sources. |
+| `scripts/politique-pays.js` | Réunit `politique.json` et les relevés nationaux `data/pays/<iso3>/politique.json` pour les contrôles IPU et Wikidata. |
 | `scripts/ipu-sieges.js` | Sièges par parti à la dernière élection, API IPU Parline, contrôle hebdomadaire. |
 | `scripts/politique.js` | Contrôle les chefs d'État et de gouvernement contre Wikidata (détecteur d'écarts, n'écrit rien dans les données). |
 | `scripts/build.js` | Liste les pays du sélecteur (nom, capitale, membre de l'UE), calcule le plafond sanctions de chaque paire et injecte fond de carte, noms, commerce, votes et plafonds dans le gabarit. |
 | `data/sanctions.json` | Mesures de sanctions retenues (qui sanctionne qui, source de chaque mesure) et règle de plafonnement validée le 26/10/2026. À revoir à chaque renouvellement d'un régime. |
-| `data/trade/trade-<pays>.json` | Commerce de biens d'un pays focus par partenaire, 2025 et 2024, en Md$, produit par `scripts/imts.js`. Mêmes 11 pays. |
+| `data/trade/trade-<pays>.json` | Commerce de biens d'un pays focus par partenaire, 2025 et 2024, en Md$, produit par `scripts/imts.js`. Mêmes 35 pays. |
 | `scripts/imts.js` | Interroge l'API publique du FMI (IMTS, sans clé) et écrit les échanges par partenaire. |
 | `data/orgs.json` | Liste fermée des 15 organisations et de leurs membres pleins, validée à la main. |
 | `data/freshness.json` | Fraîcheur de chaque couche (période couverte, dernière vérification), affichée sur la carte. |
 | `data/check/orgs-wikidata.json` | Membres des organisations selon Wikidata, dernier relevé (sert à détecter les changements). |
-| `scripts/refresh-trade.js` | Actualise le commerce des 11 pays depuis le FMI et contrôle les nouveaux chiffres. |
+| `scripts/refresh-trade.js` | Actualise le commerce des 35 pays depuis le FMI et contrôle les nouveaux chiffres. |
 | `scripts/orgs-wikidata.js` | Compare les organisations avec Wikidata et produit un rapport des écarts. |
 | `.github/workflows/actualisation.yml` | Actualisation automatique quotidienne (voir plus bas). |
 | `.github/workflows/veille-sanctions.yml`, `scripts/veille-sanctions.js` | Veille mensuelle des régimes de sanctions (voir plus bas). |
@@ -112,7 +113,7 @@ Limite : la veille voit la création ou la levée d'un régime, pas un allègeme
 
 ```sh
 pip install numpy pandas pyreadr country_converter
-python3 scripts/votes_kappa.py UNVotes.RData data/votes FRA,USA,CHN,RUS,DEU,GBR,IND,JPN,ITA,CAN,KOR
+python3 scripts/votes_kappa.py UNVotes.RData data/votes FRA,USA,CHN,RUS,DEU,GBR,IND,JPN,ITA,CAN,KOR,AUT,BEL,BGR,HRV,CYP,CZE,DNK,EST,FIN,GRC,HUN,IRL,LVA,LTU,LUX,MLT,NLD,POL,PRT,ROU,SVK,SVN,ESP,SWE
 ```
 
 Score = (kappa + 1) / 2 × 100 : 50 = pas plus d'accord que le hasard, au-dessus = votent ensemble, en dessous = votent l'un contre l'autre. L'échelle est la même pour tous les pays focus, donc les scores se comparent d'un pays à l'autre. L'ancienne échelle relative (100 = partenaire le plus aligné du pays focus) reste disponible avec `--echelle relative`.
@@ -129,7 +130,7 @@ Score = (kappa + 1) / 2 × 100 : 50 = pas plus d'accord que le hasard, au-dessus
 
 ## Pays couverts
 
-Le sélecteur propose 11 pays, retenus le 26/10/2026 : moyenne des rangs au PIB nominal 2025 (FMI, WEO d'octobre 2026) et aux dépenses militaires 2025 ([SIPRI, avril 2026](https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025)). Dans l'ordre : États-Unis, Chine, Allemagne, Royaume-Uni, Inde, Russie (ex aequo), Japon, France, Italie, puis Canada et Corée du Sud à égalité pour la 10e place (tous deux gardés). L'Arabie saoudite suit juste après.
+Le sélecteur propose 11 pays, retenus le 26/10/2026 : moyenne des rangs au PIB nominal 2025 (FMI, WEO d'octobre 2026) et aux dépenses militaires 2025 ([SIPRI, avril 2026](https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025)). Dans l'ordre : États-Unis, Chine, Allemagne, Royaume-Uni, Inde, Russie (ex aequo), Japon, France, Italie, puis Canada et Corée du Sud à égalité pour la 10e place (tous deux gardés). L'Arabie saoudite suit juste après. Depuis le 27/10/2026, les 24 autres membres de l'UE s'y ajoutent (35 pays) : commerce, votes, organisations et sanctions sont calculés comme pour les autres ; présences militaires, conflits et forces politiques viennent des sources nationales de chaque pays (`data/pays/`). Une source citée mais dont le site n'a pas pu être relu porte la mention « non vérifié ».
 
 Pour ces pays, commerce et proximité diplomatique sont calculés. Présences militaires, conflits et tensions ne sont renseignés que pour la France. Le plafond lié aux sanctions ne s'applique qu'aux pays de l'UE (France, Allemagne, Italie) : la règle pour les régimes des autres pays reste à définir.
 

@@ -1,0 +1,353 @@
+{
+  "pays": "PRT",
+  "verifie": "2026-10-26",
+  "sources": [
+    {
+      "id": "ine",
+      "nom": "INE, commerce international de biens par pays partenaire",
+      "editeur": "Instituto Nacional de Estatística (PRT)",
+      "url": "https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_api",
+      "type": "officiel",
+      "langue": "pt",
+      "licence": "non précisée (conditions d'utilisation du portail INE à lire)",
+      "cadence": "mensuelle (estimation rapide trimestrielle)",
+      "api": true,
+      "api_url": "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=<code_indicateur>&lang=PT",
+      "format": "json",
+      "couches": [
+        "commerce"
+      ],
+      "notes": "API publique sans clé (paramètres op, varcd, Dim1…, d'après le paquet R ineptr2). Code de l'indicateur « commerce par pays partenaire » non identifié : à relever sur le portail. Domaine bloqué depuis la session, commerce.json non produit.",
+      "hotes": [
+        "www.ine.pt"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "gee",
+      "nom": "GEE, Síntese do Comércio Internacional (mensuelle)",
+      "editeur": "Gabinete de Estratégia e Estudos, ministère de l'Économie (PRT)",
+      "url": "https://www.gee.gov.pt/lista-publicacoes/10570-seci-n-6-2026",
+      "type": "officiel",
+      "langue": "pt",
+      "licence": "non précisée",
+      "cadence": "mensuelle",
+      "api": false,
+      "api_url": null,
+      "format": "pdf",
+      "couches": [
+        "commerce"
+      ],
+      "notes": "Reprend les données INE avec parts par partenaire (T1 2026 : Espagne 26,1 %, France 12,6 %, Allemagne 12,2 % des exportations, d'après un extrait de recherche non relu). PDF : sert au recoupement, pas à l'automatisation.",
+      "hotes": [
+        "www.gee.gov.pt"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "bpstat",
+      "nom": "BPstat, balance des paiements et séries statistiques",
+      "editeur": "Banco de Portugal",
+      "url": "https://bpstat.bportugal.pt/data/docs",
+      "type": "officiel",
+      "langue": "pt",
+      "licence": "non précisée (accès gratuit sans inscription)",
+      "cadence": "mensuelle",
+      "api": true,
+      "api_url": "https://bpstat.bportugal.pt/data/v1/series/?series_ids=<id>&lang=PT",
+      "format": "json-stat",
+      "couches": [
+        "commerce",
+        "autre"
+      ],
+      "notes": "API en deux temps : /series/ donne domaine et jeu de données, puis /domains/{d}/datasets/{ds}/. Utile pour les services et la balance courante par pays, que l'INE ne couvre pas.",
+      "hotes": [
+        "bpstat.bportugal.pt"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "defesa_mi",
+      "nom": "Ministère de la Défense nationale, page « Missões Internacionais »",
+      "editeur": "Ministério da Defesa Nacional (PRT)",
+      "url": "https://www.defesa.gov.pt/pt/pdefesa/mi",
+      "type": "officiel",
+      "langue": "pt",
+      "licence": "non précisée",
+      "cadence": "trimestrielle (mention « Última atualização » sur la page)",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences"
+      ],
+      "notes": "Liste les missions avec effectifs (FND, END, AMN-PM). Extraits de recherche : Baltic Air Policing 146, Sea Guardian 82 militaires et 4 moyens, VJTF maritime 4, 22 missions actives et 871 effectifs au 3e trimestre. Page non lue directement : chiffres et date à relire.",
+      "hotes": [
+        "www.defesa.gov.pt"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "dgpdn",
+      "nom": "DGPDN, rapports trimestriels « Envolvimento de militares no exterior »",
+      "editeur": "Direção-Geral de Política de Defesa Nacional (PRT)",
+      "url": "https://www.defesa.gov.pt/pt/comunicacao/documentos/Lists/PDEFINTER_DocumentoLookupList/20240123-Relatorio_Envolvimento-militares-exterior_4TRI-2023.pdf",
+      "type": "officiel",
+      "langue": "pt",
+      "licence": "non précisée",
+      "cadence": "trimestrielle (dernier rapport trouvé : 4e trimestre 2023)",
+      "api": false,
+      "api_url": null,
+      "format": "pdf",
+      "couches": [
+        "presences"
+      ],
+      "notes": "Chiffres issus du Commandement conjoint des opérations (EMGFA), de la Police maritime et de la DGPDN. Aucun rapport 2026 trouvé par recherche : publication peut-être interrompue.",
+      "hotes": [
+        "www.defesa.gov.pt"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "emgfa",
+      "nom": "EMGFA, Forces nationales déployées (FND)",
+      "editeur": "Estado-Maior-General das Forças Armadas (PRT)",
+      "url": "https://www.emgfa.pt",
+      "type": "officiel",
+      "langue": "pt",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences"
+      ],
+      "notes": "État-major des armées : source primaire des effectifs déployés. Page des missions non trouvée par recherche.",
+      "hotes": [
+        "www.emgfa.pt"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "dr",
+      "nom": "Diário da República, portarias de financement des FND et actes officiels",
+      "editeur": "Imprensa Nacional-Casa da Moeda (PRT)",
+      "url": "https://diariodarepublica.pt/dr/detalhe/portaria/199-2026-1080928229",
+      "type": "officiel",
+      "langue": "pt",
+      "licence": "réutilisation des documents publics (loi n.º 68/2021, transposition de la directive 2019/1024) ; licence exacte non précisée",
+      "cadence": "quotidienne",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences",
+        "politique",
+        "sanctions"
+      ],
+      "notes": "Chaque mission FND fait l'objet d'une portaria signée par le ministre de la Défense, avec plafond d'effectif et durée : confirmation par l'État déployeur. Les effectifs repris ici sont des plafonds autorisés, pas des effectifs constatés. Publie aussi le mapa oficial des élections et la loi n.º 97/2017 (mesures restrictives).",
+      "hotes": [
+        "diariodarepublica.pt"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "parlamento",
+      "nom": "Assembleia da República, données ouvertes",
+      "editeur": "Assembleia da República (PRT)",
+      "url": "https://www.parlamento.pt/Cidadania/paginas/dadosabertos.aspx",
+      "type": "officiel",
+      "langue": "pt",
+      "licence": "réutilisation libre avec mention de la source (selon la page Dados Abertos)",
+      "cadence": "à chaque changement (députés, groupes, activité)",
+      "api": true,
+      "api_url": "https://www.parlamento.pt/Cidadania/paginas/dadosabertos.aspx",
+      "format": "json",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Jeux XML et JSON par législature (registre biographique, composition, activité). URL exacte des fichiers de la XVIIe législature non relevée : les liens de téléchargement sont sur la page Dados Abertos et peuvent pointer vers un autre hôte.",
+      "hotes": [
+        "www.parlamento.pt"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "cne",
+      "nom": "CNE, mapa oficial des résultats de l'élection de l'Assemblée de la République du 18/05/2025",
+      "editeur": "Comissão Nacional de Eleições (PRT)",
+      "url": "https://www.cne.pt",
+      "type": "officiel",
+      "langue": "pt",
+      "licence": "non précisée",
+      "cadence": "à chaque élection",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Le mapa oficial est publié au Diário da República. Sièges repris ici d'après la RTP citant ce mapa (AD 91 = PSD 89 + CDS-PP 2) : à relire sur le mapa.",
+      "hotes": [
+        "www.cne.pt",
+        "diariodarepublica.pt"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "sgmai",
+      "nom": "SGMAI, résultats électoraux",
+      "editeur": "Secretaria-Geral do Ministério da Administração Interna (PRT)",
+      "url": "https://www.eleicoes.mai.gov.pt",
+      "type": "officiel",
+      "langue": "pt",
+      "licence": "non précisée",
+      "cadence": "à chaque élection",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Résultats provisoires ; les pourcentages diffèrent du mapa CNE (base votes exprimés ou votants).",
+      "hotes": [
+        "www.eleicoes.mai.gov.pt"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "governo",
+      "nom": "Portail du gouvernement, composition du XXVe gouvernement constitutionnel",
+      "editeur": "Governo da República Portuguesa",
+      "url": "https://www.portugal.gov.pt/pt/gc25",
+      "type": "officiel",
+      "langue": "pt",
+      "licence": "non précisée",
+      "cadence": "à chaque changement",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique",
+        "conflits"
+      ],
+      "notes": "",
+      "hotes": [
+        "www.portugal.gov.pt",
+        "portugal.gov.pt"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "presidencia",
+      "nom": "Présidence de la République",
+      "editeur": "Presidência da República Portuguesa",
+      "url": "https://www.presidencia.pt",
+      "type": "officiel",
+      "langue": "pt",
+      "licence": "non précisée",
+      "cadence": "à chaque changement",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique"
+      ],
+      "notes": "",
+      "hotes": [
+        "www.presidencia.pt"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "mne",
+      "nom": "Ministère des Affaires étrangères, Portal Diplomático (mesures restrictives, communiqués)",
+      "editeur": "Ministério dos Negócios Estrangeiros (PRT)",
+      "url": "https://portaldiplomatico.mne.gov.pt",
+      "type": "officiel",
+      "langue": "pt",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "sanctions",
+        "conflits"
+      ],
+      "notes": "Autorités nationales compétentes pour les mesures restrictives (loi n.º 97/2017) : DGPE du MNE et GPEARI du ministère des Finances. Le Portugal applique les sanctions ONU et UE, sans régime national autonome identifié : rien à ajouter à la couche sanctions UE.",
+      "hotes": [
+        "portaldiplomatico.mne.gov.pt"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "dados_gov",
+      "nom": "dados.gov.pt, catalogue national de données ouvertes",
+      "editeur": "Agência para a Modernização Administrativa (PRT)",
+      "url": "https://dados.gov.pt",
+      "type": "officiel",
+      "langue": "pt",
+      "licence": "variable selon le jeu de données",
+      "cadence": "continue",
+      "api": true,
+      "api_url": "https://dados.gov.pt/api/1/datasets/",
+      "format": "json",
+      "couches": [
+        "autre"
+      ],
+      "notes": "API de type udata (hypothèse non vérifiée). Point d'entrée pour retrouver les jeux INE, AR et ministères.",
+      "hotes": [
+        "dados.gov.pt"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "wikidata",
+      "nom": "Wikidata, Portugal (Q45) : chef de l'État (P35), chef du gouvernement (P6)",
+      "editeur": "Wikimedia Foundation",
+      "url": "https://www.wikidata.org/wiki/Q45",
+      "type": "international",
+      "langue": "fr",
+      "licence": "CC0",
+      "cadence": "continue",
+      "api": true,
+      "api_url": "https://query.wikidata.org/sparql",
+      "format": "json",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Requête du 2026-10-26 : P35 = António José Seguro depuis 2026-03-09, P6 = Luís Montenegro depuis 2024-04-02.",
+      "hotes": [
+        "www.wikidata.org",
+        "query.wikidata.org"
+      ],
+      "acces": "verifie"
+    },
+    {
+      "id": "presse",
+      "nom": "Presse portugaise (RTP, Renascença, Sábado)",
+      "editeur": "RTP, Rádio Renascença, Sábado",
+      "url": "https://www.rtp.pt/noticias/politica/jose-manuel-pureza-e-o-novo-coordenador-do-bloco-de-esquerda_n1701681",
+      "type": "presse",
+      "langue": "pt",
+      "licence": "droits réservés (faits seulement)",
+      "cadence": "quotidienne",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique",
+        "conflits"
+      ],
+      "notes": "Utilisée faute de source officielle lue : dirigeants de partis (Pureza élu coordinateur du BE le 30/11/2025, Sousa Real réélue porte-parole du PAN le 20/12/2025) et accord Portugal–Ukraine du 28/05/2024 (RTP).",
+      "hotes": [
+        "www.rtp.pt",
+        "rr.pt",
+        "www.sabado.pt"
+      ],
+      "acces": "non_verifie"
+    }
+  ]
+}

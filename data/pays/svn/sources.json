@@ -1,0 +1,248 @@
+{
+  "pays": "SVN",
+  "verifie": "2026-10-26",
+  "sources": [
+    {
+      "id": "surs",
+      "nom": "SiStat, Izvoz in uvoz po državah (tables 2490003S mensuelle, 2490004S annuelle)",
+      "editeur": "Statistični urad Republike Slovenije (SURS)",
+      "url": "https://pxweb.stat.si/SiStatData/pxweb/sl/Data/-/2490004S.px",
+      "type": "officiel",
+      "langue": "sl",
+      "licence": "Réutilisation libre et gratuite, y compris commerciale, avec mention « Vir: SURS » et signalement des modifications (page Copyright de stat.si)",
+      "cadence": "mensuelle (données provisoires), annuelle définitive",
+      "api": true,
+      "api_url": "https://pxweb.stat.si/SiStatData/api/v1/sl/Data/2490004S.px",
+      "format": "json (API PxWeb, requête POST, sortie json-stat ou csv)",
+      "couches": [
+        "commerce"
+      ],
+      "notes": "Exportations par pays de destination ; importations intra-UE par pays d'expédition, extra-UE par pays d'origine. La Suisse est le premier partenaire à l'importation en 2025 (16,4 Md€ selon la diffusion SURS reprise par izvoznookno.si) : opérations de travail à façon pharmaceutique, écart attendu avec le FMI. Tables aussi publiées sur podatki.gov.si (jeux surs2490003s, surs2490004s). commerce.json non rempli : domaine bloqué, chiffres non relus à la source.",
+      "hotes": [
+        "pxweb.stat.si",
+        "www.stat.si",
+        "podatki.gov.si"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "mo",
+      "nom": "Ministrstvo za obrambo, thème « Mednarodne operacije in misije »",
+      "editeur": "Ministrstvo za obrambo Republike Slovenije",
+      "url": "https://www.gov.si/teme/mednarodne-operacije-in-misije/",
+      "type": "officiel",
+      "langue": "sl",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences"
+      ],
+      "notes": "Chaque déploiement repose sur une décision du gouvernement (art. 37 de la loi sur la défense). Bilan publié : environ 300 militaires dans 12 opérations et missions (décembre 2024, juin 2025), sans liste chiffrée par mission sur la page.",
+      "hotes": [
+        "www.gov.si"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "sv",
+      "nom": "Slovenska vojska, « International Operations and Missions » et communiqués de relève des contingents",
+      "editeur": "Slovenska vojska (forces armées slovènes)",
+      "url": "https://www.slovenskavojska.si/en/in-the-service-of-peace/international-operations-and-missions/",
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "irrégulière (communiqué à chaque relève, en général semestrielle)",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences"
+      ],
+      "notes": "Page non datée : 12 missions, environ 300 militaires. Relèves 2025-2026 : 53e contingent KFOR le 23/04/2026 (base de Novo Selo), 6e contingent en Slovaquie (111 militaires, terrain de Lešť), SVNKON 49 en Bosnie-Herzégovine. Missions citées dans des sources plus anciennes mais non reconfirmées en 2025-2026 : FINUL (Liban), ONUST, Irak (coalition contre Daech, NMI), EUNAVFOR MED Irini, contribution en Allemagne.",
+      "hotes": [
+        "www.slovenskavojska.si"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "sv_revija",
+      "nom": "Revija Slovenska vojska n° 12, décembre 2025",
+      "editeur": "Ministrstvo za obrambo Republike Slovenije",
+      "url": "https://www.gov.si/assets/ministrstva/MO/Revija-SV/2025/SV_revija-DEC-2025-splet.pdf",
+      "type": "officiel",
+      "langue": "sl",
+      "licence": "non précisée",
+      "cadence": "mensuelle",
+      "api": false,
+      "api_url": null,
+      "format": "pdf",
+      "couches": [
+        "presences"
+      ],
+      "notes": "Donne 109 militaires dans la KFOR et des contingents en Bosnie-Herzégovine, Lettonie, Allemagne, Kosovo et Slovaquie.",
+      "hotes": [
+        "www.gov.si"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "dz",
+      "nom": "Državni zbor, données ouvertes XML (députés, groupes, séances, votes nominatifs)",
+      "editeur": "Državni zbor Republike Slovenije",
+      "url": "https://podatki.gov.si/dataset/dzglasovanja-dz",
+      "type": "officiel",
+      "langue": "sl",
+      "licence": "CC BY 4.0 (podatki.gov.si)",
+      "cadence": "quotidienne (XML régénéré toutes les 24 h selon la page « Podatki v obliki XML »)",
+      "api": true,
+      "api_url": "https://podatki.gov.si/dataset/dzglasovanja-dz",
+      "format": "xml (schémas XSD publiés)",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Fichiers servis par fotogalerija.dz-rs.si, indexés sur podatki.gov.si (API CKAN). Votes nominatifs par législature depuis le 3e mandat.",
+      "hotes": [
+        "www.dz-rs.si",
+        "fotogalerija.dz-rs.si",
+        "podatki.gov.si"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "dvk",
+      "nom": "Državna volilna komisija, élections à l'Assemblée nationale du 22 mars 2026",
+      "editeur": "Državna volilna komisija (DVK)",
+      "url": "https://volitve.dvk-rs.si/dz2026/",
+      "type": "officiel",
+      "langue": "sl",
+      "licence": "non précisée",
+      "cadence": "à chaque élection",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Résultat officiel publié au Uradni list. La DVK décrit des fichiers de données pour les médias (www.dvk-rs.si, « Volitve v Državni zbor RS 2026 – datoteke s podatki »), format non relu. Sièges : GS 29, SDS 28, NSi-SLS-Fokus 9, SD 6, Demokrati 6, Levica in Vesna 5, Resni.ca 5, plus 2 sièges réservés aux minorités italienne et hongroise.",
+      "hotes": [
+        "volitve.dvk-rs.si",
+        "www.dvk-rs.si"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "vlada",
+      "nom": "Vlada Republike Slovenije, composition et communiqués",
+      "editeur": "Vlada Republike Slovenije",
+      "url": "https://www.gov.si/drzavni-organi/vlada/",
+      "type": "officiel",
+      "langue": "sl",
+      "licence": "non précisée",
+      "cadence": "à chaque changement",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique",
+        "conflits",
+        "sanctions"
+      ],
+      "notes": "Janez Janša élu Premier ministre par l'Assemblée le 22/05/2026 (51 voix contre 36), gouvernement nommé le 04/06/2026. Coalition SDS, NSi-SLS-Fokus, Demokrati (43 sièges), avec le soutien sans participation de Resni.ca.",
+      "hotes": [
+        "www.gov.si"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "mzez",
+      "nom": "Ministrstvo za zunanje in evropske zadeve, communiqués",
+      "editeur": "Ministrstvo za zunanje in evropske zadeve Republike Slovenije",
+      "url": "https://www.gov.si/drzavni-organi/ministrstva/ministrstvo-za-zunanje-in-evropske-zadeve/",
+      "type": "officiel",
+      "langue": "sl",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "conflits",
+        "sanctions"
+      ],
+      "notes": "Position officielle sur la frontière avec la Croatie (sentence arbitrale de 2017) et sur les mesures restrictives.",
+      "hotes": [
+        "www.gov.si"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "pisrs",
+      "nom": "PISRS, Zakon o omejevalnih ukrepih (ZOUPAMO) et actes d'application",
+      "editeur": "Ministrstvo za pravosodje / Služba Vlade za zakonodajo",
+      "url": "https://pisrs.si/",
+      "type": "officiel",
+      "langue": "sl",
+      "licence": "non précisée",
+      "cadence": "à chaque modification",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "sanctions"
+      ],
+      "notes": "Loi qui transpose en droit slovène les sanctions de l'ONU et de l'UE ; une mesure purement nationale passe par un décret du gouvernement publié au Uradni list (www.uradni-list.si). Les sanctions UE elles-mêmes viennent de la couche commune.",
+      "hotes": [
+        "pisrs.si",
+        "www.uradni-list.si"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "cpa",
+      "nom": "Cour permanente d'arbitrage, affaire 2012-04 Croatie/Slovénie, sentence du 29 juin 2017",
+      "editeur": "Cour permanente d'arbitrage",
+      "url": "https://pca-cpa.org/en/cases/",
+      "type": "international",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "figée",
+      "api": false,
+      "api_url": null,
+      "format": "html, pdf",
+      "couches": [
+        "conflits"
+      ],
+      "notes": "Arrêt de la CJUE du 31/01/2020 (affaire C-457/18, Slovénie c. Croatie) : la Cour se déclare incompétente (curia.europa.eu).",
+      "hotes": [
+        "pca-cpa.org",
+        "curia.europa.eu"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "wikidata",
+      "nom": "Wikidata, chefs de l'État et du gouvernement (P35, P6) et dirigeants de partis (P488)",
+      "editeur": "Wikimedia Foundation",
+      "url": "https://www.wikidata.org/wiki/Q215",
+      "type": "recherche",
+      "langue": "fr",
+      "licence": "CC0",
+      "cadence": "continue",
+      "api": true,
+      "api_url": "https://query.wikidata.org/sparql",
+      "format": "json (SPARQL)",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Relu le 26/10/2026 : P35 Nataša Pirc Musar depuis le 22/12/2022, P6 Janez Janša depuis le 04/06/2026.",
+      "hotes": [
+        "www.wikidata.org",
+        "query.wikidata.org"
+      ],
+      "acces": "verifie"
+    }
+  ]
+}
