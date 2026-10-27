@@ -1,45 +1,53 @@
 {
   "pays": "LUX",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "presences": [
     {
       "hote": "LTU",
       "lon": 24.2,
       "lat": 55.1,
-      "nom": "Présence avancée renforcée de l'OTAN en Lituanie (Forward Land Forces, groupement sous commandement allemand, Rukla)",
+      "nom": "Présence avancée renforcée de l'OTAN en Lituanie (Forward Land Forces, groupement sous commandement allemand, Rukla) : transport et liaison satellitaire",
       "cat": "otan",
-      "eff": null,
+      "eff": 7,
       "depuis": null,
-      "src": "cetat"
+      "src": "chd_def"
     },
     {
       "hote": "ROU",
       "lon": 24.8,
       "lat": 45.9,
-      "nom": "Activités de vigilance renforcée de l'OTAN en Roumanie (peloton de reconnaissance, Cincu)",
+      "nom": "Présence avancée renforcée de l'OTAN en Roumanie (Forward Land Forces, commandement français) : peloton de reconnaissance et équipe satellite",
       "cat": "otan",
-      "eff": null,
-      "depuis": "2023-03",
+      "eff": 26,
+      "depuis": null,
       "src": "chd_def"
     },
     {
       "hote": "DEU",
-      "lon": 13.4,
-      "lat": 52.5,
-      "nom": "Mission d'assistance militaire de l'UE en soutien à l'Ukraine (EUMAM Ukraine), formation en Allemagne",
+      "lon": 13.9,
+      "lat": 52.6,
+      "nom": "EUMAM Ukraine : état-major de formation de Strausberg et instructeurs (1 permanent, au plus 5 en rotation)",
       "cat": "ue",
-      "eff": null,
+      "eff": 6,
       "depuis": null,
-      "src": "defense"
+      "src": "chd_def"
     }
   ],
   "non_localisees": [
-    { "nom": "Opération navale de l'UE en Méditerranée (EUNAVFOR MED Irini)", "eff": "non publié", "src": "chd_def" },
-    { "nom": "Mission de l'UE au Mozambique (équipe de communication par satellite, deux séjours par an)", "eff": "non publié", "src": "chd_def" }
+    {
+      "nom": "EUNAVFOR MED Irini : détachement d'avion de patrouille maritime fourni par un prestataire civil, 6 personnes à Sigonella (Sicile) et 2 analystes au quartier général de Rome",
+      "eff": "8 (sans militaires)",
+      "src": "chd_def"
+    },
+    {
+      "nom": "EUMAM Mozambique : liaison satellitaire depuis le Luxembourg, équipe de 2 militaires sur place deux fois par an",
+      "eff": "aucune présence permanente",
+      "src": "chd_def"
+    }
   ],
   "notes": [
-    "Total publié en commission le 17/06/2026 : 19 militaires, dont 17 déployés, dans trois missions OTAN et trois missions UE (effectif par mission non relevé).",
-    "KFOR (Kosovo) non reprise : participation autorisée du 01/04/2025 au 31/05/2026 (au plus 10 militaires) et annoncée comme se terminant en juin 2026.",
-    "Lituanie : participation prolongée jusqu'au 31/12/2027 (projet de règlement grand-ducal). Roumanie : autorisation jusqu'au 01/07/2027."
+    "Situation au 25/02/2026 (procès-verbal de la Chambre) : 19 militaires dont 17 déployés. Roumanie : 26 est l'effectif annoncé pour fin avril 2026, 3 étaient sur place au 25/02/2026 (mi-mission et formation sur de nouveaux véhicules).",
+    "KFOR (Kosovo) non reprise : le détachement luxembourgeois devait rentrer à la mi-avril 2026 (autorisation jusqu'au 31/05/2026).",
+    "Plafonds d'autorisation (Conseil d'État) : Lituanie dix militaires par rotation, prolongation jusqu'au 31/12/2027 ; Roumanie trente militaires au plus."
   ]
 }

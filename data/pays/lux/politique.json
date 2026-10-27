@@ -1,31 +1,111 @@
 {
   "pays": "LUX",
-  "verifie": "2026-10-26",
-  "chef_etat": { "nom": "Guillaume", "fonction": "Grand-Duc (chef de l'État)", "parti": null, "depuis": "2025-10-03", "qid": "Q161319", "src": "gouvernement" },
-  "chef_gouv": { "nom": "Luc Frieden", "fonction": "Premier ministre", "parti": "CSV (Parti populaire chrétien-social)", "depuis": "2023-11-17", "qid": "Q592101", "src": "gouvernement" },
+  "verifie": "2026-10-27",
+  "chef_etat": {
+    "nom": "Guillaume",
+    "fonction": "Grand-Duc (chef de l'État)",
+    "parti": null,
+    "depuis": "2025-10-03",
+    "qid": "Q161319",
+    "src": "avenement"
+  },
+  "chef_gouv": {
+    "nom": "Luc Frieden",
+    "fonction": "Premier ministre",
+    "parti": "CSV (Parti populaire chrétien-social)",
+    "depuis": "2023-11-17",
+    "qid": "Q592101",
+    "src": "gouvernement"
+  },
   "chambre": {
     "nom": "Chambre des Députés",
     "sieges": 60,
     "majorite": 31,
     "election": "2023-10-08",
-    "src": "elections",
+    "src": "gouvernement",
     "ipu": "LU-LC01-E20231008"
   },
   "partis": [
-    { "nom": "CSV (Parti populaire chrétien-social)", "sieges": 21, "role": "gouv", "leaders": "Luc Frieden (président du parti, selon Wikidata)", "qid": "Q1344670" },
-    { "nom": "DP (Parti démocratique)", "sieges": 14, "role": "gouv", "leaders": "Carole Hartmann (présidente du parti depuis 2025, selon Wikidata)", "qid": "Q1029792" },
-    { "nom": "LSAP (Parti ouvrier socialiste luxembourgeois)", "sieges": 11, "role": "hors", "leaders": "Dan Biancalana et Francine Closener (coprésidents, non reconfirmé)", "qid": "Q1070311" },
-    { "nom": "ADR (Parti réformiste d'alternative démocratique)", "sieges": 5, "role": "hors", "leaders": "Alexandra Schoos (présidente du parti depuis 2024, selon Wikidata)", "qid": "Q339280" },
-    { "nom": "déi gréng (Les Verts)", "sieges": 4, "role": "hors", "leaders": "non relevé", "qid": "Q767761" },
-    { "nom": "Piraten (Parti pirate)", "sieges": 3, "role": "hors", "leaders": "Starsky Flor (président, non reconfirmé)", "qid": "Q3079953" },
-    { "nom": "déi Lénk (La Gauche)", "sieges": 2, "role": "hors", "leaders": "non relevé (pas de président unique)", "qid": "Q1270494" }
+    {
+      "nom": "CSV (Parti populaire chrétien-social)",
+      "sieges": 21,
+      "role": "gouv",
+      "leaders": "Luc Frieden (président du parti, selon Wikidata)",
+      "qid": "Q1344670",
+      "ipu": [
+        "lu-christian_social_party_pcscsv"
+      ]
+    },
+    {
+      "nom": "DP (Parti démocratique)",
+      "sieges": 14,
+      "role": "gouv",
+      "leaders": "Carole Hartmann (présidente du parti depuis 2025, selon Wikidata)",
+      "qid": "Q1029792",
+      "ipu": [
+        "lu-democrat_party_pddp"
+      ]
+    },
+    {
+      "nom": "LSAP (Parti ouvrier socialiste luxembourgeois)",
+      "sieges": 11,
+      "role": "hors",
+      "leaders": "Dan Biancalana et Francine Closener (coprésidents, non reconfirmé)",
+      "qid": "Q1070311",
+      "ipu": [
+        "lu-socialist_workers_party_posllsap"
+      ]
+    },
+    {
+      "nom": "ADR (Parti réformiste d'alternative démocratique)",
+      "sieges": 5,
+      "role": "hors",
+      "leaders": "Alexandra Schoos (présidente du parti depuis 2024, selon Wikidata)",
+      "qid": "Q339280",
+      "ipu": [
+        "lu-alternative_democratic_reform_party_adr"
+      ]
+    },
+    {
+      "nom": "déi gréng (Les Verts)",
+      "sieges": 4,
+      "role": "hors",
+      "leaders": "non relevé",
+      "qid": "Q767761",
+      "ipu": [
+        "lu-greens_dei_gr__ng"
+      ]
+    },
+    {
+      "nom": "Piraten (Parti pirate)",
+      "sieges": 3,
+      "role": "hors",
+      "leaders": "Starsky Flor (président, non reconfirmé)",
+      "qid": "Q3079953",
+      "ipu": [
+        "lu-parti_pirate_piraten_"
+      ]
+    },
+    {
+      "nom": "déi Lénk (La Gauche)",
+      "sieges": 2,
+      "role": "hors",
+      "leaders": "non relevé (pas de président unique)",
+      "qid": "Q1270494",
+      "ipu": [
+        "lu-left_d__i_l__nk"
+      ]
+    }
   ],
   "seconde": null,
   "notes": [
     "Parlement monocaméral ; le Conseil d'État n'est pas une seconde chambre.",
-    "Sièges issus de l'élection de 2023, figés jusqu'au prochain scrutin (prévu en 2028). Ben Polidori, élu sur la liste Piraten, siège au LSAP depuis septembre 2024 : 12 LSAP et 2 Piraten en séance.",
+    "Sièges issus de l'élection de 2023 (SIP et IPU concordent), figés jusqu'au prochain scrutin. Ben Polidori, élu sur la liste Piraten, a quitté le groupe le 15/07/2024 et siège au LSAP depuis le 19/09/2024 (note de la brochure du SIP) : 12 LSAP et 2 Piraten en séance, non retenu dans le tableau.",
     "Coalition CSV-DP : 35 sièges sur 60."
   ],
-  "src_leaders": { "t": "Wikidata (P488), relevé du 26/10/2026", "u": "https://query.wikidata.org/" },
+  "src_leaders": {
+    "t": "Wikidata (P488), relevé du 26/10/2026",
+    "u": "https://query.wikidata.org/"
+  },
   "autres": 0
 }
