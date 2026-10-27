@@ -1,6 +1,6 @@
 {
   "pays": "SVN",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "sources": [
     {
       "id": "surs",
@@ -17,13 +17,11 @@
       "couches": [
         "commerce"
       ],
-      "notes": "Exportations par pays de destination ; importations intra-UE par pays d'expédition, extra-UE par pays d'origine. La Suisse est le premier partenaire à l'importation en 2025 (16,4 Md€ selon la diffusion SURS reprise par izvoznookno.si) : opérations de travail à façon pharmaceutique, écart attendu avec le FMI. Tables aussi publiées sur podatki.gov.si (jeux surs2490003s, surs2490004s). commerce.json non rempli : domaine bloqué, chiffres non relus à la source.",
+      "notes": "API lue le 27/10/2026 : table 2490004S (annuelle, EUR/USD/kg, 2024, 2025 définitive en cours, 2026M01-M08 provisoire). Requête POST JSON, sortie csv en cp1250. Exportations par pays de destination ; importations intra-UE par pays d'expédition, extra-UE par pays d'origine. Suisse à recouper avec le FMI (30,7 Md€ à l'export, 16,4 Md€ à l'import en 2025). Page Copyright de www.stat.si (réutilisation libre avec mention) toujours bloquée : licence non relue à la source ; podatki.gov.si accessible mais non nécessaire.",
       "hotes": [
-        "pxweb.stat.si",
-        "www.stat.si",
-        "podatki.gov.si"
+        "pxweb.stat.si"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "mo",
@@ -40,11 +38,11 @@
       "couches": [
         "presences"
       ],
-      "notes": "Chaque déploiement repose sur une décision du gouvernement (art. 37 de la loi sur la défense). Bilan publié : environ 300 militaires dans 12 opérations et missions (décembre 2024, juin 2025), sans liste chiffrée par mission sur la page.",
+      "notes": "Page lue le 27/10/2026. Les déploiements reposent sur des décisions du gouvernement (art. 37 de la loi sur la défense) ; depuis mai 1997 environ 16 750 déploiements dans plus de 30 opérations (mi-2025). Aucun effectif par mission sur cette page : voir sv.",
       "hotes": [
         "www.gov.si"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "sv",
@@ -61,11 +59,11 @@
       "couches": [
         "presences"
       ],
-      "notes": "Page non datée : 12 missions, environ 300 militaires. Relèves 2025-2026 : 53e contingent KFOR le 23/04/2026 (base de Novo Selo), 6e contingent en Slovaquie (111 militaires, terrain de Lešť), SVNKON 49 en Bosnie-Herzégovine. Missions citées dans des sources plus anciennes mais non reconfirmées en 2025-2026 : FINUL (Liban), ONUST, Irak (coalition contre Daech, NMI), EUNAVFOR MED Irini, contribution en Allemagne.",
+      "notes": "Page lue le 27/10/2026 : 12 missions, environ 300 militaires ; tableau officiel daté du 25/09/2024 (BiH Joint Enterprise 5, Althea 22, Irak OIR 2, KFOR 102, UNMIK 1, Lettonie 35, Allemagne EUMAM jusqu'à 30, Slovaquie 102, Serbie 1, Irini 3, Aspides 1, UNTSO 2 ; total 307). Pages par pays : UNFICYP (6 militaires depuis mars 2025, décision du gouvernement de janvier 2024 pour 15 au plus). Communiqués de relève : 53e contingent KFOR le 23/04/2026 ; 6e contingent en Slovaquie (111 militaires) le 23/12/2024. Le tableau n'est pas mis à jour à chaque relève.",
       "hotes": [
         "www.slovenskavojska.si"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "sv_revija",
@@ -82,11 +80,11 @@
       "couches": [
         "presences"
       ],
-      "notes": "Donne 109 militaires dans la KFOR et des contingents en Bosnie-Herzégovine, Lettonie, Allemagne, Kosovo et Slovaquie.",
+      "notes": "PDF lu le 27/10/2026 : « Slovenija v operaciji Kfor trenutno sodeluje s 109 pripadniki » (dont 1 de l'UNMIK et 3 civils), 52e contingent ; la KFOR représente environ un tiers des militaires déployés.",
       "hotes": [
         "www.gov.si"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "dz",
@@ -95,7 +93,7 @@
       "url": "https://podatki.gov.si/dataset/dzglasovanja-dz",
       "type": "officiel",
       "langue": "sl",
-      "licence": "CC BY 4.0 (podatki.gov.si)",
+      "licence": "non précisée dans les métadonnées CKAN de podatki.gov.si (CC BY 4.0 annoncé par un résumé de recherche, non confirmé)",
       "cadence": "quotidienne (XML régénéré toutes les 24 h selon la page « Podatki v obliki XML »)",
       "api": true,
       "api_url": "https://podatki.gov.si/dataset/dzglasovanja-dz",
@@ -103,7 +101,7 @@
       "couches": [
         "politique"
       ],
-      "notes": "Fichiers servis par fotogalerija.dz-rs.si, indexés sur podatki.gov.si (API CKAN). Votes nominatifs par législature depuis le 3e mandat.",
+      "notes": "Métadonnées lues sur podatki.gov.si le 27/10/2026 (jeu dzglasovanja-dz, modifié le 02/06/2026, fichiers GDZ.XML, GDZ8.XML… servis par fotogalerija.dz-rs.si). Hôtes dz-rs.si et fotogalerija.dz-rs.si toujours bloqués : fichiers XML non relus.",
       "hotes": [
         "www.dz-rs.si",
         "fotogalerija.dz-rs.si",
@@ -120,18 +118,18 @@
       "langue": "sl",
       "licence": "non précisée",
       "cadence": "à chaque élection",
-      "api": false,
-      "api_url": null,
-      "format": "html",
+      "api": true,
+      "api_url": "https://volitve.dvk-rs.si/dz2026/data/rezultati.json",
+      "format": "json (rezultati.json, udelezba.json, kandidati_rezultat.json ; csv et xlsx aussi)",
       "couches": [
         "politique"
       ],
-      "notes": "Résultat officiel publié au Uradni list. La DVK décrit des fichiers de données pour les médias (www.dvk-rs.si, « Volitve v Državni zbor RS 2026 – datoteke s podatki »), format non relu. Sièges : GS 29, SDS 28, NSi-SLS-Fokus 9, SD 6, Demokrati 6, Levica in Vesna 5, Resni.ca 5, plus 2 sièges réservés aux minorités italienne et hongroise.",
+      "notes": "rezultati.json lu le 27/10/2026 (mis à jour le 07/04/2026) : 88 sièges de listes (GS 29, SDS 28, NSi-SLS-Fokus 9, SD 6, Demokrati 6, Levica in Vesna 5, Resni.ca 5) ; les 2 sièges des minorités italienne et hongroise sont élus à part. Structure décrite dans le PDF « datoteke s podatki » de www.dvk-rs.si.",
       "hotes": [
         "volitve.dvk-rs.si",
         "www.dvk-rs.si"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "vlada",
@@ -150,17 +148,17 @@
         "conflits",
         "sanctions"
       ],
-      "notes": "Janez Janša élu Premier ministre par l'Assemblée le 22/05/2026 (51 voix contre 36), gouvernement nommé le 04/06/2026. Coalition SDS, NSi-SLS-Fokus, Demokrati (43 sièges), avec le soutien sans participation de Resni.ca.",
+      "notes": "Page des séances lue le 27/10/2026 (17e séance ordinaire du 22/10/2026). Le nom du chef du gouvernement vient de Wikidata (P6) et de l'IPU, pas de cette page.",
       "hotes": [
         "www.gov.si"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "mzez",
-      "nom": "Ministrstvo za zunanje in evropske zadeve, communiqués",
+      "nom": "Ministrstvo za zunanje in evropske zadeve, pages « Arbitration » et communiqués",
       "editeur": "Ministrstvo za zunanje in evropske zadeve Republike Slovenije",
-      "url": "https://www.gov.si/drzavni-organi/ministrstva/ministrstvo-za-zunanje-in-evropske-zadeve/",
+      "url": "https://www.gov.si/en/registries/projects/arbitraza/",
       "type": "officiel",
       "langue": "sl",
       "licence": "non précisée",
@@ -172,11 +170,11 @@
         "conflits",
         "sanctions"
       ],
-      "notes": "Position officielle sur la frontière avec la Croatie (sentence arbitrale de 2017) et sur les mesures restrictives.",
+      "notes": "Pages lues le 27/10/2026 : arbitrage Slovénie-Croatie (sentence du 29/06/2017, refus de la Croatie, action de la Slovénie sur le fondement de l'art. 259 TFUE) ; communiqué du 24/02/2026 sur l'Ukraine (« Slovenia will continue to provide military, humanitarian and other assistance »).",
       "hotes": [
         "www.gov.si"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "pisrs",
@@ -193,7 +191,7 @@
       "couches": [
         "sanctions"
       ],
-      "notes": "Loi qui transpose en droit slovène les sanctions de l'ONU et de l'UE ; une mesure purement nationale passe par un décret du gouvernement publié au Uradni list (www.uradni-list.si). Les sanctions UE elles-mêmes viennent de la couche commune.",
+      "notes": "Hôtes toujours bloqués (403). Le cadre légal (loi ZOUPAMO sur les mesures restrictives) est décrit sur https://www.gov.si/en/topics/restrictive-measures/, lu le 27/10/2026. Les sanctions de l'UE viennent de la couche commune.",
       "hotes": [
         "pisrs.si",
         "www.uradni-list.si"
@@ -202,7 +200,7 @@
     },
     {
       "id": "cpa",
-      "nom": "Cour permanente d'arbitrage, affaire 2012-04 Croatie/Slovénie, sentence du 29 juin 2017",
+      "nom": "Cour permanente d'arbitrage, affaire Croatie/Slovénie (sentence du 29 juin 2017)",
       "editeur": "Cour permanente d'arbitrage",
       "url": "https://pca-cpa.org/en/cases/",
       "type": "international",
@@ -215,7 +213,7 @@
       "couches": [
         "conflits"
       ],
-      "notes": "Arrêt de la CJUE du 31/01/2020 (affaire C-457/18, Slovénie c. Croatie) : la Cour se déclare incompétente (curia.europa.eu).",
+      "notes": "Hôtes toujours bloqués (403). Fait de conflits.json lu sur gov.si (mzez). Arrêt de la CJUE du 31/01/2020 (C-457/18) non relu.",
       "hotes": [
         "pca-cpa.org",
         "curia.europa.eu"
@@ -241,6 +239,27 @@
       "hotes": [
         "www.wikidata.org",
         "query.wikidata.org"
+      ],
+      "acces": "verifie"
+    },
+    {
+      "id": "ipu",
+      "nom": "IPU Parline, Slovenia National Assembly March 2026 Election",
+      "editeur": "Union interparlementaire",
+      "url": "https://data.ipu.org/parliament/SI/SI-LC01/election/SI-LC01-E20260322/",
+      "type": "international",
+      "langue": "en",
+      "licence": "CC BY-NC-SA 4.0",
+      "cadence": "à chaque élection",
+      "api": true,
+      "api_url": "https://api.data.ipu.org/v1/elections/SI-LC01-E20260322",
+      "format": "json",
+      "couches": [
+        "politique"
+      ],
+      "notes": "API lue le 27/10/2026 : sièges identiques à la DVK. Le texte d'introduction de l'IPU donne encore 28 et 27 sièges pour Svoboda et SDS, ce qui contredit ses propres données et la DVK ; il n'est pas retenu. Indique que Resni.ca soutient le gouvernement sans y participer.",
+      "hotes": [
+        "api.data.ipu.org"
       ],
       "acces": "verifie"
     }

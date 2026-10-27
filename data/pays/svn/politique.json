@@ -1,6 +1,6 @@
 {
   "pays": "SVN",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "chef_etat": {
     "nom": "Nataša Pirc Musar",
     "fonction": "Présidente de la République",
@@ -30,49 +30,73 @@
       "nom": "Gibanje Svoboda",
       "sieges": 29,
       "role": "hors",
-      "leaders": "Robert Golob (président)"
+      "leaders": "Robert Golob (président)",
+      "ipu": [
+        "si-freedom_movement_svoboda_"
+      ]
     },
     {
       "nom": "SDS",
       "sieges": 28,
       "role": "gouv",
-      "leaders": "Janez Janša (président)"
+      "leaders": "Janez Janša (président)",
+      "ipu": [
+        "si-slovenian_democratic_party_sds"
+      ]
     },
     {
       "nom": "NSi–SLS–Fokus",
       "sieges": 9,
       "role": "gouv",
-      "leaders": "Jernej Vrtovec (NSi), Tina Bregant (SLS), Marko Lotrič (Fokus)"
+      "leaders": "Jernej Vrtovec (NSi), Tina Bregant (SLS), Marko Lotrič (Fokus)",
+      "ipu": [
+        "si-nsi-sls-fokus"
+      ]
     },
     {
       "nom": "SD",
       "sieges": 6,
       "role": "hors",
-      "leaders": "Matjaž Han (président)"
+      "leaders": "Matjaž Han (président)",
+      "ipu": [
+        "si-social_democrats_sd"
+      ]
     },
     {
       "nom": "Demokrati",
       "sieges": 6,
       "role": "gouv",
-      "leaders": "Anže Logar (président)"
+      "leaders": "Anže Logar (président)",
+      "ipu": [
+        "si-democrats"
+      ]
     },
     {
       "nom": "Levica in Vesna",
       "sieges": 5,
       "role": "hors",
-      "leaders": "Asta Vrečko et Luka Mesec (Levica), Urša Zgojznik et Uroš Macerl (Vesna)"
+      "leaders": "Asta Vrečko et Luka Mesec (Levica), Urša Zgojznik et Uroš Macerl (Vesna)",
+      "ipu": [
+        "si-left-vesna"
+      ]
     },
     {
       "nom": "Resni.ca",
       "sieges": 5,
       "role": "hors",
-      "leaders": "Zoran Stevanović (président de l'Assemblée nationale) ; soutien au gouvernement sans participation"
+      "leaders": "Zoran Stevanović (président de l'Assemblée nationale) ; soutien au gouvernement sans participation",
+      "ipu": [
+        "si-resni-ca-002"
+      ]
     },
     {
       "nom": "Députés des minorités italienne et hongroise",
       "sieges": 2,
       "role": "hors",
-      "leaders": "2 sièges réservés"
+      "leaders": "2 sièges réservés",
+      "ipu": [
+        "si-representatives_ethnic_minorities"
+      ]
     }
   ]
 }

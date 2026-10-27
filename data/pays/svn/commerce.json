@@ -1,0 +1,83 @@
+{
+  "pays": "SVN",
+  "verifie": "2026-10-27",
+  "src": "surs",
+  "annee": 2025,
+  "devise": "EUR",
+  "unite": "Md",
+  "concept": "commerce de biens, données provisoires 2025 ; exportations par pays de destination, importations par pays d'expédition (UE) ou d'origine (hors UE)",
+  "total": {
+    "x": 72.09,
+    "m": 70.69
+  },
+  "partenaires": [
+    {
+      "pays": "CHE",
+      "x": 30.69,
+      "m": 16.36
+    },
+    {
+      "pays": "DEU",
+      "x": 7.3,
+      "m": 7.18
+    },
+    {
+      "pays": "ITA",
+      "x": 4.53,
+      "m": 5.43
+    },
+    {
+      "pays": "CHN",
+      "x": 0.23,
+      "m": 9.08
+    },
+    {
+      "pays": "HRV",
+      "x": 4.84,
+      "m": 3.24
+    },
+    {
+      "pays": "AUT",
+      "x": 2.83,
+      "m": 4.4
+    },
+    {
+      "pays": "IND",
+      "x": 0.14,
+      "m": 5.55
+    },
+    {
+      "pays": "HUN",
+      "x": 1.33,
+      "m": 2.14
+    },
+    {
+      "pays": "POL",
+      "x": 1.57,
+      "m": 1.58
+    },
+    {
+      "pays": "FRA",
+      "x": 1.78,
+      "m": 1.35
+    },
+    {
+      "pays": "NLD",
+      "x": 0.9,
+      "m": 2.01
+    },
+    {
+      "pays": "SRB",
+      "x": 1.29,
+      "m": 0.8
+    },
+    {
+      "pays": "RUS",
+      "x": 1.26,
+      "m": 0.09
+    }
+  ],
+  "notes": {
+    "CHE": "Première destination (30,7 Md€) et première origine (16,4 Md€) : à recouper avec le FMI."
+  }
+}
