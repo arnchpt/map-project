@@ -1,8 +1,22 @@
 {
   "pays": "NLD",
-  "verifie": "2026-10-26",
-  "chef_etat": { "nom": "Willem-Alexander", "fonction": "Roi des Pays-Bas", "parti": null, "depuis": "2013-04-30", "qid": "Q154952", "src": "kabinet" },
-  "chef_gouv": { "nom": "Rob Jetten", "fonction": "Ministre-président", "parti": "D66", "depuis": "2026-02-23", "qid": "Q28860866", "src": "kabinet" },
+  "verifie": "2026-10-27",
+  "chef_etat": {
+    "nom": "Willem-Alexander",
+    "fonction": "Roi des Pays-Bas",
+    "parti": null,
+    "depuis": "2013-04-30",
+    "qid": "Q154952",
+    "src": "kabinet"
+  },
+  "chef_gouv": {
+    "nom": "Rob Jetten",
+    "fonction": "Ministre-président",
+    "parti": "D66",
+    "depuis": "2026-02-23",
+    "qid": "Q28860866",
+    "src": "kabinet"
+  },
   "chambre": {
     "nom": "Tweede Kamer (Seconde Chambre)",
     "sieges": 150,
@@ -12,20 +26,140 @@
     "ipu": "NL-LC01-E20251029"
   },
   "partis": [
-    { "nom": "D66", "sieges": 26, "role": "gouv", "leaders": "Rob Jetten (chef du parti, ministre-président), Jan Paternotte (président du groupe)" },
-    { "nom": "PVV", "sieges": 26, "role": "hors", "leaders": "Geert Wilders" },
-    { "nom": "VVD", "sieges": 22, "role": "gouv", "leaders": "Dilan Yeşilgöz (cheffe du parti, vice-ministre-présidente), Ruben Brekelmans (président du groupe)" },
-    { "nom": "GroenLinks-PvdA", "sieges": 20, "role": "hors", "leaders": "Jesse Klaver" },
-    { "nom": "CDA", "sieges": 18, "role": "gouv", "leaders": "Henri Bontenbal (président du groupe)" },
-    { "nom": "JA21", "sieges": 9, "role": "hors", "leaders": "Joost Eerdmans" },
-    { "nom": "FvD", "sieges": 7, "role": "hors", "leaders": null },
-    { "nom": "BBB", "sieges": 4, "role": "hors", "leaders": null },
-    { "nom": "SP", "sieges": 3, "role": "hors", "leaders": null },
-    { "nom": "DENK", "sieges": 3, "role": "hors", "leaders": null },
-    { "nom": "PvdD", "sieges": 3, "role": "hors", "leaders": null },
-    { "nom": "SGP", "sieges": 3, "role": "hors", "leaders": null },
-    { "nom": "ChristenUnie", "sieges": 3, "role": "hors", "leaders": null },
-    { "nom": "50PLUS", "sieges": 2, "role": "hors", "leaders": null },
-    { "nom": "Volt", "sieges": 1, "role": "hors", "leaders": null }
+    {
+      "nom": "D66",
+      "sieges": 26,
+      "role": "gouv",
+      "leaders": "Jan Paternotte (président du groupe)",
+      "ipu": [
+        "nl-democrats_66_d66"
+      ]
+    },
+    {
+      "nom": "PVV",
+      "sieges": 26,
+      "role": "hors",
+      "leaders": "Geert Wilders (président du groupe)",
+      "ipu": [
+        "nl-party_freedom_pvv"
+      ]
+    },
+    {
+      "nom": "VVD",
+      "sieges": 22,
+      "role": "gouv",
+      "leaders": "Ruben Brekelmans (président du groupe) ; Dilan Yeşilgöz-Zegerius, ministre de la Défense et 1re vice-ministre-présidente",
+      "ipu": [
+        "nl-peoples_party_freedom_and_democracy_vvd"
+      ]
+    },
+    {
+      "nom": "GroenLinks-PvdA (depuis juin 2026 : Progressief Nederland)",
+      "sieges": 20,
+      "role": "hors",
+      "leaders": "Jesse Klaver (président du groupe)",
+      "ipu": [
+        "nl-green-left-labour-party-(pvda)"
+      ]
+    },
+    {
+      "nom": "CDA",
+      "sieges": 18,
+      "role": "gouv",
+      "leaders": "Henri Bontenbal (président du groupe) ; Bart van den Brink, ministre de l'Asile et de la Migration et 2e vice-ministre-président",
+      "ipu": [
+        "nl-christian_democratic_appeal_cda"
+      ]
+    },
+    {
+      "nom": "JA21",
+      "sieges": 9,
+      "role": "hors",
+      "leaders": "Joost Eerdmans (président du groupe)",
+      "ipu": [
+        "nl-ja21"
+      ]
+    },
+    {
+      "nom": "FvD",
+      "sieges": 7,
+      "role": "hors",
+      "leaders": "Ralf Dekker (président du groupe)",
+      "ipu": [
+        "nl-forum_democracy_fvd"
+      ]
+    },
+    {
+      "nom": "BBB",
+      "sieges": 4,
+      "role": "hors",
+      "leaders": "Henk Vermeer (président du groupe)",
+      "ipu": [
+        "nl-boerburgerbeweging_bbb_"
+      ]
+    },
+    {
+      "nom": "SP",
+      "sieges": 3,
+      "role": "hors",
+      "leaders": "Jimmy Dijk (président du groupe)",
+      "ipu": [
+        "nl-socialist_party_sp"
+      ]
+    },
+    {
+      "nom": "DENK",
+      "sieges": 3,
+      "role": "hors",
+      "leaders": "Stephan van Baarle (président du groupe)",
+      "ipu": [
+        "nl-denk"
+      ]
+    },
+    {
+      "nom": "PvdD",
+      "sieges": 3,
+      "role": "hors",
+      "leaders": "Christine Teunissen (présidente du groupe)",
+      "ipu": [
+        "nl-party_animals_pvdd"
+      ]
+    },
+    {
+      "nom": "SGP",
+      "sieges": 3,
+      "role": "hors",
+      "leaders": "Chris Stoffer (président du groupe)",
+      "ipu": [
+        "nl-reformed_political_party_sgp"
+      ]
+    },
+    {
+      "nom": "ChristenUnie",
+      "sieges": 3,
+      "role": "hors",
+      "leaders": "Mirjam Bikker (présidente du groupe)",
+      "ipu": [
+        "nl-christian_union_cu"
+      ]
+    },
+    {
+      "nom": "50PLUS",
+      "sieges": 2,
+      "role": "hors",
+      "leaders": "Jan Struijs (président du groupe)",
+      "ipu": [
+        "nl-party_over_50_50plus"
+      ]
+    },
+    {
+      "nom": "Volt",
+      "sieges": 1,
+      "role": "hors",
+      "leaders": "Laurens Dassen (président du groupe)",
+      "ipu": [
+        "nl-volt"
+      ]
+    }
   ]
 }

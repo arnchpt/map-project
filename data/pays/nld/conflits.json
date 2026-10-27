@@ -1,8 +1,22 @@
 {
   "pays": "NLD",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "evenements": [
-    { "avec": "UKR", "k": "soutien", "t": "Aide militaire à l'Ukraine", "d": "Livraisons de matériel et formation depuis février 2022 : 14,3 Md€ alloués jusqu'en 2025, environ 3 Md€ nets par an prévus sur 2026-2029 (lettre du 21/04/2026).", "date": "2022-02", "src": "oekraine" },
-    { "avec": "RUS", "k": "tension", "t": "MH17 : responsabilité de la Russie", "d": "Le Conseil de l'OACI (mai 2025) puis la CEDH (09/07/2025), saisis par les Pays-Bas, ont conclu à la responsabilité de la Russie dans la destruction du vol MH17 en 2014.", "date": "2025-07-09", "src": "mh17" }
+    {
+      "avec": "UKR",
+      "k": "soutien",
+      "t": "Soutien militaire à l'Ukraine",
+      "d": "Livraisons et formation depuis 2022 ; au 21/10/2026, formation d'Ukrainiens en Allemagne (EUMAM) et défense antiaérienne du centre logistique OTAN en Pologne.",
+      "date": "2022-02",
+      "src": "defensie"
+    },
+    {
+      "avec": "RUS",
+      "k": "tension",
+      "t": "MH17 : responsabilité de la Russie",
+      "d": "Le Conseil de l'OACI (12/05/2025, saisi par les Pays-Bas et l'Australie en 2022) puis la CEDH (09/07/2025, à l'unanimité) ont jugé la Russie responsable de la destruction du vol MH17.",
+      "date": "2025-07-09",
+      "src": "mh17"
+    }
   ]
 }
