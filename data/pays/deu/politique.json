@@ -1,0 +1,94 @@
+{
+  "pays": "DEU",
+  "verifie": "2026-10-26",
+  "chef_etat": {
+    "nom": "Frank-Walter Steinmeier",
+    "fonction": "Président fédéral",
+    "parti": "SPD",
+    "depuis": "2017-03-19",
+    "qid": "Q76658",
+    "src": "presidence"
+  },
+  "chef_gouv": {
+    "nom": "Friedrich Merz",
+    "fonction": "Chancelier",
+    "parti": "CDU",
+    "depuis": "2025-05-06",
+    "qid": "Q566257",
+    "src": "gouvernement"
+  },
+  "chambre": {
+    "nom": "Bundestag",
+    "sieges": 630,
+    "majorite": 316,
+    "election": "2025-02-23",
+    "src": "ipu",
+    "ipu": "DE-LC01-E20250223"
+  },
+  "partis": [
+    {
+      "nom": "CDU/CSU",
+      "sieges": 208,
+      "role": "gouv",
+      "leaders": "Friedrich Merz (CDU), Markus Söder (CSU)",
+      "ok": false,
+      "ipu": [
+        "de-christian_democratic_union_cdu",
+        "de-christian_social_union_bavaria_csu"
+      ]
+    },
+    {
+      "nom": "AfD",
+      "sieges": 152,
+      "role": "hors",
+      "leaders": "Alice Weidel et Tino Chrupalla (réélus en juillet 2026)",
+      "src": {
+        "t": "ZDF",
+        "u": "https://www.zdfheute.de/politik/deutschland/afd-parteitag-erfurt-chrupalla-weidel-100.html"
+      },
+      "ipu": [
+        "de-alternative_germany_afd"
+      ]
+    },
+    {
+      "nom": "SPD",
+      "sieges": 120,
+      "role": "gouv",
+      "leaders": "Lars Klingbeil (coprésidente Bärbel Bas démissionnaire le 12/10/2026, congrès prévu mi-janvier)",
+      "src": {
+        "t": "taz",
+        "u": "https://taz.de/Ruecktritt-von-SPD-Chefin/!6220794/"
+      },
+      "ipu": [
+        "de-social_democratic_party_spd"
+      ]
+    },
+    {
+      "nom": "Verts (Bündnis 90/Die Grünen)",
+      "sieges": 85,
+      "role": "hors",
+      "leaders": "Franziska Brantner et Felix Banaszak",
+      "src": {
+        "t": "Site du parti",
+        "u": "https://www.gruene.de/leute/unser-bundesvorstand"
+      },
+      "ipu": [
+        "de-green_party"
+      ]
+    },
+    {
+      "nom": "Die Linke",
+      "sieges": 64,
+      "role": "hors",
+      "leaders": "Ines Schwerdtner et Luigi Pantisano (depuis juin 2026)",
+      "src": {
+        "t": "Site du parti",
+        "u": "https://www.die-linke.de/partei/parteidemokratie/parteivorstand/parteivorstand-2026-2028/"
+      },
+      "ipu": [
+        "de-left_party_die_linke"
+      ]
+    }
+  ],
+  "autres": 1
+}

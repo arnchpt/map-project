@@ -1,0 +1,84 @@
+{
+  "pays": "ROU",
+  "verifie": "2026-10-26",
+  "chef_etat": {
+    "nom": "Nicușor Dan",
+    "fonction": "Président de la Roumanie",
+    "parti": null,
+    "depuis": "2025-05-26",
+    "qid": "Q11163124",
+    "src": "presidence"
+  },
+  "chef_gouv": {
+    "nom": "Luca Niculescu",
+    "fonction": "Premier ministre",
+    "parti": null,
+    "depuis": "2026-10-20",
+    "qid": "Q121140873",
+    "src": "gouvernement"
+  },
+  "chambre": {
+    "nom": "Chambre des députés",
+    "sieges": 331,
+    "majorite": 166,
+    "election": "2024-12-01",
+    "src": "electoral",
+    "ipu": "RO-LC01-E20241201"
+  },
+  "partis": [
+    {
+      "nom": "Parti social-démocrate (PSD)",
+      "sieges": 86,
+      "role": "gouv",
+      "leaders": "Sorin Grindeanu (président du parti)"
+    },
+    {
+      "nom": "Alliance pour l'unité des Roumains (AUR)",
+      "sieges": 63,
+      "role": "hors",
+      "leaders": "George Simion (président du parti)"
+    },
+    {
+      "nom": "Parti national libéral (PNL)",
+      "sieges": 49,
+      "role": "hors",
+      "leaders": "Ilie Bolojan (président du parti)"
+    },
+    {
+      "nom": "Union sauvez la Roumanie (USR)",
+      "sieges": 40,
+      "role": "hors",
+      "leaders": "Dominic Fritz (président du parti)"
+    },
+    {
+      "nom": "S.O.S. Roumanie (SOS RO)",
+      "sieges": 28,
+      "role": "hors",
+      "leaders": "Diana Șoșoacă (présidente du parti)"
+    },
+    {
+      "nom": "Parti de la jeunesse (POT)",
+      "sieges": 24,
+      "role": "hors",
+      "leaders": "Anamaria Gavrilă (présidente du parti)"
+    },
+    {
+      "nom": "Union démocrate magyare de Roumanie (UDMR)",
+      "sieges": 22,
+      "role": "hors",
+      "leaders": "Kelemen Hunor (président du parti)"
+    },
+    {
+      "nom": "Groupe des minorités nationales",
+      "sieges": 19,
+      "role": "hors",
+      "leaders": "sièges réservés aux organisations des minorités nationales"
+    }
+  ],
+  "notes": [
+    "Sièges : résultat de l'élection du 01/12/2024, figés (les changements de groupe depuis ne sont pas suivis).",
+    "Le cabinet Niculescu réunit des ministres PSD et indépendants ; il est soutenu au Parlement par le PNL et l'UDMR, qui figurent ici hors gouvernement (role « hors »).",
+    "Luca Niculescu est indépendant selon Wikidata (P102).",
+    "Dirigeants de partis : Wikidata (P488) et presse, non reconfirmés sur les sites des partis."
+  ]
+}

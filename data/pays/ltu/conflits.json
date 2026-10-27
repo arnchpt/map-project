@@ -1,0 +1,30 @@
+{
+  "pays": "LTU",
+  "verifie": "2026-10-26",
+  "evenements": [
+    {
+      "avec": "UKR",
+      "k": "soutien",
+      "t": "Aide militaire à l'Ukraine",
+      "d": "Le ministère de la Défense nationale annonce le 13/02/2026 une enveloppe de 223 M€ pour 2026 et une aide cumulée supérieure à 1 Md$ depuis 2022.",
+      "date": "2022-02",
+      "src": "aide-ukr"
+    },
+    {
+      "avec": "BLR",
+      "k": "tension",
+      "t": "Fermeture des points de passage frontaliers",
+      "d": "Le gouvernement ferme les points de Šalčininkai et Medininkai jusqu'au 30/11/2025 après des intrusions de ballons venus de Biélorussie, qualifiées d'attaque hybride par la Première ministre.",
+      "date": "2025-10-29",
+      "src": "frontiere-blr"
+    },
+    {
+      "avec": "CHN",
+      "k": "tension",
+      "t": "Relations diplomatiques abaissées au niveau de chargé d'affaires",
+      "d": "La Chine abaisse le 21/11/2021 ses relations avec la Lituanie au niveau de chargé d'affaires après l'ouverture à Vilnius d'un « Bureau de représentation taïwanais ».",
+      "date": "2021-11-21",
+      "src": "mae-chine"
+    }
+  ]
+}

@@ -1,0 +1,274 @@
+{
+  "pays": "ITA",
+  "verifie": "2026-10-26",
+  "sources": [
+    {
+      "id": "stat",
+      "nom": "ISTAT, commerce extérieur (Coeweb et service SDMX)",
+      "editeur": "Istituto nazionale di statistica (ISTAT)",
+      "url": "https://www.coeweb.istat.it/",
+      "type": "officiel",
+      "langue": "it",
+      "licence": "CC BY 4.0 (notes légales ISTAT : « salvo diversa indicazione », réutilisation commerciale admise avec citation)",
+      "cadence": "mensuelle (données provisoires révisées le mois suivant)",
+      "api": true,
+      "api_url": "https://esploradati.istat.it/SDMXWS/rest",
+      "format": "sdmx-xml / sdmx-json",
+      "couches": [
+        "commerce"
+      ],
+      "notes": "Hôte bloqué par le proxy de la session le 26/10/2026 : informations relevées par recherche web, page non lue. Agence SDMX IT1 ; limite de 5 requêtes par minute et par IP, dépassement = blocage de 1 à 2 jours. Identifiant du flux commerce par pays partenaire non trouvé. Pays partenaire : provenance/destination pour l'UE (Intrastat), origine/destination hors UE (DAU) : écarts attendus avec le FMI. commerce.json non rempli faute de chiffres lus à la source.",
+      "hotes": [
+        "www.coeweb.istat.it",
+        "coeweb.istat.it",
+        "esploradati.istat.it",
+        "sdmx.istat.it",
+        "www.istat.it"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "missions",
+      "nom": "Délibération du Conseil des ministres sur les missions internationales 2026 (Doc. XXV n. 4) et relation analytique 2025 avec prorogation 2026 (Doc. XXVI n. 4)",
+      "editeur": "Gouvernement italien, transmis à la Chambre des députés et au Sénat",
+      "url": "https://temi.camera.it/leg19/temi/autorizzazione-e-proroga-delle-missioni-internazionali-nel-2024_d_d.html",
+      "type": "officiel",
+      "langue": "it",
+      "licence": "non précisée",
+      "cadence": "annuelle (délibération au printemps, vote du Parlement à l'été)",
+      "api": false,
+      "api_url": null,
+      "format": "pdf / html",
+      "couches": [
+        "presences",
+        "conflits"
+      ],
+      "notes": "Hôte bloqué par le proxy de la session le 26/10/2026 : informations relevées par recherche web, page non lue. Cadre : loi 145/2016 réformée par la loi 168/2024. Délibération du 14/05/2026 (trois nouvelles missions : Iraq bilatérale, fiche 4-bis/2026 ; Somalie bilatérale, fiche 8-bis/2026), rapport des commissions III et IV le 14/07/2026, résolution adoptée par la Chambre le 28/07/2026. Chaque fiche donne une consistance maximale autorisée (plafond), pas l'effectif présent. Dossier du Service d'études du Sénat n. 704.",
+      "hotes": [
+        "temi.camera.it",
+        "documenti.camera.it",
+        "www.camera.it",
+        "www.senato.it"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "difesa",
+      "nom": "Ministère de la Défense, « Operazioni internazionali in corso »",
+      "editeur": "Ministero della Difesa",
+      "url": "https://www.difesa.it/operazionimilitari/op-intern-corso/operazioni-int/26752.html",
+      "type": "officiel",
+      "langue": "it",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences"
+      ],
+      "notes": "Hôte bloqué par le proxy de la session le 26/10/2026 : informations relevées par recherche web, page non lue. Une fiche par opération avec « contributo nazionale » ; ex. UNIFIL : consistance maximale annuelle 1 256 militaires (fiche Liban, d'après le résultat de recherche).",
+      "hotes": [
+        "www.difesa.it"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "normattiva",
+      "nom": "Normattiva, texte consolidé des décrets-lois sur les cessions de matériels militaires à l'Ukraine",
+      "editeur": "Istituto Poligrafico e Zecca dello Stato / Presidenza del Consiglio",
+      "url": "https://www.normattiva.it/",
+      "type": "officiel",
+      "langue": "it",
+      "licence": "non précisée",
+      "cadence": "à chaque texte",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "conflits"
+      ],
+      "notes": "Hôte bloqué par le proxy de la session le 26/10/2026 : informations relevées par recherche web, page non lue. Les listes de matériels cédés sont classifiées ; seule l'autorisation légale est publique.",
+      "hotes": [
+        "www.normattiva.it",
+        "www.gazzettaufficiale.it"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "electoral",
+      "nom": "Eligendo, résultats officiels des élections politiques du 25/09/2022 (Chambre)",
+      "editeur": "Ministero dell'Interno",
+      "url": "https://elezioni.interno.gov.it/",
+      "type": "officiel",
+      "langue": "it",
+      "licence": "CC BY 4.0 (indiqué par des copies municipales des mêmes fichiers, Gênes et Milan)",
+      "cadence": "à chaque élection",
+      "api": true,
+      "api_url": "https://elezioni.interno.gov.it/opendata",
+      "format": "csv",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Hôte bloqué par le proxy de la session le 26/10/2026 : informations relevées par recherche web, page non lue. L'IPU ne publie que les totaux par coalition pour 2022 : cette source donne le détail par liste. URL exacte de la section open data non confirmée.",
+      "hotes": [
+        "elezioni.interno.gov.it",
+        "eligendo.interno.gov.it",
+        "elezionistorico.interno.gov.it"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "camera",
+      "nom": "Chambre des députés, composition des groupes parlementaires (XIXe législature) et données ouvertes",
+      "editeur": "Camera dei deputati",
+      "url": "https://www.camera.it/leg19/46",
+      "type": "officiel",
+      "langue": "it",
+      "licence": "CC BY-SA (pages des jeux de données dati.camera.it)",
+      "cadence": "quotidienne (changements de groupe enregistrés au fil de l'eau)",
+      "api": true,
+      "api_url": "https://dati.camera.it/sparql",
+      "format": "sparql / rdf",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Hôte bloqué par le proxy de la session le 26/10/2026 : informations relevées par recherche web, page non lue. Les groupes diffèrent des sièges élus en 2022 (changements de groupe). Relevé de recherche web, non recoupé : FdI 117, PD 68, Lega 55, FI 52, M5S 48, AVS 10, Azione 10, Noi Moderati 8, IV 7, Misto 23 (total 398). La carte garde les sièges de l'élection, règle commune.",
+      "hotes": [
+        "www.camera.it",
+        "dati.camera.it"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "senato",
+      "nom": "Sénat, données ouvertes (sénateurs, groupes)",
+      "editeur": "Senato della Repubblica",
+      "url": "https://dati.senato.it/",
+      "type": "officiel",
+      "langue": "it",
+      "licence": "non précisée",
+      "cadence": "quotidienne",
+      "api": true,
+      "api_url": "https://dati.senato.it/sparql",
+      "format": "sparql / rdf",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Hôte bloqué par le proxy de la session le 26/10/2026 : informations relevées par recherche web, page non lue. Licence non confirmée.",
+      "hotes": [
+        "dati.senato.it",
+        "www.senato.it"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "gouvernement",
+      "nom": "Présidence du Conseil des ministres, composition du gouvernement",
+      "editeur": "Presidenza del Consiglio dei ministri",
+      "url": "https://www.governo.it/it/i-governi-dal-1943-ad-oggi/governo-meloni",
+      "type": "officiel",
+      "langue": "it",
+      "licence": "non précisée",
+      "cadence": "à chaque changement",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Hôte bloqué par le proxy de la session le 26/10/2026 : informations relevées par recherche web, page non lue.",
+      "hotes": [
+        "www.governo.it"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "quirinale",
+      "nom": "Présidence de la République, le Président",
+      "editeur": "Presidenza della Repubblica",
+      "url": "https://www.quirinale.it/",
+      "type": "officiel",
+      "langue": "it",
+      "licence": "non précisée",
+      "cadence": "à chaque élection",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Hôte bloqué par le proxy de la session le 26/10/2026 : informations relevées par recherche web, page non lue. Sergio Mattarella, réélu le 29/01/2022 (second mandat).",
+      "hotes": [
+        "www.quirinale.it"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "csf",
+      "nom": "Comité de sécurité financière (MEF) et UIF : gel d'avoirs, listes nationales",
+      "editeur": "Ministero dell'Economia e delle Finanze, Dipartimento del Tesoro ; Unità di Informazione Finanziaria (Banca d'Italia)",
+      "url": "https://www.dt.mef.gov.it/it/attivita_istituzionali/prevenzione_reati_finanziari/",
+      "type": "officiel",
+      "langue": "it",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html / pdf",
+      "couches": [
+        "sanctions"
+      ],
+      "notes": "Hôte bloqué par le proxy de la session le 26/10/2026 : informations relevées par recherche web, page non lue. L'Italie applique les sanctions ONU et UE (d.lgs. 109/2007 ; embargos et biens à double usage : d.lgs. 221/2017). L'art. 4-bis du d.lgs. 109/2007 permet des listes nationales de gel, valables 6 mois et caduques dès l'adoption de mesures UE : pas de régime autonome durable, donc rien à ajouter à la couche sanctions UE.",
+      "hotes": [
+        "www.dt.mef.gov.it",
+        "uif.bancaditalia.it"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "armements",
+      "nom": "Rapport annuel au Parlement sur les exportations d'armement (loi 185/1990)",
+      "editeur": "Presidenza del Consiglio dei ministri ; UAMA (Ministero degli Affari esteri)",
+      "url": "https://www.senato.it/",
+      "type": "officiel",
+      "langue": "it",
+      "licence": "non précisée",
+      "cadence": "annuelle (rapport 2025 transmis le 19/05/2026, Doc. LXVII n. 4)",
+      "api": false,
+      "api_url": null,
+      "format": "pdf",
+      "couches": [
+        "autre"
+      ],
+      "notes": "Hôte bloqué par le proxy de la session le 26/10/2026 : informations relevées par recherche web, page non lue. Autorisations par pays destinataire : piste pour une future couche, non exploitée ici. Lien direct vers le Doc. LXVII n. 4 non trouvé.",
+      "hotes": [
+        "www.senato.it",
+        "documenti.camera.it",
+        "www.esteri.it"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "mae",
+      "nom": "Ministère des Affaires étrangères, communiqués",
+      "editeur": "Ministero degli Affari esteri e della cooperazione internazionale",
+      "url": "https://www.esteri.it/it/sala_stampa/",
+      "type": "officiel",
+      "langue": "it",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "conflits"
+      ],
+      "notes": "Hôte bloqué par le proxy de la session le 26/10/2026 : informations relevées par recherche web, page non lue. Aucune tension officielle bilatérale relevée faute d'accès.",
+      "hotes": [
+        "www.esteri.it"
+      ],
+      "acces": "non_verifie"
+    }
+  ]
+}

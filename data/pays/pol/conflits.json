@@ -1,0 +1,9 @@
+{
+  "pays": "POL",
+  "verifie": "2026-10-26",
+  "evenements": [
+    { "avec": "UKR", "k": "soutien", "t": "Aide militaire à l'Ukraine", "d": "Paquets d'aide militaire annoncés par le ministère de la Défense depuis février 2022 ; liste détaillée non publiée.", "date": "2022-02", "src": "mon" },
+    { "avec": "RUS", "k": "tension", "t": "Consultations de l'OTAN après l'incursion de drones", "d": "La Pologne a demandé des consultations au titre de l'article 4 du traité de l'Atlantique Nord après l'entrée de 19 objets de type drone russes dans son espace aérien dans la nuit du 9 au 10/09/2025.", "date": "2025-09-10", "src": "otan_art4" },
+    { "avec": "BLR", "k": "tension", "t": "Restrictions dans la zone frontalière avec la Biélorussie", "d": "Règlement du ministre de l'Intérieur du 26/05/2026 interdisant temporairement le séjour dans une partie de la zone frontalière, en vigueur le 03/06/2026.", "date": "2026-06-03", "src": "dzu" }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "pays": "DNK",
+  "verifie": "2026-10-26",
+  "chef_etat": { "nom": "Frederik X", "fonction": "Roi de Danemark", "parti": null, "depuis": "2024-01-14", "qid": "Q1004037", "src": "wikidata" },
+  "chef_gouv": { "nom": "Mette Frederiksen", "fonction": "Première ministre", "parti": "Socialdemokratiet", "depuis": "2019-06-27", "qid": "Q5015", "src": "gouvernement" },
+  "chambre": {
+    "nom": "Folketing",
+    "sieges": 179,
+    "majorite": 90,
+    "election": "2026-03-24",
+    "src": "electoral",
+    "ipu": null
+  },
+  "partis": [
+    { "nom": "Socialdemokratiet (S)", "sieges": 38, "role": "gouv", "leaders": "Mette Frederiksen (présidente)", "ipu": [] },
+    { "nom": "Socialistisk Folkeparti (SF)", "sieges": 20, "role": "gouv", "leaders": "Pia Olsen Dyhr (présidente)", "ipu": [] },
+    { "nom": "Venstre (V)", "sieges": 18, "role": "hors", "leaders": "Troels Lund Poulsen (président)", "ipu": [] },
+    { "nom": "Liberal Alliance (I)", "sieges": 16, "role": "hors", "leaders": "Alex Vanopslagh (président)", "ipu": [] },
+    { "nom": "Dansk Folkeparti (O)", "sieges": 16, "role": "hors", "leaders": "Morten Messerschmidt (président)", "ipu": [] },
+    { "nom": "Moderaterne (M)", "sieges": 14, "role": "gouv", "leaders": "Lars Løkke Rasmussen (président)", "ipu": [] },
+    { "nom": "Det Konservative Folkeparti (C)", "sieges": 13, "role": "hors", "leaders": "Mona Juul (présidente)", "ipu": [] },
+    { "nom": "Enhedslisten (Ø)", "sieges": 11, "role": "hors", "leaders": "Pelle Dragsted (porte-parole politique)", "ipu": [] },
+    { "nom": "Radikale Venstre (B)", "sieges": 10, "role": "gouv", "leaders": null, "ipu": [] },
+    { "nom": "Danmarksdemokraterne (Æ)", "sieges": 10, "role": "hors", "leaders": null, "ipu": [] },
+    { "nom": "Alternativet (Å)", "sieges": 5, "role": "hors", "leaders": null, "ipu": [] },
+    { "nom": "Borgernes Parti (H)", "sieges": 4, "role": "hors", "leaders": null, "ipu": [] }
+  ]
+}

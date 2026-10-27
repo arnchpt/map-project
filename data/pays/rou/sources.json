@@ -1,0 +1,224 @@
+{
+  "pays": "ROU",
+  "verifie": "2026-10-26",
+  "sources": [
+    {
+      "id": "mapn",
+      "nom": "Ministère de la Défense nationale, communiqués de presse",
+      "editeur": "Ministerul Apărării Naționale (ROU)",
+      "url": "https://www.mapn.ro/cpresa/",
+      "type": "officiel",
+      "langue": "ro",
+      "licence": "non précisée",
+      "cadence": "irrégulière (communiqué à chaque relève ou déploiement)",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences",
+        "conflits"
+      ],
+      "notes": "Domaine bloqué pour la session (proxy 403), page non lue. Les présences ci-dessous ont été relevées dans des articles de presse citant ces communiqués (g4media.ro 2026-01, sofiaglobe.com 2025-01-15) : à recouper sur le site. Pas de page de synthèse des déploiements ni de flux structuré connus ; effectifs par mission rarement publiés.",
+      "hotes": [
+        "www.mapn.ro",
+        "english.mapn.ro"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "csat",
+      "nom": "Conseil suprême de défense du pays (CSAT), décisions sur les forces en missions extérieures",
+      "editeur": "Administrația Prezidențială (ROU)",
+      "url": "https://www.presidency.ro/ro/presedinte/consiliul-suprem-de-aparare-a-tarii",
+      "type": "officiel",
+      "langue": "ro",
+      "licence": "non précisée",
+      "cadence": "annuelle (liste des forces pour l'année suivante, adoptée en fin d'année)",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences"
+      ],
+      "notes": "Fixe chaque année le plafond des forces pouvant être engagées à l'étranger. Communiqué HTML, décisions détaillées non publiées.",
+      "hotes": [
+        "www.presidency.ro"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "parlement",
+      "nom": "Chambre des députés, composition et groupes parlementaires",
+      "editeur": "Camera Deputaților (ROU)",
+      "url": "https://www.cdep.ro/pls/parlam/structura2015.gp",
+      "type": "officiel",
+      "langue": "ro",
+      "licence": "non précisée",
+      "cadence": "continue (mise à jour à chaque changement de groupe)",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique",
+        "presences"
+      ],
+      "notes": "Site Oracle ORDS en HTML, pas d'open data documenté. Les effectifs des groupes évoluent depuis 2024 (changements de groupe) : non repris, les sièges retenus sont ceux de l'élection. Le Parlement approuve aussi les déploiements étrangers en Roumanie et roumains à l'étranger (décisions au Monitorul Oficial).",
+      "hotes": [
+        "www.cdep.ro"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "senat",
+      "nom": "Sénat, composition et groupes",
+      "editeur": "Senatul României (ROU)",
+      "url": "https://www.senat.ro/",
+      "type": "officiel",
+      "langue": "ro",
+      "licence": "non précisée",
+      "cadence": "continue",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique"
+      ],
+      "notes": "",
+      "hotes": [
+        "www.senat.ro"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "gouvernement",
+      "nom": "Gouvernement de la Roumanie, composition du cabinet",
+      "editeur": "Guvernul României (ROU)",
+      "url": "https://gov.ro/ro/guvernul/cabinetul-de-ministri",
+      "type": "officiel",
+      "langue": "ro",
+      "licence": "non précisée",
+      "cadence": "à chaque changement",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Cabinet Niculescu investi le 2026-10-20 (280 voix sur 338 votants). Relevé via Wikidata (P6, Q218) et presse (romaniajournal.ro, rador.ro, 2026-10-21) faute d'accès au site.",
+      "hotes": [
+        "gov.ro"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "presidence",
+      "nom": "Administration présidentielle",
+      "editeur": "Administrația Prezidențială (ROU)",
+      "url": "https://www.presidency.ro/",
+      "type": "officiel",
+      "langue": "ro",
+      "licence": "non précisée",
+      "cadence": "à chaque changement",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Nicușor Dan, président depuis le 2025-05-26 (Wikidata P35, Q218).",
+      "hotes": [
+        "www.presidency.ro"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "electoral",
+      "nom": "Autorité électorale permanente et Bureau électoral central, résultats des législatives du 1er décembre 2024",
+      "editeur": "Autoritatea Electorală Permanentă (ROU)",
+      "url": "https://www.roaep.ro/",
+      "type": "officiel",
+      "langue": "ro",
+      "licence": "OGL-ROU-1.0 sur data.gov.ro (à vérifier)",
+      "cadence": "à chaque élection",
+      "api": true,
+      "api_url": "https://data.gov.ro/organization/autoritatea-electorala-permanenta",
+      "format": "csv",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Sièges 2024 recoupés avec la répartition publiée par l'IPU (code RO-LC01-E20241201, non lu depuis la session : api.data.ipu.org bloqué) et Wikipedia. Codes partis IPU non relevés : les sièges restent figés jusqu'à leur ajout.",
+      "hotes": [
+        "www.roaep.ro",
+        "prezenta.roaep.ro",
+        "data.gov.ro"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "mae",
+      "nom": "Ministère des Affaires étrangères, communiqués",
+      "editeur": "Ministerul Afacerilor Externe (ROU)",
+      "url": "https://www.mae.ro/node/1787",
+      "type": "officiel",
+      "langue": "ro",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "conflits",
+        "sanctions"
+      ],
+      "notes": "Domaine bloqué. Convocations de l'ambassadeur russe (2026-04-25, 2026-07-27) relevées via l'agence publique Agerpres (agerpres.ro), à recouper. Rubrique « Sancțiuni internaționale » : la Roumanie applique les sanctions ONU et UE (OUG 202/2008), aucun régime national autonome identifié, donc rien à ajouter à la couche sanctions UE.",
+      "hotes": [
+        "www.mae.ro"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "anaf",
+      "nom": "Agence nationale de l'administration fiscale, mise en œuvre des sanctions internationales",
+      "editeur": "Agenția Națională de Administrare Fiscală (ROU)",
+      "url": "https://static.anaf.ro/static/10/Anaf/sanctiuni_internationale/Informatiiprivinddepunereainstiintarilorsicererilor.pdf",
+      "type": "officiel",
+      "langue": "ro",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "pdf",
+      "couches": [
+        "sanctions"
+      ],
+      "notes": "Autorité de gel des avoirs (OUG 202/2008) ; les ordres de gel paraissent au Monitorul Oficial. Pas de liste propre. Cour des comptes (sept. 2024) : coordination ANAF–MAE jugée insuffisante.",
+      "hotes": [
+        "static.anaf.ro",
+        "www.anaf.ro"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "ins",
+      "nom": "Institut national de la statistique, TEMPO-Online, matrices EXP101B (exportations FOB par pays partenaire) et IMP101B (importations CAF)",
+      "editeur": "Institutul Național de Statistică (ROU)",
+      "url": "http://statistici.insse.ro:8077/tempo-online/",
+      "type": "officiel",
+      "langue": "ro",
+      "licence": "réutilisation avec mention de l'INS (à vérifier sur le site)",
+      "cadence": "mensuelle (provisoire), annuelle (définitive)",
+      "api": true,
+      "api_url": "http://statistici.insse.ro:8077/tempo-ins/matrix/EXP101B",
+      "format": "json",
+      "couches": [
+        "commerce"
+      ],
+      "notes": "API REST JSON sans clé : /tempo-ins/context, /matrix/<code>, /matrix/dataSet/<code> (POST). Servie en http seul sur le port 8077 : fragile, et le port non standard peut être refusé même une fois l'hôte autorisé. Domaine bloqué : commerce.json non rempli, aucun chiffre relevé. Clients existants : paquet R « TEMPO » (Revista Română de Statistică, 2019), dépôt gov2-ro/tempo-ins-dump.",
+      "hotes": [
+        "statistici.insse.ro",
+        "insse.ro"
+      ],
+      "acces": "non_verifie"
+    }
+  ]
+}

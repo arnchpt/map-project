@@ -11,7 +11,7 @@ const { touch } = require("./freshness");
 const root = path.join(__dirname, "..");
 const API = "https://api.data.ipu.org/v1";
 const OUT = path.join(root, "data/politique/ipu-sieges.json");
-const pol = JSON.parse(fs.readFileSync(path.join(root, "data/politique/politique.json"), "utf8"));
+const pol = require("./politique-pays").chargerPolitique();
 const get = async u => { const r = await fetch(u, { headers: { Accept: "application/json" } }); if (!r.ok) throw new Error(`${r.status} ${u}`); return r.json(); };
 
 (async () => {

@@ -1,0 +1,30 @@
+{
+  "pays": "AUT",
+  "verifie": "2026-10-26",
+  "src": "stat",
+  "annee": 2025,
+  "devise": "EUR",
+  "unite": "Md",
+  "concept": "résultats provisoires du 30/06/2026 ; concept (spécial/général, CAF/FOB) non vérifié",
+  "total": {
+    "x": 189.79,
+    "m": 196.9
+  },
+  "partenaires": [
+    {
+      "pays": "DEU",
+      "x": 56.2,
+      "m": 63.36
+    },
+    {
+      "pays": "USA",
+      "x": 12.8,
+      "m": 7.75
+    }
+  ],
+  "notes": {
+    "DEU": "Importations calculées à partir des exportations (56,2) et du solde publié (−7,16), non publiées telles quelles dans l'extrait lu.",
+    "USA": "Importations calculées à partir des exportations (12,8) et du solde publié (+5,05).",
+    "CHN": "Seul le solde est connu : −12,62 Md€, le plus fort déficit bilatéral. Exportations et importations non relevées."
+  }
+}

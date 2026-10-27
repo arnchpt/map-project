@@ -1,0 +1,26 @@
+{
+  "pays": "POL",
+  "verifie": "2026-10-26",
+  "presences": [
+    { "hote": "LVA", "lon": 24.3, "lat": 57.1, "nom": "Contingent dans la présence avancée renforcée de l'OTAN (Lettonie)", "cat": "otan", "eff": null, "depuis": null, "src": "eli_mp" },
+    { "hote": "LTU", "lon": 23.9, "lat": 54.9, "nom": "Contingent dans la présence avancée renforcée de l'OTAN (Lituanie)", "cat": "otan", "eff": null, "depuis": null, "src": "eli_mp" },
+    { "hote": "EST", "lon": 24.8, "lat": 59.4, "nom": "Contingent dans la présence avancée renforcée de l'OTAN (Estonie)", "cat": "otan", "eff": null, "depuis": null, "src": "eli_mp" },
+    { "hote": "ROU", "lon": 23.8, "lat": 44.3, "nom": "Contingent dans la Brigade multinationale Sud-Est de l'OTAN (Roumanie)", "cat": "otan", "eff": null, "depuis": null, "src": "eli_mp" },
+    { "hote": "BGR", "lon": 23.3, "lat": 42.7, "nom": "Contingent dans la Brigade multinationale Sud-Est de l'OTAN (Bulgarie)", "cat": "otan", "eff": null, "depuis": null, "src": "eli_mp" },
+    { "hote": "TUR", "lon": 35.3, "lat": 37.0, "nom": "Contingent dans les mesures de réassurance adaptées de l'OTAN (Turquie)", "cat": "otan", "eff": null, "depuis": null, "src": "eli_mp" },
+    { "hote": "MKD", "lon": 21.4, "lat": 42.0, "nom": "Contingent dans les forces internationales (soutien à la KFOR, Macédoine du Nord)", "cat": "otan", "eff": null, "depuis": null, "src": "eli_mp" },
+    { "hote": "BIH", "lon": 18.4, "lat": 43.9, "nom": "Contingent dans l'opération de l'UE EUFOR Althea (Bosnie-Herzégovine)", "cat": "ue", "eff": null, "depuis": null, "src": "eli_mp" },
+    { "hote": "IRQ", "lon": 44.4, "lat": 33.3, "nom": "Contingent dans l'opération Inherent Resolve et la mission de l'OTAN en Irak", "cat": "ope", "eff": null, "depuis": null, "src": "eli_mp" },
+    { "hote": "KWT", "lon": 48.0, "lat": 29.4, "nom": "Contingent de soutien à l'opération Inherent Resolve (Koweït)", "cat": "ope", "eff": null, "depuis": null, "src": "eli_mp" },
+    { "hote": "JOR", "lon": 35.9, "lat": 31.9, "nom": "Contingent de soutien à l'opération Inherent Resolve (Jordanie)", "cat": "ope", "eff": null, "depuis": null, "src": "eli_mp" },
+    { "hote": "QAT", "lon": 51.5, "lat": 25.3, "nom": "Contingent de soutien à l'opération Inherent Resolve (Qatar)", "cat": "ope", "eff": null, "depuis": null, "src": "eli_mp" },
+    { "hote": "CAF", "lon": 18.6, "lat": 4.4, "nom": "Mission de formation de l'UE en République centrafricaine (EUTM RCA)", "cat": "ue", "eff": 2, "depuis": null, "src": "eli_mp" }
+  ],
+  "non_localisees": [
+    { "nom": "Kosovo, KFOR (même décision que la Macédoine du Nord et la Bosnie-Herzégovine ; code ISO du Kosovo absent du validateur)", "eff": "plafond 300 pour les trois pays (MP 2026/639)", "src": "eli_mp" },
+    { "nom": "Présence avancée renforcée de l'OTAN, Lettonie, Estonie, Lituanie", "eff": "plafond 320 pour les trois pays, jusqu'au 30/11/2026 (MP 2026/654)", "src": "eli_mp" },
+    { "nom": "Irak, Jordanie, Qatar, Koweït", "eff": "plafond 200 pour les quatre pays, jusqu'au 31/12/2026 (MP 2026/655)", "src": "eli_mp" },
+    { "nom": "Turquie et groupes navals permanents de l'OTAN (Méditerranée, mer Noire)", "eff": "plafond 95, jusqu'au 31/12/2026 (MP 2026/638)", "src": "eli_mp" },
+    { "nom": "Roumanie et Bulgarie, Brigade multinationale Sud-Est", "eff": "plafond non relevé, jusqu'au 31/12/2026 (MP 2026/637)", "src": "eli_mp" }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "pays": "GRC",
+  "verifie": "2026-10-26",
+  "chef_etat": { "nom": "Konstantinos Tasoulas", "fonction": "Président de la République", "parti": null, "depuis": "2025-03-13", "qid": "Q20995518", "src": "presidence" },
+  "chef_gouv": { "nom": "Kyriakos Mitsotakis", "fonction": "Premier ministre", "parti": "Nouvelle Démocratie", "depuis": "2023-06-26", "qid": "Q552751", "src": "gouvernement" },
+  "chambre": {
+    "nom": "Parlement hellénique",
+    "sieges": 300,
+    "majorite": 151,
+    "election": "2023-06-25",
+    "src": "ypes",
+    "ipu": "GR-LC01-E20230625"
+  },
+  "partis": [
+    { "nom": "Nouvelle Démocratie", "sieges": 158, "role": "gouv", "leaders": "Kyriakos Mitsotakis" },
+    { "nom": "SYRIZA", "sieges": 47, "role": "hors", "leaders": "Présidence vacante depuis la démission de Sokratis Famellos (09/07/2026)" },
+    { "nom": "PASOK-KINAL", "sieges": 32, "role": "hors", "leaders": "Nikos Androulakis" },
+    { "nom": "Parti communiste de Grèce (KKE)", "sieges": 21, "role": "hors", "leaders": "Dimitris Koutsoumpas (non reconfirmé)" },
+    { "nom": "Spartiates", "sieges": 12, "role": "hors", "leaders": "non reconfirmé" },
+    { "nom": "Solution grecque", "sieges": 12, "role": "hors", "leaders": "Kyriakos Velopoulos (non reconfirmé)" },
+    { "nom": "Niki", "sieges": 10, "role": "hors", "leaders": "Dimitris Natsios (non reconfirmé)" },
+    { "nom": "Cap vers la liberté (Plefsi Eleftherias)", "sieges": 8, "role": "hors", "leaders": "Zoe Konstantopoulou (non reconfirmé)" }
+  ],
+  "seconde": "Parlement monocaméral.",
+  "src_leaders": "presse_partis",
+  "notes": [
+    "Sièges : résultat du scrutin du 25/06/2023, à confirmer par l'IPU (codes partis non relevés, domaine bloqué). La composition actuelle des groupes diffère (scission de la Nouvelle Gauche issue de SYRIZA, indépendants) : voir la source parlement.",
+    "Alexis Tsipras a quitté le Parlement en octobre 2025 et fondé en mai 2026 un nouveau parti (ELAS), sans groupe issu de l'élection de 2023.",
+    "Kyriakos Mitsotakis est Premier ministre depuis le 08/07/2019, reconduit après les élections de juin 2023 (date retenue : 26/06/2023, à vérifier sur la source gouvernement).",
+    "Prochaines élections législatives attendues en 2027."
+  ]
+}

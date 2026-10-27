@@ -1,0 +1,264 @@
+{
+  "pays": "LUX",
+  "verifie": "2026-10-26",
+  "sources": [
+    {
+      "id": "stat",
+      "nom": "STATEC, « Entreprises - Commerce international de biens » (commerce extérieur par pays partenaires, millions EUR)",
+      "editeur": "STATEC, Institut national de la statistique et des études économiques (Luxembourg)",
+      "url": "https://data.public.lu/fr/datasets/?q=commerce%20international%20de%20biens",
+      "type": "officiel",
+      "langue": "fr",
+      "licence": "CC0 (fiche du jeu de données sur data.public.lu)",
+      "cadence": "annuelle (dernière mise à jour constatée : 17/06/2025)",
+      "api": true,
+      "api_url": "https://data.public.lu/api/1/datasets/?q=commerce+international+de+biens",
+      "format": "xlsx/csv via l'API udata de data.public.lu",
+      "couches": [
+        "commerce"
+      ],
+      "notes": "Pas de commerce.json : data.public.lu et lustat.statec.lu sont injoignables depuis l'environnement de travail (DNS refusé), le fichier n'a donc pas pu être relevé. À brancher en ajoutant data.public.lu à la liste des domaines autorisés. Le commerce de biens luxembourgeois est faible face aux services, ce que le FMI (biens seuls) ne montre pas.",
+      "hotes": [
+        "data.public.lu"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "lustat",
+      "nom": "LUSTAT, base de données statistiques du STATEC (séries détaillées, dont commerce extérieur)",
+      "editeur": "STATEC (Luxembourg)",
+      "url": "https://lustat.statec.lu",
+      "type": "officiel",
+      "langue": "fr",
+      "licence": "non précisée (conditions d'utilisation non vérifiées, site injoignable)",
+      "cadence": "mensuelle à annuelle selon les séries",
+      "api": true,
+      "api_url": "https://lustat.statec.lu",
+      "format": "SDMX (plateforme .Stat Suite de l'OCDE)",
+      "couches": [
+        "commerce"
+      ],
+      "notes": "API ouverte depuis avril 2022 selon le STATEC (https://statistiques.public.lu/en/donnees/nos-donnees.html). Point d'accès SDMX exact et licence à confirmer quand le domaine sera autorisé.",
+      "hotes": [
+        "lustat.statec.lu",
+        "statistiques.public.lu"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "chd_def",
+      "nom": "Chambre des Députés, commission des Affaires étrangères et de la Défense, procès-verbal du 17/06/2026 (missions de l'Armée)",
+      "editeur": "Chambre des Députés (Luxembourg)",
+      "url": "https://wdocs-pub.chd.lu/docs/Reunions/2023_DEF/a0OMz00000BVxboMAD/20260617_PV.pdf",
+      "type": "officiel",
+      "langue": "fr",
+      "licence": "non précisée",
+      "cadence": "irrégulière (point sur les missions présenté en commission)",
+      "api": false,
+      "api_url": null,
+      "format": "pdf",
+      "couches": [
+        "presences"
+      ],
+      "notes": "Document non lu en entier (domaine injoignable) : contenu relevé par extrait de moteur de recherche. Selon l'extrait : Armée engagée en Allemagne, au Kosovo, en Méditerranée, au Mozambique, en Lituanie et en Roumanie, 19 militaires au total dont 17 déployés, dans trois missions OTAN et trois missions UE. Effectifs par mission non relevés.",
+      "hotes": [
+        "wdocs-pub.chd.lu"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "cetat",
+      "nom": "Conseil d'État, projets de règlements grand-ducaux autorisant les missions de l'Armée et avis",
+      "editeur": "Conseil d'État (Luxembourg)",
+      "url": "https://conseil-etat.public.lu/content/dam/conseil_etat/fr/avis/2025/18112025/62326-texte-du-projet-de-rglement-grand-ducal-14102025.pdf",
+      "type": "officiel",
+      "langue": "fr",
+      "licence": "non précisée",
+      "cadence": "à chaque autorisation ou prolongation de mission",
+      "api": false,
+      "api_url": null,
+      "format": "pdf",
+      "couches": [
+        "presences"
+      ],
+      "notes": "Chaque mission est autorisée par règlement grand-ducal (loi de 1992 sur les opérations de maintien de la paix) avec un plafond d'effectif et une date de fin : c'est la source la plus stable pour les dates. Textes relevés : prolongation de la présence avancée renforcée en Lituanie jusqu'au 31/12/2027 (projet 62326) ; KFOR, au plus 10 militaires du 01/04/2025 au 31/05/2026 (avis 61948, https://conseil-etat.public.lu/content/dam/conseil_etat/fr/avis/2024/12112024/61948-avis-du-12-novembre-2024.pdf).",
+      "hotes": [
+        "conseil-etat.public.lu"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "defense",
+      "nom": "Direction de la défense, ministère des Affaires étrangères et européennes, de la Défense, de la Coopération et du Commerce extérieur",
+      "editeur": "Gouvernement du Grand-Duché de Luxembourg",
+      "url": "https://defense.gouvernement.lu/fr.html",
+      "type": "officiel",
+      "langue": "fr",
+      "licence": "non précisée",
+      "cadence": "irrégulière (communiqués)",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences",
+        "conflits"
+      ],
+      "notes": "Domaine injoignable depuis l'environnement de travail. Communiqué du 13/10/2026 sur la visite de la ministre à EUMAM Ukraine en Allemagne : https://gouvernement.lu/fr/actualites/toutes_actualites/communiques/2026/10-octobre/13-backes-allemagne.html",
+      "hotes": [
+        "defense.gouvernement.lu",
+        "gouvernement.lu"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "gouv_ukr",
+      "nom": "Gouvernement, communiqué du 18/06/2026 sur le groupe de contact pour la défense de l'Ukraine (OTAN, Bruxelles)",
+      "editeur": "Gouvernement du Grand-Duché de Luxembourg",
+      "url": "https://gouvernement.lu/fr/actualites/toutes_actualites/communiques/2026/06-juin/18-backes-otan-ukraine-defence-contact-group-bruxelles.html",
+      "type": "officiel",
+      "langue": "fr",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "conflits"
+      ],
+      "notes": "Montants relevés par moteur de recherche (page injoignable) : au moins 100 M€ d'aide militaire prévus pour 2026 ; 155 M€ en 2025 ; 414 M€ cumulés depuis février 2022 au mois d'avril 2026. Les chiffres de la contribution au mécanisme PURL divergent entre communiqués (30 M€ / 30 M$), non repris.",
+      "hotes": [
+        "gouvernement.lu"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "gouvernement",
+      "nom": "Service information et presse, « Le gouvernement du Grand-Duché de Luxembourg » (composition)",
+      "editeur": "Service information et presse du gouvernement (SIP)",
+      "url": "https://sip.gouvernement.lu/dam-assets/publications/brochure-livre/minist-etat/sip/brochure/le-gouvernement-du-grand-duche-de-luxembourg/gouvernement-2023/le-gouvernement-du-grand-duch-de-luxembourg-2023.pdf",
+      "type": "officiel",
+      "langue": "fr",
+      "licence": "non précisée",
+      "cadence": "à chaque changement de gouvernement",
+      "api": false,
+      "api_url": null,
+      "format": "pdf",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Chef de l'État et chef du gouvernement recoupés avec Wikidata (P35, P6) le 26/10/2026 : Guillaume (Q161319) depuis le 03/10/2025, Luc Frieden (Q592101) depuis le 17/11/2023.",
+      "hotes": [
+        "sip.gouvernement.lu"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "elections",
+      "nom": "Résultats officiels des élections législatives du 8 octobre 2023",
+      "editeur": "Gouvernement du Grand-Duché de Luxembourg (portail elections.public.lu)",
+      "url": "https://elections.public.lu",
+      "type": "officiel",
+      "langue": "fr",
+      "licence": "non précisée",
+      "cadence": "à chaque élection (prochaines législatives prévues en 2028)",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Domaine injoignable : répartition des sièges relevée dans la presse (Paperjam, https://paperjam.lu/article/dei-greng-coule-csv-maitre-jeu ; L'essentiel/Les Frontaliers pour l'ADR). Le contrôle hebdomadaire IPU (code LU-LC01-E20231008) prendra le relais si le code correspond. Page exacte des résultats 2023 non vérifiée (domaine injoignable).",
+      "hotes": [
+        "elections.public.lu",
+        "paperjam.lu"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "chd",
+      "nom": "Chambre des Députés, open data (députés, présences, votes, textes)",
+      "editeur": "Chambre des Députés (Luxembourg)",
+      "url": "https://www.chd.lu/fr/open-data",
+      "type": "officiel",
+      "langue": "fr",
+      "licence": "Creative Commons (variante non vérifiée)",
+      "cadence": "mensuelle annoncée, environ tous les deux mois constatée selon la Chambre",
+      "api": true,
+      "api_url": "https://data.public.lu/api/1/datasets/?q=chambre+des+deputes",
+      "format": "xlsx via data.public.lu",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Liste des députés avec groupe politique : permet de suivre les changements de groupe (ex. Ben Polidori, élu Piraten en 2023, passé au LSAP en septembre 2024). Domaine injoignable, non branché.",
+      "hotes": [
+        "data.public.lu",
+        "www.chd.lu"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "wikidata_partis",
+      "nom": "Wikidata, présidents de partis (P488) des partis luxembourgeois",
+      "editeur": "Wikimedia Foundation",
+      "url": "https://query.wikidata.org/",
+      "type": "international",
+      "langue": "fr",
+      "licence": "CC0",
+      "cadence": "irrégulière (contributions bénévoles)",
+      "api": true,
+      "api_url": "https://query.wikidata.org/sparql",
+      "format": "json (SPARQL)",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Relevé du 26/10/2026. Seule source joignable pour les dirigeants ; dates de début parfois anciennes (Piraten : 2019), donc mention « non reconfirmé » quand aucune source de 2026 n'a été trouvée.",
+      "hotes": [
+        "query.wikidata.org"
+      ],
+      "acces": "verifie"
+    },
+    {
+      "id": "mfin_sanctions",
+      "nom": "Ministère des Finances, dossier « Sanctions financières internationales »",
+      "editeur": "Ministère des Finances (Luxembourg)",
+      "url": "https://mfin.gouvernement.lu/fr/dossiers/2018/sanctions-financiaires-internationales.html",
+      "type": "officiel",
+      "langue": "fr",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "sanctions"
+      ],
+      "notes": "Le Luxembourg n'a pas de liste nationale autonome trouvée : la loi du 19/12/2020 relative à la mise en œuvre de mesures restrictives en matière financière désigne les personnes visées par renvoi aux listes de l'UE et de l'ONU (art. 4(2)). Rien à ajouter à la couche sanctions UE automatique. La page indique 4 698 231 424,09 € gelés au titre du règlement UE 269/2014 (date du chiffre non indiquée).",
+      "hotes": [
+        "mfin.gouvernement.lu"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "mae_sanctions",
+      "nom": "Ministère des Affaires étrangères et européennes, « Mesures restrictives »",
+      "editeur": "Ministère des Affaires étrangères et européennes (Luxembourg)",
+      "url": "https://mae.gouvernement.lu/en/directions-du-ministere/affaires-europeennes/organisations-economiques-int/mesures-restrictives.html",
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "sanctions"
+      ],
+      "notes": "Le ministère coordonne l'application des sanctions de l'ONU et de l'UE. Volet commercial (biens à double usage, embargos) : loi du 27/06/2018 sur le contrôle des exportations, guichet https://guichet.public.lu/fr/entreprises/import-export/licences/sanctions-mesures-restrictives/definition-mesures-restrictives.html",
+      "hotes": [
+        "guichet.public.lu",
+        "mae.gouvernement.lu"
+      ],
+      "acces": "non_verifie"
+    }
+  ]
+}

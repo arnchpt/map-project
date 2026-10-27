@@ -1,0 +1,17 @@
+{
+  "pays": "CYP",
+  "verifie": "2026-10-26",
+  "presences": [
+    {
+      "hote": "GRC",
+      "lon": 22.4,
+      "lat": 39.6,
+      "nom": "Officiers à l'état-major de l'opération EUNAVFOR Aspides (Larissa)",
+      "cat": "ue",
+      "eff": 2,
+      "depuis": "2024-02",
+      "src": "presse-aspides"
+    }
+  ],
+  "non_localisees": []
+}

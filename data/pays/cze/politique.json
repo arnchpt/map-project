@@ -1,0 +1,77 @@
+{
+  "pays": "CZE",
+  "verifie": "2026-10-26",
+  "chef_etat": {
+    "nom": "Petr Pavel",
+    "fonction": "Président de la République",
+    "parti": null,
+    "depuis": "2023-03-09",
+    "qid": "Q2080040",
+    "src": "wikidata"
+  },
+  "chef_gouv": {
+    "nom": "Andrej Babiš",
+    "fonction": "Président du gouvernement",
+    "parti": "ANO",
+    "depuis": "2025-12-09",
+    "qid": "Q10819807",
+    "src": "wikidata"
+  },
+  "chambre": {
+    "nom": "Chambre des députés (Poslanecká sněmovna)",
+    "sieges": 200,
+    "majorite": 101,
+    "election": "2025-10-03",
+    "src": "presse_resultats",
+    "ipu": null
+  },
+  "partis": [
+    {
+      "nom": "ANO",
+      "sieges": 80,
+      "role": "gouv",
+      "leaders": "non reconfirmé",
+      "ipu": []
+    },
+    {
+      "nom": "SPOLU (ODS, KDU-ČSL, TOP 09)",
+      "sieges": 52,
+      "role": "hors",
+      "leaders": "non reconfirmé",
+      "ipu": []
+    },
+    {
+      "nom": "STAN (Maires et indépendants)",
+      "sieges": 22,
+      "role": "hors",
+      "leaders": "non reconfirmé",
+      "ipu": []
+    },
+    {
+      "nom": "Parti pirate tchèque",
+      "sieges": 18,
+      "role": "hors",
+      "leaders": "non reconfirmé",
+      "ipu": []
+    },
+    {
+      "nom": "SPD (Liberté et démocratie directe)",
+      "sieges": 15,
+      "role": "gouv",
+      "leaders": "non reconfirmé",
+      "ipu": []
+    },
+    {
+      "nom": "Motoristé sobě",
+      "sieges": 13,
+      "role": "gouv",
+      "leaders": "non reconfirmé",
+      "ipu": []
+    }
+  ],
+  "notes": [
+    "Scrutin des 3 et 4 octobre 2025. Sièges par parti : Wikipédia (presse_resultats), en attendant le XML officiel de volby.cz (bloqué). Total de la coalition gouvernementale (108) recoupé par Radio Prague International (presse_coalition).",
+    "Dirigeants de partis non reconfirmés : aucune source lue depuis la session.",
+    "Code IPU de l'élection non lu (api.data.ipu.org bloqué depuis la session)."
+  ]
+}

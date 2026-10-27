@@ -1,0 +1,53 @@
+{
+  "pays": "LVA",
+  "verifie": "2026-10-26",
+  "presences": [
+    {
+      "hote": "XKX",
+      "lon": 21.2,
+      "lat": 42.6,
+      "nom": "KFOR (OTAN) : compagnie d'infanterie légère dans un bataillon multinational mené par les États-Unis",
+      "cat": "otan",
+      "eff": null,
+      "depuis": null,
+      "src": "defense"
+    },
+    {
+      "hote": "IRQ",
+      "lon": 44.4,
+      "lat": 33.3,
+      "nom": "Mission de l'OTAN en Irak (état-major de Bagdad)",
+      "cat": "otan",
+      "eff": null,
+      "depuis": null,
+      "src": "defense"
+    },
+    {
+      "hote": "ISR",
+      "lon": 35.2,
+      "lat": 31.8,
+      "nom": "Organisme des Nations unies chargé de la surveillance de la trêve (ONUST)",
+      "cat": "onu",
+      "eff": null,
+      "depuis": null,
+      "src": "saeima"
+    }
+  ],
+  "non_localisees": [
+    {
+      "nom": "Opération de déminage dans le détroit d'Ormuz (mandat de la Saeima du 24/09/2026, jusqu'au 01/09/2028)",
+      "eff": "jusqu'à 20 (plafond du mandat, déploiement non daté)",
+      "src": "saeima"
+    },
+    {
+      "nom": "EUNAVFOR MED Irini (UE, Méditerranée)",
+      "eff": "non publié",
+      "src": "defense"
+    },
+    {
+      "nom": "Coalition Inherent Resolve",
+      "eff": "non publié",
+      "src": "defense"
+    }
+  ]
+}
