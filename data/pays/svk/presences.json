@@ -1,6 +1,6 @@
 {
   "pays": "SVK",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "presences": [
     {
       "hote": "CYP",
@@ -8,9 +8,9 @@
       "lat": 35.1,
       "nom": "Contingent slovaque de l'UNFICYP (secteur 4)",
       "cat": "onu",
-      "eff": null,
+      "eff": 234,
       "depuis": "2001",
-      "src": "unficyp"
+      "src": "defense"
     },
     {
       "hote": "BIH",
@@ -18,7 +18,7 @@
       "lat": 43.8,
       "nom": "Contribution à l'opération EUFOR Althea",
       "cat": "ue",
-      "eff": null,
+      "eff": 51,
       "depuis": "2004-12",
       "src": "defense"
     },
@@ -29,8 +29,8 @@
       "nom": "Contingent dans la brigade multinationale de l'OTAN en Lettonie",
       "cat": "otan",
       "eff": null,
-      "depuis": "2018",
-      "src": "nrsr"
+      "depuis": "2018-06",
+      "src": "defense"
     },
     {
       "hote": "XKX",
@@ -41,13 +41,73 @@
       "eff": null,
       "depuis": "2025",
       "src": "nrsr"
+    },
+    {
+      "hote": "ISR",
+      "lon": 35.2,
+      "lat": 31.8,
+      "nom": "Mission d'observation de l'ONU UNTSO (Proche-Orient)",
+      "cat": "onu",
+      "eff": 3,
+      "depuis": null,
+      "src": "defense"
+    },
+    {
+      "hote": "IRQ",
+      "lon": 44.4,
+      "lat": 33.3,
+      "nom": "Mission OTAN en Irak (NMI)",
+      "cat": "otan",
+      "eff": 5,
+      "depuis": null,
+      "src": "defense"
+    },
+    {
+      "hote": "GEO",
+      "lon": 44.8,
+      "lat": 41.7,
+      "nom": "Mission d'observation de l'UE en Géorgie (EUMM)",
+      "cat": "ue",
+      "eff": 1,
+      "depuis": null,
+      "src": "defense"
+    },
+    {
+      "hote": "POL",
+      "lon": 21.0,
+      "lat": 52.2,
+      "nom": "Mission d'assistance de l'UE à l'Ukraine (EUMAM UA), Pologne",
+      "cat": "ue",
+      "eff": 1,
+      "depuis": null,
+      "src": "defense"
+    },
+    {
+      "hote": "BEL",
+      "lon": 4.4,
+      "lat": 50.8,
+      "nom": "Mission d'assistance de l'UE à l'Ukraine (EUMAM UA), Belgique",
+      "cat": "ue",
+      "eff": 1,
+      "depuis": null,
+      "src": "defense"
+    },
+    {
+      "hote": "ITA",
+      "lon": 12.5,
+      "lat": 41.9,
+      "nom": "Opération EUNAVFOR MED Irini, Italie",
+      "cat": "ue",
+      "eff": 3,
+      "depuis": null,
+      "src": "defense"
     }
   ],
   "non_localisees": [
     {
       "nom": "Activité OTAN « Eastern Sentry », défense aérienne, prioritairement en Pologne et en Roumanie",
       "eff": "plafond de 101 approuvé par le gouvernement puis la Národná rada (2026)",
-      "src": "vlada"
+      "src": "nrsr"
     }
   ]
 }
