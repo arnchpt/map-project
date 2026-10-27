@@ -1,6 +1,6 @@
 {
   "pays": "BGR",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "sources": [
     {
       "id": "stat",
@@ -17,7 +17,7 @@
       "couches": [
         "commerce"
       ],
-      "notes": "Commerce de biens par partenaire depuis 2000, Intrastat (UE) et Extrastat (hors UE). Aucune API documentée trouvée : export manuel depuis Infostat. Séries en leva jusqu'en 2025, en euros depuis l'adoption de l'euro le 01/01/2026 (1 € = 1,95583 BGN, Commission européenne). Domaines bloqués depuis la session : pas de commerce.json tant que les chiffres ne sont pas relevés à la source. Licence : https://www.nsi.bg/en/pages/license-to-use-statistical-information-produced-and-disseminated-by-the-national-statistical-institute-485",
+      "notes": "Commerce de biens par partenaire depuis 2000, Intrastat (UE) et Extrastat (hors UE). Aucune API documentée trouvée : export manuel depuis Infostat. Séries en leva jusqu'en 2025, en euros depuis l'adoption de l'euro le 01/01/2026 (1 € = 1,95583 BGN, Commission européenne). Domaines bloqués depuis la session : pas de commerce.json tant que les chiffres ne sont pas relevés à la source. Licence : https://www.nsi.bg/en/pages/license-to-use-statistical-information-produced-and-disseminated-by-the-national-statistical-institute-485 Hôtes toujours inaccessibles le 27/10/2026.",
       "hotes": [
         "nsi.bg",
         "www.nsi.bg",
@@ -27,25 +27,24 @@
     },
     {
       "id": "defense",
-      "nom": "Ministère de la Défense, communiqués sur les contingents à l'étranger",
+      "nom": "Ministère de la Défense, « Participation aux opérations et missions de l'OTAN » (fiche PDF)",
       "editeur": "Ministère de la Défense (Bulgarie)",
-      "url": "https://www.mod.bg/en/",
+      "url": "https://www.mod.bg/doc/cooperation/NATO_participation_missions.pdf",
       "type": "officiel",
       "langue": "bg",
       "licence": "non précisée",
-      "cadence": "irrégulière (à chaque rotation)",
+      "cadence": "irrégulière (fiche datée 2025)",
       "api": false,
       "api_url": null,
-      "format": "html",
+      "format": "pdf",
       "couches": [
         "presences"
       ],
-      "notes": "Seule l'Assemblée nationale autorise l'envoi de forces à l'étranger (déclaration du ministre de la Défense relayée par BTA). Le ministère a annoncé le 05/10/2026 environ 270 militaires dans cinq opérations OTAN et trois opérations UE, sans détail accessible. Chiffres relayés par l'agence BTA (source bta), à recouper sur mod.bg.",
+      "notes": "Lue le 27/10/2026. Donne les effectifs et les décisions du Conseil des ministres : KFOR ≈ 280 militaires (2025, depuis le 09/02/2000), NMI Irak 2 officiers + module de communication jusqu'à 14 (CM n° 751/2018, n° 403/2025), Sea Guardian 1 frégate jusqu'à 153 pendant 60 jours par an, groupes navals SNMG2/SNMCMG2 jusqu'à 5 en état-major, NSATU jusqu'à 6 (CM n° 567/2024). La fiche sur les opérations militaires de l'UE (https://www.mod.bg/doc/cooperation/Miltary_missions.pdf) date de 2020 : non utilisée. Le total de 270 militaires (05/10/2026) et Althea restent sur BTA.",
       "hotes": [
-        "www.mod.bg",
-        "mod.bg"
+        "www.mod.bg"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "parlement",
@@ -64,12 +63,11 @@
         "presences",
         "conflits"
       ],
-      "notes": "API JSON publique non documentée, repérée via un outil tiers (https://skillsmp.com/creators/atanasster/electionsbg/claude-skills-parliament-scrape) : non testée. Décisions utilisées, relayées par la presse : aide militaire à l'Ukraine (04/05/2022 puis 03/11/2022, Sofia Globe) ; levée conditionnelle du veto sur la Macédoine du Nord (24/06/2022).",
+      "notes": "API JSON lue le 27/10/2026 (coll-list-ns/bg) : 52e Assemblée, 240 députés actifs, groupes parlementaires Bulgarie progressiste 131, GERB-SDS 39, DPS 21, Bulgarie démocratique 21, Nous continuons le changement 16, Renaissance 12. Licence et documentation de l'API non trouvées. Aucune décision de déploiement lue sur ce site.",
       "hotes": [
-        "www.parliament.bg",
-        "parliament.bg"
+        "www.parliament.bg"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "dv",
@@ -108,7 +106,7 @@
       "couches": [
         "politique"
       ],
-      "notes": "Résultats définitifs du 19/04/2026 relayés par Novinite (https://www.novinite.com/view_news.php?id=238183) : participation 51,11 %, Bulgarie progressiste 131 sièges, GERB 39, PP-DB 37. Format des fichiers non vérifié.",
+      "notes": "Résultats définitifs du 19/04/2026 relayés par Novinite (https://www.novinite.com/view_news.php?id=238183) : participation 51,11 %, Bulgarie progressiste 131 sièges, GERB 39, PP-DB 37. Format des fichiers non vérifié. Le 27/10/2026, results.cik.bg répond 403 (anti-robot) et www.cik.bg est inaccessible.",
       "hotes": [
         "results.cik.bg",
         "www.cik.bg"
@@ -131,12 +129,11 @@
         "politique",
         "presences"
       ],
-      "notes": "Adopte les décisions d'application des mandats parlementaires (ex. participation à EUMAM Ukraine, contingent d'EUFOR Althea).",
+      "notes": "Pages « Premier ministre » et « Composition du gouvernement » lues le 27/10/2026 : Roumen Radev, Premier ministre ; Dimitar Stoyanov, ministre de la Défense ; Velislava Petrova-Tchamova, ministre des Affaires étrangères. Porte aussi la Coordination des mesures restrictives de l'UE (décision du Conseil des ministres n° 789 du 20/10/2022). Le site n'a pas été exploré pour les décisions de déploiement.",
       "hotes": [
-        "www.gov.bg",
-        "gov.bg"
+        "www.gov.bg"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "mae",
@@ -154,7 +151,7 @@
         "conflits",
         "sanctions"
       ],
-      "notes": "Pas de liste nationale de sanctions : la Bulgarie applique les listes ONU et UE (déjà couvertes par la carte). Autorité compétente pour les restrictions de voyage (liste des autorités nationales de la Commission européenne). Projet de loi sur la mise en œuvre des sanctions internationales mis en consultation en février 2026 (BTA), adoption non confirmée. Expulsion de 70 diplomates russes annoncée le 28/06/2022 (Al Jazeera).",
+      "notes": "Pas de liste nationale de sanctions : la Bulgarie applique les listes ONU et UE (déjà couvertes par la carte). Autorité compétente pour les restrictions de voyage (liste des autorités nationales de la Commission européenne). Projet de loi sur la mise en œuvre des sanctions internationales mis en consultation en février 2026 (BTA), adoption non confirmée. Expulsion de 70 diplomates russes annoncée le 28/06/2022 (Al Jazeera). Site protégé par un anti-robot (Radware), non contourné : reste non vérifié.",
       "hotes": [
         "www.mfa.bg",
         "mfa.bg"
@@ -200,7 +197,7 @@
         "conflits",
         "politique"
       ],
-      "notes": "Retenue faute d'accès aux sites officiels : relaie les communiqués du ministère de la Défense et du Conseil des ministres. Articles utilisés : 270 militaires dans 8 opérations (https://www.bta.bg/en/news/bulgaria/884087-about-270-servicemen-take-part-in-five-nato-three-eu-operations) ; EUFOR Althea (https://bta.bg/en/news/590490-bulgaria-to-continue-to-participate-in-eu-military-operation-in-bosnia-and-herze) ; EUMAM Ukraine (https://www.bta.bg/en/news/bulgaria/407963-government-adopts-decision-implementing-national-assembly-decision-on-provision-). Pages lues via moteur de recherche uniquement.",
+      "notes": "Retenue faute d'accès aux sites officiels : relaie les communiqués du ministère de la Défense et du Conseil des ministres. Articles utilisés : 270 militaires dans 8 opérations (https://www.bta.bg/en/news/bulgaria/884087-about-270-servicemen-take-part-in-five-nato-three-eu-operations) ; EUFOR Althea (https://bta.bg/en/news/590490-bulgaria-to-continue-to-participate-in-eu-military-operation-in-bosnia-and-herze) ; EUMAM Ukraine (https://www.bta.bg/en/news/bulgaria/407963-government-adopts-decision-implementing-national-assembly-decision-on-provision-). Pages lues via moteur de recherche uniquement. Hôte toujours inaccessible le 27/10/2026.",
       "hotes": [
         "www.bta.bg",
         "bta.bg"
@@ -249,6 +246,27 @@
         "query.wikidata.org"
       ],
       "acces": "verifie"
+    },
+    {
+      "id": "sofiaglobe",
+      "nom": "Sofia Globe, vote du Parlement sur l'aide à l'Ukraine",
+      "editeur": "The Sofia Globe",
+      "url": "https://sofiaglobe.com/2022/11/03/bulgarias-parliament-votes-in-favour-of-supplying-weapons-to-ukraine/",
+      "type": "presse",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "ponctuelle",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "conflits"
+      ],
+      "notes": "Admise faute de source officielle lue : décisions du Parlement des 04/05/2022 et 03/11/2022. Site non ouvert au réseau.",
+      "hotes": [
+        "sofiaglobe.com"
+      ],
+      "acces": "non_verifie"
     }
   ]
 }

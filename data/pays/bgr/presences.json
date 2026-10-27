@@ -1,7 +1,27 @@
 {
   "pays": "BGR",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "presences": [
+    {
+      "hote": "XKX",
+      "lon": 21.2,
+      "lat": 42.6,
+      "nom": "KFOR (force de l'OTAN au Kosovo)",
+      "cat": "otan",
+      "eff": 280,
+      "depuis": "2000-02-09",
+      "src": "defense"
+    },
+    {
+      "hote": "IRQ",
+      "lon": 44.4,
+      "lat": 33.3,
+      "nom": "Mission de l'OTAN en Irak (2 officiers d'état-major, module de communication jusqu'à 14)",
+      "cat": "otan",
+      "eff": null,
+      "depuis": "2018-10",
+      "src": "defense"
+    },
     {
       "hote": "BIH",
       "lon": 18.4,
@@ -10,29 +30,34 @@
       "cat": "ue",
       "eff": null,
       "depuis": null,
-      "src": "gouvernement"
-    },
-    {
-      "hote": "XKX",
-      "lon": 21.2,
-      "lat": 42.6,
-      "nom": "KFOR (force de l'OTAN au Kosovo)",
-      "cat": "otan",
-      "eff": null,
-      "depuis": null,
-      "src": "defense"
+      "src": "bta"
     }
   ],
   "non_localisees": [
     {
       "nom": "Total déclaré : cinq opérations de l'OTAN et trois opérations de l'UE (au 05/10/2026)",
       "eff": "≈ 270",
+      "src": "bta"
+    },
+    {
+      "nom": "Opération Sea Guardian de l'OTAN en Méditerranée (une frégate, 60 jours par an)",
+      "eff": "jusqu'à 153",
+      "src": "defense"
+    },
+    {
+      "nom": "Groupes navals permanents de l'OTAN SNMG2 et SNMCMG2 (états-majors)",
+      "eff": "jusqu'à 5",
+      "src": "defense"
+    },
+    {
+      "nom": "NSATU, mécanisme de l'OTAN d'appui à l'Ukraine, dans des pays alliés",
+      "eff": "jusqu'à 6",
       "src": "defense"
     },
     {
       "nom": "EUMAM Ukraine (mission de formation de l'UE, hors du territoire ukrainien)",
       "eff": "non publié",
-      "src": "gouvernement"
+      "src": "bta"
     }
   ]
 }
