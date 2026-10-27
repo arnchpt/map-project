@@ -1,0 +1,68 @@
+{
+  "pays": "BEL",
+  "verifie": "2026-10-27",
+  "src": "nbb-stat",
+  "annee": 2025,
+  "devise": "EUR",
+  "unite": "Md",
+  "concept": "concept national de la Banque nationale de Belgique, total des produits, données annuelles",
+  "total": {
+    "x": 338.9,
+    "m": 342.3
+  },
+  "partenaires": [
+    {
+      "pays": "NLD",
+      "x": 42.5,
+      "m": 78.5
+    },
+    {
+      "pays": "DEU",
+      "x": 56.5,
+      "m": 45.8
+    },
+    {
+      "pays": "FRA",
+      "x": 42.8,
+      "m": 39.0
+    },
+    {
+      "pays": "USA",
+      "x": 26.1,
+      "m": 23.2
+    },
+    {
+      "pays": "ITA",
+      "x": 16.6,
+      "m": 15.4
+    },
+    {
+      "pays": "GBR",
+      "x": 19.7,
+      "m": 8.6
+    },
+    {
+      "pays": "ESP",
+      "x": 11.1,
+      "m": 8.9
+    },
+    {
+      "pays": "CHN",
+      "x": 6.2,
+      "m": 12.7
+    },
+    {
+      "pays": "IRL",
+      "x": 3.2,
+      "m": 13.3
+    },
+    {
+      "pays": "POL",
+      "x": 10.3,
+      "m": 6.0
+    }
+  ],
+  "notes": {
+    "NLD": "Premier partenaire en valeur : 42,5 Md EUR d'exportations, 78,5 Md EUR d'importations. Écart avec le commerce FMI non encore recoupé."
+  }
+}

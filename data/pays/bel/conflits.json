@@ -1,13 +1,13 @@
 {
   "pays": "BEL",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "evenements": [
     {
       "avec": "UKR",
       "k": "soutien",
-      "t": "Aide militaire à l'Ukraine",
-      "d": "Soutien militaire déclaré par le gouvernement depuis 2022, avec une participation au Security Assistance Group et à la mission européenne EUMAM Ukraine.",
-      "date": "2022-02",
+      "t": "Soutien aux forces armées ukrainiennes",
+      "d": "Le plan opérationnel 2026, approuvé le 12/12/2025, fait du soutien à l'Ukraine une priorité : formation et coordination dans les cadres de l'UE et de l'OTAN, dont des formations à l'emploi des chasseurs de mines.",
+      "date": "2025-12-12",
       "src": "defense-plan"
     }
   ]
