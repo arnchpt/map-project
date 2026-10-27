@@ -3,6 +3,16 @@
   "verifie": "2026-10-26",
   "presences": [
     {
+      "hote": "XKX",
+      "lon": 21.2,
+      "lat": 42.7,
+      "nom": "Contingent dans la KFOR (force de l'OTAN au Kosovo)",
+      "cat": "otan",
+      "eff": 408,
+      "depuis": "1999",
+      "src": "otan_kfor"
+    },
+    {
       "hote": "BIH",
       "lon": 18.4,
       "lat": 43.9,
@@ -43,11 +53,5 @@
       "src": "onu_pk"
     }
   ],
-  "non_localisees": [
-    {
-      "nom": "Contingent dans la KFOR (force de l'OTAN au Kosovo), depuis 1999 ; classé ici car le Kosovo n'a pas de code ISO alpha-3 accepté par le contrôle",
-      "eff": "408 (février 2026)",
-      "src": "otan_kfor"
-    }
-  ]
+  "non_localisees": []
 }
