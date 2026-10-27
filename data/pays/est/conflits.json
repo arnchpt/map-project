@@ -1,20 +1,20 @@
 {
   "pays": "EST",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "evenements": [
     {
       "avec": "UKR",
       "k": "soutien",
       "t": "Aide militaire à l'Ukraine",
-      "d": "Livraisons d'armes et de matériel déclarées par le gouvernement estonien depuis 2022.",
-      "date": "2022",
+      "d": "Plus de 800 M€ d'aide militaire depuis le début de l'invasion à grande échelle le 24/02/2022, selon le ministère de la Défense ; des missiles Javelin avaient été livrés avant cette date.",
+      "date": "2022-02",
       "src": "defense"
     },
     {
       "avec": "RUS",
       "k": "tension",
       "t": "Violation de l'espace aérien et demande de consultations OTAN",
-      "d": "Trois MiG-31 russes sont entrés dans l'espace aérien estonien pendant 12 minutes le 19/09/2025 ; le gouvernement a demandé des consultations au titre de l'article 4 du traité de l'Atlantique Nord.",
+      "d": "Le gouvernement a décidé le 19/09/2025 de demander des consultations au titre de l'article 4 du traité de l'Atlantique Nord après l'entrée de trois MiG-31 russes dans l'espace aérien estonien.",
       "date": "2025-09-19",
       "src": "gouvernement"
     }

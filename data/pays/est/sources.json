@@ -1,6 +1,6 @@
 {
   "pays": "EST",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "sources": [
     {
       "type": "officiel",
@@ -9,8 +9,8 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "notes": "Hôte bloqué depuis la session : contenu connu par extraits de recherche uniquement. Effectifs 2026 non trouvés. La même rubrique « Allied forces in Estonia » documente les forces accueillies (groupement OTAN mené par le Royaume-Uni à Tapa avec une contribution française, présence rotationnelle américaine à Tapa et Võru) : ces présences relèvent des fichiers des pays déployeurs (GBR, FRA, USA) et servent de confirmation par l'État hôte.",
-      "acces": "non_verifie",
+      "notes": "Relue le 27/10/2026 : la page « Allied Forces in Estonia / UK-led NATO Battlegroup » (mise à jour 09/04/2026) confirme le groupement OTAN de plus de 1 000 militaires à Tapa mené par le Royaume-Uni, avec une compagnie française, intégré à la 1re brigade d'infanterie, et la brigade britannique de renfort (4th Brigade en haute disponibilité au Royaume-Uni depuis l'été 2025) ; la page « Ukraine and others defence-related assistance » donne plus de 800 M€ d'aide militaire à l'Ukraine depuis le 24/02/2022. Ces présences d'alliés relèvent des fichiers des pays déployeurs (GBR, FRA, USA), non recopiées ici. La page « participation aux opérations internationales » est générale et ne liste pas les missions : la liste vient des résolutions du Riigikogu (source mandats). Page de la mission mil.ee (« Operations abroad ») inaccessible (hôte mil.ee bloqué).",
+      "acces": "verifie",
       "id": "defense",
       "nom": "Ministère de la Défense, participation de l'Estonie aux opérations militaires internationales",
       "editeur": "Kaitseministeerium (ministère de la Défense, EST)",
@@ -27,17 +27,17 @@
     },
     {
       "type": "officiel",
-      "langue": "en",
+      "langue": "et",
       "licence": "CC BY-SA 3.0 (données ouvertes du Riigikogu)",
       "api": true,
       "api_url": "https://api.riigikogu.ee/api/votings?startDate=2026-01-01&endDate=2026-12-31",
       "format": "json",
-      "notes": "Chaque opération fait l'objet d'une résolution avec un plafond d'effectifs, plus un mandat d'urgence de 50 militaires pour une opération OTAN, UE ou ONU. Plafonds = maximum autorisé, pas effectif déployé. Projet pour 2027 : 344 militaires au total, dont 204 en opérations (ERR, octobre 2026, non vérifié). API : 1 requête/s par IP, 12 requêtes/min par URL.",
-      "acces": "non_verifie",
+      "notes": "Relues le 27/10/2026 (exposés des motifs des résolutions) : OTAN Irak (≤ 3 militaires, 1 officier d'état-major prévu), UNTSO (plafond 6 en 2026 avec 2 militaires dont 1 observateur au Sud-Liban et 1 chef de représentation au Caire ; 1 observateur prévu en 2027), UNIFIL (≤ 3, 1 militaire prévu en 2026, résolution du 05/11/2025), EUNAVFOR Aspides (≤ 3, 1 militaire en 2026, en poste en Grèce), EUNAVFOR Irini (≤ 6, 2 officiers d'état-major en 2026), mission de l'UE au Mozambique (≤ 3, 1 prévu), force expéditionnaire commune du Royaume-Uni (JEF, ≤ 24 selon les besoins, aucun déploiement fixe). Les plafonds sont des maxima autorisés ; le champ eff retient le nombre prévu ou déclaré. L'opération Inherent Resolve n'apparaît plus dans les résolutions 2026–2027 : la mention d'un contingent à Harir (brouillon du 26/10) est retirée. Projets 2027 déposés le 12/10/2026 (non encore adoptés).",
+      "acces": "verifie",
       "id": "mandats",
-      "nom": "Riigikogu, résolutions annuelles sur l'emploi des Forces de défense dans les opérations internationales",
+      "nom": "Riigikogu, résolutions sur l'emploi des Forces de défense dans les opérations internationales (2026–2027)",
       "editeur": "Riigikogu (parlement, EST)",
-      "url": "https://www.riigikogu.ee/en/sitting-reviews/the-riigikogu-extended-the-participation-of-the-defence-forces-in-international-military-operations/",
+      "url": "https://www.riigikogu.ee/en/riigikogu/committees/national-defence-committee/",
       "cadence": "annuelle (vote en fin d'année pour l'année suivante)",
       "couches": [
         "presences"
@@ -54,8 +54,8 @@
       "api": true,
       "api_url": "https://api.riigikogu.ee/api/votings",
       "format": "json",
-      "notes": "Endpoint des factions non confirmé (seul /api/votings est documenté publiquement). Les factions actuelles diffèrent fortement des sièges élus en 2023 (scission de l'EKRE, une quinzaine de non-inscrits selon la presse) : la carte affiche les sièges élus, comme pour les autres pays. Anomalies signalées sur GitHub riigikogu-kantselei/api.",
-      "acces": "non_verifie",
+      "notes": "API relue le 27/10/2026 : /api/plenary-members renvoie les 101 membres avec leur faction ; /api/votings répond. Composition par faction relevée ce jour : Parti de la réforme 26, Isamaa 7, EKRE 6, SDE 6, Eesti 200 5, Centre 4, non-inscrits 47 (total 101). La carte affiche les sièges élus en 2023 (IPU), non cette composition. Limites : 1 requête/s par IP, 12 requêtes/min par URL (réponse 429 observée au-delà).",
+      "acces": "verifie",
       "id": "parlement",
       "nom": "Riigikogu, données ouvertes (membres, factions, votes)",
       "editeur": "Riigikogu (parlement, EST)",
@@ -76,8 +76,8 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "notes": "Rubrique « Open data » présente dans l'archive, format non confirmé. Sièges 2023 relevés via sources secondaires, à recouper. Prochaine élection au plus tard en mars 2027. Code IPU EE-LC01-E20230305 déduit du format des autres pays (api.data.ipu.org bloqué depuis cette session), codes partis IPU non renseignés.",
-      "acces": "non_verifie",
+      "notes": "Relue le 27/10/2026 : valimised.ee publie la page de l'élection présidentielle 2026 (1er tour du 02/09/2026, Ülle Madise 71 voix, déclarée élue). Les résultats détaillés des législatives 2023 sont sur rk2023.valimised.ee (hôte bloqué) ; les sièges par parti sont recoupés par l'IPU (source ipu). Rubrique « Open data » présente, format non confirmé. Prochaines législatives au plus tard en mars 2027.",
+      "acces": "verifie",
       "id": "electoral",
       "nom": "Commission électorale, résultats officiels des élections au Riigikogu",
       "editeur": "Valimisteenistus (service électoral, EST)",
@@ -97,8 +97,8 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "notes": "Pas d'API connue. Chefs de l'État et du gouvernement recoupés avec Wikidata (P35, P6) le 2026-10-26.",
-      "acces": "non_verifie",
+      "notes": "Relue le 27/10/2026 : valitsus.ee liste le gouvernement (Premier ministre Kristen Michal ; Martin Herem à la Défense, Margus Tsahkna aux Affaires étrangères, Kristina Kallas à l'Éducation) et publie le communiqué du 19/09/2025 sur la demande de consultations article 4. Pas d'API.",
+      "acces": "verifie",
       "id": "gouvernement",
       "nom": "Gouvernement de la République, composition",
       "editeur": "Valitsus (gouvernement, EST)",
@@ -119,28 +119,7 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "notes": "Ülle Madise élue par le Riigikogu le 2026-09-02 (71 voix, 68 requises), en fonction le 2026-10-12 (Wikidata P35, recoupé par la presse).",
-      "acces": "non_verifie",
-      "id": "president",
-      "nom": "Présidence de la République",
-      "editeur": "Vabariigi Presidendi Kantselei (chancellerie du président, EST)",
-      "url": "https://www.president.ee/en",
-      "cadence": "à chaque élection",
-      "couches": [
-        "politique"
-      ],
-      "hotes": [
-        "www.president.ee"
-      ]
-    },
-    {
-      "type": "officiel",
-      "langue": "en",
-      "licence": "non précisée",
-      "api": false,
-      "api_url": null,
-      "format": "html",
-      "notes": "Sanctions nationales prises par règlement du gouvernement (art. 27 de la loi sur les sanctions internationales), en plus des sanctions UE (déjà couvertes par data/sanctions.json, non recopiées). Désignations notamment d'officiels bélarusses. Dernière mise à jour vue : 2025-08-26.",
+      "notes": "Sanctions nationales prises par règlement du gouvernement (art. 27 de la loi sur les sanctions internationales), en plus des sanctions UE (déjà couvertes par data/sanctions.json, non recopiées). Désignations notamment d'officiels bélarusses. Dernière mise à jour vue : 2025-08-26. Hôtes vm.ee et www.vm.ee toujours bloqués le 27/10/2026.",
       "acces": "non_verifie",
       "id": "mae",
       "nom": "Ministère des Affaires étrangères, sanctions du gouvernement de la République",
@@ -163,7 +142,7 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "notes": "Base légale des sanctions nationales. Version consolidée la plus récente à vérifier.",
+      "notes": "Base légale des sanctions nationales. Version consolidée la plus récente à vérifier. Hôte toujours bloqué le 27/10/2026.",
       "acces": "non_verifie",
       "id": "loi-sanctions",
       "nom": "Loi sur les sanctions internationales (version consolidée)",
@@ -184,7 +163,7 @@
       "api": true,
       "api_url": "https://data.opensanctions.org/datasets/latest/ee_international_sanctions/targets.simple.csv",
       "format": "csv",
-      "notes": "Copie automatisable de la liste du ministère (mae). Licence non commerciale, compatible avec un site gratuit sans publicité. Peut être en retard sur la source officielle.",
+      "notes": "Copie automatisable de la liste du ministère (mae). Licence non commerciale, compatible avec un site gratuit sans publicité. Peut être en retard sur la source officielle. Hôte toujours bloqué le 27/10/2026.",
       "acces": "non_verifie",
       "id": "opensanctions-ee",
       "nom": "OpenSanctions, liste estonienne au titre de la loi sur les sanctions internationales",
@@ -206,7 +185,7 @@
       "api": true,
       "api_url": "https://andmed.stat.ee/api/v1/en/stat",
       "format": "json (PxWeb)",
-      "notes": "commerce.json non produit : hôte bloqué, aucun chiffre lu. Base du commerce extérieur déplacée en mars 2026 (ancienne adresse andmebaas.stat.ee abandonnée, tables refondues, une périodicité par table) : risque de rupture des URL. Tables repérées : VKA05 (par activité et pays partenaire, 2018–2025), VKK14, VKK28 (mensuel 2004M01–2025M12). Intra-UE : Intrastat ; hors UE : déclarations douanières. Hors services et transit.",
+      "notes": "commerce.json non produit. andmed.stat.ee répond (API PxWeb) mais ses tables par pays partenaire s'arrêtent à 2020 (VKA04, par caractéristiques d'entreprises) ou à 2023 (VK12, tables closes) ; les tables courantes (série VKK) ont migré en mars 2026 vers une base de commerce extérieur dont l'hôte (valiskaubandus.stat.ee) est bloqué. Hôte à ouvrir pour produire commerce.json. Intra-UE : Intrastat ; hors UE : déclarations douanières ; hors services et transit.",
       "acces": "non_verifie",
       "id": "stat",
       "nom": "Statistique Estonie, commerce extérieur de biens par pays partenaire",
@@ -218,8 +197,52 @@
       ],
       "hotes": [
         "andmed.stat.ee",
-        "stat.ee"
+        "valiskaubandus.stat.ee"
       ]
+    },
+    {
+      "id": "ipu",
+      "nom": "Union interparlementaire (IPU Parline), élection au Riigikogu du 05/03/2023",
+      "editeur": "Union interparlementaire",
+      "url": "https://data.ipu.org/parliament/EE/EE-LC01/election/EE-LC01-E20230305/",
+      "type": "international",
+      "langue": "en",
+      "licence": "CC BY-NC-SA 4.0",
+      "cadence": "à chaque élection",
+      "api": true,
+      "api_url": "https://api.data.ipu.org/v1/elections/EE-LC01-E20230305",
+      "format": "json",
+      "couches": [
+        "politique"
+      ],
+      "hotes": [
+        "api.data.ipu.org",
+        "data.ipu.org"
+      ],
+      "acces": "verifie",
+      "notes": "API lue le 27/10/2026 : 101 sièges, Réforme 37, EKRE 17, Centre 16, Eesti 200 14, SDE 9, Isamaa 8."
+    },
+    {
+      "id": "wikidata",
+      "nom": "Wikidata, chefs d'État et de gouvernement, présidents de partis (P35, P6, P488)",
+      "editeur": "Wikimedia Foundation",
+      "url": "https://www.wikidata.org/wiki/Q191",
+      "type": "recherche",
+      "langue": "en",
+      "licence": "CC0",
+      "cadence": "continue",
+      "api": true,
+      "api_url": "https://query.wikidata.org/sparql",
+      "format": "json",
+      "couches": [
+        "politique"
+      ],
+      "hotes": [
+        "query.wikidata.org",
+        "www.wikidata.org"
+      ],
+      "acces": "verifie",
+      "notes": "Requêtes SPARQL du 27/10/2026 : Ülle Madise (P35, depuis 2026-10-12), Kristen Michal (P6, depuis 2024-07-23). Présidents de partis : Reinsalu (Isamaa, 2023-06-10), Kallas (Eesti 200, 2024), Michal (Réforme, 2024), Helme (EKRE), Kõlvart (Centre, 2023-09-10), Läänemets (SDE, 2022-02-05). Données collaboratives, non officielles."
     }
   ]
 }
