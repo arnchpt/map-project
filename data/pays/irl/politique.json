@@ -1,0 +1,27 @@
+{
+  "pays": "IRL",
+  "verifie": "2026-10-26",
+  "chef_etat": { "nom": "Catherine Connolly", "fonction": "Présidente de l'Irlande (Uachtarán na hÉireann)", "parti": "indépendante", "depuis": "2025-11-11", "qid": "Q5052598", "src": "wikidata" },
+  "chef_gouv": { "nom": "Micheál Martin", "fonction": "Taoiseach (Premier ministre)", "parti": "Fianna Fáil", "depuis": "2025-01-23", "qid": "Q920403", "src": "wikidata" },
+  "chambre": {
+    "nom": "Dáil Éireann (34e Dáil)",
+    "sieges": 174,
+    "majorite": 88,
+    "election": "2024-11-29",
+    "src": "presse_examiner",
+    "ipu": null
+  },
+  "partis": [
+    { "nom": "Fianna Fáil", "sieges": 48, "role": "gouv", "leaders": "Micheál Martin (non reconfirmé)", "ok": false, "ipu": [] },
+    { "nom": "Sinn Féin", "sieges": 39, "role": "hors", "leaders": "Mary Lou McDonald (non reconfirmé)", "ok": false, "ipu": [] },
+    { "nom": "Fine Gael", "sieges": 38, "role": "gouv", "leaders": "Simon Harris (non reconfirmé)", "ok": false, "ipu": [] },
+    { "nom": "Labour Party", "sieges": 11, "role": "hors", "leaders": "Ivana Bacik (non reconfirmé)", "ok": false, "ipu": [] },
+    { "nom": "Social Democrats", "sieges": 11, "role": "hors", "leaders": "Holly Cairns (non reconfirmé)", "ok": false, "ipu": [] },
+    { "nom": "Independent Ireland", "sieges": 4, "role": "hors", "leaders": "Michael Collins (non reconfirmé)", "ok": false, "ipu": [] },
+    { "nom": "People Before Profit–Solidarity", "sieges": 3, "role": "hors", "leaders": "direction collective (non reconfirmé)", "ok": false, "ipu": [] },
+    { "nom": "Aontú", "sieges": 2, "role": "hors", "leaders": "Peadar Tóibín (non reconfirmé)", "ok": false, "ipu": [] },
+    { "nom": "Green Party", "sieges": 1, "role": "hors", "leaders": "Roderic O'Gorman (non reconfirmé)", "ok": false, "ipu": [] },
+    { "nom": "100% Redress", "sieges": 1, "role": "hors", "leaders": "Charles Ward (non reconfirmé)", "ok": false, "ipu": [] },
+    { "nom": "Indépendants (dont le Regional Independent Group, membre de la coalition, et la Ceann Comhairle)", "sieges": 16, "role": "hors", "leaders": "sans direction commune", "ok": false, "ipu": [] }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "pays": "LVA",
+  "verifie": "2026-10-26",
+  "src": "stat",
+  "annee": 2025,
+  "devise": "EUR",
+  "unite": "Md",
+  "concept": "commerce de biens aux prix courants, exportations FOB, importations CAF (concept du CSP à confirmer)",
+  "total": { "x": 19.54, "m": 23.19 },
+  "partenaires": [],
+  "notes": {}
+}

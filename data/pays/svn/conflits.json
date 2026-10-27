@@ -1,0 +1,30 @@
+{
+  "pays": "SVN",
+  "verifie": "2026-10-26",
+  "evenements": [
+    {
+      "avec": "HRV",
+      "k": "tension",
+      "t": "Frontière terrestre et maritime avec la Croatie",
+      "d": "La Croatie ne reconnaît pas la sentence arbitrale du 29/06/2017 que la Slovénie demande d'appliquer ; la CJUE s'est déclarée incompétente le 31/01/2020.",
+      "date": "2017-06-29",
+      "src": "cpa"
+    },
+    {
+      "avec": "UKR",
+      "k": "soutien",
+      "t": "Aide militaire à l'Ukraine",
+      "d": "Livraisons de matériel militaire déclarées par le gouvernement depuis 2022.",
+      "date": "2022-02",
+      "src": "mo"
+    },
+    {
+      "avec": "ISR",
+      "k": "tension",
+      "t": "Mesures nationales contre Israël (2025), levées en 2026",
+      "d": "Deux ministres israéliens déclarés persona non grata le 17/07/2025 et embargo national sur les armes en août 2025 ; le gouvernement Janša a levé l'embargo et l'interdiction des produits des colonies en juin 2026.",
+      "date": "2025-07-17",
+      "src": "vlada"
+    }
+  ]
+}

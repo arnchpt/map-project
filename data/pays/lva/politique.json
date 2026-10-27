@@ -1,0 +1,23 @@
+{
+  "pays": "LVA",
+  "verifie": "2026-10-26",
+  "chef_etat": { "nom": "Edgars Rinkēvičs", "fonction": "Président de la République", "parti": null, "depuis": "2023-07-08", "qid": "Q3047551", "src": "wikidata" },
+  "chef_gouv": { "nom": "Andris Kulbergs", "fonction": "Premier ministre", "parti": "Liste unie", "depuis": "2026-05-28", "qid": "Q115604300", "src": "wikidata" },
+  "chambre": {
+    "nom": "Saeima",
+    "sieges": 100,
+    "majorite": 51,
+    "election": "2026-10-03",
+    "src": "electoral",
+    "ipu": "LV-LC01-E20261003"
+  },
+  "partis": [
+    { "nom": "Liste unie (Apvienotais saraksts)", "sieges": 41, "role": "gouv", "leaders": "Andris Kulbergs (tête de liste, Premier ministre)" },
+    { "nom": "La Lettonie d'abord (Latvija pirmajā vietā)", "sieges": 17, "role": "hors", "leaders": "Ainārs Šlesers (président du parti)" },
+    { "nom": "Pouvoir souverain / Alliance des Jeunes Lettons (Suverēnā vara / Apvienība Jaunlatvieši)", "sieges": 15, "role": "hors", "leaders": "Jūlija Stepaņenko (tête de liste)" },
+    { "nom": "Alliance nationale (Nacionālā apvienība)", "sieges": 10, "role": "gouv", "leaders": "Raivis Dzintars (président du parti)" },
+    { "nom": "Les Progressistes (Progresīvie)", "sieges": 10, "role": "hors", "leaders": "Agnese Lāce et Andris Šuvajevs (coprésidents)" },
+    { "nom": "Nouvelle Unité (Jaunā Vienotība)", "sieges": 7, "role": "gouv", "leaders": "non relevé" }
+  ],
+  "notes": "Rôles au 26/10/2026 : partis du gouvernement Kulbergs sortant (l'Union des verts et paysans, quatrième partenaire, n'est pas réélue). La 15e Saeima siège le 03/11/2026 ; à mettre à jour après l'investiture du nouveau gouvernement. Codes partis IPU non relevés (api.data.ipu.org bloqué depuis la session)."
+}

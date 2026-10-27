@@ -1,0 +1,243 @@
+{
+  "pays": "AUT",
+  "verifie": "2026-10-26",
+  "sources": [
+    {
+      "id": "stat",
+      "nom": "Statistik Austria, commerce extérieur (Außenhandel) par partenaire",
+      "editeur": "Statistik Austria",
+      "url": "https://www.statistik.at/statistiken/internationaler-handel/internationaler-warenhandel",
+      "type": "officiel",
+      "langue": "de",
+      "licence": "Réutilisation libre, y compris commerciale, avec mention « STATISTIK AUSTRIA » (conditions d'utilisation à lire sur le site ; CC BY 4.0 non confirmé)",
+      "cadence": "mensuelle (résultats annuels provisoires en mars, révisés en juin)",
+      "api": true,
+      "api_url": "https://data.statistik.gv.at/ogd/json",
+      "format": "json/csv",
+      "couches": [
+        "commerce"
+      ],
+      "notes": "Portail open data copié chaque semaine sur data.gv.at (CKAN) et sur le portail européen. Le nom exact du jeu de données par partenaire reste à identifier une fois l'accès ouvert. STATcube (API REST, compte requis) offre le détail par pays et par chapitre SH. Chiffres 2025 relevés dans le communiqué du 30/06/2026 (www.statistik.at/fileadmin/announcement/2026/06/20260630Aussenhandel2025.pdf), cité par la presse ; le PDF n'a pas pu être ouvert.",
+      "hotes": [
+        "www.statistik.at",
+        "data.statistik.gv.at",
+        "www.data.gv.at"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "parlement",
+      "nom": "Parlement autrichien, open data (députés, groupes, autorisations de déploiement)",
+      "editeur": "Parlament Österreich",
+      "url": "https://www.parlament.gv.at/recherchieren/open-data/",
+      "type": "officiel",
+      "langue": "de",
+      "licence": "CC BY 4.0 depuis le 12/01/2023 (d'après une présentation du Parlement, à confirmer sur la page « Daten und Lizenz »)",
+      "cadence": "continue (à chaque changement de mandat)",
+      "api": true,
+      "api_url": "https://www.parlament.gv.at/recherchieren/open-data/",
+      "format": "json",
+      "couches": [
+        "politique",
+        "presences"
+      ],
+      "notes": "Interface JSON documentée sur le site (paramètres non relevés). 183 députés au Nationalrat. La commission principale (Hauptausschuss) du Nationalrat autorise chaque envoi de troupes à l'étranger : ses décisions sont publiées par la Parlamentskorrespondenz sur le même site.",
+      "hotes": [
+        "www.parlament.gv.at"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "elections",
+      "nom": "Ministère de l'Intérieur, résultats officiels des élections au Nationalrat",
+      "editeur": "Bundesministerium für Inneres (BMI)",
+      "url": "https://www.bmi.gv.at/412/Nationalratswahlen/",
+      "type": "officiel",
+      "langue": "de",
+      "licence": "non précisée",
+      "cadence": "à chaque élection",
+      "api": false,
+      "api_url": null,
+      "format": "html/pdf",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Résultat final officiel de l'élection du 29/09/2024 publié le 16/10/2024. Sièges recoupés avec le rapport électoral du Land de Haute-Autriche (www.land-oberoesterreich.gv.at, Wahlbericht_NR24.pdf), lu via un moteur de recherche.",
+      "hotes": [
+        "www.bmi.gv.at"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "gouvernement",
+      "nom": "Chancellerie fédérale, composition du gouvernement",
+      "editeur": "Bundeskanzleramt",
+      "url": "https://www.bundeskanzleramt.gv.at/bundeskanzleramt/die-bundesregierung/bundesministerinnen-und-bundesminister.html",
+      "type": "officiel",
+      "langue": "de",
+      "licence": "non précisée",
+      "cadence": "à chaque changement",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Coalition ÖVP, SPÖ et NEOS assermentée le 03/03/2025 : 14 membres et 7 secrétaires d'État. Ministre des Affaires étrangères : Beate Meinl-Reisinger (NEOS). Ministre de la Défense : Klaudia Tanner (ÖVP). Lu via un moteur de recherche.",
+      "hotes": [
+        "www.bundeskanzleramt.gv.at"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "presidence",
+      "nom": "Présidence fédérale",
+      "editeur": "Präsidentschaftskanzlei",
+      "url": "https://www.bundespraesident.at/",
+      "type": "officiel",
+      "langue": "de",
+      "licence": "non précisée",
+      "cadence": "à chaque élection présidentielle",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Date d'entrée en fonction et identifiant pris dans Wikidata (Q78869), source lue directement.",
+      "hotes": [
+        "www.bundespraesident.at"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "wikidata",
+      "nom": "Wikidata, titulaires des fonctions (contrôle)",
+      "editeur": "Wikimedia Foundation",
+      "url": "https://www.wikidata.org/wiki/Q40",
+      "type": "international",
+      "langue": "fr",
+      "licence": "CC0",
+      "cadence": "continue",
+      "api": true,
+      "api_url": "https://query.wikidata.org/sparql",
+      "format": "json",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Sert seulement à fournir les qid et les dates d'entrée en fonction : Van der Bellen depuis le 26/01/2017, Stocker depuis le 03/03/2025. Requête faite le 26/10/2026.",
+      "hotes": [
+        "query.wikidata.org",
+        "www.wikidata.org"
+      ],
+      "acces": "verifie"
+    },
+    {
+      "id": "defense",
+      "nom": "Forces armées fédérales (Bundesheer), page « Auslandseinsätze »",
+      "editeur": "Bundesministerium für Landesverteidigung",
+      "url": "https://www.bundesheer.gv.at/einsatz/auslandseinsaetze",
+      "type": "officiel",
+      "langue": "de",
+      "licence": "non précisée",
+      "cadence": "irrégulière (à chaque relève ou mandat)",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences"
+      ],
+      "notes": "Page non lue. Effectifs à reprendre sur cette page. En attendant, la presse donne environ 550 soldats dans 12 missions, prolongées jusqu'à fin 2026 en Conseil des ministres : EUFOR Althea ≈ 200, UNIFIL ≈ 180 (présence depuis 2011, mandat clos fin 2026), KFOR ≈ 140 (voir la source orf). Le Hauptausschuss a autorisé jusqu'à 65 militaires pour EUNAVFOR MED Irini en 2026, ainsi que des envois vers l'Ukraine et le Caucase du Sud (missions non identifiées). Les 12 missions ne sont pas toutes connues : seules les quatre citées sont saisies.",
+      "hotes": [
+        "www.bundesheer.gv.at"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "orf",
+      "nom": "ORF, « Regierung verlängerte Auslandseinsätze des Bundesheers »",
+      "editeur": "ORF (radiotélévision publique autrichienne)",
+      "url": "https://orf.at/stories/3409207/",
+      "type": "presse",
+      "langue": "de",
+      "licence": "non précisée",
+      "cadence": "ponctuelle",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences"
+      ],
+      "notes": "Article de presse (repris de l'APA) dont la date n'est pas relevée. Il n'est cité que pour les ordres de grandeur, rapportés dans les notes de la source defense. Aucun fait ne s'appuie dessus.",
+      "hotes": [
+        "orf.at"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "mae",
+      "nom": "Ministère fédéral des Affaires européennes et internationales (BMEIA), sanctions et communiqués",
+      "editeur": "Bundesministerium für europäische und internationale Angelegenheiten",
+      "url": "https://www.bmeia.gv.at/",
+      "type": "officiel",
+      "langue": "de",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "conflits",
+        "sanctions"
+      ],
+      "notes": "Aucun engagement armé, aucun soutien militaire létal déclaré et aucun différend officiel relevé : conflits.json est vide. L'Autriche est neutre en vertu de la loi constitutionnelle du 26/10/1955. Elle n'est pas membre de l'OTAN mais participe au Partenariat pour la paix, et a signé en 2024 la déclaration d'adhésion à l'European Sky Shield Initiative (ESSI). Aucun communiqué n'a été lu.",
+      "hotes": [
+        "www.bmeia.gv.at"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "oenb",
+      "nom": "Banque nationale (OeNB), sanctions financières",
+      "editeur": "Oesterreichische Nationalbank",
+      "url": "https://www.oenb.at/",
+      "type": "officiel",
+      "langue": "de",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html/pdf",
+      "couches": [
+        "sanctions"
+      ],
+      "notes": "L'OeNB est l'autorité compétente pour le gel des avoirs selon le Sanktionengesetz 2010 (§ 2), sous instructions du ministre des Finances (§ 10). Le ministère de l'Intérieur contrôle le reste. Aucune liste nationale autonome n'a été trouvée : l'Autriche applique les listes de l'UE et de l'ONU, déjà couvertes par la couche commune. Source : guide OeNB sur les sanctions Russie/Bélarus, V16 (oenb.at/dam/…/OeNB-Leitfaden_Russland-Belarus-Sanktionen_V16.pdf).",
+      "hotes": [
+        "www.oenb.at"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "ris",
+      "nom": "RIS (Rechtsinformationssystem), Sanktionengesetz 2010 consolidé",
+      "editeur": "Bundeskanzleramt",
+      "url": "https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=20006871",
+      "type": "officiel",
+      "langue": "de",
+      "licence": "Données ouvertes du RIS (licence à confirmer, CC BY 4.0 annoncée sur data.gv.at)",
+      "cadence": "à chaque modification de la loi",
+      "api": true,
+      "api_url": "https://data.bka.gv.at/ris/api/v2.6/Bundesrecht",
+      "format": "json/xml",
+      "couches": [
+        "sanctions"
+      ],
+      "notes": "Base légale des mesures nationales. Le numéro de loi (Gesetzesnummer) et la version de l'API sont à vérifier une fois l'accès ouvert.",
+      "hotes": [
+        "www.ris.bka.gv.at",
+        "data.bka.gv.at"
+      ],
+      "acces": "non_verifie"
+    }
+  ]
+}

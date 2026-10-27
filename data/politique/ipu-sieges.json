@@ -185,5 +185,374 @@
    "kr-new-future-party": 1,
    "kr-progressive-party": 1
   }
+ },
+ "AUT": {
+  "code": "AT-LC01-E20240929",
+  "date": "2024-09-29",
+  "sieges": 183,
+  "partis": {
+   "at-freedom_party_fp": 57,
+   "at-peoples_party___vp": 51,
+   "at-social_democratic_party_sp": 41,
+   "at-neos_new_austria_neos": 18,
+   "at-greens": 16
+  }
+ },
+ "BEL": {
+  "code": "BE-LC01-E20240609",
+  "date": "2024-06-09",
+  "sieges": 150,
+  "partis": {
+   "be-new_flemish_alliance_n_va": 24,
+   "be-vlaams_belang_flemish_interest": 20,
+   "be-movement_reform_mr": 20,
+   "be-socialist_party_walloon_ps": 16,
+   "be-workers_party_of_belgium_ptb_pvda_": 15,
+   "be-les-engages": 14,
+   "be-vooruit": 13,
+   "be-christian_democratic_and_flemish_cdv": 11,
+   "be-open_vld": 7,
+   "be-groen_flemish_green_party": 6,
+   "be-greens_walloon_ecolo": 3,
+   "be-d_fi_democratic_federalist_independent_": 1
+  }
+ },
+ "BGR": {
+  "code": "BG-LC01-E20260419",
+  "date": "2026-04-19",
+  "sieges": 240,
+  "partis": {
+   "bg-progressive-bulgaria": 131,
+   "bg-citizens_for_european_development_of_bulgaria_party_gerb_union_of_democratic_forces_sds_": 39,
+   "bg-we_continue_the_change_democratic_bulgaria": 37,
+   "bg-movement_rights_and_freedoms_dps": 21,
+   "bg-vuzrazhdane": 12
+  }
+ },
+ "CYP": {
+  "code": "CY-LC01-E20260524",
+  "date": "2026-05-24",
+  "sieges": 56,
+  "partis": {
+   "cy-democratic_rally_disy": 17,
+   "cy-progressive_party_working_people_akel": 15,
+   "cy-national_popular_front_elam_": 8,
+   "cy-democratic_party_diko": 8,
+   "cy-alma-citizens-for-cyprus": 4,
+   "cy-direct-democracy-cyprus": 4
+  }
+ },
+ "CZE": {
+  "code": "CZ-LC01-E20251003",
+  "date": "2025-10-03",
+  "sieges": 200,
+  "partis": {
+   "cz-ano": 80,
+   "cz-spolu": 52,
+   "cz-mayors_and_independents_stan": 22,
+   "cz-czech_pirate_party": 18,
+   "cz-freedom_and_direct_democracy_spd": 15,
+   "cz-motoriste-sobe-(auto)": 13
+  }
+ },
+ "DNK": {
+  "code": "DK-LC01-E20260324",
+  "date": "2026-03-24",
+  "sieges": 179,
+  "partis": {
+   "dk-social_democratic_party": 38,
+   "dk-socialist_people_s_party_sf_": 20,
+   "dk-liberal_party_venstre": 18,
+   "dk-liberal_alliance": 16,
+   "dk-danish_peoples_party": 16,
+   "dk-moderates_m_": 14,
+   "dk-conservative_peoples_party": 13,
+   "dk-unity_list_red_green_alliance": 11,
+   "dk-social_liberal_party_rv": 10,
+   "dk-danish_democrats_": 10,
+   "dk-alternative": 5,
+   "dk-citizens-party-(bp)": 4
+  }
+ },
+ "ESP": {
+  "code": "ES-LC01-E20230723",
+  "date": "2023-07-23",
+  "sieges": 350,
+  "partis": {
+   "es-peoples_party_pp": 136,
+   "es-spanish_socialist_workers_party_psoe": 122,
+   "es-vox": 33,
+   "es-sumar": 31,
+   "es-republican_left_catalonia_erc": 7,
+   "es-junts_per_catalunya_together_for_catalonia_jxcat_junts": 7,
+   "es-unite_basque_country_euskal_herria_bildueh_bildu_eh_bildu": 6,
+   "es-basque_nationalist_party_eaj_pnv": 5,
+   "es-galician_nationalist_bloc_bng_": 1,
+   "es-canarian_coalition": 1,
+   "es-navarrese_people_s_union_upn_": 1
+  }
+ },
+ "EST": {
+  "code": "EE-LC01-E20230305",
+  "date": "2023-03-05",
+  "sieges": 101,
+  "partis": {
+   "ee-reform_party": 37,
+   "ee-conservative_peoples_party_ekre": 17,
+   "ee-centre_party": 16,
+   "ee-eesti_200": 14,
+   "ee-social_democratic_party": 9,
+   "ee-isamaa": 8
+  }
+ },
+ "FIN": {
+  "code": "FI-LC01-E20230402",
+  "date": "2023-04-02",
+  "sieges": 200,
+  "partis": {
+   "fi-national_coalition_party_kok": 48,
+   "fi-finns_party_ps": 46,
+   "fi-social_democratic_party_sdp": 43,
+   "fi-center_party_kesk": 23,
+   "fi-greens_0": 13,
+   "fi-left_alliance_vas": 11,
+   "fi-swedish_people_s_party_of_finland": 9,
+   "fi-christian_democrats_kd": 5,
+   "fi-movement_now_liike_nyt_": 1,
+   "fi-others": 1
+  }
+ },
+ "GRC": {
+  "code": "GR-LC01-E20230625",
+  "date": "2023-06-25",
+  "sieges": 300,
+  "partis": {
+   "gr-new_democracy_nd": 158,
+   "gr-coalition_radical_left_syriza": 47,
+   "gr-panhellenic_socialist_movement_movement_for_change_pasok_kinal_": 32,
+   "gr-communist_party_kke": 21,
+   "gr-spartans": 12,
+   "gr-greek_solution_el_": 12,
+   "gr-democratic_patriotic_movement_victory_": 10,
+   "gr-course_of_freedom": 8
+  }
+ },
+ "HRV": {
+  "code": "HR-LC01-E20240417",
+  "date": "2024-04-17",
+  "sieges": 151,
+  "partis": {
+   "hr-croatian_democratic_union_hdz": 55,
+   "hr-social-democratic-party-of-croatia-(sdp)": 37,
+   "hr-homeland-movement-(dp)": 11,
+   "hr-we-can!-–-political-platform-(možemo!)": 10,
+   "hr-bridge-(most)": 7,
+   "hr-independent-democratic-serb-party-(sdss)": 3,
+   "hr-centre": 2,
+   "hr-croatian-social-liberal-party-(hsls)": 2,
+   "hr-independent-platform-of-the-north-(nps)": 2,
+   "hr-istrian_democratic_assembly_ids": 2,
+   "hr-civic-liberal-alliance-(glas)": 1,
+   "hr-croatian-demochristian-party-(hds)": 1,
+   "hr-croatian-party-of-pensioners-(hsu)": 1,
+   "hr-croatian-peasant-party-(hss)": 1,
+   "hr-croatian-people's-party-–-liberal-democrats-(hns)": 1,
+   "hr-croatian-sovereigntists": 1,
+   "hr-dalija-orešković-and-people-with-a-first-and-last-name-(do-i-sip)": 1,
+   "hr-focus": 1,
+   "hr-law-and-justice-(pravo-i-pravda)": 1,
+   "hr-the-independents-(stranka-nezavisni)": 1,
+   "hr-independent-(nz)": 10
+  }
+ },
+ "HUN": {
+  "code": "HU-LC01-E20260412",
+  "date": "2026-04-12",
+  "sieges": 199,
+  "partis": {
+   "hu-tisza-party": 141,
+   "hu-hungarian_civic_union_christian_democratic_peoples_party_fidesz_kdnp": 52,
+   "hu-our_homeland_mi_haz_nk_": 6
+  }
+ },
+ "IRL": {
+  "code": "IE-LC01-E20241129",
+  "date": "2024-11-29",
+  "sieges": 174,
+  "partis": {
+   "ie-fianna_fail": 48,
+   "ie-sinn_fein": 39,
+   "ie-fine_gael": 38,
+   "ie-social_democratic_party": 11,
+   "ie-labour_party": 11,
+   "ie-independent-ireland": 4,
+   "ie-solidarity_people_before_profit_sol_pbp_": 3,
+   "ie-aont_": 2,
+   "ie-green_party_0": 1,
+   "ie-100-redress": 1,
+   "ie-independents": 16
+  }
+ },
+ "LTU": {
+  "code": "LT-LC01-E20241013",
+  "date": "2024-10-13",
+  "sieges": 141,
+  "partis": {
+   "lt-lithuanian_social_democratic_party_lsdp": 52,
+   "lt-homeland_union_lithuanian_christian_democrats_ts_lkd": 28,
+   "lt-political-party-the-dawn-of-nemunas-(ppna)": 20,
+   "lt-union-of-democrats-for-lithuania-(dsvl)": 14,
+   "lt-liberals-movement-of-the-republic-of-lithuania-(ls)": 12,
+   "lt-lithuanian-farmers-popular-union-(lvzs)": 8,
+   "lt-lithuanian_poles_electoral_action_llra_": 3,
+   "lt-national-alliance-(ns)": 1,
+   "lt-freedom-and-justice-party-(plt)": 1,
+   "lt-independents": 2
+  }
+ },
+ "LUX": {
+  "code": "LU-LC01-E20231008",
+  "date": "2023-10-08",
+  "sieges": 60,
+  "partis": {
+   "lu-christian_social_party_pcscsv": 21,
+   "lu-democrat_party_pddp": 14,
+   "lu-socialist_workers_party_posllsap": 11,
+   "lu-alternative_democratic_reform_party_adr": 5,
+   "lu-greens_dei_gr__ng": 4,
+   "lu-parti_pirate_piraten_": 3,
+   "lu-left_d__i_l__nk": 2
+  }
+ },
+ "LVA": {
+  "code": "LV-LC01-E20261003",
+  "date": "2026-10-03",
+  "sieges": 100,
+  "partis": {
+   "lv-united_list": 41,
+   "lv-latvia_first": 17,
+   "lv-suverena-vara-apvieniba-jaunlatviesi": 15,
+   "lv-national_alliance_all_latvia_fatherland_and_freedom_lnnk_na": 10,
+   "lv-progressives": 10,
+   "lv-new_unity_vienotiba_": 7
+  }
+ },
+ "MLT": {
+  "code": "MT-LC01-E20260530",
+  "date": "2026-05-30",
+  "sieges": 79,
+  "partis": {
+   "mt-labour_party_lp": 42,
+   "mt-nationalist_party_pn": 37
+  }
+ },
+ "NLD": {
+  "code": "NL-LC01-E20251029",
+  "date": "2025-10-29",
+  "sieges": 150,
+  "partis": {
+   "nl-democrats_66_d66": 26,
+   "nl-party_freedom_pvv": 26,
+   "nl-peoples_party_freedom_and_democracy_vvd": 22,
+   "nl-green-left-labour-party-(pvda)": 20,
+   "nl-christian_democratic_appeal_cda": 18,
+   "nl-ja21": 9,
+   "nl-forum_democracy_fvd": 7,
+   "nl-boerburgerbeweging_bbb_": 4,
+   "nl-christian_union_cu": 3,
+   "nl-denk": 3,
+   "nl-party_animals_pvdd": 3,
+   "nl-reformed_political_party_sgp": 3,
+   "nl-socialist_party_sp": 3,
+   "nl-party_over_50_50plus": 2,
+   "nl-volt": 1
+  }
+ },
+ "POL": {
+  "code": "PL-LC01-E20231015",
+  "date": "2023-10-15",
+  "sieges": 460,
+  "partis": {
+   "pl-law_and_justice_pis": 194,
+   "pl-civic_coalition_ko_": 157,
+   "pl-third_way": 65,
+   "pl-the_new_left_nowa_lewica_": 26,
+   "pl-confederation_liberty_and_independence_kwin_": 18
+  }
+ },
+ "PRT": {
+  "code": "PT-LC01-E20250518",
+  "date": "2025-05-18",
+  "sieges": 230,
+  "partis": {
+   "pt-social_democratic_party_ppdpsd_democratic_and_social_centre_peoples_party_cds_pp": 88,
+   "pt-enough_ch_": 60,
+   "pt-socialist_party_ps": 58,
+   "pt-liberal_initiative_il_": 9,
+   "pt-livre_l_": 6,
+   "pt-communist_party_green_coalition_pcp_pev": 3,
+   "pt-social_democratic_party_ppd_psd_democratic_and_social_centre_people_s_party_cds_pp_people_s_monarchist_party_ppm_": 3,
+   "pt-left_bloc_be": 1,
+   "pt-party_people_animals_and_nature_pan": 1,
+   "pt-together-for-the-people-(jpp)": 1
+  }
+ },
+ "ROU": {
+  "code": "RO-LC01-E20241201",
+  "date": "2024-12-01",
+  "sieges": 331,
+  "partis": {
+   "ro-social_democratic_party_psd": 86,
+   "ro-alliance_for_the_unity_of_romanians_aur_": 63,
+   "ro-national_liberal_party_pnl": 49,
+   "ro-save_romania_union_usr": 40,
+   "ro-s-o-s-romania": 28,
+   "ro-party-of-young-people-(pot)": 24,
+   "ro-democratic-union-of-hungarians-in-romania-(udmr)": 22
+  }
+ },
+ "SVK": {
+  "code": "SK-LC01-E20230930",
+  "date": "2023-09-30",
+  "sieges": 150,
+  "partis": {
+   "sk-smer_social_democracy_smer_sd": 42,
+   "sk-progressive_slovakia_ps_": 32,
+   "sk-voice_hlas_sd": 27,
+   "sk-coalition_o_ano_and_friends_for_the_people_and_christian_union_": 16,
+   "sk-christian_democratic_movement_kdh": 12,
+   "sk-freedom_and_solidarity_sas": 11,
+   "sk-slovak_national_party_sns": 10
+  }
+ },
+ "SVN": {
+  "code": "SI-LC01-E20260322",
+  "date": "2026-03-22",
+  "sieges": 90,
+  "partis": {
+   "si-freedom_movement_svoboda_": 29,
+   "si-slovenian_democratic_party_sds": 28,
+   "si-nsi-sls-fokus": 9,
+   "si-social_democrats_sd": 6,
+   "si-democrats": 6,
+   "si-left-vesna": 5,
+   "si-resni-ca-002": 5,
+   "si-representatives_ethnic_minorities": 2
+  }
+ },
+ "SWE": {
+  "code": "SE-LC01-E20260913",
+  "date": "2026-09-13",
+  "sieges": 349,
+  "partis": {
+   "se-social_democratic_party_sap": 99,
+   "se-moderate_party_m": 70,
+   "se-sweden_democrats_sd": 62,
+   "se-left_party_vp": 30,
+   "se-centre_party_cp": 25,
+   "se-christian_democrats_kd": 22,
+   "se-green_party_mpg": 22,
+   "se-liberal-party-(l)": 19
+  }
  }
 }

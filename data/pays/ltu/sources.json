@@ -1,0 +1,374 @@
+{
+  "pays": "LTU",
+  "verifie": "2026-10-26",
+  "sources": [
+    {
+      "id": "defense",
+      "nom": "Ministère de la Défense nationale, « International operations and training missions »",
+      "editeur": "Krašto apsaugos ministerija (KAM)",
+      "url": "https://kam.lt/en/international-operations-and-training-missions/",
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "irrégulière (à chaque mandat du Seimas ou relève)",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences"
+      ],
+      "notes": "Domaine kam.lt bloqué par le réseau du projet le 2026-10-26 (cloud et poste d'Arnaud) : contenu relevé via moteur de recherche, non relu en direct. La page n'est pas datée. Elle indique 125 militaires dans 9 opérations et des plafonds par mission (KFOR 60, EUMAM Ukraine 40, Atalanta 30, Irini 20, EUTM RCA et EUMAM Mozambique 11), avec des effectifs relevés de 44 (KFOR), 2 (EUMAM Ukraine), 2 (Atalanta). Faute de date, les effectifs restent à null dans presences.json.",
+      "hotes": [
+        "kam.lt"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "mandat",
+      "nom": "Résolution du Seimas sur la participation aux opérations internationales 2026-2027 (communiqué KAM du 18/12/2025)",
+      "editeur": "Krašto apsaugos ministerija (KAM), repris par GlobalSecurity.org",
+      "url": "https://www.globalsecurity.org/military/library/news/2025/12/mil-251218-lithuania-mnd01.htm",
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "biennale (mandat 2026-2027), amendements ponctuels",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences"
+      ],
+      "notes": "14 missions et opérations, plafond de 412 personnels. Nouveautés 2026 : EUFOR Althea et EUTM Somalie. Texte officiel de la résolution au registre des actes juridiques (e-tar.lt), domaine bloqué. Amendement de juin 2026 : participation à l'opération maritime du détroit d'Ormuz (jusqu'à 40 personnels), voir source « ormuz ».",
+      "hotes": [
+        "www.globalsecurity.org",
+        "www.e-tar.lt"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "ormuz",
+      "nom": "« The Seimas approved the proposal to contribute to international operation in the Strait of Hormuz »",
+      "editeur": "Krašto apsaugos ministerija (KAM)",
+      "url": "https://kam.lt/en/the-seimas-approved-the-proposal-to-contribute-to-international-operation-in-the-strait-of-hormuz/",
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "ponctuelle",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences"
+      ],
+      "notes": "Juin 2026, contingent de 40 personnels au plus. Relevé via moteur de recherche (domaine bloqué).",
+      "hotes": [
+        "kam.lt"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "kariuomene",
+      "nom": "Forces armées lituaniennes, opérations internationales",
+      "editeur": "Lietuvos kariuomenė",
+      "url": "https://kariuomene.lt/en/",
+      "type": "officiel",
+      "langue": "lt",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences"
+      ],
+      "notes": "Annonce les relèves OTAN de juillet à décembre 2026 : module de transmissions (9 militaires) dans l'opération OTAN « Active Fence », navire « Jotvingis » (61 militaires) dans l'opération OTAN « Brilliant Shield ». Page exacte non relue (domaine bloqué).",
+      "hotes": [
+        "kariuomene.lt"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "allies",
+      "nom": "KAM, forces alliées en Lituanie (pays hôte)",
+      "editeur": "Krašto apsaugos ministerija (KAM)",
+      "url": "https://kam.lt/en/?p=45476",
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences"
+      ],
+      "notes": "Confirmation côté pays hôte des forces étrangères en Lituanie : brigade allemande « Litauen » (Panzerbrigade 45, Rūdninkai et Rukla), bataillon multinational OTAN sous commandement allemand, rotation américaine à Pabradė. Ces présences relèvent des fichiers des pays déployeurs (DEU, USA…), pas de presences.json de la Lituanie. Page non datée.",
+      "hotes": [
+        "kam.lt"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "aide-ukr",
+      "nom": "« Lithuania steps up military support for Ukraine: €223 million package »",
+      "editeur": "Portail officiel lithuania.lt (communiqué du ministère de la Défense nationale, 13/02/2026)",
+      "url": "https://lithuania.lt/governance-in-lithuania/lithuania-steps-up-military-support-for-ukraine-e223-million-package-focused-on-air-defence-drones-and-long-range-ammunition/",
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "conflits"
+      ],
+      "notes": "223 M€ prévus pour 2026 ; aide militaire cumulée annoncée au-delà de 1 Md$. Engagement d'au moins 0,25 % du PIB par an (Conseil de défense de l'État).",
+      "hotes": [
+        "lithuania.lt"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "gouvernement",
+      "nom": "Gouvernement de la République de Lituanie, actualités et composition",
+      "editeur": "Lietuvos Respublikos Vyriausybė",
+      "url": "https://lrv.lt/en/",
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "à chaque changement",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique",
+        "conflits"
+      ],
+      "notes": "Domaine bloqué le 2026-10-26. Chef du gouvernement recoupé par Wikidata (source « wikidata »).",
+      "hotes": [
+        "lrv.lt"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "wikidata",
+      "nom": "Wikidata, Lituanie (Q37) : chef de l'État (P35), chef du gouvernement (P6), présidents de partis (P488)",
+      "editeur": "Wikimedia Foundation",
+      "url": "https://www.wikidata.org/wiki/Q37",
+      "type": "international",
+      "langue": "en",
+      "licence": "CC0",
+      "cadence": "continue",
+      "api": true,
+      "api_url": "https://query.wikidata.org/sparql",
+      "format": "json",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Relevé SPARQL du 2026-10-26 : Gitanas Nausėda (Q9268379) président depuis le 2019-07-12 ; Mindaugas Sinkevičius (Q1936326) Premier ministre depuis le 2026-07-14, après Inga Ruginienė (2025-09-25 au 2026-07-14). Pas de président à jour pour le Mouvement libéral ni pour l'Union des paysans et des verts.",
+      "hotes": [
+        "www.wikidata.org",
+        "query.wikidata.org"
+      ],
+      "acces": "verifie"
+    },
+    {
+      "id": "seimas",
+      "nom": "Seimas, composition des groupes parlementaires (frakcijos)",
+      "editeur": "Lietuvos Respublikos Seimo kanceliarija",
+      "url": "https://www.lrs.lt/sip/portal.show?p_r=35299&p_k=2",
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "continue (changements de groupe en cours de mandat)",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Domaine bloqué le 2026-10-26. Le Seimas a ouvert 7 jeux de données sur data.gov.lt en mai 2024 (textes du site, calendrier des sessions, événements…), sans la composition des groupes à cette date. OpenSanctions publie une liste quotidienne des membres dérivée de lrs.lt (CC BY-NC 4.0).",
+      "hotes": [
+        "www.lrs.lt",
+        "data.gov.lt",
+        "get.data.gov.lt"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "electoral",
+      "nom": "Commission électorale centrale (VRK), résultats des élections au Seimas du 13 et 27 octobre 2024",
+      "editeur": "Vyriausioji rinkimų komisija (VRK)",
+      "url": "https://www.vrk.lt/",
+      "type": "officiel",
+      "langue": "lt",
+      "licence": "non précisée",
+      "cadence": "à chaque élection",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Domaine bloqué le 2026-10-26. Sièges par parti recoupés avec Wikipedia (« 2024 Lithuanian parliamentary election ») : LSDP 52, TS-LKD 28, Aube du Niémen 20, Démocrates « Pour la Lituanie » 14, Mouvement libéral 12, LVŽS 8, AWPL-ZChR 3, Union nationale 1, Parti de la liberté 1, indépendants 2. La relecture hebdomadaire IPU (api.data.ipu.org, CC BY-NC-SA 4.0) prend le relais une fois les codes partis IPU renseignés.",
+      "hotes": [
+        "www.vrk.lt",
+        "api.data.ipu.org"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "coalition",
+      "nom": "OSW, « New government in Lithuania: the third Social Democratic cabinet » (15/07/2026)",
+      "editeur": "Ośrodek Studiów Wschodnich (centre public polonais d'études)",
+      "url": "https://www.osw.waw.pl/en/publikacje/analyses/2026-07-15/new-government-lithuania-third-social-democratic-cabinet",
+      "type": "recherche",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "ponctuelle",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Coalition approuvée le 14/07/2026 : LSDP, Démocrates « Pour la Lituanie », groupe LVŽS + AWPL-ZChR, 75 sièges annoncés. Utilisée faute d'accès à lrv.lt et lrs.lt. L'opposition (conservateurs, libéraux) a annoncé un recours devant la Cour constitutionnelle sur la procédure ; issue non vérifiée.",
+      "hotes": [
+        "www.osw.waw.pl"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "stat",
+      "nom": "Statistique Lituanie, base des indicateurs, commerce extérieur par pays",
+      "editeur": "Valstybės duomenų agentūra (Statistique Lituanie)",
+      "url": "https://osp.stat.gov.lt/rdb-rest",
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "mensuelle",
+      "api": true,
+      "api_url": "https://osp-rs.stat.gov.lt/rest_xml/",
+      "format": "sdmx-xml",
+      "couches": [
+        "commerce"
+      ],
+      "notes": "Service SDMX 2.1 REST officiel (aussi osp-rs.stat.gov.lt/json_xml). Domaine bloqué le 2026-10-26 : identifiant du flux commerce par pays non vérifié, d'où l'absence de commerce.json. À relever depuis GitHub Actions (non soumis à la liste d'accès). Données Intrastat/Extrastat, nomenclature NC. Pas de licence explicite trouvée.",
+      "hotes": [
+        "osp.stat.gov.lt",
+        "osp-rs.stat.gov.lt"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "sanctions-loi",
+      "nom": "Loi sur les mesures restrictives liées à l'agression militaire contre l'Ukraine (régime national, prolongé jusqu'à fin 2027)",
+      "editeur": "Seimas de la République de Lituanie",
+      "url": "https://www.e-tar.lt/",
+      "type": "officiel",
+      "langue": "lt",
+      "licence": "non précisée",
+      "cadence": "annuelle (prolongations votées par le Seimas)",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "sanctions"
+      ],
+      "notes": "Mesures visant les ressortissants russes et biélorusses (e-résidence, achats immobiliers, espèces, produits agricoles, carburant au-delà de 200 l). Texte consolidé sur e-tar.lt, domaine bloqué. Prolongation jusqu'à fin 2027 rapportée par la presse (Baltic Times).",
+      "hotes": [
+        "www.e-tar.lt",
+        "www.lrs.lt"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "sanctions-entree",
+      "nom": "Liste nationale des étrangers interdits d'entrée (art. 133 de la loi sur le statut des étrangers, amendements « Magnitski »)",
+      "editeur": "Département des migrations, ministère de l'Intérieur (sur proposition du ministère des Affaires étrangères)",
+      "url": "https://migracija.lrv.lt/",
+      "type": "officiel",
+      "langue": "lt",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "sanctions"
+      ],
+      "notes": "Interdiction d'entrée jusqu'à 5 ans. Version machine : jeu OpenSanctions « lt_magnitsky_amendments » (CC BY-NC 4.0, compatible avec un site non commercial). opensanctions.org bloqué le 2026-10-26.",
+      "hotes": [
+        "migracija.lrv.lt",
+        "www.opensanctions.org",
+        "data.opensanctions.org"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "mae",
+      "nom": "Ministère des Affaires étrangères, sanctions internationales et communiqués",
+      "editeur": "Užsienio reikalų ministerija (URM)",
+      "url": "https://www.urm.lt/en/",
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "sanctions",
+        "conflits"
+      ],
+      "notes": "Domaine bloqué le 2026-10-26. Le contrôle financier des sanctions relève du Service d'enquête sur les délits financiers (FNTT).",
+      "hotes": [
+        "www.urm.lt"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "mae-chine",
+      "nom": "Ministère des Affaires étrangères de Chine, déclaration du 21/11/2021 sur l'abaissement des relations avec la Lituanie",
+      "editeur": "Ministère des Affaires étrangères de la République populaire de Chine",
+      "url": "https://www.mfa.gov.cn/eng/wjb/zzjg_663340/xos_664404/xwlb_664406/202111/t20211121_10451002.html",
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "ponctuelle",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "conflits"
+      ],
+      "notes": "Source officielle de l'autre partie ; aucune déclaration lituanienne correspondante relue (urm.lt bloqué).",
+      "hotes": [
+        "www.mfa.gov.cn"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "frontiere-blr",
+      "nom": "Bloomberg, « Lithuania closes border with Belarus citing hybrid attack » (29/10/2025)",
+      "editeur": "Bloomberg",
+      "url": "https://www.bloomberg.com/news/articles/2025-10-29/lithuania-closes-border-with-belarus-citing-hybrid-attack",
+      "type": "presse",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "ponctuelle",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "conflits"
+      ],
+      "notes": "Décision gouvernementale du 29/10/2025 (fermeture de Šalčininkai et Medininkai jusqu'au 30/11/2025). La décision officielle est sur lrv.lt, domaine bloqué : à remplacer par le texte officiel dès qu'il est accessible. Une nouvelle fermeture en août 2026 est rapportée par The Moscow Times, non vérifiée.",
+      "hotes": [
+        "www.bloomberg.com"
+      ],
+      "acces": "non_verifie"
+    }
+  ]
+}

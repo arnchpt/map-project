@@ -1,0 +1,277 @@
+{
+  "pays": "SWE",
+  "verifie": "2026-10-26",
+  "sources": [
+    {
+      "id": "scb",
+      "nom": "Statistikdatabasen, « Varuimport och varuexport. Totala värden efter handelspartner, bortfallsjusterat » (table HA0201J8)",
+      "editeur": "Statistiska centralbyrån (SCB)",
+      "url": "https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__HA__HA0201__HA0201A/OImpExpLandTotAr/",
+      "type": "officiel",
+      "langue": "sv",
+      "licence": "CC0 (mention « Källa: SCB » recommandée, non obligatoire)",
+      "cadence": "annuelle (tables mensuelles disponibles dans HA0201)",
+      "api": true,
+      "api_url": "https://statistikdatabasen.scb.se/api/v2/tables/{id}/data",
+      "format": "json-stat2",
+      "couches": [
+        "commerce"
+      ],
+      "hotes": [
+        "www.scb.se",
+        "statistikdatabasen.scb.se",
+        "www.statistikdatabasen.scb.se",
+        "api.scb.se"
+      ],
+      "acces": "non_verifie",
+      "notes": "PxWebApi v2 en service depuis octobre 2025 (limites : 150 000 cellules par extraction, 30 appels / 10 s) ; la v1 (api.scb.se) doit fermer vers le tournant 2026-2027, donc viser la v2. Valeurs en milliers de SEK, 1998-2025. Importations par pays d'expédition et non d'origine : écart attendu avec le FMI (Pays-Bas, Allemagne, Norvège). commerce.json non rempli : domaines bloqués, aucun chiffre relu."
+    },
+    {
+      "id": "riksdagen",
+      "nom": "Riksdagens öppna data : membres (personlista), votes, documents (propositions, skrivelser, lois SFS)",
+      "editeur": "Sveriges riksdag",
+      "url": "https://www.riksdagen.se/sv/dokument-och-lagar/riksdagens-oppna-data/",
+      "type": "officiel",
+      "langue": "sv",
+      "licence": "Libre et gratuite, mention obligatoire « Källa: Sveriges riksdag » ; interdiction d'utiliser le logo ou le nom comme caution ; photos sous droit d'auteur ; données personnelles soumises au RGPD",
+      "cadence": "quotidienne",
+      "api": true,
+      "api_url": "https://data.riksdagen.se/personlista/?utformat=json&rdlstatus=tjanstgorande",
+      "format": "json",
+      "couches": [
+        "politique",
+        "presences",
+        "conflits",
+        "autre"
+      ],
+      "hotes": [
+        "www.riksdagen.se",
+        "data.riksdagen.se"
+      ],
+      "acces": "non_verifie",
+      "notes": "Sièges en cours de mandat par parti (personlista), autorisations de déploiement à l'étranger votées par le Riksdag (propositions, ex. projet du 13/10/2026 pour les forces OTAN 2027), scrutins d'investiture du Premier ministre. Source la plus automatisable du pays."
+    },
+    {
+      "id": "val",
+      "nom": "Valmyndigheten, résultat définitif et répartition des sièges de l'élection au Riksdag du 13/09/2026",
+      "editeur": "Valmyndigheten (autorité électorale)",
+      "url": "https://resultat.val.se/protokoll/protokoll_Val_2026_00_RD.pdf",
+      "type": "officiel",
+      "langue": "sv",
+      "licence": "non précisée",
+      "cadence": "à chaque élection (législatives tous les 4 ans, prochaine en septembre 2030)",
+      "api": false,
+      "api_url": null,
+      "format": "pdf",
+      "couches": [
+        "politique"
+      ],
+      "hotes": [
+        "www.val.se",
+        "resultat.val.se"
+      ],
+      "acces": "non_verifie",
+      "notes": "Résultat fixé le 19/09/2026. Les fichiers de résultats détaillés de resultat.val.se n'ont pas pu être examinés (domaine bloqué) : format machine à confirmer."
+    },
+    {
+      "id": "regeringen",
+      "nom": "Regeringen.se / Government.se : composition du gouvernement, communiqués, décisions de déploiement, page sanctions",
+      "editeur": "Regeringskansliet (services du gouvernement)",
+      "url": "https://www.government.se/",
+      "type": "officiel",
+      "langue": "sv",
+      "licence": "non précisée",
+      "cadence": "irrégulière (à chaque décision)",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique",
+        "presences",
+        "conflits",
+        "sanctions"
+      ],
+      "hotes": [
+        "www.regeringen.se",
+        "www.government.se",
+        "regeringen.se"
+      ],
+      "acces": "non_verifie",
+      "notes": "Pas d'API publique. Les décisions de déploiement passent aussi par le Riksdag (source riksdagen, automatisable)."
+    },
+    {
+      "id": "forsvarsmakten",
+      "nom": "Försvarsmakten, actualités et opérations internationales",
+      "editeur": "Försvarsmakten (forces armées suédoises)",
+      "url": "https://www.forsvarsmakten.se/en/news-and-events/news/flf-finland/",
+      "type": "officiel",
+      "langue": "sv",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences"
+      ],
+      "hotes": [
+        "www.forsvarsmakten.se"
+      ],
+      "acces": "non_verifie",
+      "notes": "Liste à jour des contributions (missions ONU, UE, OTAN) à relever sur ce site quand le domaine sera ouvert : seules les présences confirmées par le gouvernement ou l'OTAN sont saisies pour l'instant."
+    },
+    {
+      "id": "kungahuset",
+      "nom": "Kungahuset, site officiel de la Cour royale",
+      "editeur": "Kungliga hovstaterna",
+      "url": "https://www.kungahuset.se/",
+      "type": "officiel",
+      "langue": "sv",
+      "licence": "non précisée",
+      "cadence": "à chaque changement",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique"
+      ],
+      "hotes": [
+        "www.kungahuset.se"
+      ],
+      "acces": "non_verifie",
+      "notes": "Chef de l'État recoupé par Wikidata (P35 de Q34), accès vérifié."
+    },
+    {
+      "id": "isp",
+      "nom": "Inspektionen för strategiska produkter : sanctions et exportations de matériel de guerre par pays destinataire",
+      "editeur": "Inspektionen för strategiska produkter (ISP)",
+      "url": "https://isp.se/eng/our-assignments/international-sanctions/",
+      "type": "officiel",
+      "langue": "sv",
+      "licence": "non précisée",
+      "cadence": "annuelle (rapport du gouvernement au Riksdag, avril)",
+      "api": true,
+      "api_url": "https://data.riksdagen.se/dokument/HD03114",
+      "format": "html",
+      "couches": [
+        "sanctions",
+        "autre"
+      ],
+      "hotes": [
+        "isp.se",
+        "www.isp.se",
+        "data.riksdagen.se"
+      ],
+      "acces": "non_verifie",
+      "notes": "Exportations 2025 par pays destinataire : annexe 1 de la communication du gouvernement 2025/26:114 (1er avril 2026), récupérable via l'API du Riksdag. ISP annonce un total d'un peu plus de 28 Md SEK pour 2025 (chiffre non relu)."
+    },
+    {
+      "id": "sfs2025-327",
+      "nom": "Loi (2025:327) sur les sanctions internationales",
+      "editeur": "Sveriges riksdag / Regeringskansliet",
+      "url": "https://data.riksdagen.se/dokument/sfs-2025-327.text",
+      "type": "officiel",
+      "langue": "sv",
+      "licence": "Libre, mention « Källa: Sveriges riksdag »",
+      "cadence": "irrégulière (à chaque modification de la loi)",
+      "api": true,
+      "api_url": "https://data.riksdagen.se/dokument/sfs-2025-327.text",
+      "format": "texte",
+      "couches": [
+        "sanctions"
+      ],
+      "hotes": [
+        "data.riksdagen.se"
+      ],
+      "acces": "non_verifie",
+      "notes": "En vigueur depuis le 10/06/2025. La Suède n'applique que les sanctions de l'UE et de l'ONU, sans régime autonome (selon le guide Chambers « Sanctions 2026 », https://practiceguides.chambers.com/practice-guides/sanctions-2026/sweden) : la couche sanctions UE automatique couvre donc le pays, rien à recopier."
+    },
+    {
+      "id": "openaid",
+      "nom": "Openaid.se, aide publique au développement suédoise par pays (standard IATI)",
+      "editeur": "Sida / ministère des Affaires étrangères",
+      "url": "https://openaid.se/en/available-data-and-information",
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "mensuelle",
+      "api": true,
+      "api_url": "https://api.iatistandard.org/datastore/",
+      "format": "json",
+      "couches": [
+        "autre"
+      ],
+      "hotes": [
+        "openaid.se",
+        "www.openaid.se",
+        "api.iatistandard.org"
+      ],
+      "acces": "non_verifie",
+      "notes": "Indicateur possible de relations bilatérales (aide par pays depuis 1998). Licence des données à confirmer."
+    },
+    {
+      "id": "otan",
+      "nom": "OTAN, Forward Land Forces et renforcement du flanc est",
+      "editeur": "Organisation du traité de l'Atlantique Nord",
+      "url": "https://www.nato.int/en/what-we-do/deterrence-and-defence/strengthening-natos-eastern-flank",
+      "type": "international",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences"
+      ],
+      "hotes": [
+        "www.nato.int"
+      ],
+      "acces": "non_verifie",
+      "notes": ""
+    },
+    {
+      "id": "valtioneuvosto",
+      "nom": "Gouvernement finlandais, « NATO Forward Land Forces Finland to start operations on 6 June »",
+      "editeur": "Valtioneuvosto (gouvernement de la Finlande)",
+      "url": "https://valtioneuvosto.fi/en/-/236553176/nato-forward-land-forces-finland-to-start-operations-on-6-june",
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences"
+      ],
+      "hotes": [
+        "valtioneuvosto.fi"
+      ],
+      "acces": "non_verifie",
+      "notes": "Confirmation par l'État hôte de la présence suédoise en Finlande."
+    },
+    {
+      "id": "wikidata",
+      "nom": "Wikidata : Suède (Q34), chef de l'État (P35), chef du gouvernement (P6), présidents de partis (P488)",
+      "editeur": "Wikimedia Foundation",
+      "url": "https://www.wikidata.org/wiki/Q34",
+      "type": "recherche",
+      "langue": "en",
+      "licence": "CC0",
+      "cadence": "continue",
+      "api": true,
+      "api_url": "https://query.wikidata.org/sparql",
+      "format": "json",
+      "couches": [
+        "politique"
+      ],
+      "hotes": [
+        "www.wikidata.org",
+        "query.wikidata.org"
+      ],
+      "acces": "verifie",
+      "notes": "Relevé SPARQL du 26/10/2026 : P35 = Carl XVI Gustaf (Q45068) depuis 1973-09-15 ; P6 = Ulf Kristersson (Q1780398) depuis 2022-10-18, sans date de fin ; dirigeants des 8 partis au Riksdag. Base collaborative : sert de contrôle, pas de source primaire."
+    }
+  ]
+}

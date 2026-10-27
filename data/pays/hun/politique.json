@@ -1,0 +1,51 @@
+{
+  "pays": "HUN",
+  "verifie": "2026-10-26",
+  "chef_etat": {
+    "nom": "Baka András",
+    "fonction": "Président de la République",
+    "parti": null,
+    "depuis": "2026-08-19",
+    "qid": "Q788903",
+    "src": "wikidata"
+  },
+  "chef_gouv": {
+    "nom": "Magyar Péter",
+    "fonction": "Premier ministre",
+    "parti": "Tisza",
+    "depuis": "2026-05-09",
+    "qid": "Q124488292",
+    "src": "wikidata"
+  },
+  "chambre": {
+    "nom": "Országgyűlés (Assemblée nationale)",
+    "sieges": 199,
+    "majorite": 100,
+    "election": "2026-04-12",
+    "src": "electoral",
+    "ipu": null
+  },
+  "partis": [
+    {
+      "nom": "Tisza (Tisztelet és Szabadság Párt)",
+      "sieges": 141,
+      "role": "gouv",
+      "leaders": "Magyar Péter (président)",
+      "ipu": null
+    },
+    {
+      "nom": "Fidesz–KDNP",
+      "sieges": 52,
+      "role": "hors",
+      "leaders": "Orbán Viktor (président du Fidesz), Semjén Zsolt (président du KDNP), selon Wikidata",
+      "ipu": null
+    },
+    {
+      "nom": "Mi Hazánk Mozgalom",
+      "sieges": 6,
+      "role": "hors",
+      "leaders": "Toroczkai László (président)",
+      "ipu": null
+    }
+  ]
+}

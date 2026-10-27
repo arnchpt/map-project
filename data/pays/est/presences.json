@@ -1,0 +1,33 @@
+{
+  "pays": "EST",
+  "verifie": "2026-10-26",
+  "presences": [
+    {
+      "hote": "IRQ",
+      "lon": 44.4,
+      "lat": 36.5,
+      "nom": "Contingent dans l'opération Inherent Resolve (coalition menée par les États-Unis), base aérienne de Harir",
+      "cat": "ope",
+      "eff": null,
+      "depuis": null,
+      "src": "mandats"
+    }
+  ],
+  "non_localisees": [
+    {
+      "nom": "Observateurs dans les missions de l'ONU au Moyen-Orient (ONUST, FINUL)",
+      "eff": "≤ 3 (plafond du mandat 2025)",
+      "src": "mandats"
+    },
+    {
+      "nom": "Opération navale de l'UE EUNAVFOR Aspides (mer Rouge)",
+      "eff": "1 conseiller juridique (2025)",
+      "src": "mandats"
+    },
+    {
+      "nom": "Officiers d'état-major dans des opérations de l'OTAN, de l'UE et de l'ONU",
+      "eff": "non publié",
+      "src": "defense"
+    }
+  ]
+}

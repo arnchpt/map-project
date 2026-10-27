@@ -1,0 +1,103 @@
+{
+  "pays": "HRV",
+  "verifie": "2026-10-26",
+  "presences": [
+    {
+      "hote": "POL",
+      "lon": 21.9,
+      "lat": 53.8,
+      "nom": "Présence avancée renforcée de l'OTAN, groupement tactique en Pologne",
+      "cat": "otan",
+      "eff": null,
+      "depuis": null,
+      "src": "defense"
+    },
+    {
+      "hote": "LTU",
+      "lon": 24.2,
+      "lat": 55.1,
+      "nom": "Présence avancée renforcée de l'OTAN, groupement tactique en Lituanie",
+      "cat": "otan",
+      "eff": null,
+      "depuis": null,
+      "src": "president"
+    },
+    {
+      "hote": "HUN",
+      "lon": 18.3,
+      "lat": 47.6,
+      "nom": "Présence avancée renforcée de l'OTAN, groupement tactique en Hongrie",
+      "cat": "otan",
+      "eff": null,
+      "depuis": null,
+      "src": "president"
+    },
+    {
+      "hote": "XKX",
+      "lon": 21.2,
+      "lat": 42.6,
+      "nom": "KFOR (OTAN, Kosovo)",
+      "cat": "otan",
+      "eff": null,
+      "depuis": null,
+      "src": "defense"
+    },
+    {
+      "hote": "PAK",
+      "lon": 73.1,
+      "lat": 33.7,
+      "nom": "UNMOGIP (ONU, Inde et Pakistan)",
+      "cat": "onu",
+      "eff": 9,
+      "depuis": null,
+      "src": "defense-onu"
+    },
+    {
+      "hote": "ESH",
+      "lon": -13.2,
+      "lat": 27.2,
+      "nom": "MINURSO (ONU, Sahara occidental)",
+      "cat": "onu",
+      "eff": 11,
+      "depuis": null,
+      "src": "defense-onu"
+    },
+    {
+      "hote": "LBN",
+      "lon": 35.1,
+      "lat": 33.1,
+      "nom": "FINUL (ONU, Liban), officiers de liaison",
+      "cat": "onu",
+      "eff": null,
+      "depuis": null,
+      "src": "defense-onu"
+    },
+    {
+      "hote": "CYP",
+      "lon": 33.4,
+      "lat": 35.2,
+      "nom": "UNFICYP (ONU, Chypre)",
+      "cat": "onu",
+      "eff": null,
+      "depuis": null,
+      "src": "president"
+    }
+  ],
+  "non_localisees": [
+    {
+      "nom": "Opération de sécurité maritime de l'OTAN Sea Guardian (Méditerranée)",
+      "eff": "non publié",
+      "src": "president"
+    },
+    {
+      "nom": "Groupe permanent de lutte contre les mines de l'OTAN",
+      "eff": "non publié",
+      "src": "president"
+    },
+    {
+      "nom": "Opérations navales de l'UE Atalanta et Irini",
+      "eff": "non publié",
+      "src": "president"
+    }
+  ]
+}

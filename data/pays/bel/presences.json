@@ -1,0 +1,33 @@
+{
+  "pays": "BEL",
+  "verifie": "2026-10-26",
+  "presences": [
+    {
+      "hote": "ROU",
+      "lon": 24.8,
+      "lat": 45.9,
+      "nom": "Contingent dans le groupement tactique multinational de l'OTAN en Roumanie (sous commandement français)",
+      "cat": "otan",
+      "eff": null,
+      "depuis": null,
+      "src": "defense-plan"
+    }
+  ],
+  "non_localisees": [
+    {
+      "nom": "Police du ciel de l'OTAN (Baltic Air Policing, rotations)",
+      "eff": "non publié",
+      "src": "ministre-defense"
+    },
+    {
+      "nom": "Opération Aspides de l'UE en mer Rouge (frégate prévue au second semestre 2026)",
+      "eff": "non publié",
+      "src": "defense-plan"
+    },
+    {
+      "nom": "Drone MQ-9B SkyGuardian en Méditerranée (surveillance, première mission en 2026)",
+      "eff": "non publié",
+      "src": "defense-plan"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "pays": "IRL",
+  "verifie": "2026-10-26",
+  "evenements": [
+    {
+      "avec": "UKR",
+      "k": "soutien",
+      "t": "Soutien militaire non létal à l'Ukraine",
+      "d": "Paquet bilatéral de 125 M€ pour 2026, dont 100 M€ d'équipements militaires non létaux, annoncé par le Taoiseach à Kyiv le 23/07/2026.",
+      "date": "2026-07-23",
+      "src": "taoiseach"
+    },
+    {
+      "avec": "ISR",
+      "k": "tension",
+      "t": "Intervention dans l'affaire Afrique du Sud c. Israël",
+      "d": "L'Irlande a déposé le 06/01/2025 une déclaration d'intervention devant la Cour internationale de Justice dans l'affaire relative à la convention sur le génocide.",
+      "date": "2025-01-06",
+      "src": "cij"
+    },
+    {
+      "avec": "ISR",
+      "k": "tension",
+      "t": "Fermeture de l'ambassade d'Israël à Dublin",
+      "d": "Le ministère israélien des Affaires étrangères a annoncé en décembre 2024 la fermeture de son ambassade à Dublin, en invoquant la reconnaissance de l'État de Palestine par l'Irlande et son soutien à la procédure devant la CIJ.",
+      "date": "2024-12",
+      "src": "mae_israel"
+    }
+  ]
+}

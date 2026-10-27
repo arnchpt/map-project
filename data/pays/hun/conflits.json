@@ -1,0 +1,14 @@
+{
+  "pays": "HUN",
+  "verifie": "2026-10-26",
+  "evenements": [
+    {
+      "avec": "UKR",
+      "k": "tension",
+      "t": "Expulsions réciproques de diplomates",
+      "d": "Le 9/05/2025, la Hongrie a expulsé deux diplomates ukrainiens accusés d'espionnage, et l'Ukraine a expulsé deux diplomates hongrois le même jour.",
+      "date": "2025-05-09",
+      "src": "mae"
+    }
+  ]
+}

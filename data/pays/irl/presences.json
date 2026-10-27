@@ -1,0 +1,58 @@
+{
+  "pays": "IRL",
+  "verifie": "2026-10-26",
+  "presences": [
+    {
+      "hote": "LBN",
+      "lon": 35.4,
+      "lat": 33.2,
+      "nom": "Force intérimaire des Nations unies au Liban (FINUL / UNIFIL)",
+      "cat": "onu",
+      "eff": 350,
+      "depuis": "1978",
+      "src": "defense_gov"
+    },
+    {
+      "hote": "BIH",
+      "lon": 18.4,
+      "lat": 43.9,
+      "nom": "EUFOR Althea (état-major, Sarajevo)",
+      "cat": "ue",
+      "eff": 6,
+      "depuis": null,
+      "src": "defense"
+    },
+    {
+      "hote": "XKX",
+      "lon": 21.2,
+      "lat": 42.6,
+      "nom": "KFOR (OTAN), état-major de Pristina",
+      "cat": "otan",
+      "eff": 13,
+      "depuis": null,
+      "src": "defense_gov"
+    },
+    {
+      "hote": "ISR",
+      "lon": 35.2,
+      "lat": 31.8,
+      "nom": "Organisme des Nations unies chargé de la surveillance de la trêve (ONUST / UNTSO), siège à Jérusalem",
+      "cat": "onu",
+      "eff": null,
+      "depuis": null,
+      "src": "defense"
+    }
+  ],
+  "non_localisees": [
+    {
+      "nom": "Opération navale de l'UE Irini (EUNAVFOR MED), état-major de Rome",
+      "eff": "3 (chiffre non daté)",
+      "src": "defense"
+    },
+    {
+      "nom": "Officiers d'état-major et observateurs auprès de l'ONU, de l'UE, de l'OTAN (Partenariat pour la paix) et de l'OSCE",
+      "eff": "non publié",
+      "src": "defense"
+    }
+  ]
+}
