@@ -1,6 +1,6 @@
 {
   "pays": "PRT",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "chef_etat": {
     "nom": "António José Seguro",
     "fonction": "Président de la République",
@@ -26,10 +26,10 @@
   },
   "partis": [
     {
-      "nom": "Parti social-démocrate (PSD, coalition AD)",
-      "sieges": 89,
+      "nom": "Alliance démocratique (PSD/CDS-PP)",
+      "sieges": 91,
       "role": "gouv",
-      "leaders": "Luís Montenegro (président du parti)",
+      "leaders": "Luís Montenegro (président du PSD), Nuno Melo (président du CDS-PP, non reconfirmé)",
       "qid": "Q595575"
     },
     {
@@ -57,12 +57,6 @@
       "sieges": 6,
       "role": "hors",
       "leaders": "Rui Tavares et Isabel Mendes Lopes (porte-parole)"
-    },
-    {
-      "nom": "CDS – Parti populaire (CDS-PP, coalition AD)",
-      "sieges": 2,
-      "role": "gouv",
-      "leaders": "Nuno Melo (président du parti, non reconfirmé)"
     },
     {
       "nom": "Parti communiste portugais (PCP, coalition CDU)",

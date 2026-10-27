@@ -1,6 +1,6 @@
 {
   "pays": "PRT",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "sources": [
     {
       "id": "ine",
@@ -12,16 +12,16 @@
       "licence": "non précisée (conditions d'utilisation du portail INE à lire)",
       "cadence": "mensuelle (estimation rapide trimestrielle)",
       "api": true,
-      "api_url": "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=<code_indicateur>&lang=PT",
+      "api_url": "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0005716&lang=PT",
       "format": "json",
       "couches": [
         "commerce"
       ],
-      "notes": "API publique sans clé (paramètres op, varcd, Dim1…, d'après le paquet R ineptr2). Code de l'indicateur « commerce par pays partenaire » non identifié : à relever sur le portail. Domaine bloqué depuis la session, commerce.json non produit.",
+      "notes": "Relu le 2026-10-27 : l'API pindica.jsp répond en JSON sans clé (indicateur 0008273 lu). Exportations par destination : indicateur 0005716 (« Exportações (€) de bens por Local de destino et Tipo de bens (NC8) ; Mensal », fiche lue), mais l'appel de données a expiré à 45 s (503/timeout) : volumineux, à filtrer par Dim. Aucun indicateur d'importations (€) par pays d'origine identifié : commerce.json non produit.",
       "hotes": [
         "www.ine.pt"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "gee",
@@ -38,7 +38,7 @@
       "couches": [
         "commerce"
       ],
-      "notes": "Reprend les données INE avec parts par partenaire (T1 2026 : Espagne 26,1 %, France 12,6 %, Allemagne 12,2 % des exportations, d'après un extrait de recherche non relu). PDF : sert au recoupement, pas à l'automatisation.",
+      "notes": "Reprend les données INE avec parts par partenaire (T1 2026 : Espagne 26,1 %, France 12,6 %, Allemagne 12,2 % des exportations, d'après un extrait de recherche non relu). PDF : sert au recoupement, pas à l'automatisation. Relecture du 2026-10-27 : hôte toujours injoignable ou hors liste.",
       "hotes": [
         "www.gee.gov.pt"
       ],
@@ -60,11 +60,11 @@
         "commerce",
         "autre"
       ],
-      "notes": "API en deux temps : /series/ donne domaine et jeu de données, puis /domains/{d}/datasets/{ds}/. Utile pour les services et la balance courante par pays, que l'INE ne couvre pas.",
+      "notes": "Relu le 2026-10-27 : /data/v1/domains/ répond en JSON. API en deux temps : /series/ donne domaine et jeu de données, puis /domains/{d}/datasets/{ds}/. Utile pour les services et la balance courante par pays, que l'INE ne couvre pas. Licence de réutilisation non trouvée.",
       "hotes": [
         "bpstat.bportugal.pt"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "defesa_mi",
@@ -81,7 +81,7 @@
       "couches": [
         "presences"
       ],
-      "notes": "Liste les missions avec effectifs (FND, END, AMN-PM). Extraits de recherche : Baltic Air Policing 146, Sea Guardian 82 militaires et 4 moyens, VJTF maritime 4, 22 missions actives et 871 effectifs au 3e trimestre. Page non lue directement : chiffres et date à relire.",
+      "notes": "Liste les missions avec effectifs (FND, END, AMN-PM). Extraits de recherche : Baltic Air Policing 146, Sea Guardian 82 militaires et 4 moyens, VJTF maritime 4, 22 missions actives et 871 effectifs au 3e trimestre. Page non lue directement : chiffres et date à relire. Relecture du 2026-10-27 : l'hôte répond mais une protection anti-robot (DiamWall) renvoie « Access Denied » : non contourné.",
       "hotes": [
         "www.defesa.gov.pt"
       ],
@@ -102,7 +102,7 @@
       "couches": [
         "presences"
       ],
-      "notes": "Chiffres issus du Commandement conjoint des opérations (EMGFA), de la Police maritime et de la DGPDN. Aucun rapport 2026 trouvé par recherche : publication peut-être interrompue.",
+      "notes": "Chiffres issus du Commandement conjoint des opérations (EMGFA), de la Police maritime et de la DGPDN. Aucun rapport 2026 trouvé par recherche : publication peut-être interrompue. Relecture du 2026-10-27 : l'hôte répond mais une protection anti-robot (DiamWall) renvoie « Access Denied » : non contourné.",
       "hotes": [
         "www.defesa.gov.pt"
       ],
@@ -123,7 +123,7 @@
       "couches": [
         "presences"
       ],
-      "notes": "État-major des armées : source primaire des effectifs déployés. Page des missions non trouvée par recherche.",
+      "notes": "Relecture du 2026-10-27 : la page d'accueil répond « An unexpected error has occurred » (33 octets) ; page des missions non trouvée. Source primaire des effectifs déployés.",
       "hotes": [
         "www.emgfa.pt"
       ],
@@ -146,7 +146,7 @@
         "politique",
         "sanctions"
       ],
-      "notes": "Chaque mission FND fait l'objet d'une portaria signée par le ministre de la Défense, avec plafond d'effectif et durée : confirmation par l'État déployeur. Les effectifs repris ici sont des plafonds autorisés, pas des effectifs constatés. Publie aussi le mapa oficial des élections et la loi n.º 97/2017 (mesures restrictives).",
+      "notes": "Chaque mission FND fait l'objet d'une portaria signée par le ministre de la Défense, avec plafond d'effectif et durée : confirmation par l'État déployeur. Les effectifs repris ici sont des plafonds autorisés, pas des effectifs constatés. Publie aussi le mapa oficial des élections et la loi n.º 97/2017 (mesures restrictives). Relecture du 2026-10-27 : hôte toujours injoignable ou hors liste.",
       "hotes": [
         "diariodarepublica.pt"
       ],
@@ -167,33 +167,32 @@
       "couches": [
         "politique"
       ],
-      "notes": "Jeux XML et JSON par législature (registre biographique, composition, activité). URL exacte des fichiers de la XVIIe législature non relevée : les liens de téléchargement sont sur la page Dados Abertos et peuvent pointer vers un autre hôte.",
+      "notes": "Relu le 2026-10-27 : la page Dados Abertos indique des données en XML et JSON, réutilisables en citant l'Assemblée ; thèmes dont « Informação base » (législatures, groupes parlementaires, députés) de la Constituante à la législature actuelle. Liens de téléchargement chargés par script, non extraits : URL des fichiers à relever.",
       "hotes": [
         "www.parlamento.pt"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "cne",
-      "nom": "CNE, mapa oficial des résultats de l'élection de l'Assemblée de la République du 18/05/2025",
+      "nom": "CNE, Mapa Oficial n.º 2-A/2025 des résultats de l'élection de l'Assemblée de la République du 18/05/2025",
       "editeur": "Comissão Nacional de Eleições (PRT)",
-      "url": "https://www.cne.pt",
+      "url": "https://www.cne.pt/content/mapa-oficial-no-2-a2025-de-31-de-maio",
       "type": "officiel",
       "langue": "pt",
       "licence": "non précisée",
       "cadence": "à chaque élection",
       "api": false,
       "api_url": null,
-      "format": "html",
+      "format": "pdf",
       "couches": [
         "politique"
       ],
-      "notes": "Le mapa oficial est publié au Diário da República. Sièges repris ici d'après la RTP citant ce mapa (AD 91 = PSD 89 + CDS-PP 2) : à relire sur le mapa.",
+      "notes": "Relu le 2026-10-27 : PDF du Diário da República (1.ª série, n.º 104-A, 31/05/2025), sièges recomptés par parti : AD 91 (PSD/CDS 88 + PSD/CDS/PPM 3), Chega 60, PS 58, IL 9, Livre 6, CDU 3, BE 1, PAN 1, JPP 1 = 230. Le mapa ne distingue pas PSD et CDS-PP à l'intérieur de la coalition.",
       "hotes": [
-        "www.cne.pt",
-        "diariodarepublica.pt"
+        "www.cne.pt"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "sgmai",
@@ -210,7 +209,7 @@
       "couches": [
         "politique"
       ],
-      "notes": "Résultats provisoires ; les pourcentages diffèrent du mapa CNE (base votes exprimés ou votants).",
+      "notes": "Résultats provisoires ; les pourcentages diffèrent du mapa CNE (base votes exprimés ou votants). Relecture du 2026-10-27 : hôte toujours injoignable ou hors liste.",
       "hotes": [
         "www.eleicoes.mai.gov.pt"
       ],
@@ -232,7 +231,7 @@
         "politique",
         "conflits"
       ],
-      "notes": "",
+      "notes": "Relecture du 2026-10-27 : www.portugal.gov.pt redirige vers portugal.gov.pt, hôte refusé par le réseau.",
       "hotes": [
         "www.portugal.gov.pt",
         "portugal.gov.pt"
@@ -254,7 +253,7 @@
       "couches": [
         "politique"
       ],
-      "notes": "",
+      "notes": "Relecture du 2026-10-27 : l'hôte répond (200) mais la page d'accueil ne cite pas le Président dans le texte lu.",
       "hotes": [
         "www.presidencia.pt"
       ],
@@ -276,7 +275,7 @@
         "sanctions",
         "conflits"
       ],
-      "notes": "Autorités nationales compétentes pour les mesures restrictives (loi n.º 97/2017) : DGPE du MNE et GPEARI du ministère des Finances. Le Portugal applique les sanctions ONU et UE, sans régime national autonome identifié : rien à ajouter à la couche sanctions UE.",
+      "notes": "Autorités nationales compétentes pour les mesures restrictives (loi n.º 97/2017) : DGPE du MNE et GPEARI du ministère des Finances. Le Portugal applique les sanctions ONU et UE, sans régime national autonome identifié : rien à ajouter à la couche sanctions UE. Relecture du 2026-10-27 : hôte toujours injoignable ou hors liste.",
       "hotes": [
         "portaldiplomatico.mne.gov.pt"
       ],
@@ -297,11 +296,11 @@
       "couches": [
         "autre"
       ],
-      "notes": "API de type udata (hypothèse non vérifiée). Point d'entrée pour retrouver les jeux INE, AR et ministères.",
+      "notes": "Relu le 2026-10-27 : /api/1/datasets/ répond en JSON (API udata). Point d'entrée pour retrouver les jeux INE, AR et ministères.",
       "hotes": [
         "dados.gov.pt"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "wikidata",
