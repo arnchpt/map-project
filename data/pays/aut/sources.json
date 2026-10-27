@@ -1,38 +1,37 @@
 {
   "pays": "AUT",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "sources": [
     {
       "id": "stat",
       "nom": "Statistik Austria, commerce extérieur (Außenhandel) par partenaire",
       "editeur": "Statistik Austria",
-      "url": "https://www.statistik.at/statistiken/internationaler-handel/internationaler-warenhandel",
+      "url": "https://data.statistik.gv.at/web/meta.jsp?dataset=OGD_1531kn2_Aussenhandel_4",
       "type": "officiel",
       "langue": "de",
-      "licence": "Réutilisation libre, y compris commerciale, avec mention « STATISTIK AUSTRIA » (conditions d'utilisation à lire sur le site ; CC BY 4.0 non confirmé)",
-      "cadence": "mensuelle (résultats annuels provisoires en mars, révisés en juin)",
+      "licence": "CC BY 4.0 (indiquée par le portail data.statistik.gv.at et la fiche du jeu de données)",
+      "cadence": "annuelle pour ce jeu (dernière mise à jour 15/10/2026) ; ITGS mensuel et jeux annuels par concept UE",
       "api": true,
-      "api_url": "https://data.statistik.gv.at/ogd/json",
-      "format": "json/csv",
+      "api_url": "https://data.statistik.gv.at/data/OGD_1531kn2_Aussenhandel_4.csv",
+      "format": "csv/json",
       "couches": [
         "commerce"
       ],
-      "notes": "Portail open data copié chaque semaine sur data.gv.at (CKAN) et sur le portail européen. Le nom exact du jeu de données par partenaire reste à identifier une fois l'accès ouvert. STATcube (API REST, compte requis) offre le détail par pays et par chapitre SH. Chiffres 2025 relevés dans le communiqué du 30/06/2026 (www.statistik.at/fileadmin/announcement/2026/06/20260630Aussenhandel2025.pdf), cité par la presse ; le PDF n'a pas pu être ouvert.",
+      "notes": "Jeu « Außenhandelsdaten nach Partnerländern ab 2007 » (OGD_1531kn2_Aussenhandel_4) : importations par pays d'origine, exportations par pays de destination, en euros, avec tables de codes (…_C-UBL1531-0.csv). Lu le 27/10/2026. Total 2025 de ce jeu : exportations 189,69 Md€, importations 197,07 Md€, légèrement différent du communiqué du 30/06/2026 (189,79 et 196,90, non relu : www.statistik.at ne sert pas ce PDF depuis la session). Le portail est copié chaque semaine sur data.gv.at (hôte toujours inaccessible). Jeux ITGS « nach EU-Konzept » 2022-2025 également disponibles.",
       "hotes": [
-        "www.statistik.at",
         "data.statistik.gv.at",
-        "www.data.gv.at"
+        "www.statistik.at"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "parlement",
       "nom": "Parlement autrichien, open data (députés, groupes, autorisations de déploiement)",
       "editeur": "Parlament Österreich",
-      "url": "https://www.parlament.gv.at/recherchieren/open-data/",
+      "url": "https://www.parlament.gv.at/recherchieren/open-data",
       "type": "officiel",
       "langue": "de",
-      "licence": "CC BY 4.0 depuis le 12/01/2023 (d'après une présentation du Parlement, à confirmer sur la page « Daten und Lizenz »)",
+      "licence": "CC BY 4.0 (25 jeux de données, d'après la page « Daten und Lizenz » lue le 27/10/2026 ; certains contenus restent exclus pour droit d'auteur ou protection des données)",
       "cadence": "continue (à chaque changement de mandat)",
       "api": true,
       "api_url": "https://www.parlament.gv.at/recherchieren/open-data/",
@@ -41,32 +40,32 @@
         "politique",
         "presences"
       ],
-      "notes": "Interface JSON documentée sur le site (paramètres non relevés). 183 députés au Nationalrat. La commission principale (Hauptausschuss) du Nationalrat autorise chaque envoi de troupes à l'étranger : ses décisions sont publiées par la Parlamentskorrespondenz sur le même site.",
+      "notes": "Page lue le 27/10/2026 : interface JSON et jeux de données décrits individuellement (personnes, groupes, séances). Les endpoints précis ne sont pas encore testés. La décision du Hauptausschuss sur les envois à l'étranger (fait de presences.json attribué à cette source pour Irini) n'a pas été relue : la recherche du site est rendue côté navigateur.",
       "hotes": [
         "www.parlament.gv.at"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "elections",
       "nom": "Ministère de l'Intérieur, résultats officiels des élections au Nationalrat",
       "editeur": "Bundesministerium für Inneres (BMI)",
-      "url": "https://www.bmi.gv.at/412/Nationalratswahlen/",
+      "url": "https://www.bmi.gv.at/412/nationalratswahlen/nationalratswahl_2024/start.html",
       "type": "officiel",
       "langue": "de",
       "licence": "non précisée",
       "cadence": "à chaque élection",
       "api": false,
       "api_url": null,
-      "format": "html/pdf",
+      "format": "html/pdf/xlsx",
       "couches": [
         "politique"
       ],
-      "notes": "Résultat final officiel de l'élection du 29/09/2024 publié le 16/10/2024. Sièges recoupés avec le rapport électoral du Land de Haute-Autriche (www.land-oberoesterreich.gv.at, Wahlbericht_NR24.pdf), lu via un moteur de recherche.",
+      "notes": "Résultat final lu le 27/10/2026 : proclamation de la Bundeswahlbehörde du 16/10/2024, FPÖ 57, ÖVP 51, SPÖ 41, NEOS 18, Grüne 16 sièges (183), aucun siège pour les autres listes. Fichiers xlsx et pdf du résultat sur la même page.",
       "hotes": [
         "www.bmi.gv.at"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "gouvernement",
@@ -83,11 +82,11 @@
       "couches": [
         "politique"
       ],
-      "notes": "Coalition ÖVP, SPÖ et NEOS assermentée le 03/03/2025 : 14 membres et 7 secrétaires d'État. Ministre des Affaires étrangères : Beate Meinl-Reisinger (NEOS). Ministre de la Défense : Klaudia Tanner (ÖVP). Lu via un moteur de recherche.",
+      "notes": "Page lue le 27/10/2026 : Christian Stocker (chancelier), Andreas Babler (vice-chancelier), Beate Meinl-Reisinger (Affaires européennes et internationales), Klaudia Tanner (Défense), Gerhard Karner (Intérieur), Markus Marterbauer (Finances). Claudia Bauer (anciennement Plakolm) est ministre dans la Chancellerie, Alexander Pröll secrétaire d'État. La date d'assermentation (03/03/2025) vient de la presse et de Wikidata.",
       "hotes": [
         "www.bundeskanzleramt.gv.at"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "presidence",
@@ -104,11 +103,11 @@
       "couches": [
         "politique"
       ],
-      "notes": "Date d'entrée en fonction et identifiant pris dans Wikidata (Q78869), source lue directement.",
+      "notes": "Site lu le 27/10/2026 : Alexander Van der Bellen, président fédéral, dernier contenu du 26/10/2026. Date d'entrée en fonction (26/01/2017) prise dans Wikidata (Q78869).",
       "hotes": [
         "www.bundespraesident.at"
       ],
-      "acces": "non_verifie"
+      "acces": "verifie"
     },
     {
       "id": "wikidata",
