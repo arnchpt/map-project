@@ -1,25 +1,183 @@
 {
   "pays": "ESP",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "presences": [
-    { "hote": "LBN", "lon": 35.6, "lat": 33.4, "nom": "Force intérimaire des Nations unies au Liban (FINUL / UNIFIL), brigade multinationale Est, base Miguel de Cervantes", "cat": "onu", "eff": null, "depuis": "2006-09", "src": "defensa" },
-    { "hote": "LVA", "lon": 24.3, "lat": 57.1, "nom": "Présence avancée renforcée de l'OTAN en Lettonie (eFP, base d'Ādaži)", "cat": "otan", "eff": null, "depuis": "2017-06", "src": "defensa" },
-    { "hote": "SVK", "lon": 19.3, "lat": 48.4, "nom": "Groupement tactique avancé de l'OTAN en Slovaquie (direction espagnole prévue en 2026)", "cat": "otan", "eff": null, "depuis": null, "src": "emad" },
-    { "hote": "ROU", "lon": 24.8, "lat": 45.9, "nom": "Contingent d'infanterie de marine dans le bataillon multinational de l'OTAN en Roumanie", "cat": "otan", "eff": null, "depuis": null, "src": "emad" },
-    { "hote": "TUR", "lon": 35.3, "lat": 37.0, "nom": "Batterie Patriot, mission OTAN « Apoyo a Turquía » (Adana)", "cat": "otan", "eff": null, "depuis": "2015-01", "src": "emad" },
-    { "hote": "IRQ", "lon": 44.4, "lat": 33.3, "nom": "Mission de l'OTAN en Irak (NMI, commandement espagnol) et coalition contre Daech (Inherent Resolve)", "cat": "otan", "eff": null, "depuis": "2014-12", "src": "emad" },
-    { "hote": "BIH", "lon": 18.4, "lat": 43.9, "nom": "Opération de l'UE EUFOR Althea", "cat": "ue", "eff": null, "depuis": null, "src": "defensa" },
-    { "hote": "SOM", "lon": 45.3, "lat": 2.0, "nom": "Mission de formation de l'UE en Somalie (EUTM Somalia)", "cat": "ue", "eff": null, "depuis": "2010-04", "src": "defensa" },
-    { "hote": "CAF", "lon": 18.6, "lat": 4.4, "nom": "Mission de formation de l'UE en République centrafricaine (EUTM RCA)", "cat": "ue", "eff": null, "depuis": "2016-07", "src": "defensa" },
-    { "hote": "MOZ", "lon": 32.6, "lat": -26.0, "nom": "Mission d'assistance militaire de l'UE au Mozambique (EUMAM Mozambique)", "cat": "ue", "eff": null, "depuis": "2021-11", "src": "defensa" },
-    { "hote": "DJI", "lon": 43.1, "lat": 11.5, "nom": "Détachement aérien « Orión », opération de l'UE Atalanta", "cat": "ue", "eff": null, "depuis": "2009-01", "src": "emad" },
-    { "hote": null, "lon": -5.3, "lat": 35.9, "nom": "Ceuta, Comandancia General de Ceuta", "cat": "sov", "eff": null, "depuis": null, "src": "defensa" },
-    { "hote": null, "lon": -2.9, "lat": 35.3, "nom": "Melilla, Comandancia General de Melilla", "cat": "sov", "eff": null, "depuis": null, "src": "defensa" },
-    { "hote": null, "lon": -15.4, "lat": 28.1, "nom": "Îles Canaries, Mando de Canarias", "cat": "sov", "eff": null, "depuis": null, "src": "defensa" }
+    {
+      "hote": "LBN",
+      "lon": 35.6,
+      "lat": 33.4,
+      "nom": "Force intérimaire des Nations unies au Liban (FINUL / UNIFIL)",
+      "cat": "onu",
+      "eff": null,
+      "depuis": "2006-09",
+      "src": "defensa"
+    },
+    {
+      "hote": "COL",
+      "lon": -74.1,
+      "lat": 4.7,
+      "nom": "Mission des Nations unies en Colombie (accord de paix)",
+      "cat": "onu",
+      "eff": null,
+      "depuis": "2012-08",
+      "src": "defensa"
+    },
+    {
+      "hote": "LVA",
+      "lon": 24.3,
+      "lat": 57.1,
+      "nom": "Déploiement de forces terrestres sur le flanc est de l'OTAN : Lettonie",
+      "cat": "otan",
+      "eff": null,
+      "depuis": "2017-06",
+      "src": "defensa"
+    },
+    {
+      "hote": "SVK",
+      "lon": 19.3,
+      "lat": 48.4,
+      "nom": "Déploiement de forces terrestres sur le flanc est de l'OTAN : Slovaquie",
+      "cat": "otan",
+      "eff": null,
+      "depuis": null,
+      "src": "defensa"
+    },
+    {
+      "hote": "ROU",
+      "lon": 24.8,
+      "lat": 45.9,
+      "nom": "Déploiement de forces terrestres sur le flanc est de l'OTAN : Roumanie",
+      "cat": "otan",
+      "eff": null,
+      "depuis": null,
+      "src": "defensa"
+    },
+    {
+      "hote": "ISL",
+      "lon": -22.6,
+      "lat": 64.0,
+      "nom": "Policía Aérea Islandia (Persistent Effort)",
+      "cat": "otan",
+      "eff": null,
+      "depuis": "2025-07",
+      "src": "defensa"
+    },
+    {
+      "hote": "TUR",
+      "lon": 35.3,
+      "lat": 37.0,
+      "nom": "Appui à la Turquie, batterie Patriot (Persistent Effort)",
+      "cat": "otan",
+      "eff": null,
+      "depuis": "2014-09",
+      "src": "defensa"
+    },
+    {
+      "hote": "IRQ",
+      "lon": 44.4,
+      "lat": 33.3,
+      "nom": "Appui à l'Irak (coalition contre Daech) et mission de l'OTAN en Irak (NMI)",
+      "cat": "ope",
+      "eff": null,
+      "depuis": "2014-10",
+      "src": "defensa"
+    },
+    {
+      "hote": "BIH",
+      "lon": 18.4,
+      "lat": 43.9,
+      "nom": "EUFOR Althea (Bosnie-Herzégovine)",
+      "cat": "ue",
+      "eff": null,
+      "depuis": "2004-12",
+      "src": "defensa"
+    },
+    {
+      "hote": "SOM",
+      "lon": 45.3,
+      "lat": 2.0,
+      "nom": "EUTM Somalie",
+      "cat": "ue",
+      "eff": null,
+      "depuis": "2010-01",
+      "src": "defensa"
+    },
+    {
+      "hote": "CAF",
+      "lon": 18.6,
+      "lat": 4.4,
+      "nom": "EUTM République centrafricaine",
+      "cat": "ue",
+      "eff": null,
+      "depuis": "2016-07",
+      "src": "defensa"
+    },
+    {
+      "hote": "MOZ",
+      "lon": 32.6,
+      "lat": -26.0,
+      "nom": "EUMAM Mozambique",
+      "cat": "ue",
+      "eff": null,
+      "depuis": "2021-11",
+      "src": "defensa"
+    },
+    {
+      "hote": null,
+      "lon": -5.3,
+      "lat": 35.9,
+      "nom": "Ceuta",
+      "cat": "sov",
+      "eff": null,
+      "depuis": null,
+      "src": "defensa"
+    },
+    {
+      "hote": null,
+      "lon": -2.9,
+      "lat": 35.3,
+      "nom": "Melilla",
+      "cat": "sov",
+      "eff": null,
+      "depuis": null,
+      "src": "defensa"
+    },
+    {
+      "hote": null,
+      "lon": -15.4,
+      "lat": 28.1,
+      "nom": "Îles Canaries",
+      "cat": "sov",
+      "eff": null,
+      "depuis": null,
+      "src": "defensa"
+    }
   ],
   "non_localisees": [
-    { "nom": "Opération de l'UE Atalanta (océan Indien), commandement de la force assuré par l'Espagne, quartier général d'opération à Rota", "eff": "non publié (375 militaires en 2024 selon l'infographie du ministère)", "src": "emad" },
-    { "nom": "Police du ciel de l'OTAN (Persistent Effort, Baltic Air Policing, Enhanced Air Policing) : détachements tournants dans les pays baltes et en Roumanie", "eff": "non publié", "src": "emad" },
-    { "nom": "Observateurs, officiers de liaison et conseillers militaires (plafond fixé par le Conseil des ministres)", "eff": "≤ 400", "src": "moncloa-cm" }
+    {
+      "nom": "Opération de l'UE Atalanta (océan Indien), depuis 09/2008, dirigée depuis le quartier général d'opération ES-OHQ de Rota",
+      "eff": "non publié",
+      "src": "emad"
+    },
+    {
+      "nom": "Police du ciel de l'OTAN (Persistent Effort) : Baltique (depuis 05/2020), renforcée en Bulgarie et en Roumanie (depuis 02/2022)",
+      "eff": "non publié",
+      "src": "defensa"
+    },
+    {
+      "nom": "Groupes navals permanents de l'OTAN (SNMG / SNMCMG), depuis 01/2017",
+      "eff": "non publié",
+      "src": "defensa"
+    },
+    {
+      "nom": "Sea Guardian (OTAN), depuis 11/2016",
+      "eff": "non publié",
+      "src": "defensa"
+    },
+    {
+      "nom": "Diplomatie de défense et sécurité coopérative, golfe de Guinée, depuis 09/2014",
+      "eff": "non publié",
+      "src": "defensa"
+    }
   ]
 }
