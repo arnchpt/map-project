@@ -1,32 +1,22 @@
 {
   "pays": "LVA",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "presences": [
     {
       "hote": "XKX",
       "lon": 21.2,
       "lat": 42.6,
-      "nom": "KFOR (OTAN) : compagnie d'infanterie légère dans un bataillon multinational mené par les États-Unis",
+      "nom": "KFOR (OTAN) : une compagnie d'infanterie légère dans un bataillon multinational mené par les États-Unis (mandat de la Saeima jusqu'au 31/12/2027)",
       "cat": "otan",
       "eff": null,
       "depuis": null,
-      "src": "defense"
-    },
-    {
-      "hote": "IRQ",
-      "lon": 44.4,
-      "lat": 33.3,
-      "nom": "Mission de l'OTAN en Irak (état-major de Bagdad)",
-      "cat": "otan",
-      "eff": null,
-      "depuis": null,
-      "src": "defense"
+      "src": "saeima"
     },
     {
       "hote": "ISR",
       "lon": 35.2,
       "lat": 31.8,
-      "nom": "Organisme des Nations unies chargé de la surveillance de la trêve (ONUST)",
+      "nom": "ONUST (ONU), observateurs militaires au Proche-Orient (mandat de la Saeima jusqu'au 01/05/2028)",
       "cat": "onu",
       "eff": null,
       "depuis": null,
@@ -35,7 +25,12 @@
   ],
   "non_localisees": [
     {
-      "nom": "Opération de déminage dans le détroit d'Ormuz (mandat de la Saeima du 24/09/2026, jusqu'au 01/09/2028)",
+      "nom": "Mission de l'OTAN en Irak : mandat jusqu'au 01/11/2028 ; trois militaires à l'état-major de Bagdad depuis 11/2020, rentrés en Lettonie en 03/2026 et pas retournés sur place",
+      "eff": "0 sur place (mandat de 3)",
+      "src": "saeima"
+    },
+    {
+      "nom": "Opérations de déminage dans le détroit d'Ormuz (coalition menée par les États-Unis et opération menée par le Royaume-Uni et la France) : mandat de la Saeima du 24/09/2026 jusqu'au 01/09/2028, sans participation aux actions soutenant les États-Unis comme belligérant",
       "eff": "jusqu'à 20 (plafond du mandat, déploiement non daté)",
       "src": "saeima"
     },

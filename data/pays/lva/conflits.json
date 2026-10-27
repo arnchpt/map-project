@@ -1,6 +1,6 @@
 {
   "pays": "LVA",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "evenements": [
     {
       "avec": "UKR",
@@ -16,7 +16,7 @@
       "t": "Sanctions nationales liées à l'agression russe",
       "d": "Le Conseil des ministres a adopté le 12/09/2025 le règlement n° 547 créant un régime de sanctions nationales contre les personnes liées à l'agression militaire russe contre l'Ukraine.",
       "date": "2025-09-12",
-      "src": "fid"
+      "src": "mae"
     },
     {
       "avec": "BLR",

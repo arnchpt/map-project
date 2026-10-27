@@ -1,12 +1,66 @@
 {
   "pays": "LVA",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "src": "stat",
   "annee": 2025,
   "devise": "EUR",
   "unite": "Md",
-  "concept": "commerce de biens aux prix courants, exportations FOB, importations CAF (concept du CSP à confirmer)",
-  "total": { "x": 19.54, "m": 23.19 },
-  "partenaires": [],
+  "concept": "commerce de biens en valeur (€, prix courants), toutes marchandises, par pays partenaire (table ATD020) ; base FOB/CAF non précisée dans les métadonnées de la table",
+  "total": {
+    "x": 19.86,
+    "m": 23.43
+  },
+  "partenaires": [
+    {
+      "pays": "LTU",
+      "x": 3.61,
+      "m": 4.77
+    },
+    {
+      "pays": "EST",
+      "x": 2.24,
+      "m": 2.17
+    },
+    {
+      "pays": "DEU",
+      "x": 1.31,
+      "m": 2.88
+    },
+    {
+      "pays": "POL",
+      "x": 0.9,
+      "m": 2.59
+    },
+    {
+      "pays": "FIN",
+      "x": 0.65,
+      "m": 1.27
+    },
+    {
+      "pays": "SWE",
+      "x": 1.03,
+      "m": 0.78
+    },
+    {
+      "pays": "NLD",
+      "x": 0.63,
+      "m": 1.18
+    },
+    {
+      "pays": "DNK",
+      "x": 0.76,
+      "m": 0.54
+    },
+    {
+      "pays": "GBR",
+      "x": 1.08,
+      "m": 0.2
+    },
+    {
+      "pays": "CHN",
+      "x": 0.22,
+      "m": 1.02
+    }
+  ],
   "notes": {}
 }
