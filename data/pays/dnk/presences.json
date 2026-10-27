@@ -1,12 +1,22 @@
 {
   "pays": "DNK",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "presences": [
     {
       "hote": "LVA",
       "lon": 24.3,
       "lat": 57.1,
       "nom": "Direction de l'état-major OTAN en Lettonie et bataillons de combat en rotation",
+      "cat": "otan",
+      "eff": null,
+      "depuis": null,
+      "src": "defense"
+    },
+    {
+      "hote": "EST",
+      "lon": 24.7,
+      "lat": 59.4,
+      "nom": "Présence avancée de l'OTAN dans les pays baltes et en Pologne (page « Estland »)",
       "cat": "otan",
       "eff": null,
       "depuis": null,
@@ -46,12 +56,23 @@
       "hote": null,
       "lon": -51.7,
       "lat": 64.2,
-      "nom": "Commandement arctique (Arktisk Kommando), Groenland",
+      "nom": "Commandement arctique (Arktisk Kommando), état-major à Nuuk : défense du Groenland et des îles Féroé",
       "cat": "sov",
       "eff": null,
       "depuis": null,
-      "src": "defense"
+      "src": "arktisk"
     }
   ],
-  "non_localisees": []
+  "non_localisees": [
+    {
+      "nom": "Patrouilles aériennes au-dessus de la Baltique (NATO Assurance Measures)",
+      "eff": "non publié",
+      "src": "defense"
+    },
+    {
+      "nom": "Forces navales permanentes de l'OTAN",
+      "eff": "non publié",
+      "src": "defense"
+    }
+  ]
 }

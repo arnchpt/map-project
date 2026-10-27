@@ -1,8 +1,22 @@
 {
   "pays": "DNK",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "evenements": [
-    { "avec": "UKR", "k": "soutien", "t": "Aide militaire à l'Ukraine", "d": "Paquets de dons militaires déclarés par le ministère de la Défense depuis 2022, dont un paquet d'environ 4,4 milliards de couronnes et 3,8 milliards supplémentaires pour le fonds Ukraine en 2026.", "date": "2022-02", "src": "fmn" },
-    { "avec": "USA", "k": "tension", "t": "Convocation du chargé d'affaires américain au sujet du Groenland", "d": "Le ministre des Affaires étrangères a fait convoquer le chargé d'affaires des États-Unis le 27 août 2025 après des informations sur des opérations d'influence au Groenland.", "date": "2025-08-27", "src": "upn" }
+    {
+      "avec": "UKR",
+      "k": "soutien",
+      "t": "Aide militaire à l'Ukraine",
+      "d": "Le ministère de la Défense déclare des dons de matériel et la formation de soldats et pilotes ukrainiens depuis février 2022, dont un paquet d'environ 4,4 milliards de couronnes et 3,8 milliards supplémentaires pour le fonds Ukraine en 2026.",
+      "date": "2022-02",
+      "src": "fmn"
+    },
+    {
+      "avec": "USA",
+      "k": "tension",
+      "t": "Convocation du chargé d'affaires américain au sujet du Groenland",
+      "d": "Le ministre des Affaires étrangères a fait convoquer le chargé d'affaires des États-Unis le 27 août 2025 après des informations sur des opérations d'influence au Groenland.",
+      "date": "2025-08-27",
+      "src": "upn"
+    }
   ]
 }
