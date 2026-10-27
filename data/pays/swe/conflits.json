@@ -1,14 +1,14 @@
 {
   "pays": "SWE",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "evenements": [
     {
       "avec": "UKR",
       "k": "soutien",
-      "t": "Aide militaire à l'Ukraine",
-      "d": "Paquets de soutien militaire décidés par le gouvernement suédois depuis février 2022 ; déploiement annoncé le 06/10/2026 d'une batterie Patriot à Rzeszów (Pologne), plateforme logistique de l'aide à l'Ukraine, à partir de décembre 2026.",
+      "t": "Soutien militaire à l'Ukraine",
+      "d": "Selon la communication 2025/26:162 du gouvernement (12/03/2026), 21 paquets de soutien militaire depuis l'invasion de 2022, pour environ 103 Md SEK ; un cadre de 146,5 Md SEK est fixé pour 2024-2027.",
       "date": "2022-02",
-      "src": "regeringen"
+      "src": "riksdagen"
     }
   ]
 }

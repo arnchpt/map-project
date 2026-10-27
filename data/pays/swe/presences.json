@@ -1,33 +1,38 @@
 {
   "pays": "SWE",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "presences": [
     {
       "hote": "LVA",
       "lon": 24.3,
       "lat": 57.1,
-      "nom": "Bataillon mécanisé suédois dans la brigade multinationale de l'OTAN en Lettonie (Forward Land Forces Latvia, camp d'Ādaži)",
+      "nom": "Force suédoise (bataillon) dans la brigade multinationale de l'OTAN en Lettonie, dirigée par le Canada (FLF Lettonie), basée au camp Valdemar à Ādaži ; relève semestrielle avec le Danemark",
       "cat": "otan",
       "eff": null,
-      "depuis": "2025-01",
-      "src": "regeringen"
+      "depuis": null,
+      "src": "riksdagen"
     },
     {
       "hote": "FIN",
       "lon": 25.7,
       "lat": 66.5,
-      "nom": "Forward Land Forces Finland : la Suède est nation-cadre (élément d'état-major multinational à Rovaniemi ; groupement de bataillon d'environ 600 militaires prépositionné à Boden, en Suède)",
+      "nom": "FLF Finland, groupe tactique de l'OTAN dont la Suède est nation-cadre : état-major multinational (Multinational Support Element) à Rovaniemi ; la force principale est prépositionnée à Boden, en Suède",
       "cat": "otan",
-      "eff": null,
+      "eff": 600,
       "depuis": "2026-06-06",
-      "src": "valtioneuvosto"
+      "src": "forsvarsmakten"
     }
   ],
   "non_localisees": [
     {
-      "nom": "Police du ciel renforcée et défense aérienne intégrée de l'OTAN au-dessus de la Pologne (JAS 39 Gripen, à partir du 1er octobre 2026 pour deux mois, basés surtout en Suède avec une base avancée en Pologne)",
+      "nom": "Avions de combat JAS 39 Gripen pour la défense aérienne intégrée de l'OTAN et la protection de la plateforme logistique du sud-est de la Pologne, à partir d'octobre 2026 (basés surtout en Suède, petite base avancée en Pologne)",
       "eff": "non publié",
       "src": "regeringen"
+    },
+    {
+      "nom": "Batterie Patriot et environ 100 militaires pour protéger la plateforme logistique de Rzeszów (Pologne), annoncés le 06/10/2026, du début de décembre à la fin de 2026, prolongation envisagée au premier semestre 2027",
+      "eff": "≈ 100",
+      "src": "forsvarsmakten"
     }
   ]
 }
