@@ -1,0 +1,96 @@
+{
+  "pays": "PRT",
+  "verifie": "2026-10-26",
+  "chef_etat": {
+    "nom": "António José Seguro",
+    "fonction": "Président de la République",
+    "parti": null,
+    "depuis": "2026-03-09",
+    "qid": "Q1580316",
+    "src": "wikidata"
+  },
+  "chef_gouv": {
+    "nom": "Luís Montenegro",
+    "fonction": "Premier ministre",
+    "parti": "Parti social-démocrate (PSD)",
+    "depuis": "2024-04-02",
+    "qid": "Q11764394",
+    "src": "wikidata"
+  },
+  "chambre": {
+    "nom": "Assemblée de la République",
+    "sieges": 230,
+    "majorite": 116,
+    "election": "2025-05-18",
+    "src": "cne"
+  },
+  "partis": [
+    {
+      "nom": "Parti social-démocrate (PSD, coalition AD)",
+      "sieges": 89,
+      "role": "gouv",
+      "leaders": "Luís Montenegro (président du parti)",
+      "qid": "Q595575"
+    },
+    {
+      "nom": "Chega",
+      "sieges": 60,
+      "role": "hors",
+      "leaders": "André Ventura (président du parti)"
+    },
+    {
+      "nom": "Parti socialiste (PS)",
+      "sieges": 58,
+      "role": "hors",
+      "leaders": "José Luís Carneiro (secrétaire général)",
+      "qid": "Q847263"
+    },
+    {
+      "nom": "Initiative libérale (IL)",
+      "sieges": 9,
+      "role": "hors",
+      "leaders": "Mariana Leitão (présidente du parti)",
+      "qid": "Q46122950"
+    },
+    {
+      "nom": "Livre",
+      "sieges": 6,
+      "role": "hors",
+      "leaders": "Rui Tavares et Isabel Mendes Lopes (porte-parole)"
+    },
+    {
+      "nom": "CDS – Parti populaire (CDS-PP, coalition AD)",
+      "sieges": 2,
+      "role": "gouv",
+      "leaders": "Nuno Melo (président du parti, non reconfirmé)"
+    },
+    {
+      "nom": "Parti communiste portugais (PCP, coalition CDU)",
+      "sieges": 3,
+      "role": "hors",
+      "leaders": "Paulo Raimundo (secrétaire général)",
+      "qid": "Q769829"
+    },
+    {
+      "nom": "Bloc de gauche (BE)",
+      "sieges": 1,
+      "role": "hors",
+      "leaders": "José Manuel Pureza (coordinateur)",
+      "qid": "Q884840"
+    },
+    {
+      "nom": "Personnes–Animaux–Nature (PAN)",
+      "sieges": 1,
+      "role": "hors",
+      "leaders": "Inês de Sousa Real (porte-parole)",
+      "qid": "Q2054840"
+    },
+    {
+      "nom": "Ensemble pour le peuple (JPP)",
+      "sieges": 1,
+      "role": "hors",
+      "leaders": "Filipe Sousa (non reconfirmé)",
+      "qid": "Q19694667"
+    }
+  ]
+}

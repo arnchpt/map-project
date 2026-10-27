@@ -1,0 +1,123 @@
+{
+  "pays": "ITA",
+  "verifie": "2026-10-26",
+  "presences": [
+    {
+      "hote": "LBN",
+      "lon": 35.3,
+      "lat": 33.2,
+      "nom": "UNIFIL (Force intérimaire des Nations unies au Liban), commandement du secteur Ouest",
+      "cat": "onu",
+      "eff": 1256,
+      "depuis": null,
+      "src": "difesa"
+    },
+    {
+      "hote": "XKX",
+      "lon": 21.2,
+      "lat": 42.6,
+      "nom": "KFOR (force de l'OTAN au Kosovo)",
+      "cat": "otan",
+      "eff": null,
+      "depuis": "1999-06",
+      "src": "missions"
+    },
+    {
+      "hote": "LBN",
+      "lon": 35.5,
+      "lat": 33.9,
+      "nom": "MIBIL, mission bilatérale d'assistance aux forces armées libanaises",
+      "cat": "dlia",
+      "eff": null,
+      "depuis": null,
+      "src": "missions"
+    },
+    {
+      "hote": "LVA",
+      "lon": 24.3,
+      "lat": 57.1,
+      "nom": "Présence avancée renforcée de l'OTAN en Lettonie",
+      "cat": "otan",
+      "eff": null,
+      "depuis": "2017-06",
+      "src": "missions"
+    },
+    {
+      "hote": "BGR",
+      "lon": 23.3,
+      "lat": 42.7,
+      "nom": "Groupement tactique multinational de l'OTAN en Bulgarie (nation-cadre)",
+      "cat": "otan",
+      "eff": null,
+      "depuis": "2022",
+      "src": "missions"
+    },
+    {
+      "hote": "HUN",
+      "lon": 19.0,
+      "lat": 47.5,
+      "nom": "Groupement tactique multinational de l'OTAN en Hongrie",
+      "cat": "otan",
+      "eff": null,
+      "depuis": "2022",
+      "src": "missions"
+    },
+    {
+      "hote": "IRQ",
+      "lon": 44.4,
+      "lat": 33.3,
+      "nom": "Mission bilatérale en Irak (fiche 4-bis/2026) et mission de l'OTAN en Irak",
+      "cat": "ope",
+      "eff": null,
+      "depuis": "2026",
+      "src": "missions"
+    },
+    {
+      "hote": "SOM",
+      "lon": 45.3,
+      "lat": 2.0,
+      "nom": "Mission bilatérale en Somalie (fiche 8-bis/2026) et EUTM Somalie",
+      "cat": "ue",
+      "eff": null,
+      "depuis": null,
+      "src": "missions"
+    },
+    {
+      "hote": "DJI",
+      "lon": 43.1,
+      "lat": 11.6,
+      "nom": "Base militaire nationale d'appui à Djibouti",
+      "cat": "pre",
+      "eff": null,
+      "depuis": "2013",
+      "src": "missions"
+    },
+    {
+      "hote": "LBY",
+      "lon": 13.2,
+      "lat": 32.9,
+      "nom": "MIASIT, mission bilatérale d'assistance et de soutien en Libye",
+      "cat": "dlia",
+      "eff": null,
+      "depuis": "2018",
+      "src": "missions"
+    }
+  ],
+  "non_localisees": [
+    {
+      "nom": "Opérations navales de l'UE Aspides (mer Rouge) et Atalanta (océan Indien)",
+      "eff": null,
+      "src": "missions"
+    },
+    {
+      "nom": "Forces maritimes combinées (CMF) et opération Mare Sicuro (Méditerranée centrale)",
+      "eff": null,
+      "src": "missions"
+    },
+    {
+      "nom": "Forces à haute disponibilité (Allied Reaction Force de l'OTAN)",
+      "eff": null,
+      "src": "missions"
+    }
+  ]
+}

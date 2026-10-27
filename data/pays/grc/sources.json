@@ -1,0 +1,431 @@
+{
+  "pays": "GRC",
+  "verifie": "2026-10-26",
+  "note_acces": "Tous les domaines grecs testés (statistics.gr, geetha.mil.gr, mod.mil.gr, hellenicparliament.gr, mfa.gr, primeminister.gr, ypes.gr, data.gov.gr) ainsi que ec.europa.eu et api.data.ipu.org sont bloqués depuis l'environnement cloud le 26/10/2026 : relevé fait par recherche web, pages non ouvertes. Licences et formats marqués « à vérifier » tant qu'un accès direct n'a pas eu lieu. Tous les « acces » valent donc non_verifie.",
+  "sources": [
+    {
+      "id": "stat",
+      "nom": "ELSTAT, commerce extérieur (publication SFC02) : importations-arrivées et exportations-expéditions par pays",
+      "editeur": "Autorité statistique hellénique (ELSTAT)",
+      "url": "https://www.statistics.gr/en/statistics/-/publication/SFC02/-",
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée (conditions de réutilisation non relevées, site inaccessible)",
+      "cadence": "mensuelle (série depuis janvier 2004, données provisoires à M+2)",
+      "api": false,
+      "api_url": null,
+      "format": "xls (tableaux par pays et chapitre NC2/NC4, à confirmer)",
+      "couches": [
+        "commerce"
+      ],
+      "notes": "Pas d'API documentée trouvée. commerce.json non produit : chiffres non consultables depuis l'environnement. Alternative automatisable : Eurostat Comext (source eurostat), même donnée nationale transmise par ELSTAT.",
+      "hotes": [
+        "www.statistics.gr"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "eurostat",
+      "nom": "Eurostat Comext, commerce de l'UE par partenaire (DS-045409)",
+      "editeur": "Eurostat (Commission européenne)",
+      "url": "https://ec.europa.eu/eurostat/comext/newxtweb/",
+      "type": "international",
+      "langue": "en",
+      "licence": "CC BY 4.0 (avis de droit d'auteur Eurostat)",
+      "cadence": "mensuelle",
+      "api": true,
+      "api_url": "https://ec.europa.eu/eurostat/api/comext/dissemination/statistics/1.0/data/DS-045409",
+      "format": "json (JSON-stat)",
+      "couches": [
+        "commerce"
+      ],
+      "notes": "Recoupement possible des 10 premiers partenaires FMI pour les 27 pays avec une seule requête. ec.europa.eu bloqué depuis l'environnement cloud : requête non testée.",
+      "hotes": [
+        "ec.europa.eu"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "geetha",
+      "nom": "État-major général de la défense nationale (ΓΕΕΘΑ), rubrique « Opérations et missions » et communiqués",
+      "editeur": "Γενικό Επιτελείο Εθνικής Άμυνας (ΓΕΕΘΑ)",
+      "url": "https://geetha.mil.gr/epixeiriseis-kai-apostoles/",
+      "type": "officiel",
+      "langue": "el",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences",
+        "conflits"
+      ],
+      "notes": "Source de référence des déploiements grecs (ONU, OTAN, UE, Golfe). Communiqués : https://geetha.mil.gr/category/drastiriotites/ . Aucun tableau des effectifs par mission trouvé ; site WordPress, un flux /feed/ est probable mais non vérifié.",
+      "hotes": [
+        "geetha.mil.gr"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "mod",
+      "nom": "Ministère de la Défense nationale, communiqués",
+      "editeur": "Υπουργείο Εθνικής Άμυνας",
+      "url": "https://www.mod.mil.gr/",
+      "type": "officiel",
+      "langue": "el",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences",
+        "conflits"
+      ],
+      "notes": "Aucun flux RSS trouvé. Les décisions de déploiement passent par le KYSEA (Conseil gouvernemental des affaires étrangères et de la défense), dont les décisions sont annoncées par le ministre, pas publiées en liste.",
+      "hotes": [
+        "www.mod.mil.gr"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "nato_kfor",
+      "nom": "OTAN, fiche « KFOR Placemat » (contributeurs et effectifs)",
+      "editeur": "Organisation du traité de l'Atlantique Nord",
+      "url": "https://www.nato.int/content/dam/nato/webready/documents/factsheets/kfor/KFOR-Placemat.pdf",
+      "type": "international",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "irrégulière (dernière version trouvée : février 2026)",
+      "api": false,
+      "api_url": null,
+      "format": "pdf",
+      "couches": [
+        "presences"
+      ],
+      "notes": "Février 2026 : Grèce 121 militaires sur 4 636. URL stable, contenu remplacé à chaque mise à jour.",
+      "hotes": [
+        "www.nato.int"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "eeas_aspides",
+      "nom": "SEAE, fiche de l'opération EUNAVFOR Aspides",
+      "editeur": "Service européen pour l'action extérieure",
+      "url": "https://www.eeas.europa.eu/sites/default/files/documents/2025/EUNAVFOR%20OPERATION%20ASPIDES_2025_0.pdf",
+      "type": "international",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "annuelle",
+      "api": false,
+      "api_url": null,
+      "format": "pdf",
+      "couches": [
+        "presences"
+      ],
+      "notes": "Quartier général d'opération à Larissa (Grèce), commandant d'opération grec (contre-amiral Vasileios Gryparis, nommé le 08/02/2024). Mandat prolongé au 28/02/2027. Frégate grecque HS Psara engagée en juillet 2026 (communiqués du SEAE).",
+      "hotes": [
+        "www.eeas.europa.eu"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "mae_onu",
+      "nom": "Ministère des Affaires étrangères, déclaration sur la FINUL (site de la candidature au Conseil de sécurité)",
+      "editeur": "Υπουργείο Εξωτερικών",
+      "url": "https://greeceforunsc.mfa.gr/greece-on-the-targeting-of-the-un-interim-force-in-lebanon-unifil/",
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences"
+      ],
+      "notes": "« Les forces armées helléniques contribuent avec une frégate à la Force navale de la FINUL. » Effectif non donné ; l'ONU indiquait 108 personnes en novembre 2022. La FINUL prend fin le 31/12/2026.",
+      "hotes": [
+        "greeceforunsc.mfa.gr"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "mae_chypre",
+      "nom": "Ambassade de Grèce à Nicosie, visite au camp de l'ELDYK",
+      "editeur": "Υπουργείο Εξωτερικών",
+      "url": "https://www.mfa.gr/cyprus/episkepse-tou-presbu-tes-ellados-sto-stratopedo-tes-ellenikes-dunames-sten-kupro-elduk-malounta-15-5-2015/",
+      "type": "officiel",
+      "langue": "el",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences"
+      ],
+      "notes": "Atteste la Force hellénique à Chypre (ΕΛΔΥΚ), unité permanente de l'armée de terre. Effectif non publié.",
+      "hotes": [
+        "www.mfa.gr"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "mae",
+      "nom": "Ministère des Affaires étrangères, communiqués et points de presse",
+      "editeur": "Υπουργείο Εξωτερικών",
+      "url": "https://www.mfa.gr/en/",
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "conflits"
+      ],
+      "notes": "Source officielle à privilégier pour les tensions (Turquie, Libye). Les faits de conflits.json sont pour l'instant sourcés par la presse, faute d'accès au site : à remplacer par le communiqué original.",
+      "hotes": [
+        "www.mfa.gr"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "sanctions_cahdi",
+      "nom": "Conseil de l'Europe (CAHDI), contribution de la Grèce sur la mise en œuvre des sanctions",
+      "editeur": "Conseil de l'Europe, Comité des conseillers juridiques sur le droit international public",
+      "url": "https://www.cahdidatabases.coe.int/Contribution/Details/62",
+      "type": "international",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "irrégulière (contribution de 2006)",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "sanctions"
+      ],
+      "notes": "Résolutions du Conseil de sécurité appliquées par décision ministérielle et décret présidentiel (loi 92/1967) ; mesures commerciales par décision du ministère de l'Économie (loi 936/1979). Aucun régime national autonome de sanctions trouvé : la Grèce applique les listes UE et ONU, déjà couvertes par les couches automatiques.",
+      "hotes": [
+        "www.cahdidatabases.coe.int"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "presidence",
+      "nom": "Présidence de la République hellénique",
+      "editeur": "Προεδρία της Δημοκρατίας",
+      "url": "https://www.presidency.gr/en/",
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "à chaque changement",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Recoupé avec Wikidata (Q41, P35 : Konstantinos Tasoulas depuis le 13/03/2025).",
+      "hotes": [
+        "www.presidency.gr"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "gouvernement",
+      "nom": "Bureau du Premier ministre, composition du gouvernement",
+      "editeur": "Πρωθυπουργός της Ελληνικής Δημοκρατίας",
+      "url": "https://www.primeminister.gr/en",
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "à chaque changement",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Recoupé avec Wikidata (Q41, P6 : Kyriakos Mitsotakis). Les pages « gouvernement » des ambassades sur mfa.gr ne sont pas à jour : ne pas les utiliser.",
+      "hotes": [
+        "www.primeminister.gr"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "ypes",
+      "nom": "Ministère de l'Intérieur, résultats officiels des élections législatives",
+      "editeur": "Υπουργείο Εσωτερικών",
+      "url": "https://ekloges.ypes.gr/",
+      "type": "officiel",
+      "langue": "el",
+      "licence": "non précisée",
+      "cadence": "à chaque élection",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Le site de résultats charge ses données en JSON, mais aucune API documentée n'a été trouvée. Prochaines législatives attendues en 2027.",
+      "hotes": [
+        "ekloges.ypes.gr"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "parlement",
+      "nom": "Parlement hellénique, composition des groupes parlementaires et données ouvertes",
+      "editeur": "Βουλή των Ελλήνων",
+      "url": "https://www.hellenicparliament.gr/en/Organosi-kai-Leitourgia/Koinovouleftikes-Omades/Synthesi-K-Periodou/",
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "à chaque changement de groupe",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Répartition actuelle des groupes (défections, Nouvelle Gauche, indépendants), différente du résultat de 2023. Une rubrique « Open Data » existe (https://www.hellenicparliament.gr/en/opendata/), contenu non vérifié.",
+      "hotes": [
+        "www.hellenicparliament.gr"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "ipu",
+      "nom": "Union interparlementaire, IPU Parline, Parlement hellénique",
+      "editeur": "Union interparlementaire",
+      "url": "https://data.ipu.org/parliament/GR/GR-LC01/",
+      "type": "international",
+      "langue": "en",
+      "licence": "CC BY-NC-SA 4.0",
+      "cadence": "à chaque élection",
+      "api": true,
+      "api_url": "https://api.data.ipu.org/v1/chambers/GR-LC01",
+      "format": "json",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Branchable sur scripts/ipu-sieges.js comme les 11 autres pays. Codes partis IPU non relevés (domaine bloqué depuis l'environnement).",
+      "hotes": [
+        "data.ipu.org",
+        "api.data.ipu.org"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "datagov",
+      "nom": "Portail national de données ouvertes data.gov.gr",
+      "editeur": "Ministère de la Gouvernance numérique",
+      "url": "https://data.gov.gr/",
+      "type": "officiel",
+      "langue": "el",
+      "licence": "variable selon le jeu de données",
+      "cadence": "variable",
+      "api": true,
+      "api_url": "https://data.gov.gr/api/3/action/package_search",
+      "format": "json (CKAN, DCAT-AP)",
+      "couches": [
+        "autre"
+      ],
+      "notes": "Relancé sur CKAN, plus de 22 000 jeux de données de 510 organismes (data.europa.eu). Point d'entrée CKAN standard supposé, non testé ; l'ancienne API demandait un jeton. Aucun jeu défense ou commerce par partenaire identifié.",
+      "hotes": [
+        "data.gov.gr"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "presse_patriot",
+      "nom": "Greek City Times, « Patriot Battery Stays at Yanbu as Houthis Target Saudi Oil », 26/10/2026",
+      "editeur": "Greek City Times",
+      "url": "https://greekcitytimes.com/2026/10/26/greece-patriot-yanbu-houthi-saudi-oil-attacks",
+      "type": "presse",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences"
+      ],
+      "notes": "Rapporte l'engagement du Premier ministre devant le prince héritier saoudien (25-26/10/2026) de maintenir la batterie à Yanbou. Décision précédente du KYSEA (prolongation d'un mois, 01/10/2026) : https://www.tovima.com/politics/athens-extends-patriot-deployment-in-saudi-arabia-for-another-month/ . Aucune page officielle consultable ; à remplacer par le communiqué du ministère dès que possible.",
+      "hotes": [
+        "greekcitytimes.com",
+        "www.tovima.com"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "presse_msp",
+      "nom": "Greek City Times, réaction turque à la planification de l'espace maritime grec, 22/11/2025",
+      "editeur": "Greek City Times",
+      "url": "https://greekcitytimes.com/2025/11/22/greek-maritime-spatial-planning-turkey-reaction/",
+      "type": "presse",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "conflits"
+      ],
+      "notes": "Cite la porte-parole du ministère grec des Affaires étrangères, Lana Zochiou. Déclaration turque correspondante sur mfa.gov.tr (annonce 415527).",
+      "hotes": [
+        "greekcitytimes.com"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "presse_ukr",
+      "nom": "OT.gr, décision du Premier ministre d'envoyer du matériel de défense à l'Ukraine, 27/02/2022",
+      "editeur": "OT.gr",
+      "url": "https://www.ot.gr/2022/02/27/english-edition/greece-sending-defense-medical-supplies-to-ukraine-following-decision-by-pm-mitsotakis",
+      "type": "presse",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "conflits"
+      ],
+      "notes": "Le contenu exact des livraisons n'a pas été publié en liste par le ministère. Avril 2022 : le porte-parole du gouvernement annonce l'arrêt des envois d'équipements ; livraison ultérieure de 20 BMP-1 annoncée par le ministère de la Défense.",
+      "hotes": [
+        "www.ot.gr"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "presse_partis",
+      "nom": "Relevé des dirigeants de partis (ProtoThema, 09/07/2026 et 15/10/2026)",
+      "editeur": "ProtoThema English",
+      "url": "https://en.protothema.gr/2026/07/09/breaking-syriza-president-socratis-famellos-resigns-says-i-cannot-be-part-of-this-division/",
+      "type": "presse",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Démission de Sokratis Famellos de la présidence de SYRIZA le 09/07/2026, aucun successeur trouvé. Sondage Marc du 15/10/2026 (Androulakis cité comme chef du PASOK) : https://en.protothema.gr/2026/10/15/marc-poll-new-democracy-at-30-4-leading-by-14-6-points-elas-stalls-at-15-8-pasok-narrows-gap-to-3-4-points-kasidiaris-party-at-4-2/",
+      "hotes": [
+        "en.protothema.gr"
+      ],
+      "acces": "non_verifie"
+    }
+  ]
+}

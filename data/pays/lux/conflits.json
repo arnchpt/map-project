@@ -1,0 +1,15 @@
+{
+  "pays": "LUX",
+  "verifie": "2026-10-26",
+  "evenements": [
+    {
+      "avec": "UKR",
+      "k": "soutien",
+      "t": "Aide militaire à l'Ukraine",
+      "d": "414 M€ d'aide militaire déclarés depuis février 2022 (relevé d'avril 2026), au moins 100 M€ prévus pour 2026.",
+      "date": "2022-02",
+      "src": "gouv_ukr"
+    }
+  ],
+  "notes": "Aucune tension officielle bilatérale trouvée dans les communiqués du gouvernement."
+}

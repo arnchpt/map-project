@@ -1,0 +1,28 @@
+{
+  "pays": "FRA",
+  "verifie": "2026-10-26",
+  "src": "tresor",
+  "annee": 2025,
+  "devise": "EUR",
+  "unite": "Md",
+  "concept": "données douanières (DGDDI), biens, exportations FAB, importations CAF",
+  "total": { "x": 614.7, "m": 683.9 },
+  "partenaires": [
+    { "pays": "DEU", "x": 81.5, "m": 86.8 },
+    { "pays": "CHN", "x": 28.9, "m": 74.9 },
+    { "pays": "USA", "x": 48.3, "m": 55.7 },
+    { "pays": "ITA", "x": 48.0, "m": 53.8 },
+    { "pays": "ESP", "x": 45.3, "m": 45.4 },
+    { "pays": "BEL", "x": 44.9, "m": 44.5 },
+    { "pays": "GBR", "x": 39.5, "m": 25.8 },
+    { "pays": "NLD", "x": 23.9, "m": 29.4 },
+    { "pays": "CHE", "x": 22.6, "m": 17.9 },
+    { "pays": "POL", "x": 16.2, "m": 16.6 }
+  ],
+  "notes": {
+    "CHN": "Hong Kong inclus. Le FMI donne 51,9 Md$ d'importations françaises depuis la Chine. Écart attribué à l'effet Rotterdam (hypothèse, non démontrée).",
+    "NLD": "Le FMI donne 71 Md$ d'importations depuis les Pays-Bas contre 29,4 Md€ ici : transit portuaire probable (effet Rotterdam).",
+    "BEL": "Transit portuaire par Anvers : écart probable avec le FMI.",
+    "POL": "Chiffre non recoupé avec le tableau du Trésor lors du relevé initial."
+  }
+}

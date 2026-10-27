@@ -1,0 +1,225 @@
+{
+  "pays": "EST",
+  "verifie": "2026-10-26",
+  "sources": [
+    {
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "notes": "Hôte bloqué depuis la session : contenu connu par extraits de recherche uniquement. Effectifs 2026 non trouvés. La même rubrique « Allied forces in Estonia » documente les forces accueillies (groupement OTAN mené par le Royaume-Uni à Tapa avec une contribution française, présence rotationnelle américaine à Tapa et Võru) : ces présences relèvent des fichiers des pays déployeurs (GBR, FRA, USA) et servent de confirmation par l'État hôte.",
+      "acces": "non_verifie",
+      "id": "defense",
+      "nom": "Ministère de la Défense, participation de l'Estonie aux opérations militaires internationales",
+      "editeur": "Kaitseministeerium (ministère de la Défense, EST)",
+      "url": "https://kaitseministeerium.ee/en/international-cooperation-and-allied-relations/international-defence-cooperation/estonias",
+      "cadence": "irrégulière (mise à jour à chaque mandat ou déploiement)",
+      "couches": [
+        "presences",
+        "conflits"
+      ],
+      "hotes": [
+        "kaitseministeerium.ee",
+        "www.kaitseministeerium.ee"
+      ]
+    },
+    {
+      "type": "officiel",
+      "langue": "en",
+      "licence": "CC BY-SA 3.0 (données ouvertes du Riigikogu)",
+      "api": true,
+      "api_url": "https://api.riigikogu.ee/api/votings?startDate=2026-01-01&endDate=2026-12-31",
+      "format": "json",
+      "notes": "Chaque opération fait l'objet d'une résolution avec un plafond d'effectifs, plus un mandat d'urgence de 50 militaires pour une opération OTAN, UE ou ONU. Plafonds = maximum autorisé, pas effectif déployé. Projet pour 2027 : 344 militaires au total, dont 204 en opérations (ERR, octobre 2026, non vérifié). API : 1 requête/s par IP, 12 requêtes/min par URL.",
+      "acces": "non_verifie",
+      "id": "mandats",
+      "nom": "Riigikogu, résolutions annuelles sur l'emploi des Forces de défense dans les opérations internationales",
+      "editeur": "Riigikogu (parlement, EST)",
+      "url": "https://www.riigikogu.ee/en/sitting-reviews/the-riigikogu-extended-the-participation-of-the-defence-forces-in-international-military-operations/",
+      "cadence": "annuelle (vote en fin d'année pour l'année suivante)",
+      "couches": [
+        "presences"
+      ],
+      "hotes": [
+        "www.riigikogu.ee",
+        "api.riigikogu.ee"
+      ]
+    },
+    {
+      "type": "officiel",
+      "langue": "en",
+      "licence": "CC BY-SA 3.0",
+      "api": true,
+      "api_url": "https://api.riigikogu.ee/api/votings",
+      "format": "json",
+      "notes": "Endpoint des factions non confirmé (seul /api/votings est documenté publiquement). Les factions actuelles diffèrent fortement des sièges élus en 2023 (scission de l'EKRE, une quinzaine de non-inscrits selon la presse) : la carte affiche les sièges élus, comme pour les autres pays. Anomalies signalées sur GitHub riigikogu-kantselei/api.",
+      "acces": "non_verifie",
+      "id": "parlement",
+      "nom": "Riigikogu, données ouvertes (membres, factions, votes)",
+      "editeur": "Riigikogu (parlement, EST)",
+      "url": "https://www.riigikogu.ee/en/open-data/",
+      "cadence": "continue",
+      "couches": [
+        "politique"
+      ],
+      "hotes": [
+        "www.riigikogu.ee",
+        "api.riigikogu.ee"
+      ]
+    },
+    {
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "notes": "Rubrique « Open data » présente dans l'archive, format non confirmé. Sièges 2023 relevés via sources secondaires, à recouper. Prochaine élection au plus tard en mars 2027. Code IPU EE-LC01-E20230305 déduit du format des autres pays (api.data.ipu.org bloqué depuis cette session), codes partis IPU non renseignés.",
+      "acces": "non_verifie",
+      "id": "electoral",
+      "nom": "Commission électorale, résultats officiels des élections au Riigikogu",
+      "editeur": "Valimisteenistus (service électoral, EST)",
+      "url": "https://www.valimised.ee/en/archive/riigikogu-parliament-elections/riigikogu-elections",
+      "cadence": "à chaque élection",
+      "couches": [
+        "politique"
+      ],
+      "hotes": [
+        "www.valimised.ee"
+      ]
+    },
+    {
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "notes": "Pas d'API connue. Chefs de l'État et du gouvernement recoupés avec Wikidata (P35, P6) le 2026-10-26.",
+      "acces": "non_verifie",
+      "id": "gouvernement",
+      "nom": "Gouvernement de la République, composition",
+      "editeur": "Valitsus (gouvernement, EST)",
+      "url": "https://www.valitsus.ee/en",
+      "cadence": "à chaque changement",
+      "couches": [
+        "politique",
+        "conflits"
+      ],
+      "hotes": [
+        "www.valitsus.ee"
+      ]
+    },
+    {
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "notes": "Ülle Madise élue par le Riigikogu le 2026-09-02 (71 voix, 68 requises), en fonction le 2026-10-12 (Wikidata P35, recoupé par la presse).",
+      "acces": "non_verifie",
+      "id": "president",
+      "nom": "Présidence de la République",
+      "editeur": "Vabariigi Presidendi Kantselei (chancellerie du président, EST)",
+      "url": "https://www.president.ee/en",
+      "cadence": "à chaque élection",
+      "couches": [
+        "politique"
+      ],
+      "hotes": [
+        "www.president.ee"
+      ]
+    },
+    {
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "notes": "Sanctions nationales prises par règlement du gouvernement (art. 27 de la loi sur les sanctions internationales), en plus des sanctions UE (déjà couvertes par data/sanctions.json, non recopiées). Désignations notamment d'officiels bélarusses. Dernière mise à jour vue : 2025-08-26.",
+      "acces": "non_verifie",
+      "id": "mae",
+      "nom": "Ministère des Affaires étrangères, sanctions du gouvernement de la République",
+      "editeur": "Välisministeerium (ministère des Affaires étrangères, EST)",
+      "url": "https://www.vm.ee/en/sanctions-arms-and-export-control/international-sanctions/sanctions-government-republic-estonia",
+      "cadence": "irrégulière",
+      "couches": [
+        "sanctions",
+        "conflits"
+      ],
+      "hotes": [
+        "www.vm.ee",
+        "vm.ee"
+      ]
+    },
+    {
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "notes": "Base légale des sanctions nationales. Version consolidée la plus récente à vérifier.",
+      "acces": "non_verifie",
+      "id": "loi-sanctions",
+      "nom": "Loi sur les sanctions internationales (version consolidée)",
+      "editeur": "Riigi Teataja (journal officiel, EST)",
+      "url": "https://www.riigiteataja.ee/en/eli/503072014002/consolide",
+      "cadence": "à chaque modification",
+      "couches": [
+        "sanctions"
+      ],
+      "hotes": [
+        "www.riigiteataja.ee"
+      ]
+    },
+    {
+      "type": "recherche",
+      "langue": "en",
+      "licence": "CC BY-NC 4.0",
+      "api": true,
+      "api_url": "https://data.opensanctions.org/datasets/latest/ee_international_sanctions/targets.simple.csv",
+      "format": "csv",
+      "notes": "Copie automatisable de la liste du ministère (mae). Licence non commerciale, compatible avec un site gratuit sans publicité. Peut être en retard sur la source officielle.",
+      "acces": "non_verifie",
+      "id": "opensanctions-ee",
+      "nom": "OpenSanctions, liste estonienne au titre de la loi sur les sanctions internationales",
+      "editeur": "OpenSanctions",
+      "url": "https://www.opensanctions.org/datasets/ee_international_sanctions/",
+      "cadence": "quotidienne",
+      "couches": [
+        "sanctions"
+      ],
+      "hotes": [
+        "www.opensanctions.org",
+        "data.opensanctions.org"
+      ]
+    },
+    {
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée (à vérifier sur stat.ee)",
+      "api": true,
+      "api_url": "https://andmed.stat.ee/api/v1/en/stat",
+      "format": "json (PxWeb)",
+      "notes": "commerce.json non produit : hôte bloqué, aucun chiffre lu. Base du commerce extérieur déplacée en mars 2026 (ancienne adresse andmebaas.stat.ee abandonnée, tables refondues, une périodicité par table) : risque de rupture des URL. Tables repérées : VKA05 (par activité et pays partenaire, 2018–2025), VKK14, VKK28 (mensuel 2004M01–2025M12). Intra-UE : Intrastat ; hors UE : déclarations douanières. Hors services et transit.",
+      "acces": "non_verifie",
+      "id": "stat",
+      "nom": "Statistique Estonie, commerce extérieur de biens par pays partenaire",
+      "editeur": "Statistikaamet (Statistique Estonie)",
+      "url": "https://andmed.stat.ee/en/stat",
+      "cadence": "mensuelle",
+      "couches": [
+        "commerce"
+      ],
+      "hotes": [
+        "andmed.stat.ee",
+        "stat.ee"
+      ]
+    }
+  ]
+}

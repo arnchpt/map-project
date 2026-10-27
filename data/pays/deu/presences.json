@@ -1,0 +1,93 @@
+{
+  "pays": "DEU",
+  "verifie": "2026-10-26",
+  "presences": [
+    {
+      "hote": "LTU",
+      "lon": 25.3,
+      "lat": 54.7,
+      "nom": "Panzerbrigade 45 (brigade Lituanie), stationnement permanent",
+      "cat": "pre",
+      "eff": null,
+      "depuis": "2025-04",
+      "src": "litauen"
+    },
+    {
+      "hote": "XKX",
+      "lon": 21.2,
+      "lat": 42.6,
+      "nom": "KFOR (plafond du mandat : 400, sans échéance)",
+      "cat": "otan",
+      "eff": null,
+      "depuis": null,
+      "src": "defense"
+    },
+    {
+      "hote": "BIH",
+      "lon": 18.4,
+      "lat": 43.9,
+      "nom": "EUFOR Althea (plafond du mandat : 50, jusqu'au 30/06/2027)",
+      "cat": "ue",
+      "eff": null,
+      "depuis": null,
+      "src": "defense"
+    },
+    {
+      "hote": "SSD",
+      "lon": 31.6,
+      "lat": 4.9,
+      "nom": "UNMISS (plafond du mandat : 50, jusqu'à fin octobre 2027)",
+      "cat": "onu",
+      "eff": null,
+      "depuis": null,
+      "src": "defense"
+    },
+    {
+      "hote": "LBN",
+      "lon": 35.1,
+      "lat": 33.1,
+      "nom": "UNIFIL (plafond : 300 ; retrait décidé, plafond de 80 à partir du 01/01/2027)",
+      "cat": "onu",
+      "eff": null,
+      "depuis": null,
+      "src": "defense"
+    },
+    {
+      "hote": "IRQ",
+      "lon": 44,
+      "lat": 36.2,
+      "nom": "Counter Daesh / Capacity Building Iraq (plafond du mandat : 500 avec la Jordanie, jusqu'au 31/01/2027)",
+      "cat": "ope",
+      "eff": null,
+      "depuis": null,
+      "src": "defense"
+    },
+    {
+      "hote": "JOR",
+      "lon": 36.8,
+      "lat": 31.8,
+      "nom": "Counter Daesh, base aérienne d'Al-Azraq (même mandat que l'Irak)",
+      "cat": "ope",
+      "eff": null,
+      "depuis": null,
+      "src": "defense"
+    }
+  ],
+  "non_localisees": [
+    {
+      "nom": "EUNAVFOR Aspides, mer Rouge (jusqu'au 31/10/2027)",
+      "eff": "plafond 350 selon le BMVg",
+      "src": "bmvg"
+    },
+    {
+      "nom": "EUNAVFOR MED Irini, Méditerranée (jusqu'au 30/11/2026)",
+      "eff": "plafond 300",
+      "src": "defense"
+    },
+    {
+      "nom": "OTAN Sea Guardian, Méditerranée (jusqu'au 30/11/2026)",
+      "eff": "plafond 550 ou 650 selon les relevés",
+      "src": "defense"
+    }
+  ]
+}

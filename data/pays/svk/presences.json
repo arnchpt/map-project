@@ -1,0 +1,53 @@
+{
+  "pays": "SVK",
+  "verifie": "2026-10-26",
+  "presences": [
+    {
+      "hote": "CYP",
+      "lon": 33.9,
+      "lat": 35.1,
+      "nom": "Contingent slovaque de l'UNFICYP (secteur 4)",
+      "cat": "onu",
+      "eff": null,
+      "depuis": "2001",
+      "src": "unficyp"
+    },
+    {
+      "hote": "BIH",
+      "lon": 18.3,
+      "lat": 43.8,
+      "nom": "Contribution à l'opération EUFOR Althea",
+      "cat": "ue",
+      "eff": null,
+      "depuis": "2004-12",
+      "src": "defense"
+    },
+    {
+      "hote": "LVA",
+      "lon": 24.3,
+      "lat": 57.1,
+      "nom": "Contingent dans la brigade multinationale de l'OTAN en Lettonie",
+      "cat": "otan",
+      "eff": null,
+      "depuis": "2018",
+      "src": "nrsr"
+    },
+    {
+      "hote": "XKX",
+      "lon": 21.2,
+      "lat": 42.6,
+      "nom": "Contingent dans la Force de l'OTAN au Kosovo (KFOR)",
+      "cat": "otan",
+      "eff": null,
+      "depuis": "2025",
+      "src": "nrsr"
+    }
+  ],
+  "non_localisees": [
+    {
+      "nom": "Activité OTAN « Eastern Sentry », défense aérienne, prioritairement en Pologne et en Roumanie",
+      "eff": "plafond de 101 approuvé par le gouvernement puis la Národná rada (2026)",
+      "src": "vlada"
+    }
+  ]
+}

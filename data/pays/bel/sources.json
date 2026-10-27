@@ -1,0 +1,271 @@
+{
+  "pays": "BEL",
+  "verifie": "2026-10-26",
+  "sources": [
+    {
+      "id": "defense-plan",
+      "nom": "Plan opérationnel 2026 de la Défense (approuvé en Conseil des ministres le 12/12/2025)",
+      "editeur": "Défense belge (SPF Défense)",
+      "url": "https://www.mil.be/fr/news/le-conseil-des-ministres-a-approuve-le-plan-operationnel-2026/",
+      "type": "officiel",
+      "langue": "fr",
+      "licence": "non précisée",
+      "cadence": "annuelle (plan opérationnel voté chaque fin d'année)",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences",
+        "conflits"
+      ],
+      "notes": "Aucun flux machine. Trois piliers : défense collective à l'Est, sécurité collective au Sud, territoire national. Relevé fait par recherche web, page non lue depuis la session.",
+      "hotes": [
+        "www.mil.be"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "defense-missions",
+      "nom": "Défense, page « Nos missions »",
+      "editeur": "Défense belge (SPF Défense)",
+      "url": "https://www.mil.be/fr/nos-missions/",
+      "type": "officiel",
+      "langue": "fr",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences"
+      ],
+      "notes": "Liste les opérations en cours, y compris les opérations intérieures (Urban Shield, Green Shield), exclues de la couche.",
+      "hotes": [
+        "www.mil.be"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "ministre-defense",
+      "nom": "Cabinet du ministre de la Défense, actualités",
+      "editeur": "Cabinet de Theo Francken, ministre de la Défense",
+      "url": "https://francken.belgium.be/fr/actualites/plan-operationnel-2026-approuve-par-le-conseil-des-ministres",
+      "type": "officiel",
+      "langue": "fr",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences",
+        "conflits"
+      ],
+      "notes": "Site lié au mandat du ministre : URL non durable, à remplacer par mil.be quand c'est possible.",
+      "hotes": [
+        "francken.belgium.be"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "nbb-stat",
+      "nom": "NBB.Stat, commerce extérieur (concept national et communautaire)",
+      "editeur": "Banque nationale de Belgique",
+      "url": "https://www.nbb.be/en/statistics/contact-and-more-information/nbbstat-data-explorer",
+      "type": "officiel",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "mensuelle",
+      "api": true,
+      "api_url": "https://nsidisseminate-stat.nbb.be/rest/data/BE2,DF_EXTERNAL_TRADE_OVERVIEW,latest/all",
+      "format": "sdmx-json",
+      "couches": [
+        "commerce"
+      ],
+      "notes": "API SDMX sans clé (SDMX-JSON). L'URL de base et l'identifiant du flux viennent d'un projet tiers (github.com/lacausecrypto/mcp-nbb), pas de la documentation de la BNB : à confirmer. Flux par partenaire à identifier dans le catalogue des dataflows. Licence non trouvée. Pas de commerce.json tant que l'accès n'est pas vérifié.",
+      "hotes": [
+        "www.nbb.be",
+        "stat.nbb.be",
+        "nsidisseminate-stat.nbb.be"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "statbel",
+      "nom": "Statbel, open data",
+      "editeur": "Statbel (Office belge de statistique)",
+      "url": "https://statbel.fgov.be/en/open-data",
+      "type": "officiel",
+      "langue": "en",
+      "licence": "CC BY 4.0 (page anglaise ; la page française renvoie à une licence PDF avec mention de la source)",
+      "cadence": "variable selon le jeu",
+      "api": false,
+      "api_url": null,
+      "format": "xlsx / txt (zip)",
+      "couches": [
+        "commerce",
+        "autre"
+      ],
+      "notes": "Environ 400 fichiers. Aucun jeu de commerce extérieur par partenaire trouvé : en Belgique, ces statistiques sont produites par la BNB (source nbb-stat).",
+      "hotes": [
+        "statbel.fgov.be"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "chambre-fiche",
+      "nom": "Chambre des représentants, fiche « Élections du 9 juin 2024 » (répartition des 150 sièges)",
+      "editeur": "Chambre des représentants de Belgique",
+      "url": "https://www.dekamer.be/pdf_sections/pri/fiche/fr_09_02.pdf",
+      "type": "officiel",
+      "langue": "fr",
+      "licence": "non précisée",
+      "cadence": "à chaque élection",
+      "api": false,
+      "api_url": null,
+      "format": "pdf",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Sièges relevés par recherche web (somme = 150).",
+      "hotes": [
+        "www.dekamer.be",
+        "www.lachambre.be"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "chambre-api",
+      "nom": "Chambre des représentants, portail open data (bêta)",
+      "editeur": "Chambre des représentants de Belgique",
+      "url": "https://data.dekamer.be/",
+      "type": "officiel",
+      "langue": "fr",
+      "licence": "non précisée",
+      "cadence": "continue (annoncée)",
+      "api": true,
+      "api_url": "https://data.dekamer.be/",
+      "format": "xml / json",
+      "couches": [
+        "politique"
+      ],
+      "notes": "API REST annoncée (acteurs politiques, organes, documents, questions). Le portail indique publier des données de test, pas forcément à jour ni complètes : inutilisable en production en l'état.",
+      "hotes": [
+        "data.dekamer.be"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "gouvernement",
+      "nom": "Portail fédéral, composition du gouvernement",
+      "editeur": "Chancellerie du Premier ministre",
+      "url": "https://www.belgium.be/fr/la_belgique/pouvoirs_publics/autorites_federales/gouvernement_federal/composition",
+      "type": "officiel",
+      "langue": "fr",
+      "licence": "non précisée",
+      "cadence": "à chaque changement",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Gouvernement De Wever, entré en fonction le 3 février 2025 (N-VA, MR, Les Engagés, Vooruit, CD&V). Chef de l'État et chef du gouvernement recoupés sur Wikidata (Q155004, Q336599).",
+      "hotes": [
+        "www.belgium.be",
+        "www.premier.be"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "elections",
+      "nom": "SPF Intérieur, résultats officiels des élections",
+      "editeur": "SPF Intérieur",
+      "url": "https://www.elections.fgov.be/",
+      "type": "officiel",
+      "langue": "fr",
+      "licence": "non précisée",
+      "cadence": "à chaque élection",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Source primaire des résultats ; prochaines élections fédérales prévues en 2029.",
+      "hotes": [
+        "www.elections.fgov.be",
+        "elections2024.belgium.be"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "partis",
+      "nom": "Relevé des présidents de partis (presse et listes publiques)",
+      "editeur": "La Libre Belgique / La DH / Wikipédia",
+      "url": "https://fr.wikipedia.org/wiki/Liste_des_dirigeants_des_partis_politiques_de_l%E2%80%99Union_europ%C3%A9enne",
+      "type": "presse",
+      "langue": "fr",
+      "licence": "CC BY-SA 4.0 (Wikipédia) ; articles de presse : droits réservés",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Aucune source officielle centralisée des présidents de partis. Relevé du 26/10/2026 à reconfirmer sur les sites des partis. Ecolo (coprésidence renouvelée en 2026) et Anders (ex-Open Vld) non confirmés : laissés vides.",
+      "hotes": [
+        "fr.wikipedia.org",
+        "www.dhnet.be",
+        "www.lalibre.be"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "finances-sanctions",
+      "nom": "SPF Finances, Trésorerie : liste consolidée des sanctions financières",
+      "editeur": "SPF Finances, Administration générale de la Trésorerie",
+      "url": "https://finance.belgium.be/fr/tresorerie/controle-financier-et-sanctions-financieres",
+      "type": "officiel",
+      "langue": "fr",
+      "licence": "non précisée",
+      "cadence": "à chaque modification d'un régime",
+      "api": true,
+      "api_url": "https://finance.belgium.be/fr/tresorerie/controle-financier-et-sanctions-financieres",
+      "format": "xml (zip, schéma XSD 1.1)",
+      "couches": [
+        "sanctions"
+      ],
+      "notes": "Regroupe sanctions ONU, UE et liste nationale. Seule la liste nationale terroriste est propre à la Belgique (AR du 28/12/2006 ; liste fixée par AR du 30/05/2016, modifiée notamment le 25/03/2025 et le 02/07/2025, établie par le Conseil national de sécurité sur avis de l'OCAM). Elle vise des personnes, pas des États : pas d'effet sur le plafond diplomatique. URL exacte du fichier XML à relever.",
+      "hotes": [
+        "finance.belgium.be",
+        "finances.belgium.be"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "diplomatie",
+      "nom": "SPF Affaires étrangères : sanctions et open data",
+      "editeur": "SPF Affaires étrangères, Commerce extérieur et Coopération au développement",
+      "url": "https://diplomatie.belgium.be/fr/politique/themes-politiques/paix-et-securite/sanctions/autorites-belges-en-charge-application-mesures-restrictives-ue",
+      "type": "officiel",
+      "langue": "fr",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "sanctions",
+        "conflits",
+        "autre"
+      ],
+      "notes": "La Belgique applique les mesures restrictives de l'UE et de l'ONU, sans régime national contre des États. Open data du SPF (https://diplomatie.belgium.be/fr/open-data) : adresses des ambassades et conseils aux voyageurs, pas de base de traités.",
+      "hotes": [
+        "diplomatie.belgium.be"
+      ],
+      "acces": "non_verifie"
+    }
+  ]
+}

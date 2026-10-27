@@ -1,0 +1,17 @@
+{
+  "pays": "NLD",
+  "verifie": "2026-10-26",
+  "presences": [
+    { "hote": "LTU", "lon": 24.2, "lat": 55.1, "nom": "Contingent dans le groupement tactique de présence avancée renforcée de l'OTAN (eFP) en Lituanie", "cat": "otan", "eff": 250, "depuis": "2017-02", "src": "defensie" },
+    { "hote": "POL", "lon": 22.0, "lat": 50.1, "nom": "Défense antiaérienne (Patriot) du centre logistique de l'OTAN pour l'aide à l'Ukraine (NSATU)", "cat": "otan", "eff": 300, "depuis": "2025-12", "src": "defensie" },
+    { "hote": "ROU", "lon": 23.9, "lat": 46.5, "nom": "Détachement de drones MQ-9 Reaper, renforcement du flanc est de l'OTAN", "cat": "otan", "eff": 40, "depuis": null, "src": "defensie" },
+    { "hote": "DEU", "lon": 8.2, "lat": 50.1, "nom": "Officiers d'état-major au commandement NSATU (Wiesbaden)", "cat": "otan", "eff": null, "depuis": null, "src": "defensie" },
+    { "hote": "BIH", "lon": 18.4, "lat": 43.9, "nom": "EUFOR Althea", "cat": "ue", "eff": null, "depuis": null, "src": "defensie" },
+    { "hote": "KOR", "lon": 127.0, "lat": 37.5, "nom": "Conseillers au Commandement des Nations unies (UNC)", "cat": "onu", "eff": null, "depuis": "2025-01", "src": "defensie" },
+    { "hote": null, "lon": -68.9, "lat": 12.2, "nom": "Commandement des forces dans les Caraïbes (Curaçao, Aruba, Saint-Martin et îles BES), garde-côtes et navire stationnaire", "cat": "sov", "eff": null, "depuis": null, "src": "defensie" }
+  ],
+  "non_localisees": [
+    { "nom": "Organisme des Nations unies chargé de la surveillance de la trêve (ONUST/UNTSO), Moyen-Orient", "eff": "11", "src": "defensie" },
+    { "nom": "Coordinateur américain de la sécurité (USSC) pour Israël et l'Autorité palestinienne", "eff": "non publié", "src": "defensie" }
+  ]
+}

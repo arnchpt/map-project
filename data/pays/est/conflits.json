@@ -1,0 +1,22 @@
+{
+  "pays": "EST",
+  "verifie": "2026-10-26",
+  "evenements": [
+    {
+      "avec": "UKR",
+      "k": "soutien",
+      "t": "Aide militaire à l'Ukraine",
+      "d": "Livraisons d'armes et de matériel déclarées par le gouvernement estonien depuis 2022.",
+      "date": "2022",
+      "src": "defense"
+    },
+    {
+      "avec": "RUS",
+      "k": "tension",
+      "t": "Violation de l'espace aérien et demande de consultations OTAN",
+      "d": "Trois MiG-31 russes sont entrés dans l'espace aérien estonien pendant 12 minutes le 19/09/2025 ; le gouvernement a demandé des consultations au titre de l'article 4 du traité de l'Atlantique Nord.",
+      "date": "2025-09-19",
+      "src": "gouvernement"
+    }
+  ]
+}

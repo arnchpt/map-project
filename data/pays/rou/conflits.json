@@ -1,0 +1,22 @@
+{
+  "pays": "ROU",
+  "verifie": "2026-10-26",
+  "evenements": [
+    {
+      "avec": "RUS",
+      "k": "tension",
+      "t": "Drones russes dans l'espace aérien roumain",
+      "d": "Le ministère des Affaires étrangères a convoqué l'ambassadeur de Russie le 25/04/2026 après la chute d'un drone dans la région de Galați.",
+      "date": "2026-04-25",
+      "src": "mae"
+    },
+    {
+      "avec": "RUS",
+      "k": "tension",
+      "t": "Expulsion d'un diplomate russe",
+      "d": "Après trois drones abattus du 24 au 26/07/2026, le ministère a convoqué l'ambassadeur de Russie le 27/07/2026, déclaré un membre de l'ambassade persona non grata et rappelé l'ambassadeur roumain à Moscou pour consultations.",
+      "date": "2026-07-27",
+      "src": "mae"
+    }
+  ]
+}

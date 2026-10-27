@@ -1,0 +1,70 @@
+{
+  "pays": "AUT",
+  "verifie": "2026-10-26",
+  "chef_etat": {
+    "nom": "Alexander Van der Bellen",
+    "fonction": "Président fédéral",
+    "parti": null,
+    "depuis": "2017-01-26",
+    "qid": "Q78869",
+    "src": "presidence"
+  },
+  "chef_gouv": {
+    "nom": "Christian Stocker",
+    "fonction": "Chancelier fédéral",
+    "parti": "ÖVP",
+    "depuis": "2025-03-03",
+    "qid": "Q64576653",
+    "src": "gouvernement"
+  },
+  "chambre": {
+    "nom": "Conseil national (Nationalrat)",
+    "sieges": 183,
+    "majorite": 92,
+    "election": "2024-09-29",
+    "src": "elections",
+    "ipu": null
+  },
+  "partis": [
+    {
+      "nom": "FPÖ (Parti de la liberté)",
+      "sieges": 57,
+      "role": "hors",
+      "leaders": "Herbert Kickl (président du parti)",
+      "ipu": null
+    },
+    {
+      "nom": "ÖVP (Parti populaire)",
+      "sieges": 51,
+      "role": "gouv",
+      "leaders": "Christian Stocker (président du parti, chancelier)",
+      "ipu": null
+    },
+    {
+      "nom": "SPÖ (Parti social-démocrate)",
+      "sieges": 41,
+      "role": "gouv",
+      "leaders": "Andreas Babler (président du parti, vice-chancelier)",
+      "ipu": null
+    },
+    {
+      "nom": "NEOS",
+      "sieges": 18,
+      "role": "gouv",
+      "leaders": "Beate Meinl-Reisinger (présidente du parti, ministre des Affaires étrangères)",
+      "ipu": null
+    },
+    {
+      "nom": "Les Verts (Die Grünen)",
+      "sieges": 16,
+      "role": "hors",
+      "leaders": "Leonore Gewessler (porte-parole fédérale)",
+      "ipu": null
+    }
+  ],
+  "notes": [
+    "Sièges issus de l'élection du 29/09/2024, résultat final du 16/10/2024. La répartition actuelle par groupe parlementaire n'a pas été relevée.",
+    "Codes IPU non relevés : data.ipu.org est bloqué depuis cette session.",
+    "Chefs de parti relevés par la presse (derStandard, Investmentweek, octobre 2026), non vérifiés sur les sites des partis."
+  ]
+}

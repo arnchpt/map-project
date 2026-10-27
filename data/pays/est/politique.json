@@ -1,0 +1,66 @@
+{
+  "pays": "EST",
+  "verifie": "2026-10-26",
+  "chef_etat": {
+    "nom": "Ülle Madise",
+    "fonction": "Présidente de la République",
+    "parti": null,
+    "depuis": "2026-10-12",
+    "qid": "Q16407395",
+    "src": "president"
+  },
+  "chef_gouv": {
+    "nom": "Kristen Michal",
+    "fonction": "Premier ministre",
+    "parti": "Parti de la réforme",
+    "depuis": "2024-07-23",
+    "qid": "Q1789192",
+    "src": "gouvernement"
+  },
+  "chambre": {
+    "nom": "Riigikogu",
+    "sieges": 101,
+    "majorite": 51,
+    "election": "2023-03-05",
+    "src": "electoral",
+    "ipu": "EE-LC01-E20230305"
+  },
+  "partis": [
+    {
+      "nom": "Parti de la réforme",
+      "sieges": 37,
+      "role": "gouv",
+      "leaders": "Kristen Michal (président du parti, Premier ministre)"
+    },
+    {
+      "nom": "Parti populaire conservateur (EKRE)",
+      "sieges": 17,
+      "role": "hors",
+      "leaders": "Martin Helme (président, réélu en juin 2026)"
+    },
+    {
+      "nom": "Parti du centre",
+      "sieges": 16,
+      "role": "hors",
+      "leaders": "Mihhail Kõlvart (président, non reconfirmé)"
+    },
+    {
+      "nom": "Eesti 200",
+      "sieges": 14,
+      "role": "gouv",
+      "leaders": "Kristina Kallas (présidente)"
+    },
+    {
+      "nom": "Parti social-démocrate",
+      "sieges": 9,
+      "role": "hors",
+      "leaders": "non reconfirmé"
+    },
+    {
+      "nom": "Isamaa",
+      "sieges": 8,
+      "role": "hors",
+      "leaders": "Urmas Reinsalu (président)"
+    }
+  ]
+}

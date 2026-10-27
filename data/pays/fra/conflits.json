@@ -1,0 +1,14 @@
+{
+  "pays": "FRA",
+  "verifie": "2026-10-26",
+  "evenements": [
+    { "avec": "IRQ", "k": "engage", "t": "Opération Chammal en cours", "d": "Participation à la coalition contre l'État islamique, environ 1 100 militaires selon le ministère des Armées (page du 11/09/2026).", "date": "2014-09", "src": "armees" },
+    { "avec": "UKR", "k": "soutien", "t": "Aide militaire à l'Ukraine", "d": "Livraisons d'armes et formation de militaires ukrainiens depuis l'invasion russe de février 2022.", "date": "2022-02", "src": "kiel" },
+    { "avec": "MLI", "k": "retrait", "t": "Départ des forces françaises, août 2022", "d": "Fin de l'opération Barkhane au Mali le 15/08/2022, après la dégradation des relations avec la junte.", "date": "2022-08-15", "src": "ema22" },
+    { "avec": "BFA", "k": "retrait", "t": "Départ des forces françaises, février 2023", "d": "Départ demandé par les autorités de transition, achevé en février 2023.", "date": "2023-02", "src": "bf" },
+    { "avec": "NER", "k": "retrait", "t": "Départ des forces françaises, décembre 2023", "d": "Départ exigé par la junte après le coup d'État de juillet 2023, achevé en décembre 2023.", "date": "2023-12", "src": "ne" },
+    { "avec": "TCD", "k": "retrait", "t": "Fin de la coopération militaire, novembre 2024", "d": "Fin de l'accord de défense annoncée par N'Djamena le 28/11/2024, bases rétrocédées à partir de décembre 2024.", "date": "2024-11-28", "src": "senat" },
+    { "avec": "SEN", "k": "retrait", "t": "Départ des forces françaises, juillet 2025", "d": "Bases rétrocédées en juillet 2025, après la demande du président sénégalais de fin 2024.", "date": "2025-07", "src": "sn" },
+    { "avec": "DZA", "k": "tension", "t": "Expulsions réciproques de diplomates", "d": "Douze agents français déclarés persona non grata par Alger le 14/04/2025 ; expulsion de douze agents algériens et rappel de l'ambassadeur de France annoncés par Paris le 15/04/2025.", "date": "2025-04-15", "src": "dz25" }
+  ]
+}

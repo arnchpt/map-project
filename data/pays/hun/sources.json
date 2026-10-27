@@ -1,0 +1,226 @@
+{
+  "pays": "HUN",
+  "verifie": "2026-10-26",
+  "sources": [
+    {
+      "id": "stat",
+      "nom": "STADAT, commerce extérieur de biens par pays partenaire",
+      "editeur": "Központi Statisztikai Hivatal (KSH, office central de statistique)",
+      "url": "https://www.ksh.hu/stadat?lang=hu&theme=kkr",
+      "type": "officiel",
+      "langue": "hu",
+      "licence": "non précisée",
+      "cadence": "mensuelle (flash) et annuelle (définitive)",
+      "api": false,
+      "api_url": null,
+      "format": "xlsx / csv",
+      "couches": [
+        "commerce"
+      ],
+      "notes": "Site bloqué depuis la session : tableau exact par partenaire et licence à confirmer. Depuis 2021, les tableaux STADAT sont téléchargeables en XLSX à URL stable, mais aucune API documentée n'a été trouvée. Pas de commerce.json tant qu'aucun chiffre n'a pu être lu.",
+      "hotes": [
+        "www.ksh.hu",
+        "statinfo.ksh.hu"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "honved",
+      "nom": "Ministère de la Défense et forces armées hongroises, actualités et missions",
+      "editeur": "Honvédelmi Minisztérium / Magyar Honvédség",
+      "url": "https://honvedelem.hu/",
+      "type": "officiel",
+      "langue": "hu",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "presences",
+        "conflits"
+      ],
+      "notes": "Pas de page récapitulative des effectifs par mission trouvée. Tchad : le Parlement a autorisé le 6/11/2023 jusqu'à 200 militaires (400 en relève) jusqu'au 31/12/2025, sans déploiement confirmé par une source officielle à ce jour, donc absent de presences.json. Présences étrangères en Hongrie (escadre de transport lourd de l'OTAN à Pápa, état-major de la Division multinationale Centre à Székesfehérvár) : hors du périmètre de cette couche, qui décrit les forces hongroises à l'étranger.",
+      "hotes": [
+        "honvedelem.hu",
+        "defence.hu"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "parlement",
+      "nom": "Országgyűlés : composition, groupes et résolutions autorisant les déploiements",
+      "editeur": "Országgyűlés (Assemblée nationale)",
+      "url": "https://www.parlament.hu/",
+      "type": "officiel",
+      "langue": "hu",
+      "licence": "non précisée",
+      "cadence": "à chaque changement",
+      "api": false,
+      "api_url": null,
+      "format": "html / pdf",
+      "couches": [
+        "politique",
+        "presences"
+      ],
+      "notes": "Les déploiements à l'étranger sont autorisés par résolution (OGY határozat) ou décision gouvernementale publiée au Magyar Közlöny. Aucune API publique documentée trouvée.",
+      "hotes": [
+        "www.parlament.hu",
+        "library.parlament.hu"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "kozlony",
+      "nom": "Magyar Közlöny (journal officiel) et Nemzeti Jogszabálytár (base de la législation en vigueur)",
+      "editeur": "Gouvernement de Hongrie",
+      "url": "https://magyarkozlony.hu/",
+      "type": "officiel",
+      "langue": "hu",
+      "licence": "non précisée",
+      "cadence": "quotidienne",
+      "api": false,
+      "api_url": null,
+      "format": "pdf / html",
+      "couches": [
+        "presences",
+        "sanctions"
+      ],
+      "notes": "Sanctions : la loi LII de 2017 organise l'exécution des mesures restrictives de l'UE et du Conseil de sécurité de l'ONU. Les règlements de l'UE s'appliquent directement ; aucune liste nationale autonome n'a été trouvée. Information issue d'un guide juridique secondaire (CMS), à confirmer sur njt.hu.",
+      "hotes": [
+        "magyarkozlony.hu",
+        "njt.hu"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "electoral",
+      "nom": "Nemzeti Választási Iroda : résultats officiels des législatives",
+      "editeur": "Nemzeti Választási Iroda (Office électoral national)",
+      "url": "https://vtr.valasztas.hu/",
+      "type": "officiel",
+      "langue": "hu",
+      "licence": "non précisée",
+      "cadence": "à chaque élection",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Résultats définitifs du scrutin du 12/04/2026 publiés le 18/04/2026 : 141 Tisza, 52 Fidesz–KDNP, 6 Mi Hazánk. Chiffres relevés par la presse (intellinews.com, bluewin.ch), pas lus sur le site de l'office.",
+      "hotes": [
+        "www.valasztas.hu",
+        "vtr.valasztas.hu"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "gouvernement",
+      "nom": "Portail du gouvernement, composition",
+      "editeur": "Gouvernement de Hongrie",
+      "url": "https://kormany.hu/",
+      "type": "officiel",
+      "langue": "hu",
+      "licence": "non précisée",
+      "cadence": "à chaque changement",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Gouvernement Magyar en fonctions depuis mai 2026 (16 ministres). Le ministère des Affaires étrangères a été séparé du commerce extérieur.",
+      "hotes": [
+        "kormany.hu"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "mae",
+      "nom": "Ministère des Affaires étrangères, communiqués",
+      "editeur": "Külügyminisztérium (Hongrie)",
+      "url": "https://kormany.hu/",
+      "type": "officiel",
+      "langue": "hu",
+      "licence": "non précisée",
+      "cadence": "irrégulière",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "conflits"
+      ],
+      "notes": "Avant mai 2026, ministère des Affaires étrangères et du Commerce extérieur (KKM). Une partie des annonces passait par les réseaux sociaux du ministre.",
+      "hotes": [
+        "kormany.hu"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "otan_kfor",
+      "nom": "KFOR, effectifs par pays contributeur (« placemat »)",
+      "editeur": "OTAN",
+      "url": "https://www.nato.int/content/dam/nato/webready/documents/factsheets/kfor/KFOR-Placemat.pdf",
+      "type": "international",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "irrégulière (quelques fois par an)",
+      "api": false,
+      "api_url": null,
+      "format": "pdf",
+      "couches": [
+        "presences"
+      ],
+      "notes": "Version de février 2026 : Hongrie 408 militaires sur 4 636. Chiffre lu dans un extrait de recherche, pas dans le PDF.",
+      "hotes": [
+        "www.nato.int"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "onu_pk",
+      "nom": "Contributions en personnel aux opérations de maintien de la paix, par pays et par mission",
+      "editeur": "ONU, Département des opérations de paix",
+      "url": "https://peacekeeping.un.org/en/troop-and-police-contributors",
+      "type": "international",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "mensuelle",
+      "api": true,
+      "api_url": "https://psdata.un.org/",
+      "format": "csv",
+      "couches": [
+        "presences"
+      ],
+      "notes": "Effectifs hongrois par mission (UNFICYP, UNIFIL, MINURSO) à lire ici une fois l'accès ouvert. Au 31/05/2025, 35 Hongrois servaient dans des missions de l'ONU (defence.hu). La FINUL s'achève fin 2026.",
+      "hotes": [
+        "peacekeeping.un.org",
+        "psdata.un.org"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "wikidata",
+      "nom": "Wikidata : chef de l'État, chef du gouvernement, présidents de partis",
+      "editeur": "Wikimedia Foundation",
+      "url": "https://www.wikidata.org/wiki/Q28",
+      "type": "recherche",
+      "langue": "en",
+      "licence": "CC0",
+      "cadence": "continue",
+      "api": true,
+      "api_url": "https://query.wikidata.org/sparql",
+      "format": "json",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Base collaborative : sert au contrôle croisé (qid), pas de source primaire. Relevé du 26/10/2026 : P35 = Baka András depuis le 19/08/2026, P6 = Magyar Péter depuis le 09/05/2026.",
+      "hotes": [
+        "www.wikidata.org",
+        "query.wikidata.org"
+      ],
+      "acces": "verifie"
+    }
+  ]
+}

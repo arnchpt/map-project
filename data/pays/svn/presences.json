@@ -1,0 +1,57 @@
+{
+  "pays": "SVN",
+  "verifie": "2026-10-26",
+  "presences": [
+    {
+      "hote": "XKX",
+      "lon": 21.2,
+      "lat": 42.6,
+      "nom": "KFOR (OTAN) : 53e contingent, bataillon non cinétique du commandement régional Est sous commandement slovène",
+      "cat": "otan",
+      "eff": 109,
+      "depuis": null,
+      "src": "sv_revija"
+    },
+    {
+      "hote": "BIH",
+      "lon": 18.4,
+      "lat": 43.8,
+      "nom": "Opération EUFOR Althea et quartier général de l'OTAN à Sarajevo",
+      "cat": "ue",
+      "eff": null,
+      "depuis": null,
+      "src": "sv"
+    },
+    {
+      "hote": "LVA",
+      "lon": 24.3,
+      "lat": 57.1,
+      "nom": "Brigade multinationale de l'OTAN en Lettonie (présence avancée renforcée)",
+      "cat": "otan",
+      "eff": null,
+      "depuis": null,
+      "src": "sv_revija"
+    },
+    {
+      "hote": "SVK",
+      "lon": 19.3,
+      "lat": 48.4,
+      "nom": "Groupement tactique multinational de l'OTAN en Slovaquie",
+      "cat": "otan",
+      "eff": 111,
+      "depuis": null,
+      "src": "sv"
+    },
+    {
+      "hote": "SRB",
+      "lon": 20.5,
+      "lat": 44.8,
+      "nom": "Bureau de liaison militaire de l'OTAN à Belgrade",
+      "cat": "dlia",
+      "eff": null,
+      "depuis": null,
+      "src": "sv"
+    }
+  ],
+  "non_localisees": []
+}
