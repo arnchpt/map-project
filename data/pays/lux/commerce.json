@@ -1,0 +1,66 @@
+{
+  "pays": "LUX",
+  "verifie": "2026-10-27",
+  "src": "lustat",
+  "annee": 2025,
+  "devise": "EUR",
+  "unite": "Md",
+  "concept": "commerce de biens selon le STATEC (concept spécial ou général, FOB ou CAF non précisés par l'API)",
+  "total": {
+    "x": 15.08,
+    "m": 24.66
+  },
+  "partenaires": [
+    {
+      "pays": "DEU",
+      "x": 3.83,
+      "m": 6.82
+    },
+    {
+      "pays": "BEL",
+      "x": 2.14,
+      "m": 7.81
+    },
+    {
+      "pays": "FRA",
+      "x": 2.35,
+      "m": 2.84
+    },
+    {
+      "pays": "NLD",
+      "x": 0.98,
+      "m": 1.39
+    },
+    {
+      "pays": "ITA",
+      "x": 0.63,
+      "m": 0.8
+    },
+    {
+      "pays": "USA",
+      "x": 0.44,
+      "m": 0.77
+    },
+    {
+      "pays": "JPN",
+      "x": 0.06,
+      "m": 1.1
+    },
+    {
+      "pays": "POL",
+      "x": 0.38,
+      "m": 0.52
+    },
+    {
+      "pays": "ESP",
+      "x": 0.51,
+      "m": 0.38
+    },
+    {
+      "pays": "GBR",
+      "x": 0.46,
+      "m": 0.38
+    }
+  ],
+  "notes": {}
+}
