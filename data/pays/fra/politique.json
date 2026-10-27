@@ -1,6 +1,6 @@
 {
   "pays": "FRA",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "chef_etat": { "nom": "Emmanuel Macron", "fonction": "Président de la République", "parti": "Renaissance", "depuis": "2017-05-14", "qid": "Q3052772", "src": "elysee" },
   "chef_gouv": { "nom": "Sébastien Lecornu", "fonction": "Premier ministre", "parti": "Renaissance", "depuis": "2025-09-09", "qid": "Q20089181", "src": "gouvernement" },
   "chambre": {
@@ -24,6 +24,7 @@
     "Sièges : résultat du second tour du 07/07/2024 selon l'IPU (nuances attribuées par le ministère de l'Intérieur), figés jusqu'au scrutin suivant. Les groupes de l'Assemblée ont évolué depuis.",
     "Les Républicains : le bureau politique a refusé de participer au gouvernement Lecornu II en octobre 2025 et a exclu les six élus LR devenus ministres (LCP, 13/10/2025). Rôle « hors » non revérifié pour 2026.",
     "Divers droite : nuance hétérogène, certains élus soutiennent le gouvernement. « hors » par défaut, à remplacer par le décompte officiel des groupes (Assemblée nationale, open data).",
+    "Relecture du 27/10/2026 : groupes de l'Assemblée au 27/10/2026 (open data AN, 585 mandats) : RN 122, EPR 91, LFI-NFP 71, SOC 69, DR 48, EcoS 39, Dem 38, HOR 36, LIOT 24, UDR 18, GDR 18, NI 11. Les sièges ci-dessus restent ceux de l'élection (IPU), conformément à la règle commune.",
     "Dirigeants de partis : relevé repris de data/politique/politique.json (sources de presse et Wikipédia), non revérifié dans ce fil."
   ]
 }

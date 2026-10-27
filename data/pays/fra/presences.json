@@ -1,6 +1,6 @@
 {
   "pays": "FRA",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "presences": [
     { "hote": "DJI", "lon": 42.6, "lat": 11.7, "nom": "Forces françaises stationnées à Djibouti", "cat": "pre", "eff": 1500, "depuis": null, "src": "armees" },
     { "hote": "ARE", "lon": 54.3, "lat": 23.9, "nom": "Forces françaises aux Émirats arabes unis", "cat": "pre", "eff": 750, "depuis": null, "src": "armees" },
