@@ -1,6 +1,6 @@
 {
   "pays": "DEU",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "chef_etat": {
     "nom": "Frank-Walter Steinmeier",
     "fonction": "Président fédéral",
@@ -22,7 +22,7 @@
     "sieges": 630,
     "majorite": 316,
     "election": "2025-02-23",
-    "src": "ipu",
+    "src": "electoral",
     "ipu": "DE-LC01-E20250223"
   },
   "partis": [

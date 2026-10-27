@@ -1,15 +1,15 @@
 {
   "pays": "DEU",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "presences": [
     {
       "hote": "LTU",
       "lon": 25.3,
       "lat": 54.7,
-      "nom": "Panzerbrigade 45 (brigade Lituanie), stationnement permanent",
+      "nom": "Panzerbrigade 45 (brigade Lituanie) et Multinational Battlegroup Lithuania ; plus de 5 000 militaires prévus avant 2028",
       "cat": "pre",
       "eff": null,
-      "depuis": "2025-04",
+      "depuis": null,
       "src": "litauen"
     },
     {
@@ -19,7 +19,7 @@
       "nom": "KFOR (plafond du mandat : 400, sans échéance)",
       "cat": "otan",
       "eff": null,
-      "depuis": null,
+      "depuis": "1999-06",
       "src": "defense"
     },
     {
@@ -29,27 +29,27 @@
       "nom": "EUFOR Althea (plafond du mandat : 50, jusqu'au 30/06/2027)",
       "cat": "ue",
       "eff": null,
-      "depuis": null,
+      "depuis": "2022-07",
       "src": "defense"
     },
     {
       "hote": "SSD",
       "lon": 31.6,
       "lat": 4.9,
-      "nom": "UNMISS (plafond du mandat : 50, jusqu'à fin octobre 2027)",
+      "nom": "UNMISS (plafond du mandat : 50, jusqu'au 31/10/2027)",
       "cat": "onu",
       "eff": null,
-      "depuis": null,
+      "depuis": "2011-07",
       "src": "defense"
     },
     {
       "hote": "LBN",
       "lon": 35.1,
       "lat": 33.1,
-      "nom": "UNIFIL (plafond : 300 ; retrait décidé, plafond de 80 à partir du 01/01/2027)",
+      "nom": "UNIFIL (plafond : 300 jusqu'au 31/12/2026, puis 80 en phase de retrait à partir du 01/01/2027)",
       "cat": "onu",
       "eff": null,
-      "depuis": null,
+      "depuis": "2006-09",
       "src": "defense"
     },
     {
@@ -59,34 +59,44 @@
       "nom": "Counter Daesh / Capacity Building Iraq (plafond du mandat : 500 avec la Jordanie, jusqu'au 31/01/2027)",
       "cat": "ope",
       "eff": null,
-      "depuis": null,
+      "depuis": "2015-12",
       "src": "defense"
     },
     {
       "hote": "JOR",
       "lon": 36.8,
       "lat": 31.8,
-      "nom": "Counter Daesh, base aérienne d'Al-Azraq (même mandat que l'Irak)",
+      "nom": "Counter Daesh, Jordanie (même mandat que l'Irak)",
       "cat": "ope",
       "eff": null,
-      "depuis": null,
+      "depuis": "2015-12",
+      "src": "defense"
+    },
+    {
+      "hote": "ESH",
+      "lon": -13.2,
+      "lat": 27.1,
+      "nom": "MINURSO, observateurs militaires non armés (jusqu'à 4, sans mandat du Bundestag)",
+      "cat": "onu",
+      "eff": null,
+      "depuis": "2013-10",
       "src": "defense"
     }
   ],
   "non_localisees": [
     {
-      "nom": "EUNAVFOR Aspides, mer Rouge (jusqu'au 31/10/2027)",
-      "eff": "plafond 350 selon le BMVg",
-      "src": "bmvg"
+      "nom": "EUNAVFOR Aspides, mer Rouge (mandat jusqu'au 31/10/2027)",
+      "eff": "plafond 350",
+      "src": "defense"
     },
     {
-      "nom": "EUNAVFOR MED Irini, Méditerranée (jusqu'au 30/11/2026)",
+      "nom": "EUNAVFOR MED Irini, Méditerranée (mandat jusqu'au 30/11/2026)",
       "eff": "plafond 300",
       "src": "defense"
     },
     {
-      "nom": "OTAN Sea Guardian, Méditerranée (jusqu'au 30/11/2026)",
-      "eff": "plafond 550 ou 650 selon les relevés",
+      "nom": "OTAN Sea Guardian, Méditerranée (mandat jusqu'au 30/11/2026)",
+      "eff": "plafond 550",
       "src": "defense"
     }
   ]
