@@ -1,6 +1,6 @@
 {
   "pays": "BGR",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "chef_etat": {
     "nom": "Iliana Iotova",
     "fonction": "Présidente de la République",
@@ -15,14 +15,14 @@
     "parti": "Bulgarie progressiste",
     "depuis": "2026-05-08",
     "qid": "Q26257557",
-    "src": "wikidata"
+    "src": "gouvernement"
   },
   "chambre": {
     "nom": "Assemblée nationale",
     "sieges": 240,
     "majorite": 121,
     "election": "2026-04-19",
-    "src": "ipu",
+    "src": "parlement",
     "ipu": "BG-LC01-E20260419"
   },
   "partis": [
@@ -39,16 +39,22 @@
       "leaders": "non reconfirmé"
     },
     {
-      "nom": "Nous continuons le changement – Bulgarie démocratique (PP-DB)",
-      "sieges": 37,
-      "role": "hors",
-      "leaders": "Assen Vassilev (PP) ; DB non reconfirmé"
-    },
-    {
       "nom": "Mouvement des droits et des libertés (DPS)",
       "sieges": 21,
       "role": "hors",
       "leaders": "Delyan Peevski"
+    },
+    {
+      "nom": "Bulgarie démocratique (DB)",
+      "sieges": 21,
+      "role": "hors",
+      "leaders": "non reconfirmé"
+    },
+    {
+      "nom": "Nous continuons le changement (PP)",
+      "sieges": 16,
+      "role": "hors",
+      "leaders": "Assen Vassilev"
     },
     {
       "nom": "Renaissance (Vazrazhdane)",
@@ -59,6 +65,7 @@
   ],
   "notes": [
     "Gouvernement monocolore Bulgarie progressiste.",
-    "Iliana Iotova, vice-présidente, a pris la présidence après la démission de Roumen Radev (acceptée le 23/01/2026), pour la fin du mandat qui court jusqu'en janvier 2027 (OSW)."
+    "Iliana Iotova, vice-présidente, a pris la présidence après la démission de Roumen Radev (acceptée le 23/01/2026), pour la fin du mandat qui court jusqu'en janvier 2027 (OSW).",
+    "Sièges par groupe parlementaire relus sur parliament.bg le 27/10/2026 (PP-DB s'est présenté en coalition le 19/04/2026 : 37 sièges, répartis en deux groupes)."
   ]
 }
