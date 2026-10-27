@@ -1,6 +1,6 @@
 {
   "pays": "IRL",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "presences": [
     {
       "hote": "LBN",
@@ -8,9 +8,9 @@
       "lat": 33.2,
       "nom": "Force intérimaire des Nations unies au Liban (FINUL / UNIFIL)",
       "cat": "onu",
-      "eff": 350,
+      "eff": 340,
       "depuis": "1978",
-      "src": "defense_gov"
+      "src": "defense"
     },
     {
       "hote": "BIH",
@@ -19,7 +19,7 @@
       "nom": "EUFOR Althea (état-major, Sarajevo)",
       "cat": "ue",
       "eff": 6,
-      "depuis": null,
+      "depuis": "2004-12",
       "src": "defense"
     },
     {
@@ -28,9 +28,9 @@
       "lat": 42.6,
       "nom": "KFOR (OTAN), état-major de Pristina",
       "cat": "otan",
-      "eff": 13,
+      "eff": 12,
       "depuis": null,
-      "src": "defense_gov"
+      "src": "defense"
     },
     {
       "hote": "ISR",
@@ -38,7 +38,7 @@
       "lat": 31.8,
       "nom": "Organisme des Nations unies chargé de la surveillance de la trêve (ONUST / UNTSO), siège à Jérusalem",
       "cat": "onu",
-      "eff": null,
+      "eff": 12,
       "depuis": null,
       "src": "defense"
     }
@@ -46,7 +46,7 @@
   "non_localisees": [
     {
       "nom": "Opération navale de l'UE Irini (EUNAVFOR MED), état-major de Rome",
-      "eff": "3 (chiffre non daté)",
+      "eff": "3 (page Defence Forces non datée)",
       "src": "defense"
     },
     {

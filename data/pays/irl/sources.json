@@ -1,6 +1,6 @@
 {
   "pays": "IRL",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "sources": [
     {
       "id": "stat",
@@ -9,15 +9,21 @@
       "url": "https://data.cso.ie/table/TSM10",
       "type": "officiel",
       "langue": "en",
-      "licence": "non précisée dans les résultats consultés (le CSO déclare une politique de données ouvertes ; licence à lire sur www.cso.ie)",
+      "licence": "non précisée (le jeu porte la mention de droits « Central Statistics Office, Ireland » ; page de licence www.cso.ie injoignable)",
       "cadence": "mensuelle",
       "api": true,
       "api_url": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/TSM10/JSON-stat/2.0/en",
       "format": "json-stat",
-      "couches": ["commerce"],
-      "notes": "Code de table TSM10 relevé dans la publication Goods Exports and Imports de mars 2023 ; à reconfirmer sur PxStat (le CSO a renuméroté ses tables en 2020). API sans clé selon le paquet R officiel csodata. Écart attendu avec le FMI : le commerce irlandais est dominé par les multinationales (pharmacie, contract manufacturing), ce qui gonfle les exportations vers les États-Unis. commerce.json non produit tant que l'accès n'est pas vérifié.",
-      "hotes": ["data.cso.ie", "ws.cso.ie", "www.cso.ie"],
-      "acces": "non_verifie"
+      "couches": [
+        "commerce"
+      ],
+      "notes": "Tableau TSM10 confirmé et lu le 27/10/2026 (mis à jour le 16/10/2026, données mensuelles janvier 2015 à août 2026, 49 pays et territoires, 66 groupes de produits, milliers d'euros, API sans clé). La Grande-Bretagne (XB) et l'Irlande du Nord (XI) sont séparées. commerce.json somme les 12 mois de 2025 pour le total des produits. Le commerce irlandais est dominé par les multinationales (pharmacie), ce qui gonfle les exportations vers les États-Unis : écart attendu avec le FMI.",
+      "hotes": [
+        "data.cso.ie",
+        "ws.cso.ie",
+        "www.cso.ie"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "defense",
@@ -31,10 +37,15 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["presences"],
-      "notes": "Page non datée et partiellement périmée selon les extraits de recherche (EUTM Mali, clos en 2024, y figurait encore). N'utiliser que les effectifs datés. Rapport annuel Department of Defence and Defence Forces en PDF sur le même site.",
-      "hotes": ["www.military.ie", "military.ie"],
-      "acces": "non_verifie"
+      "couches": [
+        "presences"
+      ],
+      "notes": "Page lue le 27/10/2026, non datée et en partie périmée : elle liste encore EUTM Mali et UNDOF (130), alors que le contingent UNDOF est retiré selon Security Ireland (T2 2026) ; ces deux missions ne sont pas reprises. Seuls les chiffres cohérents sont utilisés : UNIFIL 340, KFOR 12, UNTSO 12, Irini 3, EUFOR Althea 6 (« as of August 2026 », seule mention datée).",
+      "hotes": [
+        "www.military.ie",
+        "military.ie"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "defense_gov",
@@ -48,9 +59,13 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["presences"],
+      "couches": [
+        "presences"
+      ],
       "notes": "Source la plus fiable pour les effectifs : chaque participation est approuvée par le gouvernement avec un effectif. Communiqués utilisés : UNIFIL (mai 2026, environ 350 personnels jusqu'à fin 2026) et KFOR (prolongation de douze mois après juin 2026, 13 personnels à l'état-major de Pristina). Le projet de loi Defence (Amendment) Bill 2026 (suppression du « triple lock ») prévoit un rapport annuel au Dáil sur les déploiements : source future à suivre.",
-      "hotes": ["www.gov.ie"],
+      "hotes": [
+        "www.gov.ie"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -65,10 +80,16 @@
       "api": true,
       "api_url": "https://api.oireachtas.ie/v1/parties?chamber=dail&house_no=34",
       "format": "json",
-      "couches": ["politique", "autre"],
-      "notes": "Le point /v1/parties donne les sièges actuels par parti au 34e Dáil (défections comprises), /v1/members les TD. Permet aussi de suivre l'avancement du Defence (Amendment) Bill 2026 via /v1/legislation. Les sièges de politique.json sont ceux de l'élection du 29/11/2024 et n'ont pas été relus sur l'API.",
-      "hotes": ["api.oireachtas.ie", "www.oireachtas.ie"],
-      "acces": "non_verifie"
+      "couches": [
+        "politique",
+        "autre"
+      ],
+      "notes": "API lue le 27/10/2026 (/v1/members?chamber=dail&house_no=34) : 174 membres en cours, répartition par parti courante, qui diffère de l'élection de 2024 (Fine Gael 38 au lieu de 39 ; Social Democrats 12 au lieu de 11 ; indépendants 15 au lieu de 16). /v1/parties ne donne pas d'effectifs. Licence : page open-data lue, renvoie à la « Open data licence » de l'Oireachtas.",
+      "hotes": [
+        "api.oireachtas.ie",
+        "www.oireachtas.ie"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "wikidata",
@@ -82,9 +103,14 @@
       "api": true,
       "api_url": "https://query.wikidata.org/sparql",
       "format": "json",
-      "couches": ["politique"],
+      "couches": [
+        "politique"
+      ],
       "notes": "Relevé du 26/10/2026 : P35 Catherine Connolly (Q5052598) depuis le 11/11/2025 ; P6 Micheál Martin (Q920403) depuis le 23/01/2025. L'élection de 2024 (Q86345233) n'a que le résultat de Fianna Fáil (48 sièges) : pas de répartition complète des partis dans Wikidata.",
-      "hotes": ["www.wikidata.org", "query.wikidata.org"],
+      "hotes": [
+        "www.wikidata.org",
+        "query.wikidata.org"
+      ],
       "acces": "verifie"
     },
     {
@@ -99,9 +125,13 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["politique"],
+      "couches": [
+        "politique"
+      ],
       "notes": "Recoupe Wikidata P35.",
-      "hotes": ["president.ie"],
+      "hotes": [
+        "president.ie"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -116,9 +146,13 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["politique"],
+      "couches": [
+        "politique"
+      ],
       "notes": "Coalition Fianna Fáil, Fine Gael et Regional Independent Group formée en janvier 2025, avec rotation prévue du poste de Taoiseach (Simon Harris, Fine Gael) en novembre 2027 selon la presse. Remaniement du 18/11/2025 : Helen McEntee (Fine Gael) aux Affaires étrangères et à la Défense, Simon Harris (Tánaiste) aux Finances.",
-      "hotes": ["www.gov.ie"],
+      "hotes": [
+        "www.gov.ie"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -133,9 +167,15 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["politique"],
+      "couches": [
+        "politique"
+      ],
       "notes": "174 sièges, majorité à 88. Répartition reprise des comptages de presse (Irish Examiner, 01/12/2024), concordants : FF 48, SF 39, FG 38, Lab 11, SD 11, Indépendants 16, II 4, PBP-S 3, Aontú 2, Verts 1, 100% Redress 1. Code d'élection IPU Parline probable IE-LC01-E20241129, non confirmé (data.ipu.org bloqué), donc non renseigné.",
-      "hotes": ["www.oireachtas.ie", "www.electoralcommission.ie", "data.ipu.org"],
+      "hotes": [
+        "www.oireachtas.ie",
+        "www.electoralcommission.ie",
+        "data.ipu.org"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -150,9 +190,13 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["politique"],
+      "couches": [
+        "politique"
+      ],
       "notes": "Comptage des sièges en attendant la lecture de l'API Oireachtas.",
-      "hotes": ["www.irishexaminer.com"],
+      "hotes": [
+        "www.irishexaminer.com"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -167,9 +211,18 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["conflits", "sanctions"],
+      "couches": [
+        "conflits",
+        "sanctions"
+      ],
       "notes": "Sanctions : l'Irlande n'a pas de régime national autonome ; elle applique les mesures de l'UE et de l'ONU (déjà couvertes par la couche sanctions UE). Autorités compétentes : DFA, Department of Enterprise, Tourism and Employment, Central Bank of Ireland. Les sanctions pénales sont fixées par statutory instruments (irishstatutebook.ie). Le site du DFA a migré de dfa.ie vers ireland.ie/en/dfa.",
-      "hotes": ["www.ireland.ie", "www.dfa.ie", "dfa.ie", "www.irishstatutebook.ie", "www.centralbank.ie"],
+      "hotes": [
+        "www.ireland.ie",
+        "www.dfa.ie",
+        "dfa.ie",
+        "www.irishstatutebook.ie",
+        "www.centralbank.ie"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -184,9 +237,13 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["conflits"],
+      "couches": [
+        "conflits"
+      ],
       "notes": "Paquet bilatéral de 125 M€ pour 2026, dont 100 M€ d'équipements militaires non létaux et 25 M€ pour l'énergie, selon les reprises de presse (Ukrainska Pravda, IrishCentral). URL exacte du communiqué non retrouvée.",
-      "hotes": ["www.gov.ie"],
+      "hotes": [
+        "www.gov.ie"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -201,10 +258,15 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["conflits"],
-      "notes": "Affaire Afrique du Sud c. Israël (convention sur le génocide), intervention au titre de l'article 63 du Statut.",
-      "hotes": ["www.icj-cij.org", "icj-cij.org"],
-      "acces": "non_verifie"
+      "couches": [
+        "conflits"
+      ],
+      "notes": "Communiqué lu le 27/10/2026 : déclaration déposée le 06/01/2025, annoncée le 07/01/2025, au titre de l'article 63 du Statut, dans l'affaire Afrique du Sud c. Israël.",
+      "hotes": [
+        "www.icj-cij.org",
+        "icj-cij.org"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "mae_israel",
@@ -218,9 +280,13 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["conflits"],
+      "couches": [
+        "conflits"
+      ],
       "notes": "Fait rapporté par la presse (Irish Examiner, Ynet, ICTJ) avec citation du ministre Gideon Saar ; communiqué original non lu, date du 15/12/2024 à reconfirmer.",
-      "hotes": ["www.gov.il"],
+      "hotes": [
+        "www.gov.il"
+      ],
       "acces": "non_verifie"
     }
   ]
