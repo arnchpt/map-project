@@ -1,6 +1,6 @@
 {
   "pays": "SVK",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "evenements": [
     {
       "avec": "UKR",
@@ -8,7 +8,7 @@
       "t": "Aide militaire à l'Ukraine, puis arrêt",
       "d": "Cession d'un système S-300 en avril 2022 et de 13 MiG-29 en mars-avril 2023 ; le gouvernement entré en fonction le 25/10/2023 a mis fin à l'aide militaire prélevée sur les stocks de l'État.",
       "date": "2022-04",
-      "src": "defense"
+      "src": "ukrinform"
     }
   ]
 }

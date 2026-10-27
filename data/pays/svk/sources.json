@@ -1,6 +1,6 @@
 {
   "pays": "SVK",
-  "verifie": "2026-10-26",
+  "verifie": "2026-10-27",
   "sources": [
     {
       "id": "stat",
@@ -14,16 +14,23 @@
       "api": true,
       "api_url": "https://data.statistics.sk/api/html/help-en.html",
       "format": "json-stat, csv, xml, xlsx",
-      "couches": ["commerce"],
-      "notes": "API sans inscription. Migration en cours de DATAcube vers STATdata : les nouveaux cubes ne sont créés que dans STATdata, vérifier le code du cube commerce par pays avant d'automatiser. Domaines bloqués depuis la session : commerce.json non rempli tant que les chiffres ne sont pas lus à la source.",
-      "hotes": ["slovak.statistics.sk", "data.statistics.sk", "datacube.statistics.sk", "udaje.statistics.sk"],
+      "couches": [
+        "commerce"
+      ],
+      "notes": "API sans inscription. Migration en cours de DATAcube vers STATdata : les nouveaux cubes ne sont créés que dans STATdata, vérifier le code du cube commerce par pays avant d'automatiser. Domaines bloqués depuis la session : commerce.json non rempli tant que les chiffres ne sont pas lus à la source. Hôtes toujours injoignables le 2026-10-27 (échec de connexion).",
+      "hotes": [
+        "slovak.statistics.sk",
+        "data.statistics.sk",
+        "datacube.statistics.sk",
+        "udaje.statistics.sk"
+      ],
       "acces": "non_verifie"
     },
     {
       "id": "defense",
       "nom": "Ministère de la Défense, opérations et missions à l'étranger (Pôsobenie OS SR v zahraničí)",
       "editeur": "Ministerstvo obrany Slovenskej republiky",
-      "url": "https://www.mosr.sk",
+      "url": "https://www.mosr.sk/operacie-europa-a-blizky-vychod/",
       "type": "officiel",
       "langue": "sk",
       "licence": "non précisée",
@@ -31,10 +38,15 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["presences", "conflits"],
-      "notes": "Le site répond aussi sous www.mod.gov.sk. Effectifs réels publiés par communiqué, souvent inférieurs aux plafonds votés par le Parlement.",
-      "hotes": ["www.mosr.sk", "www.mod.gov.sk"],
-      "acces": "non_verifie"
+      "couches": [
+        "presences",
+        "conflits"
+      ],
+      "notes": "Lu le 2026-10-27. Fiche par mission avec effectif réel et plafond voté (uznesenie NR SR). Pages non datées : UNFICYP 234 (plafond 280), EUFOR Althea 51 (plafond 60) ; eFP Lettonie 135 « à décembre 2021 » (plafond 152), donc périmé et non repris. La page d'introduction cite encore l'Afghanistan (opération close) : la rubrique n'est pas entièrement tenue à jour. KFOR et Eastern Sentry absents de la liste. www.mod.gov.sk redirige vers le même contenu.",
+      "hotes": [
+        "www.mosr.sk"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "vlada",
@@ -48,10 +60,16 @@
       "api": false,
       "api_url": null,
       "format": "html, pdf",
-      "couches": ["presences", "politique"],
-      "notes": "Source la plus durable pour les plafonds d'effectifs : chaque déploiement passe par une résolution du gouvernement puis un vote de la Národná rada.",
-      "hotes": ["rokovania.gov.sk", "www.vlada.gov.sk"],
-      "acces": "non_verifie"
+      "couches": [
+        "presences",
+        "politique"
+      ],
+      "notes": "Lu le 2026-10-27 : portail des séances (162e séance du gouvernement fixée au 2026-10-28) et page d'accueil citant Robert Fico comme président du gouvernement. Résolution sur Eastern Sentry non retrouvée depuis la session.",
+      "hotes": [
+        "rokovania.gov.sk",
+        "www.vlada.gov.sk"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "nrsr",
@@ -65,27 +83,36 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["politique", "presences"],
-      "notes": "Un module OpenData est cité dans des documents de marché public, mais aucune documentation d'API publique trouvée par recherche web. Vote des mandats de déploiement (eFP Lettonie et KFOR votés en mars 2025 selon la presse).",
-      "hotes": ["www.nrsr.sk"],
+      "couches": [
+        "politique",
+        "presences"
+      ],
+      "notes": "Hôte répondant par une vérification anti-robot (preuve de travail JavaScript) le 2026-10-27 : non contournée, reste non vérifié. Vote des mandats KFOR et Eastern Sentry connu par la presse seulement.",
+      "hotes": [
+        "www.nrsr.sk"
+      ],
       "acces": "non_verifie"
     },
     {
       "id": "electoral",
       "nom": "Résultats officiels des élections au Conseil national, 30 septembre 2023",
       "editeur": "Štatistický úrad Slovenskej republiky (pour la Commission électorale d'État)",
-      "url": "https://volby.statistics.sk",
+      "url": "https://volby.statistics.sk/nrsr/nrsr2023/sk/vysledky_hlasovania_strany.html",
       "type": "officiel",
       "langue": "sk",
       "licence": "CC BY 4.0 (conditions générales de l'office, à confirmer pour le site électoral)",
       "cadence": "à chaque élection",
-      "api": false,
-      "api_url": null,
-      "format": "html, xlsx",
-      "couches": ["politique"],
-      "notes": "Sièges recoupés avec trois sources secondaires concordantes (Wikipédia, PolitPro, Bulletins électoraux de l'UE) : 42/32/27/16/12/11/10. Prochaine élection ordinaire attendue en 2027, anticipée possible.",
-      "hotes": ["volby.statistics.sk"],
-      "acces": "non_verifie"
+      "api": true,
+      "api_url": "https://volby.statistics.sk/nrsr/nrsr2023/files/xlsx/NRSR2023_SK_tab03a.xlsx",
+      "format": "xlsx",
+      "couches": [
+        "politique"
+      ],
+      "notes": "Lu le 2026-10-27 : tableau 03a (voix et mandats par sujet politique), 42/32/27/16/12/11/10 confirmés. Les pages d'une autre élection suivent le même modèle d'URL (nrsr2027/…).",
+      "hotes": [
+        "volby.statistics.sk"
+      ],
+      "acces": "verifie"
     },
     {
       "id": "wikidata",
@@ -99,9 +126,14 @@
       "api": true,
       "api_url": "https://query.wikidata.org/sparql",
       "format": "json",
-      "couches": ["politique"],
+      "couches": [
+        "politique"
+      ],
       "notes": "Lu le 2026-10-26 : P35 = Q17330556 (Peter Pellegrini), P6 = Q57606 (Robert Fico).",
-      "hotes": ["www.wikidata.org", "query.wikidata.org"],
+      "hotes": [
+        "www.wikidata.org",
+        "query.wikidata.org"
+      ],
       "acces": "verifie"
     },
     {
@@ -116,9 +148,14 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["sanctions", "conflits"],
-      "notes": "La Slovaquie applique les sanctions de l'ONU et de l'UE (déjà couvertes par les couches communes). Aucune liste nationale autonome trouvée par recherche web ; la loi 289/2016 permet un règlement du gouvernement, à vérifier sur le site.",
-      "hotes": ["www.mzv.sk"],
+      "couches": [
+        "sanctions",
+        "conflits"
+      ],
+      "notes": "La Slovaquie applique les sanctions de l'ONU et de l'UE (déjà couvertes par les couches communes). Aucune liste nationale autonome trouvée par recherche web ; la loi 289/2016 permet un règlement du gouvernement, à vérifier sur le site. Hôte répond 403 (protection anti-robot) le 2026-10-27.",
+      "hotes": [
+        "www.mzv.sk"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -133,9 +170,13 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["sanctions"],
-      "notes": "Définit comme « règlement de sanctions » une décision du Conseil de sécurité (art. 41), un acte contraignant de l'UE ou un règlement du gouvernement slovaque. Version consolidée en vigueur au 2026-06-01 (miroir zakonypreludi.sk, non officiel).",
-      "hotes": ["www.slov-lex.sk"],
+      "couches": [
+        "sanctions"
+      ],
+      "notes": "Définit comme « règlement de sanctions » une décision du Conseil de sécurité (art. 41), un acte contraignant de l'UE ou un règlement du gouvernement slovaque. Version consolidée en vigueur au 2026-06-01 (miroir zakonypreludi.sk, non officiel). Hôte injoignable le 2026-10-27 (échec de connexion).",
+      "hotes": [
+        "www.slov-lex.sk"
+      ],
       "acces": "non_verifie"
     },
     {
@@ -150,9 +191,35 @@
       "api": false,
       "api_url": null,
       "format": "html",
-      "couches": ["presences"],
-      "notes": "La Slovaquie tient seule le secteur 4 depuis le 2018-09-01. Effectifs relevés par recherche web : 240 (juin 2022), 198 (article non daté, vers 2024) ; aucun chiffre 2026 trouvé. Chiffres mensuels par pays aussi publiés par le DPO de l'ONU (peacekeeping.un.org).",
-      "hotes": ["unficyp.unmissions.org", "peacekeeping.un.org"],
+      "couches": [
+        "presences"
+      ],
+      "notes": "unficyp.unmissions.org injoignable le 2026-10-27 ; peacekeeping.un.org joignable mais sans effectif slovaque lisible. Effectif UNFICYP désormais pris sur la page du ministère de la Défense.",
+      "hotes": [
+        "unficyp.unmissions.org",
+        "peacekeeping.un.org"
+      ],
+      "acces": "non_verifie"
+    },
+    {
+      "id": "ukrinform",
+      "nom": "Ukrinform, dépêche relayant Reuters : fin de l'aide militaire d'État slovaque à l'Ukraine et enquête sur le don des MiG-29",
+      "editeur": "Ukrinform",
+      "url": "https://ukrinform.net/rubric-ato/3888259-slovakia-gets-first-new-f16s-to-replace-migs-it-donated-to-ukraine.html",
+      "type": "presse",
+      "langue": "en",
+      "licence": "non précisée",
+      "cadence": "ponctuelle",
+      "api": false,
+      "api_url": null,
+      "format": "html",
+      "couches": [
+        "conflits"
+      ],
+      "notes": "Source de presse faute d'accès à un communiqué officiel du ministère de la Défense ou du gouvernement ; à remplacer par une source officielle. Dates de transfert (S-300 avril 2022, 13 MiG-29 mars-avril 2023) recoupées par plusieurs médias, non lues sur un site officiel.",
+      "hotes": [
+        "ukrinform.net"
+      ],
       "acces": "non_verifie"
     }
   ]
