@@ -22,7 +22,8 @@
     "sieges": 230,
     "majorite": 116,
     "election": "2025-05-18",
-    "src": "cne"
+    "src": "cne",
+    "ipu": "PT-LC01-E20250518"
   },
   "partis": [
     {
@@ -30,61 +31,89 @@
       "sieges": 91,
       "role": "gouv",
       "leaders": "Luís Montenegro (président du PSD), Nuno Melo (président du CDS-PP, non reconfirmé)",
-      "qid": "Q595575"
+      "qid": "Q595575",
+      "ipu": [
+        "pt-social_democratic_party_ppdpsd_democratic_and_social_centre_peoples_party_cds_pp",
+        "pt-social_democratic_party_ppd_psd_democratic_and_social_centre_people_s_party_cds_pp_people_s_monarchist_party_ppm_"
+      ]
     },
     {
       "nom": "Chega",
       "sieges": 60,
       "role": "hors",
-      "leaders": "André Ventura (président du parti)"
+      "leaders": "André Ventura (président du parti)",
+      "ipu": [
+        "pt-enough_ch_"
+      ]
     },
     {
       "nom": "Parti socialiste (PS)",
       "sieges": 58,
       "role": "hors",
       "leaders": "José Luís Carneiro (secrétaire général)",
-      "qid": "Q847263"
+      "qid": "Q847263",
+      "ipu": [
+        "pt-socialist_party_ps"
+      ]
     },
     {
       "nom": "Initiative libérale (IL)",
       "sieges": 9,
       "role": "hors",
       "leaders": "Mariana Leitão (présidente du parti)",
-      "qid": "Q46122950"
+      "qid": "Q46122950",
+      "ipu": [
+        "pt-liberal_initiative_il_"
+      ]
     },
     {
       "nom": "Livre",
       "sieges": 6,
       "role": "hors",
-      "leaders": "Rui Tavares et Isabel Mendes Lopes (porte-parole)"
+      "leaders": "Rui Tavares et Isabel Mendes Lopes (porte-parole)",
+      "ipu": [
+        "pt-livre_l_"
+      ]
     },
     {
       "nom": "Parti communiste portugais (PCP, coalition CDU)",
       "sieges": 3,
       "role": "hors",
       "leaders": "Paulo Raimundo (secrétaire général)",
-      "qid": "Q769829"
+      "qid": "Q769829",
+      "ipu": [
+        "pt-communist_party_green_coalition_pcp_pev"
+      ]
     },
     {
       "nom": "Bloc de gauche (BE)",
       "sieges": 1,
       "role": "hors",
       "leaders": "José Manuel Pureza (coordinateur)",
-      "qid": "Q884840"
+      "qid": "Q884840",
+      "ipu": [
+        "pt-left_bloc_be"
+      ]
     },
     {
       "nom": "Personnes–Animaux–Nature (PAN)",
       "sieges": 1,
       "role": "hors",
       "leaders": "Inês de Sousa Real (porte-parole)",
-      "qid": "Q2054840"
+      "qid": "Q2054840",
+      "ipu": [
+        "pt-party_people_animals_and_nature_pan"
+      ]
     },
     {
       "nom": "Ensemble pour le peuple (JPP)",
       "sieges": 1,
       "role": "hors",
       "leaders": "Filipe Sousa (non reconfirmé)",
-      "qid": "Q19694667"
+      "qid": "Q19694667",
+      "ipu": [
+        "pt-together-for-the-people-(jpp)"
+      ]
     }
   ]
 }

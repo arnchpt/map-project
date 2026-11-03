@@ -17,13 +17,19 @@
     "qid": "Q124488292",
     "src": "wikidata"
   },
+  "wikidata_ignore": [
+    {
+      "qid": "Q28599854",
+      "raison": "Tamás Sulyok, président jusqu'à l'élection de Baka András (2026-08-19) ; mandat non clos sur Wikidata"
+    }
+  ],
   "chambre": {
     "nom": "Országgyűlés (Assemblée nationale)",
     "sieges": 199,
     "majorite": 100,
     "election": "2026-04-12",
     "src": "electoral",
-    "ipu": null
+    "ipu": "HU-LC01-E20260412"
   },
   "partis": [
     {
@@ -31,21 +37,27 @@
       "sieges": 141,
       "role": "gouv",
       "leaders": "Magyar Péter (président)",
-      "ipu": null
+      "ipu": [
+        "hu-tisza-party"
+      ]
     },
     {
       "nom": "Fidesz–KDNP",
       "sieges": 52,
       "role": "hors",
       "leaders": "Orbán Viktor (président du Fidesz), Semjén Zsolt (président du KDNP), selon Wikidata",
-      "ipu": null
+      "ipu": [
+        "hu-hungarian_civic_union_christian_democratic_peoples_party_fidesz_kdnp"
+      ]
     },
     {
       "nom": "Mi Hazánk Mozgalom",
       "sieges": 6,
       "role": "hors",
       "leaders": "Toroczkai László (président)",
-      "ipu": null
+      "ipu": [
+        "hu-our_homeland_mi_haz_nk_"
+      ]
     }
   ]
 }

@@ -23,7 +23,7 @@
     "majorite": 90,
     "election": "2026-03-24",
     "src": "electoral",
-    "ipu": null
+    "ipu": "DK-LC01-E20260324"
   },
   "partis": [
     {
@@ -31,84 +31,108 @@
       "sieges": 38,
       "role": "gouv",
       "leaders": "Mette Frederiksen (présidente)",
-      "ipu": []
+      "ipu": [
+        "dk-social_democratic_party"
+      ]
     },
     {
       "nom": "Socialistisk Folkeparti (SF)",
       "sieges": 20,
       "role": "gouv",
       "leaders": "Pia Olsen Dyhr (présidente)",
-      "ipu": []
+      "ipu": [
+        "dk-socialist_people_s_party_sf_"
+      ]
     },
     {
       "nom": "Venstre (V)",
       "sieges": 18,
       "role": "hors",
       "leaders": "Troels Lund Poulsen (président)",
-      "ipu": []
+      "ipu": [
+        "dk-liberal_party_venstre"
+      ]
     },
     {
       "nom": "Liberal Alliance (I)",
       "sieges": 16,
       "role": "hors",
       "leaders": "Alex Vanopslagh (président)",
-      "ipu": []
+      "ipu": [
+        "dk-liberal_alliance"
+      ]
     },
     {
       "nom": "Dansk Folkeparti (O)",
       "sieges": 16,
       "role": "hors",
       "leaders": "Morten Messerschmidt (président)",
-      "ipu": []
+      "ipu": [
+        "dk-danish_peoples_party"
+      ]
     },
     {
       "nom": "Moderaterne (M)",
       "sieges": 14,
       "role": "gouv",
       "leaders": "Lars Løkke Rasmussen (président)",
-      "ipu": []
+      "ipu": [
+        "dk-moderates_m_"
+      ]
     },
     {
       "nom": "Det Konservative Folkeparti (C)",
       "sieges": 13,
       "role": "hors",
       "leaders": "Mona Juul (présidente)",
-      "ipu": []
+      "ipu": [
+        "dk-conservative_peoples_party"
+      ]
     },
     {
       "nom": "Enhedslisten (Ø)",
       "sieges": 11,
       "role": "hors",
       "leaders": "Pelle Dragsted (porte-parole politique)",
-      "ipu": []
+      "ipu": [
+        "dk-unity_list_red_green_alliance"
+      ]
     },
     {
       "nom": "Radikale Venstre (B)",
       "sieges": 10,
       "role": "gouv",
       "leaders": null,
-      "ipu": []
+      "ipu": [
+        "dk-social_liberal_party_rv"
+      ]
     },
     {
       "nom": "Danmarksdemokraterne (Æ)",
       "sieges": 10,
       "role": "hors",
       "leaders": null,
-      "ipu": []
+      "ipu": [
+        "dk-danish_democrats_"
+      ]
     },
     {
       "nom": "Alternativet (Å)",
       "sieges": 5,
       "role": "hors",
       "leaders": null,
-      "ipu": []
+      "ipu": [
+        "dk-alternative"
+      ]
     },
     {
       "nom": "Borgernes Parti (H)",
       "sieges": 4,
       "role": "hors",
       "leaders": null,
-      "ipu": []
+      "ipu": [
+        "dk-citizens-party-(bp)"
+      ]
     }
   ]
 }

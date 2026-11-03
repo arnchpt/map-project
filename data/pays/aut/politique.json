@@ -23,7 +23,7 @@
     "majorite": 92,
     "election": "2024-09-29",
     "src": "elections",
-    "ipu": null
+    "ipu": "AT-LC01-E20240929"
   },
   "partis": [
     {
@@ -31,35 +31,45 @@
       "sieges": 57,
       "role": "hors",
       "leaders": "Herbert Kickl (président du parti)",
-      "ipu": null
+      "ipu": [
+        "at-freedom_party_fp"
+      ]
     },
     {
       "nom": "ÖVP (Parti populaire)",
       "sieges": 51,
       "role": "gouv",
       "leaders": "Christian Stocker (président du parti, chancelier)",
-      "ipu": null
+      "ipu": [
+        "at-peoples_party___vp"
+      ]
     },
     {
       "nom": "SPÖ (Parti social-démocrate)",
       "sieges": 41,
       "role": "gouv",
       "leaders": "Andreas Babler (président du parti, vice-chancelier)",
-      "ipu": null
+      "ipu": [
+        "at-social_democratic_party_sp"
+      ]
     },
     {
       "nom": "NEOS",
       "sieges": 18,
       "role": "gouv",
       "leaders": "Beate Meinl-Reisinger (présidente du parti, ministre des Affaires étrangères)",
-      "ipu": null
+      "ipu": [
+        "at-neos_new_austria_neos"
+      ]
     },
     {
       "nom": "Les Verts (Die Grünen)",
       "sieges": 16,
       "role": "hors",
       "leaders": "Leonore Gewessler (porte-parole fédérale)",
-      "ipu": null
+      "ipu": [
+        "at-greens"
+      ]
     }
   ],
   "notes": [

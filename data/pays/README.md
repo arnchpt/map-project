@@ -71,7 +71,7 @@ Un fichier sans données garde sa structure avec une liste vide et une note dans
 
 ## `politique.json`
 
-Même structure qu'une entrée de [`data/politique/politique.json`](../politique/politique.json), plus un `src` sur `chef_etat`, `chef_gouv` et `chambre`. `qid` = identifiant Wikidata (contrôle automatique hebdomadaire). `ipu` = code d'élection et codes partis de l'IPU Parline s'ils existent : les sièges sont alors relus chaque semaine. `role` : `gouv` ou `hors`. `leaders` : relevé daté du jour de `verifie`.
+Même structure qu'une entrée de [`data/politique/politique.json`](../politique/politique.json), plus un `src` sur `chef_etat`, `chef_gouv` et `chambre`. `qid` = identifiant Wikidata (contrôle automatique hebdomadaire). `ipu` = code d'élection et codes partis de l'IPU Parline s'ils existent : les sièges sont alors relus chaque semaine. `wikidata_ignore` (optionnel) : `[{ qid, raison }]`, retard connu de Wikidata (mandat non clos pour un ancien titulaire) ; seul ce qid est ignoré par le contrôle hebdomadaire. `role` : `gouv` ou `hors`. `leaders` : relevé daté du jour de `verifie`.
 
 ## `commerce.json`
 
