@@ -10,6 +10,12 @@
     "src": "presidence"
   },
   "chef_gouv": null,
+  "wikidata_ignore": [
+    {
+      "qid": "Q2112764",
+      "raison": "Níkos Anastasiádis, président jusqu'au 2023-02-28 ; mandat non clos sur Wikidata"
+    }
+  ],
   "chambre": {
     "nom": "Chambre des représentants",
     "sieges": 56,

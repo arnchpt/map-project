@@ -17,6 +17,12 @@
     "qid": "Q1789192",
     "src": "gouvernement"
   },
+  "wikidata_ignore": [
+    {
+      "qid": "Q11869065",
+      "raison": "Kaja Kallas, Première ministre jusqu'au 2024-07-23 ; mandat non clos sur Wikidata"
+    }
+  ],
   "chambre": {
     "nom": "Riigikogu",
     "sieges": 101,

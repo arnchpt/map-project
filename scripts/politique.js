@@ -2,6 +2,8 @@
 // Usage : NODE_USE_ENV_PROXY=1 node scripts/politique.js   (la variable n'est utile que derrière un proxy)
 // Sortie : tmp/rapport-politique.md (écarts à vérifier puis reporter à la main dans le JSON) et ecart=true|false pour GitHub Actions.
 // Comme pour les organisations, Wikidata n'est qu'un détecteur : rien n'est réécrit automatiquement.
+// Un titulaire décédé est écarté (mandats historiques sans date de fin). Un retard connu de Wikidata se déclare dans
+// politique.json (wikidata_ignore : [{ qid, raison }]) : seul ce qid est ignoré, tout autre écart reste signalé.
 // Sièges et dirigeants de partis ne sont pas contrôlés : Wikidata est incomplet sur ces deux points (voir README).
 const fs = require("fs");
 const path = require("path");
@@ -14,6 +16,7 @@ const query = `SELECT ?iso ?prop ?p ?pLabel WHERE {
   VALUES (?prop ?pp ?ps) { ("P35" p:P35 ps:P35) ("P6" p:P6 ps:P6) }
   ?c wdt:P298 ?iso ; ?pp ?st . ?st ?ps ?p ; wikibase:rank ?rk .
   FILTER NOT EXISTS { ?st pq:P582 [] } FILTER(?rk != wikibase:DeprecatedRank)
+  FILTER NOT EXISTS { ?p wdt:P570 [] }
   SERVICE wikibase:label { bd:serviceParam wikibase:language "fr,en". } }`;
 
 (async () => {
@@ -29,7 +32,8 @@ const query = `SELECT ?iso ?prop ?p ?pLabel WHERE {
     if (/chef de l'État et du gouvernement/.test(p.chef_etat?.fonction ?? "")) attendu.P6.push(p.chef_etat.qid);
     for (const prop of ["P35", "P6"]) {
       const wd = rows.filter(x => x.iso === iso && x.prop === prop);
-      for (const x of wd) if (!attendu[prop].includes(x.qid)) ecarts.push(`${iso} ${prop} : Wikidata indique ${x.nom} (${x.qid}), absent du JSON`);
+      const ignore = (p.wikidata_ignore ?? []).map(x => x.qid);
+      for (const x of wd) if (!attendu[prop].includes(x.qid) && !ignore.includes(x.qid)) ecarts.push(`${iso} ${prop} : Wikidata indique ${x.nom} (${x.qid}), absent du JSON`);
       for (const q of attendu[prop].filter(Boolean)) if (!wd.some(x => x.qid === q)) ecarts.push(`${iso} ${prop} : ${q} n'est plus en fonction selon Wikidata`);
     }
   }

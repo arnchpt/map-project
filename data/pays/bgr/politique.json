@@ -17,6 +17,16 @@
     "qid": "Q26257557",
     "src": "gouvernement"
   },
+  "wikidata_ignore": [
+    {
+      "qid": "Q26257557",
+      "raison": "Roumen Radev est Premier ministre depuis le 2026-05-08 ; Wikidata le liste encore comme président (mandat non clos)"
+    },
+    {
+      "qid": "Q106928258",
+      "raison": "Kiril Petkov, Premier ministre 2021-2022 ; mandat non clos sur Wikidata"
+    }
+  ],
   "chambre": {
     "nom": "Assemblée nationale",
     "sieges": 240,
